@@ -1,0 +1,1032 @@
+{
+  "totalMs": 67169,
+  "audio": "episodes/ep01-tatkal-crash/voice.mp3",
+  "scenes": [
+    {
+      "startMs": 0,
+      "durMs": 6237
+    },
+    {
+      "startMs": 6497,
+      "durMs": 5916
+    },
+    {
+      "startMs": 12673,
+      "durMs": 12328
+    },
+    {
+      "startMs": 25261,
+      "durMs": 3585
+    },
+    {
+      "startMs": 29106,
+      "durMs": 4280
+    },
+    {
+      "startMs": 33646,
+      "durMs": 4198
+    },
+    {
+      "startMs": 38104,
+      "durMs": 7378
+    },
+    {
+      "startMs": 45742,
+      "durMs": 5459
+    },
+    {
+      "startMs": 51461,
+      "durMs": 4617
+    },
+    {
+      "startMs": 56338,
+      "durMs": 10231
+    }
+  ],
+  "words": [
+    {
+      "text": "दस",
+      "startMs": 360,
+      "endMs": 632,
+      "scene": 0
+    },
+    {
+      "text": "बजे",
+      "startMs": 632,
+      "endMs": 893,
+      "scene": 0
+    },
+    {
+      "text": "Tatkal",
+      "startMs": 893,
+      "endMs": 1349,
+      "scene": 0
+    },
+    {
+      "text": "खुलता",
+      "startMs": 1371,
+      "endMs": 1740,
+      "scene": 0
+    },
+    {
+      "text": "है,",
+      "startMs": 1740,
+      "endMs": 1958,
+      "scene": 0
+    },
+    {
+      "text": "और",
+      "startMs": 2208,
+      "endMs": 2371,
+      "scene": 0
+    },
+    {
+      "text": "एक",
+      "startMs": 2458,
+      "endMs": 2653,
+      "scene": 0
+    },
+    {
+      "text": "second",
+      "startMs": 2664,
+      "endMs": 3034,
+      "scene": 0
+    },
+    {
+      "text": "बाद",
+      "startMs": 3034,
+      "endMs": 3338,
+      "scene": 0
+    },
+    {
+      "text": "site",
+      "startMs": 3349,
+      "endMs": 3686,
+      "scene": 0
+    },
+    {
+      "text": "अटक",
+      "startMs": 3719,
+      "endMs": 4001,
+      "scene": 0
+    },
+    {
+      "text": "जाती",
+      "startMs": 4001,
+      "endMs": 4360,
+      "scene": 0
+    },
+    {
+      "text": "है.",
+      "startMs": 4360,
+      "endMs": 4643,
+      "scene": 0
+    },
+    {
+      "text": "क्यों?",
+      "startMs": 5821,
+      "endMs": 6017,
+      "scene": 0
+    },
+    {
+      "text": "Interview",
+      "startMs": 6557,
+      "endMs": 7068,
+      "scene": 1
+    },
+    {
+      "text": "में",
+      "startMs": 7080,
+      "endMs": 7239,
+      "scene": 1
+    },
+    {
+      "text": "सवाल",
+      "startMs": 7250,
+      "endMs": 7637,
+      "scene": 1
+    },
+    {
+      "text": "आया:",
+      "startMs": 7648,
+      "endMs": 8091,
+      "scene": 1
+    },
+    {
+      "text": "लाखों",
+      "startMs": 8193,
+      "endMs": 8648,
+      "scene": 1
+    },
+    {
+      "text": "लोग",
+      "startMs": 8659,
+      "endMs": 8921,
+      "scene": 1
+    },
+    {
+      "text": "एक",
+      "startMs": 8932,
+      "endMs": 9159,
+      "scene": 1
+    },
+    {
+      "text": "साथ",
+      "startMs": 9171,
+      "endMs": 9523,
+      "scene": 1
+    },
+    {
+      "text": "seat",
+      "startMs": 9534,
+      "endMs": 9864,
+      "scene": 1
+    },
+    {
+      "text": "book",
+      "startMs": 9875,
+      "endMs": 10114,
+      "scene": 1
+    },
+    {
+      "text": "करें,",
+      "startMs": 10125,
+      "endMs": 10557,
+      "scene": 1
+    },
+    {
+      "text": "तो",
+      "startMs": 10784,
+      "endMs": 10921,
+      "scene": 1
+    },
+    {
+      "text": "कैसे",
+      "startMs": 10932,
+      "endMs": 11273,
+      "scene": 1
+    },
+    {
+      "text": "handle",
+      "startMs": 11284,
+      "endMs": 11659,
+      "scene": 1
+    },
+    {
+      "text": "करोगे?",
+      "startMs": 11671,
+      "endMs": 12193,
+      "scene": 1
+    },
+    {
+      "text": "पंद्रह",
+      "startMs": 12733,
+      "endMs": 13059,
+      "scene": 2
+    },
+    {
+      "text": "LPA",
+      "startMs": 13135,
+      "endMs": 13679,
+      "scene": 2
+    },
+    {
+      "text": "वाला",
+      "startMs": 13679,
+      "endMs": 13961,
+      "scene": 2
+    },
+    {
+      "text": "बोला,",
+      "startMs": 13961,
+      "endMs": 14342,
+      "scene": 2
+    },
+    {
+      "text": "simple",
+      "startMs": 14526,
+      "endMs": 14972,
+      "scene": 2
+    },
+    {
+      "text": "है,",
+      "startMs": 14972,
+      "endMs": 15200,
+      "scene": 2
+    },
+    {
+      "text": "हर",
+      "startMs": 15440,
+      "endMs": 15592,
+      "scene": 2
+    },
+    {
+      "text": "request",
+      "startMs": 15592,
+      "endMs": 16005,
+      "scene": 2
+    },
+    {
+      "text": "पे",
+      "startMs": 16005,
+      "endMs": 16179,
+      "scene": 2
+    },
+    {
+      "text": "database",
+      "startMs": 16179,
+      "endMs": 16787,
+      "scene": 2
+    },
+    {
+      "text": "check",
+      "startMs": 16787,
+      "endMs": 17026,
+      "scene": 2
+    },
+    {
+      "text": "करो.",
+      "startMs": 17026,
+      "endMs": 17353,
+      "scene": 2
+    },
+    {
+      "text": "पर",
+      "startMs": 18194,
+      "endMs": 18324,
+      "scene": 2
+    },
+    {
+      "text": "IRCTC",
+      "startMs": 18400,
+      "endMs": 19335,
+      "scene": 2
+    },
+    {
+      "text": "एक",
+      "startMs": 19379,
+      "endMs": 19585,
+      "scene": 2
+    },
+    {
+      "text": "minute",
+      "startMs": 19596,
+      "endMs": 19911,
+      "scene": 2
+    },
+    {
+      "text": "में",
+      "startMs": 19911,
+      "endMs": 20074,
+      "scene": 2
+    },
+    {
+      "text": "सैंतीस",
+      "startMs": 20074,
+      "endMs": 20607,
+      "scene": 2
+    },
+    {
+      "text": "हज़ार",
+      "startMs": 20607,
+      "endMs": 20911,
+      "scene": 2
+    },
+    {
+      "text": "tickets",
+      "startMs": 20911,
+      "endMs": 21313,
+      "scene": 2
+    },
+    {
+      "text": "book",
+      "startMs": 21324,
+      "endMs": 21531,
+      "scene": 2
+    },
+    {
+      "text": "करता",
+      "startMs": 21563,
+      "endMs": 21933,
+      "scene": 2
+    },
+    {
+      "text": "है,",
+      "startMs": 21933,
+      "endMs": 22161,
+      "scene": 2
+    },
+    {
+      "text": "और",
+      "startMs": 22466,
+      "endMs": 22629,
+      "scene": 2
+    },
+    {
+      "text": "हर",
+      "startMs": 22629,
+      "endMs": 22835,
+      "scene": 2
+    },
+    {
+      "text": "request",
+      "startMs": 22835,
+      "endMs": 23226,
+      "scene": 2
+    },
+    {
+      "text": "उसी",
+      "startMs": 23292,
+      "endMs": 23574,
+      "scene": 2
+    },
+    {
+      "text": "row",
+      "startMs": 23574,
+      "endMs": 23726,
+      "scene": 2
+    },
+    {
+      "text": "को",
+      "startMs": 23737,
+      "endMs": 23879,
+      "scene": 2
+    },
+    {
+      "text": "lock",
+      "startMs": 23879,
+      "endMs": 24129,
+      "scene": 2
+    },
+    {
+      "text": "करती",
+      "startMs": 24140,
+      "endMs": 24498,
+      "scene": 2
+    },
+    {
+      "text": "है.",
+      "startMs": 24498,
+      "endMs": 24781,
+      "scene": 2
+    },
+    {
+      "text": "सब",
+      "startMs": 25321,
+      "endMs": 25582,
+      "scene": 3
+    },
+    {
+      "text": "line",
+      "startMs": 25582,
+      "endMs": 25886,
+      "scene": 3
+    },
+    {
+      "text": "में",
+      "startMs": 25886,
+      "endMs": 26038,
+      "scene": 3
+    },
+    {
+      "text": "wait,",
+      "startMs": 26038,
+      "endMs": 26354,
+      "scene": 3
+    },
+    {
+      "text": "connections",
+      "startMs": 26484,
+      "endMs": 27049,
+      "scene": 3
+    },
+    {
+      "text": "full,",
+      "startMs": 27049,
+      "endMs": 27354,
+      "scene": 3
+    },
+    {
+      "text": "और",
+      "startMs": 27582,
+      "endMs": 27734,
+      "scene": 3
+    },
+    {
+      "text": "site",
+      "startMs": 27734,
+      "endMs": 28049,
+      "scene": 3
+    },
+    {
+      "text": "बैठ",
+      "startMs": 28049,
+      "endMs": 28310,
+      "scene": 3
+    },
+    {
+      "text": "गई.",
+      "startMs": 28321,
+      "endMs": 28625,
+      "scene": 3
+    },
+    {
+      "text": "ऊपर",
+      "startMs": 29166,
+      "endMs": 29438,
+      "scene": 4
+    },
+    {
+      "text": "से,",
+      "startMs": 29438,
+      "endMs": 29655,
+      "scene": 4
+    },
+    {
+      "text": "पहले",
+      "startMs": 29753,
+      "endMs": 30079,
+      "scene": 4
+    },
+    {
+      "text": "पाँच",
+      "startMs": 30090,
+      "endMs": 30449,
+      "scene": 4
+    },
+    {
+      "text": "minute",
+      "startMs": 30449,
+      "endMs": 30764,
+      "scene": 4
+    },
+    {
+      "text": "में",
+      "startMs": 30775,
+      "endMs": 30938,
+      "scene": 4
+    },
+    {
+      "text": "आधे",
+      "startMs": 31014,
+      "endMs": 31318,
+      "scene": 4
+    },
+    {
+      "text": "login",
+      "startMs": 31329,
+      "endMs": 31688,
+      "scene": 4
+    },
+    {
+      "text": "bots",
+      "startMs": 31688,
+      "endMs": 32036,
+      "scene": 4
+    },
+    {
+      "text": "के",
+      "startMs": 32036,
+      "endMs": 32177,
+      "scene": 4
+    },
+    {
+      "text": "होते",
+      "startMs": 32177,
+      "endMs": 32481,
+      "scene": 4
+    },
+    {
+      "text": "हैं.",
+      "startMs": 32503,
+      "endMs": 33166,
+      "scene": 4
+    },
+    {
+      "text": "Solution:",
+      "startMs": 33706,
+      "endMs": 34271,
+      "scene": 5
+    },
+    {
+      "text": "virtual",
+      "startMs": 34326,
+      "endMs": 34847,
+      "scene": 5
+    },
+    {
+      "text": "waiting",
+      "startMs": 34847,
+      "endMs": 35249,
+      "scene": 5
+    },
+    {
+      "text": "room.",
+      "startMs": 35250,
+      "endMs": 35586,
+      "scene": 5
+    },
+    {
+      "text": "पहले",
+      "startMs": 36341,
+      "endMs": 36591,
+      "scene": 5
+    },
+    {
+      "text": "queue,",
+      "startMs": 36591,
+      "endMs": 36884,
+      "scene": 5
+    },
+    {
+      "text": "फिर",
+      "startMs": 36982,
+      "endMs": 37210,
+      "scene": 5
+    },
+    {
+      "text": "booking.",
+      "startMs": 37210,
+      "endMs": 37623,
+      "scene": 5
+    },
+    {
+      "text": "Bots",
+      "startMs": 38164,
+      "endMs": 38468,
+      "scene": 6
+    },
+    {
+      "text": "छाँटो,",
+      "startMs": 38468,
+      "endMs": 38892,
+      "scene": 6
+    },
+    {
+      "text": "हर",
+      "startMs": 38979,
+      "endMs": 39164,
+      "scene": 6
+    },
+    {
+      "text": "user",
+      "startMs": 39164,
+      "endMs": 39512,
+      "scene": 6
+    },
+    {
+      "text": "को",
+      "startMs": 39512,
+      "endMs": 39664,
+      "scene": 6
+    },
+    {
+      "text": "token",
+      "startMs": 39664,
+      "endMs": 40044,
+      "scene": 6
+    },
+    {
+      "text": "दो,",
+      "startMs": 40044,
+      "endMs": 40294,
+      "scene": 6
+    },
+    {
+      "text": "seats",
+      "startMs": 40479,
+      "endMs": 40871,
+      "scene": 6
+    },
+    {
+      "text": "Redis",
+      "startMs": 40892,
+      "endMs": 41218,
+      "scene": 6
+    },
+    {
+      "text": "में",
+      "startMs": 41218,
+      "endMs": 41381,
+      "scene": 6
+    },
+    {
+      "text": "atomic",
+      "startMs": 41403,
+      "endMs": 41838,
+      "scene": 6
+    },
+    {
+      "text": "DECR",
+      "startMs": 41849,
+      "endMs": 42664,
+      "scene": 6
+    },
+    {
+      "text": "से",
+      "startMs": 42664,
+      "endMs": 42838,
+      "scene": 6
+    },
+    {
+      "text": "गिनो,",
+      "startMs": 42838,
+      "endMs": 43153,
+      "scene": 6
+    },
+    {
+      "text": "और",
+      "startMs": 43338,
+      "endMs": 43501,
+      "scene": 6
+    },
+    {
+      "text": "DB",
+      "startMs": 43501,
+      "endMs": 43849,
+      "scene": 6
+    },
+    {
+      "text": "में",
+      "startMs": 43881,
+      "endMs": 44001,
+      "scene": 6
+    },
+    {
+      "text": "सिर्फ़",
+      "startMs": 44001,
+      "endMs": 44338,
+      "scene": 6
+    },
+    {
+      "text": "confirmed",
+      "startMs": 44360,
+      "endMs": 44827,
+      "scene": 6
+    },
+    {
+      "text": "booking.",
+      "startMs": 44849,
+      "endMs": 45262,
+      "scene": 6
+    },
+    {
+      "text": "Seat",
+      "startMs": 45802,
+      "endMs": 46128,
+      "scene": 7
+    },
+    {
+      "text": "hold",
+      "startMs": 46128,
+      "endMs": 46432,
+      "scene": 7
+    },
+    {
+      "text": "memory",
+      "startMs": 46432,
+      "endMs": 46878,
+      "scene": 7
+    },
+    {
+      "text": "में,",
+      "startMs": 46878,
+      "endMs": 47074,
+      "scene": 7
+    },
+    {
+      "text": "bookings",
+      "startMs": 47193,
+      "endMs": 47617,
+      "scene": 7
+    },
+    {
+      "text": "batch",
+      "startMs": 47617,
+      "endMs": 47965,
+      "scene": 7
+    },
+    {
+      "text": "में",
+      "startMs": 47965,
+      "endMs": 48117,
+      "scene": 7
+    },
+    {
+      "text": "database",
+      "startMs": 48117,
+      "endMs": 48715,
+      "scene": 7
+    },
+    {
+      "text": "में.",
+      "startMs": 48715,
+      "endMs": 49009,
+      "scene": 7
+    },
+    {
+      "text": "ना",
+      "startMs": 49839,
+      "endMs": 50035,
+      "scene": 7
+    },
+    {
+      "text": "lock,",
+      "startMs": 50035,
+      "endMs": 50317,
+      "scene": 7
+    },
+    {
+      "text": "ना",
+      "startMs": 50382,
+      "endMs": 50567,
+      "scene": 7
+    },
+    {
+      "text": "crash.",
+      "startMs": 50567,
+      "endMs": 50980,
+      "scene": 7
+    },
+    {
+      "text": "फ़र्क़",
+      "startMs": 51521,
+      "endMs": 51738,
+      "scene": 8
+    },
+    {
+      "text": "देखो:",
+      "startMs": 51749,
+      "endMs": 52173,
+      "scene": 8
+    },
+    {
+      "text": "एक",
+      "startMs": 52293,
+      "endMs": 52488,
+      "scene": 8
+    },
+    {
+      "text": "तरफ़",
+      "startMs": 52499,
+      "endMs": 52836,
+      "scene": 8
+    },
+    {
+      "text": "हर",
+      "startMs": 52836,
+      "endMs": 53010,
+      "scene": 8
+    },
+    {
+      "text": "request",
+      "startMs": 53010,
+      "endMs": 53434,
+      "scene": 8
+    },
+    {
+      "text": "DB",
+      "startMs": 53488,
+      "endMs": 53814,
+      "scene": 8
+    },
+    {
+      "text": "पे,",
+      "startMs": 53847,
+      "endMs": 54075,
+      "scene": 8
+    },
+    {
+      "text": "दूसरी",
+      "startMs": 54238,
+      "endMs": 54619,
+      "scene": 8
+    },
+    {
+      "text": "तरफ़",
+      "startMs": 54651,
+      "endMs": 54956,
+      "scene": 8
+    },
+    {
+      "text": "queue",
+      "startMs": 54967,
+      "endMs": 55195,
+      "scene": 8
+    },
+    {
+      "text": "और",
+      "startMs": 55238,
+      "endMs": 55423,
+      "scene": 8
+    },
+    {
+      "text": "Redis.",
+      "startMs": 55434,
+      "endMs": 55858,
+      "scene": 8
+    },
+    {
+      "text": "भीड़",
+      "startMs": 56398,
+      "endMs": 56691,
+      "scene": 9
+    },
+    {
+      "text": "सीधी",
+      "startMs": 56713,
+      "endMs": 57072,
+      "scene": 9
+    },
+    {
+      "text": "DB",
+      "startMs": 57072,
+      "endMs": 57398,
+      "scene": 9
+    },
+    {
+      "text": "पे,",
+      "startMs": 57409,
+      "endMs": 57659,
+      "scene": 9
+    },
+    {
+      "text": "सिस्टम",
+      "startMs": 57800,
+      "endMs": 58191,
+      "scene": 9
+    },
+    {
+      "text": "माँगे",
+      "startMs": 58192,
+      "endMs": 58561,
+      "scene": 9
+    },
+    {
+      "text": "माफ़.",
+      "startMs": 58561,
+      "endMs": 58909,
+      "scene": 9
+    },
+    {
+      "text": "Queue",
+      "startMs": 59728,
+      "endMs": 59913,
+      "scene": 9
+    },
+    {
+      "text": "लगा",
+      "startMs": 59913,
+      "endMs": 60185,
+      "scene": 9
+    },
+    {
+      "text": "के",
+      "startMs": 60185,
+      "endMs": 60359,
+      "scene": 9
+    },
+    {
+      "text": "भेज",
+      "startMs": 60359,
+      "endMs": 60652,
+      "scene": 9
+    },
+    {
+      "text": "दो,",
+      "startMs": 60652,
+      "endMs": 60913,
+      "scene": 9
+    },
+    {
+      "text": "टिकट",
+      "startMs": 61022,
+      "endMs": 61348,
+      "scene": 9
+    },
+    {
+      "text": "मिले",
+      "startMs": 61348,
+      "endMs": 61620,
+      "scene": 9
+    },
+    {
+      "text": "साफ़.",
+      "startMs": 61620,
+      "endMs": 62000,
+      "scene": 9
+    },
+    {
+      "text": "ये",
+      "startMs": 62826,
+      "endMs": 63000,
+      "scene": 9
+    },
+    {
+      "text": "उस",
+      "startMs": 63087,
+      "endMs": 63261,
+      "scene": 9
+    },
+    {
+      "text": "दोस्त",
+      "startMs": 63261,
+      "endMs": 63631,
+      "scene": 9
+    },
+    {
+      "text": "को",
+      "startMs": 63652,
+      "endMs": 63783,
+      "scene": 9
+    },
+    {
+      "text": "भेजो",
+      "startMs": 63783,
+      "endMs": 64142,
+      "scene": 9
+    },
+    {
+      "text": "जिसका",
+      "startMs": 64152,
+      "endMs": 64522,
+      "scene": 9
+    },
+    {
+      "text": "Tatkal",
+      "startMs": 64533,
+      "endMs": 65011,
+      "scene": 9
+    },
+    {
+      "text": "हर",
+      "startMs": 65011,
+      "endMs": 65196,
+      "scene": 9
+    },
+    {
+      "text": "बार",
+      "startMs": 65196,
+      "endMs": 65457,
+      "scene": 9
+    },
+    {
+      "text": "fail",
+      "startMs": 65457,
+      "endMs": 65728,
+      "scene": 9
+    },
+    {
+      "text": "होता",
+      "startMs": 65728,
+      "endMs": 66065,
+      "scene": 9
+    },
+    {
+      "text": "है.",
+      "startMs": 66065,
+      "endMs": 66348,
+      "scene": 9
+    }
+  ]
+}
