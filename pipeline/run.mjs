@@ -66,12 +66,20 @@ async function main() {
     return;
   }
 
-  const {uploadPublic, publishReel, publishCarousel} = await import('./instagram.mjs');
+  const {uploadPublic, publishReel, publishCarousel, hasStorage} = await import('./instagram.mjs');
+  // Without S3/R2, carousel images are served from the repo's "media" branch (pushed by the workflow).
+  const rawBase =
+    process.env.MEDIA_RAW_BASE ||
+    (process.env.GITHUB_REPOSITORY ? `https://raw.githubusercontent.com/${process.env.GITHUB_REPOSITORY}/media` : null);
   const {askApproval, notify} = await import('./telegram.mjs');
 
   if (only === 'carousel') {
     const urls = [];
-    for (const [i, f] of files.slides.entries()) urls.push(await uploadPublic(f, `${slug}/slide-${i + 1}.jpg`));
+    for (const [i, f] of files.slides.entries()) {
+      if (hasStorage()) urls.push(await uploadPublic(f, `${slug}/slide-${i + 1}.jpg`));
+      else if (rawBase) urls.push(`${rawBase}/${slug}/${path.basename(f)}`);
+      else throw new Error('carousel needs public image URLs: set S3/R2 or MEDIA_RAW_BASE');
+    }
     const res = await publishCarousel({imageUrls: urls, caption});
     record({kind: 'carousel', ...res});
     await notify(`Carousel posted: ${res.permalink ?? res.mediaId}`);
@@ -86,9 +94,15 @@ async function main() {
     }
   }
 
-  const videoUrl = await uploadPublic(files.video, `${slug}/reel.mp4`);
-  const coverUrl = await uploadPublic(files.cover, `${slug}/cover.jpg`);
-  const res = await publishReel({videoUrl, coverUrl, caption, trial: Boolean(args.trial)});
+  let res;
+  if (hasStorage()) {
+    const videoUrl = await uploadPublic(files.video, `${slug}/reel.mp4`);
+    const coverUrl = await uploadPublic(files.cover, `${slug}/cover.jpg`);
+    res = await publishReel({videoUrl, coverUrl, caption, trial: Boolean(args.trial)});
+  } else {
+    // direct upload; the cover is the hook frame once its headline has animated in
+    res = await publishReel({videoFile: files.video, coverOffsetMs: 1500, caption, trial: Boolean(args.trial)});
+  }
   log(`posted: ${res.permalink ?? res.mediaId}`);
   record({kind: args.trial ? 'trial-reel' : 'reel', ...res});
   await notify(`Reel posted: ${res.permalink ?? res.mediaId}`);

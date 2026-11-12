@@ -87,10 +87,23 @@ export async function pickTrendingAudio() {
   }
 }
 
-/** Publishes a Reel. trial=true posts it as a Trial Reel (shown to non-followers first; needs eligibility). */
-export async function publishReel({videoUrl, coverUrl, caption, trial = false}) {
-  const params = {media_type: 'REELS', video_url: videoUrl, caption, share_to_feed: 'true'};
+/** True when a public bucket is configured; otherwise reels are uploaded directly (Facebook Login only). */
+export const hasStorage = () => Boolean(process.env.S3_ENDPOINT && process.env.PUBLIC_MEDIA_BASE);
+
+/**
+ * Publishes a Reel. Pass videoUrl (public link) OR videoFile (local path, uploaded straight to Instagram
+ * with a resumable upload; needs Facebook Login, IG_GRAPH_HOST=graph.facebook.com).
+ * trial=true posts it as a Trial Reel (shown to non-followers first; needs eligibility).
+ */
+export async function publishReel({videoUrl, videoFile, coverUrl, coverOffsetMs, caption, trial = false}) {
+  const params = {media_type: 'REELS', caption, share_to_feed: 'true'};
+  if (videoUrl) params.video_url = videoUrl;
+  else {
+    if (host() !== 'graph.facebook.com') throw new Error('Direct upload needs IG_GRAPH_HOST=graph.facebook.com (Facebook Login), or set up S3/R2 storage');
+    params.upload_type = 'resumable';
+  }
   if (coverUrl) params.cover_url = coverUrl;
+  else if (coverOffsetMs != null) params.thumb_offset = String(Math.round(coverOffsetMs));
   if (trial) params.trial_params = JSON.stringify({graduation_strategy: 'SS_PERFORMANCE'});
   const audio = await pickTrendingAudio();
   if (audio)
@@ -101,6 +114,17 @@ export async function publishReel({videoUrl, coverUrl, caption, trial = false}) 
       video_volume: 100,
     });
   const {id} = await call('POST', `${env('IG_USER_ID')}/media`, params);
+  if (!videoUrl) {
+    const data = fs.readFileSync(videoFile);
+    log(`uploading ${(data.length / 1e6).toFixed(1)} MB directly to Instagram…`);
+    const res = await fetch(`https://rupload.facebook.com/ig-api-upload/${ver()}/${id}`, {
+      method: 'POST',
+      headers: {Authorization: `OAuth ${env('IG_ACCESS_TOKEN')}`, offset: '0', file_size: String(data.length)},
+      body: data,
+    });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok || out.success === false) throw new Error(`Instagram upload failed: ${JSON.stringify(out)}`);
+  }
   log(`reel container ${id}, waiting for Instagram to process…`);
   await waitReady(id);
   return publishContainer(id);

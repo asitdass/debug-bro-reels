@@ -44,6 +44,20 @@ jobs:
           # slides need the episode's timings; regenerate them silently if the voice files aren't in the repo
           [ -f "episodes/$SLUG/timings.json" ] || { pip install -q edge-tts && python3 pipeline/tts.py "$SLUG"; }
           node -e "import('./pipeline/render.mjs').then(async m=>{const {timings,episode}=m.loadProps('$SLUG');const keep=['hook','code','hotrow','solution','flow','compare','rule','counter','chat'];const f=m.keyFrames(timings).filter((_,i)=>keep.includes(episode.scenes[i].type)).slice(0,8);await m.renderStills('$SLUG',f,{hideCaptions:true,prefix:'slide'})})"
+          if [ -z "$S3_ENDPOINT" ]; then
+            # no bucket: publish the slides on the "media" branch so Instagram can fetch them from raw.githubusercontent.com
+            mkdir -p /tmp/slides && cp out/$SLUG/slide-*.jpg /tmp/slides/
+            git config user.name "debug-bro-bot"
+            git config user.email "debug-bro-bot@users.noreply.github.com"
+            git stash -u -q || true
+            git fetch -q origin media || true
+            if git rev-parse --verify -q origin/media >/dev/null; then git checkout -q -B media origin/media; else git checkout -q --orphan media && git rm -rfq .; fi
+            mkdir -p "$SLUG" && cp /tmp/slides/* "$SLUG/" && git add "$SLUG"
+            git diff --cached --quiet || git commit -qm "media: $SLUG slides"
+            git push -q origin media
+            git checkout -q main && git stash pop -q || true
+            sleep 20
+          fi
           node pipeline/run.mjs --only=carousel --slug="$SLUG"
 
       - name: Save

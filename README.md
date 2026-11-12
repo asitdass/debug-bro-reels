@@ -9,7 +9,7 @@ system-design reel, then posts a carousel cheat-sheet twice a week and tracks wh
  ├─ 2. pipeline/tts.py                             Hindi voice + word timings   (edge-tts, free)
  ├─ 3. Remotion                                    animated 1080×1920 MP4 + cover + carousel slides
  ├─ 4. Telegram bot                                video on your phone: [Post it] [Skip]   (optional)
- ├─ 5. Cloudflare R2 → Instagram Graph API         posts the Reel                         (free)
+ ├─ 5. Instagram Graph API (direct upload)         posts the Reel                         (free)
  └─ 6. pipeline/metrics.mjs                        sends-per-reach per pillar → feeds step 1
 ```
 
@@ -44,7 +44,9 @@ npm run reel -- --no-publish
 4. Generate a token there; copy the **Instagram user ID** and the **long-lived token** (valid 60 days).
    Refresh it every ~50 days with `npm run refresh-token` and update the secret.
 
-**Cloudflare R2** (Instagram fetches the video from a public URL)
+**Cloudflare R2: optional.** With Facebook Login (`IG_GRAPH_HOST=graph.facebook.com`) reels are uploaded straight
+to Instagram and carousel slides are served from this repo's `media` branch, so you can skip this. Use R2 only if you
+use Instagram Login instead.
 1. Create a bucket, enable its public `r2.dev` URL → `PUBLIC_MEDIA_BASE`.
 2. Create an R2 API token (Object Read & Write) → `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, endpoint.
 
