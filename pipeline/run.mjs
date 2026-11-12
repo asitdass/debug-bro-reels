@@ -50,7 +50,14 @@ async function main() {
   let files;
   if (want('render')) files = await renderReel(slug);
 
-  if (args['no-publish'] || (only && !['publish', 'carousel'].includes(only))) return;
+  if (args['no-publish'] || (only && !['publish', 'carousel'].includes(only))) {
+    // dry run: still send the preview to your phone so you can watch it
+    if (files?.video && process.env.TELEGRAM_BOT_TOKEN) {
+      const {sendPreview} = await import('./telegram.mjs');
+      await sendPreview({video: files.video, caption: `Preview (not posted): ${slug}`}).catch((e) => log(`preview not sent: ${e.message}`));
+    }
+    return;
+  }
 
   const dir = outDir(slug);
   files ??= {

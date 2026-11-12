@@ -49,3 +49,14 @@ export async function askApproval({video, caption, slug}) {
   await notify(`No answer for ${slug}; going with "${fallback}".`);
   return fallback;
 }
+
+/** Sends a video without buttons (dry-run previews). */
+export async function sendPreview({video, caption}) {
+  const form = new FormData();
+  form.append('chat_id', env('TELEGRAM_CHAT_ID'));
+  form.append('caption', caption.slice(0, 1000));
+  form.append('supports_streaming', 'true');
+  form.append('video', new Blob([fs.readFileSync(video)], {type: 'video/mp4'}), path.basename(video));
+  const r = await (await fetch(api('sendVideo'), {method: 'POST', body: form})).json();
+  if (!r.ok) throw new Error(JSON.stringify(r));
+}
