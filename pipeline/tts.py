@@ -5,7 +5,8 @@ Writes public/episodes/<slug>/voice.mp3 and episodes/<slug>/timings.json
 (scene start/duration + per-word timestamps for karaoke captions).
 
 Engines:
-  edge    free Microsoft neural voices (hi-IN-MadhurNeural, hi-IN-SwaraNeural); word timestamps included
+  edge    free Microsoft neural voices, tuned for reels: Madhur on odd episodes, Swara on even ones;
+          a scene with "speaker": "alt" uses the other voice (e.g. the interviewer); word timestamps included
   sarvam  Sarvam Bulbul (needs SARVAM_API_KEY; free trial credits); word times aligned with faster-whisper if
           installed, else spread across the line by character length
   silent  no audio; timings estimated (preview only)
@@ -83,10 +84,34 @@ def map_boundaries(words, bounds):
 
 
 # ---------------------------------------------------------------- engines
-async def edge_line(text, voice, rate, mp3: Path):
+# Tuned for reels: faster and slightly brighter than the default newsreader delivery.
+EDGE_PRESETS = {
+    "hi-IN-MadhurNeural": {"rate": "+15%", "pitch": "+5Hz"},
+    "hi-IN-SwaraNeural": {"rate": "+10%", "pitch": "+2Hz"},
+}
+EDGE_PAIR = {"hi-IN-MadhurNeural": "hi-IN-SwaraNeural", "hi-IN-SwaraNeural": "hi-IN-MadhurNeural"}
+
+
+def edge_voices(episode):
+    """Main voice alternates by episode (odd = Madhur, even = Swara) unless the episode pins one.
+    Returns {"main": (voice, rate, pitch), "alt": (...)}; scenes with "speaker": "alt" use the other voice."""
+    cfg = episode.get("voice", {})
+    main = cfg.get("voiceId") or os.environ.get("EDGE_VOICE") or (
+        "hi-IN-MadhurNeural" if episode.get("number", 1) % 2 else "hi-IN-SwaraNeural")
+    alt = EDGE_PAIR.get(main, "hi-IN-SwaraNeural")
+
+    def spec(v, own):
+        p = EDGE_PRESETS.get(v, {"rate": "+10%", "pitch": "+0Hz"})
+        return (v, (own and cfg.get("rate")) or os.environ.get("EDGE_RATE") or p["rate"],
+                (own and cfg.get("pitch")) or os.environ.get("EDGE_PITCH") or p["pitch"])
+
+    return {"main": spec(main, True), "alt": spec(alt, False)}
+
+
+async def edge_line(text, voice, rate, mp3: Path, pitch="+0Hz"):
     import edge_tts
 
-    comm = edge_tts.Communicate(text, voice, rate=rate, boundary="WordBoundary")
+    comm = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch, boundary="WordBoundary")
     bounds = []
     with open(mp3, "wb") as f:
         async for chunk in comm.stream():
@@ -163,11 +188,10 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
         text = scene["vo"]
         raw = tmp / f"s{i:02d}.raw"
         if engine == "edge":
-            v = voice.get("voiceId") or os.environ.get("EDGE_VOICE", "hi-IN-MadhurNeural")
-            rate = voice.get("rate") or os.environ.get("EDGE_RATE", "+8%")
+            v, rate, pitch = edge_voices(episode)[scene.get("speaker", "main")]
             for attempt in range(3):
                 try:
-                    bounds = asyncio.run(edge_line(text, v, rate, raw))
+                    bounds = asyncio.run(edge_line(text, v, rate, raw, pitch))
                     break
                 except Exception as e:  # network hiccup: retry
                     if attempt == 2:
@@ -175,6 +199,8 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
                     print(f"  edge-tts retry ({e})", file=sys.stderr)
         elif engine == "sarvam":
             speaker = voice.get("voiceId") or os.environ.get("SARVAM_SPEAKER", "shubh")
+            if scene.get("speaker") == "alt":
+                speaker = os.environ.get("SARVAM_ALT_SPEAKER", "ritu")
             bounds = sarvam_line(text, speaker, float(os.environ.get("SARVAM_PACE", "1.1")), raw)
         else:
             sys.exit(f"unknown engine {engine}")

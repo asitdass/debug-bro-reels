@@ -6,9 +6,7 @@
   "topic": "Thundering herd on a hot inventory row; fix with waiting room, bot filter, Redis atomic counter, batch writes",
   "pillar": "everyday-tech",
   "voice": {
-    "engine": "edge",
-    "voiceId": "hi-IN-MadhurNeural",
-    "rate": "+8%"
+    "engine": "edge"
   },
   "coverText": "Tatkal 10 baje crash kyun?",
   "hashtags": [
@@ -28,7 +26,7 @@
       "kicker": "TATKAL · 10:00 AM",
       "title": "10:00:01 pe site kyun mar jaati hai?",
       "sub": "lakhs users · 1 train · 1 row",
-      "vo": "सुबह दस बजे Tatkal खुलता है, और एक second बाद site अटक जाती है. क्यों?"
+      "vo": "दस बजे Tatkal खुलता है, और एक second बाद site अटक जाती है. क्यों?"
     },
     {
       "type": "chat",
@@ -47,7 +45,8 @@
           "text": "Simple! Har request pe DB mein seat check karo"
         }
       ],
-      "vo": "Interview में पूछा गया. पंद्रह LPA वाला बोला, simple है, हर request पे database check करो."
+      "vo": "Interview में सवाल आया: लाखों लोग एक साथ seat book करें, तो कैसे handle करोगे?",
+      "speaker": "alt"
     },
     {
       "type": "code",
@@ -62,7 +61,7 @@
       "stamp": "row lock",
       "multiplier": "37410",
       "multiplierLabel": "tickets in 1 minute · 16 Aug 2025",
-      "vo": "IRCTC एक minute में सैंतीस हज़ार tickets book कर चुका है. और हर request उसी एक row को lock कर रही है."
+      "vo": "पंद्रह LPA वाला बोला, simple है, हर request पे database check करो. पर IRCTC एक minute में सैंतीस हज़ार tickets book करता है, और हर request उसी row को lock करती है."
     },
     {
       "type": "hotrow",
@@ -81,7 +80,7 @@
       "meterLabel": "DB connections",
       "meterMax": 100,
       "alert": "DB connections full · site down",
-      "vo": "सब line में wait, connections full, और पूरी site बैठ गई."
+      "vo": "सब line में wait, connections full, और site बैठ गई."
     },
     {
       "type": "counter",

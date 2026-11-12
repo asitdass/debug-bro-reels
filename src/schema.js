@@ -12,6 +12,8 @@ const base = {
   mood,
   // Small pill shown under the header, e.g. "PROBLEM", "SOLUTION".
   tag: z.string().max(32).optional(),
+  // "alt" = read by the second voice (Swara if the episode's main voice is Madhur, and vice versa)
+  speaker: z.enum(['main', 'alt']).optional(),
 };
 
 const str = (max) => z.string().min(1).max(max);
@@ -100,6 +102,7 @@ export const episodeSchema = z.object({
       engine: z.enum(['edge', 'sarvam', 'silent']).default('edge'),
       voiceId: z.string().optional(),
       rate: z.string().optional(),
+      pitch: z.string().optional(),
     })
     .default({engine: 'edge'}),
   caption: str(2000),

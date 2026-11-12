@@ -69,7 +69,10 @@ the fix, `comeback` (amber) for compare/twist. **Tags** (`PROBLEM`, `SOLUTION`, 
 line 2 = the send prompt, then 2–3 lines of the key takeaway, then "Save karo interview ke liye." Exactly 3 hashtags,
 specific (`#systemdesign #codinginhindi` + one topic tag). `coverText` = 3–5 punchy words.
 
-Voice: leave `"voice": {"engine": "edge", "voiceId": "hi-IN-MadhurNeural", "rate": "+8%"}` unless told otherwise.
+Voice: set `"voice": {"engine": "edge"}` and nothing else. The main voice alternates by episode number (odd = Madhur,
+even = Swara), both tuned for reels. Put `"speaker": "alt"` on a scene to have the *other* voice read it: use it for
+the interviewer's question in the `chat` scene (one speaker per scene, so give the interviewer's line its own `chat`
+scene and let the main voice read the "15 LPA" answer in the next scene). Keep it to 1–2 alt scenes per reel.
 
 ## 4. Check and finish
 1. Run `node pipeline/validate.mjs <slug>`; fix every ERROR and reconsider every warn. Repeat until OK.
