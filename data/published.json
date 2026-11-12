@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "slug": "ep01-tatkal-crash",
+    "topic": "Thundering herd on a hot inventory row; fix with waiting room, bot filter, Redis atomic counter, batch writes",
+    "pillar": "everyday-tech",
+    "title": "Tatkal 10 baje crash kyun hota hai?",
+    "postedAt": "2026-11-12T15:42:40.029Z",
+    "kind": "reel",
+    "mediaId": "17979075018139261",
+    "permalink": "https://www.instagram.com/reel/DfpZwFzFzWY/"
+  }
+]
