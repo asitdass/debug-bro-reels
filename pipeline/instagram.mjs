@@ -44,9 +44,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function waitReady(containerId, maxMin = 10) {
   for (let i = 0; i < maxMin * 4; i++) {
-    const {status_code} = await call('GET', containerId, {fields: 'status_code'});
+    const {status_code, status} = await call('GET', containerId, {fields: 'status_code,status'});
     if (status_code === 'FINISHED') return;
-    if (status_code === 'ERROR' || status_code === 'EXPIRED') throw new Error(`container ${containerId}: ${status_code}`);
+    if (status_code === 'ERROR' || status_code === 'EXPIRED') throw new Error(`container ${containerId}: ${status_code} ${status ?? ''}`);
     await sleep(15000);
   }
   throw new Error(`container ${containerId} not ready after ${maxMin} min`);
@@ -119,7 +119,12 @@ export async function publishReel({videoUrl, videoFile, coverUrl, coverOffsetMs,
     log(`uploading ${(data.length / 1e6).toFixed(1)} MB directly to Instagram…`);
     const res = await fetch(`https://rupload.facebook.com/ig-api-upload/${ver()}/${id}`, {
       method: 'POST',
-      headers: {Authorization: `OAuth ${env('IG_ACCESS_TOKEN')}`, offset: '0', file_size: String(data.length)},
+      headers: {
+        Authorization: `OAuth ${env('IG_ACCESS_TOKEN')}`,
+        offset: '0',
+        file_size: String(data.length),
+        'Content-Type': 'application/octet-stream',
+      },
       body: data,
     });
     const out = await res.json().catch(() => ({}));

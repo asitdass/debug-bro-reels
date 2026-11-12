@@ -93,6 +93,8 @@ async function main() {
     return;
   }
 
+  faststart(files.video);
+
   if (process.env.TELEGRAM_BOT_TOKEN && process.env.APPROVAL !== 'off') {
     const answer = await askApproval({video: files.video, caption, slug});
     if (answer !== 'approve') {
@@ -107,8 +109,17 @@ async function main() {
     const coverUrl = await uploadPublic(files.cover, `${slug}/cover.jpg`);
     res = await publishReel({videoUrl, coverUrl, caption, trial: Boolean(args.trial)});
   } else {
-    // direct upload; the cover is the hook frame once its headline has animated in
-    res = await publishReel({videoFile: files.video, coverOffsetMs: 1500, caption, trial: Boolean(args.trial)});
+    // the cover is the hook frame once its headline has animated in
+    const opts = {coverOffsetMs: 1500, caption, trial: Boolean(args.trial)};
+    try {
+      res = await publishReel({videoFile: files.video, ...opts});
+    } catch (e) {
+      // direct upload refused: publish the file on the repo's public "media" branch and let Instagram fetch it
+      log(`direct upload failed (${e.message}); retrying with a public link`);
+      const {publishToMediaBranch} = await import('./github-media.mjs');
+      const videoUrl = await publishToMediaBranch(files.video, `${slug}/reel.mp4`);
+      res = await publishReel({videoUrl, ...opts});
+    }
   }
   log(`posted: ${res.permalink ?? res.mediaId}`);
   record({kind: args.trial ? 'trial-reel' : 'reel', ...res});
@@ -119,6 +130,14 @@ async function main() {
     list.push({slug, topic: episode.topic, pillar: episode.pillar, title: episode.title, postedAt: new Date().toISOString(), ...extra});
     writeJSON(PUBLISHED, list);
   }
+}
+
+/** Moves the MP4 index to the front of the file (Instagram processes such files more reliably). */
+function faststart(file) {
+  const tmp = file.replace(/\.mp4$/, '.fs.mp4');
+  const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', file, '-c', 'copy', '-movflags', '+faststart', tmp]);
+  if (r.status === 0) fs.renameSync(tmp, file);
+  else log('faststart skipped (ffmpeg not available)');
 }
 
 main().catch(async (e) => {
