@@ -28,7 +28,7 @@ export async function uploadPublic(file, key) {
 
 /* ---------------- Graph API ---------------- */
 const host = () => env('IG_GRAPH_HOST', 'graph.instagram.com'); // graph.facebook.com if you use Facebook Login
-const ver = () => env('IG_API_VERSION', 'v26.0');
+const ver = () => env('IG_API_VERSION', 'v27.0');
 const base = () => `https://${host()}/${ver()}`;
 
 async function call(method, p, params = {}) {
