@@ -10,6 +10,10 @@ on:
         description: "Publish to Instagram"
         type: boolean
         default: true
+      slug:
+        description: "Existing episode to use (e.g. ep01-tatkal-crash). Leave empty to let Claude write a new one."
+        required: false
+        default: ""
 
 concurrency: daily-reel
 
@@ -38,6 +42,7 @@ jobs:
           npm ci
 
       - name: Claude writes the episode
+        if: inputs.slug == ''
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -45,6 +50,7 @@ jobs:
           claude_args: "--max-turns 40"
 
       - name: Save the episode
+        if: inputs.slug == ''
         run: |
           git config user.name "debug-bro-bot"
           git config user.email "debug-bro-bot@users.noreply.github.com"
@@ -71,11 +77,12 @@ jobs:
           APPROVAL_TIMEOUT_MIN: "30"
           APPROVAL_DEFAULT: ${{ vars.APPROVAL_DEFAULT || 'approve' }}
         run: |
+          ARGS=""
+          [ -n "${{ inputs.slug }}" ] && ARGS="--slug=${{ inputs.slug }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then
-            node pipeline/run.mjs --no-publish
-          else
-            node pipeline/run.mjs
+            ARGS="$ARGS --no-publish"
           fi
+          node pipeline/run.mjs $ARGS
 
       - name: Keep the rendered files for 14 days
         if: always()
@@ -88,5 +95,7 @@ jobs:
       - name: Save the publish log
         if: always()
         run: |
+          git config user.name "debug-bro-bot"
+          git config user.email "debug-bro-bot@users.noreply.github.com"
           git add data/published.json episodes
           git diff --cached --quiet || (git commit -m "log: published" && git push)
