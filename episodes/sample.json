@@ -1,0 +1,178 @@
+{
+  "slug": "ep01-tatkal-crash",
+  "number": 1,
+  "series": "SYSTEM DESIGN",
+  "title": "Tatkal 10 baje crash kyun hota hai?",
+  "topic": "Thundering herd on a hot inventory row; fix with waiting room, bot filter, Redis atomic counter, batch writes",
+  "pillar": "everyday-tech",
+  "voice": {
+    "engine": "edge",
+    "voiceId": "hi-IN-MadhurNeural",
+    "rate": "+8%"
+  },
+  "coverText": "Tatkal 10 baje crash kyun?",
+  "hashtags": [
+    "#systemdesign",
+    "#codinginhindi",
+    "#irctc"
+  ],
+  "caption": "Tatkal booking 10 baje crash kyun hoti hai? System design in Hindi 🚆\n\nYe reel us dost ko bhejo jiska Tatkal har baar fail hota hai.\n\n1 minute mein 37,410 tickets (IRCTC record, 16 Aug 2025). Ek hi train ki row pe lakhs requests = DB lock + connections full.\nFix: bot filter → waiting room → Redis atomic DECR → DB mein sirf confirmed booking.\n\nSave karo interview ke liye. Next: IPL live pe crore viewers kaise handle hote hain?",
+  "sources": [
+    "https://www.inkl.com/news/irctc-sets-new-records-in-online-ticket-booking-blocks-3-crore-suspicious-ids-in-2025-26",
+    "https://www.thestatesman.com/india/31814-tickets-booked-in-a-single-minute-on-may-22-railway-ministry-1503441352.html"
+  ],
+  "scenes": [
+    {
+      "type": "hook",
+      "mood": "neutral",
+      "kicker": "TATKAL · 10:00 AM",
+      "title": "10:00:01 pe site kyun mar jaati hai?",
+      "sub": "lakhs users · 1 train · 1 row",
+      "vo": "सुबह दस बजे Tatkal खुलता है, और एक second बाद site अटक जाती है. क्यों?"
+    },
+    {
+      "type": "chat",
+      "mood": "neutral",
+      "tag": "INTERVIEW",
+      "messages": [
+        {
+          "side": "left",
+          "name": "Interviewer",
+          "text": "Lakhs log ek saath seat book karein, kaise handle karoge?"
+        },
+        {
+          "side": "right",
+          "name": "Candidate",
+          "badge": "15 LPA",
+          "text": "Simple! Har request pe DB mein seat check karo"
+        }
+      ],
+      "vo": "Interview में पूछा गया. पंद्रह LPA वाला बोला, simple है, हर request पे database check करो."
+    },
+    {
+      "type": "code",
+      "mood": "problem",
+      "tag": "15 LPA KA JAWAB",
+      "label": "har request pe",
+      "code": "SELECT seats FROM trains\nWHERE id = 12951\nFOR UPDATE;",
+      "highlight": [
+        "FOR UPDATE"
+      ],
+      "verdict": "wrong",
+      "stamp": "row lock",
+      "multiplier": "37410",
+      "multiplierLabel": "tickets in 1 minute · 16 Aug 2025",
+      "vo": "IRCTC एक minute में सैंतीस हज़ार tickets book कर चुका है. और हर request उसी एक row को lock कर रही है."
+    },
+    {
+      "type": "hotrow",
+      "mood": "problem",
+      "tag": "PROBLEM",
+      "rows": [
+        "12951 Rajdhani",
+        "12002 Shatabdi",
+        "12301 Rajdhani",
+        "22691 Rajdhani"
+      ],
+      "hot": 0,
+      "valueLabel": "SEATS LEFT",
+      "from": 72,
+      "to": 9,
+      "meterLabel": "DB connections",
+      "meterMax": 100,
+      "alert": "DB connections full · site down",
+      "vo": "सब line में wait, connections full, और पूरी site बैठ गई."
+    },
+    {
+      "type": "counter",
+      "mood": "problem",
+      "tag": "AUR EK TWIST",
+      "label": "bot login attempts · first 5 min",
+      "from": 0,
+      "to": 50,
+      "sub": "% तक logins bots के",
+      "tone": "red",
+      "vo": "ऊपर से, पहले पाँच minute में आधे login bots के होते हैं."
+    },
+    {
+      "type": "solution",
+      "mood": "solution",
+      "tag": "SOLUTION",
+      "kicker": "SOLUTION",
+      "title": "Waiting Room",
+      "sub": "पहले queue, फिर booking",
+      "chipLabel": "users in queue",
+      "chipValue": 240000,
+      "vo": "Solution: virtual waiting room. पहले queue, फिर booking."
+    },
+    {
+      "type": "flow",
+      "mood": "solution",
+      "tag": "SOLUTION",
+      "packet": "user",
+      "nodes": [
+        {
+          "label": "Bot filter",
+          "sub": "captcha · otp · rate limit"
+        },
+        {
+          "label": "Waiting room",
+          "sub": "har user ko ek token"
+        },
+        {
+          "label": "Redis seat counter",
+          "sub": "atomic DECR · no lock"
+        },
+        {
+          "label": "Database",
+          "sub": "sirf confirmed booking"
+        }
+      ],
+      "vo": "Bots छाँटो, हर user को token दो, seats Redis में atomic DECR से गिनो, और DB में सिर्फ़ confirmed booking."
+    },
+    {
+      "type": "batch",
+      "mood": "solution",
+      "tag": "SOLUTION",
+      "fastLabel": "Redis",
+      "fastSub": "seat holds · in memory",
+      "fastTo": 37410,
+      "slowLabel": "bookings",
+      "slowSub": "database · confirmed",
+      "slowFrom": 0,
+      "slowTo": 36800,
+      "every": "har 2 sec · batch insert",
+      "vo": "Seat hold memory में, bookings batch में database में. ना lock, ना crash."
+    },
+    {
+      "type": "compare",
+      "mood": "comeback",
+      "tag": "FARAK DEKHO",
+      "left": {
+        "title": "15 LPA wala",
+        "items": [
+          "हर request → DB lock",
+          "bots भी अंदर",
+          "site down"
+        ]
+      },
+      "right": {
+        "title": "Scalable",
+        "items": [
+          "waiting room queue",
+          "Redis atomic DECR",
+          "DB पे सिर्फ़ confirmed"
+        ]
+      },
+      "vo": "फ़र्क़ देखो: एक तरफ़ हर request DB पे, दूसरी तरफ़ queue और Redis."
+    },
+    {
+      "type": "rule",
+      "mood": "solution",
+      "rule": "भीड़ सीधी DB पे, सिस्टम माँगे माफ़; queue लगा के भेज दो, टिकट मिले साफ़।",
+      "cta": "ये उस दोस्त को भेजो जिसका Tatkal हर बार fail होता है",
+      "next": "Next: IPL live pe crore viewers",
+      "vo": "भीड़ सीधी DB पे, सिस्टम माँगे माफ़. Queue लगा के भेज दो, टिकट मिले साफ़. ये उस दोस्त को भेजो जिसका Tatkal हर बार fail होता है."
+    }
+  ]
+}

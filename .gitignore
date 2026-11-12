@@ -1,0 +1,6 @@
+node_modules
+out
+.env
+public/episodes/*/
+!public/episodes/.gitkeep
+__pycache__

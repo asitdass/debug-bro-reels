@@ -1,0 +1,35 @@
+{
+  "name": "debug-bro-reels",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Automated Hinglish system-design reels for @debug_bro",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "reel": "node pipeline/run.mjs",
+    "voice": "node pipeline/run.mjs --only=voice",
+    "render": "node pipeline/run.mjs --only=render",
+    "publish": "node pipeline/run.mjs --only=publish",
+    "validate": "node pipeline/validate.mjs",
+    "metrics": "node pipeline/metrics.mjs",
+    "refresh-token": "node -e \"import('./pipeline/instagram.mjs').then(m=>m.refreshToken()).then(r=>console.log(r))\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1167.0",
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/noto-sans-devanagari": "5.3.0",
+    "@remotion/bundler": "4.0.543",
+    "@remotion/cli": "4.0.543",
+    "@remotion/renderer": "4.0.543",
+    "dotenv": "16.4.7",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.543",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "typescript": "5.8.3"
+  }
+}

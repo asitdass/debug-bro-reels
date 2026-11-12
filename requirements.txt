@@ -1,0 +1,4 @@
+edge-tts>=7.0,<8
+sarvamai>=0.1
+# optional, for word timings with Sarvam or your own recorded voice:
+# faster-whisper>=1.1

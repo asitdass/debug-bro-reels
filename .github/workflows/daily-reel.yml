@@ -1,0 +1,89 @@
+name: Daily reel
+
+# 18:15 IST: Claude writes the episode; the pipeline renders it, asks you on Telegram, and posts around 19:00 IST (30 min approval window).
+on:
+  schedule:
+    - cron: "45 12 * * *"
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish to Instagram"
+        type: boolean
+        default: true
+
+concurrency: daily-reel
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -r requirements.txt
+          npm ci
+
+      - name: Claude writes the episode
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: "/make-episode"
+          claude_args: "--max-turns 40"
+
+      - name: Save the episode
+        run: |
+          git config user.name "debug-bro-bot"
+          git config user.email "debug-bro-bot@users.noreply.github.com"
+          git add episodes data
+          git diff --cached --quiet || git commit -m "episode: $(ls -t episodes | head -1)"
+          git push
+
+      - name: Voice, render, approve, publish
+        env:
+          TTS_ENGINE: ${{ vars.TTS_ENGINE || 'edge' }}
+          SARVAM_API_KEY: ${{ secrets.SARVAM_API_KEY }}
+          S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          PUBLIC_MEDIA_BASE: ${{ secrets.PUBLIC_MEDIA_BASE }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          APPROVAL_TIMEOUT_MIN: "30"
+          APPROVAL_DEFAULT: ${{ vars.APPROVAL_DEFAULT || 'approve' }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then
+            node pipeline/run.mjs --no-publish
+          else
+            node pipeline/run.mjs
+          fi
+
+      - name: Keep the rendered files for 14 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ github.run_number }}
+          path: out/
+          retention-days: 14
+
+      - name: Save the publish log
+        if: always()
+        run: |
+          git add data/published.json episodes
+          git diff --cached --quiet || (git commit -m "log: published" && git push)
