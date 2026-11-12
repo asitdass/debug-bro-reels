@@ -1,0 +1,40 @@
+name: Render episode (no posting)
+
+# Renders an existing episode with voice, without Claude or Instagram. Needs no secrets.
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Episode folder name"
+        default: "ep01-tatkal-crash"
+        required: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -r requirements.txt
+          npm ci
+      - name: Voice + render
+        run: node pipeline/run.mjs --slug=${{ inputs.slug }} --no-publish
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.slug }}
+          path: |
+            out/${{ inputs.slug }}/reel.mp4
+            out/${{ inputs.slug }}/cover.jpg
+            out/${{ inputs.slug }}/slide-*.jpg
+          retention-days: 14
