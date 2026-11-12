@@ -63,6 +63,9 @@ jobs:
           PUBLIC_MEDIA_BASE: ${{ secrets.PUBLIC_MEDIA_BASE }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.instagram.com' }}
+          TRENDING_AUDIO: ${{ vars.TRENDING_AUDIO || 'off' }}
+          TRENDING_AUDIO_VOLUME: ${{ vars.TRENDING_AUDIO_VOLUME || '12' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           APPROVAL_TIMEOUT_MIN: "30"

@@ -58,11 +58,48 @@ async function publishContainer(id) {
   return {mediaId, permalink};
 }
 
+/**
+ * Trending audio via Instagram's Audio API (GET /ig_audio; no search_query = trending).
+ * Only works with the Instagram API with *Facebook Login* (IG_GRAPH_HOST=graph.facebook.com) and returns only
+ * audio licensed for third-party use. TRENDING_AUDIO=music | original_sound | off (default off).
+ * Set TRENDING_AUDIO_QUERY to search instead (e.g. "lofi").
+ */
+export async function pickTrendingAudio() {
+  const type = env('TRENDING_AUDIO', 'off');
+  if (type === 'off') return null;
+  if (host() !== 'graph.facebook.com') {
+    log('trending audio needs Facebook Login (IG_GRAPH_HOST=graph.facebook.com); posting without it');
+    return null;
+  }
+  try {
+    const params = {audio_type: type, user_id: env('IG_USER_ID')};
+    if (process.env.TRENDING_AUDIO_QUERY) params.search_query = process.env.TRENDING_AUDIO_QUERY;
+    const res = await call('GET', 'ig_audio', params);
+    const list = res.data ?? [];
+    const skip = new Set((process.env.TRENDING_AUDIO_SKIP ?? '').split(',').filter(Boolean));
+    const pick = list.find((a) => !skip.has(String(a.id)));
+    if (!pick) return null;
+    log(`trending audio: ${pick.title ?? pick.name ?? ''} ${pick.artist ?? pick.display_artist ?? ''} (${pick.id})`);
+    return pick;
+  } catch (e) {
+    log(`trending audio lookup failed, posting without it: ${e.message}`);
+    return null;
+  }
+}
+
 /** Publishes a Reel. trial=true posts it as a Trial Reel (shown to non-followers first; needs eligibility). */
 export async function publishReel({videoUrl, coverUrl, caption, trial = false}) {
   const params = {media_type: 'REELS', video_url: videoUrl, caption, share_to_feed: 'true'};
   if (coverUrl) params.cover_url = coverUrl;
   if (trial) params.trial_params = JSON.stringify({graduation_strategy: 'SS_PERFORMANCE'});
+  const audio = await pickTrendingAudio();
+  if (audio)
+    // keep the voice-over on top: music quiet underneath
+    params.audio_configuration = JSON.stringify({
+      audio_id: String(audio.id),
+      audio_volume: Number(env('TRENDING_AUDIO_VOLUME', '12')),
+      video_volume: 100,
+    });
   const {id} = await call('POST', `${env('IG_USER_ID')}/media`, params);
   log(`reel container ${id}, waiting for Instagram to process…`);
   await waitReady(id);

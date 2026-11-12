@@ -75,6 +75,11 @@ Test with Actions → Daily reel → Run workflow (untick "Publish" for a dry ru
 - **Topics**: edit `data/topics.md`. Trending news gets priority automatically.
 - **Look**: `src/theme.ts` (colours/fonts), `src/scenes/scenes.tsx` (the 12 scene types). `npm run studio` to preview.
 - **Background music**: drop a royalty-free MP3 in `public/music/` and set `"music": "music/<file>.mp3"` in an episode.
+- **Trending audio**: Instagram's Audio API can attach licensed trending music under the voice-over. It only works
+  with the *Facebook Login* flavour of the API: link @debug_bro to a Facebook Page, use permissions
+  `instagram_basic` + `instagram_content_publish` + `pages_read_engagement`, a Page/User token, and set
+  `IG_GRAPH_HOST=graph.facebook.com` and `TRENDING_AUDIO=music`. The track plays at `TRENDING_AUDIO_VOLUME` (default 12/100)
+  under the voice. Only tracks licensed for third-party apps are offered, so the list is smaller than in the app.
 - **Trial Reels** (after 200 followers): `npm run reel -- --trial`.
 
 ## Files
