@@ -13,6 +13,8 @@ jobs:
   render:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
@@ -38,3 +40,13 @@ jobs:
             out/${{ inputs.slug }}/cover.jpg
             out/${{ inputs.slug }}/slide-*.jpg
           retention-days: 14
+      - name: Save preview to the previews branch
+        run: |
+          mkdir -p /tmp/p && cp out/${{ inputs.slug }}/reel.mp4 out/${{ inputs.slug }}/cover.jpg /tmp/p/
+          git config user.name "debug-bro-bot"
+          git config user.email "debug-bro-bot@users.noreply.github.com"
+          git fetch origin previews || true
+          if git rev-parse --verify -q origin/previews >/dev/null; then git checkout -q -B previews origin/previews; else git checkout -q --orphan previews && git rm -rfq .; fi
+          git clean -fdxq -e node_modules
+          mkdir -p ${{ inputs.slug }} && cp /tmp/p/* ${{ inputs.slug }}/
+          git add ${{ inputs.slug }} && git commit -qm "preview: ${{ inputs.slug }}" && git push -q origin previews
