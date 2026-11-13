@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-11-13T08:57:39.551Z",
+  "byPillar": {
+    "everyday-tech": {
+      "posts": 1,
+      "reach": 109,
+      "shares": 0,
+      "saved": 0,
+      "sendsPerReach": 0
+    }
+  },
+  "posts": [
+    {
+      "slug": "ep01-tatkal-crash",
+      "pillar": "everyday-tech",
+      "kind": "reel",
+      "postedAt": "2026-11-12T15:42:40.029Z",
+      "reach": 109,
+      "views": 0,
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 1,
+      "ig_reels_avg_watch_time": 6158,
+      "sendsPerReach": 0,
+      "savesPerReach": 0
+    }
+  ]
+}
