@@ -3,9 +3,11 @@
 Tick a topic (`- [x]`) when its episode is written. Add new ideas anywhere. Claude picks the first unticked
 topic of the chosen pillar unless there's a fresher trending event.
 
+**Promised next (teased at the end of ep02, do this one next):** UPI free hai, toh paisa kaun kamata hai? (money-tech)
+
 ## everyday-tech
 - [x] Tatkal 10 baje crash kyun hota hai? (thundering herd, waiting room, Redis counter)
-- [ ] IPL final pe crores log ek saath live kaise dekhte hain? (CDN, adaptive bitrate, edge caching)
+- [x] IPL final pe crores log ek saath live kaise dekhte hain? (CDN, adaptive bitrate, edge caching)
 - [ ] Blinkit 10 minute mein kaise deliver karta hai? (dark stores, inventory sync, geo-sharding)
 - [ ] UPI payment "pending" kyun dikhata hai? (distributed transactions, idempotency, reconciliation)
 - [ ] Instagram like count turant kaise badhta hai? (write-behind cache, eventual consistency)

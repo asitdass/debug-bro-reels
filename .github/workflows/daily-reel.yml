@@ -1,9 +1,13 @@
 name: Daily reel
 
-# 18:15 IST: Claude writes the episode; the pipeline renders it, asks you on Telegram, and posts around 19:00 IST (30 min approval window).
+# 18:15 IST: Claude writes the episode; the pipeline renders it, asks you on Telegram, and posts around 19:00 IST
+# (30 min approval window). GitHub sometimes starts scheduled runs late or drops them, so there are backup start
+# times; the "plan" step makes sure only one reel is posted per day.
 on:
   schedule:
     - cron: "45 12 * * *"
+    - cron: "40 13 * * *"
+    - cron: "30 14 * * *"
   workflow_dispatch:
     inputs:
       publish:
@@ -41,8 +45,23 @@ jobs:
           pip install -r requirements.txt
           npm ci
 
+      - name: Plan today's run
+        id: plan
+        run: |
+          # skip scheduled runs if a reel already went out today (IST)
+          POSTED=$(node -e "const p=require('./data/published.json');const d=new Date(Date.now()+19800000).toISOString().slice(0,10);console.log(p.some(x=>x.kind==='reel'&&new Date(new Date(x.postedAt).getTime()+19800000).toISOString().slice(0,10)===d)?'yes':'no')")
+          # an episode that was written but never posted is used before writing a new one
+          PENDING=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const n=eps.filter(e=>!p.includes(e[0]));console.log(n.length?n[0][0]:'')")
+          SLUG="${{ inputs.slug }}"
+          [ -z "$SLUG" ] && SLUG="$PENDING"
+          SKIP=no
+          [ "${{ github.event_name }}" = "schedule" ] && [ "$POSTED" = "yes" ] && SKIP=yes
+          echo "skip=$SKIP" >> $GITHUB_OUTPUT
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "posted today: $POSTED · episode: ${SLUG:-new one from Claude} · skip: $SKIP"
+
       - name: Claude writes the episode
-        if: inputs.slug == ''
+        if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -50,17 +69,18 @@ jobs:
           claude_args: "--max-turns 40"
 
       - name: Save the episode
-        if: inputs.slug == ''
+        if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
         run: |
           git config user.name "debug-bro-bot"
           git config user.email "debug-bro-bot@users.noreply.github.com"
           git add episodes data
           git diff --cached --quiet || git commit -m "episode: $(ls -t episodes | head -1)"
-          git push
+          git pull --rebase -q && git push
 
       - name: Voice, render, approve, publish
+        if: steps.plan.outputs.skip != 'yes'
         env:
-          TTS_ENGINE: ${{ vars.TTS_ENGINE || 'edge' }}
+          TTS_ENGINE: ${{ vars.TTS_ENGINE || 'sarvam' }}
           SARVAM_API_KEY: ${{ secrets.SARVAM_API_KEY }}
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
@@ -79,14 +99,14 @@ jobs:
           APPROVAL_DEFAULT: ${{ vars.APPROVAL_DEFAULT || 'approve' }}
         run: |
           ARGS=""
-          [ -n "${{ inputs.slug }}" ] && ARGS="--slug=${{ inputs.slug }}"
+          [ -n "${{ steps.plan.outputs.slug }}" ] && ARGS="--slug=${{ steps.plan.outputs.slug }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then
             ARGS="$ARGS --no-publish"
           fi
           node pipeline/run.mjs $ARGS
 
       - name: Keep the rendered files for 14 days
-        if: always()
+        if: always() && steps.plan.outputs.skip != 'yes'
         uses: actions/upload-artifact@v4
         with:
           name: reel-${{ github.run_number }}
@@ -94,9 +114,9 @@ jobs:
           retention-days: 14
 
       - name: Save the publish log
-        if: always()
+        if: always() && steps.plan.outputs.skip != 'yes'
         run: |
           git config user.name "debug-bro-bot"
           git config user.email "debug-bro-bot@users.noreply.github.com"
           git add data/published.json episodes
-          git diff --cached --quiet || (git commit -m "log: published" && git push)
+          git diff --cached --quiet || (git commit -m "log: published" && git pull --rebase -q && git push)

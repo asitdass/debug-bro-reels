@@ -7,7 +7,8 @@ Writes public/episodes/<slug>/voice.mp3 and episodes/<slug>/timings.json
 Engines:
   edge    free Microsoft neural voices, tuned for reels: Madhur on odd episodes, Swara on even ones;
           a scene with "speaker": "alt" uses the other voice (e.g. the interviewer); word timestamps included
-  sarvam  Sarvam Bulbul (needs SARVAM_API_KEY; free trial credits); word times aligned with faster-whisper if
+  sarvam  Sarvam Bulbul v4 Flash reel voices (sunny_hi_reels / ritu_hi_reels, alternating by episode; needs
+          SARVAM_API_KEY); word times spread by word length, or aligned with faster-whisper if WHISPER_MODEL is set and
           installed, else spread across the line by character length
   silent  no audio; timings estimated (preview only)
 
@@ -51,15 +52,18 @@ def vo_words(text: str):
 
 
 def spread(words, start_ms, dur_ms):
-    """Assign times to words proportionally to their length (fallback when the engine gives none)."""
-    weights = [max(1, len(re.sub(r"[^\wऀ-ॿ]", "", w))) + 1 for w in words]
-    total = sum(weights)
+    """Assign times to words by their length, with a short pause after punctuation
+    (used when the engine gives no word timestamps; audio is already trimmed to the speech)."""
+    def w8(w):
+        return max(1, len(re.sub(r"[^\w\u0900-\u097F]", "", w))) + 1
+    pauses = [3 if re.search(r"[,.!?।:]$", w) else 0 for w in words]
+    total = sum(w8(w) for w in words) + sum(pauses[:-1])
     t = start_ms
     out = []
-    for w, k in zip(words, weights):
-        d = dur_ms * k / total
-        out.append((w, t, t + d * 0.92))
-        t += d
+    for i, w in enumerate(words):
+        d = dur_ms * w8(w) / total
+        out.append((w, t, t + d * 0.95))
+        t += d + (dur_ms * pauses[i] / total if i < len(words) - 1 else 0)
     return out
 
 
@@ -108,6 +112,19 @@ def edge_voices(episode):
     return {"main": spec(main, True), "alt": spec(alt, False)}
 
 
+# Sarvam's voices made for reels; the main voice alternates by episode like the edge voices.
+SARVAM_PAIR = ("sunny_hi_reels", "ritu_hi_reels")
+
+
+def sarvam_voices(episode):
+    cfg = episode.get("voice", {})
+    env_main = os.environ.get("SARVAM_SPEAKER")
+    main = env_main or (cfg.get("voiceId") if cfg.get("engine") == "sarvam" else None) or (
+        SARVAM_PAIR[0] if episode.get("number", 1) % 2 else SARVAM_PAIR[1])
+    alt = os.environ.get("SARVAM_ALT_SPEAKER") or (SARVAM_PAIR[1] if main == SARVAM_PAIR[0] else SARVAM_PAIR[0])
+    return {"main": main, "alt": alt}
+
+
 async def edge_line(text, voice, rate, mp3: Path, pitch="+0Hz"):
     import edge_tts
 
@@ -133,13 +150,23 @@ def sarvam_line(text, speaker, pace, wav: Path):
         "text": text,
         lang_key: "hi-IN",
         "speaker": speaker,
-        "model": os.environ.get("SARVAM_MODEL", "bulbul:v3"),
+        "model": os.environ.get("SARVAM_MODEL", "bulbul:v4-flash"),
         "pace": pace,
         "speech_sample_rate": 24000,
     }
-    res = client.text_to_speech.convert(**kwargs)
+    for attempt in range(3):
+        try:
+            res = client.text_to_speech.convert(**kwargs)
+            break
+        except Exception as e:  # rate limit / network hiccup
+            if attempt == 2:
+                raise
+            print(f"  sarvam retry ({e})", file=sys.stderr)
+            import time
+            time.sleep(3 * (attempt + 1))
     wav.write_bytes(base64.b64decode("".join(res.audios)))
-    return whisper_bounds(wav)
+    # word timings: faster-whisper only if explicitly enabled (WHISPER_MODEL=base), else spread by length
+    return whisper_bounds(wav) if os.environ.get("WHISPER_MODEL") else None
 
 
 def whisper_bounds(audio: Path):
@@ -147,7 +174,7 @@ def whisper_bounds(audio: Path):
         from faster_whisper import WhisperModel  # optional: pip install faster-whisper
     except ImportError:
         return None
-    model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), compute_type="int8")
+    model = WhisperModel(os.environ.get("WHISPER_MODEL", "base"), compute_type="int8")
     segs, _ = model.transcribe(str(audio), language="hi", word_timestamps=True)
     return [(w.start * 1000, w.end * 1000) for s in segs for w in (s.words or [])]
 
@@ -163,6 +190,9 @@ def main():
     episode = json.loads((ep_dir / "episode.json").read_text())
     voice = episode.get("voice", {})
     engine = args.engine or os.environ.get("TTS_ENGINE") or voice.get("engine", "edge")
+    if engine == "sarvam" and not os.environ.get("SARVAM_API_KEY"):
+        print("SARVAM_API_KEY not set: falling back to the free Microsoft voices", file=sys.stderr)
+        engine = "edge"
     pub = ROOT / "public" / "episodes" / args.slug
     pub.mkdir(parents=True, exist_ok=True)
 
@@ -198,10 +228,8 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
                         raise
                     print(f"  edge-tts retry ({e})", file=sys.stderr)
         elif engine == "sarvam":
-            speaker = voice.get("voiceId") or os.environ.get("SARVAM_SPEAKER", "shubh")
-            if scene.get("speaker") == "alt":
-                speaker = os.environ.get("SARVAM_ALT_SPEAKER", "ritu")
-            bounds = sarvam_line(text, speaker, float(os.environ.get("SARVAM_PACE", "1.1")), raw)
+            speaker = sarvam_voices(episode)[scene.get("speaker", "main")]
+            bounds = sarvam_line(text, speaker, float(os.environ.get("SARVAM_PACE", "1.15")), raw)
         else:
             sys.exit(f"unknown engine {engine}")
 

@@ -20,16 +20,18 @@ export function validate(slug) {
   }
   const ep = parsed.data;
   if (ep.slug !== slug) errors.push(`slug "${ep.slug}" must match folder "${slug}"`);
-  if (ep.scenes[0].type !== 'hook') errors.push('first scene must be a "hook"');
+  if (!['coldopen', 'hook'].includes(ep.scenes[0].type)) errors.push('first scene must be a "coldopen" (preferred) or "hook"');
+  if (ep.scenes[0].type === 'hook') warnings.push('prefer a "coldopen": show the failure in the first second');
+  if (ep.scenes.length > 10) warnings.push(`${ep.scenes.length} scenes; 6–9 keeps a 30 s reel punchy`);
   if (ep.scenes.at(-1).type !== 'rule') errors.push('last scene must be a "rule" (payoff + send prompt)');
 
   const words = ep.scenes.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
-  if (words > 165) errors.push(`voice-over is ${words} words; keep it ≤ 165 (≈55 s)`);
-  if (words < 80) warnings.push(`voice-over is only ${words} words (≈${Math.round(words / 3)} s)`);
+  if (words > 105) errors.push(`voice-over is ${words} words; keep it ≤ 105 (≈35 s). Short reels hold viewers`);
+  if (words < 55) warnings.push(`voice-over is only ${words} words (≈${Math.round(words / 3)} s)`);
   ep.scenes.forEach((s, i) => {
     const n = s.vo.trim().split(/\s+/).length;
-    if (n > 34) errors.push(`scene ${i + 1}: vo has ${n} words; split it (max 34)`);
-    if (n < 5) warnings.push(`scene ${i + 1}: vo has only ${n} words, the scene may flash by`);
+    if (n > 22) errors.push(`scene ${i + 1}: vo has ${n} words; split it (max 22, a new visual every ~2–5 s)`);
+    if (n < 4) warnings.push(`scene ${i + 1}: vo has only ${n} words, the scene may flash by`);
     const onScreen = JSON.stringify({...s, vo: undefined});
     if (EMOJI.test(onScreen)) errors.push(`scene ${i + 1}: no emoji in on-screen text (fonts can't render them)`);
   });

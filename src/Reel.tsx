@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Background, Captions, Header, useFonts} from './components/chrome';
 import {Pill, ramp} from './components/ui';
-import {SCENES} from './scenes/scenes';
+import {SCENES, sceneSfx} from './scenes/scenes';
 import {C, FONT, MOOD} from './theme';
 
 export type ReelProps = {
@@ -15,10 +15,13 @@ const TAG_COLOR: Record<string, string> = {problem: C.red, solution: C.green, co
 
 const SceneShell: React.FC<{children: React.ReactNode; dur: number}> = ({children, dur}) => {
   const frame = useCurrentFrame();
-  const inP = ramp(frame, 0, 8);
-  const out = interpolate(frame, [dur - 6, dur], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // hard cut with a punch-in, then a slow push so nothing is ever static
+  const punch = interpolate(frame, [0, 6], [1.08, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const push = interpolate(frame, [6, dur], [1, 1.035], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const inP = ramp(frame, 0, 3);
+  const out = interpolate(frame, [dur - 3, dur], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{opacity: Math.min(inP, out), transform: `translateY(${(1 - inP) * 24}px)`}}>{children}</AbsoluteFill>
+    <AbsoluteFill style={{opacity: Math.min(inP, out), transform: `scale(${punch * push})`}}>{children}</AbsoluteFill>
   );
 };
 
@@ -41,13 +44,25 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
     <AbsoluteFill style={{background: C.bg, fontFamily: FONT.sans}}>
       <Background mood={mood} prevMood={prevMood} blend={blend} />
       {timings.audio ? <Audio src={staticFile(timings.audio)} /> : null}
-      {episode.music ? <Audio src={staticFile(episode.music)} volume={0.07} loop /> : null}
-      <Header series={episode.series ?? 'SYSTEM DESIGN'} number={episode.number} sceneStarts={starts} sceneDurs={durs} />
+      {episode.music ? (
+        <Audio src={staticFile(episode.music)} volume={0.07} loop />
+      ) : episode.beat !== false ? (
+        <Audio src={staticFile('sfx/beat.mp3')} volume={(f) => interpolate(f, [0, 20], [0, 0.11], {extrapolateRight: 'clamp'})} loop />
+      ) : null}
+      <div style={{opacity: interpolate(frame, [80, 95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}}>
+        <Header series={episode.series ?? 'SYSTEM DESIGN'} number={episode.number} sceneStarts={starts} sceneDurs={durs} />
+      </div>
       {episode.scenes.map((s: any, i: number) => {
         const Comp = SCENES[s.type];
         if (!Comp) return null;
         return (
           <Sequence key={i} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
+            {i > 0 ? <Audio src={staticFile('sfx/whoosh.wav')} volume={0.22} /> : null}
+            {sceneSfx(s, durs[i]).map((fx, k) => (
+              <Sequence key={k} from={fx.at} layout="none">
+                <Audio src={staticFile(fx.src)} volume={fx.vol} />
+              </Sequence>
+            ))}
             <SceneShell dur={durs[i]}>
               {s.tag ? (
                 <div style={{position: 'absolute', top: 205, left: 70}}>

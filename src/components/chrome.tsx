@@ -141,21 +141,30 @@ export const Captions: React.FC<{words: Word[]}> = ({words}) => {
         right: 90,
         textAlign: 'center',
         fontFamily: FONT.hindi,
-        fontSize: 58,
+        fontSize: 64,
         fontWeight: 700,
-        lineHeight: 1.35,
+        lineHeight: 1.3,
         opacity: appear,
         transform: `translateY(${(1 - appear) * 14}px)`,
-        textShadow: '0 4px 24px #000',
+        textShadow: '0 4px 24px #000, 0 0 2px #000',
+        WebkitTextStroke: '1.5px #000',
       }}
     >
       {g.map((w, i) => {
         const spoken = ms >= w.startMs;
         const active = ms >= w.startMs && ms < w.endMs + 60;
         return (
-          <span key={i} style={{color: spoken ? (active ? '#ffffff' : '#d8dce4') : '#5a606e', marginRight: 16}}>
-            {w.text.replace(/[,।]$/, '')}
-          </span>
+          <React.Fragment key={i}>
+            <span
+              style={{
+                color: active ? '#ffd23f' : spoken ? '#ffffff' : '#6b7180',
+                display: 'inline-block',
+                transform: active ? 'scale(1.08)' : undefined,
+              }}
+            >
+              {w.text.replace(/[,।]$/, '')}
+            </span>{' '}
+          </React.Fragment>
         );
       })}
     </div>

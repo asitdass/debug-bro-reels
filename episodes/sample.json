@@ -1,177 +1,83 @@
 {
-  "slug": "ep01-tatkal-crash",
-  "number": 1,
+  "slug": "ep02-cricket-live-scale",
+  "number": 2,
   "series": "SYSTEM DESIGN",
-  "title": "Tatkal 10 baje crash kyun hota hai?",
-  "topic": "Thundering herd on a hot inventory row; fix with waiting room, bot filter, Redis atomic counter, batch writes",
+  "title": "6.5 crore log ek saath live, server crash kyun nahi hota?",
+  "topic": "Live streaming at cricket scale: CDN edge caching, chunked streams, adaptive bitrate, pre-scaling before spikes",
   "pillar": "everyday-tech",
-  "voice": {
-    "engine": "edge"
-  },
-  "coverText": "Tatkal 10 baje crash kyun?",
-  "hashtags": [
-    "#systemdesign",
-    "#codinginhindi",
-    "#irctc"
-  ],
-  "caption": "Tatkal booking 10 baje crash kyun hoti hai? System design in Hindi 🚆\n\nYe reel us dost ko bhejo jiska Tatkal har baar fail hota hai.\n\n1 minute mein 37,410 tickets (IRCTC record, 16 Aug 2025). Ek hi train ki row pe lakhs requests = DB lock + connections full.\nFix: bot filter → waiting room → Redis atomic DECR → DB mein sirf confirmed booking.\n\nSave karo interview ke liye. Next: IPL live pe crore viewers kaise handle hote hain?",
+  "voice": {"engine": "sarvam"},
+  "coverText": "6.5 crore live, crash kyun nahi?",
+  "hashtags": ["#systemdesign", "#codinginhindi", "#cricket"],
+  "caption": "6.5 crore log ek saath live cricket dekhte hain, server crash kyun nahi hota? System design in Hindi 🏏\n\nIs reel ko us dost ko bhejo jo buffering pe rota hai.\n\nIndia vs England, T20 WC semi-final (5 Mar 2026): 6.52 crore peak concurrent viewers on JioHotstar (ICC).\nTrick: CDN edge servers + chhote video chunks + adaptive bitrate + match se pehle pre-scaling.\n\nSave karo interview ke liye.",
   "sources": [
-    "https://www.inkl.com/news/irctc-sets-new-records-in-online-ticket-booking-blocks-3-crore-suspicious-ids-in-2025-26",
-    "https://www.thestatesman.com/india/31814-tickets-booked-in-a-single-minute-on-may-22-railway-ministry-1503441352.html"
+    "https://www.icc-cricket.com/media-releases/icc-men-s-t20-world-cup-2026-sets-new-global-streaming-record-on-jiohotstar-during-india-england-semi-final"
   ],
   "scenes": [
     {
-      "type": "hook",
-      "mood": "neutral",
-      "kicker": "TATKAL · 10:00 AM",
-      "title": "10:00:01 pe site kyun mar jaati hai?",
-      "sub": "lakhs users · 1 train · 1 row",
-      "vo": "दस बजे Tatkal खुलता है, और एक second बाद site अटक जाती है. क्यों?"
+      "type": "coldopen",
+      "mood": "problem",
+      "tick": ["6,51,99,998", "6,51,99,999", "6,52,00,000"],
+      "setup": "IND vs ENG · semi-final · live viewers",
+      "error": "1 server = 6.52 crore users?",
+      "question": "Server phata kyun nahi?",
+      "vo": "आखिरी over, साढ़े छह करोड़ लोग एक साथ live. Server फटा क्यों नहीं?"
     },
     {
       "type": "chat",
       "mood": "neutral",
       "tag": "INTERVIEW",
+      "speaker": "alt",
       "messages": [
-        {
-          "side": "left",
-          "name": "Interviewer",
-          "text": "Lakhs log ek saath seat book karein, kaise handle karoge?"
-        },
-        {
-          "side": "right",
-          "name": "Candidate",
-          "badge": "15 LPA",
-          "text": "Simple! Har request pe DB mein seat check karo"
-        }
+        {"side": "left", "name": "Interviewer", "text": "6.5 crore live users. Kaise handle karoge?"},
+        {"side": "right", "name": "Candidate", "badge": "15 LPA", "text": "Bhai, bade servers le lo!"}
       ],
-      "vo": "Interview में सवाल आया: लाखों लोग एक साथ seat book करें, तो कैसे handle करोगे?",
-      "speaker": "alt"
+      "vo": "पंद्रह LPA वाला बोला: bhai, बड़े servers ले लो!"
     },
     {
-      "type": "code",
-      "mood": "problem",
-      "tag": "15 LPA KA JAWAB",
-      "label": "har request pe",
-      "code": "SELECT seats FROM trains\nWHERE id = 12951\nFOR UPDATE;",
-      "highlight": [
-        "FOR UPDATE"
-      ],
-      "verdict": "wrong",
-      "stamp": "row lock",
-      "multiplier": "37410",
-      "multiplierLabel": "tickets in 1 minute · 16 Aug 2025",
-      "vo": "पंद्रह LPA वाला बोला, simple है, हर request पे database check करो. पर IRCTC एक minute में सैंतीस हज़ार tickets book करता है, और हर request उसी row को lock करती है."
-    },
-    {
-      "type": "hotrow",
+      "type": "crash",
       "mood": "problem",
       "tag": "PROBLEM",
-      "rows": [
-        "12951 Rajdhani",
-        "12002 Shatabdi",
-        "12301 Rajdhani",
-        "22691 Rajdhani"
-      ],
-      "hot": 0,
-      "valueLabel": "SEATS LEFT",
-      "from": 72,
-      "to": 9,
-      "meterLabel": "DB connections",
-      "meterMax": 100,
-      "alert": "DB connections full · site down",
-      "vo": "सब line में wait, connections full, और site बैठ गई."
-    },
-    {
-      "type": "counter",
-      "mood": "problem",
-      "tag": "AUR EK TWIST",
-      "label": "bot login attempts · first 5 min",
-      "from": 0,
-      "to": 50,
-      "sub": "% तक logins bots के",
-      "tone": "red",
-      "vo": "ऊपर से, पहले पाँच minute में आधे login bots के होते हैं."
+      "label": "1 origin server",
+      "value": 65200000,
+      "quote": "Sab ek hi server pe?",
+      "vo": "करोड़ों requests एक server पे? पहली ball पे ही crash."
     },
     {
       "type": "solution",
       "mood": "solution",
       "tag": "SOLUTION",
-      "kicker": "SOLUTION",
-      "title": "Waiting Room",
-      "sub": "पहले queue, फिर booking",
-      "chipLabel": "users in queue",
-      "chipValue": 240000,
-      "vo": "Solution: virtual waiting room. पहले queue, फिर booking."
+      "kicker": "ASLI TRICK",
+      "title": "CDN + Edge",
+      "sub": "video आपके शहर के पास वाले server से",
+      "vo": "Trick है CDN. Video आपके शहर के पास वाले server से आता है."
     },
     {
       "type": "flow",
       "mood": "solution",
       "tag": "SOLUTION",
-      "packet": "user",
+      "packet": "chunk",
       "nodes": [
-        {
-          "label": "Bot filter",
-          "sub": "captcha · otp · rate limit"
-        },
-        {
-          "label": "Waiting room",
-          "sub": "har user ko ek token"
-        },
-        {
-          "label": "Redis seat counter",
-          "sub": "atomic DECR · no lock"
-        },
-        {
-          "label": "Database",
-          "sub": "sirf confirmed booking"
-        }
+        {"label": "Origin", "sub": "sirf ek copy"},
+        {"label": "CDN edge", "sub": "har sheher mein cache"},
+        {"label": "Aapka phone", "sub": "chhote chunks · auto quality"}
       ],
-      "vo": "Bots छाँटो, हर user को token दो, seats Redis में atomic DECR से गिनो, और DB में सिर्फ़ confirmed booking."
-    },
-    {
-      "type": "batch",
-      "mood": "solution",
-      "tag": "SOLUTION",
-      "fastLabel": "Redis",
-      "fastSub": "seat holds · in memory",
-      "fastTo": 37410,
-      "slowLabel": "bookings",
-      "slowSub": "database · confirmed",
-      "slowFrom": 0,
-      "slowTo": 36800,
-      "every": "har 2 sec · batch insert",
-      "vo": "Seat hold memory में, bookings batch में database में. ना lock, ना crash."
+      "vo": "Stream छोटे chunks में कटता है, edge पे cache होता है, और net slow हो तो quality खुद गिरती है."
     },
     {
       "type": "compare",
       "mood": "comeback",
-      "tag": "FARAK DEKHO",
-      "left": {
-        "title": "15 LPA wala",
-        "items": [
-          "हर request → DB lock",
-          "bots भी अंदर",
-          "site down"
-        ]
-      },
-      "right": {
-        "title": "Scalable",
-        "items": [
-          "waiting room queue",
-          "Redis atomic DECR",
-          "DB पे सिर्फ़ confirmed"
-        ]
-      },
-      "vo": "फ़र्क़ देखो: एक तरफ़ हर request DB पे, दूसरी तरफ़ queue और Redis."
+      "tag": "AUR EK TRICK",
+      "left": {"title": "Autoscale", "items": ["traffic aaya, tab server", "toss pe spike = late"]},
+      "right": {"title": "Pre-scale", "items": ["match se pehle ready", "spike pe bhi smooth"]},
+      "vo": "और toss पे अचानक spike आता है, इसलिए servers match से पहले ही ready रहते हैं."
     },
     {
       "type": "rule",
       "mood": "solution",
-      "rule": "भीड़ सीधी DB पे, सिस्टम माँगे माफ़; queue लगा के भेज दो, टिकट मिले साफ़।",
-      "cta": "ये उस दोस्त को भेजो जिसका Tatkal हर बार fail होता है",
-      "next": "Next: IPL live pe crore viewers",
-      "vo": "भीड़ सीधी DB पे, सिस्टम माँगे माफ़. Queue लगा के भेज दो, टिकट मिले साफ़. ये उस दोस्त को भेजो जिसका Tatkal हर बार fail होता है."
+      "rule": "एक server पे करोड़ों, सिस्टम जाए हार; edge-edge पे बाँट दो, चले stream हर बार।",
+      "cta": "Cricket वाले उस दोस्त को भेजो जो buffering पे रोता है",
+      "next": "Next: UPI free hai, paisa kaun kamata hai?",
+      "vo": "एक server पे करोड़ों, सिस्टम जाए हार. Edge edge पे बाँट दो, चले stream हर बार. Cricket वाले दोस्त को भेजो."
     }
   ]
 }

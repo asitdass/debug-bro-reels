@@ -90,11 +90,11 @@ export const Chat: React.FC<P> = ({s, dur}) => {
   return (
     <Stage style={{justifyContent: 'center', gap: 40, alignItems: 'stretch'}}>
       {s.messages.map((m: any, i: number) => {
-        const start = (i / n) * dur * 0.8;
-        const p = ramp(frame, start, start + 8);
+        const start = (i / n) * dur * 0.55;
+        const p = ramp(frame, start, start + 5);
         if (frame < start) return null;
         const left = m.side === 'left';
-        const text = typed(m.text, frame, start + 4, 38);
+        const text = typed(m.text, frame, start + 2, 90);
         return (
           <div
             key={i}
@@ -184,7 +184,7 @@ const highlightLine = (line: string, marks: string[], markColor: string, showMar
 
 export const Code: React.FC<P> = ({s, dur}) => {
   const frame = useCurrentFrame();
-  const typeEnd = Math.min(dur * 0.45, 4 + (s.code.length / 45) * 30);
+  const typeEnd = Math.min(dur * 0.3, 3 + (s.code.length / 110) * 30);
   const shown = typed(s.code, frame, 4, (s.code.length / Math.max(1, typeEnd - 4)) * 30);
   const done = shown.length >= s.code.length;
   const verdictColor = s.verdict === 'wrong' ? C.red : C.green;
@@ -701,7 +701,107 @@ export const Rule: React.FC<P> = ({s, dur}) => {
   );
 };
 
+/* ------------------------------------------------------------------ cold open */
+export const ColdOpen: React.FC<P> = ({s}) => {
+  const frame = useCurrentFrame();
+  const ticks: string[] = s.tick ?? [];
+  const tickEnd = ticks.length * 6;
+  const crashAt = tickEnd + 2;
+  const crashed = frame >= crashAt;
+  const shake = crashed && frame < crashAt + 10 ? Math.sin(frame * 3.1) * 16 : 0;
+  const errPop = usePop(crashAt, 9);
+  const qAt = crashAt + 8;
+  const qWords = String(s.question).split(' ');
+  const flash = crashed && frame < crashAt + 3 ? 0.35 : 0;
+  const glitch = crashed && frame < crashAt + 16 && frame % 4 < 2;
+  return (
+    <>
+      <div style={{position: 'absolute', inset: 0, background: '#ff2d55', opacity: flash}} />
+      <Stage style={{transform: `translate(${shake}px, ${shake * 0.4}px)`, justifyContent: 'flex-start', paddingTop: 120}}>
+        <div style={{fontFamily: FONT.mono, fontSize: 30, letterSpacing: 4, color: C.muted, fontWeight: 700, textTransform: 'uppercase'}}>{s.setup}</div>
+        {ticks.length ? (
+          <div
+            style={{
+              marginTop: 18,
+              fontFamily: FONT.mono,
+              fontWeight: 800,
+              fontSize: Math.min(150, Math.floor(1450 / Math.max(6, (ticks[ticks.length - 1] || '').length))),
+              color: crashed ? C.red : C.text,
+              textShadow: glitch ? `-8px 0 ${C.red}, 8px 0 ${C.blue}` : crashed ? `0 0 40px ${C.red}88` : 'none',
+              transform: glitch ? 'translateX(10px) skewX(-6deg)' : undefined,
+            }}
+          >
+            {ticks[Math.min(ticks.length - 1, Math.floor(frame / 6))]}
+          </div>
+        ) : null}
+        <div style={{marginTop: 30, transform: `scale(${crashed ? 0.6 + 0.4 * errPop : 0})`}}>
+          <Card style={{padding: '26px 36px', display: 'flex', alignItems: 'center', gap: 18}} border={C.red} glow={C.red}>
+            {Icon.cross(C.red, 46)}
+            <span style={{fontFamily: FONT.mono, fontWeight: 800, fontSize: 40, color: C.red}}>{s.error}</span>
+          </Card>
+        </div>
+        <div
+          style={{
+            marginTop: 60,
+            textAlign: 'center',
+            fontFamily: FONT.sans,
+            fontWeight: 900,
+            fontSize: s.question.length > 30 ? 92 : 108,
+            lineHeight: 1.05,
+            letterSpacing: -2,
+          }}
+        >
+          {qWords.map((w: string, i: number) => {
+            const p = clamp01((frame - qAt - i * 2) / 5);
+            return (
+              <span
+                key={i}
+                style={{
+                  display: 'inline-block',
+                  marginRight: 22,
+                  opacity: p,
+                  transform: `scale(${1.6 - 0.6 * p})`,
+                  color: i === qWords.length - 1 ? C.amber : C.text,
+                }}
+              >
+                {w}
+              </span>
+            );
+          })}
+        </div>
+      </Stage>
+    </>
+  );
+};
+
+/** Frames (from scene start) where a scene wants an extra sound effect. */
+export const sceneSfx = (s: any, dur: number): {at: number; src: string; vol: number}[] => {
+  switch (s.type) {
+    case 'coldopen': {
+      const n = (s.tick ?? []).length;
+      return [
+        ...Array.from({length: n}, (_, i) => ({at: i * 6, src: 'sfx/tick.wav', vol: 0.5})),
+        {at: n * 6 + 2, src: 'sfx/glitch.wav', vol: 0.6},
+        {at: n * 6 + 2, src: 'sfx/thump.wav', vol: 0.8},
+      ];
+    }
+    case 'crash':
+      return [{at: Math.round(dur * 0.45), src: 'sfx/glitch.wav', vol: 0.55}];
+    case 'hotrow':
+      return [{at: Math.round(dur * 0.8), src: 'sfx/glitch.wav', vol: 0.4}];
+    case 'code':
+      return s.verdict ? [{at: Math.round(Math.min(dur * 0.3, 3 + (s.code.length / 110) * 30)) + 4, src: s.verdict === 'wrong' ? 'sfx/glitch.wav' : 'sfx/ding.wav', vol: 0.4}] : [];
+    case 'solution':
+      return [{at: 4, src: 'sfx/ding.wav', vol: 0.45}];
+    case 'rule':
+      return [{at: 2, src: 'sfx/thump.wav', vol: 0.6}];
+    default:
+      return [];
+  }
+};
+
 export const SCENES: Record<string, React.FC<P>> = {
+  coldopen: ColdOpen,
   hook: Hook,
   chat: Chat,
   code: Code,

@@ -1,0 +1,83 @@
+{
+  "slug": "ep02-cricket-live-scale",
+  "number": 2,
+  "series": "SYSTEM DESIGN",
+  "title": "6.5 crore log ek saath live, server crash kyun nahi hota?",
+  "topic": "Live streaming at cricket scale: CDN edge caching, chunked streams, adaptive bitrate, pre-scaling before spikes",
+  "pillar": "everyday-tech",
+  "voice": {"engine": "sarvam"},
+  "coverText": "6.5 crore live, crash kyun nahi?",
+  "hashtags": ["#systemdesign", "#codinginhindi", "#cricket"],
+  "caption": "6.5 crore log ek saath live cricket dekhte hain, server crash kyun nahi hota? System design in Hindi 🏏\n\nIs reel ko us dost ko bhejo jo buffering pe rota hai.\n\nIndia vs England, T20 WC semi-final (5 Mar 2026): 6.52 crore peak concurrent viewers on JioHotstar (ICC).\nTrick: CDN edge servers + chhote video chunks + adaptive bitrate + match se pehle pre-scaling.\n\nSave karo interview ke liye.",
+  "sources": [
+    "https://www.icc-cricket.com/media-releases/icc-men-s-t20-world-cup-2026-sets-new-global-streaming-record-on-jiohotstar-during-india-england-semi-final"
+  ],
+  "scenes": [
+    {
+      "type": "coldopen",
+      "mood": "problem",
+      "tick": ["6,51,99,998", "6,51,99,999", "6,52,00,000"],
+      "setup": "IND vs ENG · semi-final · live viewers",
+      "error": "1 server = 6.52 crore users?",
+      "question": "Server phata kyun nahi?",
+      "vo": "आखिरी over, साढ़े छह करोड़ लोग एक साथ live. Server फटा क्यों नहीं?"
+    },
+    {
+      "type": "chat",
+      "mood": "neutral",
+      "tag": "INTERVIEW",
+      "speaker": "alt",
+      "messages": [
+        {"side": "left", "name": "Interviewer", "text": "6.5 crore live users. Kaise handle karoge?"},
+        {"side": "right", "name": "Candidate", "badge": "15 LPA", "text": "Bhai, bade servers le lo!"}
+      ],
+      "vo": "पंद्रह LPA वाला बोला: bhai, बड़े servers ले लो!"
+    },
+    {
+      "type": "crash",
+      "mood": "problem",
+      "tag": "PROBLEM",
+      "label": "1 origin server",
+      "value": 65200000,
+      "quote": "Sab ek hi server pe?",
+      "vo": "करोड़ों requests एक server पे? पहली ball पे ही crash."
+    },
+    {
+      "type": "solution",
+      "mood": "solution",
+      "tag": "SOLUTION",
+      "kicker": "ASLI TRICK",
+      "title": "CDN + Edge",
+      "sub": "video आपके शहर के पास वाले server से",
+      "vo": "Trick है CDN. Video आपके शहर के पास वाले server से आता है."
+    },
+    {
+      "type": "flow",
+      "mood": "solution",
+      "tag": "SOLUTION",
+      "packet": "chunk",
+      "nodes": [
+        {"label": "Origin", "sub": "sirf ek copy"},
+        {"label": "CDN edge", "sub": "har sheher mein cache"},
+        {"label": "Aapka phone", "sub": "chhote chunks · auto quality"}
+      ],
+      "vo": "Stream छोटे chunks में कटता है, edge पे cache होता है, और net slow हो तो quality खुद गिरती है."
+    },
+    {
+      "type": "compare",
+      "mood": "comeback",
+      "tag": "AUR EK TRICK",
+      "left": {"title": "Autoscale", "items": ["traffic aaya, tab server", "toss pe spike = late"]},
+      "right": {"title": "Pre-scale", "items": ["match se pehle ready", "spike pe bhi smooth"]},
+      "vo": "और toss पे अचानक spike आता है, इसलिए servers match से पहले ही ready रहते हैं."
+    },
+    {
+      "type": "rule",
+      "mood": "solution",
+      "rule": "एक server पे करोड़ों, सिस्टम जाए हार; edge-edge पे बाँट दो, चले stream हर बार।",
+      "cta": "Cricket वाले उस दोस्त को भेजो जो buffering पे रोता है",
+      "next": "Next: UPI free hai, paisa kaun kamata hai?",
+      "vo": "एक server पे करोड़ों, सिस्टम जाए हार. Edge edge पे बाँट दो, चले stream हर बार. Cricket वाले दोस्त को भेजो."
+    }
+  ]
+}

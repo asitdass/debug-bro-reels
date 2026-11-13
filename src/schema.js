@@ -19,6 +19,15 @@ const base = {
 const str = (max) => z.string().min(1).max(max);
 
 export const sceneSchema = z.discriminatedUnion('type', [
+  // Cold open: the failure happens in the first second (clock ticks, then glitch + error card + big question).
+  z.object({
+    ...base,
+    type: z.literal('coldopen'),
+    tick: z.array(str(16)).max(4).optional(),
+    setup: str(40),
+    error: str(40),
+    question: str(56),
+  }),
   z.object({...base, type: z.literal('hook'), kicker: str(40), title: str(60), sub: str(80).optional()}),
   z.object({
     ...base,
@@ -109,6 +118,7 @@ export const episodeSchema = z.object({
   hashtags: z.array(z.string().regex(/^#\w+$/)).min(1).max(5),
   coverText: str(40),
   music: z.string().optional(),
+  beat: z.boolean().optional(),
   sources: z.array(z.string().url()).optional(),
   scenes: z.array(sceneSchema).min(5).max(14),
 });
