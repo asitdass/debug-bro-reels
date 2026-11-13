@@ -8,5 +8,15 @@
     "kind": "reel",
     "mediaId": "17979075018139261",
     "permalink": "https://www.instagram.com/reel/DfpZwFzFzWY/"
+  },
+  {
+    "slug": "ep02-cricket-live-scale",
+    "topic": "Live streaming at cricket scale: CDN edge caching, chunked streams, adaptive bitrate, pre-scaling before spikes",
+    "pillar": "everyday-tech",
+    "title": "6.5 crore log ek saath live, server crash kyun nahi hota?",
+    "postedAt": "2026-11-13T13:34:32.734Z",
+    "kind": "reel",
+    "mediaId": "18200096239386197",
+    "permalink": "https://www.instagram.com/reel/Dfrv4lpjU7V/"
   }
 ]

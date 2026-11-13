@@ -1,0 +1,648 @@
+{
+  "totalMs": 34370,
+  "audio": "episodes/ep02-cricket-live-scale/voice.mp3",
+  "scenes": [
+    {
+      "startMs": 0,
+      "durMs": 5570
+    },
+    {
+      "startMs": 5830,
+      "durMs": 2402
+    },
+    {
+      "startMs": 8492,
+      "durMs": 3216
+    },
+    {
+      "startMs": 11968,
+      "durMs": 4420
+    },
+    {
+      "startMs": 16649,
+      "durMs": 5789
+    },
+    {
+      "startMs": 22698,
+      "durMs": 4007
+    },
+    {
+      "startMs": 26965,
+      "durMs": 6804
+    }
+  ],
+  "words": [
+    {
+      "text": "आखिरी",
+      "startMs": 300,
+      "endMs": 729,
+      "scene": 0
+    },
+    {
+      "text": "over,",
+      "startMs": 752,
+      "endMs": 1109,
+      "scene": 0
+    },
+    {
+      "text": "साढ़े",
+      "startMs": 1354,
+      "endMs": 1783,
+      "scene": 0
+    },
+    {
+      "text": "छह",
+      "startMs": 1806,
+      "endMs": 2020,
+      "scene": 0
+    },
+    {
+      "text": "करोड़",
+      "startMs": 2032,
+      "endMs": 2461,
+      "scene": 0
+    },
+    {
+      "text": "लोग",
+      "startMs": 2483,
+      "endMs": 2769,
+      "scene": 0
+    },
+    {
+      "text": "एक",
+      "startMs": 2784,
+      "endMs": 2999,
+      "scene": 0
+    },
+    {
+      "text": "साथ",
+      "startMs": 3010,
+      "endMs": 3296,
+      "scene": 0
+    },
+    {
+      "text": "live.",
+      "startMs": 3311,
+      "endMs": 3669,
+      "scene": 0
+    },
+    {
+      "text": "Server",
+      "startMs": 3914,
+      "endMs": 4414,
+      "scene": 0
+    },
+    {
+      "text": "फटा",
+      "startMs": 4441,
+      "endMs": 4727,
+      "scene": 0
+    },
+    {
+      "text": "क्यों",
+      "startMs": 4742,
+      "endMs": 5171,
+      "scene": 0
+    },
+    {
+      "text": "नहीं?",
+      "startMs": 5193,
+      "endMs": 5551,
+      "scene": 0
+    },
+    {
+      "text": "पंद्रह",
+      "startMs": 5830,
+      "endMs": 6143,
+      "scene": 1
+    },
+    {
+      "text": "LPA",
+      "startMs": 6160,
+      "endMs": 6339,
+      "scene": 1
+    },
+    {
+      "text": "वाला",
+      "startMs": 6348,
+      "endMs": 6572,
+      "scene": 1
+    },
+    {
+      "text": "बोला:",
+      "startMs": 6584,
+      "endMs": 6807,
+      "scene": 1
+    },
+    {
+      "text": "bhai,",
+      "startMs": 6960,
+      "endMs": 7184,
+      "scene": 1
+    },
+    {
+      "text": "बड़े",
+      "startMs": 7337,
+      "endMs": 7561,
+      "scene": 1
+    },
+    {
+      "text": "servers",
+      "startMs": 7573,
+      "endMs": 7931,
+      "scene": 1
+    },
+    {
+      "text": "ले",
+      "startMs": 7950,
+      "endMs": 8084,
+      "scene": 1
+    },
+    {
+      "text": "लो!",
+      "startMs": 8091,
+      "endMs": 8225,
+      "scene": 1
+    },
+    {
+      "text": "करोड़ों",
+      "startMs": 8492,
+      "endMs": 8937,
+      "scene": 2
+    },
+    {
+      "text": "requests",
+      "startMs": 8960,
+      "endMs": 9460,
+      "scene": 2
+    },
+    {
+      "text": "एक",
+      "startMs": 9486,
+      "endMs": 9653,
+      "scene": 2
+    },
+    {
+      "text": "server",
+      "startMs": 9662,
+      "endMs": 10051,
+      "scene": 2
+    },
+    {
+      "text": "पे?",
+      "startMs": 10071,
+      "endMs": 10238,
+      "scene": 2
+    },
+    {
+      "text": "पहली",
+      "startMs": 10422,
+      "endMs": 10700,
+      "scene": 2
+    },
+    {
+      "text": "ball",
+      "startMs": 10714,
+      "endMs": 10992,
+      "scene": 2
+    },
+    {
+      "text": "पे",
+      "startMs": 11007,
+      "endMs": 11173,
+      "scene": 2
+    },
+    {
+      "text": "ही",
+      "startMs": 11182,
+      "endMs": 11349,
+      "scene": 2
+    },
+    {
+      "text": "crash.",
+      "startMs": 11358,
+      "endMs": 11691,
+      "scene": 2
+    },
+    {
+      "text": "Trick",
+      "startMs": 11968,
+      "endMs": 12388,
+      "scene": 3
+    },
+    {
+      "text": "है",
+      "startMs": 12410,
+      "endMs": 12620,
+      "scene": 3
+    },
+    {
+      "text": "CDN.",
+      "startMs": 12631,
+      "endMs": 12911,
+      "scene": 3
+    },
+    {
+      "text": "Video",
+      "startMs": 13147,
+      "endMs": 13567,
+      "scene": 3
+    },
+    {
+      "text": "आपके",
+      "startMs": 13589,
+      "endMs": 13939,
+      "scene": 3
+    },
+    {
+      "text": "शहर",
+      "startMs": 13957,
+      "endMs": 14237,
+      "scene": 3
+    },
+    {
+      "text": "के",
+      "startMs": 14252,
+      "endMs": 14462,
+      "scene": 3
+    },
+    {
+      "text": "पास",
+      "startMs": 14473,
+      "endMs": 14753,
+      "scene": 3
+    },
+    {
+      "text": "वाले",
+      "startMs": 14768,
+      "endMs": 15118,
+      "scene": 3
+    },
+    {
+      "text": "server",
+      "startMs": 15136,
+      "endMs": 15626,
+      "scene": 3
+    },
+    {
+      "text": "से",
+      "startMs": 15652,
+      "endMs": 15862,
+      "scene": 3
+    },
+    {
+      "text": "आता",
+      "startMs": 15873,
+      "endMs": 16153,
+      "scene": 3
+    },
+    {
+      "text": "है.",
+      "startMs": 16167,
+      "endMs": 16377,
+      "scene": 3
+    },
+    {
+      "text": "Stream",
+      "startMs": 16649,
+      "endMs": 17041,
+      "scene": 4
+    },
+    {
+      "text": "छोटे",
+      "startMs": 17062,
+      "endMs": 17343,
+      "scene": 4
+    },
+    {
+      "text": "chunks",
+      "startMs": 17357,
+      "endMs": 17750,
+      "scene": 4
+    },
+    {
+      "text": "में",
+      "startMs": 17771,
+      "endMs": 17995,
+      "scene": 4
+    },
+    {
+      "text": "कटता",
+      "startMs": 18007,
+      "endMs": 18288,
+      "scene": 4
+    },
+    {
+      "text": "है,",
+      "startMs": 18303,
+      "endMs": 18471,
+      "scene": 4
+    },
+    {
+      "text": "edge",
+      "startMs": 18657,
+      "endMs": 18938,
+      "scene": 4
+    },
+    {
+      "text": "पे",
+      "startMs": 18952,
+      "endMs": 19121,
+      "scene": 4
+    },
+    {
+      "text": "cache",
+      "startMs": 19130,
+      "endMs": 19466,
+      "scene": 4
+    },
+    {
+      "text": "होता",
+      "startMs": 19484,
+      "endMs": 19765,
+      "scene": 4
+    },
+    {
+      "text": "है,",
+      "startMs": 19779,
+      "endMs": 19948,
+      "scene": 4
+    },
+    {
+      "text": "और",
+      "startMs": 20134,
+      "endMs": 20302,
+      "scene": 4
+    },
+    {
+      "text": "net",
+      "startMs": 20311,
+      "endMs": 20536,
+      "scene": 4
+    },
+    {
+      "text": "slow",
+      "startMs": 20547,
+      "endMs": 20828,
+      "scene": 4
+    },
+    {
+      "text": "हो",
+      "startMs": 20843,
+      "endMs": 21011,
+      "scene": 4
+    },
+    {
+      "text": "तो",
+      "startMs": 21020,
+      "endMs": 21188,
+      "scene": 4
+    },
+    {
+      "text": "quality",
+      "startMs": 21197,
+      "endMs": 21646,
+      "scene": 4
+    },
+    {
+      "text": "खुद",
+      "startMs": 21670,
+      "endMs": 21894,
+      "scene": 4
+    },
+    {
+      "text": "गिरती",
+      "startMs": 21906,
+      "endMs": 22243,
+      "scene": 4
+    },
+    {
+      "text": "है.",
+      "startMs": 22260,
+      "endMs": 22429,
+      "scene": 4
+    },
+    {
+      "text": "और",
+      "startMs": 22698,
+      "endMs": 22842,
+      "scene": 5
+    },
+    {
+      "text": "toss",
+      "startMs": 22850,
+      "endMs": 23091,
+      "scene": 5
+    },
+    {
+      "text": "पे",
+      "startMs": 23104,
+      "endMs": 23248,
+      "scene": 5
+    },
+    {
+      "text": "अचानक",
+      "startMs": 23256,
+      "endMs": 23545,
+      "scene": 5
+    },
+    {
+      "text": "spike",
+      "startMs": 23560,
+      "endMs": 23849,
+      "scene": 5
+    },
+    {
+      "text": "आता",
+      "startMs": 23864,
+      "endMs": 24057,
+      "scene": 5
+    },
+    {
+      "text": "है,",
+      "startMs": 24067,
+      "endMs": 24212,
+      "scene": 5
+    },
+    {
+      "text": "इसलिए",
+      "startMs": 24372,
+      "endMs": 24661,
+      "scene": 5
+    },
+    {
+      "text": "servers",
+      "startMs": 24676,
+      "endMs": 25062,
+      "scene": 5
+    },
+    {
+      "text": "match",
+      "startMs": 25082,
+      "endMs": 25371,
+      "scene": 5
+    },
+    {
+      "text": "से",
+      "startMs": 25386,
+      "endMs": 25531,
+      "scene": 5
+    },
+    {
+      "text": "पहले",
+      "startMs": 25538,
+      "endMs": 25779,
+      "scene": 5
+    },
+    {
+      "text": "ही",
+      "startMs": 25792,
+      "endMs": 25937,
+      "scene": 5
+    },
+    {
+      "text": "ready",
+      "startMs": 25944,
+      "endMs": 26233,
+      "scene": 5
+    },
+    {
+      "text": "रहते",
+      "startMs": 26248,
+      "endMs": 26489,
+      "scene": 5
+    },
+    {
+      "text": "हैं.",
+      "startMs": 26502,
+      "endMs": 26695,
+      "scene": 5
+    },
+    {
+      "text": "एक",
+      "startMs": 26965,
+      "endMs": 27135,
+      "scene": 6
+    },
+    {
+      "text": "server",
+      "startMs": 27144,
+      "endMs": 27541,
+      "scene": 6
+    },
+    {
+      "text": "पे",
+      "startMs": 27562,
+      "endMs": 27732,
+      "scene": 6
+    },
+    {
+      "text": "करोड़ों,",
+      "startMs": 27741,
+      "endMs": 28195,
+      "scene": 6
+    },
+    {
+      "text": "सिस्टम",
+      "startMs": 28398,
+      "endMs": 28794,
+      "scene": 6
+    },
+    {
+      "text": "जाए",
+      "startMs": 28815,
+      "endMs": 29042,
+      "scene": 6
+    },
+    {
+      "text": "हार.",
+      "startMs": 29054,
+      "endMs": 29281,
+      "scene": 6
+    },
+    {
+      "text": "Edge",
+      "startMs": 29472,
+      "endMs": 29755,
+      "scene": 6
+    },
+    {
+      "text": "edge",
+      "startMs": 29770,
+      "endMs": 30054,
+      "scene": 6
+    },
+    {
+      "text": "पे",
+      "startMs": 30069,
+      "endMs": 30239,
+      "scene": 6
+    },
+    {
+      "text": "बाँट",
+      "startMs": 30248,
+      "endMs": 30531,
+      "scene": 6
+    },
+    {
+      "text": "दो,",
+      "startMs": 30546,
+      "endMs": 30716,
+      "scene": 6
+    },
+    {
+      "text": "चले",
+      "startMs": 30904,
+      "endMs": 31131,
+      "scene": 6
+    },
+    {
+      "text": "stream",
+      "startMs": 31143,
+      "endMs": 31540,
+      "scene": 6
+    },
+    {
+      "text": "हर",
+      "startMs": 31561,
+      "endMs": 31731,
+      "scene": 6
+    },
+    {
+      "text": "बार.",
+      "startMs": 31740,
+      "endMs": 31967,
+      "scene": 6
+    },
+    {
+      "text": "Cricket",
+      "startMs": 32158,
+      "endMs": 32612,
+      "scene": 6
+    },
+    {
+      "text": "वाले",
+      "startMs": 32635,
+      "endMs": 32919,
+      "scene": 6
+    },
+    {
+      "text": "दोस्त",
+      "startMs": 32934,
+      "endMs": 33274,
+      "scene": 6
+    },
+    {
+      "text": "को",
+      "startMs": 33292,
+      "endMs": 33462,
+      "scene": 6
+    },
+    {
+      "text": "भेजो.",
+      "startMs": 33471,
+      "endMs": 33755,
+      "scene": 6
+    }
+  ]
+}
