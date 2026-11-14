@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-13T08:57:39.551Z",
+  "updatedAt": "2026-11-14T08:25:33.900Z",
   "byPillar": {
     "everyday-tech": {
-      "posts": 1,
-      "reach": 109,
+      "posts": 2,
+      "reach": 0,
       "shares": 0,
       "saved": 0,
-      "sendsPerReach": 0
+      "sendsPerReach": null
     }
   },
   "posts": [
@@ -15,16 +15,32 @@
       "pillar": "everyday-tech",
       "kind": "reel",
       "postedAt": "2026-11-12T15:42:40.029Z",
-      "reach": 109,
-      "views": 0,
-      "likes": 1,
-      "comments": 0,
-      "saved": 0,
-      "shares": 0,
-      "total_interactions": 1,
-      "ig_reels_avg_watch_time": 6158,
-      "sendsPerReach": 0,
-      "savesPerReach": 0
+      "reach": null,
+      "views": null,
+      "likes": null,
+      "comments": null,
+      "saved": null,
+      "shares": null,
+      "total_interactions": null,
+      "ig_reels_avg_watch_time": null,
+      "sendsPerReach": null,
+      "savesPerReach": null
+    },
+    {
+      "slug": "ep02-cricket-live-scale",
+      "pillar": "everyday-tech",
+      "kind": "reel",
+      "postedAt": "2026-11-13T13:34:32.734Z",
+      "reach": null,
+      "views": null,
+      "likes": null,
+      "comments": null,
+      "saved": null,
+      "shares": null,
+      "total_interactions": null,
+      "ig_reels_avg_watch_time": null,
+      "sendsPerReach": null,
+      "savesPerReach": null
     }
   ]
 }
