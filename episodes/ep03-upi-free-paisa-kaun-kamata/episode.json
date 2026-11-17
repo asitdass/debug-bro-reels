@@ -1,0 +1,136 @@
+{
+  "slug": "ep03-upi-free-paisa-kaun-kamata",
+  "number": 3,
+  "series": "SYSTEM DESIGN",
+  "title": "UPI free hai, toh paisa kaun kamata hai?",
+  "topic": "UPI zero MDR economics: who pays for the rails, government subsidy, and the MDR on large merchant payments",
+  "pillar": "money-tech",
+  "voice": {
+    "engine": "sarvam"
+  },
+  "coverText": "UPI free, paisa kaun kamata?",
+  "hashtags": [
+    "#systemdesign",
+    "#codinginhindi",
+    "#upi"
+  ],
+  "caption": "UPI free hai, toh paisa kaun kamata hai? UPI MDR explained in Hindi\n\nIs reel ko us dost ko bhejo jo kehta hai 'UPI toh free hai'.\n\nChhote merchants pe MDR zero hai, par servers, banks aur fraud checks ka kharcha free nahi. Use banks, apps aur sarkari subsidy uthate hain, aur ab bade merchant payments pe MDR aa chuka hai.\nYeh paisa ka explainer hai, investment advice nahi.\n\nSave karo interview ke liye.",
+  "sources": [
+    "https://inc42.com/buzz/npci-sets-0-4-mdr-on-p2m-upi-transactions-over-₹2000/",
+    "https://inc42.com/features/upis-monetisation-moment-why-mdr-is-back-on-the-table/"
+  ],
+  "scenes": [
+    {
+      "type": "coldopen",
+      "mood": "problem",
+      "tick": [
+        "Rs 10",
+        "Rs 10",
+        "Rs 0 fee"
+      ],
+      "setup": "chai wale ko UPI se Rs 10",
+      "error": "Fee = Rs 0. Kharcha = ?",
+      "question": "Toh paisa kaun kamata hai?",
+      "vo": "UPI में fee zero. पर servers और banks का kharcha है. तो paisa कौन कमाता है?"
+    },
+    {
+      "type": "chat",
+      "mood": "neutral",
+      "tag": "INTERVIEW",
+      "speaker": "alt",
+      "messages": [
+        {
+          "side": "left",
+          "name": "Interviewer",
+          "text": "UPI free hai. Business model kya hai?"
+        },
+        {
+          "side": "right",
+          "name": "Candidate",
+          "badge": "15 LPA",
+          "text": "Free hai na, matlab koi kharcha nahi!"
+        }
+      ],
+      "vo": "पंद्रह LPA वाला बोला: free है, kharcha नहीं!"
+    },
+    {
+      "type": "compare",
+      "mood": "problem",
+      "tag": "PROBLEM",
+      "left": {
+        "title": "Aapke liye",
+        "items": [
+          "fee zero",
+          "bas QR scan"
+        ]
+      },
+      "right": {
+        "title": "System ke liye",
+        "items": [
+          "servers 24x7",
+          "bank ledgers",
+          "fraud checks"
+        ]
+      },
+      "vo": "आपके लिए free है. पीछे servers, ledgers और fraud checks चलते हैं. बिल कोई तो भरता है."
+    },
+    {
+      "type": "flow",
+      "mood": "solution",
+      "tag": "SOLUTION",
+      "packet": "paisa",
+      "nodes": [
+        {
+          "label": "Merchant",
+          "sub": "MDR zero"
+        },
+        {
+          "label": "Banks + apps",
+          "sub": "kharcha unka"
+        },
+        {
+          "label": "Sarkar",
+          "sub": "subsidy deti hai"
+        }
+      ],
+      "vo": "छोटे merchants पे MDR zero है. Kharcha banks और apps उठाते हैं, सरकार subsidy देती है."
+    },
+    {
+      "type": "solution",
+      "mood": "comeback",
+      "tag": "TWIST",
+      "kicker": "AB BADLAV",
+      "title": "Bade payments pe MDR",
+      "sub": "chhote merchants aur P2P ab bhi free",
+      "vo": "अब बदलाव: बड़े merchant payments पे MDR लगा है. P2P और छोटे दुकानदार free हैं."
+    },
+    {
+      "type": "compare",
+      "mood": "comeback",
+      "tag": "FARAK",
+      "left": {
+        "title": "Free rahega",
+        "items": [
+          "dost ko paisa bhejna",
+          "chhote merchants"
+        ]
+      },
+      "right": {
+        "title": "Fee lagegi",
+        "items": [
+          "bade merchant payments",
+          "bank, PSP, app mein split"
+        ]
+      },
+      "vo": "Fee issuer bank, payer के PSP और app providers में बँटती है."
+    },
+    {
+      "type": "rule",
+      "mood": "solution",
+      "rule": "जो चीज़ दिखे free, पीछे भरता कोई बिल; free के पीछे भी होता है, किसी का पैसा, किसी का दिल।",
+      "cta": "UPI ko free samajhne wale dost ko bhejo",
+      "next": "Next: Credit card reward points ka asli maths",
+      "vo": "जो चीज़ दिखे free, पीछे भरता कोई बिल. दोस्त को भेजो."
+    }
+  ]
+}
