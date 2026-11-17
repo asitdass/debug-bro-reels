@@ -68,11 +68,22 @@ jobs:
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
           echo "IST $NOW · posted today: $POSTED · episode: ${SLUG:-new one from Claude} · skip: $SKIP"
 
+      - name: Clean the Claude token
+        id: tok
+        if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
+        env:
+          RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          # a token pasted from a terminal can carry line breaks or spaces; strip them
+          CLEAN=$(printf '%s' "$RAW" | tr -d '[:space:]')
+          echo "::add-mask::$CLEAN"
+          echo "token=$CLEAN" >> $GITHUB_OUTPUT
+
       - name: Claude writes the episode
         if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
         uses: anthropics/claude-code-action@v1
         with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_code_oauth_token: ${{ steps.tok.outputs.token }}
           prompt: |
             Write the next Debug Bro reel episode. Read .claude/skills/make-episode/SKILL.md and follow every step in it:
             pick the topic (data/topics.md "Promised next" first), research the facts with WebSearch/WebFetch, write
