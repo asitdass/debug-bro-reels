@@ -1,8 +1,7 @@
 name: Daily reel
 
-# 18:15 IST: Claude writes the episode; the pipeline renders it, asks you on Telegram, and posts around 19:00 IST
-# (30 min approval window). GitHub sometimes starts scheduled runs late or drops them, so there are backup start
-# times; the "plan" step makes sure only one reel is posted per day.
+# Daily at ~18:05 IST a Claude scheduled task triggers this workflow (scheduled=true); GitHub's own cron below is only
+# a backup because it often starts hours late. The "plan" step posts at most one reel per day, only 17:00-23:30 IST.
 on:
   schedule:
     - cron: "45 12 * * *"
@@ -18,6 +17,10 @@ on:
         description: "Existing episode to use (e.g. ep01-tatkal-crash). Leave empty to let Claude write a new one."
         required: false
         default: ""
+      scheduled:
+        description: "Behave like the daily schedule (skip if already posted today or outside 17:00-23:30 IST)"
+        type: boolean
+        default: false
 
 concurrency: daily-reel
 
@@ -54,19 +57,36 @@ jobs:
           PENDING=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const n=eps.filter(e=>!p.includes(e[0]));console.log(n.length?n[0][0]:'')")
           SLUG="${{ inputs.slug }}"
           [ -z "$SLUG" ] && SLUG="$PENDING"
+          NOW=$(TZ=Asia/Kolkata date +%H%M)
           SKIP=no
-          [ "${{ github.event_name }}" = "schedule" ] && [ "$POSTED" = "yes" ] && SKIP=yes
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.scheduled }}" = "true" ]; then
+            [ "$POSTED" = "yes" ] && SKIP=yes
+            # GitHub can start scheduled runs hours late; never post outside the evening slot
+            { [ "$NOW" -lt 1700 ] || [ "$NOW" -gt 2330 ]; } && SKIP=yes
+          fi
           echo "skip=$SKIP" >> $GITHUB_OUTPUT
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
-          echo "posted today: $POSTED · episode: ${SLUG:-new one from Claude} · skip: $SKIP"
+          echo "IST $NOW · posted today: $POSTED · episode: ${SLUG:-new one from Claude} · skip: $SKIP"
 
       - name: Claude writes the episode
         if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt: "/make-episode"
-          claude_args: "--max-turns 40"
+          prompt: |
+            Write the next Debug Bro reel episode. Read .claude/skills/make-episode/SKILL.md and follow every step in it:
+            pick the topic (data/topics.md "Promised next" first), research the facts with WebSearch/WebFetch, write
+            episodes/<slug>/episode.json, tick the topic in data/topics.md, and run `node pipeline/validate.mjs <slug>`
+            until it prints OK. Do not edit src/ or pipeline/. Do not commit; the workflow commits for you.
+          claude_args: >-
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node pipeline/validate.mjs:*),Bash(ls:*),Bash(cat:*)"
+
+      - name: Why did Claude fail?
+        if: failure()
+        run: |
+          F=/home/runner/work/_temp/claude-execution-output.json
+          [ -f "$F" ] && node -e "const o=JSON.parse(require('fs').readFileSync('$F','utf8'));const a=Array.isArray(o)?o:[o];for(const m of a){if(m.type==='result'){console.log('result:',(m.result||'').slice(0,800));}if(m.type==='assistant'){const t=(m.message?.content||[]).filter(c=>c.type==='text').map(c=>c.text).join(' ');if(t)console.log('assistant:',t.slice(0,400));}}" || echo "no execution output"
 
       - name: Save the episode
         if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
