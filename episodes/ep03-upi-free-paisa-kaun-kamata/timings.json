@@ -1,611 +1,611 @@
 {
-  "totalMs": 32667,
+  "totalMs": 33076,
   "audio": "episodes/ep03-upi-free-paisa-kaun-kamata/voice.mp3",
   "scenes": [
     {
       "startMs": 0,
-      "durMs": 4438
+      "durMs": 4767
     },
     {
-      "startMs": 4698,
-      "durMs": 2314
+      "startMs": 5027,
+      "durMs": 2724
     },
     {
-      "startMs": 7272,
-      "durMs": 5265
+      "startMs": 8011,
+      "durMs": 4644
     },
     {
-      "startMs": 12797,
-      "durMs": 5403
+      "startMs": 12915,
+      "durMs": 4439
     },
     {
-      "startMs": 18461,
-      "durMs": 5639
+      "startMs": 17615,
+      "durMs": 6089
     },
     {
-      "startMs": 24360,
-      "durMs": 3961
+      "startMs": 23963,
+      "durMs": 4473
     },
     {
-      "startMs": 28580,
-      "durMs": 3486
+      "startMs": 28696,
+      "durMs": 3780
     }
   ],
   "words": [
     {
       "text": "UPI",
       "startMs": 300,
-      "endMs": 499,
+      "endMs": 515,
       "scene": 0
     },
     {
       "text": "में",
-      "startMs": 510,
-      "endMs": 709,
+      "startMs": 526,
+      "endMs": 741,
       "scene": 0
     },
     {
       "text": "fee",
-      "startMs": 719,
-      "endMs": 918,
+      "startMs": 752,
+      "endMs": 967,
       "scene": 0
     },
     {
       "text": "zero.",
-      "startMs": 929,
-      "endMs": 1177,
+      "startMs": 979,
+      "endMs": 1247,
       "scene": 0
     },
     {
       "text": "पर",
-      "startMs": 1348,
-      "endMs": 1497,
+      "startMs": 1431,
+      "endMs": 1592,
       "scene": 0
     },
     {
       "text": "servers",
-      "startMs": 1505,
-      "endMs": 1903,
+      "startMs": 1601,
+      "endMs": 2030,
       "scene": 0
     },
     {
       "text": "और",
-      "startMs": 1924,
-      "endMs": 2073,
+      "startMs": 2053,
+      "endMs": 2214,
       "scene": 0
     },
     {
       "text": "banks",
-      "startMs": 2081,
-      "endMs": 2380,
-      "scene": 0
-    },
-    {
-      "text": "का",
-      "startMs": 2395,
+      "startMs": 2223,
       "endMs": 2545,
       "scene": 0
     },
     {
+      "text": "का",
+      "startMs": 2562,
+      "endMs": 2723,
+      "scene": 0
+    },
+    {
       "text": "kharcha",
-      "startMs": 2552,
-      "endMs": 2951,
+      "startMs": 2732,
+      "endMs": 3161,
       "scene": 0
     },
     {
       "text": "है.",
-      "startMs": 2971,
-      "endMs": 3121,
+      "startMs": 3184,
+      "endMs": 3345,
       "scene": 0
     },
     {
       "text": "तो",
-      "startMs": 3286,
-      "endMs": 3435,
+      "startMs": 3523,
+      "endMs": 3684,
       "scene": 0
     },
     {
       "text": "paisa",
-      "startMs": 3443,
-      "endMs": 3741,
+      "startMs": 3693,
+      "endMs": 4015,
       "scene": 0
     },
     {
       "text": "कौन",
-      "startMs": 3757,
-      "endMs": 3956,
+      "startMs": 4032,
+      "endMs": 4247,
       "scene": 0
     },
     {
       "text": "कमाता",
-      "startMs": 3967,
-      "endMs": 4265,
+      "startMs": 4258,
+      "endMs": 4581,
       "scene": 0
     },
     {
       "text": "है?",
-      "startMs": 4281,
-      "endMs": 4430,
+      "startMs": 4598,
+      "endMs": 4759,
       "scene": 0
     },
     {
       "text": "पंद्रह",
-      "startMs": 4698,
-      "endMs": 5019,
+      "startMs": 5027,
+      "endMs": 5405,
       "scene": 1
     },
     {
       "text": "LPA",
-      "startMs": 5036,
-      "endMs": 5219,
+      "startMs": 5425,
+      "endMs": 5640,
       "scene": 1
     },
     {
       "text": "वाला",
-      "startMs": 5228,
-      "endMs": 5457,
+      "startMs": 5652,
+      "endMs": 5921,
       "scene": 1
     },
     {
       "text": "बोला:",
-      "startMs": 5469,
-      "endMs": 5698,
+      "startMs": 5935,
+      "endMs": 6205,
       "scene": 1
     },
     {
       "text": "free",
-      "startMs": 5855,
-      "endMs": 6084,
+      "startMs": 6389,
+      "endMs": 6659,
       "scene": 1
     },
     {
       "text": "है,",
-      "startMs": 6096,
-      "endMs": 6233,
+      "startMs": 6673,
+      "endMs": 6835,
       "scene": 1
     },
     {
       "text": "kharcha",
-      "startMs": 6385,
-      "endMs": 6752,
+      "startMs": 7014,
+      "endMs": 7445,
       "scene": 1
     },
     {
       "text": "नहीं!",
-      "startMs": 6771,
-      "endMs": 7000,
+      "startMs": 7468,
+      "endMs": 7737,
       "scene": 1
     },
     {
       "text": "आपके",
-      "startMs": 7272,
-      "endMs": 7547,
+      "startMs": 8011,
+      "endMs": 8254,
       "scene": 2
     },
     {
       "text": "लिए",
-      "startMs": 7561,
-      "endMs": 7781,
+      "startMs": 8267,
+      "endMs": 8460,
       "scene": 2
     },
     {
       "text": "free",
-      "startMs": 7793,
-      "endMs": 8067,
+      "startMs": 8471,
+      "endMs": 8713,
       "scene": 2
     },
     {
       "text": "है.",
-      "startMs": 8082,
-      "endMs": 8247,
+      "startMs": 8726,
+      "endMs": 8871,
       "scene": 2
     },
     {
       "text": "पीछे",
-      "startMs": 8429,
-      "endMs": 8704,
+      "startMs": 9032,
+      "endMs": 9274,
       "scene": 2
     },
     {
       "text": "servers,",
-      "startMs": 8718,
-      "endMs": 9158,
+      "startMs": 9287,
+      "endMs": 9675,
       "scene": 2
     },
     {
       "text": "ledgers",
-      "startMs": 9355,
-      "endMs": 9795,
+      "startMs": 9849,
+      "endMs": 10236,
       "scene": 2
     },
     {
       "text": "और",
-      "startMs": 9818,
-      "endMs": 9983,
+      "startMs": 10257,
+      "endMs": 10402,
       "scene": 2
     },
     {
       "text": "fraud",
-      "startMs": 9991,
-      "endMs": 10321,
+      "startMs": 10410,
+      "endMs": 10701,
       "scene": 2
     },
     {
       "text": "checks",
-      "startMs": 10338,
-      "endMs": 10723,
+      "startMs": 10716,
+      "endMs": 11056,
       "scene": 2
     },
     {
       "text": "चलते",
-      "startMs": 10743,
-      "endMs": 11018,
+      "startMs": 11073,
+      "endMs": 11316,
       "scene": 2
     },
     {
       "text": "हैं.",
-      "startMs": 11033,
-      "endMs": 11253,
+      "startMs": 11329,
+      "endMs": 11522,
       "scene": 2
     },
     {
       "text": "बिल",
-      "startMs": 11438,
-      "endMs": 11658,
+      "startMs": 11686,
+      "endMs": 11880,
       "scene": 2
     },
     {
       "text": "कोई",
-      "startMs": 11669,
-      "endMs": 11889,
+      "startMs": 11890,
+      "endMs": 12084,
       "scene": 2
     },
     {
       "text": "तो",
-      "startMs": 11901,
-      "endMs": 12066,
+      "startMs": 12094,
+      "endMs": 12240,
       "scene": 2
     },
     {
       "text": "भरता",
-      "startMs": 12074,
-      "endMs": 12349,
+      "startMs": 12247,
+      "endMs": 12490,
       "scene": 2
     },
     {
       "text": "है.",
-      "startMs": 12364,
-      "endMs": 12529,
+      "startMs": 12502,
+      "endMs": 12648,
       "scene": 2
     },
     {
       "text": "छोटे",
-      "startMs": 12797,
-      "endMs": 13082,
+      "startMs": 12915,
+      "endMs": 13150,
       "scene": 3
     },
     {
       "text": "merchants",
-      "startMs": 13097,
-      "endMs": 13668,
+      "startMs": 13162,
+      "endMs": 13631,
       "scene": 3
     },
     {
       "text": "पे",
-      "startMs": 13698,
-      "endMs": 13869,
+      "startMs": 13655,
+      "endMs": 13796,
       "scene": 3
     },
     {
       "text": "MDR",
-      "startMs": 13878,
-      "endMs": 14106,
+      "startMs": 13803,
+      "endMs": 13991,
       "scene": 3
     },
     {
       "text": "zero",
-      "startMs": 14118,
-      "endMs": 14403,
+      "startMs": 14001,
+      "endMs": 14235,
       "scene": 3
     },
     {
       "text": "है.",
-      "startMs": 14418,
-      "endMs": 14589,
+      "startMs": 14247,
+      "endMs": 14388,
       "scene": 3
     },
     {
       "text": "Kharcha",
-      "startMs": 14778,
-      "endMs": 15235,
+      "startMs": 14543,
+      "endMs": 14918,
       "scene": 3
     },
     {
       "text": "banks",
-      "startMs": 15259,
-      "endMs": 15601,
+      "startMs": 14938,
+      "endMs": 15219,
       "scene": 3
     },
     {
       "text": "और",
-      "startMs": 15619,
-      "endMs": 15790,
+      "startMs": 15234,
+      "endMs": 15374,
       "scene": 3
     },
     {
       "text": "apps",
-      "startMs": 15799,
-      "endMs": 16084,
+      "startMs": 15382,
+      "endMs": 15616,
       "scene": 3
     },
     {
       "text": "उठाते",
-      "startMs": 16099,
-      "endMs": 16442,
+      "startMs": 15628,
+      "endMs": 15910,
       "scene": 3
     },
     {
       "text": "हैं,",
-      "startMs": 16460,
-      "endMs": 16688,
+      "startMs": 15924,
+      "endMs": 16112,
       "scene": 3
     },
     {
       "text": "सरकार",
-      "startMs": 16880,
-      "endMs": 17222,
+      "startMs": 16270,
+      "endMs": 16551,
       "scene": 3
     },
     {
       "text": "subsidy",
-      "startMs": 17240,
-      "endMs": 17696,
+      "startMs": 16566,
+      "endMs": 16940,
       "scene": 3
     },
     {
       "text": "देती",
-      "startMs": 17720,
-      "endMs": 18006,
+      "startMs": 16960,
+      "endMs": 17194,
       "scene": 3
     },
     {
       "text": "है.",
-      "startMs": 18021,
-      "endMs": 18192,
+      "startMs": 17207,
+      "endMs": 17347,
       "scene": 3
     },
     {
       "text": "Twist:",
-      "startMs": 18461,
-      "endMs": 18822,
+      "startMs": 17615,
+      "endMs": 18005,
       "scene": 4
     },
     {
       "text": "बड़े",
-      "startMs": 19031,
-      "endMs": 19332,
+      "startMs": 18230,
+      "endMs": 18555,
       "scene": 4
     },
     {
       "text": "merchant",
-      "startMs": 19348,
-      "endMs": 19889,
+      "startMs": 18572,
+      "endMs": 19157,
       "scene": 4
     },
     {
       "text": "payments",
-      "startMs": 19918,
-      "endMs": 20460,
+      "startMs": 19188,
+      "endMs": 19773,
       "scene": 4
     },
     {
       "text": "पे",
-      "startMs": 20488,
-      "endMs": 20669,
+      "startMs": 19804,
+      "endMs": 19999,
       "scene": 4
     },
     {
       "text": "0.4%",
-      "startMs": 20678,
-      "endMs": 20859,
+      "startMs": 20009,
+      "endMs": 20204,
       "scene": 4
     },
     {
       "text": "MDR",
-      "startMs": 20868,
-      "endMs": 21109,
+      "startMs": 20214,
+      "endMs": 20474,
       "scene": 4
     },
     {
       "text": "announce",
-      "startMs": 21122,
-      "endMs": 21664,
+      "startMs": 20488,
+      "endMs": 21073,
       "scene": 4
     },
     {
       "text": "हुआ",
-      "startMs": 21692,
-      "endMs": 21933,
+      "startMs": 21104,
+      "endMs": 21364,
       "scene": 4
     },
     {
       "text": "है,",
-      "startMs": 21946,
-      "endMs": 22126,
+      "startMs": 21377,
+      "endMs": 21572,
       "scene": 4
     },
     {
       "text": "पर",
-      "startMs": 22326,
-      "endMs": 22506,
+      "startMs": 21788,
+      "endMs": 21983,
       "scene": 4
     },
     {
       "text": "rollout",
-      "startMs": 22516,
-      "endMs": 22997,
+      "startMs": 21993,
+      "endMs": 22513,
       "scene": 4
     },
     {
       "text": "अभी",
-      "startMs": 23023,
-      "endMs": 23263,
+      "startMs": 22540,
+      "endMs": 22800,
       "scene": 4
     },
     {
       "text": "postponed",
-      "startMs": 23276,
-      "endMs": 23878,
+      "startMs": 22814,
+      "endMs": 23464,
       "scene": 4
     },
     {
       "text": "है.",
-      "startMs": 23910,
-      "endMs": 24090,
+      "startMs": 23498,
+      "endMs": 23693,
       "scene": 4
     },
     {
       "text": "दोस्त",
-      "startMs": 24360,
-      "endMs": 24653,
+      "startMs": 23963,
+      "endMs": 24294,
       "scene": 5
     },
     {
       "text": "को",
-      "startMs": 24668,
-      "endMs": 24815,
+      "startMs": 24312,
+      "endMs": 24477,
       "scene": 5
     },
     {
       "text": "भेजना",
-      "startMs": 24823,
-      "endMs": 25116,
+      "startMs": 24486,
+      "endMs": 24817,
       "scene": 5
     },
     {
       "text": "और",
-      "startMs": 25131,
-      "endMs": 25278,
+      "startMs": 24835,
+      "endMs": 25000,
       "scene": 5
     },
     {
       "text": "छोटे",
-      "startMs": 25286,
-      "endMs": 25530,
+      "startMs": 25009,
+      "endMs": 25285,
       "scene": 5
     },
     {
       "text": "दुकानदार",
-      "startMs": 25543,
-      "endMs": 25983,
+      "startMs": 25299,
+      "endMs": 25796,
       "scene": 5
     },
     {
       "text": "free",
-      "startMs": 26006,
-      "endMs": 26250,
+      "startMs": 25822,
+      "endMs": 26098,
       "scene": 5
     },
     {
       "text": "रहेंगे.",
-      "startMs": 26263,
-      "endMs": 26605,
+      "startMs": 26113,
+      "endMs": 26499,
       "scene": 5
     },
     {
       "text": "Fee",
-      "startMs": 26777,
-      "endMs": 26973,
+      "startMs": 26693,
+      "endMs": 26914,
       "scene": 5
     },
     {
       "text": "merchant",
-      "startMs": 26983,
-      "endMs": 27423,
+      "startMs": 26926,
+      "endMs": 27422,
       "scene": 5
     },
     {
       "text": "भरेगा,",
-      "startMs": 27446,
-      "endMs": 27739,
+      "startMs": 27449,
+      "endMs": 27780,
       "scene": 5
     },
     {
       "text": "आप",
-      "startMs": 27909,
-      "endMs": 28056,
+      "startMs": 27971,
+      "endMs": 28137,
       "scene": 5
     },
     {
       "text": "नहीं.",
-      "startMs": 28063,
-      "endMs": 28308,
+      "startMs": 28146,
+      "endMs": 28422,
       "scene": 5
     },
     {
       "text": "जो",
-      "startMs": 28580,
-      "endMs": 28758,
+      "startMs": 28696,
+      "endMs": 28888,
       "scene": 6
     },
     {
       "text": "चीज़",
-      "startMs": 28767,
-      "endMs": 29063,
+      "startMs": 28899,
+      "endMs": 29219,
       "scene": 6
     },
     {
       "text": "दिखे",
-      "startMs": 29078,
-      "endMs": 29374,
+      "startMs": 29236,
+      "endMs": 29557,
       "scene": 6
     },
     {
       "text": "free,",
-      "startMs": 29390,
-      "endMs": 29685,
+      "startMs": 29574,
+      "endMs": 29894,
       "scene": 6
     },
     {
       "text": "पीछे",
-      "startMs": 29888,
-      "endMs": 30184,
+      "startMs": 30114,
+      "endMs": 30434,
       "scene": 6
     },
     {
       "text": "भरता",
-      "startMs": 30199,
-      "endMs": 30495,
+      "startMs": 30451,
+      "endMs": 30772,
       "scene": 6
     },
     {
       "text": "कोई",
-      "startMs": 30510,
-      "endMs": 30747,
+      "startMs": 30789,
+      "endMs": 31045,
       "scene": 6
     },
     {
       "text": "बिल.",
-      "startMs": 30759,
-      "endMs": 30996,
+      "startMs": 31059,
+      "endMs": 31315,
       "scene": 6
     },
     {
       "text": "दोस्त",
-      "startMs": 31195,
-      "endMs": 31550,
+      "startMs": 31531,
+      "endMs": 31916,
       "scene": 6
     },
     {
       "text": "को",
-      "startMs": 31569,
-      "endMs": 31746,
+      "startMs": 31936,
+      "endMs": 32128,
       "scene": 6
     },
     {
       "text": "भेजो.",
-      "startMs": 31755,
-      "endMs": 32051,
+      "startMs": 32139,
+      "endMs": 32459,
       "scene": 6
     }
   ]
