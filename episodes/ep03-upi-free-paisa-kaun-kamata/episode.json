@@ -14,10 +14,12 @@
     "#codinginhindi",
     "#upi"
   ],
-  "caption": "UPI free hai, toh paisa kaun kamata hai? UPI MDR explained in Hindi\n\nIs reel ko us dost ko bhejo jo kehta hai 'UPI toh free hai'.\n\nChhote merchants pe MDR zero hai, par servers, banks aur fraud checks ka kharcha free nahi. Use banks, apps aur sarkari subsidy uthate hain, aur ab bade merchant payments pe MDR aa chuka hai.\nYeh paisa ka explainer hai, investment advice nahi.\n\nSave karo interview ke liye.",
+  "caption": "UPI free hai, toh paisa kaun kamata hai? UPI MDR explained in Hindi\n\nIs reel ko us dost ko bhejo jo kehta hai 'UPI toh free hai'.\n\nChhote merchants pe MDR zero hai, par servers, banks aur fraud checks ka kharcha free nahi. Use banks, apps aur sarkari subsidy uthate hain, aur bade merchant payments (Rs 2000+) pe 0.4% MDR announce hua hai, par NPCI ne rollout postpone kar diya hai, naya date abhi aana baaki hai.\nYeh paisa ka explainer hai, investment advice nahi.\n\nSave karo interview ke liye.",
   "sources": [
     "https://inc42.com/buzz/npci-sets-0-4-mdr-on-p2m-upi-transactions-over-₹2000/",
-    "https://inc42.com/features/upis-monetisation-moment-why-mdr-is-back-on-the-table/"
+    "https://inc42.com/features/upis-monetisation-moment-why-mdr-is-back-on-the-table/",
+    "https://www.outlookmoney.com/banking/upi-mdr-charges-when-will-new-merchant-transaction-fees-take-effect",
+    "https://www.outlookindia.com/national/upi-payments-above-2000-what-changes-from-october-15"
   ],
   "scenes": [
     {
@@ -99,10 +101,10 @@
       "type": "solution",
       "mood": "comeback",
       "tag": "TWIST",
-      "kicker": "AB BADLAV",
-      "title": "Bade payments pe MDR",
-      "sub": "chhote merchants aur P2P ab bhi free",
-      "vo": "अब बदलाव: बड़े merchant payments पे MDR लगा है. P2P और छोटे दुकानदार free हैं."
+      "kicker": "AB BADLAV?",
+      "title": "0.4% MDR aa raha",
+      "sub": "Rs 2000+ merchant payments pe · abhi postponed",
+      "vo": "Twist: बड़े merchant payments पे 0.4% MDR announce हुआ है, पर rollout अभी postponed है."
     },
     {
       "type": "compare",
@@ -112,17 +114,17 @@
         "title": "Free rahega",
         "items": [
           "dost ko paisa bhejna",
-          "chhote merchants"
+          "chhote dukandaar"
         ]
       },
       "right": {
-        "title": "Fee lagegi",
+        "title": "Lagu hone pe fee",
         "items": [
-          "bade merchant payments",
-          "bank, PSP, app mein split"
+          "Rs 2000+ merchant payments",
+          "merchant bharega, aap nahi"
         ]
       },
-      "vo": "Fee issuer bank, payer के PSP और app providers में बँटती है."
+      "vo": "दोस्त को भेजना और छोटे दुकानदार free रहेंगे. Fee merchant भरेगा, आप नहीं."
     },
     {
       "type": "rule",
