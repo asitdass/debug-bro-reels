@@ -24,6 +24,8 @@ investment advice), `interview` (a classic system-design question, roasted), `ai
 - Every real-world number, date or incident you say out loud needs a source you opened with `WebFetch`. Put the URLs
   in `sources`. If you can't verify a number, don't say it; use words like "लाखों" instead.
 - Animated counters may use illustrative numbers, but the voice-over must not claim them as facts.
+- Policies, fees and launches change: check the **current** status (announced vs postponed vs in effect) with a
+  search for news from the last 2 weeks, and say exactly that status in the `vo` and caption.
 - Never claim how a specific company implements something unless a source (engineering blog, talk, official post)
   says so. Say "ऐसे systems में" for the general pattern.
 - No stock tips, no medical/legal advice, nothing about private individuals, no logos or show thumbnails.
