@@ -24,6 +24,8 @@ export function loadProps(slug, {allowEstimate = true} = {}) {
   if (fs.existsSync(tPath)) timings = JSON.parse(fs.readFileSync(tPath, 'utf8'));
   else if (allowEstimate) timings = estimateTimings(episode);
   else throw new Error(`No timings.json for ${slug}; run the voice step first`);
+  // timings.json is committed but voice.mp3 is not: before the voice step runs (review frames), render silent
+  if (timings.audio && !fs.existsSync(path.join(ROOT, 'public', timings.audio))) timings = {...timings, audio: null};
   return {episode, timings};
 }
 
