@@ -17,8 +17,8 @@ image = (
     modal.Image.debian_slim(python_version="3.12")
     .apt_install("git")
     .pip_install(
-        "torch==2.7.1",
-        "transformers>=4.51,<5",
+        "torch==2.9.1",
+        "transformers",
         "accelerate",
         "safetensors",
         "sentencepiece",
