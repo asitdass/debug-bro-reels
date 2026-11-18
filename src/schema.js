@@ -124,6 +124,8 @@ export const episodeSchema = z.object({
     .default({engine: 'edge'}),
   caption: str(2000),
   hashtags: z.array(z.string().regex(/^#\w+$/)).min(1).max(5),
+  // search keywords for Instagram SEO, shown in the caption as [keyword] [keyword]
+  keywords: z.array(z.string().min(3).max(40)).min(3).max(8).optional(),
   coverText: str(40),
   music: z.string().optional(),
   beat: z.boolean().optional(),

@@ -20,6 +20,7 @@ jobs:
       PUBLIC_MEDIA_BASE: ${{ secrets.PUBLIC_MEDIA_BASE }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      POST_MODE: ${{ vars.POST_MODE || 'manual' }}
       IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.instagram.com' }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -35,10 +36,15 @@ jobs:
         if: github.event.schedule != '30 6 * * 3,6'
         run: node pipeline/metrics.mjs
 
+      - name: ffmpeg (prebuilt, avoids slow apt mirrors)
+        if: github.event.schedule == '30 6 * * 3,6' || github.event_name == 'workflow_dispatch'
+        uses: AnimMouse/setup-ffmpeg@v1
+        continue-on-error: true
       - name: Carousel
+        timeout-minutes: 30
         if: github.event.schedule == '30 6 * * 3,6' || github.event_name == 'workflow_dispatch'
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          command -v ffprobe >/dev/null || timeout 420 sudo apt-get install -y -qq --no-install-recommends ffmpeg
           SLUG=$(node -e "const p=require('./data/published.json').filter(x=>x.kind==='reel');console.log(p.at(-1)?.slug||'')")
           [ -z "$SLUG" ] && { echo "nothing published yet"; exit 0; }
           # slides need the episode's timings; regenerate them silently if the voice files aren't in the repo

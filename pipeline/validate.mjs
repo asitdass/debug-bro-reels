@@ -43,6 +43,7 @@ export function validate(slug) {
     warnings.push('last scene should ask viewers to comment or send the reel');
   if (!ep.sources?.length) warnings.push('no sources listed; every real-world number or incident needs one');
   if (ep.hashtags.length > 3) warnings.push('Instagram limits hashtags; 3 focused tags work best');
+  if (!ep.keywords?.length) warnings.push('add 5-7 search keywords in "keywords" (shown as [keyword] in the caption)');
 
   const published = readJSON(path.join(ROOT, 'data/published.json'), []);
   const dupe = published.find((p) => p.slug !== slug && p.topic?.toLowerCase() === ep.topic.toLowerCase());

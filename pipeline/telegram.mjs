@@ -45,6 +45,33 @@ export async function askApproval({video, caption, slug}) {
   return fallback;
 }
 
+/** Plain text message (Telegram limit 4096 chars). */
+export async function sendText(text) {
+  const r = await (
+    await fetch(api('sendMessage'), {
+      method: 'POST',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({chat_id: env('TELEGRAM_CHAT_ID'), text: text.slice(0, 4096), disable_web_page_preview: true}),
+    })
+  ).json();
+  if (!r.ok) throw new Error(`Telegram sendMessage: ${JSON.stringify(r)}`);
+}
+
+/** One photo, or an album of up to 10, with a caption on the first. */
+export async function sendPhotos(files, caption) {
+  const form = new FormData();
+  form.append('chat_id', env('TELEGRAM_CHAT_ID'));
+  if (files.length === 1) {
+    form.append('caption', caption.slice(0, 1000));
+    form.append('photo', new Blob([fs.readFileSync(files[0])], {type: 'image/jpeg'}), path.basename(files[0]));
+    return (await fetch(api('sendPhoto'), {method: 'POST', body: form})).json();
+  }
+  const media = files.slice(0, 10).map((f, i) => ({type: 'photo', media: `attach://p${i}`, ...(i === 0 ? {caption: caption.slice(0, 1000)} : {})}));
+  form.append('media', JSON.stringify(media));
+  files.slice(0, 10).forEach((f, i) => form.append(`p${i}`, new Blob([fs.readFileSync(f)], {type: 'image/jpeg'}), path.basename(f)));
+  return (await fetch(api('sendMediaGroup'), {method: 'POST', body: form})).json();
+}
+
 /** Sends a video without buttons (dry-run previews). */
 export async function sendPreview({video, caption}) {
   await sendWithRetry(video, caption.slice(0, 1000));

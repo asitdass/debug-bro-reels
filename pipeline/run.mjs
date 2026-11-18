@@ -5,6 +5,9 @@
 //   npm run reel -- --no-publish         stop after rendering
 //   npm run reel -- --only=voice|render|publish|carousel
 //   npm run reel -- --trial              publish as a Trial Reel
+//
+// POST_MODE=manual (default while the Meta API is blocked): nothing is posted. The reel, its cover and the ready-to-paste
+// caption (with [keywords] and hashtags) go to Telegram, and the episode is logged as delivered. POST_MODE=auto posts.
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -50,11 +53,15 @@ async function main() {
   let files;
   if (want('render')) files = await renderReel(slug);
 
+  const caption = fullCaption(episode);
+
   if (args['no-publish'] || (only && !['publish', 'carousel'].includes(only))) {
-    // dry run: still send the preview to your phone so you can watch it
+    // dry run: still send the preview + caption to your phone so you can watch it
     if (files?.video && process.env.TELEGRAM_BOT_TOKEN) {
-      const {sendPreview} = await import('./telegram.mjs');
-      await sendPreview({video: files.video, caption: `Preview (not posted): ${slug}`}).catch((e) => log(`preview not sent: ${e.message}`));
+      const {sendPreview, sendText} = await import('./telegram.mjs');
+      faststart(files.video);
+      await sendPreview({video: files.video, caption: `Preview (not logged): ${slug}`}).catch((e) => log(`preview not sent: ${e.message}`));
+      await sendText(caption).catch(() => {});
     }
     return;
   }
@@ -65,7 +72,27 @@ async function main() {
     cover: path.join(dir, 'cover.jpg'),
     slides: fs.readdirSync(dir).filter((f) => f.startsWith('slide-')).sort().map((f) => path.join(dir, f)),
   };
-  const caption = `${episode.caption}\n\n${episode.hashtags.join(' ')}`;
+
+  if ((process.env.POST_MODE || 'manual') === 'manual') {
+    const {sendPreview, sendText, sendPhotos} = await import('./telegram.mjs');
+    if (only === 'carousel') {
+      await sendPhotos(files.slides, `Carousel for ${slug}: post these slides in this order.`);
+      await sendText(caption);
+      return;
+    }
+    faststart(files.video);
+    const reviewFile = path.join(outDir(slug), 'review.md');
+    const review = fs.existsSync(reviewFile) ? fs.readFileSync(reviewFile, 'utf8').trim().split('\n').slice(-1)[0] : '';
+    await sendPreview({
+      video: files.video,
+      caption: `Debug Bro ${String(episode.number).padStart(2, '0')}: ready to post\n${episode.title}\n\nCaption is in the next message (tap and hold to copy). Post between 6 and 9 pm.${review ? `\n\n${review}` : ''}`,
+    });
+    if (fs.existsSync(files.cover)) await sendPhotos([files.cover], 'Cover (optional: set it in Edit cover)').catch(() => {});
+    await sendText(caption);
+    record({kind: 'reel', delivered: 'telegram'});
+    log('sent to Telegram for manual posting');
+    return;
+  }
 
   if (!process.env.IG_ACCESS_TOKEN) {
     log(`rendered → ${files.video}`);
@@ -133,6 +160,12 @@ async function main() {
     list.push({slug, topic: episode.topic, pillar: episode.pillar, title: episode.title, postedAt: new Date().toISOString(), ...extra});
     writeJSON(PUBLISHED, list);
   }
+}
+
+/** Instagram caption: the text, then search keywords in [brackets], then hashtags. */
+export function fullCaption(episode) {
+  const kw = (episode.keywords ?? []).map((k) => `[${k}]`).join(' ');
+  return [episode.caption, kw, episode.hashtags.join(' ')].filter(Boolean).join('\n\n').slice(0, 2200);
 }
 
 /** Moves the MP4 index to the front of the file (Instagram processes such files more reliably). */

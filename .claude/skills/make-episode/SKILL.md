@@ -87,6 +87,9 @@ the fix, `comeback` (amber) for compare/twist. **Tags** (`PROBLEM`, `SOLUTION`, 
 **Caption**: line 1 = the topic in search words ("Tatkal booking crash kyun hoti hai? System design in Hindi"),
 line 2 = the send prompt, then 2–3 lines of the key takeaway, then "Save karo interview ke liye." Exactly 3 hashtags,
 specific (`#systemdesign #codinginhindi` + one topic tag). `coverText` = 3–5 punchy words.
+`keywords` = 5–7 lowercase phrases people actually type into Instagram search, shown as `[keyword]` in the caption:
+2–3 about the topic in Hinglish/English ("upi kaise kaam karta hai", "upi free kyun hai"), 1–2 for the exact
+concept ("mdr charges"), and 2 for the niche ("system design in hindi", "coding in hindi"). No hashtags, no emoji.
 
 Voice: set `"voice": {"engine": "sarvam"}`. Sarvam's reel voices alternate by episode number (odd = Sunny,
 even = Ritu); a scene with `"speaker": "alt"` is read by the other one. Use alt for the interviewer/"15 LPA" chat

@@ -25,9 +25,13 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+      - name: ffmpeg (prebuilt, avoids slow apt mirrors)
+        uses: AnimMouse/setup-ffmpeg@v1
+        continue-on-error: true
       - name: Install
+        timeout-minutes: 12
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          command -v ffprobe >/dev/null || (timeout 420 sudo apt-get install -y -qq --no-install-recommends ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg))
           pip install -r requirements.txt
           npm ci
       - name: Voice + render
