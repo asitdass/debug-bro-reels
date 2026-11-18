@@ -28,13 +28,13 @@
       "beat": "hook",
       "mood": "problem",
       "tick": [
-        "₹10",
+        "₹10 CHAI",
         "PAID",
         "FEE ₹0"
       ],
       "setup": "chai · UPI · 10 rupees",
-      "error": "FEE ₹0 · SERVER BILL ₹???",
-      "question": "Bill kaun bharta hai?",
+      "error": "SERVER BILL ₹???",
+      "question": "Bill kaun bharta?",
       "cap": "₹10 ki chai. Fee *zero*.",
       "vo": "दस रुपये की chai, UPI से. Fee zero. बिल कौन भरता है?"
     },
@@ -74,16 +74,12 @@
           "sub": "route karta hai"
         },
         {
-          "label": "Aapka bank",
-          "sub": "debit"
-        },
-        {
-          "label": "Dukaan ka bank",
-          "sub": "credit"
+          "label": "Dono banks",
+          "sub": "debit + credit"
         }
       ],
-      "cap": "Peeche *4* players",
-      "vo": "हर tap के पीछे app, NPCI का switch और दो banks चलते हैं."
+      "cap": "Peeche *3* players",
+      "vo": "हर tap के पीछे app, NPCI का switch और banks चलते हैं."
     },
     {
       "type": "solution",
@@ -165,7 +161,7 @@
       "beat": "cta",
       "mood": "solution",
       "rule": "जो चीज़ दिखे free, पीछे भरता कोई बिल; free के पीछे भी होता है, किसी का पैसा, किसी का दिल।",
-      "cta": "Comment karo: fee lagni chahiye? Haan ya na",
+      "cta": "Comment karo: fee haan ya na?",
       "next": "Next: credit card points ka asli maths",
       "cap": "Fee *haan* ya na?",
       "vo": "जो चीज़ दिखे free, पीछे भरता कोई बिल. Comment करो: fee लगनी चाहिए? हाँ या ना?"
