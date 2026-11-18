@@ -4,6 +4,8 @@ import {Background, Captions, Header, useFonts} from './components/chrome';
 import {FilmLook, PartLabel, TopCaptions, captionWords} from './components/editorial';
 import {Pill, ramp} from './components/ui';
 import {SCENES, sceneSfx} from './scenes/scenes';
+import {Mascot, MascotTrack, PoseName, poseFor} from './components/Mascot';
+import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {C, FONT, MOOD} from './theme';
 
 export type ReelProps = {
@@ -40,6 +42,26 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
   const mood = episode.scenes[cur]?.mood ?? 'neutral';
   const prevMood = episode.scenes[Math.max(0, cur - 1)]?.mood ?? 'neutral';
   const blend = cur === 0 ? 1 : ramp(frame, starts[cur], starts[cur] + 14);
+  const withMascot = episode.mascot !== false;
+  const track: MascotTrack = React.useMemo(() => {
+    const out: MascotTrack = [];
+    let prev: PoseName | undefined;
+    episode.scenes.forEach((s: any, i: number) => {
+      prev = poseFor(s, i, prev);
+      out.push({at: starts[i], pose: prev});
+    });
+    return out;
+  }, [episode, starts.join(',')]);
+  const audioData = useAudioData(timings.audio && withMascot ? staticFile(timings.audio) : staticFile('sfx/tick.wav'));
+  // mouth follows the voice loudness, only while Debug Bro himself speaks (not the "alt" voice)
+  const mouth = (fr: number) => {
+    if (!audioData || !timings.audio) return 0;
+    const sc = episode.scenes[cur];
+    if (sc?.speaker === 'alt') return 0;
+    const v = visualizeAudio({fps, frame: fr, audioData, numberOfSamples: 32, optimizeFor: 'speed'});
+    const lvl = v.slice(0, 12).reduce((a, b) => a + b, 0) / 12;
+    return Math.min(1, Math.max(0, (lvl - 0.015) * 9));
+  };
 
   return (
     <AbsoluteFill style={{background: C.bg, fontFamily: FONT.sans}}>
@@ -66,11 +88,22 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
             ))}
             <SceneShell dur={durs[i]}>
               <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} />
-              <Comp s={s} dur={durs[i]} />
+              {withMascot ? (
+                <AbsoluteFill style={{transform: 'scale(0.84)', transformOrigin: '50% 500px'}}>
+                  <Comp s={s} dur={durs[i]} />
+                </AbsoluteFill>
+              ) : (
+                <Comp s={s} dur={durs[i]} />
+              )}
             </SceneShell>
           </Sequence>
         );
       })}
+      {withMascot ? (
+        <div style={{position: 'absolute', left: -10, top: 1110, filter: 'drop-shadow(0 18px 40px #000a)'}}>
+          <Mascot track={track} mouth={mouth} width={430} seed={episode.slug ?? 'db'} />
+        </div>
+      ) : null}
       <FilmLook />
       {hideCaptions ? null : episode.scenes.some((s: any) => s.cap) ? (
         <TopCaptions words={captionWords(episode, timings)} />

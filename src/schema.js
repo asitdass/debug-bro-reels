@@ -18,6 +18,8 @@ const base = {
   beat: z.string().max(16).optional(),
   // "alt" = read by the second voice (Swara if the episode's main voice is Madhur, and vice versa)
   speaker: z.enum(['main', 'alt']).optional(),
+  // Debug Bro mascot pose for this scene; leave out to pick one from the beat
+  pose: z.enum(['idle', 'point', 'explain', 'think', 'shock', 'facepalm', 'thumbsup', 'shrug', 'crossed', 'laugh']).optional(),
 };
 
 const str = (max) => z.string().min(1).max(max);
@@ -125,6 +127,8 @@ export const episodeSchema = z.object({
   coverText: str(40),
   music: z.string().optional(),
   beat: z.boolean().optional(),
+  // false hides the Debug Bro mascot
+  mascot: z.boolean().optional(),
   sources: z.array(z.string().url()).optional(),
   scenes: z.array(sceneSchema).min(5).max(16),
 });

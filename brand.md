@@ -55,3 +55,8 @@ line you'll remember. For developers and curious app users, 18–30, India.
 3. Is anything overlapping (caption over a card, text over text)?
 4. Would this frame make someone stop scrolling? If it's just a box with text, add motion or a bigger visual.
 5. Does the first frame alone make you want to know what happens next?
+
+## Mascot
+Debug Bro is a flat vector puppet of Asit (src/components/Mascot.tsx): curly hair, full beard, open dotted charcoal
+shirt over a blue-white striped tee, tan-strap watch. He stands bottom-left (top of head at ~1150 px), reacts to each
+beat with a pose and lip-syncs the main voice. Scene content is scaled to 84% so it stays clear of him.

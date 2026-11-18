@@ -4,6 +4,7 @@ import {Cover, Reel, ReelProps} from './Reel';
 import {FPS, H, W} from './theme';
 import sample from '../episodes/sample.json';
 import {estimateTimings} from './estimate';
+import {MascotSheet} from './components/MascotSheet';
 
 const sampleProps: ReelProps = {episode: sample, timings: estimateTimings(sample)};
 
@@ -22,5 +23,6 @@ export const Root: React.FC = () => (
       })}
     />
     <Still id="Cover" component={Cover as any} width={W} height={H} defaultProps={{episode: sample} as any} />
+    <Still id="MascotSheet" component={MascotSheet} width={1600} height={1500} />
   </>
 );

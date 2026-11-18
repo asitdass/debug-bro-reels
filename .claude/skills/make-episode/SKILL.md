@@ -53,6 +53,10 @@ Copy the shape of `episodes/ep03-upi-free-paisa-kaun-kamata/episode.json` (the c
 After writing, the workflow renders frames and Claude reviews them against brand.md, so make the first frame
 strong enough to stop a scroll on its own.
 
+**Mascot**: Debug Bro (a cartoon of Asit) stands bottom-left in every reel, lip-syncing the voice. His pose comes from
+the scene's `beat`; set `"pose"` on a scene to override it (idle, point, explain, think, shock, facepalm, thumbsup,
+shrug, crossed, laugh) when a reaction fits the line better, e.g. `laugh` on a joke.
+
 **Voice-over (`vo`)**: Hinglish the way Indian devs talk. Hindi words in Devanagari, tech words in English
 (`database`, `Redis`, `queue`). Short sentences, max ~25 words per scene. Write numbers in words when spoken
 ("सैंतीस हज़ार"). The captions show `vo` word by word, so spell it exactly as it should appear.
