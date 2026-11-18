@@ -5,14 +5,15 @@ import {Avatar, Card, Cursor, Icon, Label, Pill, clamp01, ramp, typed, usePop} f
 
 type P<T = any> = {s: T; dur: number};
 
+// Scene art lives in the lower two-thirds; the top third belongs to the captions.
 const Stage: React.FC<{children: React.ReactNode; style?: React.CSSProperties}> = ({children, style}) => (
   <div
     style={{
       position: 'absolute',
-      top: 300,
+      top: 500,
       left: 70,
       right: 70,
-      height: 980,
+      height: 1000,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

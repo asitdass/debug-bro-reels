@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Background, Captions, Header, useFonts} from './components/chrome';
+import {FilmLook, PartLabel, TopCaptions, captionWords} from './components/editorial';
 import {Pill, ramp} from './components/ui';
 import {SCENES, sceneSfx} from './scenes/scenes';
 import {C, FONT, MOOD} from './theme';
@@ -64,17 +65,18 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
               </Sequence>
             ))}
             <SceneShell dur={durs[i]}>
-              {s.tag ? (
-                <div style={{position: 'absolute', top: 205, left: 70}}>
-                  <Pill text={s.tag} color={TAG_COLOR[s.mood ?? 'neutral']} style={{fontSize: 22, padding: '6px 16px'}} />
-                </div>
-              ) : null}
+              <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} />
               <Comp s={s} dur={durs[i]} />
             </SceneShell>
           </Sequence>
         );
       })}
-      {hideCaptions ? null : <Captions words={timings.words} />}
+      <FilmLook />
+      {hideCaptions ? null : episode.scenes.some((s: any) => s.cap) ? (
+        <TopCaptions words={captionWords(episode, timings)} />
+      ) : (
+        <Captions words={timings.words} />
+      )}
     </AbsoluteFill>
   );
 };

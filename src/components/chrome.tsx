@@ -25,6 +25,8 @@ export const useFonts = () => {
       '800 30px "JetBrains Mono"',
       '500 30px "Noto Sans Devanagari"',
       '700 30px "Noto Sans Devanagari"',
+      '400 30px "Instrument Serif"',
+      'italic 400 30px "Instrument Serif"',
     ];
     Promise.all(specs.map((s) => document.fonts.load(s, 'aअ')))
       .then(() => document.fonts.ready)

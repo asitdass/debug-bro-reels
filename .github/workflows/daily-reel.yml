@@ -70,7 +70,7 @@ jobs:
 
       - name: Clean the Claude token
         id: tok
-        if: steps.plan.outputs.skip != 'yes' && steps.plan.outputs.slug == ''
+        if: steps.plan.outputs.skip != 'yes'
         env:
           RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
@@ -108,6 +108,48 @@ jobs:
           git diff --cached --quiet || git commit -m "episode: $(ls -t episodes | head -1)"
           git pull --rebase -q && git push
 
+      - name: Pick the episode
+        id: ep
+        if: steps.plan.outputs.skip != 'yes'
+        run: |
+          SLUG="${{ steps.plan.outputs.slug }}"
+          [ -z "$SLUG" ] && SLUG=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const n=eps.filter(e=>!p.includes(e[0]));console.log(n.length?n[0][0]:'')")
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "episode: $SLUG"
+
+      - name: Render review frames
+        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != ''
+        run: node pipeline/review-stills.mjs "${{ steps.ep.outputs.slug }}"
+
+      - name: Claude reviews the frames
+        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != ''
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ steps.tok.outputs.token }}
+          prompt: |
+            You are the art director for the Debug Bro reel "${{ steps.ep.outputs.slug }}".
+            1. Read brand.md (especially "Frame review checklist") and episodes/${{ steps.ep.outputs.slug }}/episode.json.
+            2. Look at every image out/${{ steps.ep.outputs.slug }}/review-*.jpg (review-01 is the first frame people see).
+            3. For each frame, check the checklist. If a frame fails, fix it by editing ONLY text fields in episode.json
+               (cap, vo, question, setup, error, labels, items, title, sub, code, rule, cta). Keep every fact and its
+               status exactly as sourced. Then run `node pipeline/validate.mjs ${{ steps.ep.outputs.slug }}` until OK.
+            4. Write out/${{ steps.ep.outputs.slug }}/review.md: one line per frame (PASS or FIXED: what), then one line
+               "Hook strength: x/10 because ...".
+            Do not edit src/, pipeline/ or any other file. Do not commit.
+          claude_args: >-
+            --max-turns 40
+            --allowedTools "Read,Edit,Write,Glob,Bash(node pipeline/validate.mjs:*),Bash(ls:*)"
+
+      - name: Save review fixes
+        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != ''
+        run: |
+          git config user.name "debug-bro-bot"
+          git config user.email "debug-bro-bot@users.noreply.github.com"
+          [ -f "out/${{ steps.ep.outputs.slug }}/review.md" ] && cat "out/${{ steps.ep.outputs.slug }}/review.md"
+          git add episodes
+          git diff --cached --quiet || (git commit -m "review: ${{ steps.ep.outputs.slug }}" && git pull --rebase -q && git push)
+
       - name: Voice, render, approve, publish
         if: steps.plan.outputs.skip != 'yes'
         env:
@@ -130,7 +172,7 @@ jobs:
           APPROVAL_DEFAULT: ${{ vars.APPROVAL_DEFAULT || 'approve' }}
         run: |
           ARGS=""
-          [ -n "${{ steps.plan.outputs.slug }}" ] && ARGS="--slug=${{ steps.plan.outputs.slug }}"
+          [ -n "${{ steps.ep.outputs.slug }}" ] && ARGS="--slug=${{ steps.ep.outputs.slug }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then
             ARGS="$ARGS --no-publish"
           fi

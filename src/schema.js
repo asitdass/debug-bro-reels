@@ -12,6 +12,10 @@ const base = {
   mood,
   // Small pill shown under the header, e.g. "PROBLEM", "SOLUTION".
   tag: z.string().max(32).optional(),
+  // Roman Hinglish caption shown on screen (2–5 words per line); wrap exactly one accent word in *asterisks*.
+  cap: z.string().max(90).optional(),
+  // story beat label shown as "// 03 — break": hook, setup, break, reveal, twist, payoff, cta
+  beat: z.string().max(16).optional(),
   // "alt" = read by the second voice (Swara if the episode's main voice is Madhur, and vice versa)
   speaker: z.enum(['main', 'alt']).optional(),
 };
@@ -105,6 +109,8 @@ export const episodeSchema = z.object({
   series: z.string().default('SYSTEM DESIGN'),
   title: str(80),
   topic: str(120),
+  // the one metaphor the whole episode is built on, e.g. "UPI = toll booth on a highway"
+  world: z.string().max(80).optional(),
   pillar: z.enum(['everyday-tech', 'money-tech', 'interview', 'ai-tools']),
   voice: z
     .object({
@@ -120,7 +126,7 @@ export const episodeSchema = z.object({
   music: z.string().optional(),
   beat: z.boolean().optional(),
   sources: z.array(z.string().url()).optional(),
-  scenes: z.array(sceneSchema).min(5).max(14),
+  scenes: z.array(sceneSchema).min(5).max(16),
 });
 
 // Timings produced by pipeline/tts.py (or estimated when engine = silent).

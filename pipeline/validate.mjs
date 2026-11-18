@@ -22,7 +22,8 @@ export function validate(slug) {
   if (ep.slug !== slug) errors.push(`slug "${ep.slug}" must match folder "${slug}"`);
   if (!['coldopen', 'hook'].includes(ep.scenes[0].type)) errors.push('first scene must be a "coldopen" (preferred) or "hook"');
   if (ep.scenes[0].type === 'hook') warnings.push('prefer a "coldopen": show the failure in the first second');
-  if (ep.scenes.length > 10) warnings.push(`${ep.scenes.length} scenes; 6–9 keeps a 30 s reel punchy`);
+  if (ep.scenes.length < 8) warnings.push(`${ep.scenes.length} scenes; 9–14 gives a new picture every 1–2 s`);
+  if (!ep.world) warnings.push('no "world": pick one metaphor for the whole episode (brand.md)');
   if (ep.scenes.at(-1).type !== 'rule') errors.push('last scene must be a "rule" (payoff + send prompt)');
 
   const words = ep.scenes.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
@@ -30,13 +31,16 @@ export function validate(slug) {
   if (words < 55) warnings.push(`voice-over is only ${words} words (≈${Math.round(words / 3)} s)`);
   ep.scenes.forEach((s, i) => {
     const n = s.vo.trim().split(/\s+/).length;
-    if (n > 22) errors.push(`scene ${i + 1}: vo has ${n} words; split it (max 22, a new visual every ~2–5 s)`);
+    const max = ['coldopen', 'rule'].includes(s.type) ? 18 : 13;
+    if (n > max) errors.push(`scene ${i + 1}: vo has ${n} words; split it into two scenes (max ${max})`);
+    if (!s.cap) warnings.push(`scene ${i + 1}: no "cap" (Roman Hinglish caption)`);
+    else if ((s.cap.match(/\*[^*]+\*/g) || []).length !== 1) errors.push(`scene ${i + 1}: cap needs exactly one *accent* word`);
     if (n < 4) warnings.push(`scene ${i + 1}: vo has only ${n} words, the scene may flash by`);
     const onScreen = JSON.stringify({...s, vo: undefined});
     if (EMOJI.test(onScreen)) errors.push(`scene ${i + 1}: no emoji in on-screen text (fonts can't render them)`);
   });
-  if (!/(भेजो|bhejo|send)/i.test(ep.scenes.at(-1).cta + ep.scenes.at(-1).vo))
-    warnings.push('last scene should ask viewers to send the reel to someone');
+  if (!/(भेजो|bhejo|send|comment)/i.test(ep.scenes.at(-1).cta + ep.scenes.at(-1).vo))
+    warnings.push('last scene should ask viewers to comment or send the reel');
   if (!ep.sources?.length) warnings.push('no sources listed; every real-world number or incident needs one');
   if (ep.hashtags.length > 3) warnings.push('Instagram limits hashtags; 3 focused tags work best');
 

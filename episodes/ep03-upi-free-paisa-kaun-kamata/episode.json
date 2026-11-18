@@ -14,125 +14,162 @@
     "#codinginhindi",
     "#upi"
   ],
-  "caption": "UPI free hai, toh paisa kaun kamata hai? UPI MDR explained in Hindi\n\nIs reel ko us dost ko bhejo jo kehta hai 'UPI toh free hai'.\n\nChhote merchants pe MDR zero hai, par servers, banks aur fraud checks ka kharcha free nahi. Use banks, apps aur sarkari subsidy uthate hain, aur bade merchant payments (Rs 2000+) pe 0.4% MDR announce hua hai, par NPCI ne rollout postpone kar diya hai, naya date abhi aana baaki hai.\nYeh paisa ka explainer hai, investment advice nahi.\n\nSave karo interview ke liye.",
+  "caption": "UPI free hai, toh bill kaun bharta hai? UPI MDR explained in Hindi 🧾\n\nComment karo: fee lagni chahiye? Haan ya na. Aur us dost ko bhejo jo kehta hai 'UPI toh free hai'.\n\nMerchant fee (MDR) abhi zero hai; kharcha banks aur apps uthate hain, sarkar incentive deti aayi hai (₹1,500 cr, FY25).\nRs 2000+ merchant payments pe 0.4% MDR announce hua, par NPCI ne rollout postpone kiya hai, naya date abhi nahi aaya.\n\nYeh explainer hai, financial advice nahi. Save karo interview ke liye.",
   "sources": [
     "https://inc42.com/buzz/npci-sets-0-4-mdr-on-p2m-upi-transactions-over-₹2000/",
     "https://inc42.com/features/upis-monetisation-moment-why-mdr-is-back-on-the-table/",
     "https://www.outlookmoney.com/banking/upi-mdr-charges-when-will-new-merchant-transaction-fees-take-effect",
-    "https://www.outlookindia.com/national/upi-payments-above-2000-what-changes-from-october-15"
+    "https://www.outlookindia.com/national/upi-payments-above-2000-what-changes-from-october-15",
+    "https://www.newsonair.gov.in/cabinet-approves-incentive-scheme-for-promotion-of-low-value-bhim-upi-transactions/"
   ],
   "scenes": [
     {
       "type": "coldopen",
+      "beat": "hook",
       "mood": "problem",
       "tick": [
-        "Rs 10",
-        "Rs 10",
-        "Rs 0 fee"
+        "₹10",
+        "₹10",
+        "FEE ₹0"
       ],
-      "setup": "chai wale ko UPI se Rs 10",
-      "error": "Fee = Rs 0. Kharcha = ?",
-      "question": "Toh paisa kaun kamata hai?",
-      "vo": "UPI में fee zero. पर servers और banks का kharcha है. तो paisa कौन कमाता है?"
+      "setup": "chai · UPI · 10 rupees",
+      "error": "FEE ₹0 · SERVER BILL ₹???",
+      "question": "Bill kaun bharta hai?",
+      "cap": "₹10 ki chai. Fee *zero*.",
+      "vo": "दस रुपये की chai, UPI से. Fee zero. बिल कौन भरता है?"
     },
     {
       "type": "chat",
+      "beat": "setup",
       "mood": "neutral",
-      "tag": "INTERVIEW",
       "speaker": "alt",
       "messages": [
         {
           "side": "left",
           "name": "Interviewer",
-          "text": "UPI free hai. Business model kya hai?"
+          "text": "UPI free hai. Business model?"
         },
         {
           "side": "right",
           "name": "Candidate",
           "badge": "15 LPA",
-          "text": "Free hai na, matlab koi kharcha nahi!"
+          "text": "Free hai, toh kharcha bhi zero!"
         }
       ],
-      "vo": "पंद्रह LPA वाला बोला: free है, kharcha नहीं!"
-    },
-    {
-      "type": "compare",
-      "mood": "problem",
-      "tag": "PROBLEM",
-      "left": {
-        "title": "Aapke liye",
-        "items": [
-          "fee zero",
-          "bas QR scan"
-        ]
-      },
-      "right": {
-        "title": "System ke liye",
-        "items": [
-          "servers 24x7",
-          "bank ledgers",
-          "fraud checks"
-        ]
-      },
-      "vo": "आपके लिए free है. पीछे servers, ledgers और fraud checks चलते हैं. बिल कोई तो भरता है."
+      "cap": "15 LPA: free hai toh *kharcha* zero",
+      "vo": "पंद्रह LPA वाला: free है, तो kharcha भी zero!"
     },
     {
       "type": "flow",
-      "mood": "solution",
-      "tag": "SOLUTION",
-      "packet": "paisa",
+      "beat": "break",
+      "mood": "problem",
+      "packet": "₹10",
       "nodes": [
         {
-          "label": "Merchant",
-          "sub": "MDR zero"
+          "label": "Aapka app",
+          "sub": "PSP"
         },
         {
-          "label": "Banks + apps",
-          "sub": "kharcha unka"
+          "label": "NPCI switch",
+          "sub": "route karta hai"
         },
         {
-          "label": "Sarkar",
-          "sub": "subsidy deti hai"
+          "label": "Aapka bank",
+          "sub": "debit"
+        },
+        {
+          "label": "Dukaan ka bank",
+          "sub": "credit"
         }
       ],
-      "vo": "छोटे merchants पे MDR zero है. Kharcha banks और apps उठाते हैं, सरकार subsidy देती है."
+      "cap": "Har tap ke peeche *4* players",
+      "vo": "हर tap के पीछे app, NPCI का switch और दो banks चलते हैं."
     },
     {
       "type": "solution",
+      "beat": "reveal",
+      "mood": "solution",
+      "kicker": "ASLI JAWAB",
+      "title": "MDR = 0",
+      "sub": "merchant fee abhi zero",
+      "cap": "Merchant fee yaani *MDR*: zero",
+      "vo": "Asli jawab: merchant fee, यानी MDR, अभी zero है."
+    },
+    {
+      "type": "flow",
+      "beat": "reveal",
+      "mood": "solution",
+      "packet": "bill",
+      "nodes": [
+        {
+          "label": "Banks + apps",
+          "sub": "kharcha uthate hain"
+        },
+        {
+          "label": "Sarkar",
+          "sub": "incentive deti aayi hai"
+        }
+      ],
+      "cap": "Bill bharte *banks*, apps aur sarkar",
+      "vo": "Kharcha banks और apps उठाते हैं, सरकार incentive देती आई है."
+    },
+    {
+      "type": "counter",
+      "beat": "twist",
       "mood": "comeback",
-      "tag": "TWIST",
-      "kicker": "AB BADLAV?",
-      "title": "0.4% MDR aa raha",
-      "sub": "Rs 2000+ merchant payments pe · abhi postponed",
-      "vo": "Twist: बड़े merchant payments पे 0.4% MDR announce हुआ है, पर rollout अभी postponed है."
+      "label": "merchant payments above",
+      "from": 0,
+      "to": 2000,
+      "sub": "0.4% fee announce hui",
+      "tone": "amber",
+      "cap": "₹2000+ pe *0.4%* fee announced",
+      "vo": "Twist: ₹2000 से ऊपर के merchant payments पे 0.4% fee announce हुई."
+    },
+    {
+      "type": "code",
+      "beat": "twist",
+      "mood": "problem",
+      "label": "status check",
+      "code": "mdr_0_4 = \"announced\"\nrollout = \"postponed\"",
+      "highlight": [
+        "postponed"
+      ],
+      "verdict": "wrong",
+      "stamp": "postponed",
+      "cap": "Par rollout abhi *postponed*",
+      "vo": "पर rollout अभी postponed है. नई date NPCI ने नहीं बताई."
     },
     {
       "type": "compare",
+      "beat": "payoff",
       "mood": "comeback",
-      "tag": "FARAK",
       "left": {
-        "title": "Free rahega",
+        "title": "Lagu hone pe fee",
         "items": [
-          "dost ko paisa bhejna",
-          "chhote dukandaar"
+          "Rs 2000+ merchant pay",
+          "merchant bharega"
         ]
       },
       "right": {
-        "title": "Lagu hone pe fee",
+        "title": "Free rahega",
         "items": [
-          "Rs 2000+ merchant payments",
-          "merchant bharega, aap nahi"
+          "dost ko paisa",
+          "chhote dukandaar"
         ]
       },
-      "vo": "दोस्त को भेजना और छोटे दुकानदार free रहेंगे. Fee merchant भरेगा, आप नहीं."
+      "cap": "Fee lagi toh *merchant* bharega",
+      "vo": "दोस्त को भेजना free. Fee लगी तो merchant भरेगा, आप नहीं."
     },
     {
       "type": "rule",
+      "beat": "cta",
       "mood": "solution",
       "rule": "जो चीज़ दिखे free, पीछे भरता कोई बिल; free के पीछे भी होता है, किसी का पैसा, किसी का दिल।",
-      "cta": "UPI ko free samajhne wale dost ko bhejo",
-      "next": "Next: Credit card reward points ka asli maths",
-      "vo": "जो चीज़ दिखे free, पीछे भरता कोई बिल. दोस्त को भेजो."
+      "cta": "Comment karo: fee lagni chahiye? Haan ya na",
+      "next": "Next: credit card points ka asli maths",
+      "cap": "Comment: fee *haan* ya na?",
+      "vo": "जो चीज़ दिखे free, पीछे भरता कोई बिल. Comment करो: fee लगनी चाहिए? हाँ या ना?"
     }
-  ]
+  ],
+  "world": "UPI = free highway; banks and apps run the toll booths nobody sees"
 }

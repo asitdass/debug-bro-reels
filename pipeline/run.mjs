@@ -96,7 +96,10 @@ async function main() {
   faststart(files.video);
 
   if (process.env.TELEGRAM_BOT_TOKEN && process.env.APPROVAL !== 'off') {
-    const answer = await askApproval({video: files.video, caption, slug});
+    // put Claude's frame review on top of the Telegram message, if there is one
+    const reviewFile = path.join(outDir(slug), 'review.md');
+    const review = fs.existsSync(reviewFile) ? fs.readFileSync(reviewFile, 'utf8').trim().split('\n').slice(-1)[0] : '';
+    const answer = await askApproval({video: files.video, caption: review ? `${review}\n\n${caption}` : caption, slug});
     if (answer !== 'approve') {
       log('skipped by you on Telegram; not posting.');
       return;

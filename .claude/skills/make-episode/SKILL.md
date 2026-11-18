@@ -34,18 +34,24 @@ investment advice), `interview` (a classic system-design question, roasted), `ai
 `NN` = next number (count existing `episodes/ep*` folders + 1). `slug` field = folder name. Copy the shape of
 `episodes/ep01-tatkal-crash/episode.json`. The schema is `src/schema.js`.
 
-**The formula (a 30–35 s reel: 6–9 scenes, 70–100 words of voice-over, max ~20 words per scene).**
-Episode 1 (Tatkal, 68 s, slow hook) held viewers for only 6 s on average, so retention comes first:
-1. `coldopen` — the failure or the shocking number happens in the first second: `tick` (2–3 values counting up
-   to the moment, e.g. clock `09:59:59 → 10:00:00` or a viewer count), `setup` (context line), `error` (what broke
-   or the absurd load), `question` (4–6 words, ends in "?"). Its `vo` is one punchy line ending in the question.
-2. `chat` — interviewer asks; "Candidate" with badge "15 LPA" gives the confident naive answer. Give it
-   `"speaker": "alt"` so the second voice reads it. One line only.
-3. Problem, 1–2 scenes: `code` (`verdict: "wrong"`), `crash`, `hotrow`, `flood` or `counter` showing it break.
-4. Fix, 2–3 scenes: `solution` (pattern name), `flow` (request path), `batch`, `compare`.
-5. `rule` — a two-line दोहा, the send prompt ("… दोस्त को भेजो"), and a `next` teaser.
-Never pad: if a scene doesn't add a new picture or a new idea, cut it. Copy the shape of
-`episodes/ep02-cricket-live-scale/episode.json` (the new format), not ep01.
+**Read `brand.md` first: it is the style contract and overrides anything below.**
+
+**The formula (30–40 s: 9–14 scenes, 70–105 words of voice-over, max 12 words per scene; coldopen and rule up to 18).**
+Episodes 1–2 lost viewers in the first seconds because they read like a lecture. Every episode is now a short
+story inside ONE metaphor world (`world` field), with a new picture every 1–2 seconds:
+1. `coldopen` (beat `hook`) — the moment it breaks, in the first second: `tick` (2–3 values counting to the
+   moment), `setup`, `error`, `question` (4–6 words, ends in "?").
+2. `chat` (beat `setup`) — the "15 LPA" candidate's confident wrong answer, `"speaker": "alt"`.
+3. Break, 1–3 scenes (beat `break`): show it failing — `flow`, `crash`, `hotrow`, `flood`, `code` (`verdict: "wrong"`).
+4. Reveal, 2–3 scenes (beat `reveal`): `solution` (name the pattern), `flow`, `batch`.
+5. Twist, 1–2 scenes (beat `twist`): one surprising, sourced detail — `counter`, `code`, `compare`.
+6. `rule` (beat `cta`): the दोहा, then a one-word comment question ("Comment karo: Redis ya Kafka?"), `next` teaser.
+Every scene has `beat` and `cap`: the Roman-Hinglish caption (2–6 words) with exactly ONE accent word in
+*asterisks*, e.g. `"cap": "Par rollout abhi *postponed*"`. The caption is what people read; the `vo` is what the
+voice says. They should say the same thing, but `cap` is shorter.
+Copy the shape of `episodes/ep03-upi-free-paisa-kaun-kamata/episode.json` (the current format), not ep01/ep02.
+After writing, the workflow renders frames and Claude reviews them against brand.md, so make the first frame
+strong enough to stop a scroll on its own.
 
 **Voice-over (`vo`)**: Hinglish the way Indian devs talk. Hindi words in Devanagari, tech words in English
 (`database`, `Redis`, `queue`). Short sentences, max ~25 words per scene. Write numbers in words when spoken
