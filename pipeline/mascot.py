@@ -153,7 +153,7 @@ def ask_photos():
     if not photos:
         say("No photo arrived, so I stopped. Run the mascot workflow again when you're ready.")
         sys.exit(1)
-    say(f"Got {len(photos)} photo(s). Drawing 4 cartoon versions of you (first run downloads the model, ~10-15 min)…")
+    say(f"Got {len(photos)} photo(s). Drawing 4 cartoon versions of you (first run downloads the model, ~5 min)…")
     return photos
 
 
@@ -237,7 +237,7 @@ def main():
             (OUT / "master.png").write_bytes(master)
 
         for attempt in range(3):
-            say("Drawing the pose set (about 10 poses, ~15 min)…")
+            say("Drawing the pose set (11 poses, ~5 min)…")
             raw = {"crossed": master}
             for i, (name, pose) in enumerate(POSES.items()):
                 raw[name] = ed.edit.remote([master], KEEP + pose + ". " + FRAME, [seed_base + 100 * attempt + i])[0]
@@ -255,7 +255,7 @@ def main():
         for name, im in cut.items():
             im.save(OUT / f"{name}.png", optimize=True)
         (OUT / "mascot.json").write_text(json.dumps({
-            "poses": sorted(cut), "model": os.environ.get("EDIT_MODEL", "Qwen/Qwen-Image-Edit-2511"),
+            "poses": sorted(cut), "model": os.environ.get("EDIT_MODEL", "black-forest-labs/FLUX.2-klein-4B"),
             "style": STYLE, "look": LOOK, "seed": seed_base,
         }, indent=2))
         say("Mascot saved. It will show up in the next reels.")

@@ -30,6 +30,8 @@ jobs:
           MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          EDIT_MODEL: ${{ vars.EDIT_MODEL || 'black-forest-labs/FLUX.2-klein-4B' }}
+          MODAL_GPU: ${{ vars.MODAL_GPU || 'L4' }}
         run: python pipeline/mascot.py ${{ inputs.poses_only && '--poses-only' || '' }}
       - name: Keep the drafts for 7 days
         if: always()
