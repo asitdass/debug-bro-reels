@@ -29,7 +29,7 @@
       "mood": "problem",
       "tick": [
         "₹10",
-        "₹10",
+        "PAID",
         "FEE ₹0"
       ],
       "setup": "chai · UPI · 10 rupees",
@@ -56,7 +56,7 @@
           "text": "Free hai, toh kharcha bhi zero!"
         }
       ],
-      "cap": "15 LPA: free hai toh *kharcha* zero",
+      "cap": "15 LPA: *kharcha* bhi zero",
       "vo": "पंद्रह LPA वाला: free है, तो kharcha भी zero!"
     },
     {
@@ -82,7 +82,7 @@
           "sub": "credit"
         }
       ],
-      "cap": "Har tap ke peeche *4* players",
+      "cap": "Peeche *4* players",
       "vo": "हर tap के पीछे app, NPCI का switch और दो banks चलते हैं."
     },
     {
@@ -92,7 +92,7 @@
       "kicker": "ASLI JAWAB",
       "title": "MDR = 0",
       "sub": "merchant fee abhi zero",
-      "cap": "Merchant fee yaani *MDR*: zero",
+      "cap": "Merchant fee *MDR*: zero",
       "vo": "Asli jawab: merchant fee, यानी MDR, अभी zero है."
     },
     {
@@ -110,7 +110,7 @@
           "sub": "incentive deti aayi hai"
         }
       ],
-      "cap": "Bill bharte *banks*, apps aur sarkar",
+      "cap": "Bill: *banks*, apps, sarkar",
       "vo": "Kharcha banks और apps उठाते हैं, सरकार incentive देती आई है."
     },
     {
@@ -146,7 +146,7 @@
       "left": {
         "title": "Lagu hone pe fee",
         "items": [
-          "Rs 2000+ merchant pay",
+          "Rs 2000+ pay",
           "merchant bharega"
         ]
       },
@@ -167,7 +167,7 @@
       "rule": "जो चीज़ दिखे free, पीछे भरता कोई बिल; free के पीछे भी होता है, किसी का पैसा, किसी का दिल।",
       "cta": "Comment karo: fee lagni chahiye? Haan ya na",
       "next": "Next: credit card points ka asli maths",
-      "cap": "Comment: fee *haan* ya na?",
+      "cap": "Fee *haan* ya na?",
       "vo": "जो चीज़ दिखे free, पीछे भरता कोई बिल. Comment करो: fee लगनी चाहिए? हाँ या ना?"
     }
   ],
