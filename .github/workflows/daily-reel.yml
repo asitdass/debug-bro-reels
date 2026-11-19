@@ -134,7 +134,7 @@ jobs:
           prompt: |
             You are the art director for the Debug Bro reel "${{ steps.ep.outputs.slug }}".
             1. Read brand.md (especially "Frame review checklist") and episodes/${{ steps.ep.outputs.slug }}/episode.json.
-            2. Look at every image out/${{ steps.ep.outputs.slug }}/review-*.jpg (review-01 is the first frame people see).
+            2. Look at every image out/${{ steps.ep.outputs.slug }}/review-*.jpg (review-01 is the first frame people see: it must show the hook clearly, never a blank or half-faded frame).
             3. For each frame, check the checklist. If a frame fails, fix it by editing ONLY text fields in episode.json
                (cap, vo, line, question, setup, error, labels, items, title, sub, desc, example, headline, place, stamp, code, rule, cta). Keep every fact and its
                status exactly as sourced. Then run `node pipeline/validate.mjs ${{ steps.ep.outputs.slug }}` until OK.

@@ -93,10 +93,9 @@ export const Board: React.FC<P> = ({s, dur}) => {
           padding: '40px 46px 70px',
           position: 'relative',
           transform: `translateY(${(1 - board) * 60}px)`,
-          opacity: board,
         }}
       >
-        <Draw at={2} len={14}>
+        <Draw at={-1} len={10}>
           <div style={{fontFamily: HAND, fontWeight: 700, fontSize: items.length ? 78 : 104, color: MARKER, textAlign: 'center', lineHeight: 1.12, paddingTop: items.length ? 0 : 90}}>
             {parts.length === 2 ? (
               <>
@@ -248,7 +247,6 @@ export const Headline: React.FC<P> = ({s, dur}) => {
           overflow: 'hidden',
           boxShadow: '0 30px 80px #000a',
           transform: `translateY(${(1 - pop) * 80}px) rotate(${(1 - pop) * -2}deg)`,
-          opacity: pop,
         }}
       >
         <div style={{background: th.accent, color: '#fff', fontFamily: FONT.mono, fontWeight: 800, fontSize: 30, letterSpacing: 4, padding: '16px 34px', display: 'flex', justifyContent: 'space-between'}}>
@@ -325,13 +323,13 @@ export const Tip: React.FC<P> = ({s, dur}) => {
 export const Moment: React.FC<P> = ({s, dur}) => {
   const frame = useCurrentFrame();
   const th = useTheme();
-  const line = usePop(6);
+  const line = usePop(0); // visible from frame 0: this is often the scroll-stopping first frame
   const stamp = usePop(Math.round(Math.min(dur * 0.45, 40)));
   const flicker = 0.85 + Math.sin(frame / 3) * 0.04;
   return (
     <Stage>
       <div style={{position: 'absolute', inset: -100, background: `radial-gradient(ellipse 520px 620px at 50% 45%, ${th.accent}2a, transparent 70%)`, opacity: flicker}} />
-      <div style={{fontFamily: FONT.mono, fontSize: 32, letterSpacing: 6, color: th.muted, fontWeight: 700, opacity: interpolate(frame, [0, 8], [0, 1], clamp)}}>
+      <div style={{fontFamily: FONT.mono, fontSize: 32, letterSpacing: 6, color: th.muted, fontWeight: 700}}>
         {String(s.place ?? '').toUpperCase()}
       </div>
       <div
@@ -344,8 +342,7 @@ export const Moment: React.FC<P> = ({s, dur}) => {
           letterSpacing: -3,
           color: th.ink,
           textAlign: 'center',
-          transform: `translateY(${(1 - line) * 40}px)`,
-          opacity: line,
+          transform: `scale(${1.12 - line * 0.12})`,
           textWrap: 'balance',
         } as React.CSSProperties}
       >
