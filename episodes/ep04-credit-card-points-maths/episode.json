@@ -68,12 +68,8 @@
           "sub": "bill banata hai"
         },
         {
-          "label": "Payment processor",
-          "sub": "hissa kaatta hai"
-        },
-        {
-          "label": "Aapka bank",
-          "sub": "hissa kaatta hai"
+          "label": "Processor + bank",
+          "sub": "hissa kaatte hain"
         }
       ],
       "cap": "Dukaan ko poora *nahi* milta",
