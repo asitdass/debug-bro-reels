@@ -3,10 +3,11 @@ name: Daily reel
 # Daily at ~18:05 IST a Claude scheduled task triggers this workflow (scheduled=true); GitHub's own cron below is only
 # a backup because it often starts hours late. The "plan" step posts at most one reel per day, only 17:00-23:30 IST.
 on:
-  schedule:
-    - cron: "45 12 * * *"
-    - cron: "40 13 * * *"
-    - cron: "30 14 * * *"
+  # schedule paused on request (19 Nov 2026): reels are made only when Asit asks. To resume, restore:
+  # schedule:
+  #   - cron: "45 12 * * *"
+  #   - cron: "40 13 * * *"
+  #   - cron: "30 14 * * *"
   workflow_dispatch:
     inputs:
       publish:

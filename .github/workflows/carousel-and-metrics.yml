@@ -1,9 +1,10 @@
 name: Carousel + metrics
 
 on:
-  schedule:
-    - cron: "0 2 * * *"     # 07:30 IST daily: pull Insights
-    - cron: "30 6 * * 3,6"  # 12:00 IST Wed + Sat: carousel cheat-sheet of the latest reel
+  # schedule paused on request (19 Nov 2026). To resume, restore:
+  # schedule:
+  #   - cron: "0 2 * * *"     # 07:30 IST daily: pull Insights
+  #   - cron: "30 6 * * 3,6"  # 12:00 IST Wed + Sat: carousel cheat-sheet of the latest reel
   workflow_dispatch:
 
 jobs:
