@@ -1,0 +1,176 @@
+{
+  "slug": "ep04-credit-card-points-maths",
+  "number": 4,
+  "series": "SYSTEM DESIGN",
+  "title": "Credit card points free kyun milte hain?",
+  "topic": "Credit card reward points: merchant fee (MDR) and interchange fund the rewards, and why banks are trimming them",
+  "world": "Card swipe = a bill slice cut at the counter",
+  "pillar": "money-tech",
+  "format": "desi-story",
+  "leadMagnet": {
+    "keyword": "CARDMATHS",
+    "promise": "Points ka maths cheat sheet"
+  },
+  "voice": {
+    "engine": "sarvam"
+  },
+  "coverText": "Points free nahi hain",
+  "hashtags": [
+    "#creditcardindia",
+    "#moneytech",
+    "#codinginhindi"
+  ],
+  "caption": "Credit card swipe pe 5X points kaise milte hain, bank free mein kyun deta hai? Credit card reward points explained in Hindi.\n\nComment CARDMATHS, points ka maths cheat sheet DM mein bhejta hoon.\n\nUs dost ko bhejo jo points ke chakkar mein extra kharcha karta hai.\n\nSwipe ke baad dukaandaar ko poora paisa nahi milta: usse merchant fee (MDR) kategi, jisme bank ka interchange hissa hota hai. Credit card pe yeh fee lagbhag 1% se 3% tak hoti hai. Aam taur pe rewards isi fee se nikalte hain.\nBanks ab profitability dekh rahe hain: HDFC Regalia Gold pe 15 May 2026 se 4 points per Rs 150 ki jagah 5 points per Rs 200.\n\nYeh explainer hai, financial ya investment advice nahi. Save karo, kaam aayega.",
+  "keywords": [
+    "credit card points kaise milte hain",
+    "credit card rewards kaise kaam karte",
+    "interchange fee kya hai",
+    "mdr charges credit card",
+    "system design in hindi",
+    "coding in hindi"
+  ],
+  "sources": [
+    "https://www.businesstoday.in/personal-finance/banking/story/credit-card-rewards-reset-hdfc-sbi-axis-tighten-benefits-spend-linked-perks-take-centre-stage-524485-2026-04-07",
+    "https://razorpay.com/blog/wp-json/wp/v2/posts/17884"
+  ],
+  "scenes": [
+    {
+      "type": "moment",
+      "beat": "hook",
+      "mood": "neutral",
+      "place": "Mall billing counter, 8:40 PM",
+      "line": "Card swipe. Screen: 5X points!",
+      "stamp": "5X POINTS",
+      "cap": "Swipe kiya. *5X* points!",
+      "vo": "Billing counter. Card swipe किया. Screen बोली, पाँच X points!"
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "intern",
+      "react": "think",
+      "line": "Bhaiya, bank free mein points kyun deta hai?",
+      "vo": "Bhaiya, bank free में points क्यों देता है?"
+    },
+    {
+      "type": "flow",
+      "beat": "break",
+      "mood": "problem",
+      "packet": "Rs 1000",
+      "nodes": [
+        {
+          "label": "Aap swipe karo",
+          "sub": "card machine"
+        },
+        {
+          "label": "Dukaan",
+          "sub": "bill banata hai"
+        },
+        {
+          "label": "Payment processor",
+          "sub": "hissa kaatta hai"
+        },
+        {
+          "label": "Aapka bank",
+          "sub": "hissa kaatta hai"
+        }
+      ],
+      "cap": "Dukaan ko poora *nahi* milta",
+      "vo": "Dukaan को पूरा पैसा नहीं मिलता. Processor और bank हिस्सा काटते हैं."
+    },
+    {
+      "type": "solution",
+      "beat": "reveal",
+      "mood": "solution",
+      "kicker": "ASLI NAAM",
+      "title": "Interchange fee",
+      "sub": "merchant bharta hai, bank ko milta hai",
+      "cap": "Naam: *interchange* fee",
+      "vo": "इस कटौती को MDR कहते हैं. Bank का हिस्सा interchange कहलाता है."
+    },
+    {
+      "type": "counter",
+      "beat": "reveal",
+      "mood": "comeback",
+      "label": "credit card merchant fee, %",
+      "from": 0,
+      "to": 3,
+      "sub": "lagbhag 1% se 3% tak",
+      "tone": "amber",
+      "cap": "Fee: *1 se 3* percent",
+      "vo": "Credit card पे ये fee लगभग एक से तीन percent होती है."
+    },
+    {
+      "type": "compare",
+      "beat": "twist",
+      "mood": "comeback",
+      "left": {
+        "title": "Aapko dikhta hai",
+        "items": [
+          "5X points",
+          "lounge access"
+        ]
+      },
+      "right": {
+        "title": "Peeche ka sach",
+        "items": [
+          "dukaan ki fee",
+          "bank ka hissa"
+        ]
+      },
+      "cap": "Points ka *paisa* kahan se?",
+      "vo": "आम तौर पर rewards इसी fee से आते हैं. आप swipe करो, bank कमाता."
+    },
+    {
+      "type": "code",
+      "beat": "twist",
+      "mood": "problem",
+      "label": "HDFC Regalia Gold, 15 May 2026",
+      "code": "before: 4 pts / Rs 150\nafter:  5 pts / Rs 200",
+      "highlight": [
+        "5 pts / Rs 200"
+      ],
+      "verdict": "wrong",
+      "stamp": "RATE CUT",
+      "cap": "Ab rewards *ghat* rahe hain",
+      "vo": "इसीलिए rewards घटते हैं. Regalia Gold: पाँच points per दो सौ."
+    },
+    {
+      "type": "board",
+      "beat": "payoff",
+      "mood": "solution",
+      "title": "Points ka asli maths",
+      "layout": "checks",
+      "items": [
+        {
+          "label": "Rate padho",
+          "sub": "points per kitne rupaye",
+          "icon": "1"
+        },
+        {
+          "label": "Redeem rules",
+          "sub": "multiples aur caps",
+          "icon": "2"
+        },
+        {
+          "label": "Extra kharcha nahi",
+          "sub": "sirf zaroorat pe swipe",
+          "icon": "3"
+        }
+      ],
+      "cap": "Points ke liye kharcha *mat* karo",
+      "vo": "Rate पढ़ो, redeem rules देखो, points के लिए extra खर्चा मत करो."
+    },
+    {
+      "type": "dialog",
+      "beat": "cta",
+      "mood": "solution",
+      "who": "bro",
+      "react": "laugh",
+      "pose": "thumbsup",
+      "line": "Comment CARDMATHS, cheat sheet DM mein!",
+      "vo": "Comment CARDMATHS, points का maths cheat sheet DM में भेजता हूँ."
+    }
+  ]
+}

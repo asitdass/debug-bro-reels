@@ -3,7 +3,7 @@
 Tick a topic (`- [x]`) when its episode is written. Add new ideas anywhere. Claude picks the first unticked
 topic of the chosen pillar unless there's a fresher trending event.
 
-**Promised next (teased at the end of ep03):** Credit card reward points ka asli maths (money-tech)
+**Promised next:** (none yet; pick the next unticked topic)
 
 ## everyday-tech
 - [x] Tatkal 10 baje crash kyun hota hai? (thundering herd, waiting room, Redis counter)
@@ -21,7 +21,7 @@ topic of the chosen pillar unless there's a fresher trending event.
 
 ## money-tech
 - [x] UPI free hai, toh paisa kaun kamata hai? (MDR, PSP economics, switch costs)
-- [ ] Credit card reward points ka asli maths (interchange fees)
+- [x] Credit card reward points ka asli maths (interchange fees)
 - [ ] Paytm/PhonePe cashback kaise afford karte hain? (CAC, float, cross-sell)
 - [ ] Zepto/Blinkit pe "handling fee" kyun lagti hai? (unit economics)
 - [ ] Bank transfer 2 second mein kaise hota hai? (IMPS/NPCI switch, ledgers)
