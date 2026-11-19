@@ -72,6 +72,15 @@ export async function sendPhotos(files, caption) {
   return (await fetch(api('sendMediaGroup'), {method: 'POST', body: form})).json();
 }
 
+/** Any file as a document (PDF freebie). */
+export async function sendFile(file, caption) {
+  const form = new FormData();
+  form.append('chat_id', env('TELEGRAM_CHAT_ID'));
+  form.append('caption', caption.slice(0, 1000));
+  form.append('document', new Blob([fs.readFileSync(file)]), path.basename(file));
+  return (await fetch(api('sendDocument'), {method: 'POST', body: form})).json();
+}
+
 /** Sends a video without buttons (dry-run previews). */
 export async function sendPreview({video, caption}) {
   await sendWithRetry(video, caption.slice(0, 1000));

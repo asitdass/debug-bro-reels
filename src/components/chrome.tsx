@@ -11,6 +11,9 @@ import '@fontsource/noto-sans-devanagari/500.css';
 import '@fontsource/noto-sans-devanagari/700.css';
 import {C, FONT, MOOD, W} from '../theme';
 import {clamp01} from './ui';
+import {useTheme} from './themeContext';
+import '@fontsource/kalam/400.css';
+import '@fontsource/kalam/700.css';
 
 /** Blocks rendering until the web fonts are loaded, so no frame renders with fallback fonts. */
 export const useFonts = () => {
@@ -27,6 +30,8 @@ export const useFonts = () => {
       '700 30px "Noto Sans Devanagari"',
       '400 30px "Instrument Serif"',
       'italic 400 30px "Instrument Serif"',
+      '400 30px "Kalam"',
+      '700 30px "Kalam"',
     ];
     Promise.all(specs.map((s) => document.fonts.load(s, 'aअ')))
       .then(() => document.fonts.ready)
@@ -36,6 +41,29 @@ export const useFonts = () => {
 
 export const Background: React.FC<{mood: string; prevMood: string; blend: number}> = ({mood, prevMood, blend}) => {
   const frame = useCurrentFrame();
+  const th = useTheme();
+  if (!th.dark) {
+    const drift = Math.sin(frame / 60) * 30;
+    return (
+      <AbsoluteFill style={{background: `linear-gradient(170deg, ${th.bg} 0%, ${th.bg} 55%, ${th.bg2} 100%)`}}>
+        <AbsoluteFill style={{background: `radial-gradient(ellipse 800px 700px at ${W / 2 + drift}px 760px, #ffffff66, transparent 70%)`}} />
+        <AbsoluteFill
+          style={{
+            backgroundImage: `radial-gradient(${th.ink}14 2px, transparent 2px)`,
+            backgroundSize: '44px 44px',
+            backgroundPosition: `0 ${(frame * 0.4) % 44}px`,
+          }}
+        />
+      </AbsoluteFill>
+    );
+  }
+  if (th.name !== 'story') {
+    return (
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 1100px 1300px at 50% 35%, ${th.bg2}, ${th.bg} 75%)`}}>
+        <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, transparent 55%, #000a 100%)'}} />
+      </AbsoluteFill>
+    );
+  }
   const drift = Math.sin(frame / 50) * 40;
   const glow = (color: string, opacity: number) => (
     <AbsoluteFill
@@ -72,6 +100,7 @@ export const Header: React.FC<{series: string; number: number; sceneStarts: numb
   sceneDurs,
 }) => {
   const frame = useCurrentFrame();
+  const th = useTheme();
   return (
     <div style={{position: 'absolute', top: 120, left: 70, right: 70}}>
       <div
@@ -81,12 +110,12 @@ export const Header: React.FC<{series: string; number: number; sceneStarts: numb
           fontFamily: FONT.mono,
           fontSize: 24,
           letterSpacing: 4,
-          color: C.muted,
+          color: th.muted,
           fontWeight: 700,
         }}
       >
-        <span style={{color: C.text}}>
-          DEBUG<span style={{color: C.green}}>_</span>BRO
+        <span style={{color: th.ink}}>
+          DEBUG<span style={{color: th.dark ? C.green : th.accent}}>_</span>BRO
         </span>
         <span>
           {series.toUpperCase()} · {String(number).padStart(2, '0')}
@@ -96,8 +125,8 @@ export const Header: React.FC<{series: string; number: number; sceneStarts: numb
         {sceneStarts.map((s, i) => {
           const p = clamp01((frame - s) / Math.max(1, sceneDurs[i]));
           return (
-            <div key={i} style={{flex: 1, height: 5, borderRadius: 3, background: `${C.line}`, overflow: 'hidden'}}>
-              <div style={{width: `${p * 100}%`, height: '100%', background: C.text}} />
+            <div key={i} style={{flex: 1, height: 5, borderRadius: 3, background: th.dark ? C.line : `${th.ink}22`, overflow: 'hidden'}}>
+              <div style={{width: `${p * 100}%`, height: '100%', background: th.ink}} />
             </div>
           );
         })}

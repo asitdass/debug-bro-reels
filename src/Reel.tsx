@@ -6,7 +6,11 @@ import {Pill, ramp} from './components/ui';
 import {SCENES, sceneSfx} from './scenes/scenes';
 import {Mascot, MascotTrack, PoseName, poseFor} from './components/Mascot';
 import {useAudioData, visualizeAudio} from '@remotion/media-utils';
-import {C, FONT, MOOD} from './theme';
+import {C, FONT, MOOD, themeFor} from './theme';
+import {FORMAT_SCENES, FULL_FRAME} from './scenes/formats';
+import {MouthCtx, ThemeCtx} from './components/themeContext';
+
+const ALL_SCENES: Record<string, React.FC<any>> = {...SCENES, ...FORMAT_SCENES};
 
 export type ReelProps = {
   episode: any;
@@ -54,17 +58,21 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
   }, [episode, starts.join(',')]);
   const audioData = useAudioData(timings.audio && withMascot ? staticFile(timings.audio) : staticFile('sfx/tick.wav'));
   // mouth follows the voice loudness, only while Debug Bro himself speaks (not the "alt" voice)
-  const mouth = (fr: number) => {
+  const level = (fr: number) => {
     if (!audioData || !timings.audio) return 0;
-    const sc = episode.scenes[cur];
-    if (sc?.speaker === 'alt') return 0;
     const v = visualizeAudio({fps, frame: fr, audioData, numberOfSamples: 32, optimizeFor: 'speed'});
     const lvl = v.slice(0, 12).reduce((a, b) => a + b, 0) / 12;
     return Math.min(1, Math.max(0, (lvl - 0.015) * 9));
   };
+  const mouth = (fr: number) => (episode.scenes[cur]?.speaker === 'alt' || episode.scenes[cur]?.who === 'intern' ? 0 : level(fr));
+  const th = themeFor(episode);
+  const fullFrame = FULL_FRAME.has(episode.scenes[cur]?.type);
+  const hideBro = fullFrame ? ramp(frame, starts[cur], starts[cur] + 6) : cur > 0 && FULL_FRAME.has(episode.scenes[cur - 1]?.type) ? 1 - ramp(frame, starts[cur], starts[cur] + 8) : 0;
 
   return (
-    <AbsoluteFill style={{background: C.bg, fontFamily: FONT.sans}}>
+    <ThemeCtx.Provider value={th}>
+    <MouthCtx.Provider value={level}>
+    <AbsoluteFill style={{background: th.bg, fontFamily: FONT.sans}}>
       <Background mood={mood} prevMood={prevMood} blend={blend} />
       {timings.audio ? <Audio src={staticFile(timings.audio)} /> : null}
       {episode.music ? (
@@ -76,7 +84,7 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
         <Header series={episode.series ?? 'SYSTEM DESIGN'} number={episode.number} sceneStarts={starts} sceneDurs={durs} />
       </div>
       {episode.scenes.map((s: any, i: number) => {
-        const Comp = SCENES[s.type];
+        const Comp = ALL_SCENES[s.type];
         if (!Comp) return null;
         return (
           <Sequence key={i} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
@@ -88,7 +96,7 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
             ))}
             <SceneShell dur={durs[i]}>
               <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} />
-              {withMascot ? (
+              {withMascot && !FULL_FRAME.has(s.type) ? (
                 <AbsoluteFill style={{transform: 'scale(0.84)', transformOrigin: '50% 500px'}}>
                   <Comp s={s} dur={durs[i]} />
                 </AbsoluteFill>
@@ -100,7 +108,7 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
         );
       })}
       {withMascot ? (
-        <div style={{position: 'absolute', left: -10, top: 1110, filter: 'drop-shadow(0 18px 40px #000a)'}}>
+        <div style={{position: 'absolute', left: -10, top: 1110, opacity: 1 - hideBro, filter: th.dark ? 'drop-shadow(0 18px 40px #000a)' : 'drop-shadow(0 12px 24px #0003)'}}>
           <Mascot track={track} mouth={mouth} width={430} seed={episode.slug ?? 'db'} />
         </div>
       ) : null}
@@ -111,6 +119,8 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
         <Captions words={timings.words} />
       )}
     </AbsoluteFill>
+    </MouthCtx.Provider>
+    </ThemeCtx.Provider>
   );
 };
 

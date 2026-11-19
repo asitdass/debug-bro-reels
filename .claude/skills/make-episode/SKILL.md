@@ -10,15 +10,21 @@ Debug Bro (@debug_bro) makes 35–55 s Hinglish reels that explain the system de
 Your job is the creative part only: pick the topic, get the facts right, write `episode.json`. The Node pipeline
 does voice, animation, rendering and posting. Do not touch `src/` or `pipeline/`.
 
-## 1. Pick the topic
-1. Read `data/published.json` (never repeat a topic) and `data/metrics.json` if it exists.
-   Prefer the pillar with the highest `sendsPerReach`; give each other pillar at least one reel a week.
-2. Search today's India tech news (one or two `WebSearch` calls): an outage, sale-day crash, IPL/cricket stream,
-   UPI downtime, exam result site crash, viral app launch. A documented event from the last 72 hours beats the backlog.
-3. Otherwise take the first unchecked topic in `data/topics.md` for the chosen pillar, and tick it.
+## 0. Read first
+`data/swipe.md` (what the outlier reels of the creators Asit admires do, beat by beat), then
+`.claude/skills/make-episode/formats.md` (the 6 formats, hook types, CTA rules, what is banned), then `brand.md`.
 
-Pillars: `everyday-tech` (how an app you use works), `money-tech` (how UPI, cards, apps make money, explained, never
-investment advice), `interview` (a classic system-design question, roasted), `ai-tools` (how an AI feature works).
+## 1. Pick the format, then the topic
+1. Read `data/published.json` and the previous 2 episodes' `format` and first scene type. Pick a DIFFERENT format
+   from the previous episode (and not one used twice in the last 4). Rotate looks: alternate dark and light formats.
+2. Search the last 48 hours of India tech news (one or two `WebSearch` calls). A big, sourced story → `news` format
+   (if the previous episode wasn't news). A viral app/outage → `desi-story`.
+3. Otherwise pick a topic that fits the chosen format (examples in formats.md) from `data/topics.md` or your own
+   research, and tick it. Prefer topics a non-engineer has lived (trains, UPI, phones) or a beginner dev needs today
+   (deploy, git, AI tools): the outliers in swipe.md are those, not textbook system design.
+4. Ask: would someone send this to a friend? If not, pick another topic.
+
+Pillars: `everyday-tech`, `money-tech` (never investment advice), `interview`, `ai-tools`, `dev-skills`, `news`.
 
 ## 2. Research
 - Every real-world number, date or incident you say out loud needs a source you opened with `WebFetch`. Put the URLs
@@ -34,26 +40,17 @@ investment advice), `interview` (a classic system-design question, roasted), `ai
 `NN` = next number (count existing `episodes/ep*` folders + 1). `slug` field = folder name. Copy the shape of
 `episodes/ep01-tatkal-crash/episode.json`. The schema is `src/schema.js`.
 
-**Read `brand.md` first: it is the style contract and overrides anything below.**
+**Structure: follow the chosen format's beats in formats.md.** 7–12 scenes, 70–110 words, 25–40 s, max 14 words
+per scene (18 for `dialog`/`coldopen`). A new picture every 2–3 seconds. Set `format`, `leadMagnet` and the hook type.
+Every non-dialog scene has `beat` and `cap`: the Roman-Hinglish caption (2–6 words) with exactly ONE accent word in
+*asterisks*, e.g. `"cap": "Par rollout abhi *postponed*"`. `dialog` scenes show their `line` in a speech bubble (no
+`cap`); set `vo` to the same words. The Intern's lines are read by the second voice automatically.
+Do not copy the shape of any earlier episode: eps 1–3 are what NOT to repeat. The validator rejects a reel that
+repeats the previous format, the previous opening scene type, the "15 LPA" chat or the दोहा ending.
+After writing, the workflow renders frames and Claude reviews them, so make the first frame stop a scroll on its own.
 
-**The formula (30–40 s: 9–14 scenes, 70–105 words of voice-over, max 12 words per scene; coldopen and rule up to 18).**
-Episodes 1–2 lost viewers in the first seconds because they read like a lecture. Every episode is now a short
-story inside ONE metaphor world (`world` field), with a new picture every 1–2 seconds:
-1. `coldopen` (beat `hook`) — the moment it breaks, in the first second: `tick` (2–3 values counting to the
-   moment), `setup`, `error`, `question` (4–6 words, ends in "?").
-2. `chat` (beat `setup`) — the "15 LPA" candidate's confident wrong answer, `"speaker": "alt"`.
-3. Break, 1–3 scenes (beat `break`): show it failing — `flow`, `crash`, `hotrow`, `flood`, `code` (`verdict: "wrong"`).
-4. Reveal, 2–3 scenes (beat `reveal`): `solution` (name the pattern), `flow`, `batch`.
-5. Twist, 1–2 scenes (beat `twist`): one surprising, sourced detail — `counter`, `code`, `compare`.
-6. `rule` (beat `cta`): the दोहा, then a one-word comment question ("Comment karo: Redis ya Kafka?"), `next` teaser.
-Every scene has `beat` and `cap`: the Roman-Hinglish caption (2–6 words) with exactly ONE accent word in
-*asterisks*, e.g. `"cap": "Par rollout abhi *postponed*"`. The caption is what people read; the `vo` is what the
-voice says. They should say the same thing, but `cap` is shorter.
-Copy the shape of `episodes/ep03-upi-free-paisa-kaun-kamata/episode.json` (the current format), not ep01/ep02.
-After writing, the workflow renders frames and Claude reviews them against brand.md, so make the first frame
-strong enough to stop a scroll on its own.
-
-**Mascot**: Debug Bro (a cartoon of Asit) stands bottom-left in every reel, lip-syncing the voice. His pose comes from
+**Characters**: Debug Bro (a cartoon of Asit) stands bottom-left in every reel, lip-syncing the voice; in `dialog`
+scenes he and the Intern both appear and the corner mascot steps aside. His pose comes from
 the scene's `beat`; set `"pose"` on a scene to override it (idle, point, explain, think, shock, facepalm, thumbsup,
 shrug, crossed, laugh) when a reaction fits the line better, e.g. `laugh` on a joke.
 
@@ -72,7 +69,7 @@ the fix, `comeback` (amber) for compare/twist. **Tags** (`PROBLEM`, `SOLUTION`, 
 | --- | --- | --- |
 | coldopen | ticking number/clock → glitch, error card, big question (first scene) | tick, setup, error, question |
 | hook | big kinetic headline | kicker, title, sub |
-| chat | interview chat bubbles | messages[side,name,text,badge] |
+| chat | interview chat bubbles (rare: max once in 3 reels) | messages[side,name,text,badge] |
 | code | typed SQL/code, stamp, multiplier | code, highlight, verdict, stamp, multiplier, multiplierLabel |
 | flood | users flying into a DB | target, total, sub |
 | hotrow | one hot row, queue of users, connection meter filling | rows, hot, valueLabel, from, to, meterLabel, meterMax, alert |
@@ -82,18 +79,22 @@ the fix, `comeback` (amber) for compare/twist. **Tags** (`PROBLEM`, `SOLUTION`, 
 | flow | 2–4 step request path with a moving packet | nodes[label,sub], packet |
 | compare | wrong vs right, ticks and crosses | left{title,items}, right{title,items} |
 | crash | a counter that cracks and resets | label, value, quote |
-| rule | दोहा + send prompt + next teaser | rule, cta, next |
+| rule | दोहा + send prompt + next teaser (rare: max once in 5 reels) | rule, cta, next |
+| board | whiteboard drawn live; "A = B" title with `not` flips to a red ≠ | title, not, layout (flow/steps/checks), items[label,sub,icon≤5 chars] |
+| dialog | Intern (left) and Debug Bro (right), one line in a speech bubble | who (intern/bro), line, react (listener's pose), pose |
+| headline | news card: source, date, big headline | source, date, headline, sub, label |
+| tip | one numbered trick: big "2/5", the trick, what it does, example | n, of, title, desc, example |
+| moment | a lived moment: place + time, one big line, a stamp | place, line, stamp |
 
-**Caption**: line 1 = the topic in search words ("Tatkal booking crash kyun hoti hai? System design in Hindi"),
-line 2 = the send prompt, then 2–3 lines of the key takeaway, then "Save karo interview ke liye." Exactly 3 hashtags,
-specific (`#systemdesign #codinginhindi` + one topic tag). `coverText` = 3–5 punchy words.
+**Caption**: line 1 = the hook retold with search words ("RAC ticket pe raat 2 baje berth kaise milti hai?"),
+line 2 = "Comment KEYWORD, <promise> DM mein bhejta hoon", line 3 = "Us dost ko bhejo jo …", then 2–3 lines of the
+key takeaway, then "Save karo, kaam aayega." Exactly 3 hashtags, specific (one niche tag + two topic tags). `coverText` = 3–5 punchy words.
 `keywords` = 5–7 lowercase phrases people actually type into Instagram search, shown as `[keyword]` in the caption:
 2–3 about the topic in Hinglish/English ("upi kaise kaam karta hai", "upi free kyun hai"), 1–2 for the exact
 concept ("mdr charges"), and 2 for the niche ("system design in hindi", "coding in hindi"). No hashtags, no emoji.
 
 Voice: set `"voice": {"engine": "sarvam"}`. Sarvam's reel voices alternate by episode number (odd = Sunny,
-even = Ritu); a scene with `"speaker": "alt"` is read by the other one. Use alt for the interviewer/"15 LPA" chat
-line only (1 scene per reel). Write numbers in words in `vo`, Hindi in Devanagari, tech words in English.
+even = Ritu); a scene with `"speaker": "alt"` is read by the other one. The Intern in `dialog` scenes gets the alt voice automatically. Write numbers in words in `vo`, Hindi in Devanagari, tech words in English.
 
 ## 4. Check and finish
 1. Run `node pipeline/validate.mjs <slug>`; fix every ERROR and reconsider every warn. Repeat until OK.

@@ -89,6 +89,16 @@ async function main() {
     });
     if (fs.existsSync(files.cover)) await sendPhotos([files.cover], 'Cover (optional: set it in Edit cover)').catch(() => {});
     await sendText(caption);
+    // the comment-keyword freebie: a PDF of the reel's key frames, for Asit to DM to everyone who comments the keyword
+    if (episode.leadMagnet && files.slides?.length) {
+      const pdf = path.join(outDir(slug), `${episode.leadMagnet.keyword.toLowerCase()}.pdf`);
+      const py = process.env.PYTHON || 'python3';
+      const r = spawnSync(py, [path.join(ROOT, 'pipeline/make_pdf.py'), pdf, ...files.slides]);
+      if (r.status === 0) {
+        const {sendFile} = await import('./telegram.mjs');
+        await sendFile(pdf, `Freebie for comments "${episode.leadMagnet.keyword}": ${episode.leadMagnet.promise}. DM this PDF to everyone who comments ${episode.leadMagnet.keyword}.`).catch(() => {});
+      }
+    }
     record({kind: 'reel', delivered: 'telegram'});
     log('sent to Telegram for manual posting');
     return;

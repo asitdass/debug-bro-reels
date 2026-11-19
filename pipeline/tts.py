@@ -140,6 +140,13 @@ async def edge_line(text, voice, rate, mp3: Path, pitch="+0Hz"):
     return bounds
 
 
+def who(scene):
+    """main or alt voice: the Intern in a dialogue scene is always the alt voice."""
+    if scene.get("type") == "dialog":
+        return "alt" if scene.get("who") == "intern" else "main"
+    return scene.get("speaker", "main")
+
+
 def sarvam_line(text, speaker, pace, wav: Path):
     from sarvamai import SarvamAI
 
@@ -218,7 +225,7 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
         text = scene["vo"]
         raw = tmp / f"s{i:02d}.raw"
         if engine == "edge":
-            v, rate, pitch = edge_voices(episode)[scene.get("speaker", "main")]
+            v, rate, pitch = edge_voices(episode)[who(scene)]
             for attempt in range(3):
                 try:
                     bounds = asyncio.run(edge_line(text, v, rate, raw, pitch))
@@ -228,7 +235,7 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
                         raise
                     print(f"  edge-tts retry ({e})", file=sys.stderr)
         elif engine == "sarvam":
-            speaker = sarvam_voices(episode)[scene.get("speaker", "main")]
+            speaker = sarvam_voices(episode)[who(scene)]
             bounds = sarvam_line(text, speaker, float(os.environ.get("SARVAM_PACE", "1.15")), raw)
         else:
             sys.exit(f"unknown engine {engine}")

@@ -9,15 +9,16 @@ line you'll remember. For developers and curious app users, 18–30, India.
 ## Story, not lecture
 - Open on a **moment**, not a fact: a time, a place, a feeling ("10:00:01. Tatkal. Site gayi."). A number is fine
   only if it is shocking and shown big.
-- One **metaphor world** per episode, used everywhere: UPI = a toll booth, CDN = chai stalls in every gali,
-  rate limiter = a bouncer at a club. Name it in `world` and make scene art, labels and jokes fit it.
-- Beats: HOOK (0–2 s) → SETUP (the naive "15 LPA" answer) → BREAK (it fails, visibly) → REVEAL (the real pattern,
-  named) → TWIST (one surprising detail or number) → PAYOFF (दोहा) → CTA → loop back to the hook image.
+- Every episode uses one of the 6 formats in `.claude/skills/make-episode/formats.md` (desi-story, whiteboard,
+  ai-hack, news, skit, myth-fact), never the same as the previous episode. The beats come from the format.
+- The characters repeat (Debug Bro + the Intern); formats, hooks, looks and endings do not. No recurring gags:
+  the "15 LPA" chat and the दोहा ending are rare guests, at most once in 5 / 3 reels.
+- A metaphor `world` is optional and helps desi-story reels.
 - The last line should flow back into the first, so a rewatch feels seamless.
 
 ## Pace
-- A new picture every 1–2 s: 9–14 scenes, 70–100 words of voice-over total, 30–40 s.
-- One idea per scene. Max 12 words of voice-over per scene (the coldopen and rule may use 18).
+- A new picture every 2–3 s: 7–12 scenes, 70–110 words of voice-over total, 25–40 s.
+- One idea per scene. Max 14 words of voice-over per scene (dialog and coldopen may use 18).
 - Never hold a static frame: something moves, counts, types, pops or glows in every scene.
 
 ## Words on screen
@@ -27,20 +28,21 @@ line you'll remember. For developers and curious app users, 18–30, India.
 - Voice-over (`vo`) stays Devanagari Hindi + English tech words, so the voice pronounces it right.
 
 ## Look
-- Dark, warm, cinematic: deep charcoal background, film grain, soft glows. Accent colours: amber (#ffb547) for
-  emphasis, red for failure, green for the fix, blue for neutral info.
+- Each format has its own theme (src/theme.ts THEMES): desi-story dark cinematic with amber, whiteboard warm yellow
+  with a hand-drawn board (Kalam), ai-hack light lavender, news black + red, skit sky blue, myth-fact deep teal.
+  Light and dark formats should alternate in the grid.
 - Type: Inter (bold) for captions, Instrument Serif italic for accent words and headlines, JetBrains Mono for
   labels and code.
 - Every scene carries a small part label, e.g. `// 03 — break`, and the part counter.
 
 ## Voice
-- Sarvam reel voices: Sunny on odd episodes, Ritu on even, the other voice reads the "15 LPA" line.
+- Sarvam reel voices: Sunny on odd episodes, Ritu on even; the other voice is the Intern in dialogue scenes.
 - Energetic, friendly, a little cheeky. Like explaining to a friend over chai, never like a lecture.
 
 ## Call to action
-- End with a question the viewer can answer in one word in the comments ("Comment karo: Redis ya Kafka?") plus a
-  send prompt ("ye us dost ko bhejo jo…").
-- Never promise a DM or a freebie until the comment-to-DM automation is switched on (`CTA_DM=on`).
+- End with a comment keyword and a freebie (`leadMagnet`): "Comment DEPLOY, checklist DM mein bhejta hoon." The
+  pipeline sends Asit the PDF on Telegram; he DMs it to commenters (until the auto-DM bot is switched on).
+- Plus a send prompt in the caption ("us dost ko bhejo jo…"). Optional series hook: "Part 2 chahiye? Comment PART2".
 
 ## Facts
 - Every real number, date, incident or policy needs a source opened that day; state its current status exactly

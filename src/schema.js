@@ -103,7 +103,26 @@ export const sceneSchema = z.discriminatedUnion('type', [
   }),
   z.object({...base, type: z.literal('crash'), label: str(24), value: z.number(), quote: str(70).optional()}),
   z.object({...base, type: z.literal('rule'), rule: str(90), cta: str(80), next: str(60).optional()}),
+  // whiteboard drawn live; title "A = B" with not:true turns the = into a red ≠ (a beginner belief, busted)
+  z.object({
+    ...base,
+    type: z.literal('board'),
+    title: str(40),
+    not: z.boolean().optional(),
+    layout: z.enum(['flow', 'steps', 'checks']).optional(),
+    items: z.array(z.object({label: str(22), sub: str(36).optional(), icon: str(5).optional()})).max(5).default([]),
+  }),
+  // one line of dialogue: Intern (left) or Debug Bro (right) speaks, the other reacts
+  z.object({...base, type: z.literal('dialog'), who: z.enum(['bro', 'intern']), line: str(90), react: z.string().optional()}),
+  // a news headline card (news format): the story is the hook
+  z.object({...base, type: z.literal('headline'), source: str(30), date: str(20), headline: str(90), sub: str(90).optional(), label: str(14).optional()}),
+  // one item of a numbered list (AI hacks, tips): big index, the trick, what it does, an example
+  z.object({...base, type: z.literal('tip'), n: z.number().int().min(1), of: z.number().int().min(1), title: str(40), desc: str(90), example: str(90).optional()}),
+  // a felt everyday moment (desi-story opener): place/time, one big line, an optional stamp
+  z.object({...base, type: z.literal('moment'), place: str(40), line: str(50), stamp: str(16).optional()}),
 ]);
+
+export const FORMATS = ['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact'];
 
 export const episodeSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
@@ -113,7 +132,13 @@ export const episodeSchema = z.object({
   topic: str(120),
   // the one metaphor the whole episode is built on, e.g. "UPI = toll booth on a highway"
   world: z.string().max(80).optional(),
-  pillar: z.enum(['everyday-tech', 'money-tech', 'interview', 'ai-tools']),
+  pillar: z.enum(['everyday-tech', 'money-tech', 'interview', 'ai-tools', 'dev-skills', 'news']),
+  // the reel's format (see .claude/skills/make-episode/formats.md); it also picks the look
+  format: z.enum(['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact']).optional(),
+  // comment-keyword freebie: "Comment RAC, DM mein one-page PDF bhejta hoon"
+  leadMagnet: z.object({keyword: z.string().regex(/^[A-Z0-9]{2,14}$/), promise: str(80)}).optional(),
+  // series hook: "Part 2 chahiye? Comment PART2"
+  part: z.number().int().min(1).optional(),
   voice: z
     .object({
       engine: z.enum(['edge', 'sarvam', 'silent']).default('edge'),

@@ -8,6 +8,13 @@ import {interpolate, spring, useCurrentFrame, useVideoConfig, random} from 'remo
 export const POSES = ['idle', 'point', 'explain', 'think', 'shock', 'facepalm', 'thumbsup', 'shrug', 'crossed', 'laugh'] as const;
 export type PoseName = (typeof POSES)[number];
 
+/** Which character: Debug Bro (Asit) or the Intern (a young dev in a teal hoodie, for dialogue scenes). */
+export type Variant = 'bro' | 'intern';
+const VCtx = React.createContext<Variant>('bro');
+const HOODIE = '#1fa391';
+const HOODIE_HI = '#28c2ac';
+const INTERN_HAIR = '#1a1310';
+
 const OUT = '#1b1412';
 const SKIN = '#e2ab88';
 const SKIN_SH = '#c98e6c';
@@ -125,12 +132,24 @@ const ArmRig: React.FC<{side: 'l' | 'r'; arm: Arm; lift: number}> = ({side, arm,
   const {elbow, wrist} = ik(sh, arm, arm.bend ?? 'out');
   const fdeg = (Math.atan2(wrist.y - elbow.y, wrist.x - elbow.x) * 180) / Math.PI;
   const cuff = {x: mix(sh.x, elbow.x, 0.9), y: mix(sh.y, elbow.y, 0.9)};
-  const watch = side === 'r' ? {x: mix(elbow.x, wrist.x, 0.84), y: mix(elbow.y, wrist.y, 0.84)} : null;
+  const v = React.useContext(VCtx);
+  const watch = side === 'r' && v === 'bro' ? {x: mix(elbow.x, wrist.x, 0.84), y: mix(elbow.y, wrist.y, 0.84)} : null;
   return (
     <g>
-      <Limb a={sh} b={elbow} w={54} color={SHIRT} />
-      <Limb a={cuff} b={elbow} w={58} color={SHIRT_HI} />
-      <Limb a={elbow} b={wrist} w={38} color={SKIN} />
+      {v === 'intern' ? (
+        <>
+          <Limb a={sh} b={elbow} w={56} color={HOODIE} />
+          <Limb a={elbow} b={{x: mix(elbow.x, wrist.x, 0.82), y: mix(elbow.y, wrist.y, 0.82)}} w={50} color={HOODIE} />
+          <Limb a={{x: mix(elbow.x, wrist.x, 0.8), y: mix(elbow.y, wrist.y, 0.8)}} b={{x: mix(elbow.x, wrist.x, 0.86), y: mix(elbow.y, wrist.y, 0.86)}} w={54} color={HOODIE_HI} />
+          <Limb a={{x: mix(elbow.x, wrist.x, 0.86), y: mix(elbow.y, wrist.y, 0.86)}} b={wrist} w={36} color={SKIN} />
+        </>
+      ) : (
+        <>
+          <Limb a={sh} b={elbow} w={54} color={SHIRT} />
+          <Limb a={cuff} b={elbow} w={58} color={SHIRT_HI} />
+          <Limb a={elbow} b={wrist} w={38} color={SKIN} />
+        </>
+      )}
       {watch ? (
         <g transform={`translate(${watch.x} ${watch.y}) rotate(${fdeg + 90})`}>
           <rect x={-24} y={-8} width={48} height={16} rx={5} fill={TAN} stroke={OUT} strokeWidth={4} />
@@ -190,7 +209,9 @@ const Mouth: React.FC<{face: Face; open: number}> = ({face, open}) => {
   );
 };
 
-const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, blink}) => (
+const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, blink}) => {
+  const v = React.useContext(VCtx);
+  return (
   <g>
     {/* neck */}
     <rect x={174} y={268} width={52} height={86} fill={SKIN_SH} stroke={OUT} strokeWidth={5} />
@@ -200,6 +221,7 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
     {/* face */}
     <ellipse cx={200} cy={205} rx={80} ry={96} fill={SKIN} stroke={OUT} strokeWidth={5} />
     {/* beard */}
+    {v === 'bro' ? (<>
     <path
       d="M 121 200 C 118 258 142 304 200 324 C 258 304 282 258 279 200 C 272 230 258 244 242 241 C 226 238 174 238 158 241 C 142 244 128 230 121 200 Z"
       fill={HAIR}
@@ -210,6 +232,10 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
     <path d="M 150 300 Q 200 316 250 300" fill="none" stroke={HAIR_HI} strokeWidth={4} strokeLinecap="round" />
     {/* moustache */}
     <path d="M 170 258 Q 186 246 200 254 Q 214 246 230 258 Q 214 262 200 260 Q 186 262 170 258 Z" fill={HAIR} stroke={OUT} strokeWidth={4} />
+    </>) : (
+      <ellipse cx={168} cy={246} rx={12} ry={7} fill="#f0a08a" opacity={0.55} />
+    )}
+    {v === 'intern' ? <ellipse cx={232} cy={246} rx={12} ry={7} fill="#f0a08a" opacity={0.55} /> : null}
     <Mouth face={face} open={open} />
     {/* nose */}
     <path d="M 201 206 Q 190 230 198 236 Q 206 238 213 231" fill="none" stroke={SKIN_SH} strokeWidth={6} strokeLinecap="round" />
@@ -229,6 +255,25 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
         />
       );
     })}
+    {v === 'intern' ? (
+      <g>
+        {/* round glasses */}
+        {[168, 232].map((x, i) => (
+          <circle key={i} cx={x} cy={198} r={26} fill="none" stroke={OUT} strokeWidth={6} />
+        ))}
+        <path d="M 194 196 Q 200 190 206 196" fill="none" stroke={OUT} strokeWidth={6} />
+        {/* straight hair with a side fringe */}
+        <path
+          d="M 116 206 C 108 140 136 96 196 92 C 256 90 292 128 284 206 C 276 176 268 160 252 150 C 230 168 186 170 150 150 C 136 164 124 182 116 206 Z"
+          fill={INTERN_HAIR}
+          stroke={OUT}
+          strokeWidth={5}
+          strokeLinejoin="round"
+        />
+        <path d="M 150 148 C 176 110 236 104 262 150 C 232 132 196 130 150 148 Z" fill={INTERN_HAIR} />
+        <path d="M 170 112 Q 210 100 246 118" fill="none" stroke="#3a2a22" strokeWidth={5} strokeLinecap="round" />
+      </g>
+    ) : (<>
     {/* curly hair */}
     <path
       d="M 118 205 C 104 152 118 100 172 86 C 200 72 242 78 264 96 C 292 118 294 162 282 205 C 278 180 272 162 262 150 C 228 160 172 160 140 150 C 130 166 124 184 118 205 Z"
@@ -246,10 +291,27 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
     {[[160, 100], [196, 92], [232, 98], [148, 128], [214, 120], [256, 118]].map(([x, y], i) => (
       <path key={i} d={`M ${x - 9} ${y + 4} q 9 -12 18 0`} fill="none" stroke={HAIR_HI} strokeWidth={4} strokeLinecap="round" />
     ))}
+    </>)}
   </g>
-);
+  );
+};
 
-const Torso: React.FC<{lift: number}> = ({lift}) => (
+const Torso: React.FC<{lift: number}> = ({lift}) => {
+  const v = React.useContext(VCtx);
+  if (v === 'intern')
+    return (
+      <g transform={`translate(0 ${lift * 0.4})`}>
+        <path d="M 52 580 L 60 412 Q 70 350 140 338 L 260 338 Q 330 350 340 412 L 348 580 Z" fill={HOODIE} stroke={OUT} strokeWidth={5} strokeLinejoin="round" />
+        {/* hood around the neck */}
+        <path d="M 128 344 Q 200 300 272 344 Q 250 392 200 396 Q 150 392 128 344 Z" fill={HOODIE_HI} stroke={OUT} strokeWidth={5} />
+        <path d="M 168 344 Q 200 372 232 344" fill={SKIN_SH} stroke={OUT} strokeWidth={4} />
+        {/* drawstrings + pocket */}
+        <path d="M 184 392 L 180 460 M 216 392 L 220 460" stroke="#f4f4f0" strokeWidth={6} strokeLinecap="round" />
+        <path d="M 120 500 L 280 500 L 296 580 L 104 580 Z" fill={HOODIE_HI} stroke={OUT} strokeWidth={5} strokeLinejoin="round" />
+        <text x={200} y={470} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={26} fill="#0d5e54">{'</>'}</text>
+      </g>
+    );
+  return (
   <g transform={`translate(0 ${lift * 0.4})`}>
     <defs>
       <pattern id="db-dots" width="14" height="14" patternUnits="userSpaceOnUse">
@@ -271,17 +333,20 @@ const Torso: React.FC<{lift: number}> = ({lift}) => (
     {/* earphone cable, like the photo */}
     <path d="M 214 345 Q 222 420 212 580" fill="none" stroke="#c0392b" strokeWidth={2.5} opacity={0.8} />
   </g>
-);
+  );
+};
 
 export type MascotTrack = {at: number; pose: PoseName; talk?: boolean}[];
 
 /** Puppet at one pose (for sheets) or following a track of poses over time, with mouth openness 0..1. */
-export const Mascot: React.FC<{track?: MascotTrack; pose?: PoseName; mouth?: (frame: number) => number; width?: number; seed?: string}> = ({
+export const Mascot: React.FC<{track?: MascotTrack; pose?: PoseName; mouth?: (frame: number) => number; width?: number; seed?: string; variant?: Variant; flip?: boolean}> = ({
   track,
   pose,
   mouth,
   width = 400,
   seed = 'db',
+  variant = 'bro',
+  flip = false,
 }) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -307,7 +372,8 @@ export const Mascot: React.FC<{track?: MascotTrack; pose?: PoseName; mouth?: (fr
   const tilt = mix(prev.tilt ?? 0, cur.tilt ?? 0, tc) + Math.sin(frame / 27) * 1.5 + open * 1.5;
   const squash = i > 0 ? interpolate(frame - tr[i].at, [0, 4, 10], [1, 1.035, 1], {extrapolateRight: 'clamp'}) : 1;
   return (
-    <svg viewBox="0 0 400 560" width={width} height={(width * 560) / 400} style={{overflow: 'visible'}}>
+    <VCtx.Provider value={variant}>
+    <svg viewBox="0 0 400 560" width={width} height={(width * 560) / 400} style={{overflow: 'visible', transform: flip ? 'scaleX(-1)' : undefined}}>
       <defs>
         <clipPath id={`db-clip-${seed}`}>
           <rect x={-300} y={-400} width={1000} height={960} />
@@ -324,6 +390,7 @@ export const Mascot: React.FC<{track?: MascotTrack; pose?: PoseName; mouth?: (fr
       </g>
       </g>
     </svg>
+    </VCtx.Provider>
   );
 };
 
@@ -339,7 +406,7 @@ export function poseFor(s: any, i: number, prev?: PoseName): PoseName {
     payoff: ['explain', 'thumbsup'],
     cta: ['thumbsup'],
   };
-  const type: Record<string, PoseName> = {coldopen: 'shock', chat: 'crossed', crash: 'facepalm', solution: 'point', rule: 'thumbsup', compare: 'shrug'};
+  const type: Record<string, PoseName> = {coldopen: 'shock', chat: 'crossed', crash: 'facepalm', solution: 'point', rule: 'thumbsup', compare: 'shrug', board: 'point', tip: 'explain', headline: 'shock', moment: 'think'};
   const opts = by[(s.beat ?? '').toLowerCase()] ?? (type[s.type] ? [type[s.type]] : ['explain', 'point']);
   let pick = opts[i % opts.length];
   if (pick === prev && opts.length > 1) pick = opts[(i + 1) % opts.length];
