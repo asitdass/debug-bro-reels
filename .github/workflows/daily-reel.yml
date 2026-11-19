@@ -89,7 +89,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ steps.tok.outputs.token }}
           prompt: |
-            Write the next Debug Bro reel episode. Read .claude/skills/make-episode/SKILL.md and follow every step in it:
+            Write the next Debug Bro reel episode. Read .claude/skills/make-episode/SKILL.md, formats.md next to it, and data/swipe.md, then follow every step:
             pick the topic (data/topics.md "Promised next" first), research the facts with WebSearch/WebFetch, write
             episodes/<slug>/episode.json, tick the topic in data/topics.md, and run `node pipeline/validate.mjs <slug>`
             until it prints OK. Do not edit src/ or pipeline/. Do not commit; the workflow commits for you.
@@ -136,7 +136,7 @@ jobs:
             1. Read brand.md (especially "Frame review checklist") and episodes/${{ steps.ep.outputs.slug }}/episode.json.
             2. Look at every image out/${{ steps.ep.outputs.slug }}/review-*.jpg (review-01 is the first frame people see).
             3. For each frame, check the checklist. If a frame fails, fix it by editing ONLY text fields in episode.json
-               (cap, vo, question, setup, error, labels, items, title, sub, code, rule, cta). Keep every fact and its
+               (cap, vo, line, question, setup, error, labels, items, title, sub, desc, example, headline, place, stamp, code, rule, cta). Keep every fact and its
                status exactly as sourced. Then run `node pipeline/validate.mjs ${{ steps.ep.outputs.slug }}` until OK.
             4. Write out/${{ steps.ep.outputs.slug }}/review.md: one line per frame (PASS or FIXED: what), then one line
                "Hook strength: x/10 because ...".
