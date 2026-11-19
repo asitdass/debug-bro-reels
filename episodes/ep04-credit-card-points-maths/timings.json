@@ -1,0 +1,656 @@
+{
+  "totalMs": 35534,
+  "audio": "episodes/ep04-credit-card-points-maths/voice.mp3",
+  "scenes": [
+    {
+      "startMs": 0,
+      "durMs": 4365
+    },
+    {
+      "startMs": 4625,
+      "durMs": 1755
+    },
+    {
+      "startMs": 6641,
+      "durMs": 3900
+    },
+    {
+      "startMs": 10801,
+      "durMs": 4273
+    },
+    {
+      "startMs": 15333,
+      "durMs": 2811
+    },
+    {
+      "startMs": 18405,
+      "durMs": 4530
+    },
+    {
+      "startMs": 23194,
+      "durMs": 4064
+    },
+    {
+      "startMs": 27518,
+      "durMs": 3932
+    },
+    {
+      "startMs": 31710,
+      "durMs": 3224
+    }
+  ],
+  "words": [
+    {
+      "text": "Billing",
+      "startMs": 300,
+      "endMs": 761,
+      "scene": 0
+    },
+    {
+      "text": "counter.",
+      "startMs": 785,
+      "endMs": 1247,
+      "scene": 0
+    },
+    {
+      "text": "Card",
+      "startMs": 1453,
+      "endMs": 1741,
+      "scene": 0
+    },
+    {
+      "text": "swipe",
+      "startMs": 1756,
+      "endMs": 2102,
+      "scene": 0
+    },
+    {
+      "text": "किया.",
+      "startMs": 2120,
+      "endMs": 2409,
+      "scene": 0
+    },
+    {
+      "text": "Screen",
+      "startMs": 2606,
+      "endMs": 3009,
+      "scene": 0
+    },
+    {
+      "text": "बोली,",
+      "startMs": 3030,
+      "endMs": 3319,
+      "scene": 0
+    },
+    {
+      "text": "पाँच",
+      "startMs": 3516,
+      "endMs": 3804,
+      "scene": 0
+    },
+    {
+      "text": "X",
+      "startMs": 3819,
+      "endMs": 3935,
+      "scene": 0
+    },
+    {
+      "text": "points!",
+      "startMs": 3941,
+      "endMs": 4344,
+      "scene": 0
+    },
+    {
+      "text": "Bhaiya,",
+      "startMs": 4625,
+      "endMs": 4885,
+      "scene": 1
+    },
+    {
+      "text": "bank",
+      "startMs": 5015,
+      "endMs": 5201,
+      "scene": 1
+    },
+    {
+      "text": "free",
+      "startMs": 5210,
+      "endMs": 5396,
+      "scene": 1
+    },
+    {
+      "text": "में",
+      "startMs": 5405,
+      "endMs": 5554,
+      "scene": 1
+    },
+    {
+      "text": "points",
+      "startMs": 5562,
+      "endMs": 5821,
+      "scene": 1
+    },
+    {
+      "text": "क्यों",
+      "startMs": 5835,
+      "endMs": 6057,
+      "scene": 1
+    },
+    {
+      "text": "देता",
+      "startMs": 6069,
+      "endMs": 6254,
+      "scene": 1
+    },
+    {
+      "text": "है?",
+      "startMs": 6264,
+      "endMs": 6375,
+      "scene": 1
+    },
+    {
+      "text": "Dukaan",
+      "startMs": 6641,
+      "endMs": 7017,
+      "scene": 2
+    },
+    {
+      "text": "को",
+      "startMs": 7036,
+      "endMs": 7197,
+      "scene": 2
+    },
+    {
+      "text": "पूरा",
+      "startMs": 7206,
+      "endMs": 7474,
+      "scene": 2
+    },
+    {
+      "text": "पैसा",
+      "startMs": 7489,
+      "endMs": 7757,
+      "scene": 2
+    },
+    {
+      "text": "नहीं",
+      "startMs": 7771,
+      "endMs": 8040,
+      "scene": 2
+    },
+    {
+      "text": "मिलता.",
+      "startMs": 8054,
+      "endMs": 8376,
+      "scene": 2
+    },
+    {
+      "text": "Processor",
+      "startMs": 8563,
+      "endMs": 9099,
+      "scene": 2
+    },
+    {
+      "text": "और",
+      "startMs": 9128,
+      "endMs": 9289,
+      "scene": 2
+    },
+    {
+      "text": "bank",
+      "startMs": 9297,
+      "endMs": 9566,
+      "scene": 2
+    },
+    {
+      "text": "हिस्सा",
+      "startMs": 9580,
+      "endMs": 9956,
+      "scene": 2
+    },
+    {
+      "text": "काटते",
+      "startMs": 9976,
+      "endMs": 10298,
+      "scene": 2
+    },
+    {
+      "text": "हैं.",
+      "startMs": 10315,
+      "endMs": 10530,
+      "scene": 2
+    },
+    {
+      "text": "इस",
+      "startMs": 10801,
+      "endMs": 10988,
+      "scene": 3
+    },
+    {
+      "text": "कटौती",
+      "startMs": 10998,
+      "endMs": 11373,
+      "scene": 3
+    },
+    {
+      "text": "को",
+      "startMs": 11392,
+      "endMs": 11580,
+      "scene": 3
+    },
+    {
+      "text": "MDR",
+      "startMs": 11590,
+      "endMs": 11839,
+      "scene": 3
+    },
+    {
+      "text": "कहते",
+      "startMs": 11853,
+      "endMs": 12165,
+      "scene": 3
+    },
+    {
+      "text": "हैं.",
+      "startMs": 12181,
+      "endMs": 12431,
+      "scene": 3
+    },
+    {
+      "text": "Bank",
+      "startMs": 12641,
+      "endMs": 12954,
+      "scene": 3
+    },
+    {
+      "text": "का",
+      "startMs": 12970,
+      "endMs": 13157,
+      "scene": 3
+    },
+    {
+      "text": "हिस्सा",
+      "startMs": 13167,
+      "endMs": 13604,
+      "scene": 3
+    },
+    {
+      "text": "interchange",
+      "startMs": 13627,
+      "endMs": 14377,
+      "scene": 3
+    },
+    {
+      "text": "कहलाता",
+      "startMs": 14416,
+      "endMs": 14853,
+      "scene": 3
+    },
+    {
+      "text": "है.",
+      "startMs": 14876,
+      "endMs": 15064,
+      "scene": 3
+    },
+    {
+      "text": "Credit",
+      "startMs": 15333,
+      "endMs": 15686,
+      "scene": 4
+    },
+    {
+      "text": "card",
+      "startMs": 15705,
+      "endMs": 15957,
+      "scene": 4
+    },
+    {
+      "text": "पे",
+      "startMs": 15970,
+      "endMs": 16121,
+      "scene": 4
+    },
+    {
+      "text": "ये",
+      "startMs": 16129,
+      "endMs": 16280,
+      "scene": 4
+    },
+    {
+      "text": "fee",
+      "startMs": 16288,
+      "endMs": 16490,
+      "scene": 4
+    },
+    {
+      "text": "लगभग",
+      "startMs": 16500,
+      "endMs": 16752,
+      "scene": 4
+    },
+    {
+      "text": "एक",
+      "startMs": 16766,
+      "endMs": 16917,
+      "scene": 4
+    },
+    {
+      "text": "से",
+      "startMs": 16925,
+      "endMs": 17076,
+      "scene": 4
+    },
+    {
+      "text": "तीन",
+      "startMs": 17084,
+      "endMs": 17285,
+      "scene": 4
+    },
+    {
+      "text": "percent",
+      "startMs": 17296,
+      "endMs": 17699,
+      "scene": 4
+    },
+    {
+      "text": "होती",
+      "startMs": 17720,
+      "endMs": 17972,
+      "scene": 4
+    },
+    {
+      "text": "है.",
+      "startMs": 17986,
+      "endMs": 18137,
+      "scene": 4
+    },
+    {
+      "text": "आम",
+      "startMs": 18405,
+      "endMs": 18597,
+      "scene": 5
+    },
+    {
+      "text": "तौर",
+      "startMs": 18608,
+      "endMs": 18865,
+      "scene": 5
+    },
+    {
+      "text": "पर",
+      "startMs": 18878,
+      "endMs": 19071,
+      "scene": 5
+    },
+    {
+      "text": "rewards",
+      "startMs": 19081,
+      "endMs": 19595,
+      "scene": 5
+    },
+    {
+      "text": "इसी",
+      "startMs": 19622,
+      "endMs": 19879,
+      "scene": 5
+    },
+    {
+      "text": "fee",
+      "startMs": 19892,
+      "endMs": 20149,
+      "scene": 5
+    },
+    {
+      "text": "से",
+      "startMs": 20163,
+      "endMs": 20355,
+      "scene": 5
+    },
+    {
+      "text": "आते",
+      "startMs": 20365,
+      "endMs": 20622,
+      "scene": 5
+    },
+    {
+      "text": "हैं.",
+      "startMs": 20636,
+      "endMs": 20893,
+      "scene": 5
+    },
+    {
+      "text": "आप",
+      "startMs": 21109,
+      "endMs": 21302,
+      "scene": 5
+    },
+    {
+      "text": "swipe",
+      "startMs": 21312,
+      "endMs": 21697,
+      "scene": 5
+    },
+    {
+      "text": "करो,",
+      "startMs": 21718,
+      "endMs": 21974,
+      "scene": 5
+    },
+    {
+      "text": "bank",
+      "startMs": 22191,
+      "endMs": 22512,
+      "scene": 5
+    },
+    {
+      "text": "कमाता.",
+      "startMs": 22529,
+      "endMs": 22914,
+      "scene": 5
+    },
+    {
+      "text": "इसीलिए",
+      "startMs": 23194,
+      "endMs": 23610,
+      "scene": 6
+    },
+    {
+      "text": "rewards",
+      "startMs": 23632,
+      "endMs": 24107,
+      "scene": 6
+    },
+    {
+      "text": "घटते",
+      "startMs": 24132,
+      "endMs": 24429,
+      "scene": 6
+    },
+    {
+      "text": "हैं.",
+      "startMs": 24445,
+      "endMs": 24682,
+      "scene": 6
+    },
+    {
+      "text": "Regalia",
+      "startMs": 24882,
+      "endMs": 25358,
+      "scene": 6
+    },
+    {
+      "text": "Gold:",
+      "startMs": 25383,
+      "endMs": 25680,
+      "scene": 6
+    },
+    {
+      "text": "पाँच",
+      "startMs": 25883,
+      "endMs": 26180,
+      "scene": 6
+    },
+    {
+      "text": "points",
+      "startMs": 26195,
+      "endMs": 26611,
+      "scene": 6
+    },
+    {
+      "text": "per",
+      "startMs": 26633,
+      "endMs": 26870,
+      "scene": 6
+    },
+    {
+      "text": "दो",
+      "startMs": 26883,
+      "endMs": 27061,
+      "scene": 6
+    },
+    {
+      "text": "सौ.",
+      "startMs": 27071,
+      "endMs": 27249,
+      "scene": 6
+    },
+    {
+      "text": "Rate",
+      "startMs": 27518,
+      "endMs": 27797,
+      "scene": 7
+    },
+    {
+      "text": "पढ़ो,",
+      "startMs": 27812,
+      "endMs": 28090,
+      "scene": 7
+    },
+    {
+      "text": "redeem",
+      "startMs": 28281,
+      "endMs": 28671,
+      "scene": 7
+    },
+    {
+      "text": "rules",
+      "startMs": 28692,
+      "endMs": 29026,
+      "scene": 7
+    },
+    {
+      "text": "देखो,",
+      "startMs": 29044,
+      "endMs": 29323,
+      "scene": 7
+    },
+    {
+      "text": "points",
+      "startMs": 29514,
+      "endMs": 29904,
+      "scene": 7
+    },
+    {
+      "text": "के",
+      "startMs": 29924,
+      "endMs": 30092,
+      "scene": 7
+    },
+    {
+      "text": "लिए",
+      "startMs": 30101,
+      "endMs": 30324,
+      "scene": 7
+    },
+    {
+      "text": "extra",
+      "startMs": 30335,
+      "endMs": 30670,
+      "scene": 7
+    },
+    {
+      "text": "खर्चा",
+      "startMs": 30687,
+      "endMs": 31022,
+      "scene": 7
+    },
+    {
+      "text": "मत",
+      "startMs": 31040,
+      "endMs": 31207,
+      "scene": 7
+    },
+    {
+      "text": "करो.",
+      "startMs": 31216,
+      "endMs": 31439,
+      "scene": 7
+    },
+    {
+      "text": "Comment",
+      "startMs": 31710,
+      "endMs": 32082,
+      "scene": 8
+    },
+    {
+      "text": "CARDMATHS,",
+      "startMs": 32101,
+      "endMs": 32565,
+      "scene": 8
+    },
+    {
+      "text": "points",
+      "startMs": 32736,
+      "endMs": 33061,
+      "scene": 8
+    },
+    {
+      "text": "का",
+      "startMs": 33078,
+      "endMs": 33217,
+      "scene": 8
+    },
+    {
+      "text": "maths",
+      "startMs": 33225,
+      "endMs": 33503,
+      "scene": 8
+    },
+    {
+      "text": "cheat",
+      "startMs": 33518,
+      "endMs": 33796,
+      "scene": 8
+    },
+    {
+      "text": "sheet",
+      "startMs": 33811,
+      "endMs": 34089,
+      "scene": 8
+    },
+    {
+      "text": "DM",
+      "startMs": 34104,
+      "endMs": 34243,
+      "scene": 8
+    },
+    {
+      "text": "में",
+      "startMs": 34250,
+      "endMs": 34436,
+      "scene": 8
+    },
+    {
+      "text": "भेजता",
+      "startMs": 34446,
+      "endMs": 34724,
+      "scene": 8
+    },
+    {
+      "text": "हूँ.",
+      "startMs": 34739,
+      "endMs": 34924,
+      "scene": 8
+    }
+  ]
+}
