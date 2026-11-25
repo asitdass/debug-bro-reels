@@ -777,7 +777,17 @@ export const ColdOpen: React.FC<P> = ({s}) => {
 
 /** Frames (from scene start) where a scene wants an extra sound effect. */
 export const sceneSfx = (s: any, dur: number): {at: number; src: string; vol: number}[] => {
+  // a tick when an open-loop sticker lands: the ear notices it even if the eye is on the captions
+  const tease = s.tease ? [{at: 6, src: 'sfx/tick.wav', vol: 0.45}] : [];
+  return [...tease, ...typeSfx(s, dur)];
+};
+
+const typeSfx = (s: any, dur: number): {at: number; src: string; vol: number}[] => {
   switch (s.type) {
+    case 'quiz':
+      return [{at: 2, src: 'sfx/ding.wav', vol: 0.5}];
+    case 'board':
+      return s.not ? [{at: Math.round(dur * 0.35), src: 'sfx/glitch.wav', vol: 0.45}, {at: Math.round(dur * 0.35), src: 'sfx/thump.wav', vol: 0.5}] : [];
     case 'coldopen': {
       const n = (s.tick ?? []).length;
       return [

@@ -11,22 +11,30 @@ Updated from `data/insights.json` after each reel. Every new episode runs ONE ex
   shares** (3.6% and 2.6% of views). It was personal (Asit's own journey) and gave people something to keep.
 - So the metric to chase is **saves + shares per view**, then skip rate. Likes don't matter.
 
-## Rules from this
-1. **Make it keepable.** Every reel ends on something worth saving: a checklist, a roadmap, a cheat sheet, "3 commands",
-   a template. Show it full-screen for 2+ seconds so people pause and save. Say "save karo" only when there is
-   something to save.
-2. **Make it sendable.** It should make someone think of a specific friend ("us dost ko bhejo jo…"): a shared pain,
-   a joke about a type of person, a tip for a situation they're in.
-3. **First-person beats lecture.** The breakout was "I'm doing this". Try Debug Bro speaking from experience
-   ("Maine prod mein ye galti ki thi…") instead of explaining from above.
-4. **Hook in 1 second, with the sound off.** Episode 1 lost people within 6 seconds.
-5. **Never the same look twice in a row.** Style must differ from the last two reels (validator enforces).
+## Rules from this (rewritten 26 Nov 2026 after the hit-vs-flop study in data/swipe.md)
+1. **Frame 0 is the hook, fully built.** It is the autoplay frame and the grid thumbnail. The code pre-rolls scene 1
+   (HOOK_PREROLL in src/Reel.tsx) so it is never a fade from black. Never open on a number or a definition.
+2. **Moment or belief, then the question within ~5 s.** "1 tick = block?", "Manali, ₹180 ki Maggi". The question
+   ("kaise?", "kyun?", "?") is on screen in the first 3 scenes.
+3. **One house look: `stage`** (src/stage.tsx: bright room, both characters always on screen, the scene on a monitor,
+   the wall colour changes with every scene's mood). Big accounts never change their look; change the hook, the topic
+   and the format instead. Another style only as a deliberate, logged experiment.
+4. **Open loops keep people watching.** A `tease` sticker ("Group wala twist end mein", "Quiz aa raha hai") every
+   12-15 s; the validator requires 1 above 110 words and 2 above 150. Pay every tease off.
+5. **Length follows the story**: 120-175 words (≈40-60 s with Sarvam at ~2.9 words/s). Not shorter by force.
+6. **Make it keepable**: a `board` with layout "checks" (cheat sheet) near the end. It now goes into the PDF freebie.
+7. **Make it commentable**: caption line 1 = "Comment KEYWORD for <promise>" (validator enforces), pin the same text
+   as a comment, and end on a `quiz` whose answer is NOT in the reel (it goes in a pinned reply ~2 h later).
+8. **Make it sendable**: topics everyone uses (WhatsApp, UPI, Uber, trains, ChatGPT) + "us dost ko bhejo jo …".
+9. **First-person and dialogue beat lecture.** The Intern voices the viewer's belief; Debug Bro answers.
+10. **Original audio.** Don't add a trending song under the voice-over when posting (ep04 had one).
 
 ## Experiment log
 | ep | style | format | experiment (one change) | result |
 | --- | --- | --- | --- | --- |
 | 1-3 | cinema | legacy | baseline | 119-135 views, ~0 saves/shares |
-| 4 | cinema | desi-story | news topic + dialogue + comment keyword | pending (re-check after 48 h) |
+| 4 | cinema | desi-story | news topic + dialogue + comment keyword | 69 views ~35 min after posting (26 Nov); grid thumbnail was a blank frame; posted with a trending song. Re-check after 48 h |
+| 5 | stage | whiteboard | new house style (full frame, both characters, hook at frame 0) + tease stickers + quiz ending + keyword ask in caption line 1 | pending: judge by skip rate, then saves+shares per view |
 
 ## Still unknown (need screenshots from the Instagram app: Insights → the reel)
 - Skip rate (share of viewers who left in the first 3 s) and the retention curve for eps 3-4.

@@ -1,14 +1,14 @@
 # Debug Bro formats
 
 Every episode picks ONE format. Never the same format as the previous episode, and never the same opening scene type
-twice in a row (the validator enforces both). The format also picks the look, so the feed alternates colours:
-desi-story = dark cinematic, whiteboard = warm yellow, ai-hack = light lavender, news = black + red, skit = sky blue,
-myth-fact = deep teal.
+twice in a row (the validator enforces both). The LOOK no longer rotates: every episode uses the house style `stage`
+(src/stage.tsx), whose wall colour already changes with each scene's mood. Formats change the script shape only.
 
 The characters are the brand and DO repeat: **Debug Bro** (Asit: curly hair, beard, dotted shirt) and **the Intern**
 (glasses, teal hoodie, asks the questions a beginner would). Everything else changes every time.
 
-Scene types for every format: see the table in SKILL.md. Lengths: 7-12 scenes, 70-110 words, 25-40 s.
+Scene types for every format: see the table in SKILL.md. Lengths: 10-15 scenes, 120-175 words, 40-60 s, a `tease`
+every 12-15 s, and every format ends: cheat sheet (`board` checks) → `quiz` → CTA with the comment keyword.
 
 ---
 
@@ -69,11 +69,13 @@ The first frame must make sense with the sound off. Never open on a statistic.
 
 ## CTA: the comment-keyword freebie (every episode)
 Set `leadMagnet` {keyword, promise}, e.g. {"keyword": "DEPLOY", "promise": "Deploy checklist PDF"}. The last scene says
-it in `vo` and `cap`: "Comment DEPLOY, checklist DM mein bhejta hoon." The caption's first lines repeat it. Add a
+it in `vo` and `cap`: "Comment DEPLOY, checklist DM mein bhejta hoon." Caption LINE 1 is the same ask (validator).
+Before it, a `quiz` scene: a question people answer in one letter, answer not in the reel (like billu's "API ya MCP?"). Add a
 "send this to the friend who …" line in the caption. Asit sends the DMs (the pipeline makes the PDF).
 Optional series hook: `"part": 1` and "Part 2 chahiye? Comment PART2".
 
 ## Banned (they made eps 1-3 feel identical)
 - The "15 LPA" interview chat and the दोहा `rule` ending as fixtures. Each may appear at most once in 5 episodes.
-- Opening on a number, a definition or "aaj hum seekhenge".
+- Opening on a number, a definition or "aaj hum seekhenge" (the validator rejects a number).
+- An empty or dark first frame. Frame 0 must already show the headline, the monitor visual and both characters.
 - Explaining in order: problem → solution → summary. Tell it as a story or a list instead.

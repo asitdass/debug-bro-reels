@@ -20,6 +20,10 @@ const base = {
   speaker: z.enum(['main', 'alt']).optional(),
   // Debug Bro mascot pose for this scene; leave out to pick one from the beat
   pose: z.enum(['idle', 'point', 'explain', 'think', 'shock', 'facepalm', 'thumbsup', 'shrug', 'crossed', 'laugh']).optional(),
+  // stage style: the pose of the character who is NOT talking (the listener's reaction)
+  react: z.enum(['idle', 'point', 'explain', 'think', 'shock', 'facepalm', 'thumbsup', 'shrug', 'crossed', 'laugh']).optional(),
+  // open-loop sticker shown on this scene, a reason to keep watching: "Group wala twist end mein"
+  tease: z.string().min(3).max(40).optional(),
 };
 
 const str = (max) => z.string().min(1).max(max);
@@ -120,6 +124,8 @@ export const sceneSchema = z.discriminatedUnion('type', [
   z.object({...base, type: z.literal('tip'), n: z.number().int().min(1), of: z.number().int().min(1), title: str(40), desc: str(90), example: str(90).optional()}),
   // a felt everyday moment (desi-story opener): place/time, one big line, an optional stamp
   z.object({...base, type: z.literal('moment'), place: str(40), line: str(50), stamp: str(16).optional()}),
+  // a question with 2-4 options; the answer is NOT shown (it goes in the pinned comment), so people comment
+  z.object({...base, type: z.literal('quiz'), question: str(60), options: z.array(str(36)).min(2).max(4), answer: z.number().int().min(0).max(3), why: str(120)}),
 ]);
 
 export const FORMATS = ['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact'];
@@ -136,7 +142,7 @@ export const episodeSchema = z.object({
   // the reel's format (see .claude/skills/make-episode/formats.md); it also picks the look
   format: z.enum(['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact']).optional(),
   // art direction (src/styles.ts): changes the whole frame; never the same as either of the last 2 episodes
-  style: z.enum(['cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone']).optional(),
+  style: z.enum(['stage', 'cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone']).optional(),
   // the ONE change this episode tests vs the previous reel (see data/learnings.md), and the metric that will judge it
   experiment: z.object({change: str(140), why: str(200), metric: z.enum(['skip-rate', 'watch-time', 'views', 'saves', 'shares', 'follows', 'comments'])}).optional(),
   // the 3 hook options considered; the scenes use the best one

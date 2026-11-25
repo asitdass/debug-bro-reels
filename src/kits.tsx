@@ -43,6 +43,8 @@ export function keyText(s: any): {big: string; small?: string; list?: string[]; 
       return {big: s.title, small: s.kicker};
     case 'rule':
       return {big: s.rule, small: s.cta};
+    case 'quiz':
+      return {big: s.question, list: (s.options ?? []).map((o: string, j: number) => `${String.fromCharCode(65 + j)}: ${o}`)};
     default:
       return {big: plain(s.cap) || plain(s.vo)};
   }

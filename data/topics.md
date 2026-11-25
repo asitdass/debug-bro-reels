@@ -14,7 +14,7 @@ topic of the chosen pillar unless there's a fresher trending event.
 - [ ] Swiggy/Zomato New Year's Eve pe kaise nahi girta? (autoscaling, queue-based load levelling)
 - [ ] Flipkart Big Billion Days ka iPhone sale crash (inventory locking, overselling)
 - [ ] Google Maps ko traffic kaise pata chalta hai? (crowd-sourced telemetry, aggregation)
-- [ ] WhatsApp double tick aur blue tick kaise kaam karte hain? (delivery receipts, message queues)
+- [x] WhatsApp double tick aur blue tick kaise kaam karte hain? (delivery receipts, message queues)
 - [ ] Result day pe board exam websites kyun girti hain? (static pre-rendering, CDN)
 - [ ] OTP 30 second late kyun aata hai? (SMS gateways, retries, rate limits)
 - [ ] YouTube "views 301 pe ruk gaye" ka asli kaaran (counting at scale, fraud filtering)

@@ -80,6 +80,9 @@ export const Board: React.FC<P> = ({s, dur}) => {
   const flipped = s.not && frame >= flip;
   const flipPop = usePop(flip);
   const board = usePop(0);
+  // flow items share the board's inner width (868px) with the arrows, so 3+ items never spill off the board
+  const itemW = items.length >= 3 ? Math.floor((868 - (items.length - 1) * 100) / items.length) : 260;
+  const itemFont = items.length >= 3 ? 46 : 56;
   return (
     <Stage>
       <div
@@ -128,10 +131,10 @@ export const Board: React.FC<P> = ({s, dur}) => {
                     <Arrow at={at(i) - 6} />
                   </div>
                 ) : null}
-                <Draw at={at(i)} len={10} style={{width: 260, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+                <Draw at={at(i)} len={10} style={{width: itemW, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
                   <IconBubble text={it.icon ?? String(i + 1)} />
-                  <div style={{fontFamily: HAND, fontWeight: 700, fontSize: 56, color: MARKER, marginTop: 14, lineHeight: 1.1}}>{it.label}</div>
-                  {it.sub ? <div style={{fontFamily: HAND, fontSize: 40, color: '#556', marginTop: 6, lineHeight: 1.15}}>{it.sub}</div> : null}
+                  <div style={{fontFamily: HAND, fontWeight: 700, fontSize: itemFont, color: MARKER, marginTop: 14, lineHeight: 1.1}}>{it.label}</div>
+                  {it.sub ? <div style={{fontFamily: HAND, fontSize: itemFont - 14, color: '#556', marginTop: 6, lineHeight: 1.15}}>{it.sub}</div> : null}
                 </Draw>
               </React.Fragment>
             ))}
@@ -370,7 +373,42 @@ export const Moment: React.FC<P> = ({s, dur}) => {
   );
 };
 
+
+/* --------------------------------------------------------------- quiz (comment bait: the answer is not shown) */
+const OPT_COL = ['#ffc857', '#4be3c9', '#ff8fab', '#9db4ff'];
+export const Quiz: React.FC<P> = ({s, dur}) => {
+  const frame = useCurrentFrame();
+  const q = usePop(0);
+  const opts: string[] = s.options ?? [];
+  const pulse = 1 + Math.sin(frame / 4) * 0.03;
+  return (
+    <Stage style={{justifyContent: 'flex-start', paddingTop: 10}}>
+      <div style={{fontFamily: FONT.mono, fontWeight: 800, fontSize: 34, letterSpacing: 8, color: '#ffc857', opacity: q}}>QUIZ TIME</div>
+      <div style={{marginTop: 22, fontFamily: FONT.sans, fontWeight: 900, fontSize: String(s.question).length > 34 ? 76 : 90, lineHeight: 1.05, letterSpacing: -2, color: '#ffffff', textAlign: 'center', transform: `scale(${0.9 + q * 0.1})`, textWrap: 'balance'} as React.CSSProperties}>
+        {s.question}
+      </div>
+      <div style={{marginTop: 50, display: 'flex', flexDirection: 'column', gap: 28, width: 900}}>
+        {opts.map((o, i) => {
+          const p = usePopSafe(8 + i * 7);
+          return (
+            <div key={i} style={{display: 'flex', alignItems: 'center', gap: 28, background: '#ffffff', borderRadius: 30, padding: '24px 30px', transform: `translateX(${(1 - p) * (i % 2 ? 120 : -120)}px)`, opacity: Math.min(1, p * 1.4), boxShadow: `0 10px 0 ${OPT_COL[i % 4]}`}}>
+              <div style={{width: 96, height: 96, borderRadius: 24, background: OPT_COL[i % 4], display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.sans, fontWeight: 900, fontSize: 60, color: '#1b1412', flexShrink: 0}}>
+                {String.fromCharCode(65 + i)}
+              </div>
+              <div style={{fontFamily: FONT.sans, fontWeight: 800, fontSize: 56, lineHeight: 1.1, color: '#1b1412'}}>{o}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div style={{marginTop: 54, fontFamily: FONT.sans, fontWeight: 900, fontSize: 58, color: '#ffc857', transform: `scale(${pulse})`, opacity: interpolate(frame, [20, 30], [0, 1], clamp)}}>
+        Comment karo: {opts.map((_, i) => String.fromCharCode(65 + i)).join(' ya ')}?
+      </div>
+    </Stage>
+  );
+};
+
 export const FORMAT_SCENES: Record<string, React.FC<P>> = {
+  quiz: Quiz,
   board: Board,
   dialog: Dialog,
   headline: Headline,

@@ -25,12 +25,28 @@ export type ArtStyle = {
   /** per-scene background colours (poster style switches colour every cut) */
   blocks?: string[];
   /** a scene kit replaces the scene layouts entirely (src/kits.tsx); no corner mascot, no caption layer */
-  kit?: 'phone' | 'comic' | 'kinetic';
+  kit?: 'phone' | 'comic' | 'kinetic' | 'stage';
 };
 
 const t = (base: keyof typeof THEMES, patch: Partial<Theme>): Theme => ({...THEMES[base], ...patch});
 
 export const STYLES: Record<string, ArtStyle> = {
+  // House style from ep 5 (src/stage.tsx): bright room, both characters always on screen, the scene on a monitor.
+  // The outliers we studied keep ONE recognisable look; the hook, topic and format change, the look does not.
+  stage: {
+    id: 'stage',
+    label: "Debug Bro's room (house style)",
+    theme: THEMES.story,
+    bg: 'glow',
+    captions: 'top',
+    header: 'none',
+    transition: 'pop',
+    mascot: {x: 0, y: 0, width: 0},
+    stage: {scale: 1, originY: 500, shiftX: 0},
+    grain: 0.03,
+    display: '"Inter", sans-serif',
+    kit: 'stage',
+  },
   cinema: {
     id: 'cinema',
     label: 'Dark cinematic (eps 1-4)',
