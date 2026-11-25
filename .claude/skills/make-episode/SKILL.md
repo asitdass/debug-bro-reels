@@ -30,8 +30,12 @@ then `data/swipe.md` (what the outlier reels of the creators Asit admires do, be
    {change, why, metric}. Keep everything else comparable, so the result teaches something.
 6. Pick the **style** (art direction, `style`): never one used by the previous 2 episodes. The style changes the whole
    frame (background, captions, header, where Debug Bro stands, transitions):
-   `cinema` dark film · `notebook` hand-drawn notes on paper · `blueprint` engineer's drawing · `newsroom` newspaper
-   front page · `poster` bold colour blocks with huge words · `terminal` hacker console · `comic` comic-book panels.
+   Three styles re-lay the WHOLE reel (different visual grammar, prefer these):
+   `phone` the story plays as a chat on a phone (dialogue-heavy scripts, everyday-app topics) · `comic` every beat is a
+   comic page with panels, SFX and both characters (skits, outages, drama) · `poster` giant kinetic words on colour
+   blocks, no cards (hot takes, myth-fact, news). The others restyle the standard layout:
+   `cinema` dark film · `notebook` hand-drawn paper · `blueprint` engineer's drawing · `newsroom` newspaper · `terminal`.
+   Never use a skin style twice in a row; rotate between a kit style and a skin style.
    Match it to the topic (news → newsroom, a dev tip → terminal or notebook, a hot take → poster, a skit → comic).
 
 Pillars: `everyday-tech`, `money-tech` (never investment advice), `interview`, `ai-tools`, `dev-skills`, `news`.

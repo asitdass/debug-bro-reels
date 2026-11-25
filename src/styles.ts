@@ -24,6 +24,8 @@ export type ArtStyle = {
   display: string; // headline font
   /** per-scene background colours (poster style switches colour every cut) */
   blocks?: string[];
+  /** a scene kit replaces the scene layouts entirely (src/kits.tsx); no corner mascot, no caption layer */
+  kit?: 'phone' | 'comic' | 'kinetic';
 };
 
 const t = (base: keyof typeof THEMES, patch: Partial<Theme>): Theme => ({...THEMES[base], ...patch});
@@ -94,6 +96,21 @@ export const STYLES: Record<string, ArtStyle> = {
     grain: 0.06,
     display: '"Anton", "Inter", sans-serif',
     blocks: ['#ff5a1f', '#1f4dff', '#111111', '#ffd400', '#00b37e', '#ff2e88'],
+    kit: 'kinetic',
+  },
+  phone: {
+    id: 'phone',
+    label: 'Chat on a phone',
+    theme: t('skit', {name: 'phone', dark: true, bg: '#151827', bg2: '#2a1f4d', ink: '#ffffff', muted: '#9aa3c7', accent: '#25d366', card: '#ffffff', cardInk: '#111b21', line: '#2b3050', vignette: 0.5}),
+    bg: 'glow',
+    captions: 'top',
+    header: 'none',
+    transition: 'punch',
+    mascot: {x: 0, y: 0, width: 0},
+    stage: {scale: 1, originY: 500, shiftX: 0},
+    grain: 0.04,
+    display: '"Inter", sans-serif',
+    kit: 'phone',
   },
   terminal: {
     id: 'terminal',
@@ -120,6 +137,7 @@ export const STYLES: Record<string, ArtStyle> = {
     stage: {scale: 0.84, originY: 500, shiftX: 30},
     grain: 0.03,
     display: '"Anton", "Inter", sans-serif',
+    kit: 'comic',
   },
 };
 
@@ -131,6 +149,7 @@ const FORMAT_STYLE: Record<string, string> = {
   news: 'newsroom',
   skit: 'comic',
   'myth-fact': 'poster',
+  chat: 'phone',
 };
 
 export const styleFor = (episode: any): ArtStyle => STYLES[episode?.style ?? FORMAT_STYLE[episode?.format] ?? 'cinema'] ?? STYLES.cinema;

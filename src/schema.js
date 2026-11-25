@@ -136,7 +136,7 @@ export const episodeSchema = z.object({
   // the reel's format (see .claude/skills/make-episode/formats.md); it also picks the look
   format: z.enum(['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact']).optional(),
   // art direction (src/styles.ts): changes the whole frame; never the same as either of the last 2 episodes
-  style: z.enum(['cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic']).optional(),
+  style: z.enum(['cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone']).optional(),
   // the ONE change this episode tests vs the previous reel (see data/learnings.md), and the metric that will judge it
   experiment: z.object({change: str(140), why: str(200), metric: z.enum(['skip-rate', 'watch-time', 'views', 'saves', 'shares', 'follows', 'comments'])}).optional(),
   // the 3 hook options considered; the scenes use the best one

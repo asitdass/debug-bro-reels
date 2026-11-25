@@ -10,6 +10,7 @@ import {C, FONT, MOOD, themeFor} from './theme';
 import {FORMAT_SCENES, FULL_FRAME} from './scenes/formats';
 import {MouthCtx, ThemeCtx} from './components/themeContext';
 import {styleFor} from './styles';
+import {ComicScene, KineticScene, PhoneReel} from './kits';
 import {Cut, MascotFrame, StyleBackground, StyleHeader, StyledCaptions} from './components/frame';
 
 const ALL_SCENES: Record<string, React.FC<any>> = {...SCENES, ...FORMAT_SCENES};
@@ -88,8 +89,14 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
         <StyleHeader st={sty} episode={episode} starts={starts} durs={durs} scene={cur} />
       </div>
       {episode.scenes.map((s: any, i: number) => {
-        const Comp = ALL_SCENES[s.type];
+        const Comp: React.FC<any> = sty.kit === "comic" ? ComicScene : sty.kit === "kinetic" ? KineticScene : ALL_SCENES[s.type];
         if (!Comp) return null;
+        if (sty.kit === 'phone')
+          return (
+            <Sequence key={i} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
+              {i > 0 ? <Audio src={staticFile('sfx/whoosh.wav')} volume={0.12} /> : null}
+            </Sequence>
+          );
         return (
           <Sequence key={i} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
             {i > 0 ? <Audio src={staticFile('sfx/whoosh.wav')} volume={0.22} /> : null}
@@ -100,7 +107,9 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
             ))}
             <Cut st={sty} dur={durs[i]}>
               {sty.header === 'bars' ? <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} /> : null}
-              {withMascot && !FULL_FRAME.has(s.type) ? (
+              {sty.kit ? (
+                <Comp s={s} dur={durs[i]} i={i} />
+              ) : withMascot && !FULL_FRAME.has(s.type) ? (
                 <AbsoluteFill style={{transform: `translateX(${sty.stage.shiftX}px) scale(${sty.stage.scale})`, transformOrigin: `50% ${sty.stage.originY}px`}}>
                   <Comp s={s} dur={durs[i]} />
                 </AbsoluteFill>
@@ -111,7 +120,8 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
           </Sequence>
         );
       })}
-      {withMascot ? (
+      {sty.kit === 'phone' ? <PhoneReel episode={episode} starts={starts} cur={cur} /> : null}
+      {withMascot && !sty.kit ? (
         <div style={{opacity: 1 - hideBro, filter: th.dark ? 'drop-shadow(0 18px 40px #000a)' : 'drop-shadow(0 12px 24px #0003)'}}>
           <MascotFrame st={sty}>
             <Mascot track={track} mouth={mouth} width={sty.mascot.width} flip={sty.mascot.flip} seed={episode.slug ?? 'db'} />
@@ -119,7 +129,7 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
         </div>
       ) : null}
       <FilmLook grain={sty.grain} />
-      {hideCaptions ? null : episode.scenes.some((s: any) => s.cap) ? (
+      {hideCaptions || sty.kit ? null : episode.scenes.some((s: any) => s.cap) ? (
         sty.captions === 'top' ? <TopCaptions words={captionWords(episode, timings)} /> : <StyledCaptions st={sty} words={captionWords(episode, timings)} />
       ) : (
         <Captions words={timings.words} />
