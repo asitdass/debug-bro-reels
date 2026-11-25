@@ -1,0 +1,746 @@
+{
+  "totalMs": 39860,
+  "audio": "episodes/ep04-microsoft-outage-failover/voice.mp3",
+  "scenes": [
+    {
+      "startMs": 0,
+      "durMs": 4254
+    },
+    {
+      "startMs": 4514,
+      "durMs": 1609
+    },
+    {
+      "startMs": 6383,
+      "durMs": 2561
+    },
+    {
+      "startMs": 9205,
+      "durMs": 2857
+    },
+    {
+      "startMs": 12322,
+      "durMs": 5445
+    },
+    {
+      "startMs": 18027,
+      "durMs": 2782
+    },
+    {
+      "startMs": 21069,
+      "durMs": 3036
+    },
+    {
+      "startMs": 24365,
+      "durMs": 972
+    },
+    {
+      "startMs": 25597,
+      "durMs": 2652
+    },
+    {
+      "startMs": 28509,
+      "durMs": 4859
+    },
+    {
+      "startMs": 33627,
+      "durMs": 3193
+    },
+    {
+      "startMs": 37080,
+      "durMs": 2180
+    }
+  ],
+  "words": [
+    {
+      "text": "Friday",
+      "startMs": 300,
+      "endMs": 746,
+      "scene": 0
+    },
+    {
+      "text": "सुबह,",
+      "startMs": 769,
+      "endMs": 1088,
+      "scene": 0
+    },
+    {
+      "text": "office.",
+      "startMs": 1305,
+      "endMs": 1751,
+      "scene": 0
+    },
+    {
+      "text": "Outlook",
+      "startMs": 1976,
+      "endMs": 2485,
+      "scene": 0
+    },
+    {
+      "text": "बोला,",
+      "startMs": 2512,
+      "endMs": 2830,
+      "scene": 0
+    },
+    {
+      "text": "trying",
+      "startMs": 3048,
+      "endMs": 3494,
+      "scene": 0
+    },
+    {
+      "text": "to",
+      "startMs": 3517,
+      "endMs": 3708,
+      "scene": 0
+    },
+    {
+      "text": "connect.",
+      "startMs": 3718,
+      "endMs": 4228,
+      "scene": 0
+    },
+    {
+      "text": "भैया,",
+      "startMs": 4514,
+      "endMs": 4733,
+      "scene": 1
+    },
+    {
+      "text": "Microsoft",
+      "startMs": 4882,
+      "endMs": 5319,
+      "scene": 1
+    },
+    {
+      "text": "hack",
+      "startMs": 5342,
+      "endMs": 5560,
+      "scene": 1
+    },
+    {
+      "text": "हो",
+      "startMs": 5572,
+      "endMs": 5703,
+      "scene": 1
+    },
+    {
+      "text": "गया",
+      "startMs": 5710,
+      "endMs": 5884,
+      "scene": 1
+    },
+    {
+      "text": "क्या?",
+      "startMs": 5894,
+      "endMs": 6112,
+      "scene": 1
+    },
+    {
+      "text": "Hack",
+      "startMs": 6383,
+      "endMs": 6613,
+      "scene": 2
+    },
+    {
+      "text": "नहीं.",
+      "startMs": 6625,
+      "endMs": 6855,
+      "scene": 2
+    },
+    {
+      "text": "July",
+      "startMs": 7012,
+      "endMs": 7241,
+      "scene": 2
+    },
+    {
+      "text": "का",
+      "startMs": 7253,
+      "endMs": 7391,
+      "scene": 2
+    },
+    {
+      "text": "एक",
+      "startMs": 7398,
+      "endMs": 7536,
+      "scene": 2
+    },
+    {
+      "text": "fix.",
+      "startMs": 7543,
+      "endMs": 7727,
+      "scene": 2
+    },
+    {
+      "text": "तीन",
+      "startMs": 7881,
+      "endMs": 8065,
+      "scene": 2
+    },
+    {
+      "text": "महीने",
+      "startMs": 8075,
+      "endMs": 8350,
+      "scene": 2
+    },
+    {
+      "text": "चुप",
+      "startMs": 8365,
+      "endMs": 8548,
+      "scene": 2
+    },
+    {
+      "text": "बैठा",
+      "startMs": 8558,
+      "endMs": 8788,
+      "scene": 2
+    },
+    {
+      "text": "था.",
+      "startMs": 8800,
+      "endMs": 8937,
+      "scene": 2
+    },
+    {
+      "text": "एक",
+      "startMs": 9205,
+      "endMs": 9358,
+      "scene": 3
+    },
+    {
+      "text": "दिन",
+      "startMs": 9366,
+      "endMs": 9571,
+      "scene": 3
+    },
+    {
+      "text": "पहले,",
+      "startMs": 9582,
+      "endMs": 9838,
+      "scene": 3
+    },
+    {
+      "text": "करीब",
+      "startMs": 10013,
+      "endMs": 10269,
+      "scene": 3
+    },
+    {
+      "text": "चौदह",
+      "startMs": 10283,
+      "endMs": 10539,
+      "scene": 3
+    },
+    {
+      "text": "percent",
+      "startMs": 10552,
+      "endMs": 10962,
+      "scene": 3
+    },
+    {
+      "text": "gateway",
+      "startMs": 10984,
+      "endMs": 11393,
+      "scene": 3
+    },
+    {
+      "text": "servers",
+      "startMs": 11415,
+      "endMs": 11825,
+      "scene": 3
+    },
+    {
+      "text": "बंद.",
+      "startMs": 11846,
+      "endMs": 12051,
+      "scene": 3
+    },
+    {
+      "text": "फिर",
+      "startMs": 12322,
+      "endMs": 12645,
+      "scene": 4
+    },
+    {
+      "text": "Teams",
+      "startMs": 12662,
+      "endMs": 13147,
+      "scene": 4
+    },
+    {
+      "text": "का",
+      "startMs": 13173,
+      "endMs": 13415,
+      "scene": 4
+    },
+    {
+      "text": "traffic",
+      "startMs": 13428,
+      "endMs": 14075,
+      "scene": 4
+    },
+    {
+      "text": "भी",
+      "startMs": 14109,
+      "endMs": 14351,
+      "scene": 4
+    },
+    {
+      "text": "उसी",
+      "startMs": 14364,
+      "endMs": 14687,
+      "scene": 4
+    },
+    {
+      "text": "gateway",
+      "startMs": 14704,
+      "endMs": 15351,
+      "scene": 4
+    },
+    {
+      "text": "पे.",
+      "startMs": 15385,
+      "endMs": 15627,
+      "scene": 4
+    },
+    {
+      "text": "Load",
+      "startMs": 15895,
+      "endMs": 16299,
+      "scene": 4
+    },
+    {
+      "text": "बढ़ा,",
+      "startMs": 16321,
+      "endMs": 16725,
+      "scene": 4
+    },
+    {
+      "text": "bug",
+      "startMs": 17001,
+      "endMs": 17325,
+      "scene": 4
+    },
+    {
+      "text": "जागा.",
+      "startMs": 17342,
+      "endMs": 17746,
+      "scene": 4
+    },
+    {
+      "text": "Server",
+      "startMs": 18027,
+      "endMs": 18335,
+      "scene": 5
+    },
+    {
+      "text": "अटका,",
+      "startMs": 18352,
+      "endMs": 18572,
+      "scene": 5
+    },
+    {
+      "text": "तो",
+      "startMs": 18723,
+      "endMs": 18855,
+      "scene": 5
+    },
+    {
+      "text": "system",
+      "startMs": 18862,
+      "endMs": 19170,
+      "scene": 5
+    },
+    {
+      "text": "ने",
+      "startMs": 19186,
+      "endMs": 19319,
+      "scene": 5
+    },
+    {
+      "text": "traffic",
+      "startMs": 19326,
+      "endMs": 19678,
+      "scene": 5
+    },
+    {
+      "text": "बगल",
+      "startMs": 19696,
+      "endMs": 19873,
+      "scene": 5
+    },
+    {
+      "text": "वाले",
+      "startMs": 19882,
+      "endMs": 20102,
+      "scene": 5
+    },
+    {
+      "text": "server",
+      "startMs": 20114,
+      "endMs": 20422,
+      "scene": 5
+    },
+    {
+      "text": "पे",
+      "startMs": 20438,
+      "endMs": 20571,
+      "scene": 5
+    },
+    {
+      "text": "भेजा.",
+      "startMs": 20578,
+      "endMs": 20798,
+      "scene": 5
+    },
+    {
+      "text": "Domino.",
+      "startMs": 21069,
+      "endMs": 21412,
+      "scene": 6
+    },
+    {
+      "text": "दो",
+      "startMs": 21584,
+      "endMs": 21731,
+      "scene": 6
+    },
+    {
+      "text": "घंटे",
+      "startMs": 21738,
+      "endMs": 21983,
+      "scene": 6
+    },
+    {
+      "text": "में",
+      "startMs": 21996,
+      "endMs": 22191,
+      "scene": 6
+    },
+    {
+      "text": "अस्सी",
+      "startMs": 22201,
+      "endMs": 22495,
+      "scene": 6
+    },
+    {
+      "text": "percent",
+      "startMs": 22510,
+      "endMs": 22901,
+      "scene": 6
+    },
+    {
+      "text": "से",
+      "startMs": 22922,
+      "endMs": 23068,
+      "scene": 6
+    },
+    {
+      "text": "ज़्यादा",
+      "startMs": 23076,
+      "endMs": 23467,
+      "scene": 6
+    },
+    {
+      "text": "servers",
+      "startMs": 23488,
+      "endMs": 23879,
+      "scene": 6
+    },
+    {
+      "text": "चुप.",
+      "startMs": 23899,
+      "endMs": 24095,
+      "scene": 6
+    },
+    {
+      "text": "तो",
+      "startMs": 24365,
+      "endMs": 24504,
+      "scene": 7
+    },
+    {
+      "text": "restart",
+      "startMs": 24511,
+      "endMs": 24880,
+      "scene": 7
+    },
+    {
+      "text": "कर",
+      "startMs": 24900,
+      "endMs": 25038,
+      "scene": 7
+    },
+    {
+      "text": "दो",
+      "startMs": 25045,
+      "endMs": 25184,
+      "scene": 7
+    },
+    {
+      "text": "ना?",
+      "startMs": 25191,
+      "endMs": 25330,
+      "scene": 7
+    },
+    {
+      "text": "किया.",
+      "startMs": 25597,
+      "endMs": 25849,
+      "scene": 8
+    },
+    {
+      "text": "Restart",
+      "startMs": 26021,
+      "endMs": 26424,
+      "scene": 8
+    },
+    {
+      "text": "होते",
+      "startMs": 26446,
+      "endMs": 26697,
+      "scene": 8
+    },
+    {
+      "text": "ही",
+      "startMs": 26711,
+      "endMs": 26862,
+      "scene": 8
+    },
+    {
+      "text": "रुका",
+      "startMs": 26870,
+      "endMs": 27122,
+      "scene": 8
+    },
+    {
+      "text": "traffic",
+      "startMs": 27135,
+      "endMs": 27538,
+      "scene": 8
+    },
+    {
+      "text": "फिर",
+      "startMs": 27559,
+      "endMs": 27761,
+      "scene": 8
+    },
+    {
+      "text": "टूट",
+      "startMs": 27772,
+      "endMs": 27973,
+      "scene": 8
+    },
+    {
+      "text": "पड़ा.",
+      "startMs": 27984,
+      "endMs": 28236,
+      "scene": 8
+    },
+    {
+      "text": "Twist:",
+      "startMs": 28509,
+      "endMs": 28878,
+      "scene": 9
+    },
+    {
+      "text": "test",
+      "startMs": 29092,
+      "endMs": 29400,
+      "scene": 9
+    },
+    {
+      "text": "कम",
+      "startMs": 29416,
+      "endMs": 29600,
+      "scene": 9
+    },
+    {
+      "text": "cores",
+      "startMs": 29610,
+      "endMs": 29979,
+      "scene": 9
+    },
+    {
+      "text": "वाली",
+      "startMs": 29999,
+      "endMs": 30307,
+      "scene": 9
+    },
+    {
+      "text": "machines",
+      "startMs": 30323,
+      "endMs": 30877,
+      "scene": 9
+    },
+    {
+      "text": "पे",
+      "startMs": 30906,
+      "endMs": 31090,
+      "scene": 9
+    },
+    {
+      "text": "हुआ.",
+      "startMs": 31100,
+      "endMs": 31346,
+      "scene": 9
+    },
+    {
+      "text": "बड़े",
+      "startMs": 31554,
+      "endMs": 31861,
+      "scene": 9
+    },
+    {
+      "text": "servers",
+      "startMs": 31877,
+      "endMs": 32370,
+      "scene": 9
+    },
+    {
+      "text": "पे",
+      "startMs": 32396,
+      "endMs": 32580,
+      "scene": 9
+    },
+    {
+      "text": "bug",
+      "startMs": 32590,
+      "endMs": 32836,
+      "scene": 9
+    },
+    {
+      "text": "और",
+      "startMs": 32849,
+      "endMs": 33034,
+      "scene": 9
+    },
+    {
+      "text": "बुरा.",
+      "startMs": 33044,
+      "endMs": 33351,
+      "scene": 9
+    },
+    {
+      "text": "सबक:",
+      "startMs": 33627,
+      "endMs": 33844,
+      "scene": 10
+    },
+    {
+      "text": "failover",
+      "startMs": 34027,
+      "endMs": 34514,
+      "scene": 10
+    },
+    {
+      "text": "को",
+      "startMs": 34540,
+      "endMs": 34702,
+      "scene": 10
+    },
+    {
+      "text": "brake",
+      "startMs": 34711,
+      "endMs": 35036,
+      "scene": 10
+    },
+    {
+      "text": "चाहिए,",
+      "startMs": 35053,
+      "endMs": 35378,
+      "scene": 10
+    },
+    {
+      "text": "वरना",
+      "startMs": 35566,
+      "endMs": 35837,
+      "scene": 10
+    },
+    {
+      "text": "वही",
+      "startMs": 35851,
+      "endMs": 36068,
+      "scene": 10
+    },
+    {
+      "text": "आग",
+      "startMs": 36079,
+      "endMs": 36242,
+      "scene": 10
+    },
+    {
+      "text": "फैलाता",
+      "startMs": 36250,
+      "endMs": 36629,
+      "scene": 10
+    },
+    {
+      "text": "है.",
+      "startMs": 36649,
+      "endMs": 36812,
+      "scene": 10
+    },
+    {
+      "text": "Comment",
+      "startMs": 37080,
+      "endMs": 37376,
+      "scene": 11
+    },
+    {
+      "text": "FAILOVER,",
+      "startMs": 37392,
+      "endMs": 37725,
+      "scene": 11
+    },
+    {
+      "text": "पूरा",
+      "startMs": 37859,
+      "endMs": 38044,
+      "scene": 11
+    },
+    {
+      "text": "outage",
+      "startMs": 38054,
+      "endMs": 38312,
+      "scene": 11
+    },
+    {
+      "text": "एक",
+      "startMs": 38326,
+      "endMs": 38437,
+      "scene": 11
+    },
+    {
+      "text": "page",
+      "startMs": 38443,
+      "endMs": 38628,
+      "scene": 11
+    },
+    {
+      "text": "में",
+      "startMs": 38637,
+      "endMs": 38785,
+      "scene": 11
+    },
+    {
+      "text": "DM",
+      "startMs": 38793,
+      "endMs": 38904,
+      "scene": 11
+    },
+    {
+      "text": "करता",
+      "startMs": 38910,
+      "endMs": 39095,
+      "scene": 11
+    },
+    {
+      "text": "हूँ.",
+      "startMs": 39104,
+      "endMs": 39252,
+      "scene": 11
+    }
+  ]
+}

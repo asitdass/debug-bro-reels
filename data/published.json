@@ -27,5 +27,14 @@
     "postedAt": "2026-11-18T21:51:34.317Z",
     "kind": "reel",
     "delivered": "telegram"
+  },
+  {
+    "slug": "ep04-microsoft-outage-failover",
+    "topic": "Microsoft 365 global outage Nov 2026: latent bug + failover cascade",
+    "pillar": "news",
+    "title": "Microsoft 365 outage: safety system ne hi aag failayi",
+    "postedAt": "2026-11-25T18:39:30.213Z",
+    "kind": "reel",
+    "delivered": "telegram"
   }
 ]
