@@ -2,6 +2,7 @@
 
 Automated pipeline for the @debug_bro Instagram page: Hinglish system-design explainer reels.
 
+- New session? Read `HANDOFF.md` first (current state, results, next steps).
 - Writing an episode: follow `.claude/skills/make-episode/SKILL.md` (`/make-episode`).
 - Episodes live in `episodes/<slug>/episode.json`; the schema is `src/schema.js`; validate with `node pipeline/validate.mjs <slug>`.
 - `npm run reel -- --slug=<slug>` does voice → render → approval → publish. `--no-publish` stops after rendering.
