@@ -11,7 +11,8 @@ Your job is the creative part only: pick the topic, get the facts right, write `
 does voice, animation, rendering and posting. Do not touch `src/` or `pipeline/`.
 
 ## 0. Read first
-`data/swipe.md` (what the outlier reels of the creators Asit admires do, beat by beat), then
+`data/learnings.md` and `data/insights.json` (how the last reels actually did, and the rules that came out of it),
+then `data/swipe.md` (what the outlier reels of the creators Asit admires do, beat by beat), then
 `.claude/skills/make-episode/formats.md` (the 6 formats, hook types, CTA rules, what is banned), then `brand.md`.
 
 ## 1. Pick the format, then the topic
@@ -23,6 +24,15 @@ does voice, animation, rendering and posting. Do not touch `src/` or `pipeline/`
    research, and tick it. Prefer topics a non-engineer has lived (trains, UPI, phones) or a beginner dev needs today
    (deploy, git, AI tools): the outliers in swipe.md are those, not textbook system design.
 4. Ask: would someone send this to a friend? If not, pick another topic.
+
+5. Pick the **experiment**: ONE change versus the previous reel, taken from learnings.md (e.g. "first-person hook
+   instead of a scene", "end on a full-screen checklist to save", "25 s instead of 38 s"). Write it in `experiment`
+   {change, why, metric}. Keep everything else comparable, so the result teaches something.
+6. Pick the **style** (art direction, `style`): never one used by the previous 2 episodes. The style changes the whole
+   frame (background, captions, header, where Debug Bro stands, transitions):
+   `cinema` dark film · `notebook` hand-drawn notes on paper · `blueprint` engineer's drawing · `newsroom` newspaper
+   front page · `poster` bold colour blocks with huge words · `terminal` hacker console · `comic` comic-book panels.
+   Match it to the topic (news → newsroom, a dev tip → terminal or notebook, a hot take → poster, a skit → comic).
 
 Pillars: `everyday-tech`, `money-tech` (never investment advice), `interview`, `ai-tools`, `dev-skills`, `news`.
 
@@ -45,6 +55,10 @@ per scene (18 for `dialog`/`coldopen`). A new picture every 2–3 seconds. Set `
 Every non-dialog scene has `beat` and `cap`: the Roman-Hinglish caption (2–6 words) with exactly ONE accent word in
 *asterisks*, e.g. `"cap": "Par rollout abhi *postponed*"`. `dialog` scenes show their `line` in a speech bubble (no
 `cap`); set `vo` to the same words. The Intern's lines are read by the second voice automatically.
+**Hooks**: write 3 different hook options in `hooks` (different hook types from formats.md). Score each: does the
+first frame alone stop a scroll with the sound off? Is it a moment, a belief or a line of dialogue (not a fact)? Is it
+under 8 words on screen? Use the best one. **Ending**: the second-last scene is the keepable payoff (a checklist,
+roadmap or cheat sheet on a `board` or `tip`), held on screen long enough to save.
 Do not copy the shape of any earlier episode: eps 1–3 are what NOT to repeat. The validator rejects a reel that
 repeats the previous format, the previous opening scene type, the "15 LPA" chat or the दोहा ending.
 After writing, the workflow renders frames and Claude reviews them, so make the first frame stop a scroll on its own.
@@ -100,3 +114,9 @@ even = Ritu); a scene with `"speaker": "alt"` is read by the other one. The Inte
 1. Run `node pipeline/validate.mjs <slug>`; fix every ERROR and reconsider every warn. Repeat until OK.
 2. Re-read the `vo` lines aloud in your head: would a Bhubaneswar engineer say it this way to a friend? Fix stiff lines.
 3. Reply with: slug, topic, pillar, and the sources used.
+
+## 5. After a reel is posted (48 hours later, when asked)
+Open each new reel's insights (instagram.com/p/<code>/ → View insights, logged in as debug_bro) and add views,
+viewers, non-follower %, likes, comments, saves, shares and follows to `data/insights.json`. Ask Asit for app
+screenshots of the retention curve and skip rate (the web doesn't show them). Then update `data/learnings.md`: fill
+the experiment's result in the log, and change the rules if the numbers say so.

@@ -9,6 +9,8 @@ import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {C, FONT, MOOD, themeFor} from './theme';
 import {FORMAT_SCENES, FULL_FRAME} from './scenes/formats';
 import {MouthCtx, ThemeCtx} from './components/themeContext';
+import {styleFor} from './styles';
+import {Cut, MascotFrame, StyleBackground, StyleHeader, StyledCaptions} from './components/frame';
 
 const ALL_SCENES: Record<string, React.FC<any>> = {...SCENES, ...FORMAT_SCENES};
 
@@ -65,7 +67,9 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
     return Math.min(1, Math.max(0, (lvl - 0.015) * 9));
   };
   const mouth = (fr: number) => (episode.scenes[cur]?.speaker === 'alt' || episode.scenes[cur]?.who === 'intern' ? 0 : level(fr));
-  const th = themeFor(episode);
+  const st = styleFor(episode);
+  const th = episode.style ? st.theme : themeFor(episode);
+  const sty = {...st, theme: th};
   const fullFrame = FULL_FRAME.has(episode.scenes[cur]?.type);
   const hideBro = fullFrame ? ramp(frame, starts[cur], starts[cur] + 6) : cur > 0 && FULL_FRAME.has(episode.scenes[cur - 1]?.type) ? 1 - ramp(frame, starts[cur], starts[cur] + 8) : 0;
 
@@ -73,15 +77,15 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
     <ThemeCtx.Provider value={th}>
     <MouthCtx.Provider value={level}>
     <AbsoluteFill style={{background: th.bg, fontFamily: FONT.sans}}>
-      <Background mood={mood} prevMood={prevMood} blend={blend} />
+      <StyleBackground st={sty} mood={mood} prevMood={prevMood} blend={blend} scene={cur} />
       {timings.audio ? <Audio src={staticFile(timings.audio)} /> : null}
       {episode.music ? (
         <Audio src={staticFile(episode.music)} volume={0.07} loop />
       ) : episode.beat !== false ? (
         <Audio src={staticFile('sfx/beat.mp3')} volume={(f) => interpolate(f, [0, 20], [0, 0.11], {extrapolateRight: 'clamp'})} loop />
       ) : null}
-      <div style={{opacity: interpolate(frame, [80, 95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}}>
-        <Header series={episode.series ?? 'SYSTEM DESIGN'} number={episode.number} sceneStarts={starts} sceneDurs={durs} />
+      <div style={{opacity: sty.header === 'bars' ? interpolate(frame, [80, 95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1}}>
+        <StyleHeader st={sty} episode={episode} starts={starts} durs={durs} scene={cur} />
       </div>
       {episode.scenes.map((s: any, i: number) => {
         const Comp = ALL_SCENES[s.type];
@@ -94,27 +98,29 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
                 <Audio src={staticFile(fx.src)} volume={fx.vol} />
               </Sequence>
             ))}
-            <SceneShell dur={durs[i]}>
-              <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} />
+            <Cut st={sty} dur={durs[i]}>
+              {sty.header === 'bars' ? <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} /> : null}
               {withMascot && !FULL_FRAME.has(s.type) ? (
-                <AbsoluteFill style={{transform: 'scale(0.84)', transformOrigin: '50% 500px'}}>
+                <AbsoluteFill style={{transform: `translateX(${sty.stage.shiftX}px) scale(${sty.stage.scale})`, transformOrigin: `50% ${sty.stage.originY}px`}}>
                   <Comp s={s} dur={durs[i]} />
                 </AbsoluteFill>
               ) : (
                 <Comp s={s} dur={durs[i]} />
               )}
-            </SceneShell>
+            </Cut>
           </Sequence>
         );
       })}
       {withMascot ? (
-        <div style={{position: 'absolute', left: -10, top: 1110, opacity: 1 - hideBro, filter: th.dark ? 'drop-shadow(0 18px 40px #000a)' : 'drop-shadow(0 12px 24px #0003)'}}>
-          <Mascot track={track} mouth={mouth} width={430} seed={episode.slug ?? 'db'} />
+        <div style={{opacity: 1 - hideBro, filter: th.dark ? 'drop-shadow(0 18px 40px #000a)' : 'drop-shadow(0 12px 24px #0003)'}}>
+          <MascotFrame st={sty}>
+            <Mascot track={track} mouth={mouth} width={sty.mascot.width} flip={sty.mascot.flip} seed={episode.slug ?? 'db'} />
+          </MascotFrame>
         </div>
       ) : null}
-      <FilmLook />
+      <FilmLook grain={sty.grain} />
       {hideCaptions ? null : episode.scenes.some((s: any) => s.cap) ? (
-        <TopCaptions words={captionWords(episode, timings)} />
+        sty.captions === 'top' ? <TopCaptions words={captionWords(episode, timings)} /> : <StyledCaptions st={sty} words={captionWords(episode, timings)} />
       ) : (
         <Captions words={timings.words} />
       )}

@@ -44,7 +44,7 @@ export function captionWords(episode: any, timings: any): CapWord[] {
 }
 
 /** One caption line per scene (split in two only if it is long), so a phrase never breaks mid-thought. */
-const chunk = (words: CapWord[]) => {
+export const chunk = (words: CapWord[]) => {
   const byScene = new Map<number, CapWord[]>();
   words.forEach((w) => byScene.set(w.scene, [...(byScene.get(w.scene) ?? []), w]));
   const out: CapWord[][] = [];
@@ -149,7 +149,7 @@ export const PartLabel: React.FC<{index: number; total: number; label: string}> 
 };
 
 /** Film grain + warm light leak + vignette over everything. */
-export const FilmLook: React.FC = () => {
+export const FilmLook: React.FC<{grain?: number}> = ({grain = 0.07}) => {
   const frame = useCurrentFrame();
   const x = Math.floor(random(`gx${frame}`) * 512);
   const y = Math.floor(random(`gy${frame}`) * 512);
@@ -168,7 +168,7 @@ export const FilmLook: React.FC = () => {
         style={{
           backgroundImage: `url(${staticFile('fx/grain.png')})`,
           backgroundPosition: `${x}px ${y}px`,
-          opacity: 0.07,
+          opacity: grain,
           mixBlendMode: 'overlay',
         }}
       />

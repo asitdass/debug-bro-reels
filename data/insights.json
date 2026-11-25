@@ -1,0 +1,11 @@
+{
+  "note": "Per-reel Instagram insights. Web insights (instagram.com/insights/media/<id>) give views, viewers, likes, saves, shares, follows. Watch time, retention curve and skip rate are only in the app: add them from screenshots.",
+  "updatedAt": "2026-11-26",
+  "reels": [
+    {"slug": "dsa-day-0", "url": "https://www.instagram.com/reel/DaB4c64zixm/", "postedAt": "2026-06-26", "what": "Asit's own 'Day 0 of mastering DSA' reel recommending a DSA sheet (pre-Debug Bro)", "views": 5240, "viewers": null, "nonFollowerPct": 99.7, "likes": 46, "comments": 0, "saves": 188, "shares": 134, "follows": 6},
+    {"slug": "ep01-tatkal-crash", "url": "https://www.instagram.com/reel/DfpZwFzFzWY/", "style": "cinema", "format": "legacy", "views": 119, "viewers": 108, "nonFollowerPct": 97.5, "likes": 1, "comments": 0, "saves": 0, "shares": 0, "follows": 0, "avgWatchSec": 6.2, "lengthSec": 68},
+    {"slug": "ep02-cricket-live-scale", "url": "https://www.instagram.com/reel/Dfrv4lpjU7V/", "style": "cinema", "format": "legacy", "views": 123, "viewers": 108, "nonFollowerPct": 95.9, "likes": 0, "comments": 0, "saves": 0, "shares": 0, "follows": 0},
+    {"slug": "ep03-upi-free-paisa-kaun-kamata", "url": "https://www.instagram.com/reel/Df6JnPTzZg7/", "style": "cinema", "format": "legacy", "views": 135, "viewers": 122, "nonFollowerPct": 98.5, "likes": 3, "comments": 0, "saves": 1, "shares": 0, "follows": 0},
+    {"slug": "ep04-microsoft-outage-failover", "url": "https://www.instagram.com/reel/DgLOXwszVf1/", "style": "cinema", "format": "desi-story", "views": 2, "note": "just posted when read; re-check after 48 h"}
+  ]
+}

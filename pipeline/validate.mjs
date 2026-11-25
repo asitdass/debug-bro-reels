@@ -48,6 +48,13 @@ export function validate(slug) {
     errors.push('a "rule" (दोहा) ending was used in the last 3 episodes; end with the payoff + comment keyword instead');
   if (ep.scenes.some((s) => s.type === 'chat') && lastN(3).some((e) => e.scenes?.some((s) => s.type === 'chat')))
     errors.push('a "chat" interview scene was used in the last 3 episodes; use dialog or another setup');
+  if (ep.number > 4) {
+    if (!ep.style) errors.push('set "style" (cinema, notebook, blueprint, newsroom, poster, terminal, comic): see src/styles.ts');
+    const recentStyles = lastN(2).map((e) => e.style ?? 'cinema');
+    if (ep.style && recentStyles.includes(ep.style)) errors.push(`style "${ep.style}" was used in the last 2 episodes (${recentStyles.join(', ')}); pick another look`);
+    if (!ep.experiment) errors.push('set "experiment" {change, why, metric}: the one thing this reel tests (read data/learnings.md)');
+    if (!ep.hooks || ep.hooks.length < 3) warnings.push('list the 3 hook options you considered in "hooks"');
+  }
   if (!ep.leadMagnet) warnings.push('no "leadMagnet": every outlier in data/swipe.md asks for a comment keyword with a freebie');
   else if (!new RegExp(ep.leadMagnet.keyword, 'i').test(JSON.stringify(ep.scenes.slice(-2))))
     errors.push(`the last scenes must say the comment keyword "${ep.leadMagnet.keyword}"`);

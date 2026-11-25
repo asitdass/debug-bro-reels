@@ -135,6 +135,12 @@ export const episodeSchema = z.object({
   pillar: z.enum(['everyday-tech', 'money-tech', 'interview', 'ai-tools', 'dev-skills', 'news']),
   // the reel's format (see .claude/skills/make-episode/formats.md); it also picks the look
   format: z.enum(['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact']).optional(),
+  // art direction (src/styles.ts): changes the whole frame; never the same as either of the last 2 episodes
+  style: z.enum(['cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic']).optional(),
+  // the ONE change this episode tests vs the previous reel (see data/learnings.md), and the metric that will judge it
+  experiment: z.object({change: str(140), why: str(200), metric: z.enum(['skip-rate', 'watch-time', 'views', 'saves', 'shares', 'follows', 'comments'])}).optional(),
+  // the 3 hook options considered; the scenes use the best one
+  hooks: z.array(str(120)).max(5).optional(),
   // comment-keyword freebie: "Comment RAC, DM mein one-page PDF bhejta hoon"
   leadMagnet: z.object({keyword: z.string().regex(/^[A-Z0-9]{2,14}$/), promise: str(80)}).optional(),
   // series hook: "Part 2 chahiye? Comment PART2"
