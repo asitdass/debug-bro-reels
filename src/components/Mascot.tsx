@@ -8,7 +8,7 @@ import {interpolate, spring, useCurrentFrame, useVideoConfig, random} from 'remo
 export const POSES = ['idle', 'point', 'explain', 'think', 'shock', 'facepalm', 'thumbsup', 'shrug', 'crossed', 'laugh'] as const;
 export type PoseName = (typeof POSES)[number];
 
-/** Which character: Debug Bro (Asit) or the Intern (a young dev in a teal hoodie, for dialogue scenes). */
+/** Which character: Debug Bro (Asit) or the Intern (a young woman developer in a teal hoodie, for dialogue scenes). */
 export type Variant = 'bro' | 'intern';
 const VCtx = React.createContext<Variant>('bro');
 const HOODIE = '#1fa391';
@@ -213,6 +213,13 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
   const v = React.useContext(VCtx);
   return (
   <g>
+    {v === 'intern' ? (
+      /* long hair falling behind the shoulders, and a high ponytail */
+      <g>
+        <path d="M 112 190 C 100 260 104 330 120 380 L 280 380 C 296 330 300 260 288 190 Z" fill={INTERN_HAIR} stroke={OUT} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M 250 96 C 300 70 336 110 322 170 C 312 214 290 236 276 250 C 290 200 296 150 262 120 Z" fill={INTERN_HAIR} stroke={OUT} strokeWidth={5} strokeLinejoin="round" />
+      </g>
+    ) : null}
     {/* neck */}
     <rect x={174} y={268} width={52} height={86} fill={SKIN_SH} stroke={OUT} strokeWidth={5} />
     {/* ears */}
@@ -264,7 +271,7 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
         <path d="M 194 196 Q 200 190 206 196" fill="none" stroke={OUT} strokeWidth={6} />
         {/* straight hair with a side fringe */}
         <path
-          d="M 116 206 C 108 140 136 96 196 92 C 256 90 292 128 284 206 C 276 176 268 160 252 150 C 230 168 186 170 150 150 C 136 164 124 182 116 206 Z"
+          d="M 114 230 C 100 140 136 92 198 90 C 260 88 300 132 286 230 C 280 190 272 166 256 150 C 230 168 186 170 150 150 C 132 168 122 196 114 230 Z"
           fill={INTERN_HAIR}
           stroke={OUT}
           strokeWidth={5}
@@ -272,6 +279,10 @@ const Head: React.FC<{face: Face; open: number; blink: number}> = ({face, open, 
         />
         <path d="M 150 148 C 176 110 236 104 262 150 C 232 132 196 130 150 148 Z" fill={INTERN_HAIR} />
         <path d="M 170 112 Q 210 100 246 118" fill="none" stroke="#3a2a22" strokeWidth={5} strokeLinecap="round" />
+        {/* hair tie + small earrings */}
+        <rect x={262} y={96} width={22} height={14} rx={5} fill="#ff6b8a" stroke={OUT} strokeWidth={3} transform="rotate(30 273 103)" />
+        <circle cx={121} cy={240} r={5} fill="#ffd166" stroke={OUT} strokeWidth={2} />
+        <circle cx={279} cy={240} r={5} fill="#ffd166" stroke={OUT} strokeWidth={2} />
       </g>
     ) : (<>
     {/* curly hair */}

@@ -9,7 +9,7 @@ export const MascotSheet: React.FC = () => (
     {POSES.map((p) => (
       <div key={p} style={{width: 308, height: 470, position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', borderBottom: '1px solid #222'}}>
         <div style={{position: 'absolute', top: 10, left: 14, color: '#ffb547', fontFamily: FONT.mono, fontSize: 26}}>{p}</div>
-        <Mascot pose={p} width={280} />
+        <Mascot pose={p} width={280} variant={p === 'laugh' || p === 'shrug' || p === 'think' ? 'intern' : 'bro'} />
       </div>
     ))}
   </AbsoluteFill>

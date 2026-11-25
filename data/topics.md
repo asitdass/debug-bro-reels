@@ -21,7 +21,7 @@ topic of the chosen pillar unless there's a fresher trending event.
 
 ## money-tech
 - [x] UPI free hai, toh paisa kaun kamata hai? (MDR, PSP economics, switch costs)
-- [x] Credit card reward points ka asli maths (interchange fees)
+- [ ] Credit card reward points ka asli maths (interchange fees)
 - [ ] Paytm/PhonePe cashback kaise afford karte hain? (CAC, float, cross-sell)
 - [ ] Zepto/Blinkit pe "handling fee" kyun lagti hai? (unit economics)
 - [ ] Bank transfer 2 second mein kaise hota hai? (IMPS/NPCI switch, ledgers)

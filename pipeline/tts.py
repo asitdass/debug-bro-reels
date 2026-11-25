@@ -119,8 +119,8 @@ SARVAM_PAIR = ("sunny_hi_reels", "ritu_hi_reels")
 def sarvam_voices(episode):
     cfg = episode.get("voice", {})
     env_main = os.environ.get("SARVAM_SPEAKER")
-    main = env_main or (cfg.get("voiceId") if cfg.get("engine") == "sarvam" else None) or (
-        SARVAM_PAIR[0] if episode.get("number", 1) % 2 else SARVAM_PAIR[1])
+    # Debug Bro (a man) is always Sunny; the Intern (a woman) is always Ritu
+    main = env_main or (cfg.get("voiceId") if cfg.get("engine") == "sarvam" else None) or SARVAM_PAIR[0]
     alt = os.environ.get("SARVAM_ALT_SPEAKER") or (SARVAM_PAIR[1] if main == SARVAM_PAIR[0] else SARVAM_PAIR[0])
     return {"main": main, "alt": alt}
 

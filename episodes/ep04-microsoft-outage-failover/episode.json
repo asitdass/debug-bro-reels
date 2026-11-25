@@ -1,0 +1,221 @@
+{
+  "slug": "ep04-microsoft-outage-failover",
+  "number": 4,
+  "series": "Outage Files",
+  "title": "Microsoft 365 outage: safety system ne hi aag failayi",
+  "topic": "Microsoft 365 global outage Nov 2026: latent bug + failover cascade",
+  "format": "desi-story",
+  "world": "Toll plaza: lanes band hui, traffic baaki lanes pe, wo bhi jam",
+  "pillar": "news",
+  "voice": {
+    "engine": "sarvam"
+  },
+  "leadMagnet": {
+    "keyword": "FAILOVER",
+    "promise": "Poora outage ek page mein, aur 3 bachaav"
+  },
+  "caption": "Outlook aur Teams poori duniya mein band kyun hue? Ek July ka bug, aur Microsoft ka apna failover.\n\nComment FAILOVER, poora outage ek page mein DM mein bhejta hoon.\n\nUs dost ko bhejo jiska 13 November ka meeting Outlook kha gaya.\n\nMicrosoft ki preliminary post-incident report ke hisaab se: July mein gateway servers pe ek fix gaya, jo 3 mahine chup-chaap chalta raha. Ek din pehle ~14% gateway capacity kisi aur wajah se band thi, aur Teams ka traffic usi gateway pe aa gaya. Bug jaga, servers atke, aur auto-rerouting ne load bache servers pe daal diya. 2 ghante mein 80% se zyada servers unresponsive.\n\nTwist: lab test kam cores wali machines pe hua tha. Badi machines pe bug aur bura.\n\nSave karo, system design interview mein kaam aayega.",
+  "hashtags": [
+    "#systemdesign",
+    "#microsoft",
+    "#outage"
+  ],
+  "keywords": [
+    "microsoft outage",
+    "outlook down kyun hua",
+    "teams down",
+    "cascading failure kya hai",
+    "system design in hindi",
+    "coding in hindi"
+  ],
+  "coverText": "Safety ne hi aag lagayi",
+  "beat": true,
+  "sources": [
+    "https://bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage",
+    "https://expertinsights.com/?p=63941",
+    "https://inc42.com/features/microsofts-outlook-outage-drags-on-indian-enterprises-are-feeling-the-heat/",
+    "https://us.smartprix.com/bytes/microsoft-365-outage-outlook-and-teams-still-unreliable-in-india-as-microsoft-chases-a-server-failure/"
+  ],
+  "scenes": [
+    {
+      "type": "moment",
+      "beat": "hook",
+      "mood": "problem",
+      "pose": "shock",
+      "vo": "Friday सुबह, office. Outlook बोला, trying to connect.",
+      "cap": "Outlook: *Trying to connect*",
+      "place": "Office · Friday · 10 AM",
+      "line": "Outlook: Trying to connect...",
+      "stamp": "74 DESH"
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "intern",
+      "react": "think",
+      "vo": "भैया, Microsoft hack हो गया क्या?",
+      "line": "Bhaiya, Microsoft hack ho gaya kya?"
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "bro",
+      "react": "shock",
+      "pose": "point",
+      "vo": "Hack नहीं. July का एक fix. तीन महीने चुप बैठा था.",
+      "line": "Hack nahi. July ka ek fix. 3 mahine chup baitha tha."
+    },
+    {
+      "type": "counter",
+      "beat": "break",
+      "mood": "problem",
+      "vo": "एक दिन पहले, करीब चौदह percent gateway servers बंद.",
+      "cap": "*14%* servers pehle se off",
+      "label": "% gateway capacity already offline",
+      "from": 0,
+      "to": 14,
+      "sub": "a separate, unrelated issue",
+      "tone": "red"
+    },
+    {
+      "type": "flow",
+      "beat": "break",
+      "mood": "problem",
+      "vo": "फिर Teams का traffic भी उसी gateway पे. Load बढ़ा, bug जागा.",
+      "cap": "Load badha, *bug* jaaga",
+      "nodes": [
+        {
+          "label": "Teams",
+          "sub": "traffic shift"
+        },
+        {
+          "label": "Gateway",
+          "sub": "86% bacha"
+        },
+        {
+          "label": "Exchange",
+          "sub": "Outlook mail"
+        }
+      ],
+      "packet": "load"
+    },
+    {
+      "type": "board",
+      "beat": "break",
+      "mood": "problem",
+      "vo": "Server अटका, तो system ने traffic बगल वाले server पे भेजा.",
+      "cap": "Traffic *bagal* wale pe",
+      "title": "Failover = Safety?",
+      "not": true,
+      "layout": "flow",
+      "items": [
+        {
+          "label": "Atka",
+          "sub": "server A",
+          "icon": "A"
+        },
+        {
+          "label": "Double load",
+          "sub": "server B",
+          "icon": "B"
+        },
+        {
+          "label": "Wo bhi gaya",
+          "sub": "server C",
+          "icon": "C"
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "beat": "reveal",
+      "mood": "problem",
+      "pose": "facepalm",
+      "vo": "Domino. दो घंटे में अस्सी percent से ज़्यादा servers चुप.",
+      "cap": "2 ghante, *80%* servers chup",
+      "label": "% servers unresponsive (worst point)",
+      "from": 0,
+      "to": 80,
+      "sub": "per Microsoft's preliminary report",
+      "tone": "red"
+    },
+    {
+      "type": "dialog",
+      "beat": "twist",
+      "mood": "neutral",
+      "who": "intern",
+      "react": "crossed",
+      "vo": "तो restart कर दो ना?",
+      "line": "Toh restart kar do na?"
+    },
+    {
+      "type": "dialog",
+      "beat": "twist",
+      "mood": "problem",
+      "who": "bro",
+      "react": "shock",
+      "pose": "facepalm",
+      "vo": "किया. Restart होते ही रुका traffic फिर टूट पड़ा.",
+      "line": "Kiya. Restart hote hi ruka traffic phir toot pada."
+    },
+    {
+      "type": "board",
+      "beat": "twist",
+      "mood": "comeback",
+      "pose": "shrug",
+      "vo": "Twist: test कम cores वाली machines पे हुआ. बड़े servers पे bug और बुरा.",
+      "cap": "Lab mein *theek*, prod mein dhamaka",
+      "title": "Lab = Production?",
+      "not": true,
+      "layout": "flow",
+      "items": [
+        {
+          "label": "Lab",
+          "sub": "kam cores, sab theek",
+          "icon": "LAB"
+        },
+        {
+          "label": "Production",
+          "sub": "zyada cores, bug bura",
+          "icon": "PROD"
+        }
+      ]
+    },
+    {
+      "type": "board",
+      "beat": "payoff",
+      "mood": "solution",
+      "pose": "explain",
+      "vo": "सबक: failover को brake चाहिए, वरना वही आग फैलाता है.",
+      "cap": "Failover ko *brake* chahiye",
+      "title": "Failover ke 3 brake",
+      "layout": "checks",
+      "items": [
+        {
+          "label": "Capacity check",
+          "sub": "shift se pehle"
+        },
+        {
+          "label": "Backoff",
+          "sub": "retry dheere"
+        },
+        {
+          "label": "Bulkhead",
+          "sub": "region ki deewar"
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "beat": "cta",
+      "mood": "solution",
+      "who": "bro",
+      "react": "laugh",
+      "pose": "thumbsup",
+      "vo": "Comment FAILOVER, पूरा outage एक page में DM करता हूँ.",
+      "line": "Comment FAILOVER, poora outage ek page mein DM karta hoon."
+    }
+  ]
+}
