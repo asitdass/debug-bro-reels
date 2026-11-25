@@ -12,6 +12,7 @@ import {MouthCtx, ThemeCtx} from './components/themeContext';
 import {styleFor} from './styles';
 import {ComicScene, KineticScene, PhoneReel} from './kits';
 import {Cut, MascotFrame, StyleBackground, StyleHeader, StyledCaptions} from './components/frame';
+import {StageCast, StageRoom, StageScene, Tease} from './stage';
 
 const ALL_SCENES: Record<string, React.FC<any>> = {...SCENES, ...FORMAT_SCENES};
 
@@ -20,6 +21,12 @@ export type ReelProps = {
   timings: {totalMs: number; audio: string | null; scenes: {startMs: number; durMs: number}[]; words: any[]};
   hideCaptions?: boolean;
 };
+
+/**
+ * The first scene starts this many frames into its own animation, so frame 0 (the autoplay frame and the default
+ * grid thumbnail) already shows the finished hook instead of a fade-in from black. Eps 1-4 opened on an empty frame.
+ */
+export const HOOK_PREROLL = 12;
 
 const TAG_COLOR: Record<string, string> = {problem: C.red, solution: C.green, comeback: C.amber, neutral: C.muted};
 
@@ -88,39 +95,68 @@ export const Reel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
       <div style={{opacity: sty.header === 'bars' ? interpolate(frame, [80, 95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1}}>
         <StyleHeader st={sty} episode={episode} starts={starts} durs={durs} scene={cur} />
       </div>
+      {sty.kit === 'stage' ? <StageRoom episode={episode} starts={starts} cur={cur} /> : null}
       {episode.scenes.map((s: any, i: number) => {
         const Comp: React.FC<any> = sty.kit === "comic" ? ComicScene : sty.kit === "kinetic" ? KineticScene : ALL_SCENES[s.type];
         if (!Comp) return null;
+        // scene 0 is pre-rolled: it begins HOOK_PREROLL frames into its animation (see HOOK_PREROLL)
+        const pre = i === 0 ? HOOK_PREROLL : 0;
+        const from = starts[i] - pre;
+        const len = Math.max(1, durs[i] + pre);
         if (sty.kit === 'phone')
           return (
             <Sequence key={i} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
               {i > 0 ? <Audio src={staticFile('sfx/whoosh.wav')} volume={0.12} /> : null}
             </Sequence>
           );
-        return (
-          <Sequence key={i} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
+        const sfx = (
+          <>
             {i > 0 ? <Audio src={staticFile('sfx/whoosh.wav')} volume={0.22} /> : null}
-            {sceneSfx(s, durs[i]).map((fx, k) => (
-              <Sequence key={k} from={fx.at} layout="none">
+            {sceneSfx(s, len).map((fx, k) => (
+              <Sequence key={k} from={Math.max(pre, fx.at)} layout="none">
                 <Audio src={staticFile(fx.src)} volume={fx.vol} />
               </Sequence>
             ))}
-            <Cut st={sty} dur={durs[i]}>
+          </>
+        );
+        if (sty.kit === 'stage')
+          return (
+            <Sequence key={i} from={from} durationInFrames={len} layout="none">
+              {sfx}
+              <StageScene s={s} dur={len} Comp={Comp} />
+            </Sequence>
+          );
+        return (
+          <Sequence key={i} from={from} durationInFrames={len} layout="none">
+            {sfx}
+            <Cut st={sty} dur={len} first={i === 0}>
               {sty.header === 'bars' ? <PartLabel index={i} total={episode.scenes.length} label={(s.beat ?? s.tag ?? s.type).toLowerCase()} /> : null}
               {sty.kit ? (
-                <Comp s={s} dur={durs[i]} i={i} />
+                <Comp s={s} dur={len} i={i} />
               ) : withMascot && !FULL_FRAME.has(s.type) ? (
                 <AbsoluteFill style={{transform: `translateX(${sty.stage.shiftX}px) scale(${sty.stage.scale})`, transformOrigin: `50% ${sty.stage.originY}px`}}>
-                  <Comp s={s} dur={durs[i]} />
+                  <Comp s={s} dur={len} />
                 </AbsoluteFill>
               ) : (
-                <Comp s={s} dur={durs[i]} />
+                <Comp s={s} dur={len} />
               )}
+              {s.tease ? <Tease text={s.tease} top={420} /> : null}
             </Cut>
           </Sequence>
         );
       })}
       {sty.kit === 'phone' ? <PhoneReel episode={episode} starts={starts} cur={cur} /> : null}
+      {sty.kit === 'stage' ? <StageCast episode={episode} starts={starts} cur={cur} /> : null}
+      {/* stage teases sit above the characters, at the monitor's bottom-right corner */}
+      {sty.kit === 'stage'
+        ? episode.scenes.map((s: any, i: number) =>
+            s.tease ? (
+              <Sequence key={`t${i}`} from={starts[i]} durationInFrames={Math.max(1, durs[i])} layout="none">
+                <Tease text={s.tease} top={1030} />
+              </Sequence>
+            ) : null,
+          )
+        : null}
       {withMascot && !sty.kit ? (
         <div style={{opacity: 1 - hideBro, filter: th.dark ? 'drop-shadow(0 18px 40px #000a)' : 'drop-shadow(0 12px 24px #0003)'}}>
           <MascotFrame st={sty}>

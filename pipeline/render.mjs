@@ -84,8 +84,13 @@ export async function renderReel(slug) {
 
   // Cover (profile grid) and carousel slides (key frame of each scene, no captions).
   const cover = path.join(dir, 'cover.jpg');
-  const coverComp = await selectComposition({serveUrl, id: 'Cover', inputProps: {episode: inputProps.episode}, browserExecutable});
-  await renderStill({composition: coverComp, serveUrl, output: cover, inputProps: {episode: inputProps.episode}, imageFormat: 'jpeg', jpegQuality: 92, browserExecutable});
+  if (inputProps.episode.style === 'stage') {
+    // the house style's first frame IS the hook (headline + monitor + both characters): use it as the grid cover
+    await renderStill({composition: comp, serveUrl, output: cover, frame: 0, inputProps, imageFormat: 'jpeg', jpegQuality: 92, browserExecutable});
+  } else {
+    const coverComp = await selectComposition({serveUrl, id: 'Cover', inputProps: {episode: inputProps.episode}, browserExecutable});
+    await renderStill({composition: coverComp, serveUrl, output: cover, inputProps: {episode: inputProps.episode}, imageFormat: 'jpeg', jpegQuality: 92, browserExecutable});
+  }
 
   const pick = pickCarouselScenes(inputProps.episode);
   const frames = keyFrames(inputProps.timings).filter((_, i) => pick.includes(i));
@@ -94,8 +99,11 @@ export async function renderReel(slug) {
   return {video: final, cover, slides};
 }
 
-/** Carousel = up to 8 scenes that read well as a still (skip pure-motion scenes). */
+/**
+ * Carousel = up to 8 scenes that read well as a still (skip pure-motion scenes). The slides also become the
+ * comment-keyword PDF, so the keepable payoff (a board checklist, tips) must be in here: it was missing before ep 5.
+ */
 function pickCarouselScenes(episode) {
-  const still = ['hook', 'code', 'hotrow', 'solution', 'flow', 'compare', 'rule', 'counter', 'chat'];
+  const still = ['hook', 'moment', 'board', 'tip', 'headline', 'quiz', 'code', 'hotrow', 'solution', 'flow', 'compare', 'rule', 'counter', 'chat'];
   return episode.scenes.map((s, i) => (still.includes(s.type) ? i : -1)).filter((i) => i >= 0).slice(0, 8);
 }

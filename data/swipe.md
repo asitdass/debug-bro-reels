@@ -1,7 +1,39 @@
-# Swipe file: what works for the accounts Asit admires (studied 19 Nov 2026)
+# Swipe file: what works for the accounts Asit admires
+
+Copy the STRUCTURE (hook type, beats, CTA), never their words, characters, art or topics as-is.
+
+## Re-study, 26 Nov 2026: hits vs flops from the SAME accounts (frames sampled through each reel)
+
+| reel | views | shares | comments | length | first frame |
+| --- | --- | --- | --- | --- | --- |
+| devmonk: Uber "kahan kitne drivers?" | 10.8M | 167.5K | 2.5K | 138 s | real concert clip, "CONCERT KHATAM" → 3D crowd → stadium → map → "KAISE?" at 11 s |
+| devmonk: UPI "Manali, ₹180 ki Maggi" | 8.3M | 126.9K | 9.3K | 104 s | illustrated Maggi stall, friends, QR; "₹180 PHONEPE KE PAAS?" at 4.5 s |
+| sys.design.101: ChatGPT 5 codes | 2.4M | 90.8K | 14.1K | 53 s | huge 2-line Hindi headline + before/after photos |
+| billu: "API का ज़माना ख़त्म? अब सब MCP!" | 411K (1 day) | 7.2K | 54 | 164 s | whiteboard "R.I.P. API" gravestone, both characters big, reacting |
+| devmonk: Truecaller (face-cam + static UI) | 34.6K (5 days) | 81 | 6 | 93 s | him talking + small phone UI |
+| sys.design.101: "65 words = 92 tokens" | 20.1K | 54 | 43 | 89 s | almost empty dark frame, text typing in |
+| billu: product ad (no characters) | 3,074 | 24 | 4 | 34 s | newspaper ad |
+| jayantcreates (posts several a day) | 2-7K typical | | | | volume without a strong hook does nothing |
+| **Debug Bro ep03: UPI free, paisa kaun kamata?** | **135** | 0 | 0 | | plain dark card. SAME topic as devmonk's 8.3M |
+
+What separates hits from flops (same creator, same niche, same week):
+1. **Frame 0 is a full, specific picture.** Hits: a scene, a real clip, a gravestone on a board. Flops: a near-empty dark
+   frame. Ep04's grid thumbnail was a blank frame (fixed in code: HOOK_PREROLL).
+2. **Hook = a lived moment or a hot take, then "kaise?" by ~5 s.** Never a number or a definition first.
+3. **Length is not the enemy.** Hits run 53-164 s. They keep reopening the question: a countdown ("05"),
+   "सबसे काम का अभी आ रहा है…", "Shock laga?" at 10 s. Our problem was the first 6 s, not the total.
+4. **Characters on screen, big, acting.** billu's flop is the one reel without the duo.
+5. **One consistent look per account.** None of them changes style per reel; the hook, topic and format change.
+6. **Shares come from things everyone uses** (UPI, Uber, Truecaller, ChatGPT photos) + a specific "us dost ko bhejo
+   jo …" line. Hits: shares = 30-90% of likes.
+7. **Comments come from an ask you can't miss.** sys.design puts "Comment Codes for PDF" as caption line 1 (14.1K
+   comments); devmonk pins "Comment Uber for 1 page PDF"; billu ends on a quiz ("API ya MCP?") and pins the answer.
+8. **Original audio, always.** No trending song under the voice-over on any hit.
+9. **Bright or busy beats dark and empty.** billu: bright yellow world. devmonk/sys.design are dark but every frame is full.
+
+## Earlier study (19 Nov 2026)
 
 Views are from each account's reels grid; "outlier" = far above that account's usual reel.
-Copy the STRUCTURE (hook type, beats, CTA), never their words, characters, art or topics as-is.
 
 ## Accounts
 
@@ -51,7 +83,7 @@ Copy the STRUCTURE (hook type, beats, CTA), never their words, characters, art o
 - **Series**: "Part 2" and "DM PART 2" make people follow.
 - **Topics with the biggest pull**: everyday Indian systems (railways, UPI, GPS), practical dev skills (deploy, which framework), AI tricks people can use today, same-day tech news.
 - **Captions**: line 1 retells the hook, then the CTA, then a keywords line.
-- **Length**: most outliers are 20-45 s; cuts every 1.5-3 s.
+- **Length**: (corrected 26 Nov) the biggest outliers run 53-164 s; what matters is a new picture every 1.5-3 s and an open loop every ~15 s.
 
 ## What Debug Bro did wrong (eps 1-3)
 

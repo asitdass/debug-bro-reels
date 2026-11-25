@@ -1,0 +1,235 @@
+{
+  "slug": "ep05-ek-tick-matlab-block",
+  "number": 5,
+  "series": "SYSTEM DESIGN",
+  "title": "Ek tick matlab block? WhatsApp ke tick ka asli matlab",
+  "topic": "WhatsApp ticks: store-and-forward server, delivery and read receipts, 30-day undelivered queue",
+  "format": "whiteboard",
+  "style": "stage",
+  "world": "Message = chitthi; server = beech ka dakghar",
+  "pillar": "everyday-tech",
+  "experiment": {
+    "change": "New house style 'stage' (bright room, both characters always on screen, hook fully built at frame 0) + a quiz ending",
+    "why": "Eps 1-4 opened on an empty dark frame and lost people in ~6 s; every outlier we studied fills the frame from frame 0 and keeps its characters on screen",
+    "metric": "skip-rate"
+  },
+  "hooks": [
+    "Wrong belief: Intern panics 'Usne block kar diya, ek hi tick hai!' over a board '1 tick = Block?'",
+    "Lived moment: 'Raat 11 baje, crush ko Hi bheja. 2 ghante. Ek tick.'",
+    "Absurd question: 'Tumhara message 2 ghante kahan chhupa tha?'"
+  ],
+  "leadMagnet": {
+    "keyword": "TICK",
+    "promise": "Message ka poora safar, ek page mein"
+  },
+  "voice": {
+    "engine": "sarvam"
+  },
+  "caption": "Comment TICK for message ka poora safar, ek page mein. DM mein bhejta hoon.\n\nEk tick dekh ke socha usne block kar diya? Ruko. Ek tick ka matlab sirf itna hai: message server tak gaya, uske phone tak nahi.\n\nUs dost ko bhejo jo ek tick dekh ke panic karta hai.\n\n1 grey tick: message bhej diya gaya.\n2 grey tick: uske phone tak pahuncha.\n2 blue tick: usne padh liya.\nPhone off ho, toh WhatsApp message apne server pe rok ke rakhta hai, 30 din tak, phir delete.\n\nQuiz: group mein blue tick kab aata hai? A: ek ne padha, B: sabne padha. Comment karo, answer pinned comment mein.\n\nSave karo, kaam aayega.",
+  "hashtags": [
+    "#systemdesign",
+    "#whatsapp",
+    "#codinginhindi"
+  ],
+  "keywords": [
+    "whatsapp tick ka matlab",
+    "ek tick kyun aata hai",
+    "whatsapp blue tick",
+    "whatsapp kaise kaam karta hai",
+    "system design in hindi",
+    "coding in hindi"
+  ],
+  "coverText": "1 tick = Block?",
+  "beat": true,
+  "sources": [
+    "https://faq.whatsapp.com/665923838265756",
+    "https://www.whatsapp.com/legal/privacy-policy"
+  ],
+  "scenes": [
+    {
+      "type": "board",
+      "beat": "hook",
+      "mood": "problem",
+      "speaker": "alt",
+      "pose": "shock",
+      "react": "think",
+      "vo": "भैया, उसने मुझे block कर दिया. दो घंटे से एक ही tick है!",
+      "cap": "Ek tick matlab *block*?",
+      "title": "1 tick = Block?",
+      "items": []
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "bro",
+      "pose": "point",
+      "react": "think",
+      "vo": "रुक. एक tick से block पक्का नहीं होता.",
+      "line": "Ruk. Ek tick se block pakka nahi hota."
+    },
+    {
+      "type": "flow",
+      "beat": "setup",
+      "mood": "neutral",
+      "react": "think",
+      "vo": "तेरा message सीधा उसके phone पे नहीं जाता. पहले server पे.",
+      "cap": "Message ka *safar*",
+      "nodes": [
+        {"label": "Tera phone", "sub": "send dabaya"},
+        {"label": "Server", "sub": "beech ka dakghar"},
+        {"label": "Uska phone", "sub": "offline?"}
+      ],
+      "packet": "Hi"
+    },
+    {
+      "type": "board",
+      "beat": "reveal",
+      "mood": "neutral",
+      "pose": "explain",
+      "vo": "एक tick मतलब: message भेज दिया गया. Phone तक नहीं पहुँचा.",
+      "cap": "1 tick = sirf *bheja*",
+      "title": "1 tick = Bheja",
+      "layout": "flow",
+      "items": [
+        {"label": "Bheja", "sub": "tera phone", "icon": "YOU"},
+        {"label": "Ruka", "sub": "server pe", "icon": "SRV"}
+      ]
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "intern",
+      "react": "think",
+      "vo": "तो उसके phone तक क्यों नहीं गया?",
+      "line": "Toh uske phone tak kyun nahi gaya?"
+    },
+    {
+      "type": "board",
+      "beat": "break",
+      "mood": "problem",
+      "pose": "shrug",
+      "react": "shock",
+      "tease": "Group wala twist end mein",
+      "vo": "Phone बंद, net नहीं, या block. सिर्फ tick से पक्का नहीं कह सकते.",
+      "cap": "Wajah *teen* ho sakti hain",
+      "title": "1 tick ke reason",
+      "layout": "steps",
+      "items": [
+        {"label": "Phone off", "sub": "battery khatam"},
+        {"label": "Net nahi", "sub": "signal gaya"},
+        {"label": "Ya block", "sub": "ho sakta hai, pakka nahi"}
+      ]
+    },
+    {
+      "type": "flow",
+      "beat": "reveal",
+      "mood": "neutral",
+      "pose": "explain",
+      "react": "think",
+      "vo": "तब तक server message रोक के रखता है. Phone online होते ही, deliver.",
+      "cap": "Server *rok* ke rakhta hai",
+      "nodes": [
+        {"label": "Server queue", "sub": "message wait karta hai"},
+        {"label": "Phone online", "sub": "net wapas aaya"},
+        {"label": "Deliver", "sub": "ab 2 tick"}
+      ],
+      "packet": "msg"
+    },
+    {
+      "type": "counter",
+      "beat": "twist",
+      "mood": "comeback",
+      "pose": "point",
+      "react": "shock",
+      "vo": "WhatsApp की policy कहती है: undelivered message, तीस दिन तक. फिर delete.",
+      "cap": "*30* din tak wait",
+      "label": "din tak server pe (undelivered)",
+      "from": 0,
+      "to": 30,
+      "sub": "phir delete: WhatsApp privacy policy",
+      "tone": "amber"
+    },
+    {
+      "type": "board",
+      "beat": "reveal",
+      "mood": "solution",
+      "pose": "explain",
+      "react": "thumbsup",
+      "vo": "Phone तक पहुँचते ही वापस signal आता है: मिल गया. दूसरा tick.",
+      "cap": "Phone ne bola: *mil gaya*",
+      "title": "2 tick = Phone tak",
+      "layout": "flow",
+      "items": [
+        {"label": "Pahuncha", "sub": "uska phone", "icon": "PH"},
+        {"label": "Wapas", "sub": "mil gaya!", "icon": "ACK"}
+      ]
+    },
+    {
+      "type": "dialog",
+      "beat": "twist",
+      "mood": "neutral",
+      "who": "intern",
+      "react": "think",
+      "vo": "और blue tick कब होता है, भैया?",
+      "line": "Aur blue tick kab hota hai, bhaiya?"
+    },
+    {
+      "type": "board",
+      "beat": "reveal",
+      "mood": "solution",
+      "pose": "point",
+      "react": "laugh",
+      "tease": "Quiz aa raha hai, ruko",
+      "vo": "जब वो chat खोलता है, तब read receipt वापस आती है. Blue tick.",
+      "cap": "Chat khola, tick *blue*",
+      "title": "Blue = Chat khola",
+      "layout": "flow",
+      "items": [
+        {"label": "Chat khola", "sub": "usne padha", "icon": "OPEN"},
+        {"label": "Receipt", "sub": "wapas aayi", "icon": "BLUE"}
+      ]
+    },
+    {
+      "type": "board",
+      "beat": "payoff",
+      "mood": "solution",
+      "pose": "thumbsup",
+      "react": "thumbsup",
+      "vo": "ये cheat sheet save कर लो. अगली बार panic मत करना.",
+      "cap": "Screenshot lo, *save* karo",
+      "title": "Tick ka matlab",
+      "layout": "checks",
+      "items": [
+        {"label": "1 tick", "sub": "bheja, phone tak nahi"},
+        {"label": "2 grey", "sub": "phone tak pahuncha"},
+        {"label": "2 blue", "sub": "chat khol ke padha"},
+        {"label": "Blue kabhi nahi?", "sub": "read receipts off"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "beat": "twist",
+      "mood": "comeback",
+      "pose": "think",
+      "react": "think",
+      "vo": "Quiz: group में blue tick कब आता है? A या B? Comment करो.",
+      "cap": "Group ka *quiz*",
+      "question": "Group mein blue tick kab aata hai?",
+      "options": ["Ek ne padha", "Sabne padha"],
+      "answer": 1,
+      "why": "WhatsApp FAQ: group mein blue tick tab aata hai jab sab members padh lein."
+    },
+    {
+      "type": "dialog",
+      "beat": "cta",
+      "mood": "solution",
+      "who": "bro",
+      "pose": "thumbsup",
+      "react": "laugh",
+      "vo": "Comment TICK, message का पूरा safar एक page में DM करता हूँ.",
+      "line": "Comment TICK, poora message ka safar ek page mein DM karta hoon."
+    }
+  ]
+}

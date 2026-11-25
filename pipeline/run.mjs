@@ -87,8 +87,9 @@ async function main() {
       video: files.video,
       caption: `Debug Bro ${String(episode.number).padStart(2, '0')}: ready to post\n${episode.title}\n\nCaption is in the next message (tap and hold to copy). Post between 6 and 9 pm.${review ? `\n\n${review}` : ''}`,
     });
-    if (fs.existsSync(files.cover)) await sendPhotos([files.cover], 'Cover (optional: set it in Edit cover)').catch(() => {});
+    if (fs.existsSync(files.cover)) await sendPhotos([files.cover], 'Cover: set it in Edit cover (the grid shows this)').catch(() => {});
     await sendText(caption);
+    await sendText(postingChecklist(episode)).catch(() => {});
     // the comment-keyword freebie: a PDF of the reel's key frames, for Asit to DM to everyone who comments the keyword
     if (episode.leadMagnet && files.slides?.length) {
       const pdf = path.join(outDir(slug), `${episode.leadMagnet.keyword.toLowerCase()}.pdf`);
@@ -170,6 +171,21 @@ async function main() {
     list.push({slug, topic: episode.topic, pillar: episode.pillar, title: episode.title, postedAt: new Date().toISOString(), ...extra});
     writeJSON(PUBLISHED, list);
   }
+}
+
+/**
+ * What Asit does by hand when posting (manual mode). Each line is something the outlier accounts do on every reel
+ * (see data/swipe.md, 26 Nov 2026 study).
+ */
+export function postingChecklist(episode) {
+  const lines = ['Posting checklist:'];
+  lines.push('1. Cover: pick cover.jpg (or the first frame). Never a blank frame: it is the grid thumbnail.');
+  lines.push('2. Audio: keep the original audio. Do NOT add a trending song under the voice-over (every outlier we studied posts "Original audio").');
+  if (episode.leadMagnet) lines.push(`3. Pin this comment right after posting:\nComment "${episode.leadMagnet.keyword}" for ${episode.leadMagnet.promise}. DM mein bhejta hoon.`);
+  const quiz = episode.scenes.find((s) => s.type === 'quiz');
+  if (quiz) lines.push(`4. Quiz answer: after ~2 hours, reply to the top comments and pin:\nAnswer: ${String.fromCharCode(65 + quiz.answer)} (${quiz.options[quiz.answer]}). ${quiz.why}`);
+  lines.push('5. Reply to every comment in the first hour, and DM the PDF to everyone who comments the keyword.');
+  return lines.join('\n\n');
 }
 
 /** Instagram caption: the text, then search keywords in [brackets], then hashtags. */

@@ -43,6 +43,9 @@ line you'll remember. For developers and curious app users, 18–30, India.
 - End with a comment keyword and a freebie (`leadMagnet`): "Comment DEPLOY, checklist DM mein bhejta hoon." The
   pipeline sends Asit the PDF on Telegram; he DMs it to commenters (until the auto-DM bot is switched on).
 - Plus a send prompt in the caption ("us dost ko bhejo jo…"). Optional series hook: "Part 2 chahiye? Comment PART2".
+- Caption line 1 is the keyword ask. Before the CTA, a `quiz` whose answer is pinned later, never said in the reel.
+- Post with the reel's original audio (no trending song under the voice-over), the hook frame as cover, and pin the ask
+  as the first comment. Telegram sends this checklist with every reel.
 
 ## Facts
 - Every real number, date, incident or policy needs a source opened that day; state its current status exactly
@@ -56,9 +59,14 @@ line you'll remember. For developers and curious app users, 18–30, India.
 2. Does the frame show ONE clear idea, with the accent word visible?
 3. Is anything overlapping (caption over a card, text over text)?
 4. Would this frame make someone stop scrolling? If it's just a box with text, add motion or a bigger visual.
-5. Does the first frame alone make you want to know what happens next?
+5. Does the first frame alone make you want to know what happens next? (review-01: headline, monitor visual and both
+   characters fully visible, never blank or fading in.)
+6. Stage style: does anything important sit behind the characters' heads (bottom of the monitor) or under a tease
+   sticker? Is every tease paid off later in the reel?
 
 ## Mascot
 Debug Bro is a flat vector puppet of Asit (src/components/Mascot.tsx): curly hair, full beard, open dotted charcoal
-shirt over a blue-white striped tee, tan-strap watch. He stands bottom-left (top of head at ~1150 px), reacts to each
-beat with a pose and lip-syncs the main voice. Scene content is scaled to 84% so it stays clear of him.
+shirt over a blue-white striped tee, tan-strap watch. The Intern is a young woman dev (glasses, ponytail, teal hoodie).
+In the house style `stage` (src/stage.tsx, from ep 5) both stand behind a desk with a rubber duck under a big monitor,
+in every scene: the one talking lip-syncs and takes the scene's `pose`, the other takes its `react` pose. Older styles
+put Debug Bro alone bottom-left with the scene scaled to 84%.

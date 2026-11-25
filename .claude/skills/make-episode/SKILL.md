@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch, Bash(node pip
 
 # Make the next Debug Bro episode
 
-Debug Bro (@debug_bro) makes 35–55 s Hinglish reels that explain the system design behind apps every Indian uses.
+Debug Bro (@debug_bro) makes 40–60 s Hinglish reels that explain the system design behind apps every Indian uses.
 Your job is the creative part only: pick the topic, get the facts right, write `episode.json`. The Node pipeline
 does voice, animation, rendering and posting. Do not touch `src/` or `pipeline/`.
 
@@ -28,15 +28,11 @@ then `data/swipe.md` (what the outlier reels of the creators Asit admires do, be
 5. Pick the **experiment**: ONE change versus the previous reel, taken from learnings.md (e.g. "first-person hook
    instead of a scene", "end on a full-screen checklist to save", "25 s instead of 38 s"). Write it in `experiment`
    {change, why, metric}. Keep everything else comparable, so the result teaches something.
-6. Pick the **style** (art direction, `style`): never one used by the previous 2 episodes. The style changes the whole
-   frame (background, captions, header, where Debug Bro stands, transitions):
-   Three styles re-lay the WHOLE reel (different visual grammar, prefer these):
-   `phone` the story plays as a chat on a phone (dialogue-heavy scripts, everyday-app topics) · `comic` every beat is a
-   comic page with panels, SFX and both characters (skits, outages, drama) · `poster` giant kinetic words on colour
-   blocks, no cards (hot takes, myth-fact, news). The others restyle the standard layout:
-   `cinema` dark film · `notebook` hand-drawn paper · `blueprint` engineer's drawing · `newsroom` newspaper · `terminal`.
-   Never use a skin style twice in a row; rotate between a kit style and a skin style.
-   Match it to the topic (news → newsroom, a dev tip → terminal or notebook, a hot take → poster, a skit → comic).
+6. **Style: always `"style": "stage"`** (the house look, src/stage.tsx): a bright room, the Intern (left) and Debug Bro
+   (right) always on screen, every scene plays on a big monitor between them, the headline (`cap`) on top, and the wall
+   colour follows each scene's `mood`. The 26 Nov study (data/swipe.md) showed every outlier account keeps ONE look;
+   what changes is the hook, the topic and the format. Use another style only as a deliberate experiment written in
+   `experiment` (the validator warns).
 
 Pillars: `everyday-tech`, `money-tech` (never investment advice), `interview`, `ai-tools`, `dev-skills`, `news`.
 
@@ -54,23 +50,31 @@ Pillars: `everyday-tech`, `money-tech` (never investment advice), `interview`, `
 `NN` = next number (count existing `episodes/ep*` folders + 1). `slug` field = folder name. Copy the shape of
 `episodes/ep01-tatkal-crash/episode.json`. The schema is `src/schema.js`.
 
-**Structure: follow the chosen format's beats in formats.md.** 7–12 scenes, 70–110 words, 25–40 s, max 14 words
-per scene (18 for `dialog`/`coldopen`). A new picture every 2–3 seconds. Set `format`, `leadMagnet` and the hook type.
+**Structure: follow the chosen format's beats in formats.md.** 10–15 scenes, 120–175 words (≈40–60 s: Sarvam reads
+~2.9 words/s), max 14 words per scene (18 for `dialog`/`coldopen`). A new picture every 2–3 seconds.
+**Open loops**: put a `tease` (≤40 chars, e.g. "Group wala twist end mein", "Quiz aa raha hai, ruko") on a scene every
+12–15 s, from scene 3 on; every tease must be paid off later. The validator needs 1 above 110 words, 2 above 150. Set `format`, `leadMagnet` and the hook type.
 Every non-dialog scene has `beat` and `cap`: the Roman-Hinglish caption (2–6 words) with exactly ONE accent word in
 *asterisks*, e.g. `"cap": "Par rollout abhi *postponed*"`. `dialog` scenes show their `line` in a speech bubble (no
 `cap`); set `vo` to the same words. The Intern's lines are read by the second voice automatically.
 **Hooks**: write 3 different hook options in `hooks` (different hook types from formats.md). Score each: does the
-first frame alone stop a scroll with the sound off? Is it a moment, a belief or a line of dialogue (not a fact)? Is it
-under 8 words on screen? Use the best one. **Ending**: the second-last scene is the keepable payoff (a checklist,
-roadmap or cheat sheet on a `board` or `tip`), held on screen long enough to save.
+first frame alone stop a scroll with the sound off? (Frame 0 shows scene 1 fully built: its `cap` as the headline and
+its visual on the monitor, both characters reacting.) Is it a moment, a belief or a line of dialogue (never a number:
+the validator rejects that)? Is it under 8 words on screen? Does a question ("kaise?", "kyun?", "?") reach the screen
+within the first 3 scenes? Use the best one. Good first scenes: a `board` whose title is the wrong belief
+("1 tick = Block?"), a `moment`, a `headline`.
+**Ending**: a keepable payoff (a cheat sheet on a `board` with layout "checks", or a `tip`), then a `quiz` (2–4
+options, `answer` index, `why`) whose answer is NOT said in the reel (Asit pins it ~2 h later; the Telegram checklist
+carries it), then the CTA line with the comment keyword.
 Do not copy the shape of any earlier episode: eps 1–3 are what NOT to repeat. The validator rejects a reel that
 repeats the previous format, the previous opening scene type, the "15 LPA" chat or the दोहा ending.
 After writing, the workflow renders frames and Claude reviews them, so make the first frame stop a scroll on its own.
 
-**Characters**: Debug Bro (a cartoon of Asit) stands bottom-left in every reel, lip-syncing the voice; in `dialog`
-scenes he and the Intern both appear and the corner mascot steps aside. His pose comes from
-the scene's `beat`; set `"pose"` on a scene to override it (idle, point, explain, think, shock, facepalm, thumbsup,
-shrug, crossed, laugh) when a reaction fits the line better, e.g. `laugh` on a joke.
+**Characters** (stage style): both are on screen in every scene. Who talks: a `dialog` scene's `who`; any other scene is
+Debug Bro unless it has `"speaker": "alt"`, which makes the Intern say it (her voice, her lip sync), e.g. the hook
+belief. `pose` = the talker's pose (idle, point, explain, think, shock, facepalm, thumbsup, shrug, crossed, laugh);
+`react` = the listener's pose. Pick reactions that act the line out: the Intern `shock` at the problem, Debug Bro
+`think` while she panics, both `thumbsup` at the payoff. A `dialog` line appears as a big chat card on the monitor.
 
 **Voice-over (`vo`)**: Hinglish the way Indian devs talk. Hindi words in Devanagari, tech words in English
 (`database`, `Redis`, `queue`). Short sentences, max ~25 words per scene. Write numbers in words when spoken
@@ -103,10 +107,13 @@ the fix, `comeback` (amber) for compare/twist. **Tags** (`PROBLEM`, `SOLUTION`, 
 | headline | news card: source, date, big headline | source, date, headline, sub, label |
 | tip | one numbered trick: big "2/5", the trick, what it does, example | n, of, title, desc, example |
 | moment | a lived moment: place + time, one big line, a stamp | place, line, stamp |
+| quiz | question + 2–4 lettered options, "Comment karo: A ya B?" (answer NOT shown) | question, options, answer, why |
 
-**Caption**: line 1 = the hook retold with search words ("RAC ticket pe raat 2 baje berth kaise milti hai?"),
-line 2 = "Comment KEYWORD, <promise> DM mein bhejta hoon", line 3 = "Us dost ko bhejo jo …", then 2–3 lines of the
-key takeaway, then "Save karo, kaam aayega." Exactly 3 hashtags, specific (one niche tag + two topic tags). `coverText` = 3–5 punchy words.
+Any scene may also set `tease` (open-loop sticker), `react` (listener pose) and `speaker: "alt"` (the Intern says it).
+
+**Caption**: line 1 = the ask, "Comment KEYWORD for <promise>. DM mein bhejta hoon." (the validator enforces it; the
+caption preview shows only line 1), line 2 = the hook retold with search words ("Ek tick dekh ke socha block kar
+diya?"), line 3 = "Us dost ko bhejo jo …", then 2–3 lines of the key takeaway, the quiz question again, then "Save karo, kaam aayega." Exactly 3 hashtags, specific (one niche tag + two topic tags). `coverText` = 3–5 punchy words.
 `keywords` = 5–7 lowercase phrases people actually type into Instagram search, shown as `[keyword]` in the caption:
 2–3 about the topic in Hinglish/English ("upi kaise kaam karta hai", "upi free kyun hai"), 1–2 for the exact
 concept ("mdr charges"), and 2 for the niche ("system design in hindi", "coding in hindi"). No hashtags, no emoji.

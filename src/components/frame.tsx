@@ -262,8 +262,10 @@ export const MascotFrame: React.FC<{st: ArtStyle; children: React.ReactNode}> = 
 };
 
 /* ------------------------------------------------------------ cuts */
-export const Cut: React.FC<{st: ArtStyle; dur: number; children: React.ReactNode}> = ({st, dur, children}) => {
+export const Cut: React.FC<{st: ArtStyle; dur: number; first?: boolean; children: React.ReactNode}> = ({st, dur, first, children}) => {
   const frame = useCurrentFrame();
+  // the first scene is the hook: no entry transition, it must be fully visible at frame 0
+  if (first) return <AbsoluteFill style={{opacity: interpolate(frame, [dur - 3, dur], [1, 0], clamp)}}>{children}</AbsoluteFill>;
   const out = interpolate(frame, [dur - 3, dur], [1, 0], clamp);
   const push = interpolate(frame, [6, dur], [1, 1.03], clamp);
   let style: React.CSSProperties = {};

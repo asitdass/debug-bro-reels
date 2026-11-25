@@ -49,9 +49,9 @@ export function validate(slug) {
   if (ep.scenes.some((s) => s.type === 'chat') && lastN(3).some((e) => e.scenes?.some((s) => s.type === 'chat')))
     errors.push('a "chat" interview scene was used in the last 3 episodes; use dialog or another setup');
   if (ep.number > 4) {
-    if (!ep.style) errors.push('set "style" (cinema, notebook, blueprint, newsroom, poster, terminal, comic): see src/styles.ts');
-    const recentStyles = lastN(2).map((e) => e.style ?? 'cinema');
-    if (ep.style && recentStyles.includes(ep.style)) errors.push(`style "${ep.style}" was used in the last 2 episodes (${recentStyles.join(', ')}); pick another look`);
+    // 26 Nov 2026 study: every outlier account keeps ONE recognisable look; the hook, topic and format change instead
+    if (!ep.style) errors.push('set "style": "stage" (the house style, src/stage.tsx)');
+    else if (ep.style !== 'stage') warnings.push(`style "${ep.style}" is not the house style "stage"; only use another look as a deliberate experiment`);
     if (!ep.experiment) errors.push('set "experiment" {change, why, metric}: the one thing this reel tests (read data/learnings.md)');
     if (!ep.hooks || ep.hooks.length < 3) warnings.push('list the 3 hook options you considered in "hooks"');
   }
@@ -60,8 +60,35 @@ export function validate(slug) {
     errors.push(`the last scenes must say the comment keyword "${ep.leadMagnet.keyword}"`);
 
   const words = ep.scenes.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
-  if (words > 115) errors.push(`voice-over is ${words} words; keep it ≤ 115 (≈38 s). Short reels hold viewers`);
+  // Length is not what lost viewers (eps 1-3 lost them in the first 6 s); the outliers run 53-164 s. But every
+  // extra 12-15 s needs an open loop (a "tease" sticker) so there is always a reason to keep watching.
+  const maxWords = ep.number > 4 ? 175 : 115;
+  if (words > maxWords) errors.push(`voice-over is ${words} words; keep it ≤ ${maxWords} (≈${Math.round(maxWords / 3.1)} s)`);
   if (words < 55) warnings.push(`voice-over is only ${words} words (≈${Math.round(words / 3)} s)`);
+  const teases = ep.scenes.filter((s) => s.tease).length;
+  const needTeases = words > 150 ? 2 : words > 110 ? 1 : 0;
+  if (ep.number > 4 && teases < needTeases)
+    errors.push(`${words} words needs ${needTeases} "tease" open loop(s) (e.g. "Group wala twist end mein"); found ${teases}`);
+  if (ep.scenes[0].tease) warnings.push('scene 1 has a tease: the hook itself should be the reason to stay; tease from scene 3 on');
+
+  // hook rules: never open on a number, and the question ("kaise?", "kyun?") is on screen within the first 3 scenes
+  const big = (s) => [s.cap, s.line, s.title, s.question, s.headline, s.setup].filter(Boolean).join(' ').replace(/\*/g, '');
+  if (ep.number > 4 && (/^\s*[0-9₹]/.test(big(ep.scenes[0])) || /^\s*[0-9०-९]/.test(ep.scenes[0].vo)))
+    errors.push('scene 1 opens on a number; open on a moment, a belief or a line of dialogue (the number can come later)');
+  if (ep.number > 4 && !ep.scenes.slice(0, 3).some((s) => /\?/.test(big(s))))
+    warnings.push('no question on screen in the first 3 scenes; the outliers ask "kaise?" / "kyun?" within ~5 s');
+
+  // the ending: something to keep (board checks / tip) or a quiz that people answer in the comments
+  ep.scenes.forEach((s, i) => {
+    if (s.type === 'quiz') {
+      if (s.answer >= s.options.length) errors.push(`scene ${i + 1}: quiz answer ${s.answer} is not one of its ${s.options.length} options`);
+      if (i < ep.scenes.length - 3) warnings.push(`scene ${i + 1}: put the quiz in the last 3 scenes`);
+    }
+  });
+  if (ep.number > 4 && !ep.scenes.slice(-4).some((s) => s.type === 'quiz' || (s.type === 'board' && s.layout === 'checks') || s.type === 'tip'))
+    warnings.push('end on something to save (a board with layout "checks", a tip) or a quiz');
+  if (ep.number > 4 && ep.leadMagnet && !new RegExp(`comment\\s+["“]?${ep.leadMagnet.keyword}`, 'i').test(ep.caption.split('\n')[0]))
+    errors.push(`caption line 1 must be the ask: "Comment ${ep.leadMagnet.keyword} for <promise>" (sys.design.101 does this and gets 14.1K comments)`);
   ep.scenes.forEach((s, i) => {
     const n = s.vo.trim().split(/\s+/).length;
     const max = ['coldopen', 'rule', 'dialog'].includes(s.type) ? 18 : 14;
