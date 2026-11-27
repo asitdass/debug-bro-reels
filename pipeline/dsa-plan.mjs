@@ -2,9 +2,19 @@
 //   action=write    make the next question
 //   action=deliver  slug=<slug>   a question was written but never delivered: send that one
 //   action=skip     this slot already got its reel (backup cron, or a late run)
+// Node built-ins only: the planning job runs this without installing packages.
 import fs from 'node:fs';
 import path from 'node:path';
-import {ROOT, readJSON} from './util.mjs';
+import {fileURLToPath} from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const readJSON = (p, fallback) => {
+  try {
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch {
+    return fallback;
+  }
+};
 
 const SLOT_HOURS = 8; // the two daily slots are 13 h and 11 h apart
 const published = readJSON(path.join(ROOT, 'data/published.json'), []);
