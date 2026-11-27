@@ -35,18 +35,22 @@
     "fallbackVoiceId": "en-IN-PrabhatNeural",
     "rate": "+5%"
   },
-  "caption": "Comment TWOSUM for the Two Sum notes PDF (Python, Java, C++, JavaScript).\n\nDSA-101, one interview question every day. Question 1: Two Sum (LeetCode 1). One notebook turns five hundred billion checks into one million steps.\n\nSave this for your interview. Send it to the friend who still writes two loops.",
+  "caption": "Nested loops are fine... until your input hits 1,000,000 and your runtime dies. 💀\n\nWelcome to DSA-101: one interview classic every day.\nDay 1: Two Sum (LeetCode #1)\nTrade a little extra memory for a hash map and turn about 500 billion checks into a single pass.\n\n👇 Comment TWOSUM for the full notes PDF in Python, Java, C++ and JavaScript.\n\nSave it for later + share it with your coding buddy.",
   "hashtags": [
     "#dsa",
     "#leetcode",
-    "#codinginterview"
+    "#codinginterview",
+    "#programming",
+    "#computerscience"
   ],
   "keywords": [
     "two sum",
     "leetcode 1",
     "hash map",
-    "dsa for beginners",
-    "coding interview"
+    "dsa 101",
+    "coding interview",
+    "time complexity",
+    "algorithms"
   ],
   "coverText": "TWO SUM",
   "sources": [

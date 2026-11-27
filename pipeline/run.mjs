@@ -196,9 +196,9 @@ export function postingChecklist(episode) {
   return lines.join('\n\n');
 }
 
-/** Instagram caption: the text, then search keywords in [brackets], then hashtags. */
+/** Instagram caption: the text, then search keywords as one [comma, separated] list, then hashtags. */
 export function fullCaption(episode) {
-  const kw = (episode.keywords ?? []).map((k) => `[${k}]`).join(' ');
+  const kw = episode.keywords?.length ? `[${episode.keywords.join(', ')}]` : '';
   return [episode.caption, kw, episode.hashtags.join(' ')].filter(Boolean).join('\n\n').slice(0, 2200);
 }
 
