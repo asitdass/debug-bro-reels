@@ -181,7 +181,7 @@ function validateDsa(ep, errors, warnings) {
   });
   checkCaption(ep, errors, warnings);
   if (ep.dsa && !ep.caption.includes(`(LeetCode #${ep.dsa.leetcode})`))
-    errors.push(`caption needs the line "Day ${ep.dsa.n}: <problem> (LeetCode #${ep.dsa.leetcode})"`);
+    errors.push(`caption needs the line "Question ${ep.dsa.n}: <problem> (LeetCode #${ep.dsa.leetcode})"`);
   if (!ep.sources?.length) warnings.push('no sources listed');
   if (ep.dsa) {
     // the problem on screen must be the problem in episode.dsa (catches a copied episode that kept the old content)
