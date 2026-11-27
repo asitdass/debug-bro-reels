@@ -1,2429 +1,2429 @@
 {
-  "totalMs": 139817.24137931038,
-  "audio": null,
+  "totalMs": 159187,
+  "audio": "episodes/dsa101-01-two-sum/voice.mp3",
   "scenes": [
     {
       "startMs": 0,
-      "durMs": 5817.241379310345
+      "durMs": 6811
     },
     {
-      "startMs": 6067.241379310345,
-      "durMs": 11379.310344827587
+      "startMs": 7071,
+      "durMs": 12816
     },
     {
-      "startMs": 17696.55172413793,
-      "durMs": 11034.48275862069
+      "startMs": 20147,
+      "durMs": 10999
     },
     {
-      "startMs": 28981.034482758623,
-      "durMs": 5517.241379310345
+      "startMs": 31406,
+      "durMs": 5707
     },
     {
-      "startMs": 34748.27586206897,
-      "durMs": 7931.034482758621
+      "startMs": 37373,
+      "durMs": 7838
     },
     {
-      "startMs": 42929.310344827594,
-      "durMs": 11379.310344827587
+      "startMs": 45471,
+      "durMs": 13550
     },
     {
-      "startMs": 54558.62068965518,
-      "durMs": 12068.965517241379
+      "startMs": 59282,
+      "durMs": 14375
     },
     {
-      "startMs": 66877.58620689657,
-      "durMs": 7241.379310344827
+      "startMs": 73917,
+      "durMs": 7440
     },
     {
-      "startMs": 74368.96551724139,
-      "durMs": 8620.689655172415
+      "startMs": 81616,
+      "durMs": 10511
     },
     {
-      "startMs": 83239.65517241381,
-      "durMs": 10000
+      "startMs": 92387,
+      "durMs": 11621
     },
     {
-      "startMs": 93489.65517241381,
-      "durMs": 7241.379310344827
+      "startMs": 104269,
+      "durMs": 10052
     },
     {
-      "startMs": 100981.03448275864,
-      "durMs": 5172.413793103448
+      "startMs": 114580,
+      "durMs": 5002
     },
     {
-      "startMs": 106403.44827586209,
-      "durMs": 7241.379310344827
+      "startMs": 119842,
+      "durMs": 7874
     },
     {
-      "startMs": 113894.82758620691,
-      "durMs": 8275.862068965518
+      "startMs": 127976,
+      "durMs": 11067
     },
     {
-      "startMs": 122420.68965517243,
-      "durMs": 6896.551724137931
+      "startMs": 139303,
+      "durMs": 8074
     },
     {
-      "startMs": 129567.24137931036,
-      "durMs": 10000
+      "startMs": 147637,
+      "durMs": 10949
     }
   ],
   "words": [
     {
       "text": "An",
       "startMs": 300,
-      "endMs": 604.8275862068965,
+      "endMs": 516,
       "scene": 0
     },
     {
       "text": "interviewer",
-      "startMs": 644.8275862068965,
-      "endMs": 949.6551724137931,
+      "startMs": 527,
+      "endMs": 1390,
       "scene": 0
     },
     {
       "text": "asked",
-      "startMs": 989.6551724137931,
-      "endMs": 1294.4827586206898,
+      "startMs": 1436,
+      "endMs": 1867,
       "scene": 0
     },
     {
       "text": "me",
-      "startMs": 1334.4827586206898,
-      "endMs": 1639.3103448275863,
+      "startMs": 1890,
+      "endMs": 2106,
       "scene": 0
     },
     {
       "text": "Two",
-      "startMs": 1679.3103448275863,
-      "endMs": 1984.1379310344828,
+      "startMs": 2117,
+      "endMs": 2405,
       "scene": 0
     },
     {
       "text": "Sum.",
-      "startMs": 2024.1379310344828,
-      "endMs": 2328.9655172413795,
+      "startMs": 2420,
+      "endMs": 2708,
       "scene": 0
     },
     {
       "text": "I",
-      "startMs": 2368.9655172413795,
-      "endMs": 2673.793103448276,
+      "startMs": 2950,
+      "endMs": 3094,
       "scene": 0
     },
     {
       "text": "wrote",
-      "startMs": 2713.793103448276,
-      "endMs": 3018.6206896551726,
+      "startMs": 3101,
+      "endMs": 3533,
       "scene": 0
     },
     {
       "text": "two",
-      "startMs": 3058.6206896551726,
-      "endMs": 3363.4482758620693,
+      "startMs": 3556,
+      "endMs": 3843,
       "scene": 0
     },
     {
       "text": "loops.",
-      "startMs": 3403.4482758620693,
-      "endMs": 3708.2758620689656,
+      "startMs": 3858,
+      "endMs": 4290,
       "scene": 0
     },
     {
       "text": "He",
-      "startMs": 3748.2758620689656,
-      "endMs": 4053.1034482758623,
+      "startMs": 4540,
+      "endMs": 4756,
       "scene": 0
     },
     {
       "text": "smiled.",
-      "startMs": 4093.1034482758623,
-      "endMs": 4397.931034482759,
+      "startMs": 4767,
+      "endMs": 5270,
       "scene": 0
     },
     {
       "text": "Not",
-      "startMs": 4437.931034482759,
-      "endMs": 4742.758620689656,
+      "startMs": 5524,
+      "endMs": 5812,
       "scene": 0
     },
     {
       "text": "a",
-      "startMs": 4782.758620689656,
-      "endMs": 5087.586206896552,
+      "startMs": 5827,
+      "endMs": 5971,
       "scene": 0
     },
     {
       "text": "good",
-      "startMs": 5127.586206896552,
-      "endMs": 5432.413793103448,
+      "startMs": 5978,
+      "endMs": 6338,
       "scene": 0
     },
     {
       "text": "smile.",
-      "startMs": 5472.413793103448,
-      "endMs": 5777.241379310345,
+      "startMs": 6357,
+      "endMs": 6788,
       "scene": 0
     },
     {
       "text": "Here",
-      "startMs": 6067.241379310345,
-      "endMs": 6372.068965517242,
+      "startMs": 7071,
+      "endMs": 7400,
       "scene": 1
     },
     {
       "text": "is",
-      "startMs": 6412.068965517242,
-      "endMs": 6716.896551724139,
+      "startMs": 7417,
+      "endMs": 7615,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 6756.896551724139,
-      "endMs": 7061.724137931034,
+      "startMs": 7625,
+      "endMs": 7888,
       "scene": 1
     },
     {
       "text": "question.",
-      "startMs": 7101.724137931034,
-      "endMs": 7406.551724137931,
+      "startMs": 7902,
+      "endMs": 8495,
       "scene": 1
     },
     {
       "text": "A",
-      "startMs": 7446.551724137931,
-      "endMs": 7751.379310344828,
+      "startMs": 8734,
+      "endMs": 8865,
       "scene": 1
     },
     {
       "text": "list",
-      "startMs": 7791.379310344828,
-      "endMs": 8096.206896551725,
+      "startMs": 8872,
+      "endMs": 9201,
       "scene": 1
     },
     {
       "text": "of",
-      "startMs": 8136.206896551725,
-      "endMs": 8441.034482758621,
+      "startMs": 9219,
+      "endMs": 9416,
       "scene": 1
     },
     {
       "text": "numbers,",
-      "startMs": 8481.034482758621,
-      "endMs": 8785.862068965518,
+      "startMs": 9426,
+      "endMs": 9953,
       "scene": 1
     },
     {
       "text": "and",
-      "startMs": 8825.862068965518,
-      "endMs": 9130.689655172415,
+      "startMs": 10188,
+      "endMs": 10452,
       "scene": 1
     },
     {
       "text": "a",
-      "startMs": 9170.689655172415,
-      "endMs": 9475.517241379312,
+      "startMs": 10465,
+      "endMs": 10597,
       "scene": 1
     },
     {
       "text": "target.",
-      "startMs": 9515.517241379312,
-      "endMs": 9820.344827586207,
+      "startMs": 10604,
+      "endMs": 11065,
       "scene": 1
     },
     {
       "text": "Find",
-      "startMs": 9860.344827586207,
-      "endMs": 10165.172413793105,
+      "startMs": 11297,
+      "endMs": 11626,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 10205.172413793105,
-      "endMs": 10510,
+      "startMs": 11643,
+      "endMs": 11906,
       "scene": 1
     },
     {
       "text": "two",
-      "startMs": 10550,
-      "endMs": 10854.827586206897,
+      "startMs": 11920,
+      "endMs": 12184,
       "scene": 1
     },
     {
       "text": "numbers",
-      "startMs": 10894.827586206897,
-      "endMs": 11199.655172413793,
+      "startMs": 12197,
+      "endMs": 12724,
       "scene": 1
     },
     {
       "text": "that",
-      "startMs": 11239.655172413793,
-      "endMs": 11544.48275862069,
+      "startMs": 12752,
+      "endMs": 13081,
       "scene": 1
     },
     {
       "text": "add",
-      "startMs": 11584.48275862069,
-      "endMs": 11889.310344827587,
+      "startMs": 13098,
+      "endMs": 13361,
       "scene": 1
     },
     {
       "text": "up",
-      "startMs": 11929.310344827587,
-      "endMs": 12234.137931034484,
+      "startMs": 13375,
+      "endMs": 13572,
       "scene": 1
     },
     {
       "text": "to",
-      "startMs": 12274.137931034484,
-      "endMs": 12578.96551724138,
+      "startMs": 13583,
+      "endMs": 13780,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 12618.96551724138,
-      "endMs": 12923.793103448275,
+      "startMs": 13791,
+      "endMs": 14054,
       "scene": 1
     },
     {
       "text": "target,",
-      "startMs": 12963.793103448275,
-      "endMs": 13268.620689655174,
+      "startMs": 14068,
+      "endMs": 14528,
       "scene": 1
     },
     {
       "text": "and",
-      "startMs": 13308.620689655174,
-      "endMs": 13613.448275862069,
+      "startMs": 14761,
+      "endMs": 15024,
       "scene": 1
     },
     {
       "text": "return",
-      "startMs": 13653.448275862069,
-      "endMs": 13958.275862068967,
+      "startMs": 15038,
+      "endMs": 15498,
       "scene": 1
     },
     {
       "text": "their",
-      "startMs": 13998.275862068967,
-      "endMs": 14303.103448275862,
+      "startMs": 15523,
+      "endMs": 15917,
       "scene": 1
     },
     {
       "text": "positions.",
-      "startMs": 14343.103448275862,
-      "endMs": 14647.93103448276,
+      "startMs": 15938,
+      "endMs": 16596,
       "scene": 1
     },
     {
       "text": "Two",
-      "startMs": 14687.93103448276,
-      "endMs": 14992.758620689656,
+      "startMs": 16839,
+      "endMs": 17102,
       "scene": 1
     },
     {
       "text": "plus",
-      "startMs": 15032.758620689656,
-      "endMs": 15337.58620689655,
+      "startMs": 17116,
+      "endMs": 17445,
       "scene": 1
     },
     {
       "text": "seven",
-      "startMs": 15377.58620689655,
-      "endMs": 15682.41379310345,
+      "startMs": 17462,
+      "endMs": 17857,
       "scene": 1
     },
     {
       "text": "is",
-      "startMs": 15722.41379310345,
-      "endMs": 16027.241379310344,
+      "startMs": 17878,
+      "endMs": 18075,
       "scene": 1
     },
     {
       "text": "nine.",
-      "startMs": 16067.241379310344,
-      "endMs": 16372.068965517243,
+      "startMs": 18086,
+      "endMs": 18415,
       "scene": 1
     },
     {
       "text": "So:",
-      "startMs": 16412.068965517243,
-      "endMs": 16716.896551724138,
+      "startMs": 18640,
+      "endMs": 18837,
       "scene": 1
     },
     {
       "text": "zero,",
-      "startMs": 16756.896551724138,
-      "endMs": 17061.724137931036,
+      "startMs": 19056,
+      "endMs": 19385,
       "scene": 1
     },
     {
       "text": "one.",
-      "startMs": 17101.724137931036,
-      "endMs": 17406.55172413793,
+      "startMs": 19610,
+      "endMs": 19873,
       "scene": 1
     },
     {
       "text": "My",
-      "startMs": 17696.55172413793,
-      "endMs": 18001.379310344826,
+      "startMs": 20147,
+      "endMs": 20308,
       "scene": 2
     },
     {
       "text": "first",
-      "startMs": 18041.379310344826,
-      "endMs": 18346.206896551725,
+      "startMs": 20317,
+      "endMs": 20640,
       "scene": 2
     },
     {
       "text": "answer:",
-      "startMs": 18386.206896551725,
-      "endMs": 18691.03448275862,
+      "startMs": 20657,
+      "endMs": 21034,
       "scene": 2
     },
     {
       "text": "try",
-      "startMs": 18731.03448275862,
-      "endMs": 19035.862068965518,
+      "startMs": 21224,
+      "endMs": 21440,
       "scene": 2
     },
     {
       "text": "every",
-      "startMs": 19075.862068965518,
-      "endMs": 19380.689655172413,
+      "startMs": 21451,
+      "endMs": 21774,
       "scene": 2
     },
     {
       "text": "pair.",
-      "startMs": 19420.689655172413,
-      "endMs": 19725.51724137931,
+      "startMs": 21791,
+      "endMs": 22060,
       "scene": 2
     },
     {
       "text": "Two",
-      "startMs": 19765.51724137931,
-      "endMs": 20070.344827586207,
+      "startMs": 22245,
+      "endMs": 22460,
       "scene": 2
     },
     {
       "text": "loops.",
-      "startMs": 20110.344827586207,
-      "endMs": 20415.172413793105,
+      "startMs": 22471,
+      "endMs": 22795,
       "scene": 2
     },
     {
       "text": "It",
-      "startMs": 20455.172413793105,
-      "endMs": 20760,
+      "startMs": 22982,
+      "endMs": 23143,
       "scene": 2
     },
     {
       "text": "works!",
-      "startMs": 20800,
-      "endMs": 21104.8275862069,
+      "startMs": 23152,
+      "endMs": 23475,
       "scene": 2
     },
     {
       "text": "But",
-      "startMs": 21144.8275862069,
-      "endMs": 21449.655172413793,
+      "startMs": 23662,
+      "endMs": 23878,
       "scene": 2
     },
     {
       "text": "with",
-      "startMs": 21489.655172413793,
-      "endMs": 21794.48275862069,
+      "startMs": 23889,
+      "endMs": 24158,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 21834.48275862069,
-      "endMs": 22139.310344827587,
+      "startMs": 24172,
+      "endMs": 24280,
       "scene": 2
     },
     {
       "text": "million",
-      "startMs": 22179.310344827587,
-      "endMs": 22484.137931034482,
+      "startMs": 24286,
+      "endMs": 24717,
       "scene": 2
     },
     {
       "text": "numbers,",
-      "startMs": 22524.137931034482,
-      "endMs": 22828.96551724138,
+      "startMs": 24739,
+      "endMs": 25170,
       "scene": 2
     },
     {
       "text": "that",
-      "startMs": 22868.96551724138,
-      "endMs": 23173.793103448275,
+      "startMs": 25363,
+      "endMs": 25632,
       "scene": 2
     },
     {
       "text": "is",
-      "startMs": 23213.793103448275,
-      "endMs": 23518.620689655174,
+      "startMs": 25647,
+      "endMs": 25808,
       "scene": 2
     },
     {
       "text": "five",
-      "startMs": 23558.620689655174,
-      "endMs": 23863.44827586207,
+      "startMs": 25817,
+      "endMs": 26086,
       "scene": 2
     },
     {
       "text": "hundred",
-      "startMs": 23903.44827586207,
-      "endMs": 24208.275862068964,
+      "startMs": 26100,
+      "endMs": 26531,
       "scene": 2
     },
     {
       "text": "billion",
-      "startMs": 24248.275862068964,
-      "endMs": 24553.103448275862,
+      "startMs": 26554,
+      "endMs": 26985,
       "scene": 2
     },
     {
       "text": "checks.",
-      "startMs": 24593.103448275862,
-      "endMs": 24897.93103448276,
+      "startMs": 27007,
+      "endMs": 27384,
       "scene": 2
     },
     {
       "text": "At",
-      "startMs": 24937.93103448276,
-      "endMs": 25242.758620689656,
+      "startMs": 27574,
+      "endMs": 27736,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 25282.758620689656,
-      "endMs": 25587.58620689655,
+      "startMs": 27744,
+      "endMs": 27852,
       "scene": 2
     },
     {
       "text": "billion",
-      "startMs": 25627.58620689655,
-      "endMs": 25932.41379310345,
+      "startMs": 27858,
+      "endMs": 28289,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 25972.41379310345,
-      "endMs": 26277.241379310348,
+      "startMs": 28311,
+      "endMs": 28419,
       "scene": 2
     },
     {
       "text": "second,",
-      "startMs": 26317.241379310348,
-      "endMs": 26622.068965517243,
+      "startMs": 28425,
+      "endMs": 28802,
       "scene": 2
     },
     {
       "text": "eight",
-      "startMs": 26662.068965517243,
-      "endMs": 26966.896551724138,
+      "startMs": 28992,
+      "endMs": 29315,
       "scene": 2
     },
     {
       "text": "minutes.",
-      "startMs": 27006.896551724138,
-      "endMs": 27311.724137931036,
+      "startMs": 29332,
+      "endMs": 29763,
       "scene": 2
     },
     {
       "text": "His",
-      "startMs": 27351.724137931036,
-      "endMs": 27656.55172413793,
+      "startMs": 29956,
+      "endMs": 30171,
       "scene": 2
     },
     {
       "text": "coffee",
-      "startMs": 27696.55172413793,
-      "endMs": 28001.379310344826,
+      "startMs": 30182,
+      "endMs": 30559,
       "scene": 2
     },
     {
       "text": "went",
-      "startMs": 28041.379310344826,
-      "endMs": 28346.206896551725,
+      "startMs": 30579,
+      "endMs": 30849,
       "scene": 2
     },
     {
       "text": "cold.",
-      "startMs": 28386.206896551725,
-      "endMs": 28691.034482758623,
+      "startMs": 30863,
+      "endMs": 31132,
       "scene": 2
     },
     {
       "text": "Pause",
-      "startMs": 28981.034482758623,
-      "endMs": 29285.862068965518,
+      "startMs": 31406,
+      "endMs": 31780,
       "scene": 3
     },
     {
       "text": "the",
-      "startMs": 29325.862068965518,
-      "endMs": 29630.689655172417,
+      "startMs": 31800,
+      "endMs": 32049,
       "scene": 3
     },
     {
       "text": "video.",
-      "startMs": 29670.689655172417,
-      "endMs": 29975.51724137931,
+      "startMs": 32062,
+      "endMs": 32436,
       "scene": 3
     },
     {
       "text": "Try",
-      "startMs": 30015.51724137931,
-      "endMs": 30320.34482758621,
+      "startMs": 32653,
+      "endMs": 32902,
       "scene": 3
     },
     {
       "text": "to",
-      "startMs": 30360.34482758621,
-      "endMs": 30665.172413793105,
+      "startMs": 32915,
+      "endMs": 33102,
       "scene": 3
     },
     {
       "text": "beat",
-      "startMs": 30705.172413793105,
-      "endMs": 31010.000000000004,
+      "startMs": 33112,
+      "endMs": 33423,
       "scene": 3
     },
     {
       "text": "it.",
-      "startMs": 31050.000000000004,
-      "endMs": 31354.8275862069,
+      "startMs": 33440,
+      "endMs": 33627,
       "scene": 3
     },
     {
       "text": "I",
-      "startMs": 31394.8275862069,
-      "endMs": 31699.655172413797,
+      "startMs": 33833,
+      "endMs": 33958,
       "scene": 3
     },
     {
       "text": "will",
-      "startMs": 31739.655172413797,
-      "endMs": 32044.482758620692,
+      "startMs": 33965,
+      "endMs": 34276,
       "scene": 3
     },
     {
       "text": "wait.",
-      "startMs": 32084.482758620692,
-      "endMs": 32389.310344827587,
+      "startMs": 34293,
+      "endMs": 34604,
       "scene": 3
     },
     {
       "text": "Hint:",
-      "startMs": 32429.310344827587,
-      "endMs": 32734.137931034486,
+      "startMs": 34817,
+      "endMs": 35129,
       "scene": 3
     },
     {
       "text": "you",
-      "startMs": 32774.137931034486,
-      "endMs": 33078.965517241384,
+      "startMs": 35342,
+      "endMs": 35591,
       "scene": 3
     },
     {
       "text": "only",
-      "startMs": 33118.965517241384,
-      "endMs": 33423.793103448275,
+      "startMs": 35605,
+      "endMs": 35916,
       "scene": 3
     },
     {
       "text": "need",
-      "startMs": 33463.793103448275,
-      "endMs": 33768.620689655174,
+      "startMs": 35933,
+      "endMs": 36244,
       "scene": 3
     },
     {
       "text": "one",
-      "startMs": 33808.620689655174,
-      "endMs": 34113.44827586207,
+      "startMs": 36261,
+      "endMs": 36510,
       "scene": 3
     },
     {
       "text": "notebook.",
-      "startMs": 34153.44827586207,
-      "endMs": 34458.27586206897,
+      "startMs": 36523,
+      "endMs": 37084,
       "scene": 3
     },
     {
       "text": "Picture",
-      "startMs": 34748.27586206897,
-      "endMs": 35053.10344827587,
+      "startMs": 37373,
+      "endMs": 37821,
       "scene": 4
     },
     {
       "text": "a",
-      "startMs": 35093.10344827587,
-      "endMs": 35397.93103448276,
+      "startMs": 37845,
+      "endMs": 37957,
       "scene": 4
     },
     {
       "text": "wedding",
-      "startMs": 35437.93103448276,
-      "endMs": 35742.75862068966,
+      "startMs": 37963,
+      "endMs": 38411,
       "scene": 4
     },
     {
       "text": "gate.",
-      "startMs": 35782.75862068966,
-      "endMs": 36087.58620689656,
+      "startMs": 38434,
+      "endMs": 38714,
       "scene": 4
     },
     {
       "text": "Guests",
-      "startMs": 36127.58620689656,
-      "endMs": 36432.41379310346,
+      "startMs": 38906,
+      "endMs": 39297,
       "scene": 4
     },
     {
       "text": "walk",
-      "startMs": 36472.41379310346,
-      "endMs": 36777.24137931035,
+      "startMs": 39318,
+      "endMs": 39598,
       "scene": 4
     },
     {
       "text": "in",
-      "startMs": 36817.24137931035,
-      "endMs": 37122.06896551725,
+      "startMs": 39613,
+      "endMs": 39781,
       "scene": 4
     },
     {
       "text": "one",
-      "startMs": 37162.06896551725,
-      "endMs": 37466.896551724145,
+      "startMs": 39790,
+      "endMs": 40014,
       "scene": 4
     },
     {
       "text": "by",
-      "startMs": 37506.896551724145,
-      "endMs": 37811.72413793104,
+      "startMs": 40025,
+      "endMs": 40193,
       "scene": 4
     },
     {
       "text": "one,",
-      "startMs": 37851.72413793104,
-      "endMs": 38156.551724137935,
+      "startMs": 40202,
+      "endMs": 40426,
       "scene": 4
     },
     {
       "text": "each",
-      "startMs": 38196.551724137935,
-      "endMs": 38501.37931034483,
+      "startMs": 40615,
+      "endMs": 40895,
       "scene": 4
     },
     {
       "text": "wearing",
-      "startMs": 38541.37931034483,
-      "endMs": 38846.20689655173,
+      "startMs": 40909,
+      "endMs": 41357,
       "scene": 4
     },
     {
       "text": "a",
-      "startMs": 38886.20689655173,
-      "endMs": 39191.03448275862,
+      "startMs": 41381,
+      "endMs": 41493,
       "scene": 4
     },
     {
       "text": "number.",
-      "startMs": 39231.03448275862,
-      "endMs": 39535.86206896552,
+      "startMs": 41499,
+      "endMs": 41890,
       "scene": 4
     },
     {
       "text": "The",
-      "startMs": 39575.86206896552,
-      "endMs": 39880.68965517242,
+      "startMs": 42088,
+      "endMs": 42312,
       "scene": 4
     },
     {
       "text": "host",
-      "startMs": 39920.68965517242,
-      "endMs": 40225.51724137932,
+      "startMs": 42324,
+      "endMs": 42604,
       "scene": 4
     },
     {
       "text": "keeps",
-      "startMs": 40265.51724137932,
-      "endMs": 40570.34482758621,
+      "startMs": 42618,
+      "endMs": 42954,
       "scene": 4
     },
     {
       "text": "a",
-      "startMs": 40610.34482758621,
-      "endMs": 40915.17241379311,
+      "startMs": 42972,
+      "endMs": 43084,
       "scene": 4
     },
     {
       "text": "notebook",
-      "startMs": 40955.17241379311,
-      "endMs": 41260.00000000001,
+      "startMs": 43090,
+      "endMs": 43594,
       "scene": 4
     },
     {
       "text": "of",
-      "startMs": 41300.00000000001,
-      "endMs": 41604.8275862069,
+      "startMs": 43620,
+      "endMs": 43788,
       "scene": 4
     },
     {
       "text": "everyone",
-      "startMs": 41644.8275862069,
-      "endMs": 41949.6551724138,
+      "startMs": 43797,
+      "endMs": 44301,
       "scene": 4
     },
     {
       "text": "already",
-      "startMs": 41989.6551724138,
-      "endMs": 42294.482758620696,
+      "startMs": 44327,
+      "endMs": 44775,
       "scene": 4
     },
     {
       "text": "inside.",
-      "startMs": 42334.482758620696,
-      "endMs": 42639.310344827594,
+      "startMs": 44799,
+      "endMs": 45191,
       "scene": 4
     },
     {
       "text": "For",
-      "startMs": 42929.310344827594,
-      "endMs": 43234.13793103449,
+      "startMs": 45471,
+      "endMs": 45750,
       "scene": 5
     },
     {
       "text": "every",
-      "startMs": 43274.13793103449,
-      "endMs": 43578.965517241384,
+      "startMs": 45764,
+      "endMs": 46182,
       "scene": 5
     },
     {
       "text": "new",
-      "startMs": 43618.965517241384,
-      "endMs": 43923.79310344828,
+      "startMs": 46204,
+      "endMs": 46482,
       "scene": 5
     },
     {
       "text": "guest,",
-      "startMs": 43963.79310344828,
-      "endMs": 44268.62068965518,
+      "startMs": 46497,
+      "endMs": 46914,
       "scene": 5
     },
     {
       "text": "ask:",
-      "startMs": 44308.62068965518,
-      "endMs": 44613.44827586208,
+      "startMs": 47156,
+      "endMs": 47434,
       "scene": 5
     },
     {
       "text": "who",
-      "startMs": 44653.44827586208,
-      "endMs": 44958.27586206897,
+      "startMs": 47669,
+      "endMs": 47947,
       "scene": 5
     },
     {
       "text": "is",
-      "startMs": 44998.27586206897,
-      "endMs": 45303.10344827587,
+      "startMs": 47962,
+      "endMs": 48170,
       "scene": 5
     },
     {
       "text": "my",
-      "startMs": 45343.10344827587,
-      "endMs": 45647.93103448277,
+      "startMs": 48181,
+      "endMs": 48390,
       "scene": 5
     },
     {
       "text": "partner?",
-      "startMs": 45687.93103448277,
-      "endMs": 45992.75862068967,
+      "startMs": 48401,
+      "endMs": 48958,
       "scene": 5
     },
     {
       "text": "That",
-      "startMs": 46032.75862068967,
-      "endMs": 46337.58620689656,
+      "startMs": 49207,
+      "endMs": 49555,
       "scene": 5
     },
     {
       "text": "is",
-      "startMs": 46377.58620689656,
-      "endMs": 46682.41379310346,
+      "startMs": 49573,
+      "endMs": 49782,
       "scene": 5
     },
     {
       "text": "target",
-      "startMs": 46722.41379310346,
-      "endMs": 47027.241379310355,
+      "startMs": 49793,
+      "endMs": 50280,
       "scene": 5
     },
     {
       "text": "minus",
-      "startMs": 47067.241379310355,
-      "endMs": 47372.06896551725,
+      "startMs": 50305,
+      "endMs": 50723,
       "scene": 5
     },
     {
       "text": "my",
-      "startMs": 47412.06896551725,
-      "endMs": 47716.896551724145,
+      "startMs": 50745,
+      "endMs": 50954,
       "scene": 5
     },
     {
       "text": "number.",
-      "startMs": 47756.896551724145,
-      "endMs": 48061.72413793104,
+      "startMs": 50965,
+      "endMs": 51452,
       "scene": 5
     },
     {
       "text": "Is",
-      "startMs": 48101.72413793104,
-      "endMs": 48406.55172413794,
+      "startMs": 51697,
+      "endMs": 51906,
       "scene": 5
     },
     {
       "text": "the",
-      "startMs": 48446.55172413794,
-      "endMs": 48751.37931034483,
+      "startMs": 51917,
+      "endMs": 52195,
       "scene": 5
     },
     {
       "text": "partner",
-      "startMs": 48791.37931034483,
-      "endMs": 49096.20689655173,
+      "startMs": 52210,
+      "endMs": 52766,
       "scene": 5
     },
     {
       "text": "in",
-      "startMs": 49136.20689655173,
-      "endMs": 49441.03448275863,
+      "startMs": 52796,
+      "endMs": 53005,
       "scene": 5
     },
     {
       "text": "the",
-      "startMs": 49481.03448275863,
-      "endMs": 49785.86206896552,
+      "startMs": 53015,
+      "endMs": 53294,
       "scene": 5
     },
     {
       "text": "notebook?",
-      "startMs": 49825.86206896552,
-      "endMs": 50130.68965517242,
+      "startMs": 53308,
+      "endMs": 53935,
       "scene": 5
     },
     {
       "text": "Yes:",
-      "startMs": 50170.68965517242,
-      "endMs": 50475.51724137932,
+      "startMs": 54187,
+      "endMs": 54466,
       "scene": 5
     },
     {
       "text": "done.",
-      "startMs": 50515.51724137932,
-      "endMs": 50820.34482758622,
+      "startMs": 54700,
+      "endMs": 55048,
       "scene": 5
     },
     {
       "text": "No:",
-      "startMs": 50860.34482758622,
-      "endMs": 51165.172413793116,
+      "startMs": 55286,
+      "endMs": 55495,
       "scene": 5
     },
     {
       "text": "write",
-      "startMs": 51205.172413793116,
-      "endMs": 51510.00000000001,
+      "startMs": 55726,
+      "endMs": 56143,
       "scene": 5
     },
     {
       "text": "me",
-      "startMs": 51550.00000000001,
-      "endMs": 51854.827586206906,
+      "startMs": 56165,
+      "endMs": 56374,
       "scene": 5
     },
     {
       "text": "down,",
-      "startMs": 51894.827586206906,
-      "endMs": 52199.6551724138,
+      "startMs": 56385,
+      "endMs": 56733,
       "scene": 5
     },
     {
       "text": "and",
-      "startMs": 52239.6551724138,
-      "endMs": 52544.482758620696,
+      "startMs": 56971,
+      "endMs": 57249,
       "scene": 5
     },
     {
       "text": "wait",
-      "startMs": 52584.482758620696,
-      "endMs": 52889.310344827594,
+      "startMs": 57264,
+      "endMs": 57612,
       "scene": 5
     },
     {
       "text": "for",
-      "startMs": 52929.310344827594,
-      "endMs": 53234.13793103449,
+      "startMs": 57630,
+      "endMs": 57908,
       "scene": 5
     },
     {
       "text": "the",
-      "startMs": 53274.13793103449,
-      "endMs": 53578.96551724139,
+      "startMs": 57923,
+      "endMs": 58201,
       "scene": 5
     },
     {
       "text": "next",
-      "startMs": 53618.96551724139,
-      "endMs": 53923.79310344828,
+      "startMs": 58216,
+      "endMs": 58564,
       "scene": 5
     },
     {
       "text": "guest.",
-      "startMs": 53963.79310344828,
-      "endMs": 54268.62068965518,
+      "startMs": 58582,
+      "endMs": 59000,
       "scene": 5
     },
     {
       "text": "That",
-      "startMs": 54558.62068965518,
-      "endMs": 54863.44827586208,
+      "startMs": 59282,
+      "endMs": 59588,
       "scene": 6
     },
     {
       "text": "is",
-      "startMs": 54903.44827586208,
-      "endMs": 55208.27586206897,
+      "startMs": 59604,
+      "endMs": 59788,
       "scene": 6
     },
     {
       "text": "the",
-      "startMs": 55248.27586206897,
-      "endMs": 55553.10344827587,
+      "startMs": 59797,
+      "endMs": 60042,
       "scene": 6
     },
     {
       "text": "whole",
-      "startMs": 55593.10344827587,
-      "endMs": 55897.93103448277,
+      "startMs": 60055,
+      "endMs": 60423,
       "scene": 6
     },
     {
       "text": "algorithm.",
-      "startMs": 55937.93103448277,
-      "endMs": 56242.75862068967,
+      "startMs": 60442,
+      "endMs": 61054,
       "scene": 6
     },
     {
       "text": "Eight",
-      "startMs": 56282.75862068967,
-      "endMs": 56587.58620689656,
+      "startMs": 61280,
+      "endMs": 61647,
       "scene": 6
     },
     {
       "text": "lines.",
-      "startMs": 56627.58620689656,
-      "endMs": 56932.41379310346,
+      "startMs": 61667,
+      "endMs": 62034,
       "scene": 6
     },
     {
       "text": "The",
-      "startMs": 56972.41379310346,
-      "endMs": 57277.241379310355,
+      "startMs": 62247,
+      "endMs": 62492,
       "scene": 6
     },
     {
       "text": "notebook",
-      "startMs": 57317.241379310355,
-      "endMs": 57622.06896551725,
+      "startMs": 62505,
+      "endMs": 63056,
       "scene": 6
     },
     {
       "text": "is",
-      "startMs": 57662.06896551725,
-      "endMs": 57966.896551724145,
+      "startMs": 63085,
+      "endMs": 63269,
       "scene": 6
     },
     {
       "text": "a",
-      "startMs": 58006.896551724145,
-      "endMs": 58311.72413793104,
+      "startMs": 63278,
+      "endMs": 63401,
       "scene": 6
     },
     {
       "text": "dictionary",
-      "startMs": 58351.72413793104,
-      "endMs": 58656.55172413794,
+      "startMs": 63407,
+      "endMs": 64081,
       "scene": 6
     },
     {
       "text": "called",
-      "startMs": 58696.55172413794,
-      "endMs": 59001.37931034483,
+      "startMs": 64116,
+      "endMs": 64545,
       "scene": 6
     },
     {
       "text": "seen.",
-      "startMs": 59041.37931034483,
-      "endMs": 59346.20689655173,
+      "startMs": 64568,
+      "endMs": 64874,
       "scene": 6
     },
     {
       "text": "For",
-      "startMs": 59386.20689655173,
-      "endMs": 59691.03448275863,
+      "startMs": 65083,
+      "endMs": 65328,
       "scene": 6
     },
     {
       "text": "each",
-      "startMs": 59731.03448275863,
-      "endMs": 60035.86206896552,
+      "startMs": 65341,
+      "endMs": 65647,
       "scene": 6
     },
     {
       "text": "number,",
-      "startMs": 60075.86206896552,
-      "endMs": 60380.68965517242,
+      "startMs": 65663,
+      "endMs": 66092,
       "scene": 6
     },
     {
       "text": "work",
-      "startMs": 60420.68965517242,
-      "endMs": 60725.51724137932,
+      "startMs": 66308,
+      "endMs": 66614,
       "scene": 6
     },
     {
       "text": "out",
-      "startMs": 60765.51724137932,
-      "endMs": 61070.34482758622,
+      "startMs": 66630,
+      "endMs": 66875,
       "scene": 6
     },
     {
       "text": "the",
-      "startMs": 61110.34482758622,
-      "endMs": 61415.17241379311,
+      "startMs": 66888,
+      "endMs": 67133,
       "scene": 6
     },
     {
       "text": "partner.",
-      "startMs": 61455.17241379311,
-      "endMs": 61760.00000000001,
+      "startMs": 67146,
+      "endMs": 67636,
       "scene": 6
     },
     {
       "text": "If",
-      "startMs": 61800.00000000001,
-      "endMs": 62104.827586206906,
+      "startMs": 67855,
+      "endMs": 68039,
       "scene": 6
     },
     {
       "text": "the",
-      "startMs": 62144.827586206906,
-      "endMs": 62449.6551724138,
+      "startMs": 68049,
+      "endMs": 68294,
       "scene": 6
     },
     {
       "text": "partner",
-      "startMs": 62489.6551724138,
-      "endMs": 62794.482758620696,
+      "startMs": 68306,
+      "endMs": 68796,
       "scene": 6
     },
     {
       "text": "is",
-      "startMs": 62834.482758620696,
-      "endMs": 63139.310344827594,
+      "startMs": 68822,
+      "endMs": 69006,
       "scene": 6
     },
     {
       "text": "in",
-      "startMs": 63179.310344827594,
-      "endMs": 63484.13793103449,
+      "startMs": 69016,
+      "endMs": 69199,
       "scene": 6
     },
     {
       "text": "seen,",
-      "startMs": 63524.13793103449,
-      "endMs": 63828.96551724139,
+      "startMs": 69209,
+      "endMs": 69515,
       "scene": 6
     },
     {
       "text": "return",
-      "startMs": 63868.96551724139,
-      "endMs": 64173.79310344828,
+      "startMs": 69725,
+      "endMs": 70153,
       "scene": 6
     },
     {
       "text": "both",
-      "startMs": 64213.79310344828,
-      "endMs": 64518.62068965518,
+      "startMs": 70176,
+      "endMs": 70482,
       "scene": 6
     },
     {
       "text": "positions.",
-      "startMs": 64558.62068965518,
-      "endMs": 64863.44827586207,
+      "startMs": 70498,
+      "endMs": 71111,
       "scene": 6
     },
     {
       "text": "Otherwise,",
-      "startMs": 64903.44827586207,
-      "endMs": 65208.27586206897,
+      "startMs": 71336,
+      "endMs": 71949,
       "scene": 6
     },
     {
       "text": "write",
-      "startMs": 65248.27586206897,
-      "endMs": 65553.10344827587,
+      "startMs": 72174,
+      "endMs": 72542,
       "scene": 6
     },
     {
       "text": "this",
-      "startMs": 65593.10344827587,
-      "endMs": 65897.93103448277,
+      "startMs": 72561,
+      "endMs": 72867,
       "scene": 6
     },
     {
       "text": "number",
-      "startMs": 65937.93103448277,
-      "endMs": 66242.75862068967,
+      "startMs": 72883,
+      "endMs": 73312,
       "scene": 6
     },
     {
       "text": "down.",
-      "startMs": 66282.75862068967,
-      "endMs": 66587.58620689657,
+      "startMs": 73335,
+      "endMs": 73641,
       "scene": 6
     },
     {
       "text": "Let",
-      "startMs": 66877.58620689657,
-      "endMs": 67182.41379310346,
+      "startMs": 73917,
+      "endMs": 74165,
       "scene": 7
     },
     {
       "text": "us",
-      "startMs": 67222.41379310346,
-      "endMs": 67527.24137931036,
+      "startMs": 74178,
+      "endMs": 74364,
       "scene": 7
     },
     {
       "text": "run",
-      "startMs": 67567.24137931036,
-      "endMs": 67872.06896551726,
+      "startMs": 74374,
+      "endMs": 74622,
       "scene": 7
     },
     {
       "text": "it.",
-      "startMs": 67912.06896551726,
-      "endMs": 68216.89655172414,
+      "startMs": 74635,
+      "endMs": 74821,
       "scene": 7
     },
     {
       "text": "Guest",
-      "startMs": 68256.89655172414,
-      "endMs": 68561.72413793104,
+      "startMs": 75026,
+      "endMs": 75398,
       "scene": 7
     },
     {
       "text": "one",
-      "startMs": 68601.72413793104,
-      "endMs": 68906.55172413794,
+      "startMs": 75418,
+      "endMs": 75666,
       "scene": 7
     },
     {
       "text": "is",
-      "startMs": 68946.55172413794,
-      "endMs": 69251.37931034484,
+      "startMs": 75679,
+      "endMs": 75865,
       "scene": 7
     },
     {
       "text": "two.",
-      "startMs": 69291.37931034484,
-      "endMs": 69596.20689655174,
+      "startMs": 75875,
+      "endMs": 76123,
       "scene": 7
     },
     {
       "text": "The",
-      "startMs": 69636.20689655174,
-      "endMs": 69941.03448275864,
+      "startMs": 76331,
+      "endMs": 76579,
       "scene": 7
     },
     {
       "text": "partner",
-      "startMs": 69981.03448275864,
-      "endMs": 70285.86206896554,
+      "startMs": 76593,
+      "endMs": 77088,
       "scene": 7
     },
     {
       "text": "needed",
-      "startMs": 70325.86206896554,
-      "endMs": 70630.68965517242,
+      "startMs": 77115,
+      "endMs": 77549,
       "scene": 7
     },
     {
       "text": "is",
-      "startMs": 70670.68965517242,
-      "endMs": 70975.51724137932,
+      "startMs": 77571,
+      "endMs": 77757,
       "scene": 7
     },
     {
       "text": "seven.",
-      "startMs": 71015.51724137932,
-      "endMs": 71320.34482758622,
+      "startMs": 77767,
+      "endMs": 78139,
       "scene": 7
     },
     {
       "text": "The",
-      "startMs": 71360.34482758622,
-      "endMs": 71665.17241379312,
+      "startMs": 78355,
+      "endMs": 78602,
       "scene": 7
     },
     {
       "text": "notebook",
-      "startMs": 71705.17241379312,
-      "endMs": 72010.00000000001,
+      "startMs": 78616,
+      "endMs": 79174,
       "scene": 7
     },
     {
       "text": "is",
-      "startMs": 72050.00000000001,
-      "endMs": 72354.82758620691,
+      "startMs": 79203,
+      "endMs": 79389,
       "scene": 7
     },
     {
       "text": "empty.",
-      "startMs": 72394.82758620691,
-      "endMs": 72699.65517241381,
+      "startMs": 79399,
+      "endMs": 79771,
       "scene": 7
     },
     {
       "text": "So,",
-      "startMs": 72739.65517241381,
-      "endMs": 73044.4827586207,
+      "startMs": 79986,
+      "endMs": 80172,
       "scene": 7
     },
     {
       "text": "write",
-      "startMs": 73084.4827586207,
-      "endMs": 73389.3103448276,
+      "startMs": 80378,
+      "endMs": 80750,
       "scene": 7
     },
     {
       "text": "two",
-      "startMs": 73429.3103448276,
-      "endMs": 73734.1379310345,
+      "startMs": 80769,
+      "endMs": 81017,
       "scene": 7
     },
     {
       "text": "down.",
-      "startMs": 73774.1379310345,
-      "endMs": 74078.96551724139,
+      "startMs": 81030,
+      "endMs": 81340,
       "scene": 7
     },
     {
       "text": "Guest",
-      "startMs": 74368.96551724139,
-      "endMs": 74673.79310344829,
+      "startMs": 81616,
+      "endMs": 82024,
       "scene": 8
     },
     {
       "text": "two",
-      "startMs": 74713.79310344829,
-      "endMs": 75018.62068965519,
+      "startMs": 82045,
+      "endMs": 82317,
       "scene": 8
     },
     {
       "text": "is",
-      "startMs": 75058.62068965519,
-      "endMs": 75363.44827586209,
+      "startMs": 82331,
+      "endMs": 82535,
       "scene": 8
     },
     {
       "text": "seven.",
-      "startMs": 75403.44827586209,
-      "endMs": 75708.27586206897,
+      "startMs": 82546,
+      "endMs": 82954,
       "scene": 8
     },
     {
       "text": "The",
-      "startMs": 75748.27586206897,
-      "endMs": 76053.10344827587,
+      "startMs": 83189,
+      "endMs": 83461,
       "scene": 8
     },
     {
       "text": "partner",
-      "startMs": 76093.10344827587,
-      "endMs": 76397.93103448277,
+      "startMs": 83475,
+      "endMs": 84019,
       "scene": 8
     },
     {
       "text": "needed",
-      "startMs": 76437.93103448277,
-      "endMs": 76742.75862068967,
+      "startMs": 84048,
+      "endMs": 84523,
       "scene": 8
     },
     {
       "text": "is",
-      "startMs": 76782.75862068967,
-      "endMs": 77087.58620689657,
+      "startMs": 84548,
+      "endMs": 84752,
       "scene": 8
     },
     {
       "text": "two.",
-      "startMs": 77127.58620689657,
-      "endMs": 77432.41379310346,
+      "startMs": 84763,
+      "endMs": 85034,
       "scene": 8
     },
     {
       "text": "Is",
-      "startMs": 77472.41379310346,
-      "endMs": 77777.24137931036,
+      "startMs": 85263,
+      "endMs": 85467,
       "scene": 8
     },
     {
       "text": "two",
-      "startMs": 77817.24137931036,
-      "endMs": 78122.06896551725,
+      "startMs": 85478,
+      "endMs": 85749,
       "scene": 8
     },
     {
       "text": "in",
-      "startMs": 78162.06896551725,
-      "endMs": 78466.89655172414,
+      "startMs": 85764,
+      "endMs": 85967,
       "scene": 8
     },
     {
       "text": "the",
-      "startMs": 78506.89655172414,
-      "endMs": 78811.72413793104,
+      "startMs": 85978,
+      "endMs": 86250,
       "scene": 8
     },
     {
       "text": "notebook?",
-      "startMs": 78851.72413793104,
-      "endMs": 79156.55172413794,
+      "startMs": 86264,
+      "endMs": 86875,
       "scene": 8
     },
     {
       "text": "Yes,",
-      "startMs": 79196.55172413794,
-      "endMs": 79501.37931034484,
+      "startMs": 87122,
+      "endMs": 87394,
       "scene": 8
     },
     {
       "text": "at",
-      "startMs": 79541.37931034484,
-      "endMs": 79846.20689655174,
+      "startMs": 87623,
+      "endMs": 87826,
       "scene": 8
     },
     {
       "text": "position",
-      "startMs": 79886.20689655174,
-      "endMs": 80191.03448275864,
+      "startMs": 87837,
+      "endMs": 88448,
       "scene": 8
     },
     {
       "text": "zero!",
-      "startMs": 80231.03448275864,
-      "endMs": 80535.86206896554,
+      "startMs": 88481,
+      "endMs": 88820,
       "scene": 8
     },
     {
       "text": "Answer:",
-      "startMs": 80575.86206896554,
-      "endMs": 80880.68965517242,
+      "startMs": 89053,
+      "endMs": 89528,
       "scene": 8
     },
     {
       "text": "zero,",
-      "startMs": 80920.68965517242,
-      "endMs": 81225.51724137932,
+      "startMs": 89768,
+      "endMs": 90107,
       "scene": 8
     },
     {
       "text": "one.",
-      "startMs": 81265.51724137932,
-      "endMs": 81570.34482758622,
+      "startMs": 90340,
+      "endMs": 90611,
       "scene": 8
     },
     {
       "text": "Done",
-      "startMs": 81610.34482758622,
-      "endMs": 81915.17241379312,
+      "startMs": 90840,
+      "endMs": 91180,
       "scene": 8
     },
     {
       "text": "in",
-      "startMs": 81955.17241379312,
-      "endMs": 82260.00000000001,
+      "startMs": 91198,
+      "endMs": 91402,
       "scene": 8
     },
     {
       "text": "two",
-      "startMs": 82300.00000000001,
-      "endMs": 82604.82758620691,
+      "startMs": 91412,
+      "endMs": 91684,
       "scene": 8
     },
     {
       "text": "steps.",
-      "startMs": 82644.82758620691,
-      "endMs": 82949.65517241381,
+      "startMs": 91698,
+      "endMs": 92106,
       "scene": 8
     },
     {
       "text": "One",
-      "startMs": 83239.65517241381,
-      "endMs": 83544.48275862071,
+      "startMs": 92387,
+      "endMs": 92630,
       "scene": 9
     },
     {
       "text": "trap.",
-      "startMs": 83584.48275862071,
-      "endMs": 83889.31034482761,
+      "startMs": 92643,
+      "endMs": 92946,
       "scene": 9
     },
     {
       "text": "Three",
-      "startMs": 83929.31034482761,
-      "endMs": 84234.13793103451,
+      "startMs": 93154,
+      "endMs": 93517,
       "scene": 9
     },
     {
       "text": "and",
-      "startMs": 84274.13793103451,
-      "endMs": 84578.96551724139,
+      "startMs": 93537,
+      "endMs": 93779,
       "scene": 9
     },
     {
       "text": "three,",
-      "startMs": 84618.96551724139,
-      "endMs": 84923.79310344829,
+      "startMs": 93792,
+      "endMs": 94156,
       "scene": 9
     },
     {
       "text": "target",
-      "startMs": 84963.79310344829,
-      "endMs": 85268.62068965519,
+      "startMs": 94367,
+      "endMs": 94791,
       "scene": 9
     },
     {
       "text": "six.",
-      "startMs": 85308.62068965519,
-      "endMs": 85613.44827586209,
+      "startMs": 94814,
+      "endMs": 95056,
       "scene": 9
     },
     {
       "text": "Always",
-      "startMs": 85653.44827586209,
-      "endMs": 85958.27586206899,
+      "startMs": 95261,
+      "endMs": 95685,
       "scene": 9
     },
     {
       "text": "check",
-      "startMs": 85998.27586206899,
-      "endMs": 86303.10344827588,
+      "startMs": 95708,
+      "endMs": 96072,
       "scene": 9
     },
     {
       "text": "the",
-      "startMs": 86343.10344827588,
-      "endMs": 86647.93103448278,
+      "startMs": 96091,
+      "endMs": 96333,
       "scene": 9
     },
     {
       "text": "notebook",
-      "startMs": 86687.93103448278,
-      "endMs": 86992.75862068968,
+      "startMs": 96346,
+      "endMs": 96892,
       "scene": 9
     },
     {
       "text": "first,",
-      "startMs": 87032.75862068968,
-      "endMs": 87337.58620689657,
+      "startMs": 96921,
+      "endMs": 97285,
       "scene": 9
     },
     {
       "text": "then",
-      "startMs": 87377.58620689657,
-      "endMs": 87682.41379310346,
+      "startMs": 97496,
+      "endMs": 97799,
       "scene": 9
     },
     {
       "text": "write.",
-      "startMs": 87722.41379310346,
-      "endMs": 88027.24137931036,
+      "startMs": 97815,
+      "endMs": 98179,
       "scene": 9
     },
     {
       "text": "Do",
-      "startMs": 88067.24137931036,
-      "endMs": 88372.06896551726,
+      "startMs": 98389,
+      "endMs": 98571,
       "scene": 9
     },
     {
       "text": "it",
-      "startMs": 88412.06896551726,
-      "endMs": 88716.89655172416,
+      "startMs": 98581,
+      "endMs": 98763,
       "scene": 9
     },
     {
       "text": "the",
-      "startMs": 88756.89655172416,
-      "endMs": 89061.72413793106,
+      "startMs": 98773,
+      "endMs": 99015,
       "scene": 9
     },
     {
       "text": "other",
-      "startMs": 89101.72413793106,
-      "endMs": 89406.55172413796,
+      "startMs": 99028,
+      "endMs": 99392,
       "scene": 9
     },
     {
       "text": "way,",
-      "startMs": 89446.55172413796,
-      "endMs": 89751.37931034484,
+      "startMs": 99411,
+      "endMs": 99654,
       "scene": 9
     },
     {
       "text": "and",
-      "startMs": 89791.37931034484,
-      "endMs": 90096.20689655174,
+      "startMs": 99858,
+      "endMs": 100101,
       "scene": 9
     },
     {
       "text": "a",
-      "startMs": 90136.20689655174,
-      "endMs": 90441.03448275864,
+      "startMs": 100114,
+      "endMs": 100235,
       "scene": 9
     },
     {
       "text": "number",
-      "startMs": 90481.03448275864,
-      "endMs": 90785.86206896554,
+      "startMs": 100241,
+      "endMs": 100666,
       "scene": 9
     },
     {
       "text": "pairs",
-      "startMs": 90825.86206896554,
-      "endMs": 91130.68965517243,
+      "startMs": 100688,
+      "endMs": 101052,
       "scene": 9
     },
     {
       "text": "with",
-      "startMs": 91170.68965517243,
-      "endMs": 91475.51724137933,
+      "startMs": 101071,
+      "endMs": 101375,
       "scene": 9
     },
     {
       "text": "itself.",
-      "startMs": 91515.51724137933,
-      "endMs": 91820.34482758623,
+      "startMs": 101391,
+      "endMs": 101815,
       "scene": 9
     },
     {
       "text": "Wrong",
-      "startMs": 91860.34482758623,
-      "endMs": 92165.17241379313,
+      "startMs": 102029,
+      "endMs": 102393,
       "scene": 9
     },
     {
       "text": "answer,",
-      "startMs": 92205.17241379313,
-      "endMs": 92510.00000000001,
+      "startMs": 102412,
+      "endMs": 102837,
       "scene": 9
     },
     {
       "text": "confident",
-      "startMs": 92550.00000000001,
-      "endMs": 92854.82758620691,
+      "startMs": 103051,
+      "endMs": 103657,
       "scene": 9
     },
     {
       "text": "face.",
-      "startMs": 92894.82758620691,
-      "endMs": 93199.65517241381,
+      "startMs": 103689,
+      "endMs": 103993,
       "scene": 9
     },
     {
       "text": "Now",
-      "startMs": 93489.65517241381,
-      "endMs": 93794.48275862071,
+      "startMs": 104269,
+      "endMs": 104530,
       "scene": 10
     },
     {
       "text": "the",
-      "startMs": 93834.48275862071,
-      "endMs": 94139.31034482761,
+      "startMs": 104544,
+      "endMs": 104806,
       "scene": 10
     },
     {
       "text": "maths.",
-      "startMs": 94179.31034482761,
-      "endMs": 94484.13793103451,
+      "startMs": 104819,
+      "endMs": 105212,
       "scene": 10
     },
     {
       "text": "Five",
-      "startMs": 94524.13793103451,
-      "endMs": 94828.96551724139,
+      "startMs": 105439,
+      "endMs": 105766,
       "scene": 10
     },
     {
       "text": "hundred",
-      "startMs": 94868.96551724139,
-      "endMs": 95173.79310344829,
+      "startMs": 105783,
+      "endMs": 106306,
       "scene": 10
     },
     {
       "text": "billion",
-      "startMs": 95213.79310344829,
-      "endMs": 95518.62068965519,
+      "startMs": 106334,
+      "endMs": 106857,
       "scene": 10
     },
     {
       "text": "checks",
-      "startMs": 95558.62068965519,
-      "endMs": 95863.44827586209,
+      "startMs": 106885,
+      "endMs": 107343,
       "scene": 10
     },
     {
       "text": "became",
-      "startMs": 95903.44827586209,
-      "endMs": 96208.27586206899,
+      "startMs": 107367,
+      "endMs": 107824,
       "scene": 10
     },
     {
       "text": "one",
-      "startMs": 96248.27586206899,
-      "endMs": 96553.10344827588,
+      "startMs": 107849,
+      "endMs": 108110,
       "scene": 10
     },
     {
       "text": "million",
-      "startMs": 96593.10344827588,
-      "endMs": 96897.93103448278,
+      "startMs": 108124,
+      "endMs": 108647,
       "scene": 10
     },
     {
       "text": "steps.",
-      "startMs": 96937.93103448278,
-      "endMs": 97242.75862068967,
+      "startMs": 108675,
+      "endMs": 109067,
       "scene": 10
     },
     {
       "text": "Eight",
-      "startMs": 97282.75862068967,
-      "endMs": 97587.58620689657,
+      "startMs": 109294,
+      "endMs": 109687,
       "scene": 10
     },
     {
       "text": "minutes",
-      "startMs": 97627.58620689657,
-      "endMs": 97932.41379310346,
+      "startMs": 109707,
+      "endMs": 110231,
       "scene": 10
     },
     {
       "text": "became",
-      "startMs": 97972.41379310346,
-      "endMs": 98277.24137931036,
+      "startMs": 110258,
+      "endMs": 110716,
       "scene": 10
     },
     {
       "text": "one",
-      "startMs": 98317.24137931036,
-      "endMs": 98622.06896551726,
+      "startMs": 110740,
+      "endMs": 111002,
       "scene": 10
     },
     {
       "text": "millisecond.",
-      "startMs": 98662.06896551726,
-      "endMs": 98966.89655172416,
+      "startMs": 111016,
+      "endMs": 111800,
       "scene": 10
     },
     {
       "text": "Same",
-      "startMs": 99006.89655172416,
-      "endMs": 99311.72413793106,
+      "startMs": 112048,
+      "endMs": 112375,
       "scene": 10
     },
     {
       "text": "answer.",
-      "startMs": 99351.72413793106,
-      "endMs": 99656.55172413794,
+      "startMs": 112392,
+      "endMs": 112850,
       "scene": 10
     },
     {
       "text": "Just",
-      "startMs": 99696.55172413794,
-      "endMs": 100001.37931034484,
+      "startMs": 113081,
+      "endMs": 113408,
       "scene": 10
     },
     {
       "text": "one",
-      "startMs": 100041.37931034484,
-      "endMs": 100346.20689655174,
+      "startMs": 113425,
+      "endMs": 113687,
       "scene": 10
     },
     {
       "text": "notebook.",
-      "startMs": 100386.20689655174,
-      "endMs": 100691.03448275864,
+      "startMs": 113701,
+      "endMs": 114289,
       "scene": 10
     },
     {
       "text": "With",
-      "startMs": 100981.03448275864,
-      "endMs": 101285.86206896554,
+      "startMs": 114580,
+      "endMs": 114836,
       "scene": 11
     },
     {
       "text": "this",
-      "startMs": 101325.86206896554,
-      "endMs": 101630.68965517243,
+      "startMs": 114849,
+      "endMs": 115105,
       "scene": 11
     },
     {
       "text": "answer,",
-      "startMs": 101670.68965517243,
-      "endMs": 101975.51724137933,
+      "startMs": 115118,
+      "endMs": 115476,
       "scene": 11
     },
     {
       "text": "the",
-      "startMs": 102015.51724137933,
-      "endMs": 102320.34482758622,
+      "startMs": 115656,
+      "endMs": 115860,
       "scene": 11
     },
     {
       "text": "interviewer",
-      "startMs": 102360.34482758622,
-      "endMs": 102665.17241379312,
+      "startMs": 115871,
+      "endMs": 116484,
       "scene": 11
     },
     {
       "text": "would",
-      "startMs": 102705.17241379312,
-      "endMs": 103010.00000000001,
+      "startMs": 116517,
+      "endMs": 116823,
       "scene": 11
     },
     {
       "text": "have",
-      "startMs": 103050.00000000001,
-      "endMs": 103354.82758620691,
+      "startMs": 116839,
+      "endMs": 117095,
       "scene": 11
     },
     {
       "text": "said:",
-      "startMs": 103394.82758620691,
-      "endMs": 103699.65517241381,
+      "startMs": 117108,
+      "endMs": 117364,
       "scene": 11
     },
     {
       "text": "next",
-      "startMs": 103739.65517241381,
-      "endMs": 104044.48275862071,
+      "startMs": 117538,
+      "endMs": 117794,
       "scene": 11
     },
     {
       "text": "question.",
-      "startMs": 104084.48275862071,
-      "endMs": 104389.31034482761,
+      "startMs": 117807,
+      "endMs": 118267,
       "scene": 11
     },
     {
       "text": "That",
-      "startMs": 104429.31034482761,
-      "endMs": 104734.1379310345,
+      "startMs": 118453,
+      "endMs": 118708,
       "scene": 11
     },
     {
       "text": "is",
-      "startMs": 104774.1379310345,
-      "endMs": 105078.96551724139,
+      "startMs": 118722,
+      "endMs": 118875,
       "scene": 11
     },
     {
       "text": "a",
-      "startMs": 105118.96551724139,
-      "endMs": 105423.79310344829,
+      "startMs": 118883,
+      "endMs": 118985,
       "scene": 11
     },
     {
       "text": "good",
-      "startMs": 105463.79310344829,
-      "endMs": 105768.62068965519,
+      "startMs": 118991,
+      "endMs": 119246,
       "scene": 11
     },
     {
       "text": "smile.",
-      "startMs": 105808.62068965519,
-      "endMs": 106113.44827586209,
+      "startMs": 119260,
+      "endMs": 119566,
       "scene": 11
     },
     {
       "text": "This",
-      "startMs": 106403.44827586209,
-      "endMs": 106708.27586206899,
+      "startMs": 119842,
+      "endMs": 120137,
       "scene": 12
     },
     {
       "text": "notebook",
-      "startMs": 106748.27586206899,
-      "endMs": 107053.10344827588,
+      "startMs": 120152,
+      "endMs": 120682,
       "scene": 12
     },
     {
       "text": "has",
-      "startMs": 107093.10344827588,
-      "endMs": 107397.93103448278,
+      "startMs": 120710,
+      "endMs": 120946,
       "scene": 12
     },
     {
       "text": "a",
-      "startMs": 107437.93103448278,
-      "endMs": 107742.75862068967,
+      "startMs": 120958,
+      "endMs": 121076,
       "scene": 12
     },
     {
       "text": "proper",
-      "startMs": 107782.75862068967,
-      "endMs": 108087.58620689657,
+      "startMs": 121082,
+      "endMs": 121495,
       "scene": 12
     },
     {
       "text": "name:",
-      "startMs": 108127.58620689657,
-      "endMs": 108432.41379310346,
+      "startMs": 121516,
+      "endMs": 121811,
       "scene": 12
     },
     {
       "text": "a",
-      "startMs": 108472.41379310346,
-      "endMs": 108777.24137931036,
+      "startMs": 122012,
+      "endMs": 122130,
       "scene": 12
     },
     {
       "text": "hash",
-      "startMs": 108817.24137931036,
-      "endMs": 109122.06896551726,
+      "startMs": 122136,
+      "endMs": 122431,
       "scene": 12
     },
     {
       "text": "map.",
-      "startMs": 109162.06896551726,
-      "endMs": 109466.89655172416,
+      "startMs": 122446,
+      "endMs": 122682,
       "scene": 12
     },
     {
       "text": "It",
-      "startMs": 109506.89655172416,
-      "endMs": 109811.72413793106,
+      "startMs": 122880,
+      "endMs": 123057,
       "scene": 12
     },
     {
       "text": "finds",
-      "startMs": 109851.72413793106,
-      "endMs": 110156.55172413794,
+      "startMs": 123066,
+      "endMs": 123420,
       "scene": 12
     },
     {
       "text": "anything",
-      "startMs": 110196.55172413794,
-      "endMs": 110501.37931034484,
+      "startMs": 123438,
+      "endMs": 123968,
       "scene": 12
     },
     {
       "text": "in",
-      "startMs": 110541.37931034484,
-      "endMs": 110846.20689655174,
+      "startMs": 123996,
+      "endMs": 124173,
       "scene": 12
     },
     {
       "text": "one",
-      "startMs": 110886.20689655174,
-      "endMs": 111191.03448275864,
+      "startMs": 124182,
+      "endMs": 124418,
       "scene": 12
     },
     {
       "text": "step.",
-      "startMs": 111231.03448275864,
-      "endMs": 111535.86206896554,
+      "startMs": 124430,
+      "endMs": 124725,
       "scene": 12
     },
     {
       "text": "Remember",
-      "startMs": 111575.86206896554,
-      "endMs": 111880.68965517243,
+      "startMs": 124926,
+      "endMs": 125456,
       "scene": 12
     },
     {
       "text": "this",
-      "startMs": 111920.68965517243,
-      "endMs": 112225.51724137933,
+      "startMs": 125484,
+      "endMs": 125779,
       "scene": 12
     },
     {
       "text": "trick.",
-      "startMs": 112265.51724137933,
-      "endMs": 112570.34482758623,
+      "startMs": 125794,
+      "endMs": 126147,
       "scene": 12
     },
     {
       "text": "It",
-      "startMs": 112610.34482758623,
-      "endMs": 112915.17241379312,
+      "startMs": 126352,
+      "endMs": 126529,
       "scene": 12
     },
     {
       "text": "appears",
-      "startMs": 112955.17241379312,
-      "endMs": 113260.00000000001,
+      "startMs": 126538,
+      "endMs": 127009,
       "scene": 12
     },
     {
       "text": "everywhere.",
-      "startMs": 113300.00000000001,
-      "endMs": 113604.82758620691,
+      "startMs": 127034,
+      "endMs": 127682,
       "scene": 12
     },
     {
       "text": "Notes",
-      "startMs": 113894.82758620691,
-      "endMs": 114199.65517241381,
+      "startMs": 127976,
+      "endMs": 128414,
       "scene": 13
     },
     {
       "text": "for",
-      "startMs": 114239.65517241381,
-      "endMs": 114544.48275862071,
+      "startMs": 128437,
+      "endMs": 128729,
       "scene": 13
     },
     {
       "text": "your",
-      "startMs": 114584.48275862071,
-      "endMs": 114889.31034482761,
+      "startMs": 128744,
+      "endMs": 129110,
       "scene": 13
     },
     {
       "text": "revision.",
-      "startMs": 114929.31034482761,
-      "endMs": 115234.1379310345,
+      "startMs": 129129,
+      "endMs": 129786,
       "scene": 13
     },
     {
       "text": "Time:",
-      "startMs": 115274.1379310345,
-      "endMs": 115578.96551724139,
+      "startMs": 130051,
+      "endMs": 130416,
       "scene": 13
     },
     {
       "text": "order",
-      "startMs": 115618.96551724139,
-      "endMs": 115923.79310344829,
+      "startMs": 130666,
+      "endMs": 131104,
       "scene": 13
     },
     {
       "text": "n.",
-      "startMs": 115963.79310344829,
-      "endMs": 116268.62068965519,
+      "startMs": 131127,
+      "endMs": 131273,
       "scene": 13
     },
     {
       "text": "Space:",
-      "startMs": 116308.62068965519,
-      "endMs": 116613.44827586209,
+      "startMs": 131511,
+      "endMs": 131949,
       "scene": 13
     },
     {
       "text": "order",
-      "startMs": 116653.44827586209,
-      "endMs": 116958.27586206899,
+      "startMs": 132203,
+      "endMs": 132641,
       "scene": 13
     },
     {
       "text": "n.",
-      "startMs": 116998.27586206899,
-      "endMs": 117303.10344827588,
+      "startMs": 132664,
+      "endMs": 132810,
       "scene": 13
     },
     {
       "text": "Trade",
-      "startMs": 117343.10344827588,
-      "endMs": 117647.93103448278,
+      "startMs": 133048,
+      "endMs": 133486,
       "scene": 13
     },
     {
       "text": "a",
-      "startMs": 117687.93103448278,
-      "endMs": 117992.75862068967,
+      "startMs": 133509,
+      "endMs": 133655,
       "scene": 13
     },
     {
       "text": "little",
-      "startMs": 118032.75862068967,
-      "endMs": 118337.58620689657,
+      "startMs": 133663,
+      "endMs": 134174,
       "scene": 13
     },
     {
       "text": "memory",
-      "startMs": 118377.58620689657,
-      "endMs": 118682.41379310346,
+      "startMs": 134201,
+      "endMs": 134712,
       "scene": 13
     },
     {
       "text": "for",
-      "startMs": 118722.41379310346,
-      "endMs": 119027.24137931036,
+      "startMs": 134739,
+      "endMs": 135031,
       "scene": 13
     },
     {
       "text": "a",
-      "startMs": 119067.24137931036,
-      "endMs": 119372.06896551726,
+      "startMs": 135046,
+      "endMs": 135193,
       "scene": 13
     },
     {
       "text": "lot",
-      "startMs": 119412.06896551726,
-      "endMs": 119716.89655172416,
+      "startMs": 135200,
+      "endMs": 135492,
       "scene": 13
     },
     {
       "text": "of",
-      "startMs": 119756.89655172416,
-      "endMs": 120061.72413793106,
+      "startMs": 135508,
+      "endMs": 135727,
       "scene": 13
     },
     {
       "text": "speed.",
-      "startMs": 120101.72413793106,
-      "endMs": 120406.55172413794,
+      "startMs": 135738,
+      "endMs": 136176,
       "scene": 13
     },
     {
       "text": "Amazon",
-      "startMs": 120446.55172413794,
-      "endMs": 120751.37931034484,
+      "startMs": 136430,
+      "endMs": 136941,
       "scene": 13
     },
     {
       "text": "candidates",
-      "startMs": 120791.37931034484,
-      "endMs": 121096.20689655174,
+      "startMs": 136968,
+      "endMs": 137771,
       "scene": 13
     },
     {
       "text": "report",
-      "startMs": 121136.20689655174,
-      "endMs": 121441.03448275864,
+      "startMs": 137813,
+      "endMs": 138324,
       "scene": 13
     },
     {
       "text": "this",
-      "startMs": 121481.03448275864,
-      "endMs": 121785.86206896554,
+      "startMs": 138351,
+      "endMs": 138716,
       "scene": 13
     },
     {
       "text": "one.",
-      "startMs": 121825.86206896554,
-      "endMs": 122130.68965517243,
+      "startMs": 138735,
+      "endMs": 139028,
       "scene": 13
     },
     {
       "text": "Quick",
-      "startMs": 122420.68965517243,
-      "endMs": 122725.51724137933,
+      "startMs": 139303,
+      "endMs": 139703,
       "scene": 14
     },
     {
       "text": "quiz.",
-      "startMs": 122765.51724137933,
-      "endMs": 123070.34482758623,
+      "startMs": 139724,
+      "endMs": 140058,
       "scene": 14
     },
     {
       "text": "The",
-      "startMs": 123110.34482758623,
-      "endMs": 123415.17241379313,
+      "startMs": 140286,
+      "endMs": 140553,
       "scene": 14
     },
     {
       "text": "numbers",
-      "startMs": 123455.17241379313,
-      "endMs": 123760.00000000001,
+      "startMs": 140567,
+      "endMs": 141100,
       "scene": 14
     },
     {
       "text": "are",
-      "startMs": 123800.00000000001,
-      "endMs": 124104.82758620691,
+      "startMs": 141128,
+      "endMs": 141395,
       "scene": 14
     },
     {
       "text": "already",
-      "startMs": 124144.82758620691,
-      "endMs": 124449.65517241381,
+      "startMs": 141409,
+      "endMs": 141943,
       "scene": 14
     },
     {
       "text": "sorted.",
-      "startMs": 124489.65517241381,
-      "endMs": 124794.48275862071,
+      "startMs": 141971,
+      "endMs": 142438,
       "scene": 14
     },
     {
       "text": "Which",
-      "startMs": 124834.48275862071,
-      "endMs": 125139.31034482761,
+      "startMs": 142673,
+      "endMs": 143073,
       "scene": 14
     },
     {
       "text": "is",
-      "startMs": 125179.31034482761,
-      "endMs": 125484.13793103451,
+      "startMs": 143094,
+      "endMs": 143294,
       "scene": 14
     },
     {
       "text": "better:",
-      "startMs": 125524.13793103451,
-      "endMs": 125828.9655172414,
+      "startMs": 143305,
+      "endMs": 143772,
       "scene": 14
     },
     {
       "text": "a",
-      "startMs": 125868.9655172414,
-      "endMs": 126173.79310344829,
+      "startMs": 144007,
+      "endMs": 144141,
       "scene": 14
     },
     {
       "text": "hash",
-      "startMs": 126213.79310344829,
-      "endMs": 126518.62068965519,
+      "startMs": 144148,
+      "endMs": 144481,
       "scene": 14
     },
     {
       "text": "map,",
-      "startMs": 126558.62068965519,
-      "endMs": 126863.44827586209,
+      "startMs": 144499,
+      "endMs": 144765,
       "scene": 14
     },
     {
       "text": "or",
-      "startMs": 126903.44827586209,
-      "endMs": 127208.27586206899,
+      "startMs": 144990,
+      "endMs": 145190,
       "scene": 14
     },
     {
       "text": "two",
-      "startMs": 127248.27586206899,
-      "endMs": 127553.10344827588,
+      "startMs": 145201,
+      "endMs": 145468,
       "scene": 14
     },
     {
       "text": "pointers?",
-      "startMs": 127593.10344827588,
-      "endMs": 127897.93103448278,
+      "startMs": 145482,
+      "endMs": 146082,
       "scene": 14
     },
     {
       "text": "Comment",
-      "startMs": 127937.93103448278,
-      "endMs": 128242.75862068968,
+      "startMs": 146324,
+      "endMs": 146858,
       "scene": 14
     },
     {
       "text": "A",
-      "startMs": 128282.75862068968,
-      "endMs": 128587.58620689658,
+      "startMs": 146886,
+      "endMs": 147019,
       "scene": 14
     },
     {
       "text": "or",
-      "startMs": 128627.58620689658,
-      "endMs": 128932.41379310346,
+      "startMs": 147026,
+      "endMs": 147226,
       "scene": 14
     },
     {
       "text": "B.",
-      "startMs": 128972.41379310346,
-      "endMs": 129277.24137931036,
+      "startMs": 147237,
+      "endMs": 147370,
       "scene": 14
     },
     {
       "text": "Save",
-      "startMs": 129567.24137931036,
-      "endMs": 129872.06896551726,
+      "startMs": 147637,
+      "endMs": 147945,
       "scene": 15
     },
     {
       "text": "this",
-      "startMs": 129912.06896551726,
-      "endMs": 130216.89655172416,
+      "startMs": 147961,
+      "endMs": 148269,
       "scene": 15
     },
     {
       "text": "for",
-      "startMs": 130256.89655172416,
-      "endMs": 130561.72413793106,
+      "startMs": 148285,
+      "endMs": 148531,
       "scene": 15
     },
     {
       "text": "your",
-      "startMs": 130601.72413793106,
-      "endMs": 130906.55172413794,
+      "startMs": 148544,
+      "endMs": 148852,
       "scene": 15
     },
     {
       "text": "interview.",
-      "startMs": 130946.55172413794,
-      "endMs": 131251.37931034484,
+      "startMs": 148868,
+      "endMs": 149484,
       "scene": 15
     },
     {
       "text": "Send",
-      "startMs": 131291.37931034484,
-      "endMs": 131596.20689655174,
+      "startMs": 149711,
+      "endMs": 150018,
       "scene": 15
     },
     {
       "text": "it",
-      "startMs": 131636.20689655174,
-      "endMs": 131941.03448275864,
+      "startMs": 150035,
+      "endMs": 150219,
       "scene": 15
     },
     {
       "text": "to",
-      "startMs": 131981.03448275864,
-      "endMs": 132285.86206896554,
+      "startMs": 150229,
+      "endMs": 150414,
       "scene": 15
     },
     {
       "text": "the",
-      "startMs": 132325.86206896554,
-      "endMs": 132630.68965517243,
+      "startMs": 150423,
+      "endMs": 150669,
       "scene": 15
     },
     {
       "text": "friend",
-      "startMs": 132670.68965517243,
-      "endMs": 132975.51724137933,
+      "startMs": 150682,
+      "endMs": 151113,
       "scene": 15
     },
     {
       "text": "who",
-      "startMs": 133015.51724137933,
-      "endMs": 133320.34482758623,
+      "startMs": 151136,
+      "endMs": 151382,
       "scene": 15
     },
     {
       "text": "still",
-      "startMs": 133360.34482758623,
-      "endMs": 133665.17241379313,
+      "startMs": 151395,
+      "endMs": 151764,
       "scene": 15
     },
     {
       "text": "writes",
-      "startMs": 133705.17241379313,
-      "endMs": 134010.00000000003,
+      "startMs": 151784,
+      "endMs": 152215,
       "scene": 15
     },
     {
       "text": "two",
-      "startMs": 134050.00000000003,
-      "endMs": 134354.82758620693,
+      "startMs": 152237,
+      "endMs": 152484,
       "scene": 15
     },
     {
       "text": "loops.",
-      "startMs": 134394.82758620693,
-      "endMs": 134699.6551724138,
+      "startMs": 152496,
+      "endMs": 152866,
       "scene": 15
     },
     {
       "text": "Like",
-      "startMs": 134739.6551724138,
-      "endMs": 135044.4827586207,
+      "startMs": 153080,
+      "endMs": 153387,
       "scene": 15
     },
     {
       "text": "for",
-      "startMs": 135084.4827586207,
-      "endMs": 135389.3103448276,
+      "startMs": 153404,
+      "endMs": 153650,
       "scene": 15
     },
     {
       "text": "tomorrow:",
-      "startMs": 135429.3103448276,
-      "endMs": 135734.1379310345,
+      "startMs": 153663,
+      "endMs": 154217,
       "scene": 15
     },
     {
       "text": "the",
-      "startMs": 135774.1379310345,
-      "endMs": 136078.9655172414,
+      "startMs": 154440,
+      "endMs": 154686,
       "scene": 15
     },
     {
       "text": "brackets",
-      "startMs": 136118.9655172414,
-      "endMs": 136423.7931034483,
+      "startMs": 154699,
+      "endMs": 155253,
       "scene": 15
     },
     {
       "text": "that",
-      "startMs": 136463.7931034483,
-      "endMs": 136768.6206896552,
+      "startMs": 155282,
+      "endMs": 155590,
       "scene": 15
     },
     {
       "text": "fight.",
-      "startMs": 136808.6206896552,
-      "endMs": 137113.4482758621,
+      "startMs": 155606,
+      "endMs": 155976,
       "scene": 15
     },
     {
       "text": "And",
-      "startMs": 137153.4482758621,
-      "endMs": 137458.275862069,
+      "startMs": 156189,
+      "endMs": 156436,
       "scene": 15
     },
     {
       "text": "comment",
-      "startMs": 137498.275862069,
-      "endMs": 137803.10344827588,
+      "startMs": 156449,
+      "endMs": 156941,
       "scene": 15
     },
     {
       "text": "TWOSUM",
-      "startMs": 137843.10344827588,
-      "endMs": 138147.93103448278,
+      "startMs": 156967,
+      "endMs": 157398,
       "scene": 15
     },
     {
       "text": "for",
-      "startMs": 138187.93103448278,
-      "endMs": 138492.75862068968,
+      "startMs": 157420,
+      "endMs": 157667,
       "scene": 15
     },
     {
       "text": "the",
-      "startMs": 138532.75862068968,
-      "endMs": 138837.58620689658,
+      "startMs": 157680,
+      "endMs": 157926,
       "scene": 15
     },
     {
       "text": "notes",
-      "startMs": 138877.58620689658,
-      "endMs": 139182.41379310348,
+      "startMs": 157939,
+      "endMs": 158308,
       "scene": 15
     },
     {
       "text": "PDF.",
-      "startMs": 139222.41379310348,
-      "endMs": 139527.24137931038,
+      "startMs": 158327,
+      "endMs": 158574,
       "scene": 15
     }
   ]
