@@ -39,10 +39,11 @@ Before every new reel: `/review-reels` on the Mac reads Instagram insights into 
 `data/reviews.json`; `pipeline/review-gate.mjs` blocks new episodes (local and GitHub) until the last posted reel is
 reviewed, and each new episode sets `learnedFrom`. DSA questions must vary hook type, analogy, opening and jokes.
 
-## Twice-daily DSA run
-A Claude scheduled task on the Mac ("DSA-101 twice daily", 06:00 and 19:00 IST) follows `.claude/skills/daily-dsa/`:
-review on Instagram, write the next question, check it, push, and start the Daily reel workflow, which sends the video,
-caption and PDF to Telegram. It needs the app open, the Mac awake and the built-in browser signed in to Instagram.
+## Twice-daily DSA run (on GitHub since 28 Nov)
+`.github/workflows/dsa-schedule.yml` starts around 04:47 and 17:47 IST (with backups): write the next question, test the
+code, then call Daily reel, which sends video, caption and PDF to Telegram. It uses the last saved review
+(`UNATTENDED`). The Mac's Claude scheduled task only refreshes reviews (`.claude/skills/daily-dsa/`).
+The Instagram Graph API was re-tested on 28 Nov: still "API access blocked" (code 200, subcode 5258005).
 
 ## Next steps
 1. Ep 5 (`ep05-ek-tick-matlab-block`, WhatsApp ticks, stage style) is written and validated, not posted. Run the
