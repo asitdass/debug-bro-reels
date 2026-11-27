@@ -5,7 +5,8 @@ description: Read the last Debug Bro reel's Instagram insights, work out what we
 
 # Review the last reel before making the next one
 
-Needs a browser signed in to Instagram as debug_bro (the built-in browser on Asit's Mac). It cannot run on GitHub.
+Two ways to get the numbers: the Instagram API (`pipeline/fetch-insights.mjs`, runs on GitHub) or a browser signed in
+as debug_bro (the built-in browser on Asit's Mac, the only source of per-reel follows and profile visits).
 Read only: never change, post, boost or delete anything on Instagram.
 
 1. `node pipeline/review-gate.mjs` names the reel that needs a review. Also open instagram.com/debug_bro/reels/ and
@@ -23,6 +24,16 @@ Read only: never change, post, boost or delete anything on Instagram.
    each something the next episode can actually do. If a delivered reel was never posted: {slug, "notPosted": true}.
 7. `node pipeline/review-gate.mjs` must print OK. Commit the data files only when Asit asks to push.
 8. Tell Asit: the numbers, what to fix, and which fix the next reel applies. Do not promise more views.
+
+## On GitHub (API)
+No browser: skip steps 1-2 and 4. `data/insights.json` is already fresh. The reel to review is the one
+`node pipeline/review-gate.mjs` names.
+- `skipRate`: % who skipped almost at once. High means the first frame or first line fails.
+- `avgWatchSec` against `lengthSec` (or the episode's timings.json): where the middle loses people.
+- Compare at similar age using each reel's `history`; say when a reel is younger than 24 h.
+- To judge the opening, read the first scene of that episode's episode.json.
+- Set the review's `readAt` to that reel's `readAt`. Put the numbers you used in `numbers`.
+- Then steps 3, 5 and 6.
 
 The next episode sets `learnedFrom` {slug, fix, how}: apply that ONE fix visibly (the experiment), and keep the other
 things that worked.

@@ -14,7 +14,7 @@ on:
 concurrency: dsa-schedule
 
 env:
-  # no browser here, so fresh insights cannot be read: use the last saved review (see pipeline/review-gate.mjs)
+  # if the API review fails, learn from the last saved review instead of stopping (see pipeline/review-gate.mjs)
   UNATTENDED: "1"
 
 jobs:
@@ -35,9 +35,19 @@ jobs:
           MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
         run: node pipeline/dsa-plan.mjs >> "$GITHUB_OUTPUT" && cat "$GITHUB_OUTPUT"
 
-  write:
+  # fresh numbers and a review before the next script (if it fails, writing falls back to the last saved review)
+  review:
     needs: plan
     if: needs.plan.outputs.action == 'write'
+    permissions:
+      contents: write
+      id-token: write
+    uses: ./.github/workflows/review.yml
+    secrets: inherit
+
+  write:
+    needs: [plan, review]
+    if: ${{ !cancelled() && needs.plan.outputs.action == 'write' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -71,15 +81,15 @@ jobs:
             It is the problem the highest-numbered DSA episode promised in its "close" scene. If the existing scenes cannot
             show it honestly (trees, graphs, linked lists need new visuals), take the next problem in data/dsa150.json
             order that they can, and say so.
-            First read data/reviews.json: apply one fix from the latest review and set "learnedFrom". You cannot read
-            Instagram here; never invent numbers about past reels.
+            First run `node pipeline/review-gate.mjs` and read data/reviews.json and data/insights.json: apply one fix from
+            the latest review and set "learnedFrom". Never invent numbers about past reels.
             Write the script as a good teacher says it: a hook in the first line, short sentences, one idea per scene.
             Trace the solution and every example by hand, because nobody checks this before it is rendered.
             Write episodes/<slug>/episode.json and notes.json and run `node pipeline/validate.mjs <slug>` until it prints
             OK. Do not edit anything else. Do not commit; the workflow commits for you.
           claude_args: >-
             --max-turns 80
-            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node pipeline/validate.mjs:*),Bash(ls:*),Bash(cat:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node pipeline/validate.mjs:*),Bash(node pipeline/review-gate.mjs:*),Bash(ls:*),Bash(cat:*)"
       - name: Check and save the episode
         id: new
         run: |
@@ -119,7 +129,7 @@ jobs:
 
   # Asit may be away from the Mac: a failed run has to reach the phone
   alert:
-    needs: [plan, write, check, deliver]
+    needs: [plan, review, write, check, deliver]
     if: ${{ !cancelled() && contains(needs.*.result, 'failure') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -132,4 +142,4 @@ jobs:
         run: |
           curl -sS --fail -o /dev/null "https://api.telegram.org/bot${TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${CHAT}" \
-            --data-urlencode "text=DSA-101 run failed. Do not send a PDF from this run unless 'Check DSA code' passed. Details: ${RUN}"
+            --data-urlencode "text=DSA-101 run had a failure (a failed review alone does not stop the reel). Do not send a PDF from this run unless 'Check DSA code' passed. Details: ${RUN}"

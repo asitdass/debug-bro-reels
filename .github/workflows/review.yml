@@ -1,0 +1,69 @@
+name: Review the last reel
+
+# Reads Instagram insights through the API (read only), then Claude writes what went wrong and what the next reel fixes.
+on:
+  workflow_dispatch:
+  workflow_call:
+    outputs:
+      ok:
+        value: ${{ jobs.review.outputs.ok }}
+
+concurrency: review-reels
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      id-token: write
+    outputs:
+      ok: ${{ steps.save.outputs.ok }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # the Instagram token is given to this step only; Claude never sees it
+      - name: Fetch insights
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.instagram.com' }}
+        run: node pipeline/fetch-insights.mjs
+      - name: Clean the Claude token
+        id: tok
+        env:
+          RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          CLEAN=$(printf '%s' "$RAW" | tr -d '[:space:]')
+          echo "::add-mask::$CLEAN"
+          echo "token=$CLEAN" >> $GITHUB_OUTPUT
+      - name: Claude reviews the reel
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ steps.tok.outputs.token }}
+          prompt: |
+            Review the latest posted Debug Bro reel. Follow .claude/skills/review-reels/SKILL.md, section "On GitHub (API)".
+            data/insights.json was just refreshed from the Instagram API. Write one new review at the end of
+            data/reviews.json and update the experiment log in data/learnings.md. Run `node pipeline/review-gate.mjs`
+            until it prints OK. Edit only data/reviews.json and data/learnings.md. Never invent a number. Do not commit.
+          claude_args: >-
+            --max-turns 30
+            --allowedTools "Read,Edit,Write,Glob,Grep,Bash(node pipeline/review-gate.mjs:*),Bash(ls:*)"
+      - name: Save insights and review
+        id: save
+        run: |
+          # the numbers are always worth keeping; a broken review file is thrown away
+          node -e "const r=require('./data/reviews.json');if(!Array.isArray(r.reviews))process.exit(1)" || git checkout data/reviews.json
+          if node pipeline/review-gate.mjs; then echo "ok=true" >> $GITHUB_OUTPUT; fi
+          git config user.name "debug-bro-bot"
+          git config user.email "debug-bro-bot@users.noreply.github.com"
+          git add data/insights.json data/reviews.json data/learnings.md
+          git diff --cached --quiet || (git commit -m "data: insights and review" && git pull --rebase --autostash -q && git push)
+          node pipeline/review-gate.mjs
