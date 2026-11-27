@@ -57,7 +57,18 @@ env:
   UNATTENDED: ${{ inputs.unattended && '1' || '' }}
 
 jobs:
+  # only when a new episode is about to be written
+  review:
+    if: ${{ !inputs.slug }}
+    permissions:
+      contents: write
+      id-token: write
+    uses: ./.github/workflows/review.yml
+    secrets: inherit
+
   reel:
+    needs: review
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 180
     outputs:
@@ -249,7 +260,7 @@ jobs:
   # DSA-101 only: compile and run the PDF's solutions (separate job, no secrets). A red job means: do not send the PDF.
   check-code:
     needs: reel
-    if: startsWith(needs.reel.outputs.slug, 'dsa')
+    if: ${{ !cancelled() && startsWith(needs.reel.outputs.slug, 'dsa') }}
     permissions:
       contents: read
     uses: ./.github/workflows/check-code.yml

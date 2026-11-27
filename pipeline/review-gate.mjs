@@ -2,8 +2,9 @@
 // numbers in data/insights.json and a review in data/reviews.json, and the episode names the fix it applies.
 // usage: node pipeline/review-gate.mjs        (exit 1 = review the last reel first)
 //
-// Instagram numbers can only be read in a logged-in browser (the Meta API is blocked), so GitHub cannot fetch them:
-// ask Claude on your Mac to run /review-reels. A delivered reel you decided not to post gets {"slug", "notPosted": true}.
+// pipeline/fetch-insights.mjs reads the numbers from the Instagram API (GitHub: review.yml). /review-reels on the Mac
+// does the same in the browser. Without API data, a delivered reel that was not posted gets {"slug", "notPosted": true}.
+import fs from 'node:fs';
 import path from 'node:path';
 import {ROOT, readJSON} from './util.mjs';
 
@@ -12,17 +13,21 @@ const DAY = 24 * 60 * 60 * 1000;
 export function reviewGate(excludeSlug) {
   const published = readJSON(path.join(ROOT, 'data/published.json'), []);
   const reviews = readJSON(path.join(ROOT, 'data/reviews.json'), {reviews: []}).reviews;
-  const insights = readJSON(path.join(ROOT, 'data/insights.json'), {reels: []}).reels;
+  const data = readJSON(path.join(ROOT, 'data/insights.json'), {reels: []});
+  const insights = data.reels;
   const skipped = new Set(reviews.filter((r) => r.notPosted).map((r) => r.slug));
-  const latest = published
-    .filter((p) => ['reel', 'trial-reel'].includes(p.kind) && p.slug !== excludeSlug && !skipped.has(p.slug))
-    .sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt))[0];
+  const isEpisode = (slug) => fs.existsSync(path.join(ROOT, 'episodes', slug, 'episode.json'));
+  // with API data we know what is really on Instagram; without it, fall back to what was delivered
+  const posted = data.apiSyncedAt
+    ? insights.filter((r) => r.readAt && r.postedAt && isEpisode(r.slug))
+    : published.filter((p) => ['reel', 'trial-reel'].includes(p.kind) && !skipped.has(p.slug));
+  const latest = posted.filter((p) => p.slug !== excludeSlug).sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt))[0];
   const errors = [];
   const warnings = [];
   if (!latest) return {errors, warnings};
   const review = reviews.filter((r) => r.slug === latest.slug).at(-1);
-  const numbers = insights.find((r) => r.slug === latest.slug);
-  const ask = `ask Claude on your Mac to run /review-reels for ${latest.slug}`;
+  const numbers = insights.filter((r) => r.slug === latest.slug).sort((a, b) => new Date(b.readAt ?? 0) - new Date(a.readAt ?? 0))[0];
+  const ask = `run the "Review the last reel" workflow, or /review-reels on the Mac, for ${latest.slug}`;
   if (!numbers || typeof numbers.views !== 'number' || !numbers.readAt) errors.push(`no insights for the last reel (${latest.slug}): ${ask}`);
   if (!review?.readAt || !review.fixes?.length) errors.push(`no review of the last reel (${latest.slug}): ${ask}`);
   else if (new Date(review.readAt) < new Date(latest.postedAt)) errors.push(`the review of ${latest.slug} is older than its latest posting: ${ask}`);

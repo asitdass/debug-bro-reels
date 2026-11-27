@@ -43,7 +43,9 @@ reviewed, and each new episode sets `learnedFrom`. DSA questions must vary hook 
 `.github/workflows/dsa-schedule.yml` starts around 04:47 and 17:47 IST (with backups): write the next question, test the
 code, then call Daily reel, which sends video, caption and PDF to Telegram. It uses the last saved review
 (`UNATTENDED`). The Mac's Claude scheduled task only refreshes reviews (`.claude/skills/daily-dsa/`).
-The Instagram Graph API was re-tested on 28 Nov: still "API access blocked" (code 200, subcode 5258005).
+The Instagram Graph API works again (28 Nov, after Asit's confirmation). `review.yml` runs
+`pipeline/fetch-insights.mjs` and has Claude write the review before each new script. Posting stays manual
+(`POST_MODE=manual`); API posting is untested since the block. The Mac task is an optional extra for follows.
 
 ## Next steps
 1. Ep 5 (`ep05-ek-tick-matlab-block`, WhatsApp ticks, stage style) is written and validated, not posted. Run the
