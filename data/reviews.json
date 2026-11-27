@@ -99,6 +99,44 @@
           "metric": "follows"
         }
       ]
+    },
+    {
+      "slug": "dsa101-01-two-sum",
+      "readAt": "2026-11-27T23:53:33.864Z",
+      "numbers": "313 views, 257 viewers, 248 reach, 99.4% non-followers, 2 likes, 0 comments, 1 save, 1 share, 2 follows, 2 profile activity, skip rate 62%, avg watch 20 s of 111 s, 10 h old (early, under 24 h); identical to the 23:46 read, so no new information yet",
+      "worked": [
+        "2 follows from 257 viewers (0.78%) while ep05 got 0 from 1297 and ep04 0 from 121: the numbered series gives a reason to follow",
+        "Average watch 20 s is the highest of the Debug Bro reels (ep05 13.4 s, eps 1-4 6.3-11.5 s), though only 18% of 111 s"
+      ],
+      "failed": [
+        "Skip rate 62% against ep05 33.5% and ep03 36.9%; same as ep04 (62%)",
+        "313 views at 10 h; ep05 had 1421 at 31 h, so the age differs and the gap is not yet comparable",
+        "0 comments and 2 likes: the quiz and keyword ask only come at the end of a 111 s reel, after most viewers left",
+        "Saves + shares 2 of 313 views (0.64%), below the 3.6% + 2.6% of the June hit",
+        "Hook opens on three stacked word stamps (TWO SUM, TWO LOOPS?, NOT A GOOD SMILE in the first 1 s) over the title, and it was posted with a song"
+      ],
+      "fixes": [
+        {
+          "id": "clean-first-frame",
+          "change": "No word stamp over the title in the opening; the first frame reads clearly",
+          "metric": "skipRate"
+        },
+        {
+          "id": "early-comment-ask",
+          "change": "Put the comment ask on screen before the middle of the reel, and ask for one thing only at the end",
+          "metric": "comments"
+        },
+        {
+          "id": "original-audio",
+          "change": "Post with the reel's own audio, no song",
+          "metric": "views"
+        },
+        {
+          "id": "follow-reason",
+          "change": "Keep naming the next question",
+          "metric": "follows"
+        }
+      ]
     }
   ]
 }
