@@ -1,0 +1,267 @@
+{
+  "slug": "ep06-blinkit-wifi-naam",
+  "number": 6,
+  "series": "SYSTEM DESIGN",
+  "title": "Blinkit ko mera Wi-Fi ka naam kaise pata?",
+  "topic": "Blinkit app teardown (25-27 Nov 2026): Wi-Fi name + location, claim vs reply, 4-step privacy checklist",
+  "format": "news",
+  "style": "stage",
+  "world": "Wi-Fi ka naam = ghar ka address",
+  "pillar": "news",
+  "experiment": {
+    "change": "A same-day viral controversy told with BOTH sides (her claim vs Blinkit's reply, status stated exactly) instead of an evergreen explainer",
+    "why": "Ep3 and devmonk's 8.3M UPI reel were the same topic, so freshness and 'send to a friend' matter. A story people already argue about in comments gets shared",
+    "metric": "shares"
+  },
+  "hooks": [
+    "Dialogue cliffhanger: Intern: 'Bhaiya, Blinkit ko mere Wi-Fi ka naam pata hai!'",
+    "Absurd question: 'Bina GPS ke Blinkit ko kaise pata tum kahan ho?'",
+    "Lived moment: 'Raat 12 baje, Blinkit se chips mangaye. App ne kya kya dekha?'"
+  ],
+  "leadMagnet": {
+    "keyword": "PRIVACY",
+    "promise": "Phone privacy checklist, ek page mein"
+  },
+  "voice": {
+    "engine": "sarvam"
+  },
+  "caption": "Comment PRIVACY for phone privacy checklist, ek page mein. DM mein bhejta hoon.\n\nBlinkit ko tumhare Wi-Fi ka naam pata hai? Ek creator ne app ka code khola aur ye daava kiya. Blinkit ka jawab bhi aaya. Dono side yahan hain.\n\nUs dost ko bhejo jo roz Blinkit se mangata hai.\n\nStatus: ye creator ka daava hai, Digit ne ise independently verify nahi kiya. Blinkit ne kaha ye performance ke liye hai, marketing ya households pehchanne ke liye nahi.\n\nTumhara kaam: location sirf app chalte time, ads ID delete, Wi-Fi ka naam badlo, permissions check karo.\n\nQuiz: kaun sa Wi-Fi naam sabse risky? A, B ya C? Comment karo, answer pinned comment mein.\n\nSave karo, kaam aayega.",
+  "hashtags": [
+    "#systemdesign",
+    "#blinkit",
+    "#techinhindi"
+  ],
+  "keywords": [
+    "blinkit privacy",
+    "blinkit wifi name location",
+    "app permissions kaise check kare",
+    "android privacy settings",
+    "advertising id delete",
+    "system design in hindi",
+    "coding in hindi"
+  ],
+  "coverText": "Blinkit ko Wi-Fi pata?",
+  "beat": true,
+  "sources": [
+    "https://www.digit.in/news/general/millions-of-blinkit-users-data-at-risk-viral-video-raises-alarming-questions-on-data-mining.html",
+    "https://www.freepressjournal.in/tech/blinkit-responds-after-viral-video-raises-privacy-concerns-over-user-data-collection",
+    "https://www.digit.in/features/general/is-blinkit-spying-on-you-what-the-decompiled-app-claims-to-show.html"
+  ],
+  "scenes": [
+    {
+      "type": "headline",
+      "beat": "hook",
+      "mood": "problem",
+      "speaker": "alt",
+      "pose": "shock",
+      "react": "think",
+      "vo": "भैया, Blinkit को मेरे Wi-Fi का नाम पता है!",
+      "cap": "Blinkit ko mera *Wi-Fi* pata?",
+      "source": "Instagram + Substack",
+      "date": "25 Nov 2026",
+      "headline": "Blinkit app ne Wi-Fi ka naam save kiya?",
+      "sub": "Ek creator ne app ka code khola",
+      "label": "VIRAL"
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "intern",
+      "react": "think",
+      "vo": "ये सच है क्या? किसने बोला?",
+      "line": "Ye sach hai kya? Kisne bola?"
+    },
+    {
+      "type": "counter",
+      "beat": "setup",
+      "mood": "neutral",
+      "pose": "explain",
+      "react": "shock",
+      "vo": "Anika Beri ने app खोल के देखा. करीब बाईस हज़ार lines का code पढ़ा.",
+      "cap": "Code ki *22,000* lines",
+      "label": "lines of code padhi (approx)",
+      "from": 0,
+      "to": 22000,
+      "sub": "source: Digit, 25 Nov 2026",
+      "tone": "amber"
+    },
+    {
+      "type": "board",
+      "beat": "reveal",
+      "mood": "problem",
+      "pose": "point",
+      "react": "shock",
+      "tease": "Sabse bada daava end se pehle",
+      "vo": "Daava: Wi-Fi का नाम और location साथ में. इक्कीस दूसरे apps की जाँच भी.",
+      "cap": "Uske *daave* ye the",
+      "title": "Creator ke daave",
+      "layout": "steps",
+      "items": [
+        {
+          "label": "Wi-Fi naam",
+          "sub": "location ke saath save"
+        },
+        {
+          "label": "21 apps",
+          "sub": "installed hain ya nahi"
+        },
+        {
+          "label": "Ad ID",
+          "sub": "location ke saath bheji"
+        },
+        {
+          "label": "Login token",
+          "sub": "backup file mein"
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "beat": "twist",
+      "mood": "problem",
+      "who": "intern",
+      "react": "facepalm",
+      "vo": "मतलब Blinkit मुझे track कर रहा है?",
+      "line": "Matlab Blinkit mujhe track kar raha hai?"
+    },
+    {
+      "type": "dialog",
+      "beat": "setup",
+      "mood": "neutral",
+      "who": "bro",
+      "pose": "point",
+      "react": "think",
+      "vo": "Code बताता है क्या इकट्ठा होता है. Server पे क्या होता है, ये नहीं.",
+      "line": "Code batata hai kya collect hota hai. Server pe kya hota hai, ye nahi."
+    },
+    {
+      "type": "compare",
+      "beat": "twist",
+      "mood": "comeback",
+      "pose": "think",
+      "react": "think",
+      "vo": "Blinkit बोला: Wi-Fi नाम से location जल्दी load होती है. Marketing के लिए नहीं.",
+      "cap": "Dono *side* suno",
+      "left": {
+        "title": "Creator ka daava",
+        "items": [
+          "Wi-Fi naam + location",
+          "21 apps ki list",
+          "Login token backup mein"
+        ]
+      },
+      "right": {
+        "title": "Blinkit ka jawab",
+        "items": [
+          "Location cache, app fast",
+          "Zomato login, WhatsApp share",
+          "Token pe zikr nahi"
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "beat": "reveal",
+      "mood": "neutral",
+      "pose": "explain",
+      "react": "think",
+      "tease": "Wi-Fi naam mein asli khatra aage",
+      "vo": "उनके मुताबिक ये cache है. Wi-Fi का नाम address जैसा, तो location तुरंत.",
+      "cap": "Wi-Fi naam = *address*",
+      "nodes": [
+        {
+          "label": "Pehli baar",
+          "sub": "GPS dhoondhta hai"
+        },
+        {
+          "label": "Naam yaad",
+          "sub": "Wi-Fi = jagah"
+        },
+        {
+          "label": "Agli baar",
+          "sub": "location turant"
+        }
+      ],
+      "packet": "loc"
+    },
+    {
+      "type": "moment",
+      "beat": "twist",
+      "mood": "problem",
+      "pose": "shock",
+      "react": "shock",
+      "vo": "पर Wi-Fi का नाम घर का पता बताता है. Sharma flat तीन सौ दो!",
+      "cap": "Naam mein *ghar* chhupa hai",
+      "place": "Tera router, tera Wi-Fi naam",
+      "line": "Sharma_Flat_302",
+      "stamp": "ADDRESS?"
+    },
+    {
+      "type": "dialog",
+      "beat": "reveal",
+      "mood": "comeback",
+      "who": "bro",
+      "pose": "think",
+      "react": "think",
+      "vo": "सबूत नहीं मिला, सवाल ज़रूर मिला. सवाल पूछना तेरा हक़ है.",
+      "line": "Saboot nahi mila, sawal zaroor mila. Sawal poochna tera haq hai."
+    },
+    {
+      "type": "board",
+      "beat": "payoff",
+      "mood": "solution",
+      "pose": "thumbsup",
+      "react": "thumbsup",
+      "vo": "चार settings: location सिर्फ app चलते समय. Ad ID delete. Wi-Fi का नाम बदल.",
+      "cap": "Screenshot lo, *4* settings",
+      "title": "Phone privacy: 4 kaam",
+      "layout": "checks",
+      "items": [
+        {
+          "label": "Location",
+          "sub": "sirf app chalte time"
+        },
+        {
+          "label": "Ad ID",
+          "sub": "delete kar do"
+        },
+        {
+          "label": "Wi-Fi naam",
+          "sub": "ghar ka pata mat rakho"
+        },
+        {
+          "label": "Permissions",
+          "sub": "har app ki check karo"
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "beat": "twist",
+      "mood": "comeback",
+      "pose": "think",
+      "react": "think",
+      "vo": "Quiz: कौन सा Wi-Fi नाम सबसे risky? A, B या C? Comment करो.",
+      "cap": "Kaun sa naam *risky*?",
+      "question": "Kaun sa Wi-Fi naam sabse risky?",
+      "options": [
+        "Sharma_Flat_302",
+        "JioFiber_4821",
+        "Mera_Wifi"
+      ],
+      "answer": 0,
+      "why": "Parivaar ka naam + flat number = seedha ghar ka address. Baaki naam kuch nahi batate."
+    },
+    {
+      "type": "dialog",
+      "beat": "cta",
+      "mood": "solution",
+      "who": "bro",
+      "pose": "thumbsup",
+      "react": "laugh",
+      "vo": "Comment PRIVACY, phone privacy checklist DM में भेजता हूँ.",
+      "line": "Comment PRIVACY, phone privacy checklist DM mein bhejta hoon."
+    }
+  ]
+}
