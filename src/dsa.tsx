@@ -202,30 +202,67 @@ const Pause: React.FC<K> = ({s, dur}) => {
   );
 };
 
+/** the analogy picture. look "gate": items walk through an arch; "stack": they drop into a pile; "shelf": into boxes */
 const Gate: React.FC<K> = ({s, dur}) => {
-  const {frame} = useSc();
+  const {frame, fps} = useSc();
   const d = s.data;
+  const look: 'gate' | 'stack' | 'shelf' = d.look ?? 'gate';
   const open = prog(frame, dur, 0.05, 0.2);
+  const when = (i: number) => dur * (0.15 + i * (0.68 / d.items.length));
+  const token = (v: any, i: number, w = 80) => (
+    <div style={{width: w, height: 80, borderRadius: 40, background: i === 0 ? AMBER : BLUE, color: '#1b1412', fontFamily: FONT.mono, fontWeight: 900, fontSize: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '5px solid #1b1412'}}>{v}</div>
+  );
+  const slot = Math.floor(620 / d.items.length);
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', top: 50, left: 0, right: 0, textAlign: 'center'}}><Label color={AMBER}>{d.heading}</Label></div>
-      {/* arch */}
-      <svg width={980} height={930} viewBox="0 0 980 930" style={{position: 'absolute', left: 0, top: 0}}>
-        <path d="M 330 700 L 330 330 Q 330 190 490 190 Q 650 190 650 330 L 650 700" fill="none" stroke={AMBER} strokeWidth={14} strokeLinecap="round" />
-        <text x={490} y={282} textAnchor="middle" fontFamily={FONT.mono} fontWeight={900} fontSize={34} fill={AMBER} letterSpacing={4}>{d.sign.toUpperCase()}</text>
-        <rect x={20} y={700} width={940} height={10} rx={5} fill={LINE} />
-      </svg>
-      {d.items.map((g: any, i: number) => {
-        const startF = dur * (0.15 + i * (0.68 / d.items.length));
-        const left = interpolate(frame, [startF, startF + 40], [-130, 345 + i * Math.min(78, 300 / d.items.length)], clamp);
-        return (
-          <div key={i} style={{position: 'absolute', left, top: 570, opacity: open}}>
-            <div style={{width: 80, height: 80, borderRadius: 40, background: i === 0 ? AMBER : BLUE, color: '#1b1412', fontFamily: FONT.mono, fontWeight: 900, fontSize: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '5px solid #1b1412'}}>{g}</div>
-          </div>
-        );
-      })}
+      {look === 'gate' ? (
+        <>
+          <svg width={980} height={930} viewBox="0 0 980 930" style={{position: 'absolute', left: 0, top: 0}}>
+            <path d="M 330 700 L 330 330 Q 330 190 490 190 Q 650 190 650 330 L 650 700" fill="none" stroke={AMBER} strokeWidth={14} strokeLinecap="round" />
+            <text x={490} y={282} textAnchor="middle" fontFamily={FONT.mono} fontWeight={900} fontSize={34} fill={AMBER} letterSpacing={4}>{d.sign.toUpperCase()}</text>
+            <rect x={20} y={700} width={940} height={10} rx={5} fill={LINE} />
+          </svg>
+          {d.items.map((g: any, i: number) => {
+            const left = interpolate(frame, [when(i), when(i) + 40], [-130, 345 + i * Math.min(78, 300 / d.items.length)], clamp);
+            return (
+              <div key={i} style={{position: 'absolute', left, top: 570, opacity: open}}>
+                {token(g, i)}
+              </div>
+            );
+          })}
+        </>
+      ) : null}
+      {look === 'stack' ? (
+        <>
+          {d.items.map((g: any, i: number) => {
+            const p = Math.min(1, pop(frame, when(i), fps, 15));
+            return (
+              <div key={i} style={{position: 'absolute', left: 120, top: 640 - i * 96 - (1 - p) * 420, opacity: frame >= when(i) ? 1 : 0}}>
+                {token(g, i, 420)}
+              </div>
+            );
+          })}
+          <div style={{position: 'absolute', left: 80, top: 730, width: 500, height: 18, borderRadius: 9, background: AMBER}} />
+          <div style={{position: 'absolute', left: 80, top: 775, width: 500, textAlign: 'center'}}><Label color={AMBER}>{d.sign}</Label></div>
+        </>
+      ) : null}
+      {look === 'shelf' ? (
+        <>
+          {d.items.map((g: any, i: number) => {
+            const p = Math.min(1, pop(frame, when(i), fps, 15));
+            return (
+              <React.Fragment key={i}>
+                <div style={{position: 'absolute', left: 30 + i * slot, top: 560, width: slot - 14, height: 150, border: `6px solid ${LINE}`, borderTop: 'none', borderRadius: '0 0 20px 20px'}} />
+                <div style={{position: 'absolute', left: 30 + i * slot + (slot - 14 - 80) / 2, top: 612 - (1 - p) * 380, opacity: frame >= when(i) ? 1 : 0}}>{token(g, i)}</div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{position: 'absolute', left: 30, top: 745, width: 620, textAlign: 'center'}}><Label color={AMBER}>{d.sign}</Label></div>
+        </>
+      ) : null}
       <div style={{position: 'absolute', right: 20, top: 360, opacity: prog(frame, dur, 0.55, 0.7)}}>
-        <Store title={d.storeTitle} rows={[]} w={300} />
+        <Store title={d.storeTitle} rows={[]} w={look === 'gate' ? 300 : 270} />
       </div>
     </AbsoluteFill>
   );

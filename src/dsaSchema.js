@@ -29,7 +29,7 @@ export const DSA_DATA = {
   brute: o({heading: s(40), cells: cells(3, 8), mode: z.enum(['pairs', 'scan']), counterLabel: s(34), counterTo: z.number().positive(), result: s(18)}),
   pause: o({hint: s(28)}),
   // the analogy: items walk through a gate; the store (notebook, stack of plates...) appears beside it
-  gate: o({heading: s(28), sign: s(10), items: cells(2, 5), storeTitle: s(12)}),
+  gate: o({look: z.enum(['gate', 'stack', 'shelf']).optional(), heading: s(28), sign: s(10), items: cells(2, 5), storeTitle: s(12)}),
   steps: o({steps: z.array(s(28)).min(2).max(4), yes: s(18).optional(), no: s(22).optional()}),
   code: o({file: s(30), lines: z.array(z.string().max(48)).min(3).max(12), meanings: z.array(s(44)).min(3).max(12)}),
   // one step of a dry run. store = what is in it BEFORE this step; push adds a row, hit highlights one, pop removes the last

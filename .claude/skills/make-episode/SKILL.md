@@ -13,7 +13,13 @@ Debug Bro (@debug_bro) makes 40–60 s Hinglish reels that explain the system de
 Your job is the creative part only: pick the topic, get the facts right, write `episode.json`. The Node pipeline
 does voice, animation, rendering and posting. Do not touch `src/` or `pipeline/`.
 
-## 0. Read first
+## 0. Study the last reel first
+`node pipeline/review-gate.mjs` must print OK. If it fails, stop: the last reel has to be reviewed (`/review-reels`,
+needs Asit's signed-in browser). Then read `data/reviews.json`, pick ONE fix from the latest review, apply it visibly,
+and record it: `"learnedFrom": {"slug": "<last reel>", "fix": "<fix id>", "how": "<what in this episode does it>"}`.
+Keep what the review says worked.
+
+## 0b. Read next
 `data/learnings.md` and `data/insights.json` (how the last reels actually did, and the rules that came out of it),
 then `data/swipe.md` (what the outlier reels of the creators Asit admires do, beat by beat), then
 `.claude/skills/make-episode/formats.md` (the 6 formats, hook types, CTA rules, what is banned), then `brand.md`.

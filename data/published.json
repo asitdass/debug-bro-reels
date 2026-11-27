@@ -38,6 +38,16 @@
     "delivered": "telegram"
   },
   {
+    "slug": "ep05-ek-tick-matlab-block",
+    "topic": "WhatsApp ticks: store-and-forward server, delivery and read receipts, 30-day undelivered queue",
+    "pillar": "everyday-tech",
+    "title": "Ek tick matlab block? WhatsApp ke tick ka asli matlab",
+    "postedAt": "2026-11-26T12:00:00.000Z",
+    "kind": "reel",
+    "permalink": "https://www.instagram.com/reel/DgNlbwJzaG3/",
+    "note": "posted by hand; added 28 Nov, time approximate"
+  },
+  {
     "slug": "dsa101-01-two-sum",
     "topic": "LeetCode 1 Two Sum solved with a hash map",
     "pillar": "interview",

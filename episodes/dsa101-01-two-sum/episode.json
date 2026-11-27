@@ -11,6 +11,8 @@
     "n": 1,
     "leetcode": 1,
     "difficulty": "Easy",
+    "hook": "story",
+    "analogy": "wedding gate",
     "category": "Arrays & Hashing",
     "companies": []
   },
