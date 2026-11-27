@@ -101,8 +101,8 @@ const Title: React.FC<K> = ({s, ep}) => {
       <Label color={AMBER} size={40}>DSA-101 · Question {two(meta.n)}</Label>
       <Big size={size} style={{padding: oneLine ? 0 : '0 30px', whiteSpace: oneLine ? 'nowrap' : undefined, textTransform: 'uppercase', transform: `scale(${0.9 + pop(frame + DSA_PREROLL, 0, fps) * 0.1})`}}>{d.title}</Big>
       <div style={{display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center', padding: '0 20px'}}>
-        {[meta.difficulty, meta.category].map((t, i) => (
-          <div key={i} style={{fontFamily: FONT.mono, fontWeight: 800, fontSize: 32, color: i === 0 ? GREEN : TXT, border: `4px solid ${i === 0 ? GREEN : LINE}`, borderRadius: 40, padding: '8px 22px'}}>{t}</div>
+        {[`LeetCode #${meta.leetcode}`, meta.difficulty, meta.category].map((t, i) => (
+          <div key={i} style={{fontFamily: FONT.mono, fontWeight: 800, fontSize: 32, color: i === 1 ? GREEN : TXT, border: `4px solid ${i === 1 ? GREEN : LINE}`, borderRadius: 40, padding: '8px 22px'}}>{t}</div>
         ))}
       </div>
       {meta.companies?.length ? <div style={{fontFamily: FONT.mono, fontWeight: 700, fontSize: 30, color: MUTED}}>Reported by candidates: {meta.companies.join(', ')}</div> : null}

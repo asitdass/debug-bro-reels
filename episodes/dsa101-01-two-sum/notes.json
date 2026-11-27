@@ -111,14 +111,17 @@
   "practice": [
     {
       "name": "Contains Duplicate",
+      "leetcode": 217,
       "why": "The same 'have I seen this before?' idea, with a set."
     },
     {
       "name": "Two Sum II - Input Array Is Sorted",
+      "leetcode": 167,
       "why": "Solve it with two pointers and no extra memory."
     },
     {
       "name": "3Sum",
+      "leetcode": 15,
       "why": "Builds on Two Sum: fix one number, then find a pair."
     }
   ]

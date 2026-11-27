@@ -138,6 +138,7 @@ function validateDsa(ep, errors, warnings) {
     // the problem on screen must be the problem in episode.dsa (catches a copied episode that kept the old content)
     const known = readJSON(path.join(ROOT, 'data/dsa150.json'), {problems: []}).problems.find((p) => p.leetcode === ep.dsa.leetcode);
     const title = sc.find((s) => s.kind === 'title')?.data?.title;
+    if (!known) errors.push(`dsa.leetcode ${ep.dsa.leetcode} is not in data/dsa150.json: check the number`);
     if (!title) errors.push('DSA-101 episodes need a "title" scene');
     else if (known && title.toLowerCase() !== known.name.toLowerCase())
       errors.push(`title scene says "${title}" but LeetCode ${ep.dsa.leetcode} is "${known.name}" (data/dsa150.json)`);
@@ -149,10 +150,18 @@ function validateDsa(ep, errors, warnings) {
   const notes = readJSON(path.join(ROOT, 'episodes', ep.slug, 'notes.json'), null);
   if (!notes) errors.push('write notes.json (the explanation PDF with Python, Java, C++ and JavaScript code): see .claude/skills/make-episode/dsa.md');
   else for (const i of notesSchema.safeParse(notes).error?.issues ?? []) errors.push(`notes.json ${i.path.join('.')}: ${i.message}`);
-  // viewers see "Question N" only: LeetCode problem numbers never appear in anything public (Asit, 28 Nov 2026)
+  // LeetCode numbers are public, so each one must be exact: checked against data/dsa150.json
+  const list = readJSON(path.join(ROOT, 'data/dsa150.json'), {problems: []}).problems;
+  const plain = (x) => String(x).toLowerCase().replace(/[^a-z0-9]/g, '');
+  for (const q of notes?.practice ?? []) {
+    const hit = list.find((p) => p.leetcode === q.leetcode);
+    if (!hit) errors.push(`notes.json practice: LeetCode ${q.leetcode} is not in data/dsa150.json, so it cannot be checked; pick a listed problem`);
+    else if (plain(hit.name) !== plain(q.name)) errors.push(`notes.json practice: LeetCode ${q.leetcode} is "${hit.name}", not "${q.name}"`);
+  }
+  const allowed = new Set([ep.dsa?.leetcode, ...(notes?.practice ?? []).map((q) => q.leetcode)]);
   const shown = JSON.stringify([ep.title, ep.topic, ep.caption, ep.keywords, ep.hashtags, ep.coverText, ep.leadMagnet, ep.hooks, sc, notes]);
-  const numbered = shown.match(/leet\s*code\s*(#|no\.?|number|problem)?\s*\d+/i);
-  if (numbered) errors.push(`remove "${numbered[0]}": say "Question ${ep.dsa?.n ?? 'N'}", never the LeetCode number`);
+  for (const m of shown.matchAll(/leet\s*code\s*(?:#|no\.?|number|problem)?\s*(\d+)/gi))
+    if (!allowed.has(Number(m[1]))) errors.push(`"${m[0]}" is not this episode's number (${ep.dsa?.leetcode}) or a practice problem's`);
   const words = sc.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
   return {ok: errors.length === 0, errors, warnings, words};
 }

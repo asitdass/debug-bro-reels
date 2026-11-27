@@ -94,7 +94,7 @@ def build(slug, out):
     meta = ep["dsa"]
 
     story = [
-        p(f"DSA-101  |  Question {meta['n']:02d}  |  {meta['difficulty']}  |  {meta['category']}", SMALL),
+        p(f"DSA-101  |  Question {meta['n']:02d}  |  LeetCode {meta['leetcode']}  |  {meta['difficulty']}  |  {meta['category']}", SMALL),
         Spacer(1, 4),
         p(n["title"], H1),
         *heading("The problem"),
@@ -132,7 +132,7 @@ def build(slug, out):
               *heading("Mistakes to avoid"), bullets(n["mistakes"]),
               *heading("How to say it in the interview"), bullets(n["interview"]),
               *heading("Practise next")]
-    story += [bullets([f"{q['name']}: {q['why']}" for q in n["practice"]])]
+    story += [bullets([f"LeetCode {q['leetcode']}, {q['name']}: {q['why']}" for q in n["practice"]])]
 
     doc = SimpleDocTemplate(str(out), pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm, topMargin=16 * mm,
                             bottomMargin=17 * mm, title=n["title"], author="@debug_bro")

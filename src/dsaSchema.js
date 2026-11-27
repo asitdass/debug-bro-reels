@@ -22,7 +22,7 @@ const fx = {
 const o = (shape) => z.object({...shape, ...fx}).strict();
 
 export const DSA_DATA = {
-  // big problem name; chips (difficulty, category) and companies come from episode.dsa
+  // big problem name; chips (LeetCode number, difficulty, category) and companies come from episode.dsa
   title: o({title: s(34), face: z.enum(['smirk', 'smile', 'flat']), bubble: s(30)}),
   problem: o({heading: s(60), cells: cells(2, 8), highlight: indices, targetLabel: s(14).optional(), target: s(10).optional(), working: s(24), answer: s(26)}),
   // "pairs" lights two cells at a time, "scan" one cell
@@ -118,7 +118,7 @@ export const notesSchema = z
     complexity: z.object({time: t(20), timeWhy: t(300), space: t(20), spaceWhy: t(300)}).strict(),
     mistakes: z.array(t(260)).min(2).max(6),
     interview: z.array(t(260)).min(2).max(6),
-    practice: z.array(z.object({name: t(60), why: t(160)}).strict()).min(2).max(4),
+    practice: z.array(z.object({name: t(60), leetcode: z.number().int().positive(), why: t(160)}).strict()).min(2).max(4),
   })
   .strict()
   .refine((n) => n.dryRun.rows.every((r) => r.length === n.dryRun.headers.length), {message: 'every dryRun row needs one cell per header', path: ['dryRun', 'rows']});

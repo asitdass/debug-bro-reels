@@ -3,7 +3,7 @@
   "number": 7,
   "series": "DSA-101",
   "title": "Two Sum: the one-notebook trick",
-  "topic": "Two Sum solved with a hash map",
+  "topic": "LeetCode 1 Two Sum solved with a hash map",
   "pillar": "interview",
   "format": "whiteboard",
   "style": "dsa",
@@ -35,7 +35,7 @@
     "fallbackVoiceId": "en-IN-PrabhatNeural",
     "rate": "+5%"
   },
-  "caption": "Comment TWOSUM for the Two Sum notes PDF (Python, Java, C++, JavaScript).\n\nDSA-101, one interview question every day. Question 1: Two Sum. One notebook turns five hundred billion checks into one million steps.\n\nSave this for your interview. Send it to the friend who still writes two loops.",
+  "caption": "Comment TWOSUM for the Two Sum notes PDF (Python, Java, C++, JavaScript).\n\nDSA-101, one interview question every day. Question 1: Two Sum (LeetCode 1). One notebook turns five hundred billion checks into one million steps.\n\nSave this for your interview. Send it to the friend who still writes two loops.",
   "hashtags": [
     "#dsa",
     "#leetcode",
@@ -43,6 +43,7 @@
   ],
   "keywords": [
     "two sum",
+    "leetcode 1",
     "hash map",
     "dsa for beginners",
     "coding interview"
