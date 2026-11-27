@@ -81,8 +81,8 @@ from `keywords` and `hashtags`, so leave them out of `caption`.
 ```
 Nested loops are fine... until your input hits 1,000,000 and your runtime dies. 💀
 
-Welcome to DSA-101: one interview classic every day.
-Day 1: Two Sum (LeetCode #1)
+Welcome to DSA-101: two interview classics every day.
+Question 1: Two Sum (LeetCode #1)
 <one sentence: the trade or trick and what it buys>
 
 👇 Comment TWOSUM for the full notes PDF in Python, Java, C++ and JavaScript.
@@ -90,7 +90,8 @@ Day 1: Two Sum (LeetCode #1)
 Save it for later + share it with your coding buddy.
 ```
 - Line 1: the pain of the slow or wrong approach, one emoji, at most 125 characters. Any number in it must be true.
-- "Day N" is `dsa.n`; the problem line needs `(LeetCode #X)` exactly.
+- "Question N" is `dsa.n` (two questions go out a day, so never "Day N"); the problem line needs `(LeetCode #X)`
+  exactly. In the `close` scene never promise "tomorrow": say "next".
 - `keywords` (7): problem name, "leetcode X", the technique, "dsa 101", "coding interview", 2 concepts.
 - `hashtags` (5): #dsa #leetcode #codinginterview #programming #computerscience.
 
