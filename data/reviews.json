@@ -61,6 +61,44 @@
           "metric": "follows"
         }
       ]
+    },
+    {
+      "slug": "dsa101-01-two-sum",
+      "readAt": "2026-11-27T23:46:51.609Z",
+      "numbers": "313 views, 257 viewers, 99.4% non-followers, 2 likes, 0 comments, 1 save, 1 share, 2 follows, 2 profile activity, skip rate 62%, avg watch 20 s of 111 s, 10 h old (early, under 24 h)",
+      "worked": [
+        "2 follows from 257 viewers (0.78%) while ep05 got 0 from 1297: a numbered series gives a reason to follow",
+        "Average watch 20 s is above ep05 (13.4 s) and eps 1-4 (6.3-11.5 s), though it is 18% of a 111 s reel",
+        "Skip rate 62% is the same as ep04 and far worse than ep05 (33.5%), so the opening, not the topic, looks like the problem"
+      ],
+      "failed": [
+        "313 views against ep05 1421 (31 h old, so not a like-for-like age)",
+        "Skip rate 62% against ep05 33.5%: the dark opening with word stamps over the title is the likely cause (hypothesis, one reel)",
+        "0 comments; saves + shares 2 of 313 views (0.64%)",
+        "Posted with a song, which the learnings say to avoid"
+      ],
+      "fixes": [
+        {
+          "id": "clean-first-frame",
+          "change": "No word stamp over the title in the opening; the first frame reads clearly",
+          "metric": "skipRate"
+        },
+        {
+          "id": "early-comment-ask",
+          "change": "Put the comment ask on screen before the middle of the reel, and ask for one thing only at the end",
+          "metric": "comments"
+        },
+        {
+          "id": "original-audio",
+          "change": "Post with the reel's own audio, no song",
+          "metric": "views"
+        },
+        {
+          "id": "follow-reason",
+          "change": "Keep naming the next question",
+          "metric": "follows"
+        }
+      ]
     }
   ]
 }

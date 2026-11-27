@@ -35,7 +35,8 @@ Updated from `data/insights.json` after each reel. Every new episode runs ONE ex
 | --- | --- | --- | --- | --- |
 | 1-3 | cinema | legacy | baseline | 119-135 views, ~0 saves/shares |
 | 4 | cinema | desi-story | news topic + dialogue + comment keyword | 69 views ~35 min after posting (26 Nov); grid thumbnail was a blank frame; posted with a trending song. Re-check after 48 h |
-| 5 | stage | whiteboard | new house style (full frame, both characters, hook at frame 0) + tease stickers + quiz ending + keyword ask in caption line 1 | pending: judge by skip rate, then saves+shares per view |
+| 5 | stage | whiteboard | new house style (full frame, both characters, hook at frame 0) + tease stickers + quiz ending + keyword ask in caption line 1 | 1421 views at 31 h, skip rate 33.5% (best so far; eps 1-4 were 37-69%), avg watch 13.4 s of 45 s, saves+shares 0.35% of views, 0 comments, 0 follows. Style/hook worked for reach; not for saving or following |
+| 6 (dsa101-01) | dsa | whiteboard | first DSA-101 reel: solo Debug Bro, one question, no length cap (111 s) | 313 views at 10 h (early), skip rate 62%, avg watch 20 s of 111 s, saves+shares 0.64%, 0 comments, 2 follows from 257 viewers. Longer watch time but a worse skip rate than ep05; hypothesis: dark opening with word stamps over the title. Next: clean-first-frame, original audio |
 
 ## Still unknown (need screenshots from the Instagram app: Insights → the reel)
 - Skip rate (share of viewers who left in the first 3 s) and the retention curve for eps 3-4.
