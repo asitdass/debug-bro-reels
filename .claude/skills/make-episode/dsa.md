@@ -19,8 +19,10 @@ Copy the shape of `episodes/dsa101-01-two-sum/`, never its words, numbers, analo
   that URL in both `dsa.companySource` and `sources`, and say "candidates report" in the voice. NeetCode lists and the
   public problem page do not show companies.
 
-**Never write a LeetCode number** anywhere people can read or hear it: voice, on-screen text, caption, keywords,
-notes.json. "Question N" (the series number) is enough. `dsa.leetcode` is only an internal lookup (validator enforces).
+**Show the LeetCode number** next to "Question N": the title scene adds it from `dsa.leetcode`; also write it in the
+caption ("Question N: Name (LeetCode X)"), one keyword ("leetcode X") and `topic`. Copy numbers from
+`data/dsa150.json`, never from memory (the validator rejects a number that does not match). "Question N" is the series
+number and is different from the LeetCode number.
 
 ## 2. Solve it first
 Write the solution and its tests in `notes.json` before the script. Trace your examples by hand: every number in the
@@ -71,7 +73,7 @@ no arrows, emoji or Devanagari. Fields (schema: `notesSchema` in `src/dsaSchema.
 - `steps`[3-8], `dryRun` {input, headers, rows} on a DIFFERENT input from the reel's
 - `code`: `python`, `java`, `cpp`, `javascript`, each {code (≤80 chars a line, commented), note (what is specific to
   that language), test}
-- `complexity` {time, timeWhy, space, spaceWhy}, `mistakes`[2-6], `interview`[2-6], `practice`[2-4: name, why]
+- `complexity` {time, timeWhy, space, spaceWhy}, `mistakes`[2-6], `interview`[2-6], `practice`[2-4: name, leetcode, why; only problems listed in data/dsa150.json]
 
 `test` is appended after the code and must exit non-zero on a wrong answer. Cover the examples and the edge cases.
 Java: the solution is `class Solution` (imports first), the test declares `public class Main` with `main`.
