@@ -1,11 +1,13 @@
 {
   "note": "Per-reel Instagram insights. Web insights (instagram.com/insights/media/<id>) give views, viewers, likes, saves, shares, follows. Watch time, retention curve and skip rate are only in the app: add them from screenshots.",
-  "updatedAt": "2026-11-26",
+  "updatedAt": "2026-11-27",
   "reels": [
     {"slug": "dsa-day-0", "url": "https://www.instagram.com/reel/DaB4c64zixm/", "postedAt": "2026-06-26", "what": "Asit's own 'Day 0 of mastering DSA' reel recommending a DSA sheet (pre-Debug Bro)", "views": 5240, "viewers": null, "nonFollowerPct": 99.7, "likes": 46, "comments": 0, "saves": 188, "shares": 134, "follows": 6},
     {"slug": "ep01-tatkal-crash", "url": "https://www.instagram.com/reel/DfpZwFzFzWY/", "style": "cinema", "format": "legacy", "views": 119, "viewers": 108, "nonFollowerPct": 97.5, "likes": 1, "comments": 0, "saves": 0, "shares": 0, "follows": 0, "avgWatchSec": 6.2, "lengthSec": 68},
     {"slug": "ep02-cricket-live-scale", "url": "https://www.instagram.com/reel/Dfrv4lpjU7V/", "style": "cinema", "format": "legacy", "views": 123, "viewers": 108, "nonFollowerPct": 95.9, "likes": 0, "comments": 0, "saves": 0, "shares": 0, "follows": 0},
     {"slug": "ep03-upi-free-paisa-kaun-kamata", "url": "https://www.instagram.com/reel/Df6JnPTzZg7/", "style": "cinema", "format": "legacy", "views": 135, "viewers": 122, "nonFollowerPct": 98.5, "likes": 3, "comments": 0, "saves": 1, "shares": 0, "follows": 0},
-    {"slug": "ep04-microsoft-outage-failover", "url": "https://www.instagram.com/reel/DgLOXwszVf1/", "style": "cinema", "format": "desi-story", "views": 69, "comments": 0, "lengthSec": 37, "note": "read 26 Nov ~35 min after posting: too early to judge. Grid thumbnail = blank first frame (fixed for ep 5). Posted with a trending song instead of original audio. Re-check after 48 h"}
+    {"slug": "ep04-microsoft-outage-failover", "url": "https://www.instagram.com/reel/DgLOXwszVf1/", "style": "cinema", "format": "desi-story", "lengthSec": 37, "views": 131, "viewers": 121, "nonFollowerPct": 99.2, "likes": 1, "comments": 0, "saves": 1, "shares": 0, "follows": 0, "profileActivity": 0, "readAt": "2026-11-27T23:18:15Z", "note": "Grid thumbnail was a blank frame; posted with a song"},
+    {"slug": "ep05-ek-tick-matlab-block", "url": "https://www.instagram.com/reel/DgNlbwJzaG3/", "postedAt": "2026-11-26", "style": "stage", "format": "whiteboard", "lengthSec": 45, "views": 1421, "viewers": 1297, "nonFollowerPct": 100, "likes": 8, "comments": 0, "saves": 2, "shares": 3, "follows": 0, "profileActivity": 0, "readAt": "2026-11-27T23:18:15Z", "note": "Posted with a song"},
+    {"slug": "dsa101-01-two-sum", "url": "https://www.instagram.com/reel/DgP0rUsztpD/", "postedAt": "2026-11-27", "style": "dsa", "format": "whiteboard", "lengthSec": 111, "views": 310, "viewers": 257, "nonFollowerPct": 99.4, "likes": 2, "comments": 0, "saves": 1, "shares": 1, "follows": 2, "profileActivity": 2, "readAt": "2026-11-27T23:18:15Z", "note": "Posted with a song; word stamp over the title in the opening"}
   ]
 }

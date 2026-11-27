@@ -34,6 +34,11 @@ original audio. Our ep03 (UPI, 135 views) and devmonk's UPI reel (8.3M) were the
 Eps 1-3: 119-135 views, ~0 saves/shares. Ep 4 (Microsoft 365 outage, cinema style) posted 25 Nov: re-check after 48 h.
 The only breakout on the account: June "DSA sheet, Day 0" reel, 5,240 views, 188 saves, 134 shares.
 
+## Review loop (28 Nov 2026)
+Before every new reel: `/review-reels` on the Mac reads Instagram insights into `data/insights.json` and writes
+`data/reviews.json`; `pipeline/review-gate.mjs` blocks new episodes (local and GitHub) until the last posted reel is
+reviewed, and each new episode sets `learnedFrom`. DSA questions must vary hook type, analogy, opening and jokes.
+
 ## Next steps
 1. Ep 5 (`ep05-ek-tick-matlab-block`, WhatsApp ticks, stage style) is written and validated, not posted. Run the
    workflow (it renders the lowest unpublished episode first); post it with the Telegram checklist (cover, original

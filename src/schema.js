@@ -154,7 +154,11 @@ export const episodeSchema = z.object({
   // series hook: "Part 2 chahiye? Comment PART2"
   part: z.number().int().min(1).optional(),
   // DSA-101 episodes: which problem this is
-  dsa: z.object({n: z.number().int(), leetcode: z.number().int(), difficulty: z.string(), category: z.string(), companies: z.array(z.string()).max(4).default([]), companySource: z.string().url().optional()}).optional(),
+  dsa: z.object({n: z.number().int(), leetcode: z.number().int(), difficulty: z.string(), category: z.string(), companies: z.array(z.string()).max(4).default([]), companySource: z.string().url().optional(),
+    // variety between questions (validator): the kind of opening and the everyday picture used
+    hook: z.enum(['story', 'bold-claim', 'wrong-belief', 'challenge', 'question']).optional(), analogy: z.string().min(3).max(40).optional()}).optional(),
+  // the fix from the last reel's review (data/reviews.json) that this episode applies
+  learnedFrom: z.object({slug: z.string(), fix: z.string(), how: z.string().min(10).max(240)}).optional(),
   voice: z
     .object({
       engine: z.enum(['edge', 'sarvam', 'silent']).default('edge'),

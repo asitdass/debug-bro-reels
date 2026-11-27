@@ -24,6 +24,18 @@ caption ("Question N: Name (LeetCode X)"), one keyword ("leetcode X") and `topic
 `data/dsa150.json`, never from memory (the validator rejects a number that does not match). "Question N" is the series
 number and is different from the LeetCode number.
 
+## 1b. Learn from the last reel, then vary
+- `node pipeline/review-gate.mjs` must print OK (else stop: run `/review-reels`). Set `learnedFrom` {slug, fix, how}
+  with one fix from the latest review in `data/reviews.json` and make it visible in the reel.
+- Keep the series recognisable (look, pause screen, close screen, caption shape). Change everything else:
+  - `dsa.hook`: story, bold-claim, wrong-belief, challenge or question; not one used in the last 2 questions.
+    Do not keep opening with "An interviewer asked me...".
+  - `dsa.analogy`: a new everyday picture each time; `gate.look`: "gate" (items walk through an arch), "stack" (they
+    drop into a pile) or "shelf" (into boxes), whichever fits, and not the last one.
+  - New title joke, smile line and pause hint (the validator rejects repeats).
+  - Drop or reorder middle scenes when the problem asks for it (e.g. show the trap before the code).
+- No word stamp in the first 30% of the title scene.
+
 ## 2. Solve it first
 Write the solution and its tests in `notes.json` before the script. Trace your examples by hand: every number in the
 reel (answers, dry run, step counts, speed-up) must follow from the code. Any time estimate states its assumption
@@ -44,7 +56,7 @@ quiz, close. Skip a kind when it does not fit the problem; never bend a problem 
 | problem | heading, cells[2-8, each ≤4 chars], highlight[cell indices of the answer], targetLabel?, target?, working, answer |
 | brute | heading, cells[3-8], mode ("pairs" or "scan"), counterLabel, counterTo (number), result |
 | pause | hint |
-| gate | heading, sign (≤10), items[2-5], storeTitle (the analogy's data structure) |
+| gate | look?, heading, sign (≤10), items[2-5], storeTitle (the analogy's data structure) |
 | steps | steps[2-4], yes?, no? |
 | code | file, lines[3-12, ≤48 chars], meanings (exactly one per line, ≤44) |
 | run | cells, i (current index), panelLabel, panelText, panelAccent?, storeTitle, store[rows BEFORE this step, max 4], push? (row added), hit? (row index matched), pop? (remove last row), matched?[cell indices], found (true on the last step), result |

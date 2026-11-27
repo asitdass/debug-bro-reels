@@ -1,0 +1,66 @@
+{
+  "note": "One review per posted reel, written by /review-reels before the next reel is made. pipeline/review-gate.mjs requires a review of the latest posted reel, and every new episode names the fix it applies (learnedFrom).",
+  "reviews": [
+    {
+      "slug": "ep05-ek-tick-matlab-block",
+      "readAt": "2026-11-27T23:18:15Z",
+      "numbers": "1421 views, 1297 viewers, 8 likes, 0 comments, 2 saves, 3 shares, 0 follows",
+      "worked": [
+        "About 10x the views of eps 1-4: bright full frame, a topic everyone uses (WhatsApp), a wrong belief as the hook"
+      ],
+      "failed": [
+        "Saves + shares are 0.35% of views (the June breakout had 6%)",
+        "0 comments despite a keyword ask and a quiz",
+        "0 follows and 0 profile activity: no reason given to come back"
+      ],
+      "fixes": [
+        {
+          "id": "follow-reason",
+          "change": "Give one concrete reason to follow: name what comes next",
+          "metric": "follows"
+        },
+        {
+          "id": "early-keepable",
+          "change": "Show or promise the keepable cheat sheet in the first half, not only at the end",
+          "metric": "saves"
+        }
+      ]
+    },
+    {
+      "slug": "dsa101-01-two-sum",
+      "readAt": "2026-11-27T23:18:15Z",
+      "numbers": "310 views, 257 viewers, 2 likes, 0 comments, 1 save, 1 share, 2 follows, 111 s",
+      "worked": [
+        "2 follows from 257 viewers: the best follow rate of the recent reels; a numbered series gives a reason to follow"
+      ],
+      "failed": [
+        "310 views against ep05's 1421",
+        "Opening is dark with a word stamp covering the title",
+        "0 comments: the quiz and keyword ask come only at the end of a 111 s reel",
+        "Saves + shares 0.65% of views"
+      ],
+      "fixes": [
+        {
+          "id": "clean-first-frame",
+          "change": "No word stamp over the title in the opening; the first frame reads clearly",
+          "metric": "views"
+        },
+        {
+          "id": "early-comment-ask",
+          "change": "Put the comment ask on screen before the middle of the reel, and ask for one thing only at the end",
+          "metric": "comments"
+        },
+        {
+          "id": "original-audio",
+          "change": "Post with the reel's own audio, no song",
+          "metric": "views"
+        },
+        {
+          "id": "follow-reason",
+          "change": "Keep naming the next question",
+          "metric": "follows"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {episodeSchema} from '../src/schema.js';
 import {checkDsaScene, notesSchema} from '../src/dsaSchema.js';
+import {checkLearning} from './review-gate.mjs';
 import {ROOT, epDir, latestSlug, readJSON} from './util.mjs';
 
 const EMOJI = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u;
@@ -21,6 +22,12 @@ export function validate(slug) {
   }
   const ep = parsed.data;
   if (ep.slug !== slug) errors.push(`slug "${ep.slug}" must match folder "${slug}"`);
+  // new reels (from number 8, not yet posted) must build on the last reel's review
+  if (ep.number > 7 && !readJSON(path.join(ROOT, 'data/published.json'), []).some((p) => p.slug === slug)) {
+    const learned = checkLearning(ep);
+    errors.push(...learned.errors);
+    warnings.push(...learned.warnings);
+  }
   if (ep.style === 'dsa') return validateDsa(ep, errors, warnings);
   const HOOKS = ['coldopen', 'hook', 'moment', 'board', 'dialog', 'headline', 'tip'];
   if (!HOOKS.includes(ep.scenes[0].type)) errors.push(`first scene must be a hook scene (${HOOKS.join(', ')}), not a chart`);
@@ -115,6 +122,33 @@ export function validate(slug) {
   return {ok: errors.length === 0, errors, warnings, words};
 }
 
+// Variety (28 Nov 2026): the series keeps its structure, but each question gets its own opening, picture and jokes.
+function checkVariety(ep, errors, warnings) {
+  const earlier = fs
+    .readdirSync(path.join(ROOT, 'episodes'))
+    .filter((d) => d !== ep.slug)
+    .map((d) => readJSON(path.join(ROOT, 'episodes', d, 'episode.json'), null))
+    .filter((e) => e?.style === 'dsa' && e.dsa?.n < ep.dsa.n)
+    .sort((a, b) => b.dsa.n - a.dsa.n);
+  const same = (a, b) => a && b && String(a).toLowerCase().trim() === String(b).toLowerCase().trim();
+  const scene = (e, kind) => e.scenes.find((s) => s.kind === kind)?.data ?? {};
+  const opening = (e) => e.scenes[0].vo.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(/\s+/).slice(0, 4).join(' ');
+  if (!ep.dsa.hook) errors.push('set dsa.hook (story, bold-claim, wrong-belief, challenge, question)');
+  else if (earlier.slice(0, 2).some((e) => e.dsa.hook === ep.dsa.hook)) errors.push(`dsa.hook "${ep.dsa.hook}" was used in the last 2 questions; open a different way`);
+  if (!ep.dsa.analogy) errors.push('set dsa.analogy (the everyday picture this question uses)');
+  for (const e of earlier) {
+    if (same(e.dsa.analogy, ep.dsa.analogy)) errors.push(`analogy "${ep.dsa.analogy}" was already used in question ${e.dsa.n}`);
+    if (opening(e) === opening(ep)) errors.push(`the first line opens like question ${e.dsa.n} ("${opening(ep)}...")`);
+    for (const [kind, field] of [['title', 'bubble'], ['smile', 'bubble'], ['pause', 'hint']])
+      if (same(scene(e, kind)[field], scene(ep, kind)[field])) errors.push(`${kind}.${field} repeats question ${e.dsa.n}; write a new joke or hint`);
+  }
+  const look = (e) => scene(e, 'gate').look ?? 'gate';
+  if (earlier[0] && ep.scenes.some((s) => s.kind === 'gate') && look(earlier[0]) === look(ep)) warnings.push(`the analogy picture "${look(ep)}" was used last time; try another gate.look`);
+  // the opening frame must read cleanly (review of question 1: a word stamp covered the title)
+  const early = scene(ep, 'title').slams?.find((x) => x.at < 0.3);
+  if (early) errors.push(`title scene: no word stamp before 30% of the scene ("${early.text}" covers the title)`);
+}
+
 // Caption shape (28 Nov 2026): hook first, context, then "Comment KEYWORD", then save + share.
 // pipeline/run.mjs adds the [keyword, list] and the hashtags underneath.
 function checkCaption(ep, errors, warnings) {
@@ -177,6 +211,7 @@ function validateDsa(ep, errors, warnings) {
   const shown = JSON.stringify([ep.title, ep.topic, ep.caption, ep.keywords, ep.hashtags, ep.coverText, ep.leadMagnet, ep.hooks, sc, notes]);
   for (const m of shown.matchAll(/leet\s*code\s*(?:#|no\.?|number|problem)?\s*(\d+)/gi))
     if (!allowed.has(Number(m[1]))) errors.push(`"${m[0]}" is not this episode's number (${ep.dsa?.leetcode}) or a practice problem's`);
+  if (ep.dsa?.n > 1) checkVariety(ep, errors, warnings);
   const words = sc.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
   return {ok: errors.length === 0, errors, warnings, words};
 }
