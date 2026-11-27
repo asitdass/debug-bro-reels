@@ -1,0 +1,53 @@
+name: Check DSA code
+
+# Compiles and runs the Python, Java, C++ and JavaScript solutions that go into the DSA-101 PDF.
+# This runs code written for an episode, so the job gets no secrets and a read-only token that is not kept in the checkout.
+on:
+  pull_request:
+    paths: ["episodes/dsa101-*/notes.json", "pipeline/check-code.mjs"]
+  push:
+    branches: [main]
+    paths: ["episodes/dsa101-*/notes.json", "pipeline/check-code.mjs"]
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Episode to check (empty = every DSA episode)"
+        required: false
+        default: ""
+  workflow_call:
+    inputs:
+      slug:
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # when called after the reel job, take the episode that job just pushed
+          ref: ${{ github.event_name == 'pull_request' && github.sha || github.ref_name }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: npm ci
+      - name: Compile and run the solutions
+        env:
+          SLUG: ${{ inputs.slug }}
+        run: |
+          if [ -n "$SLUG" ]; then LIST="$SLUG"; else LIST=$(ls -d episodes/dsa101-*/ | xargs -n1 basename); fi
+          status=0
+          for s in $LIST; do echo "== $s"; node pipeline/check-code.mjs "$s" || status=1; done
+          exit $status

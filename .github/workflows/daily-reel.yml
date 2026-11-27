@@ -18,6 +18,11 @@ on:
         description: "Existing episode to use (e.g. ep01-tatkal-crash). Leave empty to let Claude write a new one."
         required: false
         default: ""
+      series:
+        description: "Which series to pick or write when no episode is given"
+        type: choice
+        options: [system-design, dsa]
+        default: system-design
       scheduled:
         description: "Behave like the daily schedule (skip if already posted today or outside 17:00-23:30 IST)"
         type: boolean
@@ -25,10 +30,15 @@ on:
 
 concurrency: daily-reel
 
+env:
+  SERIES: ${{ inputs.series || 'system-design' }}
+
 jobs:
   reel:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    outputs:
+      slug: ${{ steps.ep.outputs.slug }}
     permissions:
       contents: write
       id-token: write
@@ -59,7 +69,7 @@ jobs:
           # skip scheduled runs if a reel already went out today (IST)
           POSTED=$(node -e "const p=require('./data/published.json');const d=new Date(Date.now()+19800000).toISOString().slice(0,10);console.log(p.some(x=>x.kind==='reel'&&new Date(new Date(x.postedAt).getTime()+19800000).toISOString().slice(0,10)===d)?'yes':'no')")
           # an episode that was written but never posted is used before writing a new one
-          PENDING=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const n=eps.filter(e=>!p.includes(e[0]));console.log(n.length?n[0][0]:'')")
+          PENDING=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const dsa=process.env.SERIES==='dsa';const n=eps.filter(e=>!p.includes(e[0])&&e[0].startsWith('dsa')===dsa);console.log(n.length?n[0][0]:'')")
           SLUG="${{ inputs.slug }}"
           [ -z "$SLUG" ] && SLUG="$PENDING"
           NOW=$(TZ=Asia/Kolkata date +%H%M)
@@ -90,6 +100,8 @@ jobs:
         with:
           claude_code_oauth_token: ${{ steps.tok.outputs.token }}
           prompt: |
+            Series for this run: ${{ env.SERIES }}. If it is "dsa", read .claude/skills/make-episode/dsa.md and follow it
+            instead of the steps below (it covers episode.json AND notes.json). Otherwise:
             Write the next Debug Bro reel episode. Read .claude/skills/make-episode/SKILL.md, formats.md next to it, and data/swipe.md, then follow every step:
             pick the topic (data/topics.md "Promised next" first), research the facts with WebSearch/WebFetch, write
             episodes/<slug>/episode.json, tick the topic in data/topics.md, and run `node pipeline/validate.mjs <slug>`
@@ -118,7 +130,7 @@ jobs:
         if: steps.plan.outputs.skip != 'yes'
         run: |
           SLUG="${{ steps.plan.outputs.slug }}"
-          [ -z "$SLUG" ] && SLUG=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const n=eps.filter(e=>!p.includes(e[0]));console.log(n.length?n[0][0]:'')")
+          [ -z "$SLUG" ] && SLUG=$(node -e "const fs=require('fs');const p=require('./data/published.json').map(x=>x.slug);const eps=fs.readdirSync('episodes',{withFileTypes:true}).filter(d=>d.isDirectory()&&fs.existsSync('episodes/'+d.name+'/episode.json')).map(d=>[d.name,require('./episodes/'+d.name+'/episode.json').number]).sort((a,b)=>a[1]-b[1]);const dsa=process.env.SERIES==='dsa';const n=eps.filter(e=>!p.includes(e[0])&&e[0].startsWith('dsa')===dsa);console.log(n.length?n[0][0]:'')")
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
           echo "episode: $SLUG"
 
@@ -127,7 +139,7 @@ jobs:
         run: node pipeline/review-stills.mjs "${{ steps.ep.outputs.slug }}"
 
       - name: Claude reviews the frames
-        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != '' && !startsWith(steps.ep.outputs.slug, 'dsa')
+        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != ''
         continue-on-error: true
         uses: anthropics/claude-code-action@v1
         with:
@@ -141,6 +153,9 @@ jobs:
                status exactly as sourced. Then run `node pipeline/validate.mjs ${{ steps.ep.outputs.slug }}` until OK.
             4. Write out/${{ steps.ep.outputs.slug }}/review.md: one line per frame (PASS or FIXED: what), then one line
                "Hook strength: x/10 because ...".
+            DSA-101 episodes (slug starts with "dsa"): the checklist's DSA section applies instead of the stage-style items.
+            All on-screen text is in each scene's "data" (fields: .claude/skills/make-episode/dsa.md) and you may edit those
+            text fields, but never change code lines, numbers, quiz answers or notes.json. Report a wrong one in review.md.
             Do not edit src/, pipeline/ or any other file. Do not commit.
           claude_args: >-
             --max-turns 40
@@ -199,3 +214,13 @@ jobs:
           git config user.email "debug-bro-bot@users.noreply.github.com"
           git add data/published.json episodes
           git diff --cached --quiet || (git commit -m "log: published" && git pull --rebase -q && git push)
+
+  # DSA-101 only: compile and run the PDF's solutions (separate job, no secrets). A red job means: do not send the PDF.
+  check-code:
+    needs: reel
+    if: startsWith(needs.reel.outputs.slug, 'dsa')
+    permissions:
+      contents: read
+    uses: ./.github/workflows/check-code.yml
+    with:
+      slug: ${{ needs.reel.outputs.slug }}

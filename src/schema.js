@@ -154,7 +154,7 @@ export const episodeSchema = z.object({
   // series hook: "Part 2 chahiye? Comment PART2"
   part: z.number().int().min(1).optional(),
   // DSA-101 episodes: which problem this is
-  dsa: z.object({n: z.number().int(), leetcode: z.number().int(), difficulty: z.string(), category: z.string(), companies: z.array(z.string()).max(4).default([])}).optional(),
+  dsa: z.object({n: z.number().int(), leetcode: z.number().int(), difficulty: z.string(), category: z.string(), companies: z.array(z.string()).max(4).default([]), companySource: z.string().url().optional()}).optional(),
   voice: z
     .object({
       engine: z.enum(['edge', 'sarvam', 'silent']).default('edge'),

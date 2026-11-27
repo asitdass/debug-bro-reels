@@ -6,6 +6,9 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch, Bash(node pip
 
 # Make the next Debug Bro episode
 
+**DSA-101 episode** (an interview question; "DSA", "LeetCode", `style: "dsa"`)? Follow [dsa.md](dsa.md) instead of
+this file.
+
 Debug Bro (@debug_bro) makes 40–60 s Hinglish reels that explain the system design behind apps every Indian uses.
 Your job is the creative part only: pick the topic, get the facts right, write `episode.json`. The Node pipeline
 does voice, animation, rendering and posting. Do not touch `src/` or `pipeline/`.

@@ -1,0 +1,125 @@
+{
+  "title": "Two Sum: remember who came, look up who you need",
+  "problem": "You get a list of whole numbers and one target number. Find two different positions whose numbers add up to the target, and return those two positions (counting from 0). The interview version promises that exactly one such pair exists, and you may not use the same position twice. The same value can appear twice, as in [3, 3].",
+  "examples": [
+    {
+      "input": "nums = [2, 7, 11, 15], target = 9",
+      "output": "[0, 1]",
+      "why": "nums[0] + nums[1] = 2 + 7 = 9."
+    },
+    {
+      "input": "nums = [3, 2, 4], target = 6",
+      "output": "[1, 2]",
+      "why": "2 + 4 = 6. Position 0 cannot pair with itself, even though 3 + 3 = 6."
+    },
+    {
+      "input": "nums = [3, 3], target = 6",
+      "output": "[0, 1]",
+      "why": "Two different positions holding the same value is allowed."
+    }
+  ],
+  "analogy": "Picture a wedding gate. Guests walk in one by one, each wearing a number. The host keeps a notebook of everyone already inside. When a new guest arrives, the host works out which number would complete the target, and looks in the notebook. If that partner is inside, we are done. If not, the host writes the new guest down and waits for the next one.",
+  "brute": {
+    "explain": "Try every pair with two loops: take the first number and add it to each later number, then do the same with the second, and so on. It is correct and needs no extra memory, but n numbers make n(n-1)/2 pairs. For a million numbers that is about 500 billion checks, roughly 8 minutes at a billion checks per second.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "insight": [
+    "When you stand at a number x, you do not need to search for a pair. You already know exactly which number you need: target - x.",
+    "So the real question is only: have I seen that number before, and where? A hash map (dictionary) answers that in one step on average.",
+    "Store each number as the key and its position as the value. One pass over the list is enough, because the second number of the pair will always find the first one already stored."
+  ],
+  "steps": [
+    "Create an empty map called seen (value -> position).",
+    "Walk through the list. At position i with value x, compute need = target - x.",
+    "If need is in seen, return [seen[need], i].",
+    "Otherwise store seen[x] = i and move to the next number."
+  ],
+  "dryRun": {
+    "input": "nums = [3, 2, 4], target = 6",
+    "headers": [
+      "i",
+      "x",
+      "need",
+      "seen before",
+      "action"
+    ],
+    "rows": [
+      [
+        "0",
+        "3",
+        "3",
+        "{}",
+        "not found, store 3 -> 0"
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "{3: 0}",
+        "not found, store 2 -> 1"
+      ],
+      [
+        "2",
+        "4",
+        "2",
+        "{3: 0, 2: 1}",
+        "found 2, return [1, 2]"
+      ]
+    ]
+  },
+  "code": {
+    "python": {
+      "code": "def two_sum(nums, target):\n    seen = {}                      # value -> position\n    for i, x in enumerate(nums):\n        need = target - x          # the partner I am looking for\n        if need in seen:           # check first ...\n            return [seen[need], i]\n        seen[x] = i                # ... then write\n    return []",
+      "note": "A dict is Python's hash map. 'need in seen' looks at the keys, and enumerate gives the position together with the value.",
+      "test": "\nfor nums, target, want in [([2,7,11,15],9,[0,1]), ([3,2,4],6,[1,2]), ([3,3],6,[0,1]), ([-1,-2,-3,-4,-5],-8,[2,4]), ([1,2],7,[])]:\n    got = two_sum(nums, target)\n    assert got == want, (nums, target, got)\n"
+    },
+    "java": {
+      "code": "import java.util.HashMap;\nimport java.util.Map;\n\nclass Solution {\n    public int[] twoSum(int[] nums, int target) {\n        Map<Integer, Integer> seen = new HashMap<>();  // value -> position\n        for (int i = 0; i < nums.length; i++) {\n            int need = target - nums[i];               // the partner\n            if (seen.containsKey(need)) {              // check first ...\n                return new int[] {seen.get(need), i};\n            }\n            seen.put(nums[i], i);                      // ... then write\n        }\n        return new int[0];\n    }\n}",
+      "note": "HashMap stores Integer keys and values. containsKey checks for the partner before put writes the current number.",
+      "test": "\npublic class Main {\n    static void check(int[] nums, int target, int[] want) {\n        int[] got = new Solution().twoSum(nums, target);\n        if (!java.util.Arrays.equals(got, want)) throw new RuntimeException(java.util.Arrays.toString(got));\n    }\n    public static void main(String[] args) {\n        check(new int[] {2, 7, 11, 15}, 9, new int[] {0, 1});\n        check(new int[] {3, 2, 4}, 6, new int[] {1, 2});\n        check(new int[] {3, 3}, 6, new int[] {0, 1});\n        check(new int[] {-1, -2, -3, -4, -5}, -8, new int[] {2, 4});\n        check(new int[] {1, 2}, 7, new int[] {});\n    }\n}\n"
+    },
+    "cpp": {
+      "code": "#include <unordered_map>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        unordered_map<int, int> seen;               // value -> position\n        for (int i = 0; i < (int)nums.size(); i++) {\n            int need = target - nums[i];            // the partner\n            auto it = seen.find(need);              // check first ...\n            if (it != seen.end()) {\n                return {it->second, i};\n            }\n            seen[nums[i]] = i;                      // ... then write\n        }\n        return {};\n    }\n};",
+      "note": "unordered_map is the hash map. find returns an iterator, so one lookup both checks for the partner and reads its position.",
+      "test": "\n#include <cstdlib>\nstatic void check(vector<int> nums, int target, vector<int> want) {\n    if (Solution().twoSum(nums, target) != want) exit(1);\n}\nint main() {\n    check({2, 7, 11, 15}, 9, {0, 1});\n    check({3, 2, 4}, 6, {1, 2});\n    check({3, 3}, 6, {0, 1});\n    check({-1, -2, -3, -4, -5}, -8, {2, 4});\n    check({1, 2}, 7, {});\n}\n"
+    },
+    "javascript": {
+      "code": "function twoSum(nums, target) {\n  const seen = new Map();                 // value -> position\n  for (let i = 0; i < nums.length; i++) {\n    const need = target - nums[i];        // the partner\n    if (seen.has(need)) {                 // check first ...\n      return [seen.get(need), i];\n    }\n    seen.set(nums[i], i);                 // ... then write\n  }\n  return [];\n}",
+      "note": "Use Map rather than a plain object: keys stay numbers and has/get/set say exactly what they do.",
+      "test": "\nfor (const [nums, target, want] of [[[2,7,11,15],9,[0,1]], [[3,2,4],6,[1,2]], [[3,3],6,[0,1]], [[-1,-2,-3,-4,-5],-8,[2,4]], [[1,2],7,[]]]) {\n  const got = twoSum(nums, target);\n  if (JSON.stringify(got) !== JSON.stringify(want)) throw new Error(`${nums} ${target} -> ${got}`);\n}\n"
+    }
+  },
+  "complexity": {
+    "time": "O(n) average",
+    "timeWhy": "One pass, and each map lookup and insert takes constant time on average. With very unlucky hash collisions a lookup can be slower.",
+    "space": "O(n)",
+    "spaceWhy": "In the worst case almost every number is stored before the pair is found."
+  },
+  "mistakes": [
+    "Storing the current number before checking. With [3, 3] and target 6, the first 3 finds itself and you return [0, 0].",
+    "Returning the two values instead of their positions.",
+    "Sorting the list first without keeping the original positions: the answer must use the original positions.",
+    "Assuming the numbers are positive. Negative numbers and zero work with the same code, so do not add shortcuts that skip them."
+  ],
+  "interview": [
+    "Say the brute force first and give its cost: two loops, O(n^2) time, O(1) space.",
+    "Then name the trade: extra memory for speed. 'For each number I know the partner I need, so I will remember what I have seen in a hash map.'",
+    "Mention the order (check, then store) and why, using the [3, 3] case.",
+    "Be ready for the follow-up: if the list is already sorted, two pointers from both ends solves it without a map."
+  ],
+  "practice": [
+    {
+      "name": "Contains Duplicate",
+      "why": "The same 'have I seen this before?' idea, with a set."
+    },
+    {
+      "name": "Two Sum II - Input Array Is Sorted",
+      "why": "Solve it with two pointers and no extra memory."
+    },
+    {
+      "name": "3Sum",
+      "why": "Builds on Two Sum: fix one number, then find a pair."
+    }
+  ]
+}
