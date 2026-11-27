@@ -114,10 +114,19 @@ the fix, `comeback` (amber) for compare/twist. **Tags** (`PROBLEM`, `SOLUTION`, 
 
 Any scene may also set `tease` (open-loop sticker), `react` (listener pose) and `speaker: "alt"` (the Intern says it).
 
-**Caption**: line 1 = the ask, "Comment KEYWORD for <promise>. DM mein bhejta hoon." (the validator enforces it; the
-caption preview shows only line 1), line 2 = the hook retold with search words ("Ek tick dekh ke socha block kar
-diya?"), line 3 = "Us dost ko bhejo jo …", then 2–3 lines of the key takeaway, the quiz question again, then "Save karo, kaam aayega." Exactly 3 hashtags, specific (one niche tag + two topic tags). `coverText` = 3–5 punchy words.
-`keywords` = 5–7 lowercase phrases people actually type into Instagram search, shown as `[keyword]` in the caption:
+**Caption** (hook first; blank line between blocks; write only the text, the pipeline adds keywords and hashtags):
+```
+<hook: the pain or the surprise, one emoji, at most 125 characters>
+
+<2-4 short lines: what the reel shows and the takeaway; the quiz question if there is one>
+
+👇 Comment KEYWORD for <the freebie, said concretely>.
+
+Save karo + us dost ko bhejo jo <specific friend>.
+```
+Hinglish for system-design reels. Never open with "Comment" (the validator rejects it). 3–5 specific `hashtags`.
+`coverText` = 3–5 punchy words.
+`keywords` = 5–7 lowercase phrases people actually type into Instagram search, shown as one `[a, b, c]` list:
 2–3 about the topic in Hinglish/English ("upi kaise kaam karta hai", "upi free kyun hai"), 1–2 for the exact
 concept ("mdr charges"), and 2 for the niche ("system design in hindi", "coding in hindi"). No hashtags, no emoji.
 

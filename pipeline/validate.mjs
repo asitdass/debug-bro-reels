@@ -90,8 +90,7 @@ export function validate(slug) {
   });
   if (ep.number > 4 && !ep.scenes.slice(-4).some((s) => s.type === 'quiz' || (s.type === 'board' && s.layout === 'checks') || s.type === 'tip'))
     warnings.push('end on something to save (a board with layout "checks", a tip) or a quiz');
-  if (ep.number > 4 && ep.leadMagnet && !new RegExp(`comment\\s+["“]?${ep.leadMagnet.keyword}`, 'i').test(ep.caption.split('\n')[0]))
-    errors.push(`caption line 1 must be the ask: "Comment ${ep.leadMagnet.keyword} for <promise>" (sys.design.101 does this and gets 14.1K comments)`);
+  if (ep.number > 6) checkCaption(ep, errors, warnings);
   ep.scenes.forEach((s, i) => {
     const n = s.vo.trim().split(/\s+/).length;
     const max = ['coldopen', 'rule', 'dialog'].includes(s.type) ? 18 : 14;
@@ -107,14 +106,27 @@ export function validate(slug) {
   if (!/(भेजो|bhejo|send|comment)/i.test(JSON.stringify(ep.scenes.at(-1))))
     warnings.push('last scene should ask viewers to comment or send the reel');
   if (!ep.sources?.length) warnings.push('no sources listed; every real-world number or incident needs one');
-  if (ep.hashtags.length > 3) warnings.push('Instagram limits hashtags; 3 focused tags work best');
-  if (!ep.keywords?.length) warnings.push('add 5-7 search keywords in "keywords" (shown as [keyword] in the caption)');
+  if (!ep.keywords?.length) warnings.push('add 5-7 search keywords in "keywords" (shown as one [list] in the caption)');
 
   const published = readJSON(path.join(ROOT, 'data/published.json'), []);
   const dupe = published.find((p) => p.slug !== slug && p.topic?.toLowerCase() === ep.topic.toLowerCase());
   if (dupe) errors.push(`topic already published as ${dupe.slug}`);
 
   return {ok: errors.length === 0, errors, warnings, words};
+}
+
+// Caption shape (28 Nov 2026): hook first, context, then "Comment KEYWORD", then save + share.
+// pipeline/run.mjs adds the [keyword, list] and the hashtags underneath.
+function checkCaption(ep, errors, warnings) {
+  const lines = ep.caption.split('\n').map((l) => l.trim()).filter(Boolean);
+  const first = lines[0] ?? '';
+  if (/^\W*comment\b/i.test(first)) errors.push('caption line 1 must be the hook, not the comment ask');
+  if (first.length > 125) warnings.push(`caption hook is ${first.length} characters; keep it within 125 so it shows before "more"`);
+  if (ep.leadMagnet && !new RegExp(`comment\\s+["“]?${ep.leadMagnet.keyword}\\b`, 'i').test(ep.caption))
+    errors.push(`caption needs the ask on its own line: "👇 Comment ${ep.leadMagnet.keyword} for <promise>"`);
+  if (!/save/i.test(ep.caption) || !/(share|send|bhejo)/i.test(ep.caption)) warnings.push('caption should end with a save + share line');
+  if (/\[[^\]]*,[^\]]*,/.test(ep.caption)) warnings.push('leave the [keyword, list] out of "caption": it is added from "keywords"');
+  if (ep.hashtags.length < 3) warnings.push('use 3 to 5 specific hashtags');
 }
 
 // DSA-101: no length cap (the explanation decides), one narrator, a clear first line, a pause, a close that asks for save/send/like
@@ -133,6 +145,9 @@ function validateDsa(ep, errors, warnings) {
     if (n > 45) errors.push(`scene ${i + 1}: ${n} words; split it (max 45)`);
     if (EMOJI.test(JSON.stringify({...s, vo: undefined}))) errors.push(`scene ${i + 1}: no emoji in on-screen text`);
   });
+  checkCaption(ep, errors, warnings);
+  if (ep.dsa && !ep.caption.includes(`(LeetCode #${ep.dsa.leetcode})`))
+    errors.push(`caption needs the line "Day ${ep.dsa.n}: <problem> (LeetCode #${ep.dsa.leetcode})"`);
   if (!ep.sources?.length) warnings.push('no sources listed');
   if (ep.dsa) {
     // the problem on screen must be the problem in episode.dsa (catches a copied episode that kept the old content)

@@ -69,7 +69,7 @@ The first frame must make sense with the sound off. Never open on a statistic.
 
 ## CTA: the comment-keyword freebie (every episode)
 Set `leadMagnet` {keyword, promise}, e.g. {"keyword": "DEPLOY", "promise": "Deploy checklist PDF"}. The last scene says
-it in `vo` and `cap`: "Comment DEPLOY, checklist DM mein bhejta hoon." Caption LINE 1 is the same ask (validator).
+it in `vo` and `cap`: "Comment DEPLOY, checklist DM mein bhejta hoon." The caption asks too, below the hook ("👇 Comment DEPLOY for ..."; shape in SKILL.md).
 Before it, a `quiz` scene: a question people answer in one letter, answer not in the reel (like billu's "API ya MCP?"). Add a
 "send this to the friend who …" line in the caption. Asit sends the DMs (the pipeline makes the PDF).
 Optional series hook: `"part": 1` and "Part 2 chahiye? Comment PART2".

@@ -43,7 +43,7 @@ line you'll remember. For developers and curious app users, 18–30, India.
 - End with a comment keyword and a freebie (`leadMagnet`): "Comment DEPLOY, checklist DM mein bhejta hoon." The
   pipeline sends Asit the PDF on Telegram; he DMs it to commenters (until the auto-DM bot is switched on).
 - Plus a send prompt in the caption ("us dost ko bhejo jo…"). Optional series hook: "Part 2 chahiye? Comment PART2".
-- Caption line 1 is the keyword ask. Before the CTA, a `quiz` whose answer is pinned later, never said in the reel.
+- Caption: hook first, then context, "👇 Comment KEYWORD for …", then save + share (shape in SKILL.md). Before the CTA, a `quiz` whose answer is pinned later, never said in the reel.
 - Post with the reel's original audio (no trending song under the voice-over), the hook frame as cover, and pin the ask
   as the first comment. Telegram sends this checklist with every reel.
 

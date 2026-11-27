@@ -23,7 +23,8 @@ Updated from `data/insights.json` after each reel. Every new episode runs ONE ex
    12-15 s; the validator requires 1 above 110 words and 2 above 150. Pay every tease off.
 5. **Length follows the story**: 120-175 words (≈40-60 s with Sarvam at ~2.9 words/s). Not shorter by force.
 6. **Make it keepable**: a `board` with layout "checks" (cheat sheet) near the end. It now goes into the PDF freebie.
-7. **Make it commentable**: caption line 1 = "Comment KEYWORD for <promise>" (validator enforces), pin the same text
+7. **Make it commentable**: caption opens with the hook, then "👇 Comment KEYWORD for <promise>" (Asit chose this on
+   28 Nov over asking in line 1), pin the same text
    as a comment, and end on a `quiz` whose answer is NOT in the reel (it goes in a pinned reply ~2 h later).
 8. **Make it sendable**: topics everyone uses (WhatsApp, UPI, Uber, trains, ChatGPT) + "us dost ko bhejo jo …".
 9. **First-person and dialogue beat lecture.** The Intern voices the viewer's belief; Debug Bro answers.

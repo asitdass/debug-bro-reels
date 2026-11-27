@@ -27,7 +27,7 @@ Read this first if you are a new Claude Code session picking up this project. CL
 
 ## 26 Nov study (data/swipe.md): what the hits do that we didn't
 Full frame from frame 0, a lived moment or wrong belief then "kaise?" within 5 s, characters big and acting, ONE
-consistent look, open loops every ~15 s (length 53-164 s is fine), caption line 1 = "Comment KEYWORD", quiz endings,
+consistent look, open loops every ~15 s (length 53-164 s is fine), a comment-keyword ask in the caption (since 28 Nov: hook first, ask below), quiz endings,
 original audio. Our ep03 (UPI, 135 views) and devmonk's UPI reel (8.3M) were the SAME topic.
 
 ## Results so far
