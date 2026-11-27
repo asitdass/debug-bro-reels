@@ -1,12 +1,13 @@
 // DSA-101: one narrator (Debug Bro), one question per reel, calm dark board with big readable shapes.
 // Layout (1080x1920): header chip y 110, panel y 250-1180, spoken-words block (left) + Debug Bro (right) below.
 import React from 'react';
-import {AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, continueRender, delayRender, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {FONT} from './theme';
 import {Mascot, MascotTrack, PoseName, poseFor} from './components/Mascot';
 import {useFonts} from './components/chrome';
 import {Tease} from './stage';
+import {CUT_SFX, CUTS, Confetti, Cues, CutSweep, Cut, Slam, SlamSpec, SpeedLines, cutStyle} from './dsaFx';
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const BG = '#0e1124';
@@ -139,6 +140,7 @@ const Brute: React.FC<K> = ({s, dur}) => {
   const clock = prog(frame, dur, 0.55, 0.8);
   return (
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', gap: 34}}>
+      <SpeedLines at={Math.round(dur * 0.5)} color="#ff5d6c" />
       <Label color={RED}>Try every pair: two loops</Label>
       <div style={{display: 'flex', gap: 14}}>
         {vals.map((v, i) => (
@@ -285,11 +287,12 @@ const Run: React.FC<K> = ({s, dur}) => {
   const show = d.found ? rows : writeP > 0.2 ? [...rows, [nums[d.i], d.i] as [number, number]] : rows;
   return (
     <AbsoluteFill style={{padding: 10, alignItems: 'center', justifyContent: 'center', gap: 30}}>
+      {d.found ? <Confetti at={Math.round(dur * 0.74)} seed="run" /> : null}
       <div style={{display: 'flex', gap: 18}}>
         {nums.map((n, i) => (
           <div key={i} style={{position: 'relative'}}>
             <Cell v={n} i={i} size={150} state={i === d.i ? (d.found && ansP > 0.1 ? 'ok' : 'hl') : d.found && i === 0 && hitP > 0.3 ? 'ok' : i < d.i ? 'dim' : 'idle'} />
-            {i === d.i ? <div style={{position: 'absolute', top: -70, left: 0, right: 0, textAlign: 'center', fontFamily: FONT.mono, fontWeight: 900, fontSize: 46, color: AMBER}}>▼ me</div> : null}
+            {i === d.i ? <div style={{position: 'absolute', top: -70 + Math.sin(frame / 4) * 8, left: 0, right: 0, textAlign: 'center', fontFamily: FONT.mono, fontWeight: 900, fontSize: 46, color: AMBER}}>▼ me</div> : null}
           </div>
         ))}
       </div>
@@ -344,6 +347,7 @@ const Aha: React.FC<K> = ({dur}) => {
   const c = prog(frame, dur, 0.7, 0.9);
   return (
     <AbsoluteFill style={{padding: 20, justifyContent: 'center', gap: 36}}>
+      <SpeedLines at={Math.round(dur * 0.64)} color="#3ddc84" />
       <div style={{opacity: a}}>
         <Label color={RED}>Two loops</Label>
         <div style={{height: 70, background: RED, borderRadius: 16, width: `${a * 100}%`, marginTop: 10}} />
@@ -449,6 +453,7 @@ const Close: React.FC<K> = ({s, dur}) => {
   );
   return (
     <AbsoluteFill style={{padding: 10, justifyContent: 'center', gap: 24}}>
+      <Confetti at={Math.round(dur * 0.62)} seed="close" />
       {btn('SAVE for interview', AMBER, 0.05, <path d="M6 2h12a1 1 0 0 1 1 1v19l-7-4-7 4V3a1 1 0 0 1 1-1z" />)}
       {btn('SEND to the loop friend', BLUE, 0.22, <path d="M2 21l21-9L2 3v7l15 2-15 2z" />)}
       {btn('LIKE for tomorrow', RED, 0.4, <path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" />)}
@@ -466,21 +471,27 @@ const KINDS: Record<string, React.FC<K>> = {title: Title, problem: Problem, brut
 /* ---------------------------------------------------------------- the reel */
 const PANEL_BOX = {x: 50, y: 250, w: 980, h: 930};
 
-const Scene: React.FC<{s: any; dur: number; first: boolean}> = ({s, dur, first}) => {
+const DEFAULT_CUT: Record<string, Cut> = {problem: 'slideL', brute: 'zoom', pause: 'drop', gate: 'slideR', steps: 'slideUp', code: 'flip', run: 'slideL', trap: 'flip', aha: 'drop', smile: 'zoom', name: 'slideR', notes: 'wipe', quiz: 'slideUp', close: 'zoom'};
+const SWEEP = [AMBER, BLUE, GREEN, '#ff7ad9'];
+
+const Scene: React.FC<{s: any; dur: number; first: boolean; i: number}> = ({s, dur, first, i}) => {
   const frame = useCurrentFrame();
   const Comp = KINDS[s.kind];
-  const settle = first ? 1 : interpolate(frame, [0, 6], [1.05, 1], clamp);
-  const out = interpolate(frame, [dur - 3, dur], [1, 0], clamp);
-  const local = first ? frame : frame;
+  const cut: Cut = (s.data?.cut as Cut) ?? DEFAULT_CUT[s.kind] ?? 'punch';
+  const push = interpolate(frame, [0, dur], [1, 1.035], clamp);
   return (
-    <AbsoluteFill style={{opacity: first ? 1 : out}}>
-      <div style={{position: 'absolute', left: PANEL_BOX.x, top: PANEL_BOX.y, width: PANEL_BOX.w, height: PANEL_BOX.h, borderRadius: 40, background: 'radial-gradient(ellipse at 50% 30%, #1d2247, #10132b 80%)', border: `5px solid ${LINE}`, overflow: 'hidden', transform: `scale(${settle})`}}>
-        <AbsoluteFill style={{opacity: 1}}>
-          <Comp s={s} dur={dur} />
-        </AbsoluteFill>
+    <AbsoluteFill>
+      <div style={{position: 'absolute', left: PANEL_BOX.x, top: PANEL_BOX.y, width: PANEL_BOX.w, height: PANEL_BOX.h, ...(first ? {} : cutStyle(cut, frame))}}>
+        <div style={{position: 'absolute', inset: 0, borderRadius: 40, background: 'radial-gradient(ellipse at 50% 30%, #1d2247, #10132b 80%)', border: `5px solid ${LINE}`, overflow: 'hidden', transform: `scale(${push})`, boxShadow: '0 30px 60px #0007'}}>
+          <AbsoluteFill>
+            <Comp s={s} dur={dur} />
+          </AbsoluteFill>
+        </div>
       </div>
+      {first ? null : <CutSweep color={SWEEP[i % SWEEP.length]} dir={i % 2 ? 1 : -1} />}
       {s.tease ? <Tease text={s.tease} top={160} /> : null}
-      {local < 0 ? null : null}
+      {first ? null : <Sequence from={0} layout="none"><Audio src={staticFile(`sfx/dsa/${CUT_SFX[cut] ?? 'whoosh'}.wav`)} volume={0.55} /></Sequence>}
+      <Cues kind={s.kind} dur={dur} />
     </AbsoluteFill>
   );
 };
@@ -500,7 +511,7 @@ const SpokenWords: React.FC<{words: any[]; ms: number}> = ({words, ms}) => {
       {win.map((w, i) => {
         const isCur = from + i === cur;
         return (
-          <span key={i} style={isCur ? {color: '#1b1412', background: AMBER, borderRadius: 10, padding: '0 8px'} : from + i < cur ? {color: TXT} : undefined}>
+          <span key={i} style={isCur ? {color: '#1b1412', background: AMBER, borderRadius: 10, padding: '0 8px', display: 'inline-block', transform: 'scale(1.1) rotate(-2deg)'} : from + i < cur ? {color: TXT} : undefined}>
             {w.text}{' '}
           </span>
         );
@@ -511,6 +522,11 @@ const SpokenWords: React.FC<{words: any[]; ms: number}> = ({words, ms}) => {
 
 export const DsaReel: React.FC<{episode: any; timings: any; hideCaptions?: boolean}> = ({episode, timings, hideCaptions}) => {
   useFonts();
+  const [fontH] = React.useState(() => delayRender('anton font'));
+  React.useEffect(() => {
+    const ff = new FontFace('Anton', `url(${staticFile('fonts/anton.woff2')})`);
+    ff.load().then((x) => document.fonts.add(x)).catch(() => {}).finally(() => continueRender(fontH));
+  }, [fontH]);
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const f = (ms: number) => Math.round((ms / 1000) * fps);
@@ -543,6 +559,7 @@ export const DsaReel: React.FC<{episode: any; timings: any; hideCaptions?: boole
     <AbsoluteFill style={{background: BG, fontFamily: FONT.sans}}>
       <AbsoluteFill style={{backgroundImage: `radial-gradient(${LINE} 3px, transparent 3.5px)`, backgroundSize: '60px 60px', opacity: 0.5}} />
       {timings.audio ? <Audio src={staticFile(timings.audio)} /> : null}
+      <Audio src={staticFile('sfx/dsa/bed.mp3')} volume={(fr) => interpolate(fr, [0, 25], [0, 0.17], clamp)} loop />
       {/* header */}
       <div style={{position: 'absolute', top: 100, left: 50, right: 50, display: 'flex', alignItems: 'center', gap: 20}}>
         <div style={{background: AMBER, color: '#1b1412', fontFamily: FONT.mono, fontWeight: 900, fontSize: 32, letterSpacing: 3, padding: '10px 20px', borderRadius: 12}}>DSA-101 · {String(d?.n ?? 1).padStart(2, '0')}</div>
@@ -558,9 +575,8 @@ export const DsaReel: React.FC<{episode: any; timings: any; hideCaptions?: boole
       {episode.scenes.map((s: any, i: number) => {
         const pre = i === 0 ? DSA_PREROLL : 0;
         return (
-          <Sequence key={i} from={starts[i] - pre} durationInFrames={Math.max(1, durs[i] + pre)} layout="none">
-            {i > 0 ? <Audio src={staticFile('sfx/whoosh.wav')} volume={0.18} /> : null}
-            <Scene s={s} dur={durs[i] + pre} first={i === 0} />
+          <Sequence key={i} from={starts[i] - pre} durationInFrames={Math.max(1, durs[i] + pre + (i < total - 1 ? 12 : 0))} layout="none">
+            <Scene s={s} dur={durs[i] + pre} first={i === 0} i={i} />
           </Sequence>
         );
       })}
@@ -570,9 +586,25 @@ export const DsaReel: React.FC<{episode: any; timings: any; hideCaptions?: boole
           <SpokenWords words={sceneWords} ms={ms} />
         </div>
       )}
-      <div style={{position: 'absolute', left: 585, top: 1285, filter: 'drop-shadow(0 16px 24px #0008)'}}>
+      <div style={{position: 'absolute', left: 585, top: 1285 + interpolate(frame - starts[cur], [0, 4, 10], [0, -26, 0], clamp), filter: 'drop-shadow(0 16px 24px #0008)'}}>
         <Mascot variant="bro" flip track={track} mouth={mouth} width={450} seed="dsa-bro" />
       </div>
+      {/* full-frame slam typography on top of everything */}
+      {episode.scenes.map((s: any, i: number) => {
+        const slams: SlamSpec[] = s.data?.slams ?? [];
+        if (!slams.length) return null;
+        const pre = i === 0 ? DSA_PREROLL : 0;
+        return (
+          <Sequence key={`sl${i}`} from={starts[i] - pre} durationInFrames={Math.max(1, durs[i] + pre)} layout="none">
+            {slams.map((sp, k) => (
+              <React.Fragment key={k}>
+                <Slam spec={sp} dur={durs[i] + pre} pre={pre} />
+                <Cues kind="" dur={durs[i] + pre} extra={[[Math.max(0, (Math.round((durs[i] + pre) * sp.at) - pre) / (durs[i] + pre)), sp.sfx ?? 'impact', 0.85]]} />
+              </React.Fragment>
+            ))}
+          </Sequence>
+        );
+      })}
       <div style={{position: 'absolute', left: 0, right: 0, top: 1860, height: 60, background: '#07091a'}} />
     </AbsoluteFill>
   );

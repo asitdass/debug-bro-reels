@@ -7,36 +7,338 @@
   "pillar": "interview",
   "format": "whiteboard",
   "style": "dsa",
-  "dsa": {"n": 1, "leetcode": 1, "difficulty": "Easy", "category": "Arrays & Hashing", "companies": ["Amazon"]},
-  "experiment": {"change": "First DSA-101 reel: solo Debug Bro, one question, no length cap", "why": "Tests whether a patient, funny, very clear DSA walkthrough holds viewers to the end", "metric": "watch-time"},
+  "dsa": {
+    "n": 1,
+    "leetcode": 1,
+    "difficulty": "Easy",
+    "category": "Arrays & Hashing",
+    "companies": [
+      "Amazon"
+    ]
+  },
+  "experiment": {
+    "change": "First DSA-101 reel: solo Debug Bro, one question, no length cap",
+    "why": "Tests whether a patient, funny, very clear DSA walkthrough holds viewers to the end",
+    "metric": "watch-time"
+  },
   "hooks": [
     "An interviewer asked me Two Sum. I wrote two loops. He smiled. Not a good smile.",
     "Two Sum looks easy. Most people still fail it.",
     "This one trick solves 40 percent of array questions."
   ],
-  "leadMagnet": {"keyword": "TWOSUM", "promise": "the Two Sum notes PDF with code in 4 languages"},
-  "voice": {"engine": "sarvam", "voiceId": "sunny_en_social", "lang": "en-IN", "fallbackVoiceId": "en-IN-PrabhatNeural", "rate": "+5%"},
+  "leadMagnet": {
+    "keyword": "TWOSUM",
+    "promise": "the Two Sum notes PDF with code in 4 languages"
+  },
+  "voice": {
+    "engine": "sarvam",
+    "voiceId": "sunny_en_social",
+    "lang": "en-IN",
+    "fallbackVoiceId": "en-IN-PrabhatNeural",
+    "rate": "+5%"
+  },
   "caption": "Comment TWOSUM for the Two Sum notes PDF (Python, Java, C++, JavaScript).\n\nDSA-101, one interview question every day. Today: LeetCode 1, Two Sum. One notebook turns five hundred billion checks into one million steps.\n\nSave this for your interview. Send it to the friend who still writes two loops.",
-  "hashtags": ["#dsa", "#leetcode", "#codinginterview"],
-  "keywords": ["two sum", "leetcode 1", "hash map", "dsa for beginners", "coding interview"],
+  "hashtags": [
+    "#dsa",
+    "#leetcode",
+    "#codinginterview"
+  ],
+  "keywords": [
+    "two sum",
+    "leetcode 1",
+    "hash map",
+    "dsa for beginners",
+    "coding interview"
+  ],
   "coverText": "TWO SUM",
-  "sources": ["https://leetcode.com/problems/two-sum/", "https://neetcode.io/practice/practice/neetcode150"],
+  "sources": [
+    "https://leetcode.com/problems/two-sum/",
+    "https://neetcode.io/practice/practice/neetcode150"
+  ],
   "scenes": [
-    {"type": "dsa", "kind": "title", "beat": "hook", "pose": "shock", "cap": "Two Sum. *Easy.*", "vo": "An interviewer asked me Two Sum. I wrote two loops. He smiled. Not a good smile.", "data": {"mood": "smirk"}},
-    {"type": "dsa", "kind": "problem", "beat": "setup", "pose": "explain", "vo": "Here is the question. A list of numbers, and a target. Find the two numbers that add up to the target, and return their positions. Two plus seven is nine. So: zero, one.", "data": {"nums": [2, 7, 11, 15], "target": 9}},
-    {"type": "dsa", "kind": "brute", "beat": "break", "pose": "facepalm", "vo": "My first answer: try every pair. Two loops. It works! But with a million numbers, that is five hundred billion checks. At a billion a second, eight minutes. His coffee went cold.", "data": {"nums": [2, 7, 11, 15]}},
-    {"type": "dsa", "kind": "pause", "beat": "twist", "pose": "think", "vo": "Pause the video. Try to beat it. I will wait. Hint: you only need one notebook.", "data": {}},
-    {"type": "dsa", "kind": "gate", "beat": "reveal", "pose": "point", "vo": "Picture a wedding gate. Guests walk in one by one, each wearing a number. The host keeps a notebook of everyone already inside.", "data": {"guests": [2, 7, 11, 15]}},
-    {"type": "dsa", "kind": "steps", "beat": "reveal", "pose": "explain", "vo": "For every new guest, ask: who is my partner? That is target minus my number. Is the partner in the notebook? Yes: done. No: write me down, and wait for the next guest.", "data": {}},
-    {"type": "dsa", "kind": "code", "beat": "payoff", "pose": "explain", "vo": "That is the whole algorithm. Eight lines. The notebook is a dictionary called seen. For each number, work out the partner. If the partner is in seen, return both positions. Otherwise, write this number down.", "data": {}},
-    {"type": "dsa", "kind": "run", "beat": "payoff", "pose": "point", "vo": "Let us run it. Guest one is two. The partner needed is seven. The notebook is empty. So, write two down.", "data": {"nums": [2, 7, 11, 15], "target": 9, "i": 0, "need": 7, "before": [], "found": false}},
-    {"type": "dsa", "kind": "run", "beat": "payoff", "pose": "thumbsup", "vo": "Guest two is seven. The partner needed is two. Is two in the notebook? Yes, at position zero! Answer: zero, one. Done in two steps.", "data": {"nums": [2, 7, 11, 15], "target": 9, "i": 1, "need": 2, "before": [[2, 0]], "found": true}},
-    {"type": "dsa", "kind": "trap", "beat": "twist", "pose": "shock", "tease": "One trap ahead", "vo": "One trap. Three and three, target six. Always check the notebook first, then write. Do it the other way, and a number pairs with itself. Wrong answer, confident face.", "data": {}},
-    {"type": "dsa", "kind": "aha", "beat": "payoff", "pose": "explain", "vo": "Now the maths. Five hundred billion checks became one million steps. Eight minutes became one millisecond. Same answer. Just one notebook.", "data": {}},
-    {"type": "dsa", "kind": "smile", "beat": "payoff", "pose": "laugh", "vo": "With this answer, the interviewer would have said: next question. That is a good smile.", "data": {}},
-    {"type": "dsa", "kind": "name", "beat": "payoff", "pose": "point", "vo": "This notebook has a proper name: a hash map. It finds anything in one step. Remember this trick. It appears everywhere.", "data": {}},
-    {"type": "dsa", "kind": "notes", "beat": "payoff", "pose": "explain", "vo": "Notes for your revision. Time: order n. Space: order n. Trade a little memory for a lot of speed. Amazon candidates report this one.", "data": {}},
-    {"type": "dsa", "kind": "quiz", "beat": "twist", "pose": "think", "vo": "Quick quiz. The numbers are already sorted. Which is better: a hash map, or two pointers? Comment A or B.", "data": {"question": "Sorted numbers. Which is better?", "options": ["A: Hash map", "B: Two pointers"], "answer": 1, "why": "Two pointers needs no extra memory."}},
-    {"type": "dsa", "kind": "close", "beat": "cta", "pose": "thumbsup", "vo": "Save this for your interview. Send it to the friend who still writes two loops. Like for tomorrow: the brackets that fight. And comment TWOSUM for the notes PDF.", "data": {"next": "Valid Parentheses"}}
+    {
+      "type": "dsa",
+      "kind": "title",
+      "beat": "hook",
+      "pose": "shock",
+      "cap": "Two Sum. *Easy.*",
+      "vo": "An interviewer asked me Two Sum. I wrote two loops. He smiled. Not a good smile.",
+      "data": {
+        "mood": "smirk",
+        "slams": [
+          {
+            "at": 0,
+            "text": "TWO SUM",
+            "color": "#ffc857",
+            "hold": 0.26,
+            "tilt": -4
+          },
+          {
+            "at": 0.4,
+            "text": "TWO LOOPS?",
+            "color": "#ff5d6c",
+            "hold": 0.2,
+            "tilt": 3
+          },
+          {
+            "at": 0.68,
+            "text": "NOT A GOOD SMILE",
+            "color": "#3ddc84",
+            "hold": 0.24,
+            "tilt": -3,
+            "size": 200
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "problem",
+      "beat": "setup",
+      "pose": "explain",
+      "vo": "Here is the question. A list of numbers, and a target. Find the two numbers that add up to the target, and return their positions. Two plus seven is nine. So: zero, one.",
+      "data": {
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "brute",
+      "beat": "break",
+      "pose": "facepalm",
+      "vo": "My first answer: try every pair. Two loops. It works! But with a million numbers, that is five hundred billion checks. At a billion a second, eight minutes. His coffee went cold.",
+      "data": {
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "slams": [
+          {
+            "at": 0.46,
+            "text": "500 BILLION CHECKS",
+            "color": "#ff5d6c",
+            "hold": 0.14,
+            "size": 150
+          },
+          {
+            "at": 0.74,
+            "text": "8 MINUTES",
+            "color": "#ffc857",
+            "hold": 0.12,
+            "tilt": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "pause",
+      "beat": "twist",
+      "pose": "think",
+      "vo": "Pause the video. Try to beat it. I will wait. Hint: you only need one notebook.",
+      "data": {
+        "slams": [
+          {
+            "at": 0.0,
+            "text": "YOUR TURN",
+            "color": "#3ddc84",
+            "hold": 0.2,
+            "tilt": -4
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "gate",
+      "beat": "reveal",
+      "pose": "point",
+      "vo": "Picture a wedding gate. Guests walk in one by one. The host keeps a notebook of everyone already inside.",
+      "data": {
+        "guests": [
+          2,
+          7,
+          11,
+          15
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "steps",
+      "beat": "reveal",
+      "pose": "explain",
+      "vo": "For every new guest, ask: who is my partner? That is target minus my number. Is the partner in the notebook? Yes: done. No: write me down, and wait for the next guest.",
+      "data": {}
+    },
+    {
+      "type": "dsa",
+      "kind": "code",
+      "beat": "payoff",
+      "pose": "explain",
+      "vo": "That is the whole algorithm. Eight lines. The notebook is a dictionary called seen. Work out the partner. In seen? Return both positions. Else, write this number down.",
+      "data": {}
+    },
+    {
+      "type": "dsa",
+      "kind": "run",
+      "beat": "payoff",
+      "pose": "point",
+      "vo": "Let us run it. Guest one is two. Partner needed: seven. Notebook empty. So, write two down.",
+      "data": {
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9,
+        "i": 0,
+        "need": 7,
+        "before": [],
+        "found": false
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "run",
+      "beat": "payoff",
+      "pose": "thumbsup",
+      "vo": "Guest two is seven. Partner needed: two. In the notebook? Yes, position zero! Answer: zero, one. Done in two steps.",
+      "data": {
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9,
+        "i": 1,
+        "need": 2,
+        "before": [
+          [
+            2,
+            0
+          ]
+        ],
+        "found": true,
+        "cut": "slideUp"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "trap",
+      "beat": "twist",
+      "pose": "shock",
+      "tease": "One trap ahead",
+      "vo": "One trap. Three and three, target six. Always check the notebook first, then write. Do it the other way, and a number pairs with itself. Wrong answer, confident face.",
+      "data": {
+        "slams": [
+          {
+            "at": 0.0,
+            "text": "THE TRAP",
+            "color": "#ff5d6c",
+            "hold": 0.14,
+            "tilt": -5
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "aha",
+      "beat": "payoff",
+      "pose": "explain",
+      "vo": "Now the maths. Five hundred billion checks became one million steps. Eight minutes became one millisecond. Same answer. Just one notebook.",
+      "data": {
+        "slams": [
+          {
+            "at": 0.66,
+            "text": "1 MILLISECOND",
+            "color": "#3ddc84",
+            "hold": 0.16,
+            "size": 165,
+            "tilt": -3
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "smile",
+      "beat": "payoff",
+      "pose": "laugh",
+      "vo": "With this answer, the interviewer would have said: next question. That is a good smile.",
+      "data": {}
+    },
+    {
+      "type": "dsa",
+      "kind": "name",
+      "beat": "payoff",
+      "pose": "point",
+      "vo": "This notebook is called a hash map. It finds anything in one step. Remember this trick. It appears everywhere.",
+      "data": {
+        "slams": [
+          {
+            "at": 0.03,
+            "text": "HASH MAP",
+            "color": "#ffc857",
+            "hold": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "notes",
+      "beat": "payoff",
+      "pose": "explain",
+      "vo": "Notes for your revision. Time: order n. Space: order n. Trade a little memory for a lot of speed. Amazon candidates report this one.",
+      "data": {}
+    },
+    {
+      "type": "dsa",
+      "kind": "quiz",
+      "beat": "twist",
+      "pose": "think",
+      "vo": "Quick quiz. The numbers are already sorted. Which is better: a hash map, or two pointers? Comment A or B.",
+      "data": {
+        "question": "Sorted numbers. Which is better?",
+        "options": [
+          "A: Hash map",
+          "B: Two pointers"
+        ],
+        "answer": 1,
+        "why": "Two pointers needs no extra memory."
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "close",
+      "beat": "cta",
+      "pose": "thumbsup",
+      "vo": "Save this for your interview. Send it to the friend who still writes two loops. Like for tomorrow: the brackets that fight. And comment TWOSUM for the notes PDF.",
+      "data": {
+        "next": "Valid Parentheses",
+        "slams": [
+          {
+            "at": 0.8,
+            "text": "TWOSUM",
+            "color": "#3ddc84",
+            "hold": 0.17,
+            "tilt": -3,
+            "size": 240
+          }
+        ]
+      }
+    }
   ]
 }

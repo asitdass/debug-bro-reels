@@ -237,7 +237,7 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
         elif engine == "sarvam":
             speaker = sarvam_voices(episode)[who(scene)]
             lang = voice.get("lang", "hi-IN")
-            pace = float(os.environ.get("SARVAM_PACE", "1.05" if lang.startswith("en") else "1.15"))
+            pace = float(os.environ.get("SARVAM_PACE", "1.12" if lang.startswith("en") else "1.15"))
             try:
                 bounds = sarvam_line(text, speaker, pace, raw, lang)
             except Exception as e:  # unknown voice / API error: Indian English male via Edge so the render never goes silent
