@@ -27,11 +27,34 @@ on:
         description: "Behave like the daily schedule (skip if already posted today or outside 17:00-23:30 IST)"
         type: boolean
         default: false
+      unattended:
+        description: "No fresh Instagram review available: use the last saved one"
+        type: boolean
+        default: false
+  # used by dsa-schedule.yml
+  workflow_call:
+    inputs:
+      publish:
+        type: boolean
+        default: true
+      slug:
+        type: string
+        default: ""
+      series:
+        type: string
+        default: system-design
+      scheduled:
+        type: boolean
+        default: false
+      unattended:
+        type: boolean
+        default: false
 
 concurrency: daily-reel
 
 env:
   SERIES: ${{ inputs.series || 'system-design' }}
+  UNATTENDED: ${{ inputs.unattended && '1' || '' }}
 
 jobs:
   reel:
@@ -44,6 +67,9 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          # the tip of the branch, not the commit that started the run: a caller may have just pushed the episode
+          ref: ${{ github.ref_name }}
 
       - uses: actions/setup-node@v4
         with:
@@ -74,7 +100,7 @@ jobs:
           [ -z "$SLUG" ] && SLUG="$PENDING"
           NOW=$(TZ=Asia/Kolkata date +%H%M)
           SKIP=no
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.scheduled }}" = "true" ]; then
+          if [ "${{ inputs.scheduled }}" = "true" ]; then
             [ "$POSTED" = "yes" ] && SKIP=yes
             # GitHub can start scheduled runs hours late; never post outside the evening slot
             { [ "$NOW" -lt 1700 ] || [ "$NOW" -gt 2330 ]; } && SKIP=yes
@@ -199,7 +225,7 @@ jobs:
         run: |
           ARGS=""
           [ -n "${{ steps.ep.outputs.slug }}" ] && ARGS="--slug=${{ steps.ep.outputs.slug }}"
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then
+          if [ "${{ inputs.publish }}" != "true" ]; then
             ARGS="$ARGS --no-publish"
           fi
           node pipeline/run.mjs $ARGS

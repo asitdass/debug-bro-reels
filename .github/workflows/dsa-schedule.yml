@@ -1,0 +1,135 @@
+name: DSA-101 twice daily
+
+# Makes the next DSA-101 question and sends video, caption and PDF to Telegram, without Asit's Mac.
+# Wanted around 06:00 and 19:00 IST. GitHub often starts cron runs late, so each slot starts early and has a backup;
+# the "plan" job lets only one reel through per slot.
+on:
+  schedule:
+    - cron: "17 23 * * *" # 04:47 IST
+    - cron: "7 0 * * *" #   05:37 IST backup
+    - cron: "17 12 * * *" # 17:47 IST
+    - cron: "7 13 * * *" #  18:37 IST backup
+  workflow_dispatch:
+
+concurrency: dsa-schedule
+
+env:
+  # no browser here, so fresh insights cannot be read: use the last saved review (see pipeline/review-gate.mjs)
+  UNATTENDED: "1"
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      action: ${{ steps.p.outputs.action }}
+      slug: ${{ steps.p.outputs.slug }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - id: p
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: node pipeline/dsa-plan.mjs >> "$GITHUB_OUTPUT" && cat "$GITHUB_OUTPUT"
+
+  write:
+    needs: plan
+    if: needs.plan.outputs.action == 'write'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      id-token: write
+    outputs:
+      slug: ${{ steps.new.outputs.slug }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Clean the Claude token
+        id: tok
+        env:
+          RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          CLEAN=$(printf '%s' "$RAW" | tr -d '[:space:]')
+          echo "::add-mask::$CLEAN"
+          echo "token=$CLEAN" >> $GITHUB_OUTPUT
+      - name: Claude writes the next question
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ steps.tok.outputs.token }}
+          prompt: |
+            Write the next DSA-101 episode for Debug Bro: exactly one question. Follow .claude/skills/make-episode/dsa.md.
+            It is the problem the highest-numbered DSA episode promised in its "close" scene. If the existing scenes cannot
+            show it honestly (trees, graphs, linked lists need new visuals), take the next problem in data/dsa150.json
+            order that they can, and say so.
+            First read data/reviews.json: apply one fix from the latest review and set "learnedFrom". You cannot read
+            Instagram here; never invent numbers about past reels.
+            Write the script as a good teacher says it: a hook in the first line, short sentences, one idea per scene.
+            Trace the solution and every example by hand, because nobody checks this before it is rendered.
+            Write episodes/<slug>/episode.json and notes.json and run `node pipeline/validate.mjs <slug>` until it prints
+            OK. Do not edit anything else. Do not commit; the workflow commits for you.
+          claude_args: >-
+            --max-turns 80
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node pipeline/validate.mjs:*),Bash(ls:*),Bash(cat:*)"
+      - name: Check and save the episode
+        id: new
+        run: |
+          SLUG=$(git status --porcelain --untracked-files=all episodes | grep -o 'episodes/dsa101-[a-z0-9-]*/episode.json' | head -1 | cut -d/ -f2)
+          [ -z "$SLUG" ] && { echo "no new DSA episode was written"; exit 1; }
+          node pipeline/validate.mjs "$SLUG"
+          git config user.name "debug-bro-bot"
+          git config user.email "debug-bro-bot@users.noreply.github.com"
+          git add "episodes/$SLUG/episode.json" "episodes/$SLUG/notes.json"
+          git commit -m "episode: $SLUG"
+          git pull --rebase --autostash -q && git push
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+
+  # compile and run the PDF's code BEFORE anything is sent (separate job without secrets)
+  check:
+    needs: [plan, write]
+    if: ${{ !cancelled() && (needs.write.result == 'success' || needs.plan.outputs.action == 'deliver') }}
+    permissions:
+      contents: read
+    uses: ./.github/workflows/check-code.yml
+    with:
+      slug: ${{ needs.write.outputs.slug || needs.plan.outputs.slug }}
+
+  deliver:
+    needs: [plan, write, check]
+    if: ${{ !cancelled() && needs.check.result == 'success' }}
+    permissions:
+      contents: write
+      id-token: write
+    uses: ./.github/workflows/daily-reel.yml
+    with:
+      slug: ${{ needs.write.outputs.slug || needs.plan.outputs.slug }}
+      series: dsa
+      publish: true
+      unattended: true
+    secrets: inherit
+
+  # Asit may be away from the Mac: a failed run has to reach the phone
+  alert:
+    needs: [plan, write, check, deliver]
+    if: ${{ !cancelled() && contains(needs.*.result, 'failure') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - env:
+          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -sS --fail -o /dev/null "https://api.telegram.org/bot${TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT}" \
+            --data-urlencode "text=DSA-101 run failed. Do not send a PDF from this run unless 'Check DSA code' passed. Details: ${RUN}"
