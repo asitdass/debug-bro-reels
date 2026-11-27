@@ -20,6 +20,7 @@ export function validate(slug) {
   }
   const ep = parsed.data;
   if (ep.slug !== slug) errors.push(`slug "${ep.slug}" must match folder "${slug}"`);
+  if (ep.style === 'dsa') return validateDsa(ep, errors, warnings);
   const HOOKS = ['coldopen', 'hook', 'moment', 'board', 'dialog', 'headline', 'tip'];
   if (!HOOKS.includes(ep.scenes[0].type)) errors.push(`first scene must be a hook scene (${HOOKS.join(', ')}), not a chart`);
   if (ep.scenes.length < 6) warnings.push(`${ep.scenes.length} scenes; 7–12 gives a new picture every 2–3 s`);
@@ -111,6 +112,26 @@ export function validate(slug) {
   const dupe = published.find((p) => p.slug !== slug && p.topic?.toLowerCase() === ep.topic.toLowerCase());
   if (dupe) errors.push(`topic already published as ${dupe.slug}`);
 
+  return {ok: errors.length === 0, errors, warnings, words};
+}
+
+// DSA-101: no length cap (the explanation decides), one narrator, a clear first line, a pause, a close that asks for save/send/like
+function validateDsa(ep, errors, warnings) {
+  const sc = ep.scenes;
+  if (sc.some((s) => s.type !== 'dsa')) errors.push('DSA-101 episodes use only "dsa" scenes');
+  if (!ep.dsa) errors.push('set "dsa" {n, leetcode, difficulty, category, companies}');
+  if (!sc.some((s) => s.kind === 'pause')) warnings.push('no "pause" scene (a try-it-yourself beat holds viewers)');
+  if (!sc.some((s) => s.kind === 'quiz')) warnings.push('no quiz scene');
+  const last = JSON.stringify(sc.at(-1).vo);
+  for (const w of ['save', 'send', 'like']) if (!new RegExp(w, 'i').test(last)) errors.push(`closing line must say "${w}"`);
+  if (ep.leadMagnet && !new RegExp(ep.leadMagnet.keyword, 'i').test(sc.at(-1).vo)) errors.push(`closing line must say the keyword ${ep.leadMagnet.keyword}`);
+  sc.forEach((s, i) => {
+    const n = s.vo.trim().split(/\s+/).length;
+    if (n > 45) errors.push(`scene ${i + 1}: ${n} words; split it (max 45)`);
+    if (EMOJI.test(JSON.stringify({...s, vo: undefined}))) errors.push(`scene ${i + 1}: no emoji in on-screen text`);
+  });
+  if (!ep.sources?.length) warnings.push('no sources listed');
+  const words = sc.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
   return {ok: errors.length === 0, errors, warnings, words};
 }
 

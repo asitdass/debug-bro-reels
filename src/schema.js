@@ -29,6 +29,8 @@ const base = {
 const str = (max) => z.string().min(1).max(max);
 
 export const sceneSchema = z.discriminatedUnion('type', [
+  // DSA-101 series (src/dsa.tsx): one scene "kind" per teaching beat; its parameters live in `data`
+  z.object({...base, type: z.literal('dsa'), kind: z.enum(['title', 'problem', 'brute', 'pause', 'gate', 'steps', 'code', 'run', 'trap', 'aha', 'smile', 'name', 'notes', 'quiz', 'close']), data: z.record(z.any()).default({})}),
   // Cold open: the failure happens in the first second (clock ticks, then glitch + error card + big question).
   z.object({
     ...base,
@@ -142,7 +144,7 @@ export const episodeSchema = z.object({
   // the reel's format (see .claude/skills/make-episode/formats.md); it also picks the look
   format: z.enum(['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact']).optional(),
   // art direction (src/styles.ts): changes the whole frame; never the same as either of the last 2 episodes
-  style: z.enum(['stage', 'cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone']).optional(),
+  style: z.enum(['stage', 'cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone', 'dsa']).optional(),
   // the ONE change this episode tests vs the previous reel (see data/learnings.md), and the metric that will judge it
   experiment: z.object({change: str(140), why: str(200), metric: z.enum(['skip-rate', 'watch-time', 'views', 'saves', 'shares', 'follows', 'comments'])}).optional(),
   // the 3 hook options considered; the scenes use the best one
@@ -151,12 +153,16 @@ export const episodeSchema = z.object({
   leadMagnet: z.object({keyword: z.string().regex(/^[A-Z0-9]{2,14}$/), promise: str(80)}).optional(),
   // series hook: "Part 2 chahiye? Comment PART2"
   part: z.number().int().min(1).optional(),
+  // DSA-101 episodes: which problem this is
+  dsa: z.object({n: z.number().int(), leetcode: z.number().int(), difficulty: z.string(), category: z.string(), companies: z.array(z.string()).max(4).default([])}).optional(),
   voice: z
     .object({
       engine: z.enum(['edge', 'sarvam', 'silent']).default('edge'),
       voiceId: z.string().optional(),
       rate: z.string().optional(),
       pitch: z.string().optional(),
+      lang: z.string().optional(),
+      fallbackVoiceId: z.string().optional(),
     })
     .default({engine: 'edge'}),
   caption: str(2000),
@@ -169,7 +175,7 @@ export const episodeSchema = z.object({
   // false hides the Debug Bro mascot
   mascot: z.boolean().optional(),
   sources: z.array(z.string().url()).optional(),
-  scenes: z.array(sceneSchema).min(5).max(16),
+  scenes: z.array(sceneSchema).min(5).max(30),
 });
 
 // Timings produced by pipeline/tts.py (or estimated when engine = silent).

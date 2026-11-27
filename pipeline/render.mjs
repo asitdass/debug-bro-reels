@@ -84,7 +84,7 @@ export async function renderReel(slug) {
 
   // Cover (profile grid) and carousel slides (key frame of each scene, no captions).
   const cover = path.join(dir, 'cover.jpg');
-  if (inputProps.episode.style === 'stage') {
+  if (inputProps.episode.style === 'stage' || inputProps.episode.style === 'dsa') {
     // the house style's first frame IS the hook (headline + monitor + both characters): use it as the grid cover
     await renderStill({composition: comp, serveUrl, output: cover, frame: 0, inputProps, imageFormat: 'jpeg', jpegQuality: 92, browserExecutable});
   } else {
@@ -104,6 +104,10 @@ export async function renderReel(slug) {
  * comment-keyword PDF, so the keepable payoff (a board checklist, tips) must be in here: it was missing before ep 5.
  */
 function pickCarouselScenes(episode) {
+  if (episode.style === 'dsa') {
+    const want = ['title', 'problem', 'gate', 'code', 'trap', 'aha', 'notes', 'quiz'];
+    return episode.scenes.map((s, i) => (want.includes(s.kind) ? i : -1)).filter((i) => i >= 0);
+  }
   const still = ['hook', 'moment', 'board', 'tip', 'headline', 'quiz', 'code', 'hotrow', 'solution', 'flow', 'compare', 'rule', 'counter', 'chat'];
   return episode.scenes.map((s, i) => (still.includes(s.type) ? i : -1)).filter((i) => i >= 0).slice(0, 8);
 }

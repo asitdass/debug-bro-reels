@@ -147,7 +147,7 @@ def who(scene):
     return scene.get("speaker", "main")
 
 
-def sarvam_line(text, speaker, pace, wav: Path):
+def sarvam_line(text, speaker, pace, wav: Path, lang="hi-IN"):
     from sarvamai import SarvamAI
 
     client = SarvamAI(api_subscription_key=os.environ["SARVAM_API_KEY"])
@@ -155,7 +155,7 @@ def sarvam_line(text, speaker, pace, wav: Path):
     lang_key = "target_language_code" if "target_language_code" in params else "language_code"
     kwargs = {
         "text": text,
-        lang_key: "hi-IN",
+        lang_key: lang,
         "speaker": speaker,
         "model": os.environ.get("SARVAM_MODEL", "bulbul:v4-flash"),
         "pace": pace,
@@ -236,7 +236,16 @@ import('{(ROOT / 'src/estimate.js').as_posix()}').then(m => {{
                     print(f"  edge-tts retry ({e})", file=sys.stderr)
         elif engine == "sarvam":
             speaker = sarvam_voices(episode)[who(scene)]
-            bounds = sarvam_line(text, speaker, float(os.environ.get("SARVAM_PACE", "1.15")), raw)
+            lang = voice.get("lang", "hi-IN")
+            pace = float(os.environ.get("SARVAM_PACE", "1.05" if lang.startswith("en") else "1.15"))
+            try:
+                bounds = sarvam_line(text, speaker, pace, raw, lang)
+            except Exception as e:  # unknown voice / API error: Indian English male via Edge so the render never goes silent
+                fb = voice.get("fallbackVoiceId")
+                if not fb:
+                    raise
+                print(f"  sarvam failed ({e}); using {fb}", file=sys.stderr)
+                bounds = asyncio.run(edge_line(text, fb, voice.get("rate", "+0%"), raw, "+0Hz"))
         else:
             sys.exit(f"unknown engine {engine}")
 
