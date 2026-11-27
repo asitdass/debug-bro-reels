@@ -127,7 +127,7 @@ jobs:
         run: node pipeline/review-stills.mjs "${{ steps.ep.outputs.slug }}"
 
       - name: Claude reviews the frames
-        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != ''
+        if: steps.plan.outputs.skip != 'yes' && steps.ep.outputs.slug != '' && !startsWith(steps.ep.outputs.slug, 'dsa')
         continue-on-error: true
         uses: anthropics/claude-code-action@v1
         with:
