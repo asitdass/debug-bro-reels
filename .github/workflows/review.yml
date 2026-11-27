@@ -2,6 +2,8 @@ name: Review the last reel
 
 # Reads Instagram insights through the API (read only), then Claude writes what went wrong and what the next reel fixes.
 on:
+  push:
+    branches: [auto-review]
   workflow_dispatch:
   workflow_call:
     outputs:
@@ -48,6 +50,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ steps.tok.outputs.token }}
+          github_token: ${{ github.token }}
           prompt: |
             Review the latest posted Debug Bro reel. Follow .claude/skills/review-reels/SKILL.md, section "On GitHub (API)".
             data/insights.json was just refreshed from the Instagram API. Write one new review at the end of
