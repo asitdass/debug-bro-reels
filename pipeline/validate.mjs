@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {episodeSchema} from '../src/schema.js';
+import {checkDsaScene, notesSchema} from '../src/dsaSchema.js';
 import {ROOT, epDir, latestSlug, readJSON} from './util.mjs';
 
 const EMOJI = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u;
@@ -31,7 +32,8 @@ export function validate(slug) {
     .readdirSync(path.join(ROOT, 'episodes'), {withFileTypes: true})
     .filter((d) => d.isDirectory() && d.name !== slug && fs.existsSync(path.join(ROOT, 'episodes', d.name, 'episode.json')))
     .map((d) => readJSON(path.join(ROOT, 'episodes', d.name, 'episode.json'), null))
-    .filter((e) => e && e.number < ep.number)
+    // DSA-101 is its own series with its own shape: it does not count for the system-design anti-repetition rules
+    .filter((e) => e && e.number < ep.number && e.style !== 'dsa')
     // already-published episodes are history: only new ones are held to the anti-repetition rules
     .filter(() => !readJSON(path.join(ROOT, 'data/published.json'), []).some((p) => p.slug === slug))
     .sort((a, b) => b.number - a.number);
@@ -126,11 +128,31 @@ function validateDsa(ep, errors, warnings) {
   for (const w of ['save', 'send', 'like']) if (!new RegExp(w, 'i').test(last)) errors.push(`closing line must say "${w}"`);
   if (ep.leadMagnet && !new RegExp(ep.leadMagnet.keyword, 'i').test(sc.at(-1).vo)) errors.push(`closing line must say the keyword ${ep.leadMagnet.keyword}`);
   sc.forEach((s, i) => {
+    if (s.type === 'dsa') for (const problem of checkDsaScene(s)) errors.push(`scene ${i + 1} (${s.kind}): ${problem}`);
     const n = s.vo.trim().split(/\s+/).length;
     if (n > 45) errors.push(`scene ${i + 1}: ${n} words; split it (max 45)`);
     if (EMOJI.test(JSON.stringify({...s, vo: undefined}))) errors.push(`scene ${i + 1}: no emoji in on-screen text`);
   });
   if (!ep.sources?.length) warnings.push('no sources listed');
+  if (ep.dsa) {
+    // the problem on screen must be the problem in episode.dsa (catches a copied episode that kept the old content)
+    const known = readJSON(path.join(ROOT, 'data/dsa150.json'), {problems: []}).problems.find((p) => p.leetcode === ep.dsa.leetcode);
+    const title = sc.find((s) => s.kind === 'title')?.data?.title;
+    if (!title) errors.push('DSA-101 episodes need a "title" scene');
+    else if (known && title.toLowerCase() !== known.name.toLowerCase())
+      errors.push(`title scene says "${title}" but LeetCode ${ep.dsa.leetcode} is "${known.name}" (data/dsa150.json)`);
+    if (known && ep.dsa.category !== known.category) errors.push(`dsa.category should be "${known.category}" for LeetCode ${ep.dsa.leetcode}`);
+    // a company tag is a factual claim: it needs its own source
+    if (ep.dsa.companies.length && !(ep.dsa.companySource && ep.sources?.includes(ep.dsa.companySource)))
+      errors.push('dsa.companies needs dsa.companySource (a URL that shows it, also listed in "sources"); otherwise leave companies empty');
+  }
+  const notes = readJSON(path.join(ROOT, 'episodes', ep.slug, 'notes.json'), null);
+  if (!notes) errors.push('write notes.json (the explanation PDF with Python, Java, C++ and JavaScript code): see .claude/skills/make-episode/dsa.md');
+  else for (const i of notesSchema.safeParse(notes).error?.issues ?? []) errors.push(`notes.json ${i.path.join('.')}: ${i.message}`);
+  // viewers see "Question N" only: LeetCode problem numbers never appear in anything public (Asit, 28 Nov 2026)
+  const shown = JSON.stringify([ep.title, ep.topic, ep.caption, ep.keywords, ep.hashtags, ep.coverText, ep.leadMagnet, ep.hooks, sc, notes]);
+  const numbered = shown.match(/leet\s*code\s*(#|no\.?|number|problem)?\s*\d+/i);
+  if (numbered) errors.push(`remove "${numbered[0]}": say "Question ${ep.dsa?.n ?? 'N'}", never the LeetCode number`);
   const words = sc.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
   return {ok: errors.length === 0, errors, warnings, words};
 }

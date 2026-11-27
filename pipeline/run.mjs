@@ -90,14 +90,20 @@ async function main() {
     if (fs.existsSync(files.cover)) await sendPhotos([files.cover], 'Cover: set it in Edit cover (the grid shows this)').catch(() => {});
     await sendText(caption);
     await sendText(postingChecklist(episode)).catch(() => {});
-    // the comment-keyword freebie: a PDF of the reel's key frames, for Asit to DM to everyone who comments the keyword
-    if (episode.leadMagnet && files.slides?.length) {
+    // the comment-keyword freebie, for Asit to DM to everyone who comments the keyword.
+    // DSA-101: a written explanation with code in 4 languages (notes.json). Other reels: the reel's key frames.
+    const dsa = episode.style === 'dsa';
+    if (episode.leadMagnet && (dsa || files.slides?.length)) {
       const pdf = path.join(outDir(slug), `${episode.leadMagnet.keyword.toLowerCase()}.pdf`);
       const py = process.env.PYTHON || 'python3';
-      const r = spawnSync(py, [path.join(ROOT, 'pipeline/make_pdf.py'), pdf, ...files.slides]);
+      const script = dsa ? ['pipeline/notes_pdf.py', slug, pdf] : ['pipeline/make_pdf.py', pdf, ...files.slides];
+      const r = spawnSync(py, [path.join(ROOT, script[0]), ...script.slice(1)], {stdio: 'inherit'});
+      const {sendFile} = await import('./telegram.mjs');
       if (r.status === 0) {
-        const {sendFile} = await import('./telegram.mjs');
-        await sendFile(pdf, `Freebie for comments "${episode.leadMagnet.keyword}": ${episode.leadMagnet.promise}. DM this PDF to everyone who comments ${episode.leadMagnet.keyword}.`).catch(() => {});
+        await sendFile(pdf, `Freebie for comments "${episode.leadMagnet.keyword}": ${episode.leadMagnet.promise}. DM this PDF to everyone who comments ${episode.leadMagnet.keyword}.`).catch((e) => log(`PDF not sent: ${e.message}`));
+      } else {
+        log('freebie PDF failed');
+        await sendText(`The ${episode.leadMagnet.keyword} PDF could not be built. Check the run log before promising it in comments.`).catch(() => {});
       }
     }
     record({kind: 'reel', delivered: 'telegram'});
@@ -182,7 +188,9 @@ export function postingChecklist(episode) {
   lines.push('1. Cover: pick cover.jpg (or the first frame). Never a blank frame: it is the grid thumbnail.');
   lines.push('2. Audio: keep the original audio. Do NOT add a trending song under the voice-over (every outlier we studied posts "Original audio").');
   if (episode.leadMagnet) lines.push(`3. Pin this comment right after posting:\nComment "${episode.leadMagnet.keyword}" for ${episode.leadMagnet.promise}. DM mein bhejta hoon.`);
-  const quiz = episode.scenes.find((s) => s.type === 'quiz');
+  // system-design reels: a "quiz" scene; DSA-101: a "dsa" scene of kind "quiz" with the fields in data
+  const scene = episode.scenes.find((s) => s.type === 'quiz' || s.kind === 'quiz');
+  const quiz = scene?.type === 'dsa' ? scene.data : scene;
   if (quiz) lines.push(`4. Quiz answer: after ~2 hours, reply to the top comments and pin:\nAnswer: ${String.fromCharCode(65 + quiz.answer)} (${quiz.options[quiz.answer]}). ${quiz.why}`);
   lines.push('5. Reply to every comment in the first hour, and DM the PDF to everyone who comments the keyword.');
   return lines.join('\n\n');

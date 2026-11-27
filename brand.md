@@ -64,6 +64,13 @@ line you'll remember. For developers and curious app users, 18–30, India.
 6. Stage style: does anything important sit behind the characters' heads (bottom of the monitor) or under a tease
    sticker? Is every tease paid off later in the reel?
 
+### DSA-101 frames (style `dsa`; replaces items 5 and 6)
+- Every word, number and code line on screen belongs to THIS problem and matches the voice-over and notes.json. Any
+  leftover from another problem fails the review.
+- Code: no line touches or crosses the panel edge. The highlighted line matches its meaning.
+- Dry run: the store rows, current index and result are what the code would really do.
+- First frame: the problem name is readable, not buried under a word stamp.
+
 ## Mascot
 Debug Bro is a flat vector puppet of Asit (src/components/Mascot.tsx): curly hair, full beard, open dotted charcoal
 shirt over a blue-white striped tee, tan-strap watch. The Intern is a young woman dev (glasses, ponytail, teal hoodie).
