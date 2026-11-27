@@ -1,77 +1,24 @@
 {
-<<<<<<< HEAD
-  "totalMs": 159187,
-  "audio": "episodes/dsa101-01-two-sum/voice.mp3",
-=======
   "totalMs": 132231.0344827586,
   "audio": null,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
   "scenes": [
     {
       "startMs": 0,
-      "durMs": 6811
+      "durMs": 5817.241379310345
     },
     {
-      "startMs": 7071,
-      "durMs": 12816
+      "startMs": 6067.241379310345,
+      "durMs": 11379.310344827587
     },
     {
-      "startMs": 20147,
-      "durMs": 10999
+      "startMs": 17696.55172413793,
+      "durMs": 11034.48275862069
     },
     {
-      "startMs": 31406,
-      "durMs": 5707
+      "startMs": 28981.034482758623,
+      "durMs": 5517.241379310345
     },
     {
-<<<<<<< HEAD
-      "startMs": 37373,
-      "durMs": 7838
-    },
-    {
-      "startMs": 45471,
-      "durMs": 13550
-    },
-    {
-      "startMs": 59282,
-      "durMs": 14375
-    },
-    {
-      "startMs": 73917,
-      "durMs": 7440
-    },
-    {
-      "startMs": 81616,
-      "durMs": 10511
-    },
-    {
-      "startMs": 92387,
-      "durMs": 11621
-    },
-    {
-      "startMs": 104269,
-      "durMs": 10052
-    },
-    {
-      "startMs": 114580,
-      "durMs": 5002
-    },
-    {
-      "startMs": 119842,
-      "durMs": 7874
-    },
-    {
-      "startMs": 127976,
-      "durMs": 11067
-    },
-    {
-      "startMs": 139303,
-      "durMs": 8074
-    },
-    {
-      "startMs": 147637,
-      "durMs": 10949
-=======
       "startMs": 34748.27586206897,
       "durMs": 6551.724137931034
     },
@@ -118,766 +65,646 @@
     {
       "startMs": 121981.03448275862,
       "durMs": 10000
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
     }
   ],
   "words": [
     {
       "text": "An",
       "startMs": 300,
-      "endMs": 516,
+      "endMs": 604.8275862068965,
       "scene": 0
     },
     {
       "text": "interviewer",
-      "startMs": 527,
-      "endMs": 1390,
+      "startMs": 644.8275862068965,
+      "endMs": 949.6551724137931,
       "scene": 0
     },
     {
       "text": "asked",
-      "startMs": 1436,
-      "endMs": 1867,
+      "startMs": 989.6551724137931,
+      "endMs": 1294.4827586206898,
       "scene": 0
     },
     {
       "text": "me",
-      "startMs": 1890,
-      "endMs": 2106,
+      "startMs": 1334.4827586206898,
+      "endMs": 1639.3103448275863,
       "scene": 0
     },
     {
       "text": "Two",
-      "startMs": 2117,
-      "endMs": 2405,
+      "startMs": 1679.3103448275863,
+      "endMs": 1984.1379310344828,
       "scene": 0
     },
     {
       "text": "Sum.",
-      "startMs": 2420,
-      "endMs": 2708,
+      "startMs": 2024.1379310344828,
+      "endMs": 2328.9655172413795,
       "scene": 0
     },
     {
       "text": "I",
-      "startMs": 2950,
-      "endMs": 3094,
+      "startMs": 2368.9655172413795,
+      "endMs": 2673.793103448276,
       "scene": 0
     },
     {
       "text": "wrote",
-      "startMs": 3101,
-      "endMs": 3533,
+      "startMs": 2713.793103448276,
+      "endMs": 3018.6206896551726,
       "scene": 0
     },
     {
       "text": "two",
-      "startMs": 3556,
-      "endMs": 3843,
+      "startMs": 3058.6206896551726,
+      "endMs": 3363.4482758620693,
       "scene": 0
     },
     {
       "text": "loops.",
-      "startMs": 3858,
-      "endMs": 4290,
+      "startMs": 3403.4482758620693,
+      "endMs": 3708.2758620689656,
       "scene": 0
     },
     {
       "text": "He",
-      "startMs": 4540,
-      "endMs": 4756,
+      "startMs": 3748.2758620689656,
+      "endMs": 4053.1034482758623,
       "scene": 0
     },
     {
       "text": "smiled.",
-      "startMs": 4767,
-      "endMs": 5270,
+      "startMs": 4093.1034482758623,
+      "endMs": 4397.931034482759,
       "scene": 0
     },
     {
       "text": "Not",
-      "startMs": 5524,
-      "endMs": 5812,
+      "startMs": 4437.931034482759,
+      "endMs": 4742.758620689656,
       "scene": 0
     },
     {
       "text": "a",
-      "startMs": 5827,
-      "endMs": 5971,
+      "startMs": 4782.758620689656,
+      "endMs": 5087.586206896552,
       "scene": 0
     },
     {
       "text": "good",
-      "startMs": 5978,
-      "endMs": 6338,
+      "startMs": 5127.586206896552,
+      "endMs": 5432.413793103448,
       "scene": 0
     },
     {
       "text": "smile.",
-      "startMs": 6357,
-      "endMs": 6788,
+      "startMs": 5472.413793103448,
+      "endMs": 5777.241379310345,
       "scene": 0
     },
     {
       "text": "Here",
-      "startMs": 7071,
-      "endMs": 7400,
+      "startMs": 6067.241379310345,
+      "endMs": 6372.068965517242,
       "scene": 1
     },
     {
       "text": "is",
-      "startMs": 7417,
-      "endMs": 7615,
+      "startMs": 6412.068965517242,
+      "endMs": 6716.896551724139,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 7625,
-      "endMs": 7888,
+      "startMs": 6756.896551724139,
+      "endMs": 7061.724137931034,
       "scene": 1
     },
     {
       "text": "question.",
-      "startMs": 7902,
-      "endMs": 8495,
+      "startMs": 7101.724137931034,
+      "endMs": 7406.551724137931,
       "scene": 1
     },
     {
       "text": "A",
-      "startMs": 8734,
-      "endMs": 8865,
+      "startMs": 7446.551724137931,
+      "endMs": 7751.379310344828,
       "scene": 1
     },
     {
       "text": "list",
-      "startMs": 8872,
-      "endMs": 9201,
+      "startMs": 7791.379310344828,
+      "endMs": 8096.206896551725,
       "scene": 1
     },
     {
       "text": "of",
-      "startMs": 9219,
-      "endMs": 9416,
+      "startMs": 8136.206896551725,
+      "endMs": 8441.034482758621,
       "scene": 1
     },
     {
       "text": "numbers,",
-      "startMs": 9426,
-      "endMs": 9953,
+      "startMs": 8481.034482758621,
+      "endMs": 8785.862068965518,
       "scene": 1
     },
     {
       "text": "and",
-      "startMs": 10188,
-      "endMs": 10452,
+      "startMs": 8825.862068965518,
+      "endMs": 9130.689655172415,
       "scene": 1
     },
     {
       "text": "a",
-      "startMs": 10465,
-      "endMs": 10597,
+      "startMs": 9170.689655172415,
+      "endMs": 9475.517241379312,
       "scene": 1
     },
     {
       "text": "target.",
-      "startMs": 10604,
-      "endMs": 11065,
+      "startMs": 9515.517241379312,
+      "endMs": 9820.344827586207,
       "scene": 1
     },
     {
       "text": "Find",
-      "startMs": 11297,
-      "endMs": 11626,
+      "startMs": 9860.344827586207,
+      "endMs": 10165.172413793105,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 11643,
-      "endMs": 11906,
+      "startMs": 10205.172413793105,
+      "endMs": 10510,
       "scene": 1
     },
     {
       "text": "two",
-      "startMs": 11920,
-      "endMs": 12184,
+      "startMs": 10550,
+      "endMs": 10854.827586206897,
       "scene": 1
     },
     {
       "text": "numbers",
-      "startMs": 12197,
-      "endMs": 12724,
+      "startMs": 10894.827586206897,
+      "endMs": 11199.655172413793,
       "scene": 1
     },
     {
       "text": "that",
-      "startMs": 12752,
-      "endMs": 13081,
+      "startMs": 11239.655172413793,
+      "endMs": 11544.48275862069,
       "scene": 1
     },
     {
       "text": "add",
-      "startMs": 13098,
-      "endMs": 13361,
+      "startMs": 11584.48275862069,
+      "endMs": 11889.310344827587,
       "scene": 1
     },
     {
       "text": "up",
-      "startMs": 13375,
-      "endMs": 13572,
+      "startMs": 11929.310344827587,
+      "endMs": 12234.137931034484,
       "scene": 1
     },
     {
       "text": "to",
-      "startMs": 13583,
-      "endMs": 13780,
+      "startMs": 12274.137931034484,
+      "endMs": 12578.96551724138,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 13791,
-      "endMs": 14054,
+      "startMs": 12618.96551724138,
+      "endMs": 12923.793103448275,
       "scene": 1
     },
     {
       "text": "target,",
-      "startMs": 14068,
-      "endMs": 14528,
+      "startMs": 12963.793103448275,
+      "endMs": 13268.620689655174,
       "scene": 1
     },
     {
       "text": "and",
-      "startMs": 14761,
-      "endMs": 15024,
+      "startMs": 13308.620689655174,
+      "endMs": 13613.448275862069,
       "scene": 1
     },
     {
       "text": "return",
-      "startMs": 15038,
-      "endMs": 15498,
+      "startMs": 13653.448275862069,
+      "endMs": 13958.275862068967,
       "scene": 1
     },
     {
       "text": "their",
-      "startMs": 15523,
-      "endMs": 15917,
+      "startMs": 13998.275862068967,
+      "endMs": 14303.103448275862,
       "scene": 1
     },
     {
       "text": "positions.",
-      "startMs": 15938,
-      "endMs": 16596,
+      "startMs": 14343.103448275862,
+      "endMs": 14647.93103448276,
       "scene": 1
     },
     {
       "text": "Two",
-      "startMs": 16839,
-      "endMs": 17102,
+      "startMs": 14687.93103448276,
+      "endMs": 14992.758620689656,
       "scene": 1
     },
     {
       "text": "plus",
-      "startMs": 17116,
-      "endMs": 17445,
+      "startMs": 15032.758620689656,
+      "endMs": 15337.58620689655,
       "scene": 1
     },
     {
       "text": "seven",
-      "startMs": 17462,
-      "endMs": 17857,
+      "startMs": 15377.58620689655,
+      "endMs": 15682.41379310345,
       "scene": 1
     },
     {
       "text": "is",
-      "startMs": 17878,
-      "endMs": 18075,
+      "startMs": 15722.41379310345,
+      "endMs": 16027.241379310344,
       "scene": 1
     },
     {
       "text": "nine.",
-      "startMs": 18086,
-      "endMs": 18415,
+      "startMs": 16067.241379310344,
+      "endMs": 16372.068965517243,
       "scene": 1
     },
     {
       "text": "So:",
-      "startMs": 18640,
-      "endMs": 18837,
+      "startMs": 16412.068965517243,
+      "endMs": 16716.896551724138,
       "scene": 1
     },
     {
       "text": "zero,",
-      "startMs": 19056,
-      "endMs": 19385,
+      "startMs": 16756.896551724138,
+      "endMs": 17061.724137931036,
       "scene": 1
     },
     {
       "text": "one.",
-      "startMs": 19610,
-      "endMs": 19873,
+      "startMs": 17101.724137931036,
+      "endMs": 17406.55172413793,
       "scene": 1
     },
     {
       "text": "My",
-      "startMs": 20147,
-      "endMs": 20308,
+      "startMs": 17696.55172413793,
+      "endMs": 18001.379310344826,
       "scene": 2
     },
     {
       "text": "first",
-      "startMs": 20317,
-      "endMs": 20640,
+      "startMs": 18041.379310344826,
+      "endMs": 18346.206896551725,
       "scene": 2
     },
     {
       "text": "answer:",
-      "startMs": 20657,
-      "endMs": 21034,
+      "startMs": 18386.206896551725,
+      "endMs": 18691.03448275862,
       "scene": 2
     },
     {
       "text": "try",
-      "startMs": 21224,
-      "endMs": 21440,
+      "startMs": 18731.03448275862,
+      "endMs": 19035.862068965518,
       "scene": 2
     },
     {
       "text": "every",
-      "startMs": 21451,
-      "endMs": 21774,
+      "startMs": 19075.862068965518,
+      "endMs": 19380.689655172413,
       "scene": 2
     },
     {
       "text": "pair.",
-      "startMs": 21791,
-      "endMs": 22060,
+      "startMs": 19420.689655172413,
+      "endMs": 19725.51724137931,
       "scene": 2
     },
     {
       "text": "Two",
-      "startMs": 22245,
-      "endMs": 22460,
+      "startMs": 19765.51724137931,
+      "endMs": 20070.344827586207,
       "scene": 2
     },
     {
       "text": "loops.",
-      "startMs": 22471,
-      "endMs": 22795,
+      "startMs": 20110.344827586207,
+      "endMs": 20415.172413793105,
       "scene": 2
     },
     {
       "text": "It",
-      "startMs": 22982,
-      "endMs": 23143,
+      "startMs": 20455.172413793105,
+      "endMs": 20760,
       "scene": 2
     },
     {
       "text": "works!",
-      "startMs": 23152,
-      "endMs": 23475,
+      "startMs": 20800,
+      "endMs": 21104.8275862069,
       "scene": 2
     },
     {
       "text": "But",
-      "startMs": 23662,
-      "endMs": 23878,
+      "startMs": 21144.8275862069,
+      "endMs": 21449.655172413793,
       "scene": 2
     },
     {
       "text": "with",
-      "startMs": 23889,
-      "endMs": 24158,
+      "startMs": 21489.655172413793,
+      "endMs": 21794.48275862069,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 24172,
-      "endMs": 24280,
+      "startMs": 21834.48275862069,
+      "endMs": 22139.310344827587,
       "scene": 2
     },
     {
       "text": "million",
-      "startMs": 24286,
-      "endMs": 24717,
+      "startMs": 22179.310344827587,
+      "endMs": 22484.137931034482,
       "scene": 2
     },
     {
       "text": "numbers,",
-      "startMs": 24739,
-      "endMs": 25170,
+      "startMs": 22524.137931034482,
+      "endMs": 22828.96551724138,
       "scene": 2
     },
     {
       "text": "that",
-      "startMs": 25363,
-      "endMs": 25632,
+      "startMs": 22868.96551724138,
+      "endMs": 23173.793103448275,
       "scene": 2
     },
     {
       "text": "is",
-      "startMs": 25647,
-      "endMs": 25808,
+      "startMs": 23213.793103448275,
+      "endMs": 23518.620689655174,
       "scene": 2
     },
     {
       "text": "five",
-      "startMs": 25817,
-      "endMs": 26086,
+      "startMs": 23558.620689655174,
+      "endMs": 23863.44827586207,
       "scene": 2
     },
     {
       "text": "hundred",
-      "startMs": 26100,
-      "endMs": 26531,
+      "startMs": 23903.44827586207,
+      "endMs": 24208.275862068964,
       "scene": 2
     },
     {
       "text": "billion",
-      "startMs": 26554,
-      "endMs": 26985,
+      "startMs": 24248.275862068964,
+      "endMs": 24553.103448275862,
       "scene": 2
     },
     {
       "text": "checks.",
-      "startMs": 27007,
-      "endMs": 27384,
+      "startMs": 24593.103448275862,
+      "endMs": 24897.93103448276,
       "scene": 2
     },
     {
       "text": "At",
-      "startMs": 27574,
-      "endMs": 27736,
+      "startMs": 24937.93103448276,
+      "endMs": 25242.758620689656,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 27744,
-      "endMs": 27852,
+      "startMs": 25282.758620689656,
+      "endMs": 25587.58620689655,
       "scene": 2
     },
     {
       "text": "billion",
-      "startMs": 27858,
-      "endMs": 28289,
+      "startMs": 25627.58620689655,
+      "endMs": 25932.41379310345,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 28311,
-      "endMs": 28419,
+      "startMs": 25972.41379310345,
+      "endMs": 26277.241379310348,
       "scene": 2
     },
     {
       "text": "second,",
-      "startMs": 28425,
-      "endMs": 28802,
+      "startMs": 26317.241379310348,
+      "endMs": 26622.068965517243,
       "scene": 2
     },
     {
       "text": "eight",
-      "startMs": 28992,
-      "endMs": 29315,
+      "startMs": 26662.068965517243,
+      "endMs": 26966.896551724138,
       "scene": 2
     },
     {
       "text": "minutes.",
-      "startMs": 29332,
-      "endMs": 29763,
+      "startMs": 27006.896551724138,
+      "endMs": 27311.724137931036,
       "scene": 2
     },
     {
       "text": "His",
-      "startMs": 29956,
-      "endMs": 30171,
+      "startMs": 27351.724137931036,
+      "endMs": 27656.55172413793,
       "scene": 2
     },
     {
       "text": "coffee",
-      "startMs": 30182,
-      "endMs": 30559,
+      "startMs": 27696.55172413793,
+      "endMs": 28001.379310344826,
       "scene": 2
     },
     {
       "text": "went",
-      "startMs": 30579,
-      "endMs": 30849,
+      "startMs": 28041.379310344826,
+      "endMs": 28346.206896551725,
       "scene": 2
     },
     {
       "text": "cold.",
-      "startMs": 30863,
-      "endMs": 31132,
+      "startMs": 28386.206896551725,
+      "endMs": 28691.034482758623,
       "scene": 2
     },
     {
       "text": "Pause",
-      "startMs": 31406,
-      "endMs": 31780,
+      "startMs": 28981.034482758623,
+      "endMs": 29285.862068965518,
       "scene": 3
     },
     {
       "text": "the",
-      "startMs": 31800,
-      "endMs": 32049,
+      "startMs": 29325.862068965518,
+      "endMs": 29630.689655172417,
       "scene": 3
     },
     {
       "text": "video.",
-      "startMs": 32062,
-      "endMs": 32436,
+      "startMs": 29670.689655172417,
+      "endMs": 29975.51724137931,
       "scene": 3
     },
     {
       "text": "Try",
-      "startMs": 32653,
-      "endMs": 32902,
+      "startMs": 30015.51724137931,
+      "endMs": 30320.34482758621,
       "scene": 3
     },
     {
       "text": "to",
-      "startMs": 32915,
-      "endMs": 33102,
+      "startMs": 30360.34482758621,
+      "endMs": 30665.172413793105,
       "scene": 3
     },
     {
       "text": "beat",
-      "startMs": 33112,
-      "endMs": 33423,
+      "startMs": 30705.172413793105,
+      "endMs": 31010.000000000004,
       "scene": 3
     },
     {
       "text": "it.",
-      "startMs": 33440,
-      "endMs": 33627,
+      "startMs": 31050.000000000004,
+      "endMs": 31354.8275862069,
       "scene": 3
     },
     {
       "text": "I",
-      "startMs": 33833,
-      "endMs": 33958,
+      "startMs": 31394.8275862069,
+      "endMs": 31699.655172413797,
       "scene": 3
     },
     {
       "text": "will",
-      "startMs": 33965,
-      "endMs": 34276,
+      "startMs": 31739.655172413797,
+      "endMs": 32044.482758620692,
       "scene": 3
     },
     {
       "text": "wait.",
-      "startMs": 34293,
-      "endMs": 34604,
+      "startMs": 32084.482758620692,
+      "endMs": 32389.310344827587,
       "scene": 3
     },
     {
       "text": "Hint:",
-      "startMs": 34817,
-      "endMs": 35129,
+      "startMs": 32429.310344827587,
+      "endMs": 32734.137931034486,
       "scene": 3
     },
     {
       "text": "you",
-      "startMs": 35342,
-      "endMs": 35591,
+      "startMs": 32774.137931034486,
+      "endMs": 33078.965517241384,
       "scene": 3
     },
     {
       "text": "only",
-      "startMs": 35605,
-      "endMs": 35916,
+      "startMs": 33118.965517241384,
+      "endMs": 33423.793103448275,
       "scene": 3
     },
     {
       "text": "need",
-      "startMs": 35933,
-      "endMs": 36244,
+      "startMs": 33463.793103448275,
+      "endMs": 33768.620689655174,
       "scene": 3
     },
     {
       "text": "one",
-      "startMs": 36261,
-      "endMs": 36510,
+      "startMs": 33808.620689655174,
+      "endMs": 34113.44827586207,
       "scene": 3
     },
     {
       "text": "notebook.",
-      "startMs": 36523,
-      "endMs": 37084,
+      "startMs": 34153.44827586207,
+      "endMs": 34458.27586206897,
       "scene": 3
     },
     {
       "text": "Picture",
-      "startMs": 37373,
-      "endMs": 37821,
+      "startMs": 34748.27586206897,
+      "endMs": 35053.10344827587,
       "scene": 4
     },
     {
       "text": "a",
-      "startMs": 37845,
-      "endMs": 37957,
+      "startMs": 35093.10344827587,
+      "endMs": 35397.93103448276,
       "scene": 4
     },
     {
       "text": "wedding",
-      "startMs": 37963,
-      "endMs": 38411,
+      "startMs": 35437.93103448276,
+      "endMs": 35742.75862068966,
       "scene": 4
     },
     {
       "text": "gate.",
-      "startMs": 38434,
-      "endMs": 38714,
+      "startMs": 35782.75862068966,
+      "endMs": 36087.58620689656,
       "scene": 4
     },
     {
       "text": "Guests",
-      "startMs": 38906,
-      "endMs": 39297,
+      "startMs": 36127.58620689656,
+      "endMs": 36432.41379310346,
       "scene": 4
     },
     {
       "text": "walk",
-      "startMs": 39318,
-      "endMs": 39598,
+      "startMs": 36472.41379310346,
+      "endMs": 36777.24137931035,
       "scene": 4
     },
     {
       "text": "in",
-      "startMs": 39613,
-      "endMs": 39781,
+      "startMs": 36817.24137931035,
+      "endMs": 37122.06896551725,
       "scene": 4
     },
     {
       "text": "one",
-      "startMs": 39790,
-      "endMs": 40014,
+      "startMs": 37162.06896551725,
+      "endMs": 37466.896551724145,
       "scene": 4
     },
     {
       "text": "by",
-      "startMs": 40025,
-      "endMs": 40193,
+      "startMs": 37506.896551724145,
+      "endMs": 37811.72413793104,
       "scene": 4
     },
     {
-<<<<<<< HEAD
-      "text": "one,",
-      "startMs": 40202,
-      "endMs": 40426,
-      "scene": 4
-    },
-    {
-      "text": "each",
-      "startMs": 40615,
-      "endMs": 40895,
-      "scene": 4
-    },
-    {
-      "text": "wearing",
-      "startMs": 40909,
-      "endMs": 41357,
-      "scene": 4
-    },
-    {
-      "text": "a",
-      "startMs": 41381,
-      "endMs": 41493,
-      "scene": 4
-    },
-    {
-      "text": "number.",
-      "startMs": 41499,
-      "endMs": 41890,
-      "scene": 4
-    },
-    {
-      "text": "The",
-      "startMs": 42088,
-      "endMs": 42312,
-      "scene": 4
-    },
-    {
-      "text": "host",
-      "startMs": 42324,
-      "endMs": 42604,
-      "scene": 4
-    },
-    {
-      "text": "keeps",
-      "startMs": 42618,
-      "endMs": 42954,
-      "scene": 4
-    },
-    {
-      "text": "a",
-      "startMs": 42972,
-      "endMs": 43084,
-      "scene": 4
-    },
-    {
-      "text": "notebook",
-      "startMs": 43090,
-      "endMs": 43594,
-      "scene": 4
-    },
-    {
-      "text": "of",
-      "startMs": 43620,
-      "endMs": 43788,
-      "scene": 4
-    },
-    {
-      "text": "everyone",
-      "startMs": 43797,
-      "endMs": 44301,
-      "scene": 4
-    },
-    {
-      "text": "already",
-      "startMs": 44327,
-      "endMs": 44775,
-      "scene": 4
-    },
-    {
-      "text": "inside.",
-      "startMs": 44799,
-      "endMs": 45191,
-      "scene": 4
-    },
-    {
-      "text": "For",
-      "startMs": 45471,
-      "endMs": 45750,
-      "scene": 5
-    },
-    {
-      "text": "every",
-      "startMs": 45764,
-      "endMs": 46182,
-      "scene": 5
-    },
-    {
-      "text": "new",
-      "startMs": 46204,
-      "endMs": 46482,
-      "scene": 5
-    },
-    {
-      "text": "guest,",
-      "startMs": 46497,
-      "endMs": 46914,
-      "scene": 5
-    },
-    {
-      "text": "ask:",
-      "startMs": 47156,
-      "endMs": 47434,
-      "scene": 5
-    },
-    {
-      "text": "who",
-      "startMs": 47669,
-      "endMs": 47947,
-=======
       "text": "one.",
       "startMs": 37851.72413793104,
       "endMs": 38156.551724137935,
@@ -995,387 +822,15 @@
       "text": "That",
       "startMs": 44653.44827586208,
       "endMs": 44958.27586206897,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 5
     },
     {
       "text": "is",
-      "startMs": 47962,
-      "endMs": 48170,
+      "startMs": 44998.27586206897,
+      "endMs": 45303.10344827587,
       "scene": 5
     },
     {
-<<<<<<< HEAD
-      "text": "my",
-      "startMs": 48181,
-      "endMs": 48390,
-      "scene": 5
-    },
-    {
-      "text": "partner?",
-      "startMs": 48401,
-      "endMs": 48958,
-      "scene": 5
-    },
-    {
-      "text": "That",
-      "startMs": 49207,
-      "endMs": 49555,
-      "scene": 5
-    },
-    {
-      "text": "is",
-      "startMs": 49573,
-      "endMs": 49782,
-      "scene": 5
-    },
-    {
-      "text": "target",
-      "startMs": 49793,
-      "endMs": 50280,
-      "scene": 5
-    },
-    {
-      "text": "minus",
-      "startMs": 50305,
-      "endMs": 50723,
-      "scene": 5
-    },
-    {
-      "text": "my",
-      "startMs": 50745,
-      "endMs": 50954,
-      "scene": 5
-    },
-    {
-      "text": "number.",
-      "startMs": 50965,
-      "endMs": 51452,
-      "scene": 5
-    },
-    {
-      "text": "Is",
-      "startMs": 51697,
-      "endMs": 51906,
-      "scene": 5
-    },
-    {
-      "text": "the",
-      "startMs": 51917,
-      "endMs": 52195,
-      "scene": 5
-    },
-    {
-      "text": "partner",
-      "startMs": 52210,
-      "endMs": 52766,
-      "scene": 5
-    },
-    {
-      "text": "in",
-      "startMs": 52796,
-      "endMs": 53005,
-      "scene": 5
-    },
-    {
-      "text": "the",
-      "startMs": 53015,
-      "endMs": 53294,
-      "scene": 5
-    },
-    {
-      "text": "notebook?",
-      "startMs": 53308,
-      "endMs": 53935,
-      "scene": 5
-    },
-    {
-      "text": "Yes:",
-      "startMs": 54187,
-      "endMs": 54466,
-      "scene": 5
-    },
-    {
-      "text": "done.",
-      "startMs": 54700,
-      "endMs": 55048,
-      "scene": 5
-    },
-    {
-      "text": "No:",
-      "startMs": 55286,
-      "endMs": 55495,
-      "scene": 5
-    },
-    {
-      "text": "write",
-      "startMs": 55726,
-      "endMs": 56143,
-      "scene": 5
-    },
-    {
-      "text": "me",
-      "startMs": 56165,
-      "endMs": 56374,
-      "scene": 5
-    },
-    {
-      "text": "down,",
-      "startMs": 56385,
-      "endMs": 56733,
-      "scene": 5
-    },
-    {
-      "text": "and",
-      "startMs": 56971,
-      "endMs": 57249,
-      "scene": 5
-    },
-    {
-      "text": "wait",
-      "startMs": 57264,
-      "endMs": 57612,
-      "scene": 5
-    },
-    {
-      "text": "for",
-      "startMs": 57630,
-      "endMs": 57908,
-      "scene": 5
-    },
-    {
-      "text": "the",
-      "startMs": 57923,
-      "endMs": 58201,
-      "scene": 5
-    },
-    {
-      "text": "next",
-      "startMs": 58216,
-      "endMs": 58564,
-      "scene": 5
-    },
-    {
-      "text": "guest.",
-      "startMs": 58582,
-      "endMs": 59000,
-      "scene": 5
-    },
-    {
-      "text": "That",
-      "startMs": 59282,
-      "endMs": 59588,
-      "scene": 6
-    },
-    {
-      "text": "is",
-      "startMs": 59604,
-      "endMs": 59788,
-      "scene": 6
-    },
-    {
-      "text": "the",
-      "startMs": 59797,
-      "endMs": 60042,
-      "scene": 6
-    },
-    {
-      "text": "whole",
-      "startMs": 60055,
-      "endMs": 60423,
-      "scene": 6
-    },
-    {
-      "text": "algorithm.",
-      "startMs": 60442,
-      "endMs": 61054,
-      "scene": 6
-    },
-    {
-      "text": "Eight",
-      "startMs": 61280,
-      "endMs": 61647,
-      "scene": 6
-    },
-    {
-      "text": "lines.",
-      "startMs": 61667,
-      "endMs": 62034,
-      "scene": 6
-    },
-    {
-      "text": "The",
-      "startMs": 62247,
-      "endMs": 62492,
-      "scene": 6
-    },
-    {
-      "text": "notebook",
-      "startMs": 62505,
-      "endMs": 63056,
-      "scene": 6
-    },
-    {
-      "text": "is",
-      "startMs": 63085,
-      "endMs": 63269,
-      "scene": 6
-    },
-    {
-      "text": "a",
-      "startMs": 63278,
-      "endMs": 63401,
-      "scene": 6
-    },
-    {
-      "text": "dictionary",
-      "startMs": 63407,
-      "endMs": 64081,
-      "scene": 6
-    },
-    {
-      "text": "called",
-      "startMs": 64116,
-      "endMs": 64545,
-      "scene": 6
-    },
-    {
-      "text": "seen.",
-      "startMs": 64568,
-      "endMs": 64874,
-      "scene": 6
-    },
-    {
-      "text": "For",
-      "startMs": 65083,
-      "endMs": 65328,
-      "scene": 6
-    },
-    {
-      "text": "each",
-      "startMs": 65341,
-      "endMs": 65647,
-      "scene": 6
-    },
-    {
-      "text": "number,",
-      "startMs": 65663,
-      "endMs": 66092,
-      "scene": 6
-    },
-    {
-      "text": "work",
-      "startMs": 66308,
-      "endMs": 66614,
-      "scene": 6
-    },
-    {
-      "text": "out",
-      "startMs": 66630,
-      "endMs": 66875,
-      "scene": 6
-    },
-    {
-      "text": "the",
-      "startMs": 66888,
-      "endMs": 67133,
-      "scene": 6
-    },
-    {
-      "text": "partner.",
-      "startMs": 67146,
-      "endMs": 67636,
-      "scene": 6
-    },
-    {
-      "text": "If",
-      "startMs": 67855,
-      "endMs": 68039,
-      "scene": 6
-    },
-    {
-      "text": "the",
-      "startMs": 68049,
-      "endMs": 68294,
-      "scene": 6
-    },
-    {
-      "text": "partner",
-      "startMs": 68306,
-      "endMs": 68796,
-      "scene": 6
-    },
-    {
-      "text": "is",
-      "startMs": 68822,
-      "endMs": 69006,
-      "scene": 6
-    },
-    {
-      "text": "in",
-      "startMs": 69016,
-      "endMs": 69199,
-      "scene": 6
-    },
-    {
-      "text": "seen,",
-      "startMs": 69209,
-      "endMs": 69515,
-      "scene": 6
-    },
-    {
-      "text": "return",
-      "startMs": 69725,
-      "endMs": 70153,
-      "scene": 6
-    },
-    {
-      "text": "both",
-      "startMs": 70176,
-      "endMs": 70482,
-      "scene": 6
-    },
-    {
-      "text": "positions.",
-      "startMs": 70498,
-      "endMs": 71111,
-      "scene": 6
-    },
-    {
-      "text": "Otherwise,",
-      "startMs": 71336,
-      "endMs": 71949,
-      "scene": 6
-    },
-    {
-      "text": "write",
-      "startMs": 72174,
-      "endMs": 72542,
-      "scene": 6
-    },
-    {
-      "text": "this",
-      "startMs": 72561,
-      "endMs": 72867,
-      "scene": 6
-    },
-    {
-      "text": "number",
-      "startMs": 72883,
-      "endMs": 73312,
-      "scene": 6
-    },
-    {
-      "text": "down.",
-      "startMs": 73335,
-      "endMs": 73641,
-      "scene": 6
-    },
-    {
-      "text": "Let",
-      "startMs": 73917,
-      "endMs": 74165,
-=======
       "text": "target",
       "startMs": 45343.10344827587,
       "endMs": 45647.93103448277,
@@ -1679,300 +1134,28 @@
       "text": "Let",
       "startMs": 63084.482758620696,
       "endMs": 63389.310344827594,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 7
     },
     {
       "text": "us",
-<<<<<<< HEAD
-      "startMs": 74178,
-      "endMs": 74364,
-=======
       "startMs": 63429.310344827594,
       "endMs": 63734.137931034486,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 7
     },
     {
       "text": "run",
-<<<<<<< HEAD
-      "startMs": 74374,
-      "endMs": 74622,
-=======
       "startMs": 63774.137931034486,
       "endMs": 64078.965517241384,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 7
     },
     {
       "text": "it.",
-<<<<<<< HEAD
-      "startMs": 74635,
-      "endMs": 74821,
-=======
       "startMs": 64118.965517241384,
       "endMs": 64423.79310344828,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 7
     },
     {
       "text": "Guest",
-<<<<<<< HEAD
-      "startMs": 75026,
-      "endMs": 75398,
-      "scene": 7
-    },
-    {
-      "text": "one",
-      "startMs": 75418,
-      "endMs": 75666,
-      "scene": 7
-    },
-    {
-      "text": "is",
-      "startMs": 75679,
-      "endMs": 75865,
-      "scene": 7
-    },
-    {
-      "text": "two.",
-      "startMs": 75875,
-      "endMs": 76123,
-      "scene": 7
-    },
-    {
-      "text": "The",
-      "startMs": 76331,
-      "endMs": 76579,
-      "scene": 7
-    },
-    {
-      "text": "partner",
-      "startMs": 76593,
-      "endMs": 77088,
-      "scene": 7
-    },
-    {
-      "text": "needed",
-      "startMs": 77115,
-      "endMs": 77549,
-      "scene": 7
-    },
-    {
-      "text": "is",
-      "startMs": 77571,
-      "endMs": 77757,
-      "scene": 7
-    },
-    {
-      "text": "seven.",
-      "startMs": 77767,
-      "endMs": 78139,
-      "scene": 7
-    },
-    {
-      "text": "The",
-      "startMs": 78355,
-      "endMs": 78602,
-      "scene": 7
-    },
-    {
-      "text": "notebook",
-      "startMs": 78616,
-      "endMs": 79174,
-      "scene": 7
-    },
-    {
-      "text": "is",
-      "startMs": 79203,
-      "endMs": 79389,
-      "scene": 7
-    },
-    {
-      "text": "empty.",
-      "startMs": 79399,
-      "endMs": 79771,
-      "scene": 7
-    },
-    {
-      "text": "So,",
-      "startMs": 79986,
-      "endMs": 80172,
-      "scene": 7
-    },
-    {
-      "text": "write",
-      "startMs": 80378,
-      "endMs": 80750,
-      "scene": 7
-    },
-    {
-      "text": "two",
-      "startMs": 80769,
-      "endMs": 81017,
-      "scene": 7
-    },
-    {
-      "text": "down.",
-      "startMs": 81030,
-      "endMs": 81340,
-      "scene": 7
-    },
-    {
-      "text": "Guest",
-      "startMs": 81616,
-      "endMs": 82024,
-      "scene": 8
-    },
-    {
-      "text": "two",
-      "startMs": 82045,
-      "endMs": 82317,
-      "scene": 8
-    },
-    {
-      "text": "is",
-      "startMs": 82331,
-      "endMs": 82535,
-      "scene": 8
-    },
-    {
-      "text": "seven.",
-      "startMs": 82546,
-      "endMs": 82954,
-      "scene": 8
-    },
-    {
-      "text": "The",
-      "startMs": 83189,
-      "endMs": 83461,
-      "scene": 8
-    },
-    {
-      "text": "partner",
-      "startMs": 83475,
-      "endMs": 84019,
-      "scene": 8
-    },
-    {
-      "text": "needed",
-      "startMs": 84048,
-      "endMs": 84523,
-      "scene": 8
-    },
-    {
-      "text": "is",
-      "startMs": 84548,
-      "endMs": 84752,
-      "scene": 8
-    },
-    {
-      "text": "two.",
-      "startMs": 84763,
-      "endMs": 85034,
-      "scene": 8
-    },
-    {
-      "text": "Is",
-      "startMs": 85263,
-      "endMs": 85467,
-      "scene": 8
-    },
-    {
-      "text": "two",
-      "startMs": 85478,
-      "endMs": 85749,
-      "scene": 8
-    },
-    {
-      "text": "in",
-      "startMs": 85764,
-      "endMs": 85967,
-      "scene": 8
-    },
-    {
-      "text": "the",
-      "startMs": 85978,
-      "endMs": 86250,
-      "scene": 8
-    },
-    {
-      "text": "notebook?",
-      "startMs": 86264,
-      "endMs": 86875,
-      "scene": 8
-    },
-    {
-      "text": "Yes,",
-      "startMs": 87122,
-      "endMs": 87394,
-      "scene": 8
-    },
-    {
-      "text": "at",
-      "startMs": 87623,
-      "endMs": 87826,
-      "scene": 8
-    },
-    {
-      "text": "position",
-      "startMs": 87837,
-      "endMs": 88448,
-      "scene": 8
-    },
-    {
-      "text": "zero!",
-      "startMs": 88481,
-      "endMs": 88820,
-      "scene": 8
-    },
-    {
-      "text": "Answer:",
-      "startMs": 89053,
-      "endMs": 89528,
-      "scene": 8
-    },
-    {
-      "text": "zero,",
-      "startMs": 89768,
-      "endMs": 90107,
-      "scene": 8
-    },
-    {
-      "text": "one.",
-      "startMs": 90340,
-      "endMs": 90611,
-      "scene": 8
-    },
-    {
-      "text": "Done",
-      "startMs": 90840,
-      "endMs": 91180,
-      "scene": 8
-    },
-    {
-      "text": "in",
-      "startMs": 91198,
-      "endMs": 91402,
-      "scene": 8
-    },
-    {
-      "text": "two",
-      "startMs": 91412,
-      "endMs": 91684,
-      "scene": 8
-    },
-    {
-      "text": "steps.",
-      "startMs": 91698,
-      "endMs": 92106,
-      "scene": 8
-    },
-    {
-      "text": "One",
-      "startMs": 92387,
-      "endMs": 92630,
-=======
       "startMs": 64463.79310344828,
       "endMs": 64768.62068965518,
       "scene": 7
@@ -2173,180 +1356,28 @@
       "text": "One",
       "startMs": 76343.10344827587,
       "endMs": 76647.93103448277,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "trap.",
-<<<<<<< HEAD
-      "startMs": 92643,
-      "endMs": 92946,
-=======
       "startMs": 76687.93103448277,
       "endMs": 76992.75862068967,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "Three",
-<<<<<<< HEAD
-      "startMs": 93154,
-      "endMs": 93517,
-=======
       "startMs": 77032.75862068967,
       "endMs": 77337.58620689657,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "and",
-<<<<<<< HEAD
-      "startMs": 93537,
-      "endMs": 93779,
-=======
       "startMs": 77377.58620689657,
       "endMs": 77682.41379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "three,",
-<<<<<<< HEAD
-      "startMs": 93792,
-      "endMs": 94156,
-      "scene": 9
-    },
-    {
-      "text": "target",
-      "startMs": 94367,
-      "endMs": 94791,
-      "scene": 9
-    },
-    {
-      "text": "six.",
-      "startMs": 94814,
-      "endMs": 95056,
-      "scene": 9
-    },
-    {
-      "text": "Always",
-      "startMs": 95261,
-      "endMs": 95685,
-      "scene": 9
-    },
-    {
-      "text": "check",
-      "startMs": 95708,
-      "endMs": 96072,
-      "scene": 9
-    },
-    {
-      "text": "the",
-      "startMs": 96091,
-      "endMs": 96333,
-      "scene": 9
-    },
-    {
-      "text": "notebook",
-      "startMs": 96346,
-      "endMs": 96892,
-      "scene": 9
-    },
-    {
-      "text": "first,",
-      "startMs": 96921,
-      "endMs": 97285,
-      "scene": 9
-    },
-    {
-      "text": "then",
-      "startMs": 97496,
-      "endMs": 97799,
-      "scene": 9
-    },
-    {
-      "text": "write.",
-      "startMs": 97815,
-      "endMs": 98179,
-      "scene": 9
-    },
-    {
-      "text": "Do",
-      "startMs": 98389,
-      "endMs": 98571,
-      "scene": 9
-    },
-    {
-      "text": "it",
-      "startMs": 98581,
-      "endMs": 98763,
-      "scene": 9
-    },
-    {
-      "text": "the",
-      "startMs": 98773,
-      "endMs": 99015,
-      "scene": 9
-    },
-    {
-      "text": "other",
-      "startMs": 99028,
-      "endMs": 99392,
-      "scene": 9
-    },
-    {
-      "text": "way,",
-      "startMs": 99411,
-      "endMs": 99654,
-      "scene": 9
-    },
-    {
-      "text": "and",
-      "startMs": 99858,
-      "endMs": 100101,
-      "scene": 9
-    },
-    {
-      "text": "a",
-      "startMs": 100114,
-      "endMs": 100235,
-      "scene": 9
-    },
-    {
-      "text": "number",
-      "startMs": 100241,
-      "endMs": 100666,
-      "scene": 9
-    },
-    {
-      "text": "pairs",
-      "startMs": 100688,
-      "endMs": 101052,
-      "scene": 9
-    },
-    {
-      "text": "with",
-      "startMs": 101071,
-      "endMs": 101375,
-      "scene": 9
-    },
-    {
-      "text": "itself.",
-      "startMs": 101391,
-      "endMs": 101815,
-      "scene": 9
-    },
-    {
-      "text": "Wrong",
-      "startMs": 102029,
-      "endMs": 102393,
-      "scene": 9
-    },
-    {
-      "text": "answer,",
-      "startMs": 102412,
-      "endMs": 102837,
-=======
       "startMs": 77722.41379310345,
       "endMs": 78027.24137931035,
       "scene": 9
@@ -2481,450 +1512,244 @@
       "text": "answer,",
       "startMs": 85308.62068965519,
       "endMs": 85613.44827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "confident",
-<<<<<<< HEAD
-      "startMs": 103051,
-      "endMs": 103657,
-=======
       "startMs": 85653.44827586207,
       "endMs": 85958.27586206897,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "face.",
-<<<<<<< HEAD
-      "startMs": 103689,
-      "endMs": 103993,
-=======
       "startMs": 85998.27586206897,
       "endMs": 86303.10344827587,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 9
     },
     {
       "text": "Now",
-<<<<<<< HEAD
-      "startMs": 104269,
-      "endMs": 104530,
-=======
       "startMs": 86593.10344827587,
       "endMs": 86897.93103448277,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "the",
-<<<<<<< HEAD
-      "startMs": 104544,
-      "endMs": 104806,
-=======
       "startMs": 86937.93103448277,
       "endMs": 87242.75862068967,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "maths.",
-<<<<<<< HEAD
-      "startMs": 104819,
-      "endMs": 105212,
-=======
       "startMs": 87282.75862068967,
       "endMs": 87587.58620689657,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "Five",
-<<<<<<< HEAD
-      "startMs": 105439,
-      "endMs": 105766,
-=======
       "startMs": 87627.58620689657,
       "endMs": 87932.41379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "hundred",
-<<<<<<< HEAD
-      "startMs": 105783,
-      "endMs": 106306,
-=======
       "startMs": 87972.41379310345,
       "endMs": 88277.24137931035,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "billion",
-<<<<<<< HEAD
-      "startMs": 106334,
-      "endMs": 106857,
-=======
       "startMs": 88317.24137931035,
       "endMs": 88622.06896551725,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "checks",
-<<<<<<< HEAD
-      "startMs": 106885,
-      "endMs": 107343,
-=======
       "startMs": 88662.06896551725,
       "endMs": 88966.89655172414,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "became",
-<<<<<<< HEAD
-      "startMs": 107367,
-      "endMs": 107824,
-=======
       "startMs": 89006.89655172414,
       "endMs": 89311.72413793104,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "one",
-<<<<<<< HEAD
-      "startMs": 107849,
-      "endMs": 108110,
-=======
       "startMs": 89351.72413793104,
       "endMs": 89656.55172413794,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "million",
-<<<<<<< HEAD
-      "startMs": 108124,
-      "endMs": 108647,
-=======
       "startMs": 89696.55172413794,
       "endMs": 90001.37931034484,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "steps.",
-<<<<<<< HEAD
-      "startMs": 108675,
-      "endMs": 109067,
-=======
       "startMs": 90041.37931034484,
       "endMs": 90346.20689655172,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "Eight",
-<<<<<<< HEAD
-      "startMs": 109294,
-      "endMs": 109687,
-=======
       "startMs": 90386.20689655172,
       "endMs": 90691.03448275862,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "minutes",
-<<<<<<< HEAD
-      "startMs": 109707,
-      "endMs": 110231,
-=======
       "startMs": 90731.03448275862,
       "endMs": 91035.86206896552,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "became",
-<<<<<<< HEAD
-      "startMs": 110258,
-      "endMs": 110716,
-=======
       "startMs": 91075.86206896552,
       "endMs": 91380.68965517242,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "one",
-<<<<<<< HEAD
-      "startMs": 110740,
-      "endMs": 111002,
-=======
       "startMs": 91420.68965517242,
       "endMs": 91725.51724137932,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "millisecond.",
-<<<<<<< HEAD
-      "startMs": 111016,
-      "endMs": 111800,
-=======
       "startMs": 91765.51724137932,
       "endMs": 92070.34482758622,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "Same",
-<<<<<<< HEAD
-      "startMs": 112048,
-      "endMs": 112375,
-=======
       "startMs": 92110.34482758622,
       "endMs": 92415.17241379312,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "answer.",
-<<<<<<< HEAD
-      "startMs": 112392,
-      "endMs": 112850,
-=======
       "startMs": 92455.17241379312,
       "endMs": 92760,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "Just",
-<<<<<<< HEAD
-      "startMs": 113081,
-      "endMs": 113408,
-=======
       "startMs": 92800,
       "endMs": 93104.8275862069,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "one",
-<<<<<<< HEAD
-      "startMs": 113425,
-      "endMs": 113687,
-=======
       "startMs": 93144.8275862069,
       "endMs": 93449.6551724138,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "notebook.",
-<<<<<<< HEAD
-      "startMs": 113701,
-      "endMs": 114289,
-=======
       "startMs": 93489.6551724138,
       "endMs": 93794.4827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 10
     },
     {
       "text": "With",
-<<<<<<< HEAD
-      "startMs": 114580,
-      "endMs": 114836,
-=======
       "startMs": 94084.4827586207,
       "endMs": 94389.3103448276,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "this",
-<<<<<<< HEAD
-      "startMs": 114849,
-      "endMs": 115105,
-=======
       "startMs": 94429.3103448276,
       "endMs": 94734.1379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "answer,",
-<<<<<<< HEAD
-      "startMs": 115118,
-      "endMs": 115476,
-=======
       "startMs": 94774.1379310345,
       "endMs": 95078.96551724139,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "the",
-<<<<<<< HEAD
-      "startMs": 115656,
-      "endMs": 115860,
-=======
       "startMs": 95118.96551724139,
       "endMs": 95423.79310344828,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "interviewer",
-<<<<<<< HEAD
-      "startMs": 115871,
-      "endMs": 116484,
-=======
       "startMs": 95463.79310344828,
       "endMs": 95768.62068965517,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "would",
-<<<<<<< HEAD
-      "startMs": 116517,
-      "endMs": 116823,
-=======
       "startMs": 95808.62068965517,
       "endMs": 96113.44827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "have",
-<<<<<<< HEAD
-      "startMs": 116839,
-      "endMs": 117095,
-=======
       "startMs": 96153.44827586207,
       "endMs": 96458.27586206897,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "said:",
-<<<<<<< HEAD
-      "startMs": 117108,
-      "endMs": 117364,
-=======
       "startMs": 96498.27586206897,
       "endMs": 96803.10344827587,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "next",
-<<<<<<< HEAD
-      "startMs": 117538,
-      "endMs": 117794,
-=======
       "startMs": 96843.10344827587,
       "endMs": 97147.93103448277,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "question.",
-<<<<<<< HEAD
-      "startMs": 117807,
-      "endMs": 118267,
-=======
       "startMs": 97187.93103448277,
       "endMs": 97492.75862068967,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "That",
-<<<<<<< HEAD
-      "startMs": 118453,
-      "endMs": 118708,
-=======
       "startMs": 97532.75862068967,
       "endMs": 97837.58620689655,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "is",
-<<<<<<< HEAD
-      "startMs": 118722,
-      "endMs": 118875,
-=======
       "startMs": 97877.58620689655,
       "endMs": 98182.41379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "a",
-<<<<<<< HEAD
-      "startMs": 118883,
-      "endMs": 118985,
-=======
       "startMs": 98222.41379310345,
       "endMs": 98527.24137931035,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "good",
-<<<<<<< HEAD
-      "startMs": 118991,
-      "endMs": 119246,
-=======
       "startMs": 98567.24137931035,
       "endMs": 98872.06896551725,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "smile.",
-<<<<<<< HEAD
-      "startMs": 119260,
-      "endMs": 119566,
-=======
       "startMs": 98912.06896551725,
       "endMs": 99216.89655172414,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 11
     },
     {
       "text": "This",
-<<<<<<< HEAD
-      "startMs": 119842,
-      "endMs": 120137,
-=======
       "startMs": 99506.89655172414,
       "endMs": 99811.72413793104,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "notebook",
-<<<<<<< HEAD
-      "startMs": 120152,
-      "endMs": 120682,
-      "scene": 12
-    },
-    {
-      "text": "has",
-      "startMs": 120710,
-      "endMs": 120946,
-=======
       "startMs": 99851.72413793104,
       "endMs": 100156.55172413794,
       "scene": 12
@@ -2939,870 +1764,388 @@
       "text": "called",
       "startMs": 100541.37931034484,
       "endMs": 100846.20689655172,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "a",
-<<<<<<< HEAD
-      "startMs": 120958,
-      "endMs": 121076,
-      "scene": 12
-    },
-    {
-      "text": "proper",
-      "startMs": 121082,
-      "endMs": 121495,
-      "scene": 12
-    },
-    {
-      "text": "name:",
-      "startMs": 121516,
-      "endMs": 121811,
-      "scene": 12
-    },
-    {
-      "text": "a",
-      "startMs": 122012,
-      "endMs": 122130,
-=======
       "startMs": 100886.20689655172,
       "endMs": 101191.03448275862,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "hash",
-<<<<<<< HEAD
-      "startMs": 122136,
-      "endMs": 122431,
-=======
       "startMs": 101231.03448275862,
       "endMs": 101535.86206896552,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "map.",
-<<<<<<< HEAD
-      "startMs": 122446,
-      "endMs": 122682,
-=======
       "startMs": 101575.86206896552,
       "endMs": 101880.68965517242,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "It",
-<<<<<<< HEAD
-      "startMs": 122880,
-      "endMs": 123057,
-=======
       "startMs": 101920.68965517242,
       "endMs": 102225.51724137932,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "finds",
-<<<<<<< HEAD
-      "startMs": 123066,
-      "endMs": 123420,
-=======
       "startMs": 102265.51724137932,
       "endMs": 102570.34482758622,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "anything",
-<<<<<<< HEAD
-      "startMs": 123438,
-      "endMs": 123968,
-=======
       "startMs": 102610.34482758622,
       "endMs": 102915.17241379312,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "in",
-<<<<<<< HEAD
-      "startMs": 123996,
-      "endMs": 124173,
-=======
       "startMs": 102955.17241379312,
       "endMs": 103260,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "one",
-<<<<<<< HEAD
-      "startMs": 124182,
-      "endMs": 124418,
-=======
       "startMs": 103300,
       "endMs": 103604.8275862069,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "step.",
-<<<<<<< HEAD
-      "startMs": 124430,
-      "endMs": 124725,
-=======
       "startMs": 103644.8275862069,
       "endMs": 103949.6551724138,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "Remember",
-<<<<<<< HEAD
-      "startMs": 124926,
-      "endMs": 125456,
-=======
       "startMs": 103989.6551724138,
       "endMs": 104294.4827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "this",
-<<<<<<< HEAD
-      "startMs": 125484,
-      "endMs": 125779,
-=======
       "startMs": 104334.4827586207,
       "endMs": 104639.3103448276,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "trick.",
-<<<<<<< HEAD
-      "startMs": 125794,
-      "endMs": 126147,
-=======
       "startMs": 104679.3103448276,
       "endMs": 104984.1379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "It",
-<<<<<<< HEAD
-      "startMs": 126352,
-      "endMs": 126529,
-=======
       "startMs": 105024.1379310345,
       "endMs": 105328.96551724139,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "appears",
-<<<<<<< HEAD
-      "startMs": 126538,
-      "endMs": 127009,
-=======
       "startMs": 105368.96551724139,
       "endMs": 105673.79310344829,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "everywhere.",
-<<<<<<< HEAD
-      "startMs": 127034,
-      "endMs": 127682,
-=======
       "startMs": 105713.79310344829,
       "endMs": 106018.62068965517,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 12
     },
     {
       "text": "Notes",
-<<<<<<< HEAD
-      "startMs": 127976,
-      "endMs": 128414,
-=======
       "startMs": 106308.62068965517,
       "endMs": 106613.44827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "for",
-<<<<<<< HEAD
-      "startMs": 128437,
-      "endMs": 128729,
-=======
       "startMs": 106653.44827586207,
       "endMs": 106958.27586206897,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "your",
-<<<<<<< HEAD
-      "startMs": 128744,
-      "endMs": 129110,
-=======
       "startMs": 106998.27586206897,
       "endMs": 107303.10344827587,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "revision.",
-<<<<<<< HEAD
-      "startMs": 129129,
-      "endMs": 129786,
-=======
       "startMs": 107343.10344827587,
       "endMs": 107647.93103448275,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "Time:",
-<<<<<<< HEAD
-      "startMs": 130051,
-      "endMs": 130416,
-=======
       "startMs": 107687.93103448275,
       "endMs": 107992.75862068965,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "order",
-<<<<<<< HEAD
-      "startMs": 130666,
-      "endMs": 131104,
-=======
       "startMs": 108032.75862068965,
       "endMs": 108337.58620689655,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "n.",
-<<<<<<< HEAD
-      "startMs": 131127,
-      "endMs": 131273,
-=======
       "startMs": 108377.58620689655,
       "endMs": 108682.41379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "Space:",
-<<<<<<< HEAD
-      "startMs": 131511,
-      "endMs": 131949,
-=======
       "startMs": 108722.41379310345,
       "endMs": 109027.24137931035,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "order",
-<<<<<<< HEAD
-      "startMs": 132203,
-      "endMs": 132641,
-=======
       "startMs": 109067.24137931035,
       "endMs": 109372.06896551725,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "n.",
-<<<<<<< HEAD
-      "startMs": 132664,
-      "endMs": 132810,
-=======
       "startMs": 109412.06896551725,
       "endMs": 109716.89655172414,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "Trade",
-<<<<<<< HEAD
-      "startMs": 133048,
-      "endMs": 133486,
-=======
       "startMs": 109756.89655172414,
       "endMs": 110061.72413793104,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "a",
-<<<<<<< HEAD
-      "startMs": 133509,
-      "endMs": 133655,
-=======
       "startMs": 110101.72413793104,
       "endMs": 110406.55172413793,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "little",
-<<<<<<< HEAD
-      "startMs": 133663,
-      "endMs": 134174,
-=======
       "startMs": 110446.55172413793,
       "endMs": 110751.37931034483,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "memory",
-<<<<<<< HEAD
-      "startMs": 134201,
-      "endMs": 134712,
-=======
       "startMs": 110791.37931034483,
       "endMs": 111096.20689655172,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "for",
-<<<<<<< HEAD
-      "startMs": 134739,
-      "endMs": 135031,
-=======
       "startMs": 111136.20689655172,
       "endMs": 111441.03448275862,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "a",
-<<<<<<< HEAD
-      "startMs": 135046,
-      "endMs": 135193,
-=======
       "startMs": 111481.03448275862,
       "endMs": 111785.86206896552,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "lot",
-<<<<<<< HEAD
-      "startMs": 135200,
-      "endMs": 135492,
-=======
       "startMs": 111825.86206896552,
       "endMs": 112130.68965517242,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "of",
-<<<<<<< HEAD
-      "startMs": 135508,
-      "endMs": 135727,
-=======
       "startMs": 112170.68965517242,
       "endMs": 112475.51724137932,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "speed.",
-<<<<<<< HEAD
-      "startMs": 135738,
-      "endMs": 136176,
-=======
       "startMs": 112515.51724137932,
       "endMs": 112820.3448275862,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "Amazon",
-<<<<<<< HEAD
-      "startMs": 136430,
-      "endMs": 136941,
-=======
       "startMs": 112860.3448275862,
       "endMs": 113165.1724137931,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "candidates",
-<<<<<<< HEAD
-      "startMs": 136968,
-      "endMs": 137771,
-=======
       "startMs": 113205.1724137931,
       "endMs": 113510,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "report",
-<<<<<<< HEAD
-      "startMs": 137813,
-      "endMs": 138324,
-=======
       "startMs": 113550,
       "endMs": 113854.8275862069,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "this",
-<<<<<<< HEAD
-      "startMs": 138351,
-      "endMs": 138716,
-=======
       "startMs": 113894.8275862069,
       "endMs": 114199.6551724138,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "one.",
-<<<<<<< HEAD
-      "startMs": 138735,
-      "endMs": 139028,
-=======
       "startMs": 114239.6551724138,
       "endMs": 114544.4827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 13
     },
     {
       "text": "Quick",
-<<<<<<< HEAD
-      "startMs": 139303,
-      "endMs": 139703,
-=======
       "startMs": 114834.4827586207,
       "endMs": 115139.3103448276,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "quiz.",
-<<<<<<< HEAD
-      "startMs": 139724,
-      "endMs": 140058,
-=======
       "startMs": 115179.3103448276,
       "endMs": 115484.1379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "The",
-<<<<<<< HEAD
-      "startMs": 140286,
-      "endMs": 140553,
-=======
       "startMs": 115524.1379310345,
       "endMs": 115828.96551724139,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "numbers",
-<<<<<<< HEAD
-      "startMs": 140567,
-      "endMs": 141100,
-=======
       "startMs": 115868.96551724139,
       "endMs": 116173.79310344828,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "are",
-<<<<<<< HEAD
-      "startMs": 141128,
-      "endMs": 141395,
-=======
       "startMs": 116213.79310344828,
       "endMs": 116518.62068965517,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "already",
-<<<<<<< HEAD
-      "startMs": 141409,
-      "endMs": 141943,
-=======
       "startMs": 116558.62068965517,
       "endMs": 116863.44827586207,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "sorted.",
-<<<<<<< HEAD
-      "startMs": 141971,
-      "endMs": 142438,
-=======
       "startMs": 116903.44827586207,
       "endMs": 117208.27586206897,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "Which",
-<<<<<<< HEAD
-      "startMs": 142673,
-      "endMs": 143073,
-=======
       "startMs": 117248.27586206897,
       "endMs": 117553.10344827587,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "is",
-<<<<<<< HEAD
-      "startMs": 143094,
-      "endMs": 143294,
-=======
       "startMs": 117593.10344827587,
       "endMs": 117897.93103448277,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "better:",
-<<<<<<< HEAD
-      "startMs": 143305,
-      "endMs": 143772,
-=======
       "startMs": 117937.93103448277,
       "endMs": 118242.75862068967,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "a",
-<<<<<<< HEAD
-      "startMs": 144007,
-      "endMs": 144141,
-=======
       "startMs": 118282.75862068967,
       "endMs": 118587.58620689655,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "hash",
-<<<<<<< HEAD
-      "startMs": 144148,
-      "endMs": 144481,
-=======
       "startMs": 118627.58620689655,
       "endMs": 118932.41379310345,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "map,",
-<<<<<<< HEAD
-      "startMs": 144499,
-      "endMs": 144765,
-=======
       "startMs": 118972.41379310345,
       "endMs": 119277.24137931035,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "or",
-<<<<<<< HEAD
-      "startMs": 144990,
-      "endMs": 145190,
-=======
       "startMs": 119317.24137931035,
       "endMs": 119622.06896551725,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "two",
-<<<<<<< HEAD
-      "startMs": 145201,
-      "endMs": 145468,
-=======
       "startMs": 119662.06896551725,
       "endMs": 119966.89655172414,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "pointers?",
-<<<<<<< HEAD
-      "startMs": 145482,
-      "endMs": 146082,
-=======
       "startMs": 120006.89655172414,
       "endMs": 120311.72413793104,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "Comment",
-<<<<<<< HEAD
-      "startMs": 146324,
-      "endMs": 146858,
-=======
       "startMs": 120351.72413793104,
       "endMs": 120656.55172413794,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "A",
-<<<<<<< HEAD
-      "startMs": 146886,
-      "endMs": 147019,
-=======
       "startMs": 120696.55172413794,
       "endMs": 121001.37931034484,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "or",
-<<<<<<< HEAD
-      "startMs": 147026,
-      "endMs": 147226,
-=======
       "startMs": 121041.37931034484,
       "endMs": 121346.20689655172,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "B.",
-<<<<<<< HEAD
-      "startMs": 147237,
-      "endMs": 147370,
-=======
       "startMs": 121386.20689655172,
       "endMs": 121691.03448275862,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 14
     },
     {
       "text": "Save",
-<<<<<<< HEAD
-      "startMs": 147637,
-      "endMs": 147945,
-=======
       "startMs": 121981.03448275862,
       "endMs": 122285.86206896552,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 15
     },
     {
       "text": "this",
-<<<<<<< HEAD
-      "startMs": 147961,
-      "endMs": 148269,
-=======
       "startMs": 122325.86206896552,
       "endMs": 122630.68965517242,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 15
     },
     {
       "text": "for",
-<<<<<<< HEAD
-      "startMs": 148285,
-      "endMs": 148531,
-=======
       "startMs": 122670.68965517242,
       "endMs": 122975.51724137932,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 15
     },
     {
       "text": "your",
-<<<<<<< HEAD
-      "startMs": 148544,
-      "endMs": 148852,
-=======
       "startMs": 123015.51724137932,
       "endMs": 123320.3448275862,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 15
     },
     {
       "text": "interview.",
-<<<<<<< HEAD
-      "startMs": 148868,
-      "endMs": 149484,
-      "scene": 15
-    },
-    {
-      "text": "Send",
-      "startMs": 149711,
-      "endMs": 150018,
-      "scene": 15
-    },
-    {
-      "text": "it",
-      "startMs": 150035,
-      "endMs": 150219,
-      "scene": 15
-    },
-    {
-      "text": "to",
-      "startMs": 150229,
-      "endMs": 150414,
-      "scene": 15
-    },
-    {
-      "text": "the",
-      "startMs": 150423,
-      "endMs": 150669,
-      "scene": 15
-    },
-    {
-      "text": "friend",
-      "startMs": 150682,
-      "endMs": 151113,
-      "scene": 15
-    },
-    {
-      "text": "who",
-      "startMs": 151136,
-      "endMs": 151382,
-      "scene": 15
-    },
-    {
-      "text": "still",
-      "startMs": 151395,
-      "endMs": 151764,
-      "scene": 15
-    },
-    {
-      "text": "writes",
-      "startMs": 151784,
-      "endMs": 152215,
-      "scene": 15
-    },
-    {
-      "text": "two",
-      "startMs": 152237,
-      "endMs": 152484,
-      "scene": 15
-    },
-    {
-      "text": "loops.",
-      "startMs": 152496,
-      "endMs": 152866,
-      "scene": 15
-    },
-    {
-      "text": "Like",
-      "startMs": 153080,
-      "endMs": 153387,
-      "scene": 15
-    },
-    {
-      "text": "for",
-      "startMs": 153404,
-      "endMs": 153650,
-      "scene": 15
-    },
-    {
-      "text": "tomorrow:",
-      "startMs": 153663,
-      "endMs": 154217,
-      "scene": 15
-    },
-    {
-      "text": "the",
-      "startMs": 154440,
-      "endMs": 154686,
-      "scene": 15
-    },
-    {
-      "text": "brackets",
-      "startMs": 154699,
-      "endMs": 155253,
-      "scene": 15
-    },
-    {
-      "text": "that",
-      "startMs": 155282,
-      "endMs": 155590,
-      "scene": 15
-    },
-    {
-      "text": "fight.",
-      "startMs": 155606,
-      "endMs": 155976,
-      "scene": 15
-    },
-    {
-      "text": "And",
-      "startMs": 156189,
-      "endMs": 156436,
-      "scene": 15
-    },
-    {
-      "text": "comment",
-      "startMs": 156449,
-      "endMs": 156941,
-      "scene": 15
-    },
-    {
-      "text": "TWOSUM",
-      "startMs": 156967,
-      "endMs": 157398,
-      "scene": 15
-    },
-    {
-      "text": "for",
-      "startMs": 157420,
-      "endMs": 157667,
-      "scene": 15
-    },
-    {
-      "text": "the",
-      "startMs": 157680,
-      "endMs": 157926,
-      "scene": 15
-    },
-    {
-      "text": "notes",
-      "startMs": 157939,
-      "endMs": 158308,
-      "scene": 15
-    },
-    {
-      "text": "PDF.",
-      "startMs": 158327,
-      "endMs": 158574,
-=======
       "startMs": 123360.3448275862,
       "endMs": 123665.1724137931,
       "scene": 15
@@ -3949,7 +2292,6 @@
       "text": "PDF.",
       "startMs": 131636.20689655174,
       "endMs": 131941.0344827586,
->>>>>>> d266f61 (DSA-101: slam typography, cut transitions, confetti/speed lines, synthesised SFX + music bed, tighter Two Sum script)
       "scene": 15
     }
   ]
