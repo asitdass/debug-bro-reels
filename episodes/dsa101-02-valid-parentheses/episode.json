@@ -1,0 +1,462 @@
+{
+  "slug": "dsa101-02-valid-parentheses",
+  "number": 8,
+  "series": "DSA-101",
+  "title": "Valid Parentheses: the stack of plates",
+  "topic": "LeetCode 20 Valid Parentheses solved with a stack",
+  "pillar": "interview",
+  "format": "whiteboard",
+  "style": "dsa",
+  "dsa": {
+    "n": 2,
+    "leetcode": 20,
+    "difficulty": "Easy",
+    "hook": "wrong-belief",
+    "analogy": "stack of plates",
+    "category": "Stack",
+    "companies": []
+  },
+  "learnedFrom": {
+    "slug": "dsa101-01-two-sum",
+    "fix": "clean-first-frame",
+    "how": "The opening title scene has no word stamps, so the first frame shows the title and Debug Bro clearly."
+  },
+  "experiment": {
+    "change": "Clean opening with no word stamp over the title, and a stack look instead of the gate",
+    "why": "Two Sum had a 62% skip rate behind stacked stamps; a clear first frame should lower it",
+    "metric": "skip-rate"
+  },
+  "hooks": [
+    "Is ([)] valid? Count the brackets and you will say yes. You are wrong.",
+    "Brackets that match can still be invalid. Here is why.",
+    "Most people count brackets. The interviewer wants a stack."
+  ],
+  "leadMagnet": {
+    "keyword": "BRACKETS",
+    "promise": "the Valid Parentheses notes PDF with code in 4 languages"
+  },
+  "voice": {
+    "engine": "sarvam",
+    "voiceId": "sunny_en_social",
+    "lang": "en-IN",
+    "fallbackVoiceId": "en-IN-PrabhatNeural",
+    "rate": "+5%"
+  },
+  "caption": "Your editor spots a missing bracket in a blink. Can you do it on a whiteboard? 💀\n\nWelcome to DSA-101: two interview classics every day.\nQuestion 2: Valid Parentheses (LeetCode #20)\nA stack of plates remembers which bracket opened last, so one pass over the text is enough.\n\n👇 Comment BRACKETS for the full notes PDF in Python, Java, C++ and JavaScript.\n\nSave it for later + share it with your coding buddy.",
+  "hashtags": [
+    "#dsa",
+    "#leetcode",
+    "#codinginterview",
+    "#programming",
+    "#computerscience"
+  ],
+  "keywords": [
+    "valid parentheses",
+    "leetcode 20",
+    "stack",
+    "dsa 101",
+    "coding interview",
+    "brackets",
+    "data structures"
+  ],
+  "coverText": "VALID BRACKETS?",
+  "sources": [
+    "https://leetcode.com/problems/valid-parentheses/",
+    "https://neetcode.io/practice/practice/neetcode150"
+  ],
+  "scenes": [
+    {
+      "type": "dsa",
+      "kind": "title",
+      "beat": "hook",
+      "pose": "shock",
+      "cap": "Valid Parentheses. *Easy.*",
+      "vo": "Is open round, open square, close round, close square valid? Count the brackets and you will say yes. You would be wrong.",
+      "data": {
+        "title": "Valid Parentheses",
+        "face": "smirk",
+        "bubble": "Count them? Cute."
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "problem",
+      "beat": "setup",
+      "pose": "explain",
+      "vo": "The question: a string made only of brackets. Round, square and curly. Is it valid? Every bracket must close, with the same type, in the right order. Curly, square, close square, close curly: valid.",
+      "data": {
+        "heading": "Are all brackets closed in the right order?",
+        "cells": [
+          "{",
+          "[",
+          "]",
+          "}"
+        ],
+        "highlight": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "working": "[ ] sits inside { }",
+        "answer": "answer = true"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "brute",
+      "beat": "break",
+      "pose": "facepalm",
+      "vo": "My first idea: keep deleting pairs like round-round or square-square, again and again, until nothing is left. Correct, but each pass scans the whole text. For a million characters, about two hundred fifty billion steps. At a billion a second, four minutes.",
+      "data": {
+        "heading": "Delete matching pairs, repeat",
+        "cells": [
+          "{",
+          "[",
+          "]",
+          "}",
+          "(",
+          ")"
+        ],
+        "mode": "scan",
+        "counterLabel": "steps for a million characters",
+        "counterTo": 250000000000,
+        "result": "about 4 minutes"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "pause",
+      "beat": "twist",
+      "pose": "think",
+      "vo": "Pause the video. Can you do it in one pass? I will wait. Hint: the last bracket opened must close first.",
+      "data": {
+        "hint": "Hint: last in, first out"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "gate",
+      "beat": "reveal",
+      "pose": "point",
+      "vo": "Picture a stack of plates. Every opening bracket is a plate you put on top. A closing bracket must match the top plate. You can only take from the top.",
+      "data": {
+        "look": "stack",
+        "heading": "The stack of plates",
+        "sign": "Brackets",
+        "items": [
+          "(",
+          "[",
+          "{"
+        ],
+        "storeTitle": "Plates"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "steps",
+      "beat": "reveal",
+      "pose": "explain",
+      "vo": "Read left to right. Opening bracket? Push it. Closing bracket? Look at the top plate. Same type? Pop it. Different, or no plate? Invalid. At the end, the stack must be empty.",
+      "data": {
+        "steps": [
+          "Read the next bracket",
+          "Opening? Push it",
+          "Closing? Top must match"
+        ],
+        "yes": "Match: pop it",
+        "no": "No match: INVALID"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "code",
+      "beat": "payoff",
+      "pose": "explain",
+      "vo": "That is the whole algorithm. A stack, and a map of closers to openers. Opening? Push. Closing? The top must match, or return false. At the end, return whether the stack is empty.",
+      "data": {
+        "file": "valid.py",
+        "lines": [
+          "def is_valid(s):",
+          "    pair = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}",
+          "    stack = []",
+          "    for ch in s:",
+          "        if ch in pair:",
+          "    XX",
+          "                return False",
+          "        else:",
+          "            stack.append(ch)",
+          "            top = stack.pop() if stack else \"\"",
+          "            if top != pair[ch]:"
+        ],
+        "meanings": [
+          "The question, as a function",
+          "Each closer and its opener",
+          "The plates, empty",
+          "Take each bracket",
+          "A closing bracket?",
+          "No plate, or wrong plate: invalid",
+          "Stop at once",
+          "An opening bracket?",
+          "Put the plate on top",
+          "Take the top plate, if any",
+          "Wrong or missing plate: invalid"
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "run",
+      "beat": "payoff",
+      "pose": "point",
+      "vo": "Let us run it. The first curly is already on the stack. Next is a square opening. Push it on top.",
+      "data": {
+        "cells": [
+          "{",
+          "[",
+          "]",
+          "}"
+        ],
+        "panelLabel": "this bracket",
+        "storeTitle": "Plates",
+        "i": 1,
+        "panelText": "push [",
+        "panelAccent": "[",
+        "store": [
+          "{"
+        ],
+        "push": "[",
+        "found": false,
+        "result": "Opening bracket: push it."
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "run",
+      "beat": "payoff",
+      "pose": "thumbsup",
+      "vo": "Next, a closing square. Top plate: an opening square. Match! Pop it.",
+      "data": {
+        "cells": [
+          "{",
+          "[",
+          "]",
+          "}"
+        ],
+        "panelLabel": "this bracket",
+        "storeTitle": "Plates",
+        "i": 2,
+        "panelText": "] needs [",
+        "panelAccent": "[",
+        "store": [
+          "{",
+          "["
+        ],
+        "pop": true,
+        "hit": 1,
+        "matched": [
+          1,
+          2
+        ],
+        "found": false,
+        "result": "Top is [ : match. Pop."
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "run",
+      "beat": "payoff",
+      "pose": "thumbsup",
+      "vo": "Last, a closing curly. Top plate: an opening curly. Pop. The stack is empty. Valid!",
+      "data": {
+        "cells": [
+          "{",
+          "[",
+          "]",
+          "}"
+        ],
+        "panelLabel": "this bracket",
+        "storeTitle": "Plates",
+        "i": 3,
+        "panelText": "} needs {",
+        "panelAccent": "{",
+        "store": [
+          "{"
+        ],
+        "pop": true,
+        "hit": 0,
+        "matched": [
+          0,
+          3
+        ],
+        "found": true,
+        "result": "Stack empty: return true"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "trap",
+      "beat": "twist",
+      "pose": "shock",
+      "vo": "Now the trap. Round, square, close round, close square. Counts match: one of each. But the order is broken. The stack sees a closing round on top of a square plate, and says invalid.",
+      "data": {
+        "heading": "s = ( [ ) ]",
+        "rows": [
+          {
+            "title": "Wrong: only count the brackets",
+            "cells": [
+              "(",
+              "[",
+              ")",
+              "]"
+            ],
+            "steps": [
+              "1 open round, 1 close round",
+              "1 open square, 1 close square"
+            ],
+            "result": "true",
+            "bad": true
+          },
+          {
+            "title": "Right: use a stack",
+            "cells": [
+              "(",
+              "[",
+              ")",
+              "]"
+            ],
+            "steps": [
+              "Stack: ( [   then ) arrives",
+              "Top is [ , not (  mismatch"
+            ],
+            "result": "false",
+            "bad": false
+          }
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "aha",
+      "beat": "payoff",
+      "pose": "explain",
+      "vo": "Now the maths. Two hundred fifty billion steps became one million. Four minutes became one millisecond. Same answer. One stack, one pass.",
+      "data": {
+        "slow": {
+          "label": "Delete pairs, repeat",
+          "value": "250,000,000,000 · 4 min"
+        },
+        "fast": {
+          "label": "One stack",
+          "value": "1,000,000 · 1 ms",
+          "bar": 0.015
+        },
+        "headline": "250,000× faster",
+        "sub": "same answer"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "smile",
+      "beat": "payoff",
+      "pose": "laugh",
+      "vo": "The interviewer says: great, you handled the order, not just the count. That is a good smile.",
+      "data": {
+        "bubble": "Order matters.",
+        "label": "order beats count"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "name",
+      "beat": "payoff",
+      "pose": "point",
+      "vo": "This is a stack. Last in, first out. Whenever the latest thing must finish first, think stack.",
+      "data": {
+        "name": "Stack",
+        "pairs": [
+          [
+            "push",
+            "("
+          ],
+          [
+            "push",
+            "["
+          ],
+          [
+            "pop",
+            "["
+          ]
+        ],
+        "footer": "Last in, first out"
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "notes",
+      "beat": "payoff",
+      "pose": "explain",
+      "vo": "Notes for revision. Time: order n. Space: order n. The idea: the latest opened closes first. Trap: count is not order.",
+      "data": {
+        "heading": "Valid Parentheses · Notes",
+        "rows": [
+          [
+            "TIME",
+            "O(n)"
+          ],
+          [
+            "SPACE",
+            "O(n)"
+          ],
+          [
+            "IDEA",
+            "Latest opened must close first"
+          ],
+          [
+            "TRAP",
+            "Count is not order"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "quiz",
+      "beat": "twist",
+      "pose": "think",
+      "vo": "Quick quiz. The string is three opening round brackets, and nothing else. Valid or not? Comment your answer.",
+      "data": {
+        "question": "s = \"(((\" . Valid?",
+        "options": [
+          "Yes, nothing mismatched",
+          "No, stack not empty"
+        ],
+        "answer": 1,
+        "why": "Three plates are left, so some bracket never closed."
+      }
+    },
+    {
+      "type": "dsa",
+      "kind": "close",
+      "beat": "cta",
+      "pose": "thumbsup",
+      "vo": "Save this for your interview. Send it to the friend who only counts brackets. Like for the next question: Min Stack. And comment BRACKETS for the notes PDF.",
+      "data": {
+        "save": "SAVE for interview",
+        "send": "SEND to the count friend",
+        "like": "LIKE for next",
+        "next": "Min Stack",
+        "slams": [
+          {
+            "at": 0.8,
+            "text": "BRACKETS",
+            "color": "#3ddc84",
+            "hold": 0.17,
+            "tilt": -3,
+            "size": 240
+          }
+        ]
+      }
+    }
+  ]
+}

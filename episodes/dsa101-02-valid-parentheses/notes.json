@@ -1,0 +1,130 @@
+{
+  "title": "Valid Parentheses: the latest opened bracket closes first",
+  "problem": "You get a string made only of the characters ( ) [ ] { }. Decide whether it is valid: every opening bracket must be closed by a bracket of the same type, and brackets must close in the correct order, so the most recently opened one closes first. An empty string counts as valid.",
+  "examples": [
+    {
+      "input": "s = \"()[]{}\"",
+      "output": "true",
+      "why": "Each bracket is closed right after it opens, with the same type."
+    },
+    {
+      "input": "s = \"{[]}\"",
+      "output": "true",
+      "why": "The square pair sits fully inside the curly pair."
+    },
+    {
+      "input": "s = \"([)]\"",
+      "output": "false",
+      "why": "The round bracket closes while a square one is still open on top."
+    },
+    {
+      "input": "s = \"(((\"",
+      "output": "false",
+      "why": "Three brackets are opened and never closed."
+    }
+  ],
+  "analogy": "Picture a stack of plates. Every opening bracket is a plate you put on top of the pile. A closing bracket must match the plate on top, because you can only take from the top. If the top plate is the wrong type, or there is no plate at all, the string is invalid. At the end the pile must be empty.",
+  "brute": {
+    "explain": "Keep deleting adjacent pairs such as (), [] and {} from the string, and repeat until nothing changes. If the string becomes empty it is valid. It is correct, but each pass scans the whole string and a deeply nested string needs about n/2 passes. For a million characters that is roughly 250 billion steps, about 4 minutes at a billion steps per second.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "insight": [
+    "Counting brackets is not enough. The string ([)] has one of every bracket on both sides, yet it is invalid because the order is broken.",
+    "The rule is: the most recently opened bracket must be the first one closed. That is exactly last in, first out, which is what a stack does.",
+    "So push every opening bracket. For a closing bracket, the top of the stack must be its partner. If it is not, or the stack is empty, stop with false. Valid strings leave the stack empty."
+  ],
+  "steps": [
+    "Make an empty stack and a map from each closing bracket to its opening bracket.",
+    "Read the string from left to right.",
+    "If the character is an opening bracket, push it.",
+    "If it is a closing bracket, pop the top (if any). If nothing was there or it is not the partner, return false.",
+    "After the last character, return true only if the stack is empty."
+  ],
+  "dryRun": {
+    "input": "s = \"([)]\"",
+    "headers": [
+      "i",
+      "char",
+      "stack before",
+      "action"
+    ],
+    "rows": [
+      [
+        "0",
+        "(",
+        "empty",
+        "push ("
+      ],
+      [
+        "1",
+        "[",
+        "(",
+        "push ["
+      ],
+      [
+        "2",
+        ")",
+        "( [",
+        "pop [ , needs ( : return false"
+      ]
+    ]
+  },
+  "code": {
+    "python": {
+      "code": "def is_valid(s):\n    pair = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}   # closer -> opener\n    stack = []\n    for ch in s:\n        if ch in pair:                      # a closing bracket\n            top = stack.pop() if stack else \"\"\n            if top != pair[ch]:             # wrong or missing plate\n                return False\n        else:\n            stack.append(ch)                # an opening bracket\n    return not stack                        # no plates left",
+      "note": "A list works as a stack: append pushes and pop removes the last item. An empty string never equals an opener, so a missing plate fails the check.",
+      "test": "\nfor s, want in [('()[]{}', True), ('{[]}', True), ('([)]', False), ('(((', False), (')', False), ('', True), ('(]', False)]:\n    assert is_valid(s) == want, s\n"
+    },
+    "java": {
+      "code": "import java.util.ArrayDeque;\nimport java.util.Deque;\n\nclass Solution {\n    public boolean isValid(String s) {\n        Deque<Character> stack = new ArrayDeque<>();   // the plates\n        for (char ch : s.toCharArray()) {\n            if (ch == '(') stack.push(')');   // push expected closer\n            else if (ch == '[') stack.push(']');\n            else if (ch == '{') stack.push('}');\n            else if (stack.isEmpty() || stack.pop() != ch) {\n                return false;                          // wrong or missing plate\n            }\n        }\n        return stack.isEmpty();                        // no plates left\n    }\n}",
+      "note": "Use ArrayDeque, not the old Stack class. Pushing the expected closer means a closing bracket only has to equal the popped value.",
+      "test": "\npublic class Main {\n    static void check(String s, boolean want) {\n        if (new Solution().isValid(s) != want) throw new RuntimeException(s);\n    }\n    public static void main(String[] args) {\n        check(\"()[]{}\", true);\n        check(\"{[]}\", true);\n        check(\"([)]\", false);\n        check(\"(((\", false);\n        check(\")\", false);\n        check(\"\", true);\n        check(\"(]\", false);\n    }\n}\n"
+    },
+    "cpp": {
+      "code": "#include <stack>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isValid(string s) {\n        stack<char> st;                          // the plates\n        for (char ch : s) {\n            if (ch == '(') st.push(')');         // push the expected closer\n            else if (ch == '[') st.push(']');\n            else if (ch == '{') st.push('}');\n            else {\n                if (st.empty() || st.top() != ch) return false;\n                st.pop();\n            }\n        }\n        return st.empty();                       // no plates left\n    }\n};",
+      "note": "std::stack does not return the value on pop, so read top() first and then pop(). Check empty() before top().",
+      "test": "\n#include <cstdlib>\nstatic void check(string s, bool want) {\n    if (Solution().isValid(s) != want) exit(1);\n}\nint main() {\n    check(\"()[]{}\", true);\n    check(\"{[]}\", true);\n    check(\"([)]\", false);\n    check(\"(((\", false);\n    check(\")\", false);\n    check(\"\", true);\n    check(\"(]\", false);\n}\n"
+    },
+    "javascript": {
+      "code": "function isValid(s) {\n  const pair = { ')': '(', ']': '[', '}': '{' };   // closer -> opener\n  const stack = [];\n  for (const ch of s) {\n    if (ch in pair) {                              // a closing bracket\n      if (stack.pop() !== pair[ch]) return false;  // wrong or missing plate\n    } else {\n      stack.push(ch);                              // an opening bracket\n    }\n  }\n  return stack.length === 0;                       // no plates left\n}",
+      "note": "pop() on an empty array returns undefined, which never equals an opener, so the empty-stack case is handled by the same check.",
+      "test": "\nfor (const [s, want] of [['()[]{}', true], ['{[]}', true], ['([)]', false], ['(((', false], [')', false], ['', true], ['(]', false]]) {\n  if (isValid(s) !== want) throw new Error(s);\n}\n"
+    }
+  },
+  "complexity": {
+    "time": "O(n)",
+    "timeWhy": "Each character is pushed at most once and popped at most once.",
+    "space": "O(n)",
+    "spaceWhy": "A string of only opening brackets puts every character on the stack."
+  },
+  "mistakes": [
+    "Only counting brackets of each type. ([)] has matching counts but is invalid.",
+    "Popping from an empty stack when the string starts with a closing bracket.",
+    "Forgetting the final check. The string ((( never fails inside the loop, so you must test that the stack is empty at the end.",
+    "Comparing only the type of the top plate loosely, such as treating all openers as the same."
+  ],
+  "interview": [
+    "Say the brute force first: delete pairs repeatedly, O(n^2).",
+    "Name the key observation: the latest opened bracket must close first, so use a stack.",
+    "Call out the three failure cases: wrong type on top, closer with an empty stack, and plates left at the end.",
+    "Follow-up to expect: Min Stack, or how to find the longest valid substring."
+  ],
+  "practice": [
+    {
+      "name": "Min Stack",
+      "leetcode": 155,
+      "why": "Design a stack that also answers the minimum in constant time."
+    },
+    {
+      "name": "Daily Temperatures",
+      "leetcode": 739,
+      "why": "Another stack problem where the latest item decides the answer."
+    },
+    {
+      "name": "Generate Parentheses",
+      "leetcode": 22,
+      "why": "Build all valid bracket strings instead of checking one."
+    }
+  ]
+}
