@@ -1,2589 +1,2589 @@
 {
-  "totalMs": 156200,
+  "totalMs": 159173,
   "audio": "episodes/dsa101-02-valid-parentheses/voice.mp3",
   "scenes": [
     {
       "startMs": 0,
-      "durMs": 8025
+      "durMs": 7696
     },
     {
-      "startMs": 8285,
-      "durMs": 13615
+      "startMs": 7956,
+      "durMs": 14198
     },
     {
-      "startMs": 22160,
-      "durMs": 14477
+      "startMs": 22414,
+      "durMs": 15053
     },
     {
-      "startMs": 36897,
-      "durMs": 7043
+      "startMs": 37727,
+      "durMs": 6794
     },
     {
-      "startMs": 44200,
-      "durMs": 8584
+      "startMs": 44781,
+      "durMs": 9146
     },
     {
-      "startMs": 53045,
-      "durMs": 11467
+      "startMs": 54187,
+      "durMs": 11226
     },
     {
-      "startMs": 64772,
-      "durMs": 12458
+      "startMs": 65673,
+      "durMs": 13561
     },
     {
-      "startMs": 77490,
-      "durMs": 5774
+      "startMs": 79494,
+      "durMs": 6754
     },
     {
-      "startMs": 83524,
-      "durMs": 4418
+      "startMs": 86508,
+      "durMs": 5185
     },
     {
-      "startMs": 88203,
-      "durMs": 7023
+      "startMs": 91953,
+      "durMs": 5650
     },
     {
-      "startMs": 95486,
-      "durMs": 11141
+      "startMs": 97863,
+      "durMs": 12858
     },
     {
-      "startMs": 106887,
-      "durMs": 10108
+      "startMs": 110980,
+      "durMs": 8115
     },
     {
-      "startMs": 117255,
-      "durMs": 5091
+      "startMs": 119356,
+      "durMs": 5476
     },
     {
-      "startMs": 122605,
-      "durMs": 5531
+      "startMs": 125092,
+      "durMs": 7083
     },
     {
-      "startMs": 128396,
-      "durMs": 11244
+      "startMs": 132435,
+      "durMs": 10633
     },
     {
-      "startMs": 139900,
-      "durMs": 6664
+      "startMs": 143328,
+      "durMs": 5931
     },
     {
-      "startMs": 146824,
-      "durMs": 8776
+      "startMs": 149520,
+      "durMs": 9054
     }
   ],
   "words": [
     {
       "text": "Is",
       "startMs": 300,
-      "endMs": 468,
+      "endMs": 461,
       "scene": 0
     },
     {
       "text": "open",
-      "startMs": 477,
-      "endMs": 757,
+      "startMs": 469,
+      "endMs": 738,
       "scene": 0
     },
     {
       "text": "round,",
-      "startMs": 772,
-      "endMs": 1108,
+      "startMs": 752,
+      "endMs": 1073,
       "scene": 0
     },
     {
       "text": "open",
-      "startMs": 1302,
-      "endMs": 1583,
+      "startMs": 1260,
+      "endMs": 1528,
       "scene": 0
     },
     {
       "text": "square,",
-      "startMs": 1597,
-      "endMs": 1990,
+      "startMs": 1542,
+      "endMs": 1917,
       "scene": 0
     },
     {
       "text": "close",
-      "startMs": 2187,
-      "endMs": 2523,
+      "startMs": 2107,
+      "endMs": 2428,
       "scene": 0
     },
     {
       "text": "round,",
-      "startMs": 2541,
-      "endMs": 2877,
+      "startMs": 2445,
+      "endMs": 2767,
       "scene": 0
     },
     {
       "text": "close",
-      "startMs": 3072,
-      "endMs": 3408,
+      "startMs": 2953,
+      "endMs": 3275,
       "scene": 0
     },
     {
       "text": "square",
-      "startMs": 3425,
-      "endMs": 3818,
+      "startMs": 3292,
+      "endMs": 3668,
       "scene": 0
     },
     {
       "text": "valid?",
-      "startMs": 3838,
-      "endMs": 4174,
+      "startMs": 3687,
+      "endMs": 4009,
       "scene": 0
     },
     {
       "text": "Count",
-      "startMs": 4369,
-      "endMs": 4705,
+      "startMs": 4195,
+      "endMs": 4517,
       "scene": 0
     },
     {
       "text": "the",
-      "startMs": 4723,
-      "endMs": 4947,
+      "startMs": 4534,
+      "endMs": 4749,
       "scene": 0
     },
     {
       "text": "brackets",
-      "startMs": 4959,
-      "endMs": 5463,
+      "startMs": 4760,
+      "endMs": 5243,
       "scene": 0
     },
     {
       "text": "and",
-      "startMs": 5489,
-      "endMs": 5713,
+      "startMs": 5268,
+      "endMs": 5483,
       "scene": 0
     },
     {
       "text": "you",
-      "startMs": 5725,
-      "endMs": 5949,
+      "startMs": 5494,
+      "endMs": 5708,
       "scene": 0
     },
     {
       "text": "will",
-      "startMs": 5961,
-      "endMs": 6241,
+      "startMs": 5720,
+      "endMs": 5988,
       "scene": 0
     },
     {
       "text": "say",
-      "startMs": 6256,
-      "endMs": 6480,
+      "startMs": 6002,
+      "endMs": 6217,
       "scene": 0
     },
     {
       "text": "yes.",
-      "startMs": 6492,
-      "endMs": 6716,
+      "startMs": 6228,
+      "endMs": 6442,
       "scene": 0
     },
     {
       "text": "You",
-      "startMs": 6905,
-      "endMs": 7129,
+      "startMs": 6623,
+      "endMs": 6838,
       "scene": 0
     },
     {
       "text": "would",
-      "startMs": 7141,
-      "endMs": 7477,
+      "startMs": 6849,
+      "endMs": 7171,
       "scene": 0
     },
     {
       "text": "be",
-      "startMs": 7494,
-      "endMs": 7662,
+      "startMs": 7188,
+      "endMs": 7349,
       "scene": 0
     },
     {
       "text": "wrong.",
-      "startMs": 7671,
-      "endMs": 8007,
+      "startMs": 7357,
+      "endMs": 7679,
       "scene": 0
     },
     {
       "text": "The",
-      "startMs": 8285,
-      "endMs": 8518,
+      "startMs": 7956,
+      "endMs": 8199,
       "scene": 1
     },
     {
       "text": "question:",
-      "startMs": 8530,
-      "endMs": 9055,
+      "startMs": 8212,
+      "endMs": 8758,
       "scene": 1
     },
     {
       "text": "a",
-      "startMs": 9266,
-      "endMs": 9383,
+      "startMs": 8979,
+      "endMs": 9101,
       "scene": 1
     },
     {
       "text": "string",
-      "startMs": 9389,
-      "endMs": 9797,
+      "startMs": 9107,
+      "endMs": 9532,
       "scene": 1
     },
     {
       "text": "made",
-      "startMs": 9818,
-      "endMs": 10110,
+      "startMs": 9555,
+      "endMs": 9858,
       "scene": 1
     },
     {
       "text": "only",
-      "startMs": 10125,
-      "endMs": 10416,
+      "startMs": 9874,
+      "endMs": 10178,
       "scene": 1
     },
     {
       "text": "of",
-      "startMs": 10432,
-      "endMs": 10606,
+      "startMs": 10194,
+      "endMs": 10376,
       "scene": 1
     },
     {
       "text": "brackets.",
-      "startMs": 10616,
-      "endMs": 11140,
+      "startMs": 10386,
+      "endMs": 10933,
       "scene": 1
     },
     {
       "text": "Round,",
-      "startMs": 11352,
-      "endMs": 11701,
+      "startMs": 11153,
+      "endMs": 11518,
       "scene": 1
     },
     {
       "text": "square",
-      "startMs": 11904,
-      "endMs": 12311,
+      "startMs": 11729,
+      "endMs": 12154,
       "scene": 1
     },
     {
       "text": "and",
-      "startMs": 12333,
-      "endMs": 12566,
+      "startMs": 12177,
+      "endMs": 12420,
       "scene": 1
     },
     {
       "text": "curly.",
-      "startMs": 12578,
-      "endMs": 12928,
+      "startMs": 12433,
+      "endMs": 12797,
       "scene": 1
     },
     {
       "text": "Is",
-      "startMs": 13130,
-      "endMs": 13305,
+      "startMs": 13008,
+      "endMs": 13190,
       "scene": 1
     },
     {
       "text": "it",
-      "startMs": 13314,
-      "endMs": 13489,
+      "startMs": 13200,
+      "endMs": 13382,
       "scene": 1
     },
     {
       "text": "valid?",
-      "startMs": 13498,
-      "endMs": 13848,
+      "startMs": 13392,
+      "endMs": 13756,
       "scene": 1
     },
     {
       "text": "Every",
-      "startMs": 14050,
-      "endMs": 14400,
+      "startMs": 13967,
+      "endMs": 14332,
       "scene": 1
     },
     {
       "text": "bracket",
-      "startMs": 14418,
-      "endMs": 14884,
+      "startMs": 14351,
+      "endMs": 14837,
       "scene": 1
     },
     {
       "text": "must",
-      "startMs": 14909,
-      "endMs": 15200,
+      "startMs": 14863,
+      "endMs": 15167,
       "scene": 1
     },
     {
       "text": "close,",
-      "startMs": 15215,
-      "endMs": 15565,
+      "startMs": 15183,
+      "endMs": 15547,
       "scene": 1
     },
     {
       "text": "with",
-      "startMs": 15767,
-      "endMs": 16059,
+      "startMs": 15758,
+      "endMs": 16062,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 16074,
-      "endMs": 16307,
+      "startMs": 16078,
+      "endMs": 16321,
       "scene": 1
     },
     {
       "text": "same",
-      "startMs": 16319,
-      "endMs": 16611,
+      "startMs": 16334,
+      "endMs": 16638,
       "scene": 1
     },
     {
       "text": "type,",
-      "startMs": 16626,
-      "endMs": 16917,
+      "startMs": 16654,
+      "endMs": 16957,
       "scene": 1
     },
     {
       "text": "in",
-      "startMs": 17117,
-      "endMs": 17291,
+      "startMs": 17165,
+      "endMs": 17348,
       "scene": 1
     },
     {
       "text": "the",
-      "startMs": 17300,
-      "endMs": 17534,
+      "startMs": 17357,
+      "endMs": 17600,
       "scene": 1
     },
     {
       "text": "right",
-      "startMs": 17546,
-      "endMs": 17895,
+      "startMs": 17613,
+      "endMs": 17977,
       "scene": 1
     },
     {
       "text": "order.",
-      "startMs": 17914,
-      "endMs": 18263,
+      "startMs": 17997,
+      "endMs": 18361,
       "scene": 1
     },
     {
       "text": "Curly,",
-      "startMs": 18466,
-      "endMs": 18815,
+      "startMs": 18572,
+      "endMs": 18937,
       "scene": 1
     },
     {
       "text": "square,",
-      "startMs": 19018,
-      "endMs": 19426,
+      "startMs": 19148,
+      "endMs": 19573,
       "scene": 1
     },
     {
       "text": "close",
-      "startMs": 19631,
-      "endMs": 19981,
+      "startMs": 19787,
+      "endMs": 20152,
       "scene": 1
     },
     {
       "text": "square,",
-      "startMs": 19999,
-      "endMs": 20407,
+      "startMs": 20171,
+      "endMs": 20596,
       "scene": 1
     },
     {
       "text": "close",
-      "startMs": 20612,
-      "endMs": 20962,
+      "startMs": 20811,
+      "endMs": 21175,
       "scene": 1
     },
     {
       "text": "curly:",
-      "startMs": 20980,
-      "endMs": 21330,
+      "startMs": 21194,
+      "endMs": 21559,
       "scene": 1
     },
     {
       "text": "valid.",
-      "startMs": 21532,
-      "endMs": 21882,
+      "startMs": 21770,
+      "endMs": 22135,
       "scene": 1
     },
     {
       "text": "My",
-      "startMs": 22160,
-      "endMs": 22312,
+      "startMs": 22414,
+      "endMs": 22571,
       "scene": 2
     },
     {
       "text": "first",
-      "startMs": 22320,
-      "endMs": 22623,
+      "startMs": 22580,
+      "endMs": 22895,
       "scene": 2
     },
     {
       "text": "idea:",
-      "startMs": 22639,
-      "endMs": 22892,
+      "startMs": 22912,
+      "endMs": 23175,
       "scene": 2
     },
     {
       "text": "keep",
-      "startMs": 23065,
-      "endMs": 23318,
+      "startMs": 23355,
+      "endMs": 23617,
       "scene": 2
     },
     {
       "text": "deleting",
-      "startMs": 23331,
-      "endMs": 23786,
+      "startMs": 23631,
+      "endMs": 24104,
       "scene": 2
     },
     {
       "text": "pairs",
-      "startMs": 23810,
-      "endMs": 24113,
+      "startMs": 24129,
+      "endMs": 24445,
       "scene": 2
     },
     {
       "text": "like",
-      "startMs": 24129,
-      "endMs": 24382,
+      "startMs": 24461,
+      "endMs": 24724,
       "scene": 2
     },
     {
       "text": "round-round",
-      "startMs": 24396,
-      "endMs": 24952,
+      "startMs": 24738,
+      "endMs": 25316,
       "scene": 2
     },
     {
       "text": "or",
-      "startMs": 24981,
-      "endMs": 25133,
+      "startMs": 25347,
+      "endMs": 25505,
       "scene": 2
     },
     {
       "text": "square-square,",
-      "startMs": 25141,
-      "endMs": 25798,
+      "startMs": 25513,
+      "endMs": 26196,
       "scene": 2
     },
     {
       "text": "again",
-      "startMs": 25992,
-      "endMs": 26296,
+      "startMs": 26398,
+      "endMs": 26714,
       "scene": 2
     },
     {
       "text": "and",
-      "startMs": 26312,
-      "endMs": 26514,
+      "startMs": 26730,
+      "endMs": 26941,
       "scene": 2
     },
     {
       "text": "again,",
-      "startMs": 26525,
-      "endMs": 26828,
+      "startMs": 26952,
+      "endMs": 27267,
       "scene": 2
     },
     {
       "text": "until",
-      "startMs": 27004,
-      "endMs": 27307,
+      "startMs": 27450,
+      "endMs": 27765,
       "scene": 2
     },
     {
       "text": "nothing",
-      "startMs": 27323,
-      "endMs": 27727,
+      "startMs": 27782,
+      "endMs": 28203,
       "scene": 2
     },
     {
       "text": "is",
-      "startMs": 27749,
-      "endMs": 27900,
+      "startMs": 28225,
+      "endMs": 28382,
       "scene": 2
     },
     {
       "text": "left.",
-      "startMs": 27908,
-      "endMs": 28161,
+      "startMs": 28391,
+      "endMs": 28654,
       "scene": 2
     },
     {
       "text": "Correct,",
-      "startMs": 28334,
-      "endMs": 28739,
+      "startMs": 28833,
+      "endMs": 29254,
       "scene": 2
     },
     {
       "text": "but",
-      "startMs": 28920,
-      "endMs": 29122,
+      "startMs": 29442,
+      "endMs": 29653,
       "scene": 2
     },
     {
       "text": "each",
-      "startMs": 29133,
-      "endMs": 29385,
+      "startMs": 29664,
+      "endMs": 29926,
       "scene": 2
     },
     {
       "text": "pass",
-      "startMs": 29399,
-      "endMs": 29651,
+      "startMs": 29940,
+      "endMs": 30203,
       "scene": 2
     },
     {
       "text": "scans",
-      "startMs": 29665,
-      "endMs": 29968,
+      "startMs": 30217,
+      "endMs": 30532,
       "scene": 2
     },
     {
       "text": "the",
-      "startMs": 29984,
-      "endMs": 30186,
+      "startMs": 30549,
+      "endMs": 30759,
       "scene": 2
     },
     {
       "text": "whole",
-      "startMs": 30197,
-      "endMs": 30500,
+      "startMs": 30770,
+      "endMs": 31086,
       "scene": 2
     },
     {
       "text": "text.",
-      "startMs": 30516,
-      "endMs": 30769,
+      "startMs": 31102,
+      "endMs": 31365,
       "scene": 2
     },
     {
       "text": "For",
-      "startMs": 30942,
-      "endMs": 31144,
+      "startMs": 31545,
+      "endMs": 31756,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 31155,
-      "endMs": 31256,
+      "startMs": 31767,
+      "endMs": 31872,
       "scene": 2
     },
     {
       "text": "million",
-      "startMs": 31262,
-      "endMs": 31666,
+      "startMs": 31877,
+      "endMs": 32298,
       "scene": 2
     },
     {
       "text": "characters,",
-      "startMs": 31687,
-      "endMs": 32244,
+      "startMs": 32320,
+      "endMs": 32898,
       "scene": 2
     },
     {
       "text": "about",
-      "startMs": 32432,
-      "endMs": 32736,
+      "startMs": 33095,
+      "endMs": 33410,
       "scene": 2
     },
     {
       "text": "two",
-      "startMs": 32752,
-      "endMs": 32954,
+      "startMs": 33427,
+      "endMs": 33637,
       "scene": 2
     },
     {
       "text": "hundred",
-      "startMs": 32965,
-      "endMs": 33369,
+      "startMs": 33648,
+      "endMs": 34069,
       "scene": 2
     },
     {
       "text": "fifty",
-      "startMs": 33390,
-      "endMs": 33694,
+      "startMs": 34091,
+      "endMs": 34406,
       "scene": 2
     },
     {
       "text": "billion",
-      "startMs": 33710,
-      "endMs": 34114,
+      "startMs": 34423,
+      "endMs": 34844,
       "scene": 2
     },
     {
       "text": "steps.",
-      "startMs": 34136,
-      "endMs": 34439,
+      "startMs": 34866,
+      "endMs": 35181,
       "scene": 2
     },
     {
       "text": "At",
-      "startMs": 34615,
-      "endMs": 34766,
+      "startMs": 35364,
+      "endMs": 35522,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 34774,
-      "endMs": 34875,
+      "startMs": 35530,
+      "endMs": 35635,
       "scene": 2
     },
     {
       "text": "billion",
-      "startMs": 34881,
-      "endMs": 35285,
+      "startMs": 35641,
+      "endMs": 36061,
       "scene": 2
     },
     {
       "text": "a",
-      "startMs": 35307,
-      "endMs": 35408,
+      "startMs": 36083,
+      "endMs": 36188,
       "scene": 2
     },
     {
       "text": "second,",
-      "startMs": 35413,
-      "endMs": 35767,
+      "startMs": 36194,
+      "endMs": 36562,
       "scene": 2
     },
     {
       "text": "four",
-      "startMs": 35945,
-      "endMs": 36198,
+      "startMs": 36747,
+      "endMs": 37010,
       "scene": 2
     },
     {
       "text": "minutes.",
-      "startMs": 36211,
-      "endMs": 36616,
+      "startMs": 37024,
+      "endMs": 37445,
       "scene": 2
     },
     {
       "text": "Pause",
-      "startMs": 36897,
-      "endMs": 37256,
+      "startMs": 37727,
+      "endMs": 38073,
       "scene": 3
     },
     {
       "text": "the",
-      "startMs": 37274,
-      "endMs": 37513,
+      "startMs": 38091,
+      "endMs": 38321,
       "scene": 3
     },
     {
       "text": "video.",
-      "startMs": 37526,
-      "endMs": 37884,
+      "startMs": 38334,
+      "endMs": 38679,
       "scene": 3
     },
     {
       "text": "Can",
-      "startMs": 38092,
-      "endMs": 38331,
+      "startMs": 38879,
+      "endMs": 39110,
       "scene": 3
     },
     {
       "text": "you",
-      "startMs": 38344,
-      "endMs": 38583,
+      "startMs": 39122,
+      "endMs": 39353,
       "scene": 3
     },
     {
       "text": "do",
-      "startMs": 38595,
-      "endMs": 38774,
+      "startMs": 39365,
+      "endMs": 39538,
       "scene": 3
     },
     {
       "text": "it",
-      "startMs": 38784,
-      "endMs": 38963,
+      "startMs": 39547,
+      "endMs": 39720,
       "scene": 3
     },
     {
       "text": "in",
-      "startMs": 38972,
-      "endMs": 39152,
+      "startMs": 39729,
+      "endMs": 39902,
       "scene": 3
     },
     {
       "text": "one",
-      "startMs": 39161,
-      "endMs": 39400,
+      "startMs": 39911,
+      "endMs": 40141,
       "scene": 3
     },
     {
       "text": "pass?",
-      "startMs": 39413,
-      "endMs": 39711,
+      "startMs": 40153,
+      "endMs": 40442,
       "scene": 3
     },
     {
       "text": "I",
-      "startMs": 39916,
-      "endMs": 40035,
+      "startMs": 40639,
+      "endMs": 40754,
       "scene": 3
     },
     {
       "text": "will",
-      "startMs": 40042,
-      "endMs": 40340,
+      "startMs": 40760,
+      "endMs": 41048,
       "scene": 3
     },
     {
       "text": "wait.",
-      "startMs": 40356,
-      "endMs": 40655,
+      "startMs": 41063,
+      "endMs": 41351,
       "scene": 3
     },
     {
       "text": "Hint:",
-      "startMs": 40859,
-      "endMs": 41158,
+      "startMs": 41549,
+      "endMs": 41837,
       "scene": 3
     },
     {
       "text": "the",
-      "startMs": 41362,
-      "endMs": 41601,
+      "startMs": 42034,
+      "endMs": 42264,
       "scene": 3
     },
     {
       "text": "last",
-      "startMs": 41614,
-      "endMs": 41912,
+      "startMs": 42277,
+      "endMs": 42565,
       "scene": 3
     },
     {
       "text": "bracket",
-      "startMs": 41928,
-      "endMs": 42406,
+      "startMs": 42580,
+      "endMs": 43041,
       "scene": 3
     },
     {
       "text": "opened",
-      "startMs": 42431,
-      "endMs": 42849,
+      "startMs": 43065,
+      "endMs": 43469,
       "scene": 3
     },
     {
       "text": "must",
-      "startMs": 42871,
-      "endMs": 43170,
+      "startMs": 43490,
+      "endMs": 43778,
       "scene": 3
     },
     {
       "text": "close",
-      "startMs": 43186,
-      "endMs": 43544,
+      "startMs": 43793,
+      "endMs": 44139,
       "scene": 3
     },
     {
       "text": "first.",
-      "startMs": 43563,
-      "endMs": 43922,
+      "startMs": 44157,
+      "endMs": 44503,
       "scene": 3
     },
     {
       "text": "Picture",
-      "startMs": 44200,
-      "endMs": 44616,
+      "startMs": 44781,
+      "endMs": 45224,
       "scene": 4
     },
     {
       "text": "a",
-      "startMs": 44638,
-      "endMs": 44742,
+      "startMs": 45247,
+      "endMs": 45358,
       "scene": 4
     },
     {
       "text": "stack",
-      "startMs": 44747,
-      "endMs": 45059,
+      "startMs": 45364,
+      "endMs": 45696,
       "scene": 4
     },
     {
       "text": "of",
-      "startMs": 45075,
-      "endMs": 45231,
+      "startMs": 45713,
+      "endMs": 45879,
       "scene": 4
     },
     {
       "text": "plates.",
-      "startMs": 45239,
-      "endMs": 45603,
+      "startMs": 45888,
+      "endMs": 46275,
       "scene": 4
     },
     {
       "text": "Every",
-      "startMs": 45786,
-      "endMs": 46098,
+      "startMs": 46470,
+      "endMs": 46803,
       "scene": 4
     },
     {
       "text": "opening",
-      "startMs": 46114,
-      "endMs": 46530,
+      "startMs": 46820,
+      "endMs": 47263,
       "scene": 4
     },
     {
       "text": "bracket",
-      "startMs": 46552,
-      "endMs": 46967,
+      "startMs": 47286,
+      "endMs": 47729,
       "scene": 4
     },
     {
       "text": "is",
-      "startMs": 46989,
-      "endMs": 47145,
+      "startMs": 47752,
+      "endMs": 47918,
       "scene": 4
     },
     {
       "text": "a",
-      "startMs": 47153,
-      "endMs": 47257,
+      "startMs": 47927,
+      "endMs": 48037,
       "scene": 4
     },
     {
       "text": "plate",
-      "startMs": 47262,
-      "endMs": 47574,
+      "startMs": 48043,
+      "endMs": 48375,
       "scene": 4
     },
     {
       "text": "you",
-      "startMs": 47590,
-      "endMs": 47798,
+      "startMs": 48393,
+      "endMs": 48614,
       "scene": 4
     },
     {
       "text": "put",
-      "startMs": 47809,
-      "endMs": 48017,
+      "startMs": 48626,
+      "endMs": 48847,
       "scene": 4
     },
     {
       "text": "on",
-      "startMs": 48028,
-      "endMs": 48184,
+      "startMs": 48859,
+      "endMs": 49025,
       "scene": 4
     },
     {
       "text": "top.",
-      "startMs": 48192,
-      "endMs": 48400,
+      "startMs": 49034,
+      "endMs": 49255,
       "scene": 4
     },
     {
       "text": "A",
-      "startMs": 48575,
-      "endMs": 48678,
+      "startMs": 49441,
+      "endMs": 49552,
       "scene": 4
     },
     {
       "text": "closing",
-      "startMs": 48684,
-      "endMs": 49099,
+      "startMs": 49558,
+      "endMs": 50001,
       "scene": 4
     },
     {
       "text": "bracket",
-      "startMs": 49121,
-      "endMs": 49537,
+      "startMs": 50024,
+      "endMs": 50467,
       "scene": 4
     },
     {
       "text": "must",
-      "startMs": 49559,
-      "endMs": 49818,
+      "startMs": 50490,
+      "endMs": 50767,
       "scene": 4
     },
     {
       "text": "match",
-      "startMs": 49832,
-      "endMs": 50144,
+      "startMs": 50781,
+      "endMs": 51113,
       "scene": 4
     },
     {
       "text": "the",
-      "startMs": 50160,
-      "endMs": 50368,
+      "startMs": 51131,
+      "endMs": 51352,
       "scene": 4
     },
     {
       "text": "top",
-      "startMs": 50379,
-      "endMs": 50587,
+      "startMs": 51364,
+      "endMs": 51585,
       "scene": 4
     },
     {
       "text": "plate.",
-      "startMs": 50598,
-      "endMs": 50909,
+      "startMs": 51597,
+      "endMs": 51929,
       "scene": 4
     },
     {
       "text": "You",
-      "startMs": 51090,
-      "endMs": 51297,
+      "startMs": 52121,
+      "endMs": 52342,
       "scene": 4
     },
     {
       "text": "can",
-      "startMs": 51308,
-      "endMs": 51516,
+      "startMs": 52354,
+      "endMs": 52576,
       "scene": 4
     },
     {
       "text": "only",
-      "startMs": 51527,
-      "endMs": 51787,
+      "startMs": 52587,
+      "endMs": 52864,
       "scene": 4
     },
     {
       "text": "take",
-      "startMs": 51800,
-      "endMs": 52060,
+      "startMs": 52878,
+      "endMs": 53155,
       "scene": 4
     },
     {
       "text": "from",
-      "startMs": 52074,
-      "endMs": 52333,
+      "startMs": 53170,
+      "endMs": 53446,
       "scene": 4
     },
     {
       "text": "the",
-      "startMs": 52347,
-      "endMs": 52555,
+      "startMs": 53461,
+      "endMs": 53682,
       "scene": 4
     },
     {
       "text": "top.",
-      "startMs": 52566,
-      "endMs": 52774,
+      "startMs": 53694,
+      "endMs": 53915,
       "scene": 4
     },
     {
       "text": "Read",
-      "startMs": 53045,
-      "endMs": 53322,
+      "startMs": 54187,
+      "endMs": 54459,
       "scene": 5
     },
     {
       "text": "left",
-      "startMs": 53337,
-      "endMs": 53615,
+      "startMs": 54473,
+      "endMs": 54745,
       "scene": 5
     },
     {
       "text": "to",
-      "startMs": 53630,
-      "endMs": 53796,
+      "startMs": 54760,
+      "endMs": 54923,
       "scene": 5
     },
     {
       "text": "right.",
-      "startMs": 53805,
-      "endMs": 54139,
+      "startMs": 54932,
+      "endMs": 55258,
       "scene": 5
     },
     {
       "text": "Opening",
-      "startMs": 54332,
-      "endMs": 54776,
+      "startMs": 55447,
+      "endMs": 55882,
       "scene": 5
     },
     {
       "text": "bracket?",
-      "startMs": 54800,
-      "endMs": 55244,
+      "startMs": 55905,
+      "endMs": 56341,
       "scene": 5
     },
     {
       "text": "Push",
-      "startMs": 55443,
-      "endMs": 55721,
+      "startMs": 56535,
+      "endMs": 56807,
       "scene": 5
     },
     {
       "text": "it.",
-      "startMs": 55736,
-      "endMs": 55903,
+      "startMs": 56822,
+      "endMs": 56985,
       "scene": 5
     },
     {
       "text": "Closing",
-      "startMs": 56087,
-      "endMs": 56532,
+      "startMs": 57165,
+      "endMs": 57601,
       "scene": 5
     },
     {
       "text": "bracket?",
-      "startMs": 56555,
-      "endMs": 57000,
+      "startMs": 57624,
+      "endMs": 58059,
       "scene": 5
     },
     {
       "text": "Look",
-      "startMs": 57198,
-      "endMs": 57476,
+      "startMs": 58254,
+      "endMs": 58526,
       "scene": 5
     },
     {
       "text": "at",
-      "startMs": 57491,
-      "endMs": 57658,
+      "startMs": 58540,
+      "endMs": 58703,
       "scene": 5
     },
     {
       "text": "the",
-      "startMs": 57667,
-      "endMs": 57889,
+      "startMs": 58712,
+      "endMs": 58930,
       "scene": 5
     },
     {
       "text": "top",
-      "startMs": 57901,
-      "endMs": 58123,
+      "startMs": 58941,
+      "endMs": 59159,
       "scene": 5
     },
     {
       "text": "plate.",
-      "startMs": 58135,
-      "endMs": 58468,
+      "startMs": 59170,
+      "endMs": 59497,
       "scene": 5
     },
     {
       "text": "Same",
-      "startMs": 58661,
-      "endMs": 58939,
+      "startMs": 59686,
+      "endMs": 59958,
       "scene": 5
     },
     {
       "text": "type?",
-      "startMs": 58954,
-      "endMs": 59232,
+      "startMs": 59972,
+      "endMs": 60244,
       "scene": 5
     },
     {
       "text": "Pop",
-      "startMs": 59422,
-      "endMs": 59644,
+      "startMs": 60430,
+      "endMs": 60648,
       "scene": 5
     },
     {
       "text": "it.",
-      "startMs": 59656,
-      "endMs": 59822,
+      "startMs": 60659,
+      "endMs": 60822,
       "scene": 5
     },
     {
       "text": "Different,",
-      "startMs": 60007,
-      "endMs": 60563,
+      "startMs": 61003,
+      "endMs": 61547,
       "scene": 5
     },
     {
       "text": "or",
-      "startMs": 60767,
-      "endMs": 60934,
+      "startMs": 61748,
+      "endMs": 61911,
       "scene": 5
     },
     {
       "text": "no",
-      "startMs": 60943,
-      "endMs": 61110,
+      "startMs": 61919,
+      "endMs": 62083,
       "scene": 5
     },
     {
       "text": "plate?",
-      "startMs": 61118,
-      "endMs": 61452,
+      "startMs": 62091,
+      "endMs": 62418,
       "scene": 5
     },
     {
       "text": "Invalid.",
-      "startMs": 61645,
-      "endMs": 62090,
+      "startMs": 62607,
+      "endMs": 63042,
       "scene": 5
     },
     {
       "text": "At",
-      "startMs": 62289,
-      "endMs": 62455,
+      "startMs": 63237,
+      "endMs": 63400,
       "scene": 5
     },
     {
       "text": "the",
-      "startMs": 62464,
-      "endMs": 62686,
+      "startMs": 63409,
+      "endMs": 63626,
       "scene": 5
     },
     {
       "text": "end,",
-      "startMs": 62698,
-      "endMs": 62920,
+      "startMs": 63638,
+      "endMs": 63855,
       "scene": 5
     },
     {
       "text": "the",
-      "startMs": 63108,
-      "endMs": 63330,
+      "startMs": 64039,
+      "endMs": 64256,
       "scene": 5
     },
     {
       "text": "stack",
-      "startMs": 63342,
-      "endMs": 63675,
+      "startMs": 64268,
+      "endMs": 64594,
       "scene": 5
     },
     {
       "text": "must",
-      "startMs": 63693,
-      "endMs": 63971,
+      "startMs": 64611,
+      "endMs": 64883,
       "scene": 5
     },
     {
       "text": "be",
-      "startMs": 63985,
-      "endMs": 64152,
+      "startMs": 64898,
+      "endMs": 65061,
       "scene": 5
     },
     {
       "text": "empty.",
-      "startMs": 64161,
-      "endMs": 64494,
+      "startMs": 65070,
+      "endMs": 65396,
       "scene": 5
     },
     {
       "text": "That",
-      "startMs": 64772,
-      "endMs": 65074,
+      "startMs": 65673,
+      "endMs": 66002,
       "scene": 6
     },
     {
       "text": "is",
-      "startMs": 65090,
-      "endMs": 65271,
+      "startMs": 66019,
+      "endMs": 66216,
       "scene": 6
     },
     {
       "text": "the",
-      "startMs": 65280,
-      "endMs": 65522,
+      "startMs": 66227,
+      "endMs": 66490,
       "scene": 6
     },
     {
       "text": "whole",
-      "startMs": 65535,
-      "endMs": 65897,
+      "startMs": 66503,
+      "endMs": 66898,
       "scene": 6
     },
     {
       "text": "algorithm.",
-      "startMs": 65916,
-      "endMs": 66520,
+      "startMs": 66919,
+      "endMs": 67576,
       "scene": 6
     },
     {
       "text": "A",
-      "startMs": 66742,
-      "endMs": 66863,
+      "startMs": 67818,
+      "endMs": 67949,
       "scene": 6
     },
     {
       "text": "stack,",
-      "startMs": 66869,
-      "endMs": 67232,
+      "startMs": 67956,
+      "endMs": 68351,
       "scene": 6
     },
     {
       "text": "and",
-      "startMs": 67441,
-      "endMs": 67683,
+      "startMs": 68579,
+      "endMs": 68842,
       "scene": 6
     },
     {
       "text": "a",
-      "startMs": 67696,
-      "endMs": 67816,
+      "startMs": 68856,
+      "endMs": 68987,
       "scene": 6
     },
     {
       "text": "map",
-      "startMs": 67823,
-      "endMs": 68064,
+      "startMs": 68994,
+      "endMs": 69257,
       "scene": 6
     },
     {
       "text": "of",
-      "startMs": 68077,
-      "endMs": 68258,
+      "startMs": 69271,
+      "endMs": 69468,
       "scene": 6
     },
     {
       "text": "closers",
-      "startMs": 68268,
-      "endMs": 68751,
+      "startMs": 69478,
+      "endMs": 70004,
       "scene": 6
     },
     {
       "text": "to",
-      "startMs": 68776,
-      "endMs": 68957,
+      "startMs": 70032,
+      "endMs": 70229,
       "scene": 6
     },
     {
       "text": "openers.",
-      "startMs": 68967,
-      "endMs": 69450,
+      "startMs": 70240,
+      "endMs": 70765,
       "scene": 6
     },
     {
       "text": "Opening?",
-      "startMs": 69666,
-      "endMs": 70149,
+      "startMs": 71001,
+      "endMs": 71526,
       "scene": 6
     },
     {
       "text": "Push.",
-      "startMs": 70365,
-      "endMs": 70667,
+      "startMs": 71762,
+      "endMs": 72090,
       "scene": 6
     },
     {
       "text": "Closing?",
-      "startMs": 70874,
-      "endMs": 71357,
+      "startMs": 72315,
+      "endMs": 72841,
       "scene": 6
     },
     {
       "text": "The",
-      "startMs": 71573,
-      "endMs": 71815,
+      "startMs": 73076,
+      "endMs": 73339,
       "scene": 6
     },
     {
       "text": "top",
-      "startMs": 71827,
-      "endMs": 72069,
+      "startMs": 73353,
+      "endMs": 73616,
       "scene": 6
     },
     {
       "text": "must",
-      "startMs": 72082,
-      "endMs": 72383,
+      "startMs": 73630,
+      "endMs": 73958,
       "scene": 6
     },
     {
       "text": "match,",
-      "startMs": 72399,
-      "endMs": 72762,
+      "startMs": 73976,
+      "endMs": 74370,
       "scene": 6
     },
     {
       "text": "or",
-      "startMs": 72971,
-      "endMs": 73153,
+      "startMs": 74598,
+      "endMs": 74795,
       "scene": 6
     },
     {
       "text": "return",
-      "startMs": 73162,
-      "endMs": 73585,
+      "startMs": 74806,
+      "endMs": 75266,
       "scene": 6
     },
     {
       "text": "false.",
-      "startMs": 73607,
-      "endMs": 73969,
+      "startMs": 75290,
+      "endMs": 75685,
       "scene": 6
     },
     {
       "text": "At",
-      "startMs": 74179,
-      "endMs": 74360,
+      "startMs": 75913,
+      "endMs": 76110,
       "scene": 6
     },
     {
       "text": "the",
-      "startMs": 74370,
-      "endMs": 74611,
+      "startMs": 76120,
+      "endMs": 76383,
       "scene": 6
     },
     {
       "text": "end,",
-      "startMs": 74624,
-      "endMs": 74866,
+      "startMs": 76397,
+      "endMs": 76660,
       "scene": 6
     },
     {
       "text": "return",
-      "startMs": 75069,
-      "endMs": 75492,
+      "startMs": 76881,
+      "endMs": 77342,
       "scene": 6
     },
     {
       "text": "whether",
-      "startMs": 75514,
-      "endMs": 75997,
+      "startMs": 77366,
+      "endMs": 77892,
       "scene": 6
     },
     {
       "text": "the",
-      "startMs": 76022,
-      "endMs": 76264,
+      "startMs": 77919,
+      "endMs": 78182,
       "scene": 6
     },
     {
       "text": "stack",
-      "startMs": 76277,
-      "endMs": 76639,
+      "startMs": 78196,
+      "endMs": 78590,
       "scene": 6
     },
     {
       "text": "is",
-      "startMs": 76658,
-      "endMs": 76839,
+      "startMs": 78611,
+      "endMs": 78808,
       "scene": 6
     },
     {
       "text": "empty.",
-      "startMs": 76849,
-      "endMs": 77211,
+      "startMs": 78819,
+      "endMs": 79213,
       "scene": 6
     },
     {
       "text": "Let",
-      "startMs": 77490,
-      "endMs": 77703,
+      "startMs": 79494,
+      "endMs": 79743,
       "scene": 7
     },
     {
       "text": "us",
-      "startMs": 77714,
-      "endMs": 77874,
+      "startMs": 79756,
+      "endMs": 79943,
       "scene": 7
     },
     {
       "text": "run",
-      "startMs": 77883,
-      "endMs": 78096,
+      "startMs": 79953,
+      "endMs": 80202,
       "scene": 7
     },
     {
       "text": "it.",
-      "startMs": 78107,
-      "endMs": 78267,
+      "startMs": 80215,
+      "endMs": 80402,
       "scene": 7
     },
     {
       "text": "The",
-      "startMs": 78443,
-      "endMs": 78656,
+      "startMs": 80609,
+      "endMs": 80858,
       "scene": 7
     },
     {
       "text": "first",
-      "startMs": 78667,
-      "endMs": 78987,
+      "startMs": 80871,
+      "endMs": 81245,
       "scene": 7
     },
     {
       "text": "curly",
-      "startMs": 79004,
-      "endMs": 79323,
+      "startMs": 81264,
+      "endMs": 81638,
       "scene": 7
     },
     {
       "text": "is",
-      "startMs": 79340,
-      "endMs": 79500,
+      "startMs": 81658,
+      "endMs": 81845,
       "scene": 7
     },
     {
       "text": "already",
-      "startMs": 79508,
-      "endMs": 79934,
+      "startMs": 81854,
+      "endMs": 82353,
       "scene": 7
     },
     {
       "text": "on",
-      "startMs": 79957,
-      "endMs": 80117,
+      "startMs": 82379,
+      "endMs": 82566,
       "scene": 7
     },
     {
       "text": "the",
-      "startMs": 80125,
-      "endMs": 80338,
+      "startMs": 82576,
+      "endMs": 82825,
       "scene": 7
     },
     {
       "text": "stack.",
-      "startMs": 80349,
-      "endMs": 80669,
+      "startMs": 82838,
+      "endMs": 83212,
       "scene": 7
     },
     {
       "text": "Next",
-      "startMs": 80854,
-      "endMs": 81120,
+      "startMs": 83428,
+      "endMs": 83740,
       "scene": 7
     },
     {
       "text": "is",
-      "startMs": 81134,
-      "endMs": 81294,
+      "startMs": 83756,
+      "endMs": 83943,
       "scene": 7
     },
     {
       "text": "a",
-      "startMs": 81302,
-      "endMs": 81409,
+      "startMs": 83953,
+      "endMs": 84078,
       "scene": 7
     },
     {
       "text": "square",
-      "startMs": 81414,
-      "endMs": 81787,
+      "startMs": 84084,
+      "endMs": 84520,
       "scene": 7
     },
     {
       "text": "opening.",
-      "startMs": 81807,
-      "endMs": 82233,
+      "startMs": 84543,
+      "endMs": 85041,
       "scene": 7
     },
     {
       "text": "Push",
-      "startMs": 82423,
-      "endMs": 82690,
+      "startMs": 85264,
+      "endMs": 85576,
       "scene": 7
     },
     {
       "text": "it",
-      "startMs": 82704,
-      "endMs": 82864,
+      "startMs": 85592,
+      "endMs": 85779,
       "scene": 7
     },
     {
       "text": "on",
-      "startMs": 82872,
-      "endMs": 83032,
+      "startMs": 85789,
+      "endMs": 85976,
       "scene": 7
     },
     {
       "text": "top.",
-      "startMs": 83040,
-      "endMs": 83253,
+      "startMs": 85986,
+      "endMs": 86235,
       "scene": 7
     },
     {
       "text": "Next,",
-      "startMs": 83524,
-      "endMs": 83793,
+      "startMs": 86508,
+      "endMs": 86824,
       "scene": 8
     },
     {
       "text": "a",
-      "startMs": 83978,
-      "endMs": 84085,
+      "startMs": 87040,
+      "endMs": 87166,
       "scene": 8
     },
     {
       "text": "closing",
-      "startMs": 84091,
-      "endMs": 84521,
+      "startMs": 87173,
+      "endMs": 87678,
       "scene": 8
     },
     {
       "text": "square.",
-      "startMs": 84544,
-      "endMs": 84921,
+      "startMs": 87705,
+      "endMs": 88147,
       "scene": 8
     },
     {
       "text": "Top",
-      "startMs": 85110,
-      "endMs": 85326,
+      "startMs": 88369,
+      "endMs": 88622,
       "scene": 8
     },
     {
       "text": "plate:",
-      "startMs": 85337,
-      "endMs": 85660,
+      "startMs": 88635,
+      "endMs": 89014,
       "scene": 8
     },
     {
       "text": "an",
-      "startMs": 85847,
-      "endMs": 86008,
+      "startMs": 89233,
+      "endMs": 89423,
       "scene": 8
     },
     {
       "text": "opening",
-      "startMs": 86017,
-      "endMs": 86447,
+      "startMs": 89433,
+      "endMs": 89938,
       "scene": 8
     },
     {
       "text": "square.",
-      "startMs": 86470,
-      "endMs": 86847,
+      "startMs": 89964,
+      "endMs": 90407,
       "scene": 8
     },
     {
       "text": "Match!",
-      "startMs": 87036,
-      "endMs": 87359,
+      "startMs": 90629,
+      "endMs": 91008,
       "scene": 8
     },
     {
       "text": "Pop",
-      "startMs": 87546,
-      "endMs": 87762,
+      "startMs": 91227,
+      "endMs": 91480,
       "scene": 8
     },
     {
       "text": "it.",
-      "startMs": 87773,
-      "endMs": 87934,
+      "startMs": 91493,
+      "endMs": 91683,
       "scene": 8
     },
     {
       "text": "Last,",
-      "startMs": 88203,
-      "endMs": 88554,
+      "startMs": 91953,
+      "endMs": 92235,
       "scene": 9
     },
     {
       "text": "a",
-      "startMs": 88794,
-      "endMs": 88935,
+      "startMs": 92429,
+      "endMs": 92542,
       "scene": 9
     },
     {
       "text": "closing",
-      "startMs": 88942,
-      "endMs": 89504,
+      "startMs": 92547,
+      "endMs": 92999,
       "scene": 9
     },
     {
       "text": "curly.",
-      "startMs": 89534,
-      "endMs": 89955,
+      "startMs": 93023,
+      "endMs": 93362,
       "scene": 9
     },
     {
       "text": "Top",
-      "startMs": 90199,
-      "endMs": 90480,
+      "startMs": 93559,
+      "endMs": 93785,
       "scene": 9
     },
     {
       "text": "plate:",
-      "startMs": 90495,
-      "endMs": 90916,
+      "startMs": 93796,
+      "endMs": 94136,
       "scene": 9
     },
     {
       "text": "an",
-      "startMs": 91160,
-      "endMs": 91371,
+      "startMs": 94332,
+      "endMs": 94501,
       "scene": 9
     },
     {
       "text": "opening",
-      "startMs": 91382,
-      "endMs": 91944,
+      "startMs": 94510,
+      "endMs": 94962,
       "scene": 9
     },
     {
       "text": "curly.",
-      "startMs": 91973,
-      "endMs": 92395,
+      "startMs": 94986,
+      "endMs": 95325,
       "scene": 9
     },
     {
       "text": "Pop.",
-      "startMs": 92639,
-      "endMs": 92920,
+      "startMs": 95521,
+      "endMs": 95747,
       "scene": 9
     },
     {
       "text": "The",
-      "startMs": 93156,
-      "endMs": 93437,
+      "startMs": 95938,
+      "endMs": 96164,
       "scene": 9
     },
     {
       "text": "stack",
-      "startMs": 93452,
-      "endMs": 93873,
+      "startMs": 96176,
+      "endMs": 96515,
       "scene": 9
     },
     {
       "text": "is",
-      "startMs": 93895,
-      "endMs": 94106,
+      "startMs": 96532,
+      "endMs": 96702,
       "scene": 9
     },
     {
       "text": "empty.",
-      "startMs": 94117,
-      "endMs": 94539,
+      "startMs": 96711,
+      "endMs": 97050,
       "scene": 9
     },
     {
       "text": "Valid!",
-      "startMs": 94783,
-      "endMs": 95204,
+      "startMs": 97246,
+      "endMs": 97585,
       "scene": 9
     },
     {
       "text": "Now",
-      "startMs": 95486,
-      "endMs": 95698,
+      "startMs": 97863,
+      "endMs": 98107,
       "scene": 10
     },
     {
       "text": "the",
-      "startMs": 95709,
-      "endMs": 95921,
+      "startMs": 98120,
+      "endMs": 98364,
       "scene": 10
     },
     {
       "text": "trap.",
-      "startMs": 95932,
-      "endMs": 96196,
+      "startMs": 98377,
+      "endMs": 98683,
       "scene": 10
     },
     {
       "text": "Round,",
-      "startMs": 96377,
-      "endMs": 96695,
+      "startMs": 98892,
+      "endMs": 99258,
       "scene": 10
     },
     {
       "text": "square,",
-      "startMs": 96879,
-      "endMs": 97249,
+      "startMs": 99470,
+      "endMs": 99898,
       "scene": 10
     },
     {
       "text": "close",
-      "startMs": 97436,
-      "endMs": 97753,
+      "startMs": 100113,
+      "endMs": 100480,
       "scene": 10
     },
     {
       "text": "round,",
-      "startMs": 97770,
-      "endMs": 98088,
+      "startMs": 100499,
+      "endMs": 100865,
       "scene": 10
     },
     {
       "text": "close",
-      "startMs": 98271,
-      "endMs": 98589,
+      "startMs": 101077,
+      "endMs": 101444,
       "scene": 10
     },
     {
       "text": "square.",
-      "startMs": 98606,
-      "endMs": 98976,
+      "startMs": 101463,
+      "endMs": 101891,
       "scene": 10
     },
     {
       "text": "Counts",
-      "startMs": 99163,
-      "endMs": 99533,
+      "startMs": 102106,
+      "endMs": 102533,
       "scene": 10
     },
     {
       "text": "match:",
-      "startMs": 99553,
-      "endMs": 99870,
+      "startMs": 102556,
+      "endMs": 102922,
       "scene": 10
     },
     {
       "text": "one",
-      "startMs": 100054,
-      "endMs": 100266,
+      "startMs": 103135,
+      "endMs": 103379,
       "scene": 10
     },
     {
       "text": "of",
-      "startMs": 100277,
-      "endMs": 100435,
+      "startMs": 103392,
+      "endMs": 103575,
       "scene": 10
     },
     {
       "text": "each.",
-      "startMs": 100444,
-      "endMs": 100708,
+      "startMs": 103585,
+      "endMs": 103890,
       "scene": 10
     },
     {
       "text": "But",
-      "startMs": 100889,
-      "endMs": 101101,
+      "startMs": 104099,
+      "endMs": 104343,
       "scene": 10
     },
     {
       "text": "the",
-      "startMs": 101112,
-      "endMs": 101324,
+      "startMs": 104356,
+      "endMs": 104600,
       "scene": 10
     },
     {
       "text": "order",
-      "startMs": 101335,
-      "endMs": 101653,
+      "startMs": 104613,
+      "endMs": 104980,
       "scene": 10
     },
     {
       "text": "is",
-      "startMs": 101669,
-      "endMs": 101828,
+      "startMs": 104999,
+      "endMs": 105182,
       "scene": 10
     },
     {
       "text": "broken.",
-      "startMs": 101836,
-      "endMs": 102207,
+      "startMs": 105192,
+      "endMs": 105619,
       "scene": 10
     },
     {
       "text": "The",
-      "startMs": 102393,
-      "endMs": 102605,
+      "startMs": 105835,
+      "endMs": 106079,
       "scene": 10
     },
     {
       "text": "stack",
-      "startMs": 102616,
-      "endMs": 102934,
+      "startMs": 106092,
+      "endMs": 106458,
       "scene": 10
     },
     {
       "text": "sees",
-      "startMs": 102951,
-      "endMs": 103215,
+      "startMs": 106478,
+      "endMs": 106783,
       "scene": 10
     },
     {
       "text": "a",
-      "startMs": 103229,
-      "endMs": 103335,
+      "startMs": 106799,
+      "endMs": 106921,
       "scene": 10
     },
     {
       "text": "closing",
-      "startMs": 103340,
-      "endMs": 103764,
+      "startMs": 106928,
+      "endMs": 107416,
       "scene": 10
     },
     {
       "text": "round",
-      "startMs": 103786,
-      "endMs": 104104,
+      "startMs": 107442,
+      "endMs": 107808,
       "scene": 10
     },
     {
       "text": "on",
-      "startMs": 104120,
-      "endMs": 104279,
+      "startMs": 107828,
+      "endMs": 108011,
       "scene": 10
     },
     {
       "text": "top",
-      "startMs": 104287,
-      "endMs": 104499,
+      "startMs": 108020,
+      "endMs": 108265,
       "scene": 10
     },
     {
       "text": "of",
-      "startMs": 104510,
-      "endMs": 104669,
+      "startMs": 108278,
+      "endMs": 108461,
       "scene": 10
     },
     {
       "text": "a",
-      "startMs": 104677,
-      "endMs": 104783,
+      "startMs": 108470,
+      "endMs": 108593,
       "scene": 10
     },
     {
       "text": "square",
-      "startMs": 104789,
-      "endMs": 105159,
+      "startMs": 108599,
+      "endMs": 109027,
       "scene": 10
     },
     {
       "text": "plate,",
-      "startMs": 105179,
-      "endMs": 105496,
+      "startMs": 109049,
+      "endMs": 109415,
       "scene": 10
     },
     {
       "text": "and",
-      "startMs": 105680,
-      "endMs": 105892,
+      "startMs": 109628,
+      "endMs": 109872,
       "scene": 10
     },
     {
       "text": "says",
-      "startMs": 105903,
-      "endMs": 106167,
+      "startMs": 109885,
+      "endMs": 110190,
       "scene": 10
     },
     {
       "text": "invalid.",
-      "startMs": 106181,
-      "endMs": 106605,
+      "startMs": 110206,
+      "endMs": 110695,
       "scene": 10
     },
     {
       "text": "Now",
-      "startMs": 106887,
-      "endMs": 107148,
+      "startMs": 110980,
+      "endMs": 111190,
       "scene": 11
     },
     {
       "text": "the",
-      "startMs": 107162,
-      "endMs": 107423,
+      "startMs": 111201,
+      "endMs": 111411,
       "scene": 11
     },
     {
       "text": "maths.",
-      "startMs": 107437,
-      "endMs": 107829,
+      "startMs": 111422,
+      "endMs": 111737,
       "scene": 11
     },
     {
       "text": "Two",
-      "startMs": 108056,
-      "endMs": 108317,
+      "startMs": 111919,
+      "endMs": 112129,
       "scene": 11
     },
     {
       "text": "hundred",
-      "startMs": 108331,
-      "endMs": 108853,
+      "startMs": 112140,
+      "endMs": 112559,
       "scene": 11
     },
     {
       "text": "fifty",
-      "startMs": 108881,
-      "endMs": 109273,
+      "startMs": 112581,
+      "endMs": 112896,
       "scene": 11
     },
     {
       "text": "billion",
-      "startMs": 109294,
-      "endMs": 109816,
+      "startMs": 112913,
+      "endMs": 113332,
       "scene": 11
     },
     {
       "text": "steps",
-      "startMs": 109844,
-      "endMs": 110236,
+      "startMs": 113354,
+      "endMs": 113669,
       "scene": 11
     },
     {
       "text": "became",
-      "startMs": 110256,
-      "endMs": 110713,
+      "startMs": 113686,
+      "endMs": 114053,
       "scene": 11
     },
     {
       "text": "one",
-      "startMs": 110737,
-      "endMs": 110999,
+      "startMs": 114072,
+      "endMs": 114282,
       "scene": 11
     },
     {
       "text": "million.",
-      "startMs": 111013,
-      "endMs": 111535,
+      "startMs": 114293,
+      "endMs": 114712,
       "scene": 11
     },
     {
       "text": "Four",
-      "startMs": 111769,
-      "endMs": 112095,
+      "startMs": 114900,
+      "endMs": 115162,
       "scene": 11
     },
     {
       "text": "minutes",
-      "startMs": 112113,
-      "endMs": 112635,
+      "startMs": 115176,
+      "endMs": 115596,
       "scene": 11
     },
     {
       "text": "became",
-      "startMs": 112663,
-      "endMs": 113120,
+      "startMs": 115618,
+      "endMs": 115985,
       "scene": 11
     },
     {
       "text": "one",
-      "startMs": 113144,
-      "endMs": 113405,
+      "startMs": 116004,
+      "endMs": 116214,
       "scene": 11
     },
     {
       "text": "millisecond.",
-      "startMs": 113419,
-      "endMs": 114203,
+      "startMs": 116225,
+      "endMs": 116854,
       "scene": 11
     },
     {
       "text": "Same",
-      "startMs": 114450,
-      "endMs": 114777,
+      "startMs": 117053,
+      "endMs": 117315,
       "scene": 11
     },
     {
       "text": "answer.",
-      "startMs": 114794,
-      "endMs": 115252,
+      "startMs": 117329,
+      "endMs": 117696,
       "scene": 11
     },
     {
       "text": "One",
-      "startMs": 115482,
-      "endMs": 115743,
+      "startMs": 117881,
+      "endMs": 118091,
       "scene": 11
     },
     {
       "text": "stack,",
-      "startMs": 115757,
-      "endMs": 116149,
+      "startMs": 118102,
+      "endMs": 118417,
       "scene": 11
     },
     {
       "text": "one",
-      "startMs": 116376,
-      "endMs": 116637,
+      "startMs": 118599,
+      "endMs": 118809,
       "scene": 11
     },
     {
       "text": "pass.",
-      "startMs": 116651,
-      "endMs": 116977,
+      "startMs": 118820,
+      "endMs": 119082,
       "scene": 11
     },
     {
       "text": "The",
-      "startMs": 117255,
-      "endMs": 117446,
+      "startMs": 119356,
+      "endMs": 119562,
       "scene": 12
     },
     {
       "text": "interviewer",
-      "startMs": 117456,
-      "endMs": 118031,
+      "startMs": 119573,
+      "endMs": 120191,
       "scene": 12
     },
     {
       "text": "says:",
-      "startMs": 118061,
-      "endMs": 118300,
+      "startMs": 120223,
+      "endMs": 120481,
       "scene": 12
     },
     {
       "text": "great,",
-      "startMs": 118464,
-      "endMs": 118752,
+      "startMs": 120657,
+      "endMs": 120966,
       "scene": 12
     },
     {
       "text": "you",
-      "startMs": 118918,
-      "endMs": 119109,
+      "startMs": 121145,
+      "endMs": 121351,
       "scene": 12
     },
     {
       "text": "handled",
-      "startMs": 119119,
-      "endMs": 119503,
+      "startMs": 121362,
+      "endMs": 121774,
       "scene": 12
     },
     {
       "text": "the",
-      "startMs": 119523,
-      "endMs": 119714,
+      "startMs": 121796,
+      "endMs": 122002,
       "scene": 12
     },
     {
       "text": "order,",
-      "startMs": 119724,
-      "endMs": 120012,
+      "startMs": 122012,
+      "endMs": 122322,
       "scene": 12
     },
     {
       "text": "not",
-      "startMs": 120178,
-      "endMs": 120369,
+      "startMs": 122500,
+      "endMs": 122706,
       "scene": 12
     },
     {
       "text": "just",
-      "startMs": 120380,
-      "endMs": 120619,
+      "startMs": 122717,
+      "endMs": 122975,
       "scene": 12
     },
     {
       "text": "the",
-      "startMs": 120632,
-      "endMs": 120823,
+      "startMs": 122988,
+      "endMs": 123194,
       "scene": 12
     },
     {
       "text": "count.",
-      "startMs": 120833,
-      "endMs": 121120,
+      "startMs": 123205,
+      "endMs": 123514,
       "scene": 12
     },
     {
       "text": "That",
-      "startMs": 121287,
-      "endMs": 121526,
+      "startMs": 123693,
+      "endMs": 123951,
       "scene": 12
     },
     {
       "text": "is",
-      "startMs": 121539,
-      "endMs": 121682,
+      "startMs": 123964,
+      "endMs": 124119,
       "scene": 12
     },
     {
       "text": "a",
-      "startMs": 121690,
-      "endMs": 121786,
+      "startMs": 124127,
+      "endMs": 124230,
       "scene": 12
     },
     {
       "text": "good",
-      "startMs": 121791,
-      "endMs": 122030,
+      "startMs": 124235,
+      "endMs": 124493,
       "scene": 12
     },
     {
       "text": "smile.",
-      "startMs": 122043,
-      "endMs": 122330,
+      "startMs": 124507,
+      "endMs": 124816,
       "scene": 12
     },
     {
       "text": "This",
-      "startMs": 122605,
-      "endMs": 122863,
+      "startMs": 125092,
+      "endMs": 125422,
       "scene": 13
     },
     {
       "text": "is",
-      "startMs": 122876,
-      "endMs": 123031,
+      "startMs": 125439,
+      "endMs": 125637,
       "scene": 13
     },
     {
       "text": "a",
-      "startMs": 123039,
-      "endMs": 123142,
+      "startMs": 125647,
+      "endMs": 125779,
       "scene": 13
     },
     {
       "text": "stack.",
-      "startMs": 123147,
-      "endMs": 123457,
+      "startMs": 125786,
+      "endMs": 126182,
       "scene": 13
     },
     {
       "text": "Last",
-      "startMs": 123636,
-      "endMs": 123893,
+      "startMs": 126411,
+      "endMs": 126741,
       "scene": 13
     },
     {
       "text": "in,",
-      "startMs": 123907,
-      "endMs": 124061,
+      "startMs": 126759,
+      "endMs": 126957,
       "scene": 13
     },
     {
       "text": "first",
-      "startMs": 124232,
-      "endMs": 124541,
+      "startMs": 127175,
+      "endMs": 127571,
       "scene": 13
     },
     {
       "text": "out.",
-      "startMs": 124557,
-      "endMs": 124763,
+      "startMs": 127592,
+      "endMs": 127856,
       "scene": 13
     },
     {
       "text": "Whenever",
-      "startMs": 124937,
-      "endMs": 125401,
+      "startMs": 128078,
+      "endMs": 128672,
       "scene": 13
     },
     {
       "text": "the",
-      "startMs": 125425,
-      "endMs": 125631,
+      "startMs": 128703,
+      "endMs": 128967,
       "scene": 13
     },
     {
       "text": "latest",
-      "startMs": 125642,
-      "endMs": 126002,
+      "startMs": 128981,
+      "endMs": 129443,
       "scene": 13
     },
     {
       "text": "thing",
-      "startMs": 126021,
-      "endMs": 126331,
+      "startMs": 129467,
+      "endMs": 129863,
       "scene": 13
     },
     {
       "text": "must",
-      "startMs": 126347,
-      "endMs": 126604,
+      "startMs": 129884,
+      "endMs": 130214,
       "scene": 13
     },
     {
       "text": "finish",
-      "startMs": 126618,
-      "endMs": 126979,
+      "startMs": 130231,
+      "endMs": 130693,
       "scene": 13
     },
     {
       "text": "first,",
-      "startMs": 126998,
-      "endMs": 127307,
+      "startMs": 130717,
+      "endMs": 131113,
       "scene": 13
     },
     {
       "text": "think",
-      "startMs": 127486,
-      "endMs": 127795,
+      "startMs": 131342,
+      "endMs": 131738,
       "scene": 13
     },
     {
       "text": "stack.",
-      "startMs": 127811,
-      "endMs": 128120,
+      "startMs": 131759,
+      "endMs": 132155,
       "scene": 13
     },
     {
       "text": "Notes",
-      "startMs": 128396,
-      "endMs": 128875,
+      "startMs": 132435,
+      "endMs": 132888,
       "scene": 14
     },
     {
       "text": "for",
-      "startMs": 128900,
-      "endMs": 129219,
+      "startMs": 132911,
+      "endMs": 133213,
       "scene": 14
     },
     {
       "text": "revision.",
-      "startMs": 129235,
-      "endMs": 129953,
+      "startMs": 133229,
+      "endMs": 133907,
       "scene": 14
     },
     {
       "text": "Time:",
-      "startMs": 130242,
-      "endMs": 130641,
+      "startMs": 134181,
+      "endMs": 134558,
       "scene": 14
     },
     {
       "text": "order",
-      "startMs": 130914,
-      "endMs": 131392,
+      "startMs": 134816,
+      "endMs": 135268,
       "scene": 14
     },
     {
       "text": "n.",
-      "startMs": 131417,
-      "endMs": 131577,
+      "startMs": 135292,
+      "endMs": 135443,
       "scene": 14
     },
     {
       "text": "Space:",
-      "startMs": 131837,
-      "endMs": 132315,
+      "startMs": 135689,
+      "endMs": 136141,
       "scene": 14
     },
     {
       "text": "order",
-      "startMs": 132592,
-      "endMs": 133070,
+      "startMs": 136403,
+      "endMs": 136855,
       "scene": 14
     },
     {
       "text": "n.",
-      "startMs": 133095,
-      "endMs": 133255,
+      "startMs": 136879,
+      "endMs": 137030,
       "scene": 14
     },
     {
       "text": "The",
-      "startMs": 133515,
-      "endMs": 133834,
+      "startMs": 137276,
+      "endMs": 137577,
       "scene": 14
     },
     {
       "text": "idea:",
-      "startMs": 133851,
-      "endMs": 134249,
+      "startMs": 137593,
+      "endMs": 137970,
       "scene": 14
     },
     {
       "text": "the",
-      "startMs": 134522,
-      "endMs": 134841,
+      "startMs": 138228,
+      "endMs": 138529,
       "scene": 14
     },
     {
       "text": "latest",
-      "startMs": 134857,
-      "endMs": 135415,
+      "startMs": 138545,
+      "endMs": 139073,
       "scene": 14
     },
     {
       "text": "opened",
-      "startMs": 135445,
-      "endMs": 136003,
+      "startMs": 139101,
+      "endMs": 139628,
       "scene": 14
     },
     {
       "text": "closes",
-      "startMs": 136032,
-      "endMs": 136590,
+      "startMs": 139656,
+      "endMs": 140184,
       "scene": 14
     },
     {
       "text": "first.",
-      "startMs": 136620,
-      "endMs": 137098,
+      "startMs": 140212,
+      "endMs": 140664,
       "scene": 14
     },
     {
       "text": "Trap:",
-      "startMs": 137375,
-      "endMs": 137773,
+      "startMs": 140926,
+      "endMs": 141303,
       "scene": 14
     },
     {
       "text": "count",
-      "startMs": 138046,
-      "endMs": 138524,
+      "startMs": 141560,
+      "endMs": 142013,
       "scene": 14
     },
     {
       "text": "is",
-      "startMs": 138550,
-      "endMs": 138789,
+      "startMs": 142037,
+      "endMs": 142263,
       "scene": 14
     },
     {
       "text": "not",
-      "startMs": 138801,
-      "endMs": 139120,
+      "startMs": 142275,
+      "endMs": 142576,
       "scene": 14
     },
     {
       "text": "order.",
-      "startMs": 139137,
-      "endMs": 139615,
+      "startMs": 142592,
+      "endMs": 143044,
       "scene": 14
     },
     {
       "text": "Quick",
-      "startMs": 139900,
-      "endMs": 140228,
+      "startMs": 143328,
+      "endMs": 143620,
       "scene": 15
     },
     {
       "text": "quiz.",
-      "startMs": 140245,
-      "endMs": 140518,
+      "startMs": 143635,
+      "endMs": 143878,
       "scene": 15
     },
     {
       "text": "The",
-      "startMs": 140705,
-      "endMs": 140923,
+      "startMs": 144044,
+      "endMs": 144238,
       "scene": 15
     },
     {
       "text": "string",
-      "startMs": 140934,
-      "endMs": 141316,
+      "startMs": 144249,
+      "endMs": 144589,
       "scene": 15
     },
     {
       "text": "is",
-      "startMs": 141337,
-      "endMs": 141500,
+      "startMs": 144606,
+      "endMs": 144752,
       "scene": 15
     },
     {
       "text": "three",
-      "startMs": 141509,
-      "endMs": 141836,
+      "startMs": 144760,
+      "endMs": 145051,
       "scene": 15
     },
     {
       "text": "opening",
-      "startMs": 141854,
-      "endMs": 142290,
+      "startMs": 145067,
+      "endMs": 145455,
       "scene": 15
     },
     {
       "text": "round",
-      "startMs": 142313,
-      "endMs": 142641,
+      "startMs": 145476,
+      "endMs": 145767,
       "scene": 15
     },
     {
       "text": "brackets,",
-      "startMs": 142658,
-      "endMs": 143149,
+      "startMs": 145783,
+      "endMs": 146220,
       "scene": 15
     },
     {
       "text": "and",
-      "startMs": 143347,
-      "endMs": 143565,
+      "startMs": 146396,
+      "endMs": 146590,
       "scene": 15
     },
     {
       "text": "nothing",
-      "startMs": 143577,
-      "endMs": 144014,
+      "startMs": 146601,
+      "endMs": 146989,
       "scene": 15
     },
     {
       "text": "else.",
-      "startMs": 144036,
-      "endMs": 144309,
+      "startMs": 147010,
+      "endMs": 147253,
       "scene": 15
     },
     {
       "text": "Valid",
-      "startMs": 144496,
-      "endMs": 144823,
+      "startMs": 147419,
+      "endMs": 147710,
       "scene": 15
     },
     {
       "text": "or",
-      "startMs": 144841,
-      "endMs": 145004,
+      "startMs": 147726,
+      "endMs": 147871,
       "scene": 15
     },
     {
       "text": "not?",
-      "startMs": 145013,
-      "endMs": 145231,
+      "startMs": 147879,
+      "endMs": 148073,
       "scene": 15
     },
     {
       "text": "Comment",
-      "startMs": 145415,
-      "endMs": 145852,
+      "startMs": 148237,
+      "endMs": 148625,
       "scene": 15
     },
     {
       "text": "your",
-      "startMs": 145875,
-      "endMs": 146148,
+      "startMs": 148646,
+      "endMs": 148889,
       "scene": 15
     },
     {
       "text": "answer.",
-      "startMs": 146162,
-      "endMs": 146544,
+      "startMs": 148902,
+      "endMs": 149242,
       "scene": 15
     },
     {
       "text": "Save",
-      "startMs": 146824,
-      "endMs": 147078,
+      "startMs": 149520,
+      "endMs": 149782,
       "scene": 16
     },
     {
       "text": "this",
-      "startMs": 147092,
-      "endMs": 147346,
+      "startMs": 149796,
+      "endMs": 150058,
       "scene": 16
     },
     {
       "text": "for",
-      "startMs": 147359,
-      "endMs": 147563,
+      "startMs": 150072,
+      "endMs": 150281,
       "scene": 16
     },
     {
       "text": "your",
-      "startMs": 147573,
-      "endMs": 147827,
+      "startMs": 150292,
+      "endMs": 150555,
       "scene": 16
     },
     {
       "text": "interview.",
-      "startMs": 147841,
-      "endMs": 148349,
+      "startMs": 150568,
+      "endMs": 151093,
       "scene": 16
     },
     {
       "text": "Send",
-      "startMs": 148537,
-      "endMs": 148791,
+      "startMs": 151286,
+      "endMs": 151548,
       "scene": 16
     },
     {
       "text": "it",
-      "startMs": 148804,
-      "endMs": 148957,
+      "startMs": 151562,
+      "endMs": 151719,
       "scene": 16
     },
     {
       "text": "to",
-      "startMs": 148965,
-      "endMs": 149117,
+      "startMs": 151728,
+      "endMs": 151885,
       "scene": 16
     },
     {
       "text": "the",
-      "startMs": 149125,
-      "endMs": 149329,
+      "startMs": 151893,
+      "endMs": 152103,
       "scene": 16
     },
     {
       "text": "friend",
-      "startMs": 149339,
-      "endMs": 149695,
+      "startMs": 152114,
+      "endMs": 152481,
       "scene": 16
     },
     {
       "text": "who",
-      "startMs": 149714,
-      "endMs": 149917,
+      "startMs": 152501,
+      "endMs": 152710,
       "scene": 16
     },
     {
       "text": "only",
-      "startMs": 149928,
-      "endMs": 150182,
+      "startMs": 152721,
+      "endMs": 152984,
       "scene": 16
     },
     {
       "text": "counts",
-      "startMs": 150195,
-      "endMs": 150551,
+      "startMs": 152997,
+      "endMs": 153365,
       "scene": 16
     },
     {
       "text": "brackets.",
-      "startMs": 150570,
-      "endMs": 151028,
+      "startMs": 153384,
+      "endMs": 153856,
       "scene": 16
     },
     {
       "text": "Like",
-      "startMs": 151212,
-      "endMs": 151466,
+      "startMs": 154046,
+      "endMs": 154309,
       "scene": 16
     },
     {
       "text": "for",
-      "startMs": 151480,
-      "endMs": 151683,
+      "startMs": 154322,
+      "endMs": 154532,
       "scene": 16
     },
     {
       "text": "the",
-      "startMs": 151694,
-      "endMs": 151897,
+      "startMs": 154543,
+      "endMs": 154753,
       "scene": 16
     },
     {
       "text": "next",
-      "startMs": 151908,
-      "endMs": 152162,
+      "startMs": 154764,
+      "endMs": 155026,
       "scene": 16
     },
     {
       "text": "question:",
-      "startMs": 152175,
-      "endMs": 152633,
+      "startMs": 155040,
+      "endMs": 155512,
       "scene": 16
     },
     {
       "text": "Min",
-      "startMs": 152818,
-      "endMs": 153021,
+      "startMs": 155703,
+      "endMs": 155912,
       "scene": 16
     },
     {
       "text": "Stack.",
-      "startMs": 153032,
-      "endMs": 153337,
+      "startMs": 155923,
+      "endMs": 156238,
       "scene": 16
     },
     {
       "text": "And",
-      "startMs": 153513,
-      "endMs": 153717,
+      "startMs": 156420,
+      "endMs": 156630,
       "scene": 16
     },
     {
       "text": "comment",
-      "startMs": 153727,
-      "endMs": 154134,
+      "startMs": 156641,
+      "endMs": 157061,
       "scene": 16
     },
     {
       "text": "BRACKETS",
-      "startMs": 154155,
-      "endMs": 154613,
+      "startMs": 157083,
+      "endMs": 157555,
       "scene": 16
     },
     {
       "text": "for",
-      "startMs": 154637,
-      "endMs": 154840,
+      "startMs": 157579,
+      "endMs": 157789,
       "scene": 16
     },
     {
       "text": "the",
-      "startMs": 154851,
-      "endMs": 155054,
+      "startMs": 157800,
+      "endMs": 158010,
       "scene": 16
     },
     {
       "text": "notes",
-      "startMs": 155065,
-      "endMs": 155370,
+      "startMs": 158021,
+      "endMs": 158336,
       "scene": 16
     },
     {
       "text": "PDF.",
-      "startMs": 155386,
-      "endMs": 155590,
+      "startMs": 158352,
+      "endMs": 158562,
       "scene": 16
     }
   ]

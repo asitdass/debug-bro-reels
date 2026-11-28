@@ -73,5 +73,14 @@
     "postedAt": "2026-11-28T00:02:49.766Z",
     "kind": "reel",
     "delivered": "telegram"
+  },
+  {
+    "slug": "dsa101-02-valid-parentheses",
+    "topic": "LeetCode 20 Valid Parentheses solved with a stack",
+    "pillar": "interview",
+    "title": "Valid Parentheses: the stack of plates",
+    "postedAt": "2026-11-28T00:23:12.906Z",
+    "kind": "reel",
+    "delivered": "telegram"
   }
 ]
