@@ -212,6 +212,18 @@ function validateDsa(ep, errors, warnings) {
   for (const m of shown.matchAll(/leet\s*code\s*(?:#|no\.?|number|problem)?\s*(\d+)/gi))
     if (!allowed.has(Number(m[1]))) errors.push(`"${m[0]}" is not this episode's number (${ep.dsa?.leetcode}) or a practice problem's`);
   if (ep.dsa?.n > 1) checkVariety(ep, errors, warnings);
+  // the code on screen must be the tested Python in notes.json, line for line (28 Nov: a scrambled listing with a
+  // leftover "XX" line passed every check and was rendered)
+  const listing = (lines) => lines.map((l) => l.replace(/\s+#.*$/, '').trimEnd()).filter((l) => l.trim() && !l.trim().startsWith('#'));
+  const onScreen = sc.find((s) => s.kind === 'code')?.data?.lines;
+  const tested = notes?.code?.python?.code;
+  if (onScreen && tested) {
+    const a = listing(onScreen);
+    const b = listing(tested.split('\n'));
+    const at = a.findIndex((l, i) => l !== b[i]);
+    if (at !== -1 || a.length !== b.length)
+      errors.push(`code scene differs from the Python in notes.json at line ${(at === -1 ? Math.min(a.length, b.length) : at) + 1}: copy it exactly (comments may be left out)`);
+  }
   const words = sc.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
   return {ok: errors.length === 0, errors, warnings, words};
 }

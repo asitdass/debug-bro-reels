@@ -182,12 +182,12 @@
           "    stack = []",
           "    for ch in s:",
           "        if ch in pair:",
-          "    XX",
+          "            top = stack.pop() if stack else \"\"",
+          "            if top != pair[ch]:",
           "                return False",
           "        else:",
           "            stack.append(ch)",
-          "            top = stack.pop() if stack else \"\"",
-          "            if top != pair[ch]:"
+          "    return not stack"
         ],
         "meanings": [
           "The question, as a function",
@@ -195,12 +195,12 @@
           "The plates, empty",
           "Take each bracket",
           "A closing bracket?",
-          "No plate, or wrong plate: invalid",
-          "Stop at once",
-          "An opening bracket?",
-          "Put the plate on top",
           "Take the top plate, if any",
-          "Wrong or missing plate: invalid"
+          "Wrong or missing plate?",
+          "Invalid: stop at once",
+          "An opening bracket",
+          "Put the plate on top",
+          "Valid only if no plates are left"
         ]
       }
     },
