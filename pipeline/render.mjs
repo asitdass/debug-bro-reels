@@ -104,6 +104,8 @@ export async function renderReel(slug) {
  * comment-keyword PDF, so the keepable payoff (a board checklist, tips) must be in here: it was missing before ep 5.
  */
 function pickCarouselScenes(episode) {
+  // the simple DSA format sends a written PDF, not stills
+  if (episode.style === 'dsa2') return [];
   if (episode.style === 'dsa') {
     const want = ['title', 'problem', 'gate', 'code', 'trap', 'aha', 'notes', 'quiz'];
     return episode.scenes.map((s, i) => (want.includes(s.kind) ? i : -1)).filter((i) => i >= 0);

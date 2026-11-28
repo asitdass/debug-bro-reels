@@ -31,6 +31,18 @@ const str = (max) => z.string().min(1).max(max);
 export const sceneSchema = z.discriminatedUnion('type', [
   // DSA-101 series (src/dsa.tsx): one scene "kind" per teaching beat; its parameters live in `data`
   z.object({...base, type: z.literal('dsa'), kind: z.enum(['title', 'problem', 'brute', 'pause', 'gate', 'steps', 'code', 'run', 'trap', 'aha', 'smile', 'name', 'notes', 'quiz', 'close']), data: z.record(z.any()).default({})}),
+  // DSA-101 simple format (src/dsa2.tsx): hook, series, question, promise, slow, guess, payoff, code, ask
+  z.object({
+    ...base,
+    type: z.literal('dsa2'),
+    kind: z.enum(['hook', 'series', 'concept', 'ops', 'catch', 'guess', 'brute', 'trap', 'insight', 'code', 'dryrun', 'compare', 'say', 'ask']),
+    // the level chip, the interviewer's mood 0-100, a mid-reel nudge, and the transition
+    level: z.string().max(22).optional(),
+    meter: z.number().min(0).max(100).optional(),
+    pop: z.object({icon: z.enum(['like', 'comment', 'share', 'follow', 'save']), text: z.string().min(2).max(22)}).strict().optional(),
+    fx: z.enum(['none', 'zoom', 'whip', 'punch', 'glitch', 'flash']).optional(),
+    data: z.record(z.any()).default({}),
+  }),
   // Cold open: the failure happens in the first second (clock ticks, then glitch + error card + big question).
   z.object({
     ...base,
@@ -144,7 +156,7 @@ export const episodeSchema = z.object({
   // the reel's format (see .claude/skills/make-episode/formats.md); it also picks the look
   format: z.enum(['desi-story', 'whiteboard', 'ai-hack', 'news', 'skit', 'myth-fact']).optional(),
   // art direction (src/styles.ts): changes the whole frame; never the same as either of the last 2 episodes
-  style: z.enum(['stage', 'cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone', 'dsa']).optional(),
+  style: z.enum(['stage', 'cinema', 'notebook', 'blueprint', 'newsroom', 'poster', 'terminal', 'comic', 'phone', 'dsa', 'dsa2']).optional(),
   // the ONE change this episode tests vs the previous reel (see data/learnings.md), and the metric that will judge it
   experiment: z.object({change: str(140), why: str(200), metric: z.enum(['skip-rate', 'watch-time', 'views', 'saves', 'shares', 'follows', 'comments'])}).optional(),
   // the 3 hook options considered; the scenes use the best one
@@ -156,7 +168,11 @@ export const episodeSchema = z.object({
   // DSA-101 episodes: which problem this is
   dsa: z.object({n: z.number().int(), leetcode: z.number().int(), difficulty: z.string(), category: z.string(), companies: z.array(z.string()).max(4).default([]), companySource: z.string().url().optional(),
     // variety between questions (validator): the kind of opening and the everyday picture used
-    hook: z.enum(['story', 'bold-claim', 'wrong-belief', 'challenge', 'question']).optional(), analogy: z.string().min(3).max(40).optional()}).optional(),
+    hook: z.enum(['story', 'bold-claim', 'wrong-belief', 'challenge', 'question', 'company', 'job-life', 'wrong-answer']).optional(),
+    // dsa2: the problem name shown on the cover
+    name: z.string().max(60).optional(), analogy: z.string().min(3).max(40).optional()}).optional(),
+  // dsa2 cover: one tiny picture of the problem
+  cover: z.object({art: z.array(z.string().min(1).max(3)).min(2).max(5), note: z.string().min(1).max(12), pose: z.enum(['idle', 'point', 'explain', 'think', 'shock', 'facepalm', 'thumbsup', 'shrug', 'crossed', 'laugh'])}).optional(),
   // the fix from the last reel's review (data/reviews.json) that this episode applies
   learnedFrom: z.object({slug: z.string(), fix: z.string(), how: z.string().min(10).max(240)}).optional(),
   voice: z

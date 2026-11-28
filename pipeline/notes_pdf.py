@@ -107,6 +107,7 @@ def build(slug, out):
     b = n["brute"]
     story += [*heading("Picture it"), boxed(p(n["analogy"], CELL), CREAM, AMBER),
               *heading("First idea: brute force"), p(b["explain"]), p(f"Time {b['time']}, space {b['space']}.", SMALL),
+              *([Spacer(1, 6), code_block(b["code"])] if b.get("code") else []),
               *heading("The key insight"), *[p(t) for t in n["insight"]],
               *heading("Algorithm, step by step"), bullets(n["steps"], numbered=True)]
 

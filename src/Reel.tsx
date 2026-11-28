@@ -13,6 +13,7 @@ import {styleFor} from './styles';
 import {ComicScene, KineticScene, PhoneReel} from './kits';
 import {Cut, MascotFrame, StyleBackground, StyleHeader, StyledCaptions} from './components/frame';
 import {DsaReel} from './dsa';
+import {Dsa2Cover, Dsa2Reel} from './dsa2';
 import {StageCast, StageRoom, StageScene, Tease} from './stage';
 
 const ALL_SCENES: Record<string, React.FC<any>> = {...SCENES, ...FORMAT_SCENES};
@@ -177,10 +178,13 @@ const ClassicReel: React.FC<ReelProps> = ({episode, timings, hideCaptions}) => {
   );
 };
 
-export const Reel: React.FC<ReelProps> = (p) => (p.episode.style === 'dsa' ? <DsaReel {...p} /> : <ClassicReel {...p} />);
+export const Reel: React.FC<ReelProps> = (p) =>
+  p.episode.style === 'dsa2' ? <Dsa2Reel {...p} /> : p.episode.style === 'dsa' ? <DsaReel {...p} /> : <ClassicReel {...p} />;
 
 /** Cover image for the profile grid. Instagram's grid crops to the centre 3:4, so text stays in the middle. */
-export const Cover: React.FC<{episode: any}> = ({episode}) => {
+export const Cover: React.FC<{episode: any}> = (p) => (p.episode.style === 'dsa2' ? <Dsa2Cover {...p} /> : <ClassicCover {...p} />);
+
+const ClassicCover: React.FC<{episode: any}> = ({episode}) => {
   useFonts();
   const words = String(episode.coverText).split(' ');
   return (

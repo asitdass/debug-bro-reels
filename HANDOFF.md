@@ -47,6 +47,11 @@ The Instagram Graph API works again (28 Nov, after Asit's confirmation). `review
 `pipeline/fetch-insights.mjs` and has Claude write the review before each new script. Posting stays manual
 (`POST_MODE=manual`); API posting is untested since the block. The Mac task is an optional extra for follows.
 
+## DSA format since 28 Nov: "dsa2" (src/dsa2.tsx)
+Hook, series line, question, promise, slow way, guess, payoff, key code, one ask (~60-75 s); the cover shows the number
+out of 150, name, difficulty, concept, a tiny puzzle and a "Prep for" MANGOS row (public/logos, from simple-icons
+16.38.1; OpenAI is text because the set has no logo; the logos are their owners' trademarks). Rules: dsa.md.
+
 ## Next steps
 1. Ep 5 (`ep05-ek-tick-matlab-block`, WhatsApp ticks, stage style) is written and validated, not posted. Run the
    workflow (it renders the lowest unpublished episode first); post it with the Telegram checklist (cover, original

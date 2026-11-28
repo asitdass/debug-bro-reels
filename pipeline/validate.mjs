@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {episodeSchema} from '../src/schema.js';
-import {checkDsaScene, notesSchema} from '../src/dsaSchema.js';
+import {DSA2_ORDER, DSA2_REPEAT, checkDsa2Scene, checkDsaScene, notesSchema} from '../src/dsaSchema.js';
 import {checkLearning} from './review-gate.mjs';
 import {ROOT, epDir, latestSlug, readJSON} from './util.mjs';
 
@@ -28,7 +28,12 @@ export function validate(slug) {
     errors.push(...learned.errors);
     warnings.push(...learned.warnings);
   }
-  if (ep.style === 'dsa') return validateDsa(ep, errors, warnings);
+  if (ep.style === 'dsa2') return validateDsa2(ep, errors, warnings);
+  if (ep.style === 'dsa') {
+    const posted = readJSON(path.join(ROOT, 'data/published.json'), []).some((p) => p.slug === slug);
+    if (ep.dsa?.n >= 3 && !posted) errors.push('new DSA questions use the simple format: "style": "dsa2" (.claude/skills/make-episode/dsa.md)');
+    return validateDsa(ep, errors, warnings);
+  }
   const HOOKS = ['coldopen', 'hook', 'moment', 'board', 'dialog', 'headline', 'tip'];
   if (!HOOKS.includes(ep.scenes[0].type)) errors.push(`first scene must be a hook scene (${HOOKS.join(', ')}), not a chart`);
   if (ep.scenes.length < 6) warnings.push(`${ep.scenes.length} scenes; 7–12 gives a new picture every 2–3 s`);
@@ -122,6 +127,129 @@ export function validate(slug) {
   return {ok: errors.length === 0, errors, warnings, words};
 }
 
+// LeetCode numbers are public, so each one must be exact: checked against data/dsa150.json
+function checkNumbers(ep, notes, sc, errors) {
+  const list = readJSON(path.join(ROOT, 'data/dsa150.json'), {problems: []}).problems;
+  const plain = (x) => String(x).toLowerCase().replace(/[^a-z0-9]/g, '');
+  for (const q of notes?.practice ?? []) {
+    const hit = list.find((p) => p.leetcode === q.leetcode);
+    if (!hit) errors.push(`notes.json practice: LeetCode ${q.leetcode} is not in data/dsa150.json, so it cannot be checked; pick a listed problem`);
+    else if (plain(hit.name) !== plain(q.name)) errors.push(`notes.json practice: LeetCode ${q.leetcode} is "${hit.name}", not "${q.name}"`);
+  }
+  const allowed = new Set([ep.dsa?.leetcode, ...(notes?.practice ?? []).map((q) => q.leetcode)]);
+  const shown = JSON.stringify([ep.title, ep.topic, ep.caption, ep.keywords, ep.hashtags, ep.coverText, ep.leadMagnet, ep.hooks, sc, notes]);
+  for (const m of shown.matchAll(/leet\s*code\s*(?:#|no\.?|number|problem)?\s*(\d+)/gi))
+    if (!allowed.has(Number(m[1]))) errors.push(`"${m[0]}" is not this episode's number (${ep.dsa?.leetcode}) or a practice problem's`);
+}
+
+// DSA-101 simple format: hook, series line, one question, a promise, the slow way, a guess, the payoff, code, one ask.
+function validateDsa2(ep, errors, warnings) {
+  const sc = ep.scenes;
+  // some parts take one scene per step; "trap" may be left out when a problem has no tempting shortcut
+  const seen = sc.map((s) => s.kind).filter((k, i, all) => !(DSA2_REPEAT.includes(k) && all[i - 1] === k));
+  const wanted = DSA2_ORDER.filter((k) => k !== 'trap' || seen.includes('trap'));
+  if (sc.some((s) => s.type !== 'dsa2') || seen.join(' ') !== wanted.join(' ')) errors.push(`scenes must be, in order: ${DSA2_ORDER.join(', ')} (all type "dsa2"; ${DSA2_REPEAT.join(', ')} repeat; trap is optional)`);
+  const count = (kind) => sc.filter((s) => s.kind === kind).length;
+  const steps = sc.filter((s) => s.kind === 'dryrun');
+  if (steps.length < 3 || steps.length > 8) errors.push(`${steps.length} dry-run steps; show 3 to 8`);
+  if (count('brute') < 2) errors.push('teach the brute force in at least 2 scenes: its code, then why it is too slow');
+  if (sc.some((s) => !['hook', 'series'].includes(s.kind) && !s.level)) errors.push('every teaching scene needs a "level" chip, like "3/6 Brute force"');
+  const codeLines = sc.find((s) => s.kind === 'code')?.data?.code?.length ?? 0;
+  for (const s of steps) {
+    const {show, line} = s.data ?? {};
+    if (show && line && (show[0] > show[1] || show[1] >= codeLines || show[1] - show[0] > 4 || line.some((i) => i < show[0] || i > show[1])))
+      errors.push(`dryrun "${s.data.title}": "show" must be at most 5 lines of the code scene and contain every highlighted "line"`);
+  }
+  sc.forEach((s, i) => {
+    if (s.type === 'dsa2') for (const problem of checkDsa2Scene(s)) errors.push(`scene ${i + 1} (${s.kind}): ${problem}`);
+    const n = s.vo.trim().split(/\s+/).length;
+    if (n > 40) errors.push(`scene ${i + 1}: ${n} words; keep each part short (max 40)`);
+    if (EMOJI.test(JSON.stringify(s.data))) errors.push(`scene ${i + 1}: no emoji in on-screen text`);
+  });
+  const words = sc.reduce((n, s) => n + s.vo.trim().split(/\s+/).length, 0);
+  if (words > 480) errors.push(`voice-over is ${words} words; keep it ≤ 480 (about 2.7 minutes)`);
+  const data = (kind) => sc.find((s) => s.kind === kind)?.data ?? {};
+  const vo = (kind) => sc.find((s) => s.kind === kind)?.vo ?? '';
+  const hookWords = (data('hook').lines ?? []).join(' ').replace(/\*/g, '').split(/\s+/).filter(Boolean).length;
+  if (hookWords > 7) errors.push(`hook headline is ${hookWords} words; 7 at most, in easy words`);
+  if (vo('hook').trim().split(/\s+/).length > 12) errors.push('hook voice line: 12 words at most');
+  if (!/question/i.test(vo('series'))) errors.push('series line: "Welcome to question N of 150 popular LeetCode questions."');
+  const early = sc.slice(0, sc.findIndex((s) => s.kind === 'brute')).map((s) => s.vo).join(' ');
+  if (!/\bend\b/i.test(early)) errors.push('before the brute force, promise that something comes at the end');
+  const closing = sc.filter((s) => s.kind === 'ask').map((s) => s.vo).join(' ');
+  for (const word of ['like', 'comment', 'share', 'follow']) if (!new RegExp(`\\b${word}`, 'i').test(closing)) errors.push(`closing line must say "${word}"`);
+  // Asit, 28 Nov: never announce which question comes next
+  const said = `${sc.map((s) => `${s.vo} ${JSON.stringify(s.data)}`).join(' ')} ${ep.caption}`;
+  if (/next (question|problem|one)\s+is|next up|next\s*:|coming next|tomorrow'?s question/i.test(said)) errors.push('do not name the next question; say "follow for more questions"');
+  if (ep.leadMagnet && !new RegExp(ep.leadMagnet.keyword, 'i').test(vo('ask'))) errors.push(`closing line must say the keyword ${ep.leadMagnet.keyword}`);
+  if (!ep.leadMagnet) errors.push('set "leadMagnet" (the notes PDF keyword)');
+
+  const meta = ep.dsa;
+  if (!meta) errors.push('set "dsa" {n, leetcode, name, difficulty, category, companies, hook}');
+  else {
+    const known = readJSON(path.join(ROOT, 'data/dsa150.json'), {problems: []}).problems.find((p) => p.leetcode === meta.leetcode);
+    if (!known) errors.push(`dsa.leetcode ${meta.leetcode} is not in data/dsa150.json: check the number`);
+    else for (const field of ['name', 'difficulty', 'category']) if (meta[field] !== known[field]) errors.push(`dsa.${field} should be "${known[field]}" (data/dsa150.json)`);
+    // company names may be used for preparation; saying a company asks this question needs a source
+    const claims = /\b(asks?|asked|asking|got me (selected|hired|placed)|selected me|hired me)\b/i;
+    const spoken = `${vo('hook')} ${(data('hook').lines ?? []).join(' ')} ${ep.caption}`;
+    if (claims.test(spoken) && !(meta.companySource && ep.sources?.includes(meta.companySource)))
+      errors.push('the hook or caption claims a company asks this or someone got selected: remove it, or give dsa.companySource (also in "sources")');
+    const earlier = fs
+      .readdirSync(path.join(ROOT, 'episodes'))
+      .filter((d) => d !== ep.slug)
+      .map((d) => readJSON(path.join(ROOT, 'episodes', d, 'episode.json'), null))
+      .filter((e) => e?.style === 'dsa2' && e.dsa?.n < meta.n)
+      .sort((a, b) => b.dsa.n - a.dsa.n);
+    if (!['company', 'job-life', 'wrong-answer'].includes(meta.hook)) errors.push('set dsa.hook: company, job-life or wrong-answer');
+    else if (earlier[0]?.dsa.hook === meta.hook) errors.push(`dsa.hook "${meta.hook}" was used last time; rotate`);
+    const opening = (e) => (e.scenes[0]?.vo ?? '').toLowerCase().replace(/[^a-z0-9 ]/g, '');
+    if (earlier.some((e) => opening(e) === opening(ep))) errors.push('this hook line was already used');
+    if (!ep.caption.includes(`(LeetCode #${meta.leetcode})`)) errors.push(`caption needs the line "Question ${meta.n}: <problem> (LeetCode #${meta.leetcode})"`);
+  }
+  if (!ep.cover) errors.push('set "cover" {art, note, pose}: the tiny puzzle on the cover');
+  checkCaption(ep, errors, warnings);
+  if (!ep.sources?.length) warnings.push('no sources listed');
+
+  const notes = readJSON(path.join(ROOT, 'episodes', ep.slug, 'notes.json'), null);
+  if (!notes) errors.push('write notes.json (the explanation PDF with code in 4 languages)');
+  else for (const i of notesSchema.safeParse(notes).error?.issues ?? []) errors.push(`notes.json ${i.path.join('.')}: ${i.message}`);
+  checkNumbers(ep, notes, sc, errors);
+  const shown = data('code').code;
+  const tested = notes?.code?.python?.code;
+  if (shown && tested && !isExcerpt(shown, tested.split('\n')))
+    errors.push('code scene lines must be copied from the Python in notes.json, in order, with the same nesting (comments may be left out)');
+  if (notes && !notes.brute?.code) errors.push('notes.json brute.code: write the brute force in Python (shown in the reel and tested)');
+  for (const s of sc.filter((x) => x.kind === 'brute'))
+    if (notes?.brute?.code && s.data?.code && !isExcerpt(s.data.code, notes.brute.code.split('\n')))
+      errors.push(`brute scene "${s.data.title}": code lines must be copied from notes.json brute.code`);
+  return {ok: errors.length === 0, errors, warnings, words};
+}
+
+/** true when `shown` is an in-order excerpt of `full`: same text, and the same relative nesting depth */
+export function isExcerpt(shown, full) {
+  const parse = (list) => {
+    const kept = list.map((l) => l.replace(/\s+#.*$/, '').trimEnd()).filter((l) => l.trim() && !l.trim().startsWith('#'));
+    const indents = kept.map((l) => l.length - l.trimStart().length);
+    const unit = Math.min(...indents.filter((n) => n > 0), 4);
+    return kept.map((l, i) => ({text: l.trim(), depth: Math.round(indents[i] / unit)}));
+  };
+  const a = parse(shown);
+  const b = parse(full);
+  if (!a.length) return false;
+  for (let start = 0; start < b.length; start++) {
+    if (b[start].text !== a[0].text) continue;
+    const shift = b[start].depth - a[0].depth;
+    let at = start;
+    const ok = a.every((line) => {
+      while (at < b.length && !(b[at].text === line.text && b[at].depth - shift === line.depth)) at++;
+      return at++ < b.length;
+    });
+    if (ok) return true;
+  }
+  return false;
+}
+
 // Variety (28 Nov 2026): the series keeps its structure, but each question gets its own opening, picture and jokes.
 function checkVariety(ep, errors, warnings) {
   const earlier = fs
@@ -199,18 +327,7 @@ function validateDsa(ep, errors, warnings) {
   const notes = readJSON(path.join(ROOT, 'episodes', ep.slug, 'notes.json'), null);
   if (!notes) errors.push('write notes.json (the explanation PDF with Python, Java, C++ and JavaScript code): see .claude/skills/make-episode/dsa.md');
   else for (const i of notesSchema.safeParse(notes).error?.issues ?? []) errors.push(`notes.json ${i.path.join('.')}: ${i.message}`);
-  // LeetCode numbers are public, so each one must be exact: checked against data/dsa150.json
-  const list = readJSON(path.join(ROOT, 'data/dsa150.json'), {problems: []}).problems;
-  const plain = (x) => String(x).toLowerCase().replace(/[^a-z0-9]/g, '');
-  for (const q of notes?.practice ?? []) {
-    const hit = list.find((p) => p.leetcode === q.leetcode);
-    if (!hit) errors.push(`notes.json practice: LeetCode ${q.leetcode} is not in data/dsa150.json, so it cannot be checked; pick a listed problem`);
-    else if (plain(hit.name) !== plain(q.name)) errors.push(`notes.json practice: LeetCode ${q.leetcode} is "${hit.name}", not "${q.name}"`);
-  }
-  const allowed = new Set([ep.dsa?.leetcode, ...(notes?.practice ?? []).map((q) => q.leetcode)]);
-  const shown = JSON.stringify([ep.title, ep.topic, ep.caption, ep.keywords, ep.hashtags, ep.coverText, ep.leadMagnet, ep.hooks, sc, notes]);
-  for (const m of shown.matchAll(/leet\s*code\s*(?:#|no\.?|number|problem)?\s*(\d+)/gi))
-    if (!allowed.has(Number(m[1]))) errors.push(`"${m[0]}" is not this episode's number (${ep.dsa?.leetcode}) or a practice problem's`);
+  checkNumbers(ep, notes, sc, errors);
   if (ep.dsa?.n > 1) checkVariety(ep, errors, warnings);
   // the code on screen must be the tested Python in notes.json, line for line (28 Nov: a scrambled listing with a
   // leftover "XX" line passed every check and was rendered)

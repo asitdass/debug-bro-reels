@@ -64,12 +64,13 @@ line you'll remember. For developers and curious app users, 18–30, India.
 6. Stage style: does anything important sit behind the characters' heads (bottom of the monitor) or under a tease
    sticker? Is every tease paid off later in the reel?
 
-### DSA-101 frames (style `dsa`; replaces items 5 and 6)
-- Every word, number and code line on screen belongs to THIS problem and matches the voice-over and notes.json. Any
-  leftover from another problem fails the review.
-- Code: no line touches or crosses the panel edge. The highlighted line matches its meaning.
-- Dry run: the store rows, current index and result are what the code would really do.
-- First frame: the problem name is readable, not buried under a word stamp.
+### DSA-101 frames (style `dsa2`; replaces items 5 and 6)
+- Hook (first frame): headline readable at once, easy words, the puzzle and Debug Bro visible, nothing overlapping.
+- One headline and one picture per frame. Every word, number and code line belongs to THIS problem and matches the voice
+  and notes.json.
+- The payoff's helper values are what the code would really hold. Code lines stay inside the panel.
+- Logos appear only on the cover, under "Prep for", with "Not affiliated with these companies". Never in the reel, and
+  never beside a claim that a company asks the question.
 
 ## Mascot
 Debug Bro is a flat vector puppet of Asit (src/components/Mascot.tsx): curly hair, full beard, open dotted charcoal

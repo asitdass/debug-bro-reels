@@ -78,9 +78,8 @@ jobs:
           claude_code_oauth_token: ${{ steps.tok.outputs.token }}
           prompt: |
             Write the next DSA-101 episode for Debug Bro: exactly one question. Follow .claude/skills/make-episode/dsa.md.
-            It is the problem the highest-numbered DSA episode promised in its "close" scene. If the existing scenes cannot
-            show it honestly (trees, graphs, linked lists need new visuals), take the next problem in data/dsa150.json
-            order that they can, and say so.
+            It is the problem the highest-numbered DSA episode promised next. If its stack-or-row picture cannot show it
+            honestly (trees, graphs, linked lists), take the next problem in data/dsa150.json that it can, and say so.
             First run `node pipeline/review-gate.mjs` and read data/reviews.json and data/insights.json: apply one fix from
             the latest review and set "learnedFrom". Never invent numbers about past reels.
             Write the script as a good teacher says it: a hook in the first line, short sentences, one idea per scene.
