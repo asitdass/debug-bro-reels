@@ -1,0 +1,2740 @@
+{
+  "totalMs": 153288,
+  "audio": "episodes/dsa101-03-min-stack/voice.mp3",
+  "scenes": [
+    {
+      "startMs": 0,
+      "durMs": 4456
+    },
+    {
+      "startMs": 4716,
+      "durMs": 3181
+    },
+    {
+      "startMs": 8157,
+      "durMs": 4398
+    },
+    {
+      "startMs": 12815,
+      "durMs": 3660
+    },
+    {
+      "startMs": 16735,
+      "durMs": 5277
+    },
+    {
+      "startMs": 22272,
+      "durMs": 2902
+    },
+    {
+      "startMs": 25434,
+      "durMs": 3388
+    },
+    {
+      "startMs": 29082,
+      "durMs": 5360
+    },
+    {
+      "startMs": 34701,
+      "durMs": 6105
+    },
+    {
+      "startMs": 41066,
+      "durMs": 4825
+    },
+    {
+      "startMs": 46151,
+      "durMs": 5088
+    },
+    {
+      "startMs": 51499,
+      "durMs": 6492
+    },
+    {
+      "startMs": 58251,
+      "durMs": 5009
+    },
+    {
+      "startMs": 63520,
+      "durMs": 5281
+    },
+    {
+      "startMs": 69061,
+      "durMs": 3040
+    },
+    {
+      "startMs": 72362,
+      "durMs": 4644
+    },
+    {
+      "startMs": 77265,
+      "durMs": 5471
+    },
+    {
+      "startMs": 82996,
+      "durMs": 4712
+    },
+    {
+      "startMs": 87968,
+      "durMs": 4658
+    },
+    {
+      "startMs": 92886,
+      "durMs": 11847
+    },
+    {
+      "startMs": 104993,
+      "durMs": 4436
+    },
+    {
+      "startMs": 109689,
+      "durMs": 4070
+    },
+    {
+      "startMs": 114019,
+      "durMs": 2337
+    },
+    {
+      "startMs": 116616,
+      "durMs": 5112
+    },
+    {
+      "startMs": 121988,
+      "durMs": 5492
+    },
+    {
+      "startMs": 127739,
+      "durMs": 5385
+    },
+    {
+      "startMs": 133384,
+      "durMs": 6790
+    },
+    {
+      "startMs": 140434,
+      "durMs": 6258
+    },
+    {
+      "startMs": 146952,
+      "durMs": 5736
+    }
+  ],
+  "words": [
+    {
+      "text": "Amazon",
+      "startMs": 300,
+      "endMs": 746,
+      "scene": 0
+    },
+    {
+      "text": "interview.",
+      "startMs": 769,
+      "endMs": 1406,
+      "scene": 0
+    },
+    {
+      "text": "And",
+      "startMs": 1641,
+      "endMs": 1896,
+      "scene": 0
+    },
+    {
+      "text": "your",
+      "startMs": 1909,
+      "endMs": 2227,
+      "scene": 0
+    },
+    {
+      "text": "brain",
+      "startMs": 2244,
+      "endMs": 2626,
+      "scene": 0
+    },
+    {
+      "text": "says:",
+      "startMs": 2646,
+      "endMs": 2965,
+      "scene": 0
+    },
+    {
+      "text": "error",
+      "startMs": 3183,
+      "endMs": 3565,
+      "scene": 0
+    },
+    {
+      "text": "four",
+      "startMs": 3585,
+      "endMs": 3903,
+      "scene": 0
+    },
+    {
+      "text": "oh",
+      "startMs": 3920,
+      "endMs": 4111,
+      "scene": 0
+    },
+    {
+      "text": "four.",
+      "startMs": 4121,
+      "endMs": 4440,
+      "scene": 0
+    },
+    {
+      "text": "Welcome",
+      "startMs": 4716,
+      "endMs": 5043,
+      "scene": 1
+    },
+    {
+      "text": "to",
+      "startMs": 5060,
+      "endMs": 5183,
+      "scene": 1
+    },
+    {
+      "text": "question",
+      "startMs": 5189,
+      "endMs": 5557,
+      "scene": 1
+    },
+    {
+      "text": "three",
+      "startMs": 5576,
+      "endMs": 5821,
+      "scene": 1
+    },
+    {
+      "text": "of",
+      "startMs": 5834,
+      "endMs": 5957,
+      "scene": 1
+    },
+    {
+      "text": "one",
+      "startMs": 5963,
+      "endMs": 6126,
+      "scene": 1
+    },
+    {
+      "text": "hundred",
+      "startMs": 6135,
+      "endMs": 6462,
+      "scene": 1
+    },
+    {
+      "text": "fifty",
+      "startMs": 6479,
+      "endMs": 6724,
+      "scene": 1
+    },
+    {
+      "text": "popular",
+      "startMs": 6737,
+      "endMs": 7063,
+      "scene": 1
+    },
+    {
+      "text": "LeetCode",
+      "startMs": 7081,
+      "endMs": 7448,
+      "scene": 1
+    },
+    {
+      "text": "questions.",
+      "startMs": 7467,
+      "endMs": 7876,
+      "scene": 1
+    },
+    {
+      "text": "First,",
+      "startMs": 8157,
+      "endMs": 8452,
+      "scene": 2
+    },
+    {
+      "text": "what",
+      "startMs": 8623,
+      "endMs": 8869,
+      "scene": 2
+    },
+    {
+      "text": "is",
+      "startMs": 8882,
+      "endMs": 9029,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "startMs": 9037,
+      "endMs": 9135,
+      "scene": 2
+    },
+    {
+      "text": "stack?",
+      "startMs": 9140,
+      "endMs": 9435,
+      "scene": 2
+    },
+    {
+      "text": "Think",
+      "startMs": 9606,
+      "endMs": 9901,
+      "scene": 2
+    },
+    {
+      "text": "of",
+      "startMs": 9916,
+      "endMs": 10064,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "startMs": 10072,
+      "endMs": 10170,
+      "scene": 2
+    },
+    {
+      "text": "pile",
+      "startMs": 10175,
+      "endMs": 10421,
+      "scene": 2
+    },
+    {
+      "text": "of",
+      "startMs": 10434,
+      "endMs": 10581,
+      "scene": 2
+    },
+    {
+      "text": "plates.",
+      "startMs": 10589,
+      "endMs": 10933,
+      "scene": 2
+    },
+    {
+      "text": "Every",
+      "startMs": 11106,
+      "endMs": 11401,
+      "scene": 2
+    },
+    {
+      "text": "new",
+      "startMs": 11417,
+      "endMs": 11613,
+      "scene": 2
+    },
+    {
+      "text": "plate",
+      "startMs": 11624,
+      "endMs": 11919,
+      "scene": 2
+    },
+    {
+      "text": "goes",
+      "startMs": 11934,
+      "endMs": 12180,
+      "scene": 2
+    },
+    {
+      "text": "on",
+      "startMs": 12193,
+      "endMs": 12340,
+      "scene": 2
+    },
+    {
+      "text": "top.",
+      "startMs": 12348,
+      "endMs": 12545,
+      "scene": 2
+    },
+    {
+      "text": "You",
+      "startMs": 12815,
+      "endMs": 12983,
+      "scene": 3
+    },
+    {
+      "text": "can",
+      "startMs": 12991,
+      "endMs": 13159,
+      "scene": 3
+    },
+    {
+      "text": "only",
+      "startMs": 13168,
+      "endMs": 13377,
+      "scene": 3
+    },
+    {
+      "text": "take",
+      "startMs": 13388,
+      "endMs": 13598,
+      "scene": 3
+    },
+    {
+      "text": "from",
+      "startMs": 13609,
+      "endMs": 13818,
+      "scene": 3
+    },
+    {
+      "text": "the",
+      "startMs": 13829,
+      "endMs": 13997,
+      "scene": 3
+    },
+    {
+      "text": "top.",
+      "startMs": 14006,
+      "endMs": 14173,
+      "scene": 3
+    },
+    {
+      "text": "Pull",
+      "startMs": 14314,
+      "endMs": 14524,
+      "scene": 3
+    },
+    {
+      "text": "the",
+      "startMs": 14535,
+      "endMs": 14702,
+      "scene": 3
+    },
+    {
+      "text": "bottom",
+      "startMs": 14711,
+      "endMs": 15005,
+      "scene": 3
+    },
+    {
+      "text": "one,",
+      "startMs": 15020,
+      "endMs": 15188,
+      "scene": 3
+    },
+    {
+      "text": "and",
+      "startMs": 15329,
+      "endMs": 15496,
+      "scene": 3
+    },
+    {
+      "text": "your",
+      "startMs": 15505,
+      "endMs": 15714,
+      "scene": 3
+    },
+    {
+      "text": "mom",
+      "startMs": 15726,
+      "endMs": 15893,
+      "scene": 3
+    },
+    {
+      "text": "will",
+      "startMs": 15902,
+      "endMs": 16111,
+      "scene": 3
+    },
+    {
+      "text": "hear",
+      "startMs": 16122,
+      "endMs": 16332,
+      "scene": 3
+    },
+    {
+      "text": "it.",
+      "startMs": 16343,
+      "endMs": 16469,
+      "scene": 3
+    },
+    {
+      "text": "Now",
+      "startMs": 16735,
+      "endMs": 16963,
+      "scene": 4
+    },
+    {
+      "text": "the",
+      "startMs": 16975,
+      "endMs": 17203,
+      "scene": 4
+    },
+    {
+      "text": "question.",
+      "startMs": 17215,
+      "endMs": 17728,
+      "scene": 4
+    },
+    {
+      "text": "Build",
+      "startMs": 17934,
+      "endMs": 18276,
+      "scene": 4
+    },
+    {
+      "text": "a",
+      "startMs": 18294,
+      "endMs": 18408,
+      "scene": 4
+    },
+    {
+      "text": "stack",
+      "startMs": 18414,
+      "endMs": 18756,
+      "scene": 4
+    },
+    {
+      "text": "with",
+      "startMs": 18774,
+      "endMs": 19059,
+      "scene": 4
+    },
+    {
+      "text": "four",
+      "startMs": 19074,
+      "endMs": 19359,
+      "scene": 4
+    },
+    {
+      "text": "actions.",
+      "startMs": 19374,
+      "endMs": 19829,
+      "scene": 4
+    },
+    {
+      "text": "One:",
+      "startMs": 20033,
+      "endMs": 20261,
+      "scene": 4
+    },
+    {
+      "text": "push",
+      "startMs": 20453,
+      "endMs": 20738,
+      "scene": 4
+    },
+    {
+      "text": "adds",
+      "startMs": 20753,
+      "endMs": 21038,
+      "scene": 4
+    },
+    {
+      "text": "a",
+      "startMs": 21053,
+      "endMs": 21167,
+      "scene": 4
+    },
+    {
+      "text": "number",
+      "startMs": 21173,
+      "endMs": 21571,
+      "scene": 4
+    },
+    {
+      "text": "on",
+      "startMs": 21592,
+      "endMs": 21763,
+      "scene": 4
+    },
+    {
+      "text": "top.",
+      "startMs": 21772,
+      "endMs": 22000,
+      "scene": 4
+    },
+    {
+      "text": "Two:",
+      "startMs": 22272,
+      "endMs": 22480,
+      "scene": 5
+    },
+    {
+      "text": "pop",
+      "startMs": 22655,
+      "endMs": 22863,
+      "scene": 5
+    },
+    {
+      "text": "removes",
+      "startMs": 22874,
+      "endMs": 23290,
+      "scene": 5
+    },
+    {
+      "text": "the",
+      "startMs": 23312,
+      "endMs": 23520,
+      "scene": 5
+    },
+    {
+      "text": "top",
+      "startMs": 23531,
+      "endMs": 23739,
+      "scene": 5
+    },
+    {
+      "text": "number.",
+      "startMs": 23750,
+      "endMs": 24115,
+      "scene": 5
+    },
+    {
+      "text": "Seven",
+      "startMs": 24298,
+      "endMs": 24610,
+      "scene": 5
+    },
+    {
+      "text": "goes",
+      "startMs": 24626,
+      "endMs": 24887,
+      "scene": 5
+    },
+    {
+      "text": "away.",
+      "startMs": 24900,
+      "endMs": 25160,
+      "scene": 5
+    },
+    {
+      "text": "Three:",
+      "startMs": 25434,
+      "endMs": 25731,
+      "scene": 6
+    },
+    {
+      "text": "top",
+      "startMs": 25903,
+      "endMs": 26101,
+      "scene": 6
+    },
+    {
+      "text": "only",
+      "startMs": 26112,
+      "endMs": 26359,
+      "scene": 6
+    },
+    {
+      "text": "looks",
+      "startMs": 26372,
+      "endMs": 26669,
+      "scene": 6
+    },
+    {
+      "text": "at",
+      "startMs": 26685,
+      "endMs": 26833,
+      "scene": 6
+    },
+    {
+      "text": "the",
+      "startMs": 26841,
+      "endMs": 27039,
+      "scene": 6
+    },
+    {
+      "text": "top",
+      "startMs": 27050,
+      "endMs": 27248,
+      "scene": 6
+    },
+    {
+      "text": "number,",
+      "startMs": 27258,
+      "endMs": 27605,
+      "scene": 6
+    },
+    {
+      "text": "without",
+      "startMs": 27779,
+      "endMs": 28175,
+      "scene": 6
+    },
+    {
+      "text": "removing",
+      "startMs": 28196,
+      "endMs": 28642,
+      "scene": 6
+    },
+    {
+      "text": "it.",
+      "startMs": 28665,
+      "endMs": 28814,
+      "scene": 6
+    },
+    {
+      "text": "Four,",
+      "startMs": 29082,
+      "endMs": 29368,
+      "scene": 7
+    },
+    {
+      "text": "the",
+      "startMs": 29563,
+      "endMs": 29792,
+      "scene": 7
+    },
+    {
+      "text": "star:",
+      "startMs": 29804,
+      "endMs": 30090,
+      "scene": 7
+    },
+    {
+      "text": "get",
+      "startMs": 30286,
+      "endMs": 30515,
+      "scene": 7
+    },
+    {
+      "text": "min",
+      "startMs": 30527,
+      "endMs": 30756,
+      "scene": 7
+    },
+    {
+      "text": "tells",
+      "startMs": 30768,
+      "endMs": 31111,
+      "scene": 7
+    },
+    {
+      "text": "the",
+      "startMs": 31129,
+      "endMs": 31358,
+      "scene": 7
+    },
+    {
+      "text": "smallest",
+      "startMs": 31370,
+      "endMs": 31885,
+      "scene": 7
+    },
+    {
+      "text": "number",
+      "startMs": 31912,
+      "endMs": 32312,
+      "scene": 7
+    },
+    {
+      "text": "in",
+      "startMs": 32334,
+      "endMs": 32505,
+      "scene": 7
+    },
+    {
+      "text": "the",
+      "startMs": 32514,
+      "endMs": 32743,
+      "scene": 7
+    },
+    {
+      "text": "whole",
+      "startMs": 32755,
+      "endMs": 33098,
+      "scene": 7
+    },
+    {
+      "text": "pile.",
+      "startMs": 33116,
+      "endMs": 33402,
+      "scene": 7
+    },
+    {
+      "text": "Here,",
+      "startMs": 33598,
+      "endMs": 33884,
+      "scene": 7
+    },
+    {
+      "text": "three.",
+      "startMs": 34080,
+      "endMs": 34423,
+      "scene": 7
+    },
+    {
+      "text": "Here",
+      "startMs": 34701,
+      "endMs": 34960,
+      "scene": 8
+    },
+    {
+      "text": "is",
+      "startMs": 34974,
+      "endMs": 35129,
+      "scene": 8
+    },
+    {
+      "text": "the",
+      "startMs": 35137,
+      "endMs": 35344,
+      "scene": 8
+    },
+    {
+      "text": "catch.",
+      "startMs": 35355,
+      "endMs": 35666,
+      "scene": 8
+    },
+    {
+      "text": "All",
+      "startMs": 35846,
+      "endMs": 36053,
+      "scene": 8
+    },
+    {
+      "text": "four",
+      "startMs": 36064,
+      "endMs": 36323,
+      "scene": 8
+    },
+    {
+      "text": "must",
+      "startMs": 36336,
+      "endMs": 36595,
+      "scene": 8
+    },
+    {
+      "text": "be",
+      "startMs": 36609,
+      "endMs": 36764,
+      "scene": 8
+    },
+    {
+      "text": "instant,",
+      "startMs": 36772,
+      "endMs": 37187,
+      "scene": 8
+    },
+    {
+      "text": "even",
+      "startMs": 37372,
+      "endMs": 37631,
+      "scene": 8
+    },
+    {
+      "text": "with",
+      "startMs": 37645,
+      "endMs": 37903,
+      "scene": 8
+    },
+    {
+      "text": "a",
+      "startMs": 37917,
+      "endMs": 38021,
+      "scene": 8
+    },
+    {
+      "text": "million",
+      "startMs": 38026,
+      "endMs": 38440,
+      "scene": 8
+    },
+    {
+      "text": "numbers.",
+      "startMs": 38462,
+      "endMs": 38876,
+      "scene": 8
+    },
+    {
+      "text": "Stay",
+      "startMs": 39062,
+      "endMs": 39321,
+      "scene": 8
+    },
+    {
+      "text": "till",
+      "startMs": 39334,
+      "endMs": 39593,
+      "scene": 8
+    },
+    {
+      "text": "the",
+      "startMs": 39607,
+      "endMs": 39814,
+      "scene": 8
+    },
+    {
+      "text": "end",
+      "startMs": 39825,
+      "endMs": 40032,
+      "scene": 8
+    },
+    {
+      "text": "for",
+      "startMs": 40043,
+      "endMs": 40250,
+      "scene": 8
+    },
+    {
+      "text": "the",
+      "startMs": 40261,
+      "endMs": 40468,
+      "scene": 8
+    },
+    {
+      "text": "trick.",
+      "startMs": 40479,
+      "endMs": 40790,
+      "scene": 8
+    },
+    {
+      "text": "So",
+      "startMs": 41066,
+      "endMs": 41252,
+      "scene": 9
+    },
+    {
+      "text": "how",
+      "startMs": 41262,
+      "endMs": 41509,
+      "scene": 9
+    },
+    {
+      "text": "do",
+      "startMs": 41522,
+      "endMs": 41708,
+      "scene": 9
+    },
+    {
+      "text": "you",
+      "startMs": 41718,
+      "endMs": 41966,
+      "scene": 9
+    },
+    {
+      "text": "find",
+      "startMs": 41979,
+      "endMs": 42288,
+      "scene": 9
+    },
+    {
+      "text": "the",
+      "startMs": 42305,
+      "endMs": 42552,
+      "scene": 9
+    },
+    {
+      "text": "smallest",
+      "startMs": 42566,
+      "endMs": 43123,
+      "scene": 9
+    },
+    {
+      "text": "instantly?",
+      "startMs": 43152,
+      "endMs": 43772,
+      "scene": 9
+    },
+    {
+      "text": "Think.",
+      "startMs": 44000,
+      "endMs": 44371,
+      "scene": 9
+    },
+    {
+      "text": "Three.",
+      "startMs": 44587,
+      "endMs": 44958,
+      "scene": 9
+    },
+    {
+      "text": "Two.",
+      "startMs": 45173,
+      "endMs": 45421,
+      "scene": 9
+    },
+    {
+      "text": "One.",
+      "startMs": 45630,
+      "endMs": 45878,
+      "scene": 9
+    },
+    {
+      "text": "Idea",
+      "startMs": 46151,
+      "endMs": 46432,
+      "scene": 10
+    },
+    {
+      "text": "one:",
+      "startMs": 46446,
+      "endMs": 46671,
+      "scene": 10
+    },
+    {
+      "text": "brute",
+      "startMs": 46861,
+      "endMs": 47198,
+      "scene": 10
+    },
+    {
+      "text": "force.",
+      "startMs": 47216,
+      "endMs": 47553,
+      "scene": 10
+    },
+    {
+      "text": "Keep",
+      "startMs": 47748,
+      "endMs": 48029,
+      "scene": 10
+    },
+    {
+      "text": "a",
+      "startMs": 48044,
+      "endMs": 48156,
+      "scene": 10
+    },
+    {
+      "text": "normal",
+      "startMs": 48162,
+      "endMs": 48556,
+      "scene": 10
+    },
+    {
+      "text": "list.",
+      "startMs": 48576,
+      "endMs": 48857,
+      "scene": 10
+    },
+    {
+      "text": "Push",
+      "startMs": 49050,
+      "endMs": 49331,
+      "scene": 10
+    },
+    {
+      "text": "just",
+      "startMs": 49345,
+      "endMs": 49627,
+      "scene": 10
+    },
+    {
+      "text": "adds",
+      "startMs": 49641,
+      "endMs": 49922,
+      "scene": 10
+    },
+    {
+      "text": "the",
+      "startMs": 49937,
+      "endMs": 50162,
+      "scene": 10
+    },
+    {
+      "text": "number",
+      "startMs": 50174,
+      "endMs": 50567,
+      "scene": 10
+    },
+    {
+      "text": "at",
+      "startMs": 50588,
+      "endMs": 50757,
+      "scene": 10
+    },
+    {
+      "text": "the",
+      "startMs": 50765,
+      "endMs": 50990,
+      "scene": 10
+    },
+    {
+      "text": "end.",
+      "startMs": 51002,
+      "endMs": 51227,
+      "scene": 10
+    },
+    {
+      "text": "For",
+      "startMs": 51499,
+      "endMs": 51779,
+      "scene": 11
+    },
+    {
+      "text": "get",
+      "startMs": 51794,
+      "endMs": 52074,
+      "scene": 11
+    },
+    {
+      "text": "min,",
+      "startMs": 52089,
+      "endMs": 52369,
+      "scene": 11
+    },
+    {
+      "text": "check",
+      "startMs": 52605,
+      "endMs": 53026,
+      "scene": 11
+    },
+    {
+      "text": "every",
+      "startMs": 53048,
+      "endMs": 53469,
+      "scene": 11
+    },
+    {
+      "text": "single",
+      "startMs": 53491,
+      "endMs": 53981,
+      "scene": 11
+    },
+    {
+      "text": "box",
+      "startMs": 54007,
+      "endMs": 54288,
+      "scene": 11
+    },
+    {
+      "text": "and",
+      "startMs": 54302,
+      "endMs": 54583,
+      "scene": 11
+    },
+    {
+      "text": "keep",
+      "startMs": 54597,
+      "endMs": 54948,
+      "scene": 11
+    },
+    {
+      "text": "the",
+      "startMs": 54966,
+      "endMs": 55247,
+      "scene": 11
+    },
+    {
+      "text": "smallest.",
+      "startMs": 55261,
+      "endMs": 55892,
+      "scene": 11
+    },
+    {
+      "text": "And",
+      "startMs": 56147,
+      "endMs": 56427,
+      "scene": 11
+    },
+    {
+      "text": "honestly,",
+      "startMs": 56442,
+      "endMs": 57073,
+      "scene": 11
+    },
+    {
+      "text": "it",
+      "startMs": 57327,
+      "endMs": 57537,
+      "scene": 11
+    },
+    {
+      "text": "works.",
+      "startMs": 57549,
+      "endMs": 57969,
+      "scene": 11
+    },
+    {
+      "text": "But",
+      "startMs": 58251,
+      "endMs": 58447,
+      "scene": 12
+    },
+    {
+      "text": "a",
+      "startMs": 58458,
+      "endMs": 58556,
+      "scene": 12
+    },
+    {
+      "text": "million",
+      "startMs": 58561,
+      "endMs": 58953,
+      "scene": 12
+    },
+    {
+      "text": "boxes",
+      "startMs": 58974,
+      "endMs": 59268,
+      "scene": 12
+    },
+    {
+      "text": "means",
+      "startMs": 59284,
+      "endMs": 59578,
+      "scene": 12
+    },
+    {
+      "text": "a",
+      "startMs": 59594,
+      "endMs": 59692,
+      "scene": 12
+    },
+    {
+      "text": "million",
+      "startMs": 59697,
+      "endMs": 60090,
+      "scene": 12
+    },
+    {
+      "text": "checks,",
+      "startMs": 60110,
+      "endMs": 60454,
+      "scene": 12
+    },
+    {
+      "text": "every",
+      "startMs": 60627,
+      "endMs": 60921,
+      "scene": 12
+    },
+    {
+      "text": "time",
+      "startMs": 60936,
+      "endMs": 61182,
+      "scene": 12
+    },
+    {
+      "text": "you",
+      "startMs": 61195,
+      "endMs": 61391,
+      "scene": 12
+    },
+    {
+      "text": "ask.",
+      "startMs": 61401,
+      "endMs": 61597,
+      "scene": 12
+    },
+    {
+      "text": "Your",
+      "startMs": 61763,
+      "endMs": 62008,
+      "scene": 12
+    },
+    {
+      "text": "interviewer",
+      "startMs": 62021,
+      "endMs": 62609,
+      "scene": 12
+    },
+    {
+      "text": "will",
+      "startMs": 62640,
+      "endMs": 62886,
+      "scene": 12
+    },
+    {
+      "text": "retire.",
+      "startMs": 62899,
+      "endMs": 63242,
+      "scene": 12
+    },
+    {
+      "text": "Smart",
+      "startMs": 63520,
+      "endMs": 63887,
+      "scene": 13
+    },
+    {
+      "text": "shortcut:",
+      "startMs": 63906,
+      "endMs": 64457,
+      "scene": 13
+    },
+    {
+      "text": "keep",
+      "startMs": 64679,
+      "endMs": 64985,
+      "scene": 13
+    },
+    {
+      "text": "one",
+      "startMs": 65001,
+      "endMs": 65246,
+      "scene": 13
+    },
+    {
+      "text": "variable",
+      "startMs": 65259,
+      "endMs": 65810,
+      "scene": 13
+    },
+    {
+      "text": "for",
+      "startMs": 65839,
+      "endMs": 66083,
+      "scene": 13
+    },
+    {
+      "text": "the",
+      "startMs": 66096,
+      "endMs": 66341,
+      "scene": 13
+    },
+    {
+      "text": "smallest.",
+      "startMs": 66354,
+      "endMs": 66904,
+      "scene": 13
+    },
+    {
+      "text": "Push",
+      "startMs": 67127,
+      "endMs": 67433,
+      "scene": 13
+    },
+    {
+      "text": "five.",
+      "startMs": 67449,
+      "endMs": 67755,
+      "scene": 13
+    },
+    {
+      "text": "It",
+      "startMs": 67964,
+      "endMs": 68147,
+      "scene": 13
+    },
+    {
+      "text": "says",
+      "startMs": 68157,
+      "endMs": 68463,
+      "scene": 13
+    },
+    {
+      "text": "five.",
+      "startMs": 68479,
+      "endMs": 68785,
+      "scene": 13
+    },
+    {
+      "text": "Push",
+      "startMs": 69061,
+      "endMs": 69334,
+      "scene": 14
+    },
+    {
+      "text": "three.",
+      "startMs": 69348,
+      "endMs": 69675,
+      "scene": 14
+    },
+    {
+      "text": "It",
+      "startMs": 69864,
+      "endMs": 70028,
+      "scene": 14
+    },
+    {
+      "text": "updates",
+      "startMs": 70036,
+      "endMs": 70472,
+      "scene": 14
+    },
+    {
+      "text": "to",
+      "startMs": 70495,
+      "endMs": 70659,
+      "scene": 14
+    },
+    {
+      "text": "three.",
+      "startMs": 70667,
+      "endMs": 70994,
+      "scene": 14
+    },
+    {
+      "text": "Genius,",
+      "startMs": 71184,
+      "endMs": 71565,
+      "scene": 14
+    },
+    {
+      "text": "right?",
+      "startMs": 71757,
+      "endMs": 72084,
+      "scene": 14
+    },
+    {
+      "text": "Now",
+      "startMs": 72362,
+      "endMs": 72556,
+      "scene": 15
+    },
+    {
+      "text": "pop.",
+      "startMs": 72566,
+      "endMs": 72760,
+      "scene": 15
+    },
+    {
+      "text": "Three",
+      "startMs": 72923,
+      "endMs": 73214,
+      "scene": 15
+    },
+    {
+      "text": "is",
+      "startMs": 73229,
+      "endMs": 73375,
+      "scene": 15
+    },
+    {
+      "text": "gone,",
+      "startMs": 73382,
+      "endMs": 73625,
+      "scene": 15
+    },
+    {
+      "text": "but",
+      "startMs": 73790,
+      "endMs": 73984,
+      "scene": 15
+    },
+    {
+      "text": "the",
+      "startMs": 73995,
+      "endMs": 74188,
+      "scene": 15
+    },
+    {
+      "text": "variable",
+      "startMs": 74199,
+      "endMs": 74635,
+      "scene": 15
+    },
+    {
+      "text": "still",
+      "startMs": 74658,
+      "endMs": 74949,
+      "scene": 15
+    },
+    {
+      "text": "says",
+      "startMs": 74964,
+      "endMs": 75207,
+      "scene": 15
+    },
+    {
+      "text": "three.",
+      "startMs": 75219,
+      "endMs": 75510,
+      "scene": 15
+    },
+    {
+      "text": "We",
+      "startMs": 75679,
+      "endMs": 75824,
+      "scene": 15
+    },
+    {
+      "text": "completely",
+      "startMs": 75832,
+      "endMs": 76365,
+      "scene": 15
+    },
+    {
+      "text": "forgot",
+      "startMs": 76393,
+      "endMs": 76732,
+      "scene": 15
+    },
+    {
+      "text": "five.",
+      "startMs": 76750,
+      "endMs": 76993,
+      "scene": 15
+    },
+    {
+      "text": "Here",
+      "startMs": 77265,
+      "endMs": 77551,
+      "scene": 16
+    },
+    {
+      "text": "is",
+      "startMs": 77566,
+      "endMs": 77737,
+      "scene": 16
+    },
+    {
+      "text": "what",
+      "startMs": 77746,
+      "endMs": 78032,
+      "scene": 16
+    },
+    {
+      "text": "you",
+      "startMs": 78047,
+      "endMs": 78275,
+      "scene": 16
+    },
+    {
+      "text": "waited",
+      "startMs": 78287,
+      "endMs": 78687,
+      "scene": 16
+    },
+    {
+      "text": "for.",
+      "startMs": 78708,
+      "endMs": 78937,
+      "scene": 16
+    },
+    {
+      "text": "A",
+      "startMs": 79129,
+      "endMs": 79243,
+      "scene": 16
+    },
+    {
+      "text": "stack",
+      "startMs": 79249,
+      "endMs": 79592,
+      "scene": 16
+    },
+    {
+      "text": "changes",
+      "startMs": 79610,
+      "endMs": 80067,
+      "scene": 16
+    },
+    {
+      "text": "only",
+      "startMs": 80091,
+      "endMs": 80377,
+      "scene": 16
+    },
+    {
+      "text": "at",
+      "startMs": 80392,
+      "endMs": 80563,
+      "scene": 16
+    },
+    {
+      "text": "the",
+      "startMs": 80572,
+      "endMs": 80801,
+      "scene": 16
+    },
+    {
+      "text": "top.",
+      "startMs": 80813,
+      "endMs": 81041,
+      "scene": 16
+    },
+    {
+      "text": "Boxes",
+      "startMs": 81233,
+      "endMs": 81576,
+      "scene": 16
+    },
+    {
+      "text": "below",
+      "startMs": 81594,
+      "endMs": 81937,
+      "scene": 16
+    },
+    {
+      "text": "never",
+      "startMs": 81955,
+      "endMs": 82298,
+      "scene": 16
+    },
+    {
+      "text": "change.",
+      "startMs": 82316,
+      "endMs": 82715,
+      "scene": 16
+    },
+    {
+      "text": "So",
+      "startMs": 82996,
+      "endMs": 83153,
+      "scene": 17
+    },
+    {
+      "text": "give",
+      "startMs": 83161,
+      "endMs": 83421,
+      "scene": 17
+    },
+    {
+      "text": "every",
+      "startMs": 83435,
+      "endMs": 83747,
+      "scene": 17
+    },
+    {
+      "text": "box",
+      "startMs": 83764,
+      "endMs": 83972,
+      "scene": 17
+    },
+    {
+      "text": "a",
+      "startMs": 83983,
+      "endMs": 84087,
+      "scene": 17
+    },
+    {
+      "text": "sticky",
+      "startMs": 84092,
+      "endMs": 84457,
+      "scene": 17
+    },
+    {
+      "text": "note:",
+      "startMs": 84476,
+      "endMs": 84736,
+      "scene": 17
+    },
+    {
+      "text": "the",
+      "startMs": 84914,
+      "endMs": 85122,
+      "scene": 17
+    },
+    {
+      "text": "smallest",
+      "startMs": 85133,
+      "endMs": 85602,
+      "scene": 17
+    },
+    {
+      "text": "number",
+      "startMs": 85626,
+      "endMs": 85991,
+      "scene": 17
+    },
+    {
+      "text": "from",
+      "startMs": 86010,
+      "endMs": 86270,
+      "scene": 17
+    },
+    {
+      "text": "the",
+      "startMs": 86284,
+      "endMs": 86492,
+      "scene": 17
+    },
+    {
+      "text": "bottom",
+      "startMs": 86503,
+      "endMs": 86867,
+      "scene": 17
+    },
+    {
+      "text": "up",
+      "startMs": 86887,
+      "endMs": 87043,
+      "scene": 17
+    },
+    {
+      "text": "to",
+      "startMs": 87051,
+      "endMs": 87207,
+      "scene": 17
+    },
+    {
+      "text": "that",
+      "startMs": 87215,
+      "endMs": 87476,
+      "scene": 17
+    },
+    {
+      "text": "box.",
+      "startMs": 87489,
+      "endMs": 87698,
+      "scene": 17
+    },
+    {
+      "text": "When",
+      "startMs": 87968,
+      "endMs": 88209,
+      "scene": 18
+    },
+    {
+      "text": "a",
+      "startMs": 88222,
+      "endMs": 88318,
+      "scene": 18
+    },
+    {
+      "text": "box",
+      "startMs": 88323,
+      "endMs": 88515,
+      "scene": 18
+    },
+    {
+      "text": "leaves,",
+      "startMs": 88525,
+      "endMs": 88862,
+      "scene": 18
+    },
+    {
+      "text": "its",
+      "startMs": 89032,
+      "endMs": 89224,
+      "scene": 18
+    },
+    {
+      "text": "note",
+      "startMs": 89234,
+      "endMs": 89475,
+      "scene": 18
+    },
+    {
+      "text": "leaves",
+      "startMs": 89487,
+      "endMs": 89824,
+      "scene": 18
+    },
+    {
+      "text": "too.",
+      "startMs": 89842,
+      "endMs": 90034,
+      "scene": 18
+    },
+    {
+      "text": "The",
+      "startMs": 90196,
+      "endMs": 90388,
+      "scene": 18
+    },
+    {
+      "text": "older",
+      "startMs": 90399,
+      "endMs": 90687,
+      "scene": 18
+    },
+    {
+      "text": "answer",
+      "startMs": 90702,
+      "endMs": 91039,
+      "scene": 18
+    },
+    {
+      "text": "is",
+      "startMs": 91057,
+      "endMs": 91201,
+      "scene": 18
+    },
+    {
+      "text": "already",
+      "startMs": 91209,
+      "endMs": 91593,
+      "scene": 18
+    },
+    {
+      "text": "waiting",
+      "startMs": 91614,
+      "endMs": 91998,
+      "scene": 18
+    },
+    {
+      "text": "right",
+      "startMs": 92019,
+      "endMs": 92307,
+      "scene": 18
+    },
+    {
+      "text": "below.",
+      "startMs": 92322,
+      "endMs": 92611,
+      "scene": 18
+    },
+    {
+      "text": "Now",
+      "startMs": 92886,
+      "endMs": 93162,
+      "scene": 19
+    },
+    {
+      "text": "the",
+      "startMs": 93177,
+      "endMs": 93453,
+      "scene": 19
+    },
+    {
+      "text": "code.",
+      "startMs": 93467,
+      "endMs": 93813,
+      "scene": 19
+    },
+    {
+      "text": "In",
+      "startMs": 94049,
+      "endMs": 94256,
+      "scene": 19
+    },
+    {
+      "text": "push,",
+      "startMs": 94267,
+      "endMs": 94612,
+      "scene": 19
+    },
+    {
+      "text": "start",
+      "startMs": 94848,
+      "endMs": 95263,
+      "scene": 19
+    },
+    {
+      "text": "with",
+      "startMs": 95285,
+      "endMs": 95630,
+      "scene": 19
+    },
+    {
+      "text": "the",
+      "startMs": 95648,
+      "endMs": 95924,
+      "scene": 19
+    },
+    {
+      "text": "new",
+      "startMs": 95939,
+      "endMs": 96215,
+      "scene": 19
+    },
+    {
+      "text": "number.",
+      "startMs": 96229,
+      "endMs": 96713,
+      "scene": 19
+    },
+    {
+      "text": "If",
+      "startMs": 96956,
+      "endMs": 97163,
+      "scene": 19
+    },
+    {
+      "text": "a",
+      "startMs": 97174,
+      "endMs": 97312,
+      "scene": 19
+    },
+    {
+      "text": "box",
+      "startMs": 97320,
+      "endMs": 97596,
+      "scene": 19
+    },
+    {
+      "text": "is",
+      "startMs": 97610,
+      "endMs": 97817,
+      "scene": 19
+    },
+    {
+      "text": "below,",
+      "startMs": 97828,
+      "endMs": 98243,
+      "scene": 19
+    },
+    {
+      "text": "compare",
+      "startMs": 98482,
+      "endMs": 99035,
+      "scene": 19
+    },
+    {
+      "text": "with",
+      "startMs": 99064,
+      "endMs": 99409,
+      "scene": 19
+    },
+    {
+      "text": "its",
+      "startMs": 99427,
+      "endMs": 99703,
+      "scene": 19
+    },
+    {
+      "text": "note.",
+      "startMs": 99718,
+      "endMs": 100063,
+      "scene": 19
+    },
+    {
+      "text": "Store",
+      "startMs": 100299,
+      "endMs": 100714,
+      "scene": 19
+    },
+    {
+      "text": "both.",
+      "startMs": 100736,
+      "endMs": 101081,
+      "scene": 19
+    },
+    {
+      "text": "Pop",
+      "startMs": 101317,
+      "endMs": 101593,
+      "scene": 19
+    },
+    {
+      "text": "removes",
+      "startMs": 101608,
+      "endMs": 102160,
+      "scene": 19
+    },
+    {
+      "text": "both.",
+      "startMs": 102189,
+      "endMs": 102534,
+      "scene": 19
+    },
+    {
+      "text": "Get",
+      "startMs": 102771,
+      "endMs": 103047,
+      "scene": 19
+    },
+    {
+      "text": "min",
+      "startMs": 103061,
+      "endMs": 103338,
+      "scene": 19
+    },
+    {
+      "text": "reads",
+      "startMs": 103352,
+      "endMs": 103766,
+      "scene": 19
+    },
+    {
+      "text": "the",
+      "startMs": 103788,
+      "endMs": 104064,
+      "scene": 19
+    },
+    {
+      "text": "top",
+      "startMs": 104079,
+      "endMs": 104355,
+      "scene": 19
+    },
+    {
+      "text": "note.",
+      "startMs": 104370,
+      "endMs": 104715,
+      "scene": 19
+    },
+    {
+      "text": "Dry",
+      "startMs": 104993,
+      "endMs": 105237,
+      "scene": 20
+    },
+    {
+      "text": "run",
+      "startMs": 105250,
+      "endMs": 105494,
+      "scene": 20
+    },
+    {
+      "text": "time.",
+      "startMs": 105507,
+      "endMs": 105813,
+      "scene": 20
+    },
+    {
+      "text": "Push",
+      "startMs": 106022,
+      "endMs": 106327,
+      "scene": 20
+    },
+    {
+      "text": "five.",
+      "startMs": 106343,
+      "endMs": 106648,
+      "scene": 20
+    },
+    {
+      "text": "Nothing",
+      "startMs": 106857,
+      "endMs": 107346,
+      "scene": 20
+    },
+    {
+      "text": "is",
+      "startMs": 107372,
+      "endMs": 107555,
+      "scene": 20
+    },
+    {
+      "text": "below,",
+      "startMs": 107565,
+      "endMs": 107931,
+      "scene": 20
+    },
+    {
+      "text": "so",
+      "startMs": 108143,
+      "endMs": 108326,
+      "scene": 20
+    },
+    {
+      "text": "its",
+      "startMs": 108336,
+      "endMs": 108580,
+      "scene": 20
+    },
+    {
+      "text": "note",
+      "startMs": 108593,
+      "endMs": 108898,
+      "scene": 20
+    },
+    {
+      "text": "is",
+      "startMs": 108915,
+      "endMs": 109098,
+      "scene": 20
+    },
+    {
+      "text": "five.",
+      "startMs": 109107,
+      "endMs": 109413,
+      "scene": 20
+    },
+    {
+      "text": "Push",
+      "startMs": 109689,
+      "endMs": 109954,
+      "scene": 21
+    },
+    {
+      "text": "three.",
+      "startMs": 109968,
+      "endMs": 110285,
+      "scene": 21
+    },
+    {
+      "text": "Smaller",
+      "startMs": 110469,
+      "endMs": 110893,
+      "scene": 21
+    },
+    {
+      "text": "of",
+      "startMs": 110915,
+      "endMs": 111074,
+      "scene": 21
+    },
+    {
+      "text": "three",
+      "startMs": 111083,
+      "endMs": 111400,
+      "scene": 21
+    },
+    {
+      "text": "and",
+      "startMs": 111417,
+      "endMs": 111629,
+      "scene": 21
+    },
+    {
+      "text": "five",
+      "startMs": 111640,
+      "endMs": 111905,
+      "scene": 21
+    },
+    {
+      "text": "is",
+      "startMs": 111919,
+      "endMs": 112078,
+      "scene": 21
+    },
+    {
+      "text": "three.",
+      "startMs": 112086,
+      "endMs": 112404,
+      "scene": 21
+    },
+    {
+      "text": "So",
+      "startMs": 112588,
+      "endMs": 112747,
+      "scene": 21
+    },
+    {
+      "text": "its",
+      "startMs": 112755,
+      "endMs": 112967,
+      "scene": 21
+    },
+    {
+      "text": "note",
+      "startMs": 112978,
+      "endMs": 113243,
+      "scene": 21
+    },
+    {
+      "text": "is",
+      "startMs": 113257,
+      "endMs": 113416,
+      "scene": 21
+    },
+    {
+      "text": "three.",
+      "startMs": 113424,
+      "endMs": 113742,
+      "scene": 21
+    },
+    {
+      "text": "Push",
+      "startMs": 114019,
+      "endMs": 114217,
+      "scene": 22
+    },
+    {
+      "text": "seven.",
+      "startMs": 114227,
+      "endMs": 114465,
+      "scene": 22
+    },
+    {
+      "text": "Smaller",
+      "startMs": 114603,
+      "endMs": 114920,
+      "scene": 22
+    },
+    {
+      "text": "of",
+      "startMs": 114937,
+      "endMs": 115056,
+      "scene": 22
+    },
+    {
+      "text": "seven",
+      "startMs": 115062,
+      "endMs": 115300,
+      "scene": 22
+    },
+    {
+      "text": "and",
+      "startMs": 115312,
+      "endMs": 115471,
+      "scene": 22
+    },
+    {
+      "text": "three",
+      "startMs": 115479,
+      "endMs": 115717,
+      "scene": 22
+    },
+    {
+      "text": "is",
+      "startMs": 115730,
+      "endMs": 115849,
+      "scene": 22
+    },
+    {
+      "text": "still",
+      "startMs": 115855,
+      "endMs": 116093,
+      "scene": 22
+    },
+    {
+      "text": "three.",
+      "startMs": 116105,
+      "endMs": 116343,
+      "scene": 22
+    },
+    {
+      "text": "Get",
+      "startMs": 116616,
+      "endMs": 116889,
+      "scene": 23
+    },
+    {
+      "text": "min.",
+      "startMs": 116904,
+      "endMs": 117177,
+      "scene": 23
+    },
+    {
+      "text": "Just",
+      "startMs": 117408,
+      "endMs": 117750,
+      "scene": 23
+    },
+    {
+      "text": "read",
+      "startMs": 117768,
+      "endMs": 118110,
+      "scene": 23
+    },
+    {
+      "text": "the",
+      "startMs": 118128,
+      "endMs": 118401,
+      "scene": 23
+    },
+    {
+      "text": "top",
+      "startMs": 118416,
+      "endMs": 118689,
+      "scene": 23
+    },
+    {
+      "text": "note.",
+      "startMs": 118704,
+      "endMs": 119046,
+      "scene": 23
+    },
+    {
+      "text": "Three.",
+      "startMs": 119280,
+      "endMs": 119690,
+      "scene": 23
+    },
+    {
+      "text": "One",
+      "startMs": 119928,
+      "endMs": 120201,
+      "scene": 23
+    },
+    {
+      "text": "look,",
+      "startMs": 120216,
+      "endMs": 120558,
+      "scene": 23
+    },
+    {
+      "text": "no",
+      "startMs": 120792,
+      "endMs": 120997,
+      "scene": 23
+    },
+    {
+      "text": "searching.",
+      "startMs": 121008,
+      "endMs": 121692,
+      "scene": 23
+    },
+    {
+      "text": "Pop.",
+      "startMs": 121988,
+      "endMs": 122309,
+      "scene": 24
+    },
+    {
+      "text": "Seven",
+      "startMs": 122579,
+      "endMs": 123060,
+      "scene": 24
+    },
+    {
+      "text": "leaves",
+      "startMs": 123086,
+      "endMs": 123648,
+      "scene": 24
+    },
+    {
+      "text": "with",
+      "startMs": 123677,
+      "endMs": 124079,
+      "scene": 24
+    },
+    {
+      "text": "its",
+      "startMs": 124100,
+      "endMs": 124421,
+      "scene": 24
+    },
+    {
+      "text": "note.",
+      "startMs": 124438,
+      "endMs": 124839,
+      "scene": 24
+    },
+    {
+      "text": "The",
+      "startMs": 125114,
+      "endMs": 125435,
+      "scene": 24
+    },
+    {
+      "text": "smallest",
+      "startMs": 125451,
+      "endMs": 126174,
+      "scene": 24
+    },
+    {
+      "text": "is",
+      "startMs": 126212,
+      "endMs": 126453,
+      "scene": 24
+    },
+    {
+      "text": "still",
+      "startMs": 126465,
+      "endMs": 126947,
+      "scene": 24
+    },
+    {
+      "text": "three.",
+      "startMs": 126972,
+      "endMs": 127454,
+      "scene": 24
+    },
+    {
+      "text": "Pop",
+      "startMs": 127739,
+      "endMs": 127977,
+      "scene": 25
+    },
+    {
+      "text": "again.",
+      "startMs": 127990,
+      "endMs": 128347,
+      "scene": 25
+    },
+    {
+      "text": "Three",
+      "startMs": 128553,
+      "endMs": 128910,
+      "scene": 25
+    },
+    {
+      "text": "leaves,",
+      "startMs": 128929,
+      "endMs": 129345,
+      "scene": 25
+    },
+    {
+      "text": "and",
+      "startMs": 129555,
+      "endMs": 129793,
+      "scene": 25
+    },
+    {
+      "text": "the",
+      "startMs": 129805,
+      "endMs": 130043,
+      "scene": 25
+    },
+    {
+      "text": "top",
+      "startMs": 130056,
+      "endMs": 130294,
+      "scene": 25
+    },
+    {
+      "text": "note",
+      "startMs": 130306,
+      "endMs": 130604,
+      "scene": 25
+    },
+    {
+      "text": "says",
+      "startMs": 130619,
+      "endMs": 130917,
+      "scene": 25
+    },
+    {
+      "text": "five.",
+      "startMs": 130932,
+      "endMs": 131230,
+      "scene": 25
+    },
+    {
+      "text": "The",
+      "startMs": 131433,
+      "endMs": 131671,
+      "scene": 25
+    },
+    {
+      "text": "shortcut's",
+      "startMs": 131684,
+      "endMs": 132279,
+      "scene": 25
+    },
+    {
+      "text": "bug",
+      "startMs": 132310,
+      "endMs": 132548,
+      "scene": 25
+    },
+    {
+      "text": "is",
+      "startMs": 132560,
+      "endMs": 132739,
+      "scene": 25
+    },
+    {
+      "text": "fixed.",
+      "startMs": 132748,
+      "endMs": 133105,
+      "scene": 25
+    },
+    {
+      "text": "The",
+      "startMs": 133384,
+      "endMs": 133612,
+      "scene": 26
+    },
+    {
+      "text": "race.",
+      "startMs": 133624,
+      "endMs": 133910,
+      "scene": 26
+    },
+    {
+      "text": "Brute",
+      "startMs": 134105,
+      "endMs": 134447,
+      "scene": 26
+    },
+    {
+      "text": "force:",
+      "startMs": 134465,
+      "endMs": 134808,
+      "scene": 26
+    },
+    {
+      "text": "a",
+      "startMs": 135006,
+      "endMs": 135120,
+      "scene": 26
+    },
+    {
+      "text": "million",
+      "startMs": 135126,
+      "endMs": 135583,
+      "scene": 26
+    },
+    {
+      "text": "checks.",
+      "startMs": 135607,
+      "endMs": 136007,
+      "scene": 26
+    },
+    {
+      "text": "Sticky",
+      "startMs": 136208,
+      "endMs": 136608,
+      "scene": 26
+    },
+    {
+      "text": "notes:",
+      "startMs": 136629,
+      "endMs": 136971,
+      "scene": 26
+    },
+    {
+      "text": "one",
+      "startMs": 137169,
+      "endMs": 137398,
+      "scene": 26
+    },
+    {
+      "text": "look.",
+      "startMs": 137410,
+      "endMs": 137695,
+      "scene": 26
+    },
+    {
+      "text": "The",
+      "startMs": 137890,
+      "endMs": 138119,
+      "scene": 26
+    },
+    {
+      "text": "price",
+      "startMs": 138131,
+      "endMs": 138473,
+      "scene": 26
+    },
+    {
+      "text": "is",
+      "startMs": 138491,
+      "endMs": 138663,
+      "scene": 26
+    },
+    {
+      "text": "one",
+      "startMs": 138672,
+      "endMs": 138900,
+      "scene": 26
+    },
+    {
+      "text": "extra",
+      "startMs": 138912,
+      "endMs": 139254,
+      "scene": 26
+    },
+    {
+      "text": "number",
+      "startMs": 139272,
+      "endMs": 139672,
+      "scene": 26
+    },
+    {
+      "text": "per",
+      "startMs": 139693,
+      "endMs": 139921,
+      "scene": 26
+    },
+    {
+      "text": "box.",
+      "startMs": 139933,
+      "endMs": 140162,
+      "scene": 26
+    },
+    {
+      "text": "In",
+      "startMs": 140434,
+      "endMs": 140597,
+      "scene": 27
+    },
+    {
+      "text": "the",
+      "startMs": 140606,
+      "endMs": 140824,
+      "scene": 27
+    },
+    {
+      "text": "interview",
+      "startMs": 140836,
+      "endMs": 141381,
+      "scene": 27
+    },
+    {
+      "text": "say",
+      "startMs": 141410,
+      "endMs": 141628,
+      "scene": 27
+    },
+    {
+      "text": "this:",
+      "startMs": 141640,
+      "endMs": 141912,
+      "scene": 27
+    },
+    {
+      "text": "I",
+      "startMs": 142099,
+      "endMs": 142208,
+      "scene": 27
+    },
+    {
+      "text": "store",
+      "startMs": 142214,
+      "endMs": 142541,
+      "scene": 27
+    },
+    {
+      "text": "the",
+      "startMs": 142558,
+      "endMs": 142776,
+      "scene": 27
+    },
+    {
+      "text": "minimum",
+      "startMs": 142788,
+      "endMs": 143224,
+      "scene": 27
+    },
+    {
+      "text": "so",
+      "startMs": 143247,
+      "endMs": 143411,
+      "scene": 27
+    },
+    {
+      "text": "far",
+      "startMs": 143419,
+      "endMs": 143638,
+      "scene": 27
+    },
+    {
+      "text": "with",
+      "startMs": 143649,
+      "endMs": 143922,
+      "scene": 27
+    },
+    {
+      "text": "every",
+      "startMs": 143936,
+      "endMs": 144263,
+      "scene": 27
+    },
+    {
+      "text": "element,",
+      "startMs": 144281,
+      "endMs": 144717,
+      "scene": 27
+    },
+    {
+      "text": "so",
+      "startMs": 144912,
+      "endMs": 145076,
+      "scene": 27
+    },
+    {
+      "text": "get",
+      "startMs": 145084,
+      "endMs": 145303,
+      "scene": 27
+    },
+    {
+      "text": "min",
+      "startMs": 145314,
+      "endMs": 145532,
+      "scene": 27
+    },
+    {
+      "text": "takes",
+      "startMs": 145544,
+      "endMs": 145871,
+      "scene": 27
+    },
+    {
+      "text": "constant",
+      "startMs": 145888,
+      "endMs": 146379,
+      "scene": 27
+    },
+    {
+      "text": "time.",
+      "startMs": 146405,
+      "endMs": 146678,
+      "scene": 27
+    },
+    {
+      "text": "Like",
+      "startMs": 146952,
+      "endMs": 147175,
+      "scene": 28
+    },
+    {
+      "text": "if",
+      "startMs": 147187,
+      "endMs": 147321,
+      "scene": 28
+    },
+    {
+      "text": "it",
+      "startMs": 147328,
+      "endMs": 147462,
+      "scene": 28
+    },
+    {
+      "text": "clicked.",
+      "startMs": 147469,
+      "endMs": 147827,
+      "scene": 28
+    },
+    {
+      "text": "Comment",
+      "startMs": 147986,
+      "endMs": 148344,
+      "scene": 28
+    },
+    {
+      "text": "STACK",
+      "startMs": 148363,
+      "endMs": 148631,
+      "scene": 28
+    },
+    {
+      "text": "for",
+      "startMs": 148645,
+      "endMs": 148823,
+      "scene": 28
+    },
+    {
+      "text": "the",
+      "startMs": 148833,
+      "endMs": 149011,
+      "scene": 28
+    },
+    {
+      "text": "notes.",
+      "startMs": 149021,
+      "endMs": 149289,
+      "scene": 28
+    },
+    {
+      "text": "Share",
+      "startMs": 149444,
+      "endMs": 149712,
+      "scene": 28
+    },
+    {
+      "text": "it",
+      "startMs": 149726,
+      "endMs": 149860,
+      "scene": 28
+    },
+    {
+      "text": "with",
+      "startMs": 149867,
+      "endMs": 150090,
+      "scene": 28
+    },
+    {
+      "text": "your",
+      "startMs": 150102,
+      "endMs": 150326,
+      "scene": 28
+    },
+    {
+      "text": "placement",
+      "startMs": 150337,
+      "endMs": 150784,
+      "scene": 28
+    },
+    {
+      "text": "friend,",
+      "startMs": 150808,
+      "endMs": 151120,
+      "scene": 28
+    },
+    {
+      "text": "and",
+      "startMs": 151278,
+      "endMs": 151456,
+      "scene": 28
+    },
+    {
+      "text": "follow",
+      "startMs": 151466,
+      "endMs": 151778,
+      "scene": 28
+    },
+    {
+      "text": "for",
+      "startMs": 151795,
+      "endMs": 151974,
+      "scene": 28
+    },
+    {
+      "text": "more",
+      "startMs": 151983,
+      "endMs": 152206,
+      "scene": 28
+    },
+    {
+      "text": "questions.",
+      "startMs": 152218,
+      "endMs": 152665,
+      "scene": 28
+    }
+  ]
+}
