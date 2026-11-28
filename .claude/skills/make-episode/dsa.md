@@ -1,121 +1,121 @@
-# DSA-101 episodes
+# DSA-101 episodes (simple format, "style": "dsa2")
 
-One interview question per reel: Debug Bro alone, English voice, no length cap, `"style": "dsa"`. These rules replace
-the system-design steps in SKILL.md (formats.md, the `stage` style and the word cap do not apply).
+One question per reel, taught completely, like a game with levels: after watching, a student needs no other video.
+Hook, series line, what the data structure is, what the question asks (every operation, with an example), the catch, a
+guess, the brute force (code and why it is slow), the tempting shortcut that breaks, the key idea and why it works, the
+code, a step-by-step dry run, the comparison, the sentence to say in the interview, and one closing ask. English voice,
+about 2 to 2.7 minutes. Teach like the best teacher: everyday words, an example before every rule, one idea per
+screen, one short joke per level that is about the thing being taught. These rules replace the system-design steps in
+SKILL.md. Episodes 1 and 2 (`"style": "dsa"`) are the retired format.
 
-You write two files. The code in `src/` draws only what they say: nothing about any problem is built in.
+You write two files; the code in `src/dsa2.tsx` draws only what they say:
 
-- `episodes/dsa101-NN-<problem-name>/episode.json`: the reel
+- `episodes/dsa101-NN-<problem-name>/episode.json`: the reel and its cover
 - `episodes/dsa101-NN-<problem-name>/notes.json`: the PDF people get for commenting the keyword
 
-Copy the shape of `episodes/dsa101-01-two-sum/`, never its words, numbers, analogy or jokes.
-
 ## 1. Pick the problem and number it
-- Find the last DSA episode (highest `dsa.n`). Its `close` scene promised the next problem: make that one.
-- `dsa.n` = last `dsa.n` + 1. `number` = highest `number` of ANY episode + 1. `NN` in the slug = `dsa.n`.
-- `dsa.leetcode`, name, difficulty and category come from `data/dsa150.json`. The `title` scene's text must be that name
-  (the validator checks it). The `n` in dsa150.json is not the episode number.
-- `dsa.companies`: leave `[]`. A company tag is a factual claim; add one only if you opened a page that shows it, put
-  that URL in both `dsa.companySource` and `sources`, and say "candidates report" in the voice. NeetCode lists and the
-  public problem page do not show companies.
+- The last DSA episode promised the next one (the first `practice` problem in its notes.json; for episode 2, its `close` scene `next`). Make that one. `dsa.n` = last `dsa.n` + 1, `number` = highest
+  `number` of ANY episode + 1, `NN` = `dsa.n`.
+- `dsa.leetcode`, `name`, `difficulty`, `category` come exactly from `data/dsa150.json` (the validator checks them).
+  Its `n` field is not the episode number. Write "LeetCode #X" in the caption; never from memory.
+- The picture is a stack or a row of cells with one helper structure. If a problem cannot be shown honestly that way
+  (trees, graphs, linked lists), take the next one in `data/dsa150.json` that can, and say so.
+- `dsa.companies`: `[]` unless you opened a page showing it (then `companySource`, also in `sources`).
 
-**Show the LeetCode number** next to "Question N": the title scene adds it from `dsa.leetcode`; also write it in the
-caption ("Question N: Name (LeetCode X)"), one keyword ("leetcode X") and `topic`. Copy numbers from
-`data/dsa150.json`, never from memory (the validator rejects a number that does not match). "Question N" is the series
-number and is different from the LeetCode number.
-
-## 1b. Learn from the last reel, then vary
-- `node pipeline/review-gate.mjs` must print OK (else stop: run `/review-reels`). Set `learnedFrom` {slug, fix, how}
-  with one fix from the latest review in `data/reviews.json` and make it visible in the reel.
-- Keep the series recognisable (look, pause screen, close screen, caption shape). Change everything else:
-  - `dsa.hook`: story, bold-claim, wrong-belief, challenge or question; not one used in the last 2 questions.
-    Do not keep opening with "An interviewer asked me...".
-  - `dsa.analogy`: a new everyday picture each time; `gate.look`: "gate" (items walk through an arch), "stack" (they
-    drop into a pile) or "shelf" (into boxes), whichever fits, and not the last one.
-  - New title joke, smile line and pause hint (the validator rejects repeats).
-  - Drop or reorder middle scenes when the problem asks for it (e.g. show the trap before the code).
-- No word stamp in the first 30% of the title scene.
+## 1b. Learn from the last reel
+`node pipeline/review-gate.mjs` must print OK (else stop: run `/review-reels`). Apply one fix from the latest review in
+`data/reviews.json` and record `learnedFrom` {slug, fix, how}. A fix never changes the order of the parts below.
 
 ## 2. Solve it first
-Write the solution and its tests in `notes.json` before the script. Trace your examples by hand: every number in the
-reel (answers, dry run, step counts, speed-up) must follow from the code. Any time estimate states its assumption
-("at a billion checks a second").
+Write the solution and its tests in `notes.json` before the script. Trace every example by hand: every number on screen
+(values, helper values, verdicts) must follow from the code.
 
-## 3. episode.json
+## 3. The hook (most important)
+`dsa.hook` rotates; never the same as the last episode:
+- `company`: a company name plus a job-seeker's worry. "Amazon interview. Mind blank?"
+- `job-life`: a real moment of job hunting, no company. "Placements next month. Still stuck?" "No calls yet?"
+- `wrong-answer`: a confident answer that is wrong. "Smallest is 3. Remove 3. Still 3?"
+
+Rules: headline at most 7 easy words; voice line at most 12 words; the puzzle is on screen beside it; write a new one
+each time. Company names are for preparation only: never say a company asks this question, and never say anyone got
+selected, without a source. No made-up statistics, messages or offers.
+
+## 4. episode.json
 Top level: `slug`, `number`, `series: "DSA-101"`, `title`, `topic`, `pillar: "interview"`, `format: "whiteboard"`,
-`style: "dsa"`, `dsa`, `experiment`, 3 `hooks`, `leadMagnet` {keyword, promise}, `voice` (copy it from episode 1),
-`caption`, `hashtags`, `keywords`, `coverText`, `sources` (the problem page at least), `scenes`.
+`style: "dsa2"`, `dsa` {n, leetcode, name, difficulty, category, companies: [], hook}, `cover` {art: 2-5 short tiles
+showing the puzzle, note (at most 12 characters, like "min = ?"), pose}, `experiment`, 3 `hooks`, `learnedFrom`,
+`leadMagnet` {keyword, promise}, `voice` (copy from the last DSA episode), `caption`, `hashtags`, `keywords`,
+`coverText`, `sources`, `scenes`.
 
-Every scene: `{"type": "dsa", "kind", "beat", "pose", "vo", "data"}`. `vo` at most 45 words, English, short sentences.
-Order that works: title, problem, brute, pause, gate, steps, code, run (1-3 of them), trap, aha, smile, name, notes,
-quiz, close. Skip a kind when it does not fit the problem; never bend a problem to fit a kind.
+Every scene: `{"type": "dsa2", "kind", "vo", "data", "level", "meter", "pop"?, "fx"?}`. At most 40 words per `vo`, 480 in
+total. `level` is the chip at the top ("3/7 Brute force"), on every scene after the series line. `meter` is the
+interviewer's mood 0-100: neutral 50, low when something fails, 100 at the end. `pop` {icon: like/comment/share/follow/
+save, text} is a nudge, at most 3 in the reel besides the closing screen. `fx` overrides the transition.
+`lines` are headlines: 1-3 very short lines (at most 18 characters), at most one `*highlighted*` word. `title` at most 16
+characters, `note` at most 34. `board` = {layout: "stack" (up to 4, newest last) or "row" (up to 6), values, side?:
+{title, values}, slots?, lit?: [cell indices]}.
 
-| kind | `data` fields (all required unless marked ?) |
-| --- | --- |
-| title | title (the problem name), face (smirk/smile/flat), bubble |
-| problem | heading, cells[2-8, each ≤4 chars], highlight[cell indices of the answer], targetLabel?, target?, working, answer |
-| brute | heading, cells[3-8], mode ("pairs" or "scan"), counterLabel, counterTo (number), result |
-| pause | hint |
-| gate | look?, heading, sign (≤10), items[2-5], storeTitle (the analogy's data structure) |
-| steps | steps[2-4], yes?, no? |
-| code | file, lines[3-12, ≤48 chars: exactly the Python in notes.json, comments left out], meanings (exactly one per line, ≤44) |
-| run | cells, i (current index), panelLabel, panelText, panelAccent?, storeTitle, store[rows BEFORE this step, max 4], push? (row added), hit? (row index matched), pop? (remove last row), matched?[cell indices], found (true on the last step), result |
-| trap | heading, rows[exactly 2: {title, cells, steps[1-2], result, bad}] wrong first, then right |
-| aha | slow {label, value}, fast {label, value, bar 0.01-1}, headline, sub |
-| smile | bubble, label |
-| name | name (the technique), pairs[2-4 of [from, to]], footer |
-| notes | heading, rows[3-5 of [key ≤7, value]] |
-| quiz | question, options[2-3, no "A:" letters], answer (index), why |
-| close | save, send, like (button texts), next (next problem's name) |
+| kind, in this order (* repeats) | teaches | `data` |
+| --- | --- | --- |
+| hook | the worry | lines (up to 4), board, ask (at most 16) |
+| series | "Welcome to question N of 150 popular LeetCode questions." | total: 150 |
+| concept* | the data structure, from zero | title, note, board, drop?, crash?, result? |
+| ops* | what the question asks: one scene per operation or input rule, with the example | same as concept |
+| catch | the constraint that makes it hard; promise something at the end | lines, tag (at most 20) |
+| guess | let them think | lines, sticker (at most 30) |
+| brute* (2+) | the obvious solution: its code, its run, why it is too slow | title, note, code (2-5 lines from notes.brute.code), line, board, scan?, bad? |
+| trap* (optional) | a clever-looking shortcut and the exact input that breaks it | title, note, board, box {label, value}, bad? |
+| insight* | the key idea and WHY it works | title, note, board, grow? |
+| code | the optimal code, line by line | lines, code (3-9 lines), focus |
+| dryrun* (3-8) | the real code on the example, one step per scene | title, note, board after the step, show [first, last] code-scene lines (at most 5), line |
+| compare | brute force against optimal, and the price paid | lines (1), slow {title, value}, fast {title, value}, note (at most 26) |
+| say | the interview sentence | lines, quote (at most 110) |
+| ask | "Like ... comment KEYWORD ... share ... follow for more questions." | lines |
 
-Any `data` may add `slams` (full-screen word stamps: [{at 0-1, text, color?, hold?, tilt?, size?}]) and `cut`
-(punch, slideL, slideR, slideUp, flip, zoom, drop, wipe). Use slams sparingly: each one hides the scene while it shows,
-and the first frame must not repeat the title underneath it.
+NEVER name the next question: not in the voice, on screen or in the caption.
 
-The last scene's `vo` must say "save", "send", "like" and the keyword. The quiz answer is never said in the reel; the
-Telegram checklist carries it. No emoji in on-screen text.
+`code` lines are copied from the Python in notes.json, in order, with the same nesting; leave lines out, never rewrite
+them. Use 2 spaces per level and short names so lines fit.
+
+Dry run: run the real code on the reel's own example, one operation or one loop step per scene, and include the step
+that shows why the trick works (for Min Stack: popping the smallest). Every value shown must be what the code holds.
+
+Pay every promise. Every value on screen must be what the code really holds at that moment.
 
 ### Caption
-English. Keep this shape; write a new hook and takeaway for every problem. The `[keyword, list]` and hashtags are added
-from `keywords` and `hashtags`, so leave them out of `caption`.
+English. The `[keyword, list]` and hashtags are added from `keywords` and `hashtags`.
 ```
-Nested loops are fine... until your input hits 1,000,000 and your runtime dies. 💀
+<the hook as a sentence, one emoji, at most 125 characters>
 
 Welcome to DSA-101: two interview classics every day.
-Question 1: Two Sum (LeetCode #1)
-<one sentence: the trade or trick and what it buys>
+Question N: <name> (LeetCode #X)
+<one sentence: the trick and what it buys>
 
-👇 Comment TWOSUM for the full notes PDF in Python, Java, C++ and JavaScript.
+👇 Comment KEYWORD for the full notes PDF in Python, Java, C++ and JavaScript.
 
-Save it for later + share it with your coding buddy.
+Save it, share it with your placement friend and follow for more questions.
 ```
-- Line 1: the pain of the slow or wrong approach, one emoji, at most 125 characters. Any number in it must be true.
-- "Question N" is `dsa.n` (two questions go out a day, so never "Day N"); the problem line needs `(LeetCode #X)`
-  exactly. In the `close` scene never promise "tomorrow": say "next".
-- `keywords` (7): problem name, "leetcode X", the technique, "dsa 101", "coding interview", 2 concepts.
-- `hashtags` (5): #dsa #leetcode #codinginterview #programming #computerscience.
+`keywords` (7): problem name, "leetcode X", the technique, "dsa 101", "coding interview", 2 concepts.
+`hashtags` (5): #dsa #leetcode #codinginterview #programming #computerscience.
 
-## 4. notes.json (the PDF)
+## 5. notes.json (the PDF)
 A short lesson that stands on its own, in your own words (never paste LeetCode's problem text). Plain characters only:
 no arrows, emoji or Devanagari. Fields (schema: `notesSchema` in `src/dsaSchema.js`):
 
 - `title`, `problem`, `examples`[2-4: input, output, why]
-- `analogy` (the same one as the reel), `brute` {explain, time, space}
-- `insight`[2-5 paragraphs]: why the better idea works, not just what it does
+- `analogy`, `brute` {explain, time, space, code: Python, same interface, must pass the Python test}, `insight`[2-5 paragraphs: why the better idea works]
 - `steps`[3-8], `dryRun` {input, headers, rows} on a DIFFERENT input from the reel's
-- `code`: `python`, `java`, `cpp`, `javascript`, each {code (≤80 chars a line, commented), note (what is specific to
-  that language), test}
-- `complexity` {time, timeWhy, space, spaceWhy}, `mistakes`[2-6], `interview`[2-6], `practice`[2-4: name, leetcode, why; only problems listed in data/dsa150.json]
+- `code`: `python`, `java`, `cpp`, `javascript`, each {code (80 characters a line at most, commented), note, test}
+- `complexity` {time, timeWhy, space, spaceWhy}, `mistakes`[2-6], `interview`[2-6]
+- `practice`[2-4: name, leetcode, why; only problems listed in data/dsa150.json]; the first is the next episode
+  (internally: never announce it)
 
-`test` is appended after the code and must exit non-zero on a wrong answer. Cover the examples and the edge cases.
-Java: the solution is `class Solution` (imports first), the test declares `public class Main` with `main`.
-Python: use `assert`. JavaScript: `throw`. C++: `main` that calls `exit(1)`.
+`test` is appended after the code and must exit non-zero on a wrong answer. Cover the examples and edge cases. Java:
+the solution is `class Solution` (imports first) and the test declares `public class Main` with `main`. Python: use
+`assert`. JavaScript: `throw`. C++: `main` that calls `exit(1)`.
 
-If the caption promises code in these four languages, all four must be in the PDF.
-
-## 5. Check
+## 6. Check
 1. `node pipeline/validate.mjs <slug>` until OK.
-2. When you can run commands (not in the GitHub writing step): `node pipeline/check-code.mjs <slug>` and
-   `python3 pipeline/notes_pdf.py <slug>`. "NOT CHECKED" means untested, not passed. GitHub runs the same code check
-   in the "Check DSA code" job.
+2. When you can run commands: `node pipeline/check-code.mjs <slug>`, `python3 pipeline/notes_pdf.py <slug>` and
+   `node pipeline/review-stills.mjs <slug>`. "NOT CHECKED" means untested. GitHub tests the code before sending.
 3. Reply with the slug, the problem and the sources.

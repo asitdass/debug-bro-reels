@@ -1,0 +1,793 @@
+{
+ "slug": "dsa101-03-min-stack",
+ "number": 9,
+ "series": "DSA-101",
+ "title": "Min Stack: remember the smallest at every level",
+ "topic": "LeetCode 155 Min Stack: keep the smallest so far with every value",
+ "pillar": "interview",
+ "format": "whiteboard",
+ "style": "dsa2",
+ "dsa": {
+  "n": 3,
+  "leetcode": 155,
+  "name": "Min Stack",
+  "difficulty": "Medium",
+  "category": "Stack",
+  "companies": [],
+  "hook": "company"
+ },
+ "cover": {
+  "art": [
+   "5",
+   "3",
+   "7"
+  ],
+  "note": "min = ?",
+  "pose": "shock"
+ },
+ "experiment": {
+  "change": "Full lesson as a game with levels: concept, all operations, brute force, a broken shortcut, optimal idea, code, dry run",
+  "why": "The short version felt rushed and boring; students should not need another video",
+  "metric": "watch-time"
+ },
+ "hooks": [
+  "Amazon interview. And your brain says: error 404.",
+  "Placements next month. Still scared of stacks?",
+  "Smallest is 3. Remove 3. Still 3?"
+ ],
+ "learnedFrom": {
+  "slug": "dsa101-02-valid-parentheses",
+  "fix": "puzzle-on-first-frame",
+  "how": "The stack and the question smallest = ? are on screen from the first frame, under a short hook"
+ },
+ "leadMagnet": {
+  "keyword": "STACK",
+  "promise": "the Min Stack notes PDF with code in 4 languages"
+ },
+ "voice": {
+  "engine": "sarvam",
+  "voiceId": "sunny_en_social",
+  "lang": "en-IN",
+  "fallbackVoiceId": "en-IN-PrabhatNeural",
+  "rate": "+5%"
+ },
+ "caption": "Amazon interview and your brain shows error 404? 😶\n\nWelcome to DSA-101: two interview classics every day.\nQuestion 3: Min Stack (LeetCode #155)\nFrom brute force to the sticky-note trick, with a full dry run.\n\n👇 Comment STACK for the full notes PDF in Python, Java, C++ and JavaScript.\n\nSave it, share it with your placement friend and follow for more questions.",
+ "hashtags": [
+  "#dsa",
+  "#leetcode",
+  "#codinginterview",
+  "#programming",
+  "#computerscience"
+ ],
+ "keywords": [
+  "min stack",
+  "leetcode 155",
+  "stack",
+  "dsa 101",
+  "coding interview",
+  "constant time",
+  "data structures"
+ ],
+ "coverText": "MIN STACK",
+ "sources": [
+  "https://leetcode.com/problems/min-stack/"
+ ],
+ "scenes": [
+  {
+   "type": "dsa2",
+   "kind": "hook",
+   "vo": "Amazon interview. And your brain says: error four oh four.",
+   "data": {
+    "lines": [
+     "Amazon",
+     "interview.",
+     "Brain: *404*"
+    ],
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    },
+    "ask": "smallest = ?"
+   },
+   "meter": 50
+  },
+  {
+   "type": "dsa2",
+   "kind": "series",
+   "vo": "Welcome to question three of one hundred fifty popular LeetCode questions.",
+   "data": {
+    "total": 150
+   },
+   "meter": 50
+  },
+  {
+   "type": "dsa2",
+   "kind": "concept",
+   "vo": "First, what is a stack? Think of a pile of plates. Every new plate goes on top.",
+   "data": {
+    "title": "A stack",
+    "note": "Like a pile of plates",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    },
+    "drop": true
+   },
+   "level": "1/7 Stack",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "concept",
+   "vo": "You can only take from the top. Pull the bottom one, and your mom will hear it.",
+   "data": {
+    "title": "Top only",
+    "note": "Pull the bottom? Disaster",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    },
+    "crash": true
+   },
+   "level": "1/7 Stack",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "ops",
+   "vo": "Now the question. Build a stack with four actions. One: push adds a number on top.",
+   "data": {
+    "title": "push",
+    "note": "Add a number on top",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ],
+     "lit": [
+      2
+     ]
+    },
+    "result": "push(7)"
+   },
+   "level": "2/7 Question",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "ops",
+   "vo": "Two: pop removes the top number. Seven goes away.",
+   "data": {
+    "title": "pop",
+    "note": "Remove the top number",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3
+     ]
+    },
+    "result": "7 removed"
+   },
+   "level": "2/7 Question",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "ops",
+   "vo": "Three: top only looks at the top number, without removing it.",
+   "data": {
+    "title": "top",
+    "note": "Look, but do not remove",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3
+     ],
+     "lit": [
+      1
+     ]
+    },
+    "result": "top() = 3"
+   },
+   "level": "2/7 Question",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "ops",
+   "vo": "Four, the star: get min tells the smallest number in the whole pile. Here, three.",
+   "data": {
+    "title": "getMin",
+    "note": "Smallest in the whole pile",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ],
+     "lit": [
+      1
+     ]
+    },
+    "result": "getMin() = 3"
+   },
+   "level": "2/7 Question",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "catch",
+   "vo": "Here is the catch. All four must be instant, even with a million numbers. Stay till the end for the trick.",
+   "data": {
+    "lines": [
+     "All four",
+     "must be",
+     "*instant*"
+    ],
+    "tag": "even with 1 million"
+   },
+   "level": "2/7 Question",
+   "meter": 40
+  },
+  {
+   "type": "dsa2",
+   "kind": "guess",
+   "vo": "So how do you find the smallest instantly? Think. Three. Two. One.",
+   "data": {
+    "lines": [
+     "Your",
+     "*guess?*"
+    ],
+    "sticker": "Think before I show you"
+   },
+   "level": "2/7 Question",
+   "meter": 40,
+   "pop": {
+    "icon": "comment",
+    "text": "Comment your guess"
+   }
+  },
+  {
+   "type": "dsa2",
+   "kind": "brute",
+   "vo": "Idea one: brute force. Keep a normal list. Push just adds the number at the end.",
+   "data": {
+    "title": "Brute force",
+    "note": "Keep one normal list",
+    "code": [
+     "def push(self, x):",
+     "  self.st.append(x)",
+     "def getMin(self):",
+     "  return min(self.st)"
+    ],
+    "line": [
+     0,
+     1
+    ],
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    }
+   },
+   "level": "3/7 Brute force",
+   "meter": 50
+  },
+  {
+   "type": "dsa2",
+   "kind": "brute",
+   "vo": "For get min, check every single box and keep the smallest. And honestly, it works.",
+   "data": {
+    "title": "getMin",
+    "note": "Check every box",
+    "code": [
+     "def push(self, x):",
+     "  self.st.append(x)",
+     "def getMin(self):",
+     "  return min(self.st)"
+    ],
+    "line": [
+     2,
+     3
+    ],
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    },
+    "scan": true
+   },
+   "level": "3/7 Brute force",
+   "meter": 55
+  },
+  {
+   "type": "dsa2",
+   "kind": "brute",
+   "vo": "But a million boxes means a million checks, every time you ask. Your interviewer will retire.",
+   "data": {
+    "title": "Too slow",
+    "note": "1M boxes = 1M checks",
+    "code": [
+     "def push(self, x):",
+     "  self.st.append(x)",
+     "def getMin(self):",
+     "  return min(self.st)"
+    ],
+    "line": [
+     3
+    ],
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    },
+    "scan": true,
+    "bad": true
+   },
+   "level": "3/7 Brute force",
+   "meter": 12,
+   "fx": "glitch"
+  },
+  {
+   "type": "dsa2",
+   "kind": "trap",
+   "vo": "Smart shortcut: keep one variable for the smallest. Push five. It says five.",
+   "data": {
+    "title": "One variable",
+    "note": "Just save the smallest",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5
+     ]
+    },
+    "box": {
+     "label": "smallest",
+     "value": "5"
+    }
+   },
+   "level": "4/7 Shortcut",
+   "meter": 50
+  },
+  {
+   "type": "dsa2",
+   "kind": "trap",
+   "vo": "Push three. It updates to three. Genius, right?",
+   "data": {
+    "title": "push 3",
+    "note": "3 is smaller, update",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3
+     ]
+    },
+    "box": {
+     "label": "smallest",
+     "value": "3"
+    }
+   },
+   "level": "4/7 Shortcut",
+   "meter": 75
+  },
+  {
+   "type": "dsa2",
+   "kind": "trap",
+   "vo": "Now pop. Three is gone, but the variable still says three. We completely forgot five.",
+   "data": {
+    "title": "pop",
+    "note": "It still says 3!",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5
+     ]
+    },
+    "box": {
+     "label": "smallest",
+     "value": "3"
+    },
+    "bad": true
+   },
+   "level": "4/7 Shortcut",
+   "meter": 8,
+   "fx": "glitch"
+  },
+  {
+   "type": "dsa2",
+   "kind": "insight",
+   "vo": "Here is what you waited for. A stack changes only at the top. Boxes below never change.",
+   "data": {
+    "title": "Key idea",
+    "note": "Boxes below never change",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ]
+    }
+   },
+   "level": "5/7 The idea",
+   "meter": 60
+  },
+  {
+   "type": "dsa2",
+   "kind": "insight",
+   "vo": "So give every box a sticky note: the smallest number from the bottom up to that box.",
+   "data": {
+    "title": "Sticky notes",
+    "note": "Smallest up to this box",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5,
+       3,
+       3
+      ]
+     },
+     "slots": 3
+    },
+    "grow": true
+   },
+   "level": "5/7 The idea",
+   "meter": 75
+  },
+  {
+   "type": "dsa2",
+   "kind": "insight",
+   "vo": "When a box leaves, its note leaves too. The older answer is already waiting right below.",
+   "data": {
+    "title": "Why it works",
+    "note": "Old answers stay saved",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5,
+       3
+      ]
+     },
+     "slots": 3
+    }
+   },
+   "level": "5/7 The idea",
+   "meter": 85,
+   "pop": {
+    "icon": "save",
+    "text": "Save this idea"
+   }
+  },
+  {
+   "type": "dsa2",
+   "kind": "code",
+   "vo": "Now the code. In push, start with the new number. If a box is below, compare with its note. Store both. Pop removes both. Get min reads the top note.",
+   "data": {
+    "lines": [
+     "The *code*"
+    ],
+    "code": [
+     "def push(self, x):",
+     "  low = x",
+     "  if self.st:",
+     "    low = min(x, self.st[-1][1])",
+     "  self.st.append((x, low))",
+     "def pop(self):",
+     "  self.st.pop()",
+     "def getMin(self):",
+     "  return self.st[-1][1]"
+    ],
+    "focus": [
+     0,
+     1,
+     3,
+     4,
+     6,
+     8
+    ]
+   },
+   "level": "6/7 The code",
+   "meter": 85
+  },
+  {
+   "type": "dsa2",
+   "kind": "dryrun",
+   "vo": "Dry run time. Push five. Nothing is below, so its note is five.",
+   "data": {
+    "title": "push 5",
+    "note": "Nothing below: note 5",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5
+      ]
+     },
+     "slots": 3,
+     "lit": [
+      0
+     ]
+    },
+    "show": [
+     0,
+     4
+    ],
+    "line": [
+     1,
+     4
+    ]
+   },
+   "level": "7/7 Dry run",
+   "meter": 80
+  },
+  {
+   "type": "dsa2",
+   "kind": "dryrun",
+   "vo": "Push three. Smaller of three and five is three. So its note is three.",
+   "data": {
+    "title": "push 3",
+    "note": "min(3, 5) = 3",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5,
+       3
+      ]
+     },
+     "slots": 3,
+     "lit": [
+      1
+     ]
+    },
+    "show": [
+     0,
+     4
+    ],
+    "line": [
+     3,
+     4
+    ]
+   },
+   "level": "7/7 Dry run",
+   "meter": 80
+  },
+  {
+   "type": "dsa2",
+   "kind": "dryrun",
+   "vo": "Push seven. Smaller of seven and three is still three.",
+   "data": {
+    "title": "push 7",
+    "note": "min(7, 3) = 3",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5,
+       3,
+       3
+      ]
+     },
+     "slots": 3,
+     "lit": [
+      2
+     ]
+    },
+    "show": [
+     0,
+     4
+    ],
+    "line": [
+     3,
+     4
+    ]
+   },
+   "level": "7/7 Dry run",
+   "meter": 80
+  },
+  {
+   "type": "dsa2",
+   "kind": "dryrun",
+   "vo": "Get min. Just read the top note. Three. One look, no searching.",
+   "data": {
+    "title": "getMin",
+    "note": "Top note says 3",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3,
+      7
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5,
+       3,
+       3
+      ]
+     },
+     "slots": 3
+    },
+    "show": [
+     7,
+     8
+    ],
+    "line": [
+     8
+    ]
+   },
+   "level": "7/7 Dry run",
+   "meter": 90
+  },
+  {
+   "type": "dsa2",
+   "kind": "dryrun",
+   "vo": "Pop. Seven leaves with its note. The smallest is still three.",
+   "data": {
+    "title": "pop",
+    "note": "7 leaves with its note",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5,
+      3
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5,
+       3
+      ]
+     },
+     "slots": 3
+    },
+    "show": [
+     5,
+     6
+    ],
+    "line": [
+     6
+    ]
+   },
+   "level": "7/7 Dry run",
+   "meter": 90
+  },
+  {
+   "type": "dsa2",
+   "kind": "dryrun",
+   "vo": "Pop again. Three leaves, and the top note says five. The shortcut's bug is fixed.",
+   "data": {
+    "title": "pop",
+    "note": "Now the note says 5",
+    "board": {
+     "layout": "stack",
+     "values": [
+      5
+     ],
+     "side": {
+      "title": "smallest",
+      "values": [
+       5
+      ]
+     },
+     "slots": 3
+    },
+    "show": [
+     5,
+     6
+    ],
+    "line": [
+     6
+    ]
+   },
+   "level": "7/7 Dry run",
+   "meter": 95
+  },
+  {
+   "type": "dsa2",
+   "kind": "compare",
+   "vo": "The race. Brute force: a million checks. Sticky notes: one look. The price is one extra number per box.",
+   "data": {
+    "lines": [
+     "The *race*"
+    ],
+    "slow": {
+     "title": "Brute force",
+     "value": "1M checks"
+    },
+    "fast": {
+     "title": "Sticky notes",
+     "value": "1 look"
+    },
+    "note": "Cost: 1 extra number"
+   },
+   "level": "Result",
+   "meter": 98,
+   "pop": {
+    "icon": "share",
+    "text": "Share this"
+   }
+  },
+  {
+   "type": "dsa2",
+   "kind": "say",
+   "vo": "In the interview say this: I store the minimum so far with every element, so get min takes constant time.",
+   "data": {
+    "lines": [
+     "Say *this*"
+    ],
+    "quote": "I store the minimum so far with every element, so getMin is constant time."
+   },
+   "level": "Say this",
+   "meter": 100
+  },
+  {
+   "type": "dsa2",
+   "kind": "ask",
+   "vo": "Like if it clicked. Comment STACK for the notes. Share it with your placement friend, and follow for more questions.",
+   "data": {
+    "lines": [
+     "Got *it?*"
+    ]
+   },
+   "level": "Done",
+   "meter": 100
+  }
+ ]
+}

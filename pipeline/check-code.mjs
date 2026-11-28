@@ -53,5 +53,12 @@ for (const [lang, cfg] of Object.entries(LANGS)) {
   console.log(bad ? `FAIL ${lang}:\n${bad}` : `PASS ${lang}`);
   if (bad) failed++;
 }
+// the brute force shown in the reel must give the same answers: it has to pass the same Python test
+if (notes.brute?.code && works('python3')) {
+  fs.writeFileSync(path.join(dir, 'brute.py'), `${notes.brute.code}\n${notes.code.python.test}\n`);
+  const r = run('python3', ['brute.py']);
+  console.log(r.status === 0 ? 'PASS python brute force' : `FAIL python brute force:\n${(r.stderr || r.stdout).trim().split('\n').slice(-6).join('\n')}`);
+  if (r.status !== 0) failed++;
+}
 fs.rmSync(dir, {recursive: true, force: true});
 process.exit(failed ? 1 : skipped ? 2 : 0);

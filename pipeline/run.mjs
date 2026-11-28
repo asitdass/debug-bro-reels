@@ -92,7 +92,7 @@ async function main() {
     await sendText(postingChecklist(episode)).catch(() => {});
     // the comment-keyword freebie, for Asit to DM to everyone who comments the keyword.
     // DSA-101: a written explanation with code in 4 languages (notes.json). Other reels: the reel's key frames.
-    const dsa = episode.style === 'dsa';
+    const dsa = String(episode.style).startsWith('dsa');
     if (episode.leadMagnet && (dsa || files.slides?.length)) {
       const pdf = path.join(outDir(slug), `${episode.leadMagnet.keyword.toLowerCase()}.pdf`);
       const py = process.env.PYTHON || 'python3';

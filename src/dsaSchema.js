@@ -90,6 +90,63 @@ export function checkDsaScene(scene) {
   return out;
 }
 
+/* ------------------------------------------------------------------ dsa2: the simple format (src/dsa2.tsx) */
+const value = z.union([z.string().min(1).max(4), z.number()]);
+const board = z
+  .object({layout: z.enum(['stack', 'row']), values: z.array(value).min(2).max(6), side: z.object({title: s(12), values: z.array(value).min(1).max(6)}).strict().optional()})
+  .strict()
+  .refine((b) => b.layout !== 'stack' || b.values.length <= 4, {message: 'a stack shows at most 4 blocks', path: ['values']});
+// headline lines: very large type, a few words each, one *word* highlighted
+const lines = (max) => z.array(z.string().min(1).max(18)).min(1).max(max);
+const d2 = (shape) => z.object(shape).strict();
+
+export const DSA2_ORDER = ['hook', 'series', 'concept', 'ops', 'catch', 'guess', 'brute', 'trap', 'insight', 'code', 'dryrun', 'compare', 'say', 'ask'];
+/** parts that may take several scenes (one per step, so voice and picture move together); "trap" may be left out */
+export const DSA2_REPEAT = ['concept', 'ops', 'brute', 'trap', 'insight', 'dryrun'];
+// teaching pictures may start empty and fill up step by step
+const runCells = z.array(value).max(6);
+const runBoard = z
+  .object({layout: z.enum(['stack', 'row']), values: runCells, side: z.object({title: s(12), values: runCells}).strict().optional(), slots: z.number().int().min(1).max(4).optional(), lit: z.array(z.number().int().min(0).max(5)).max(3).optional()})
+  .strict()
+  .refine((b) => b.layout !== 'stack' || b.values.length <= 4, {message: 'a stack shows at most 4 blocks', path: ['values']});
+const lineNo = z.number().int().min(0).max(8);
+const title = s(16);
+const note = s(34);
+const teach = d2({title, note, board: runBoard, drop: z.boolean().optional(), crash: z.boolean().optional(), result: s(18).optional()});
+const side = d2({title: s(16), value: s(16)});
+
+export const DSA2_DATA = {
+  hook: d2({lines: lines(4), board, ask: s(16)}),
+  series: d2({total: z.literal(150)}),
+  concept: teach,
+  ops: teach,
+  catch: d2({lines: lines(3), tag: s(20)}),
+  guess: d2({lines: lines(2), sticker: s(30)}),
+  brute: d2({title, note, code: z.array(z.string().max(34)).min(2).max(5), line: z.array(lineNo).min(1).max(3), board: runBoard, scan: z.boolean().optional(), bad: z.boolean().optional()}),
+  trap: d2({title, note, board: runBoard, box: d2({label: s(14), value: s(4)}), bad: z.boolean().optional()}),
+  insight: d2({title, note, board: runBoard, grow: z.boolean().optional()}),
+  // the key lines only, copied from notes.json Python
+  code: d2({lines: lines(2), code: z.array(z.string().max(34)).min(3).max(9), focus: z.array(lineNo).min(1).max(6)}),
+  dryrun: d2({title, note, board: runBoard, show: z.tuple([lineNo, lineNo]), line: z.array(lineNo).min(1).max(3)}),
+  compare: d2({lines: lines(1), slow: side, fast: side, note: s(26)}),
+  say: d2({lines: lines(2), quote: s(110)}),
+  ask: d2({lines: lines(2)}),
+};
+
+export function checkDsa2Scene(scene) {
+  const schema = DSA2_DATA[scene.kind];
+  if (!schema) return [`unknown kind "${scene.kind}"`];
+  const r = schema.safeParse(scene.data ?? {});
+  if (!r.success) return r.error.issues.map((i) => `data.${i.path.join('.') || '(root)'}: ${i.message}`);
+  const d = r.data;
+  const out = [];
+  if (scene.kind === 'brute' && d.line.some((i) => i >= d.code.length)) out.push('data.line: no such code line');
+  if (scene.kind === 'code' && d.focus.some((i) => i >= d.code.length)) out.push('data.focus: no such code line');
+  const marked = (d.lines ?? []).join(' ').match(/\*[^*]+\*/g) ?? [];
+  if (scene.kind !== 'series' && d.lines && marked.length > 1) out.push('data.lines: highlight at most one *word*');
+  return out;
+}
+
 /* ------------------------------------------------------------------ notes.json (the PDF) */
 // The PDF uses the built-in Helvetica/Courier fonts, which only cover Windows-1252 characters.
 const PDF_SAFE = /^[\x09\x0A\x20-\x7E -ÿ–—‘’“”•…]*$/;
@@ -110,7 +167,7 @@ export const notesSchema = z
     problem: t(700),
     examples: z.array(z.object({input: t(90), output: t(60), why: t(160)}).strict()).min(2).max(4),
     analogy: t(600),
-    brute: z.object({explain: t(600), time: t(20), space: t(20)}).strict(),
+    brute: z.object({explain: t(600), time: t(20), space: t(20), code: z.string().max(1600).regex(PDF_SAFE).optional()}).strict(),
     insight: z.array(t(600)).min(2).max(5),
     steps: z.array(t(220)).min(3).max(8),
     dryRun: z.object({input: t(90), headers: z.array(t(18)).min(2).max(5), rows: z.array(z.array(t(48))).min(2).max(10)}).strict(),

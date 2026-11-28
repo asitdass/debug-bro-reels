@@ -1,0 +1,135 @@
+{
+  "title": "Min Stack: remember the smallest at every level",
+  "problem": "Design a stack of numbers with four actions: push adds a number on top, pop removes the top number, top shows it, and getMin shows the smallest number currently in the stack. Every action must take constant time, however many numbers the stack holds.",
+  "examples": [
+    {
+      "input": "push 5, push 3, push 7, getMin",
+      "output": "3",
+      "why": "3 is the smallest of 5, 3 and 7, even though 7 is on top."
+    },
+    {
+      "input": "then pop, pop, getMin",
+      "output": "5",
+      "why": "7 and 3 have left, so only 5 remains."
+    },
+    {
+      "input": "push 2, push 2, pop, getMin",
+      "output": "2",
+      "why": "The same smallest value can appear twice; one copy is still there."
+    }
+  ],
+  "analogy": "Picture boxes stacked in a storeroom. On each box you stick a note saying the lightest weight among this box and every box under it. To know the lightest box, you read only the top note. When you lift the top box away, its note goes with it and the note below is already correct.",
+  "brute": {
+    "explain": "Keep a normal stack and, for getMin, look at every number to find the smallest. It is easy to write, but getMin then takes longer as the stack grows: a million numbers means a million checks every time.",
+    "time": "O(n) getMin",
+    "space": "O(n)",
+    "code": "class MinStack:\n    def __init__(self):\n        self.st = []\n\n    def push(self, x):\n        self.st.append(x)\n\n    def pop(self):\n        self.st.pop()\n\n    def top(self):\n        return self.st[-1]\n\n    def getMin(self):\n        return min(self.st)          # looks at every value"
+  },
+  "insight": [
+    "A stack only changes at the top. So the numbers underneath any entry never change while that entry exists.",
+    "That means the smallest value from the bottom up to an entry can be worked out once, at the moment it is pushed, and stored with it.",
+    "The new note is the smaller of the new number and the note below it. getMin just reads the top note."
+  ],
+  "steps": [
+    "Store pairs: the value and the smallest value so far.",
+    "On push, take the smaller of the new value and the top note (or the value itself if the stack is empty).",
+    "On pop, remove the whole pair.",
+    "top returns the value of the top pair.",
+    "getMin returns the note of the top pair."
+  ],
+  "dryRun": {
+    "input": "push -2, push 0, push -3, getMin, pop, getMin",
+    "headers": [
+      "action",
+      "stack (value, low)",
+      "returns"
+    ],
+    "rows": [
+      [
+        "push -2",
+        "(-2,-2)",
+        "-"
+      ],
+      [
+        "push 0",
+        "(-2,-2) (0,-2)",
+        "-"
+      ],
+      [
+        "push -3",
+        "(-2,-2) (0,-2) (-3,-3)",
+        "-"
+      ],
+      [
+        "getMin",
+        "unchanged",
+        "-3"
+      ],
+      [
+        "pop",
+        "(-2,-2) (0,-2)",
+        "-"
+      ],
+      [
+        "getMin",
+        "unchanged",
+        "-2"
+      ]
+    ]
+  },
+  "code": {
+    "python": {
+      "code": "class MinStack:\n    def __init__(self):\n        self.st = []                        # pairs: (value, smallest so far)\n\n    def push(self, x):\n        low = x\n        if self.st:\n            low = min(x, self.st[-1][1])    # compare with the note below\n        self.st.append((x, low))\n\n    def pop(self):\n        self.st.pop()                       # the note leaves with its value\n\n    def top(self):\n        return self.st[-1][0]\n\n    def getMin(self):\n        return self.st[-1][1]",
+      "note": "A list works as the stack: append pushes, pop removes the last item and index -1 reads the top.",
+      "test": "\ns = MinStack()\nfor v in (-2, 0, -3):\n    s.push(v)\nassert s.getMin() == -3\ns.pop()\nassert s.top() == 0 and s.getMin() == -2\nt = MinStack()\nfor v in (5, 3, 7, 3):\n    t.push(v)\nassert t.getMin() == 3\nt.pop(); t.pop(); assert t.getMin() == 3\nt.pop(); assert t.getMin() == 5 and t.top() == 5\n"
+    },
+    "java": {
+      "code": "import java.util.ArrayDeque;\nimport java.util.Deque;\n\nclass MinStack {\n    // each entry is {value, smallest so far}\n    private final Deque<int[]> st = new ArrayDeque<>();\n\n    public void push(int x) {\n        int low = st.isEmpty() ? x : Math.min(x, st.peek()[1]);\n        st.push(new int[] {x, low});\n    }\n\n    public void pop() {\n        st.pop();\n    }\n\n    public int top() {\n        return st.peek()[0];\n    }\n\n    public int getMin() {\n        return st.peek()[1];\n    }\n}",
+      "note": "ArrayDeque is the recommended stack in Java. Each entry is a small int array holding the value and its note.",
+      "test": "\npublic class Main {\n    static void eq(int a, int b) { if (a != b) throw new RuntimeException(a + \" != \" + b); }\n    public static void main(String[] args) {\n        MinStack s = new MinStack();\n        s.push(-2); s.push(0); s.push(-3); eq(s.getMin(), -3);\n        s.pop(); eq(s.top(), 0); eq(s.getMin(), -2);\n        MinStack t = new MinStack();\n        t.push(5); t.push(3); t.push(7); t.push(3); eq(t.getMin(), 3);\n        t.pop(); t.pop(); eq(t.getMin(), 3);\n        t.pop(); eq(t.getMin(), 5); eq(t.top(), 5);\n    }\n}\n"
+    },
+    "cpp": {
+      "code": "#include <algorithm>\n#include <stack>\n#include <utility>\n\nclass MinStack {\n    // each entry is (value, smallest so far)\n    std::stack<std::pair<int, int>> st;\n\npublic:\n    void push(int x) {\n        int low = st.empty() ? x : std::min(x, st.top().second);\n        st.push({x, low});\n    }\n\n    void pop() { st.pop(); }\n\n    int top() { return st.top().first; }\n\n    int getMin() { return st.top().second; }\n};",
+      "note": "std::stack of pairs: first is the value and second is the smallest so far. pop returns nothing, so read before popping.",
+      "test": "\n#include <cstdlib>\nstatic void eq(int a, int b) { if (a != b) std::exit(1); }\nint main() {\n    MinStack s;\n    s.push(-2); s.push(0); s.push(-3); eq(s.getMin(), -3);\n    s.pop(); eq(s.top(), 0); eq(s.getMin(), -2);\n    MinStack t;\n    t.push(5); t.push(3); t.push(7); t.push(3); eq(t.getMin(), 3);\n    t.pop(); t.pop(); eq(t.getMin(), 3);\n    t.pop(); eq(t.getMin(), 5); eq(t.top(), 5);\n}\n"
+    },
+    "javascript": {
+      "code": "class MinStack {\n  constructor() {\n    this.st = [];                      // pairs: [value, smallest so far]\n  }\n\n  push(x) {\n    const below = this.st[this.st.length - 1];\n    const low = below ? Math.min(x, below[1]) : x;\n    this.st.push([x, low]);\n  }\n\n  pop() {\n    this.st.pop();\n  }\n\n  top() {\n    return this.st[this.st.length - 1][0];\n  }\n\n  getMin() {\n    return this.st[this.st.length - 1][1];\n  }\n}",
+      "note": "An array of two-item arrays. The item below the new one is the last element before pushing.",
+      "test": "\nconst eq = (a, b) => { if (a !== b) throw new Error(`${a} != ${b}`); };\nconst s = new MinStack();\ns.push(-2); s.push(0); s.push(-3); eq(s.getMin(), -3);\ns.pop(); eq(s.top(), 0); eq(s.getMin(), -2);\nconst t = new MinStack();\nt.push(5); t.push(3); t.push(7); t.push(3); eq(t.getMin(), 3);\nt.pop(); t.pop(); eq(t.getMin(), 3);\nt.pop(); eq(t.getMin(), 5); eq(t.top(), 5);\n"
+    }
+  },
+  "complexity": {
+    "time": "O(1) each",
+    "timeWhy": "push, pop, top and getMin only touch the top entry. (A Python list or array push is constant on average.)",
+    "space": "O(n)",
+    "spaceWhy": "Every entry stores one extra number."
+  },
+  "mistakes": [
+    "Keeping a single smallest variable: after popping that value you no longer know the next smallest.",
+    "Scanning the whole stack inside getMin, which breaks the constant-time requirement.",
+    "Updating the note with only the new value instead of comparing it with the note below."
+  ],
+  "interview": [
+    "Say the simple idea first and why getMin is too slow.",
+    "Explain why one variable fails when the smallest value is popped.",
+    "State the trade: one extra number per entry buys a constant-time getMin."
+  ],
+  "practice": [
+    {
+      "name": "Evaluate Reverse Polish Notation",
+      "leetcode": 150,
+      "why": "The next question: use a stack to evaluate an expression."
+    },
+    {
+      "name": "Daily Temperatures",
+      "leetcode": 739,
+      "why": "A stack that remembers which days are still waiting."
+    },
+    {
+      "name": "Valid Parentheses",
+      "leetcode": 20,
+      "why": "Revise the basic push and pop pattern."
+    }
+  ]
+}
