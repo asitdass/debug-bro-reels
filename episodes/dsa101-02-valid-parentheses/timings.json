@@ -1,0 +1,2590 @@
+{
+  "totalMs": 156200,
+  "audio": "episodes/dsa101-02-valid-parentheses/voice.mp3",
+  "scenes": [
+    {
+      "startMs": 0,
+      "durMs": 8025
+    },
+    {
+      "startMs": 8285,
+      "durMs": 13615
+    },
+    {
+      "startMs": 22160,
+      "durMs": 14477
+    },
+    {
+      "startMs": 36897,
+      "durMs": 7043
+    },
+    {
+      "startMs": 44200,
+      "durMs": 8584
+    },
+    {
+      "startMs": 53045,
+      "durMs": 11467
+    },
+    {
+      "startMs": 64772,
+      "durMs": 12458
+    },
+    {
+      "startMs": 77490,
+      "durMs": 5774
+    },
+    {
+      "startMs": 83524,
+      "durMs": 4418
+    },
+    {
+      "startMs": 88203,
+      "durMs": 7023
+    },
+    {
+      "startMs": 95486,
+      "durMs": 11141
+    },
+    {
+      "startMs": 106887,
+      "durMs": 10108
+    },
+    {
+      "startMs": 117255,
+      "durMs": 5091
+    },
+    {
+      "startMs": 122605,
+      "durMs": 5531
+    },
+    {
+      "startMs": 128396,
+      "durMs": 11244
+    },
+    {
+      "startMs": 139900,
+      "durMs": 6664
+    },
+    {
+      "startMs": 146824,
+      "durMs": 8776
+    }
+  ],
+  "words": [
+    {
+      "text": "Is",
+      "startMs": 300,
+      "endMs": 468,
+      "scene": 0
+    },
+    {
+      "text": "open",
+      "startMs": 477,
+      "endMs": 757,
+      "scene": 0
+    },
+    {
+      "text": "round,",
+      "startMs": 772,
+      "endMs": 1108,
+      "scene": 0
+    },
+    {
+      "text": "open",
+      "startMs": 1302,
+      "endMs": 1583,
+      "scene": 0
+    },
+    {
+      "text": "square,",
+      "startMs": 1597,
+      "endMs": 1990,
+      "scene": 0
+    },
+    {
+      "text": "close",
+      "startMs": 2187,
+      "endMs": 2523,
+      "scene": 0
+    },
+    {
+      "text": "round,",
+      "startMs": 2541,
+      "endMs": 2877,
+      "scene": 0
+    },
+    {
+      "text": "close",
+      "startMs": 3072,
+      "endMs": 3408,
+      "scene": 0
+    },
+    {
+      "text": "square",
+      "startMs": 3425,
+      "endMs": 3818,
+      "scene": 0
+    },
+    {
+      "text": "valid?",
+      "startMs": 3838,
+      "endMs": 4174,
+      "scene": 0
+    },
+    {
+      "text": "Count",
+      "startMs": 4369,
+      "endMs": 4705,
+      "scene": 0
+    },
+    {
+      "text": "the",
+      "startMs": 4723,
+      "endMs": 4947,
+      "scene": 0
+    },
+    {
+      "text": "brackets",
+      "startMs": 4959,
+      "endMs": 5463,
+      "scene": 0
+    },
+    {
+      "text": "and",
+      "startMs": 5489,
+      "endMs": 5713,
+      "scene": 0
+    },
+    {
+      "text": "you",
+      "startMs": 5725,
+      "endMs": 5949,
+      "scene": 0
+    },
+    {
+      "text": "will",
+      "startMs": 5961,
+      "endMs": 6241,
+      "scene": 0
+    },
+    {
+      "text": "say",
+      "startMs": 6256,
+      "endMs": 6480,
+      "scene": 0
+    },
+    {
+      "text": "yes.",
+      "startMs": 6492,
+      "endMs": 6716,
+      "scene": 0
+    },
+    {
+      "text": "You",
+      "startMs": 6905,
+      "endMs": 7129,
+      "scene": 0
+    },
+    {
+      "text": "would",
+      "startMs": 7141,
+      "endMs": 7477,
+      "scene": 0
+    },
+    {
+      "text": "be",
+      "startMs": 7494,
+      "endMs": 7662,
+      "scene": 0
+    },
+    {
+      "text": "wrong.",
+      "startMs": 7671,
+      "endMs": 8007,
+      "scene": 0
+    },
+    {
+      "text": "The",
+      "startMs": 8285,
+      "endMs": 8518,
+      "scene": 1
+    },
+    {
+      "text": "question:",
+      "startMs": 8530,
+      "endMs": 9055,
+      "scene": 1
+    },
+    {
+      "text": "a",
+      "startMs": 9266,
+      "endMs": 9383,
+      "scene": 1
+    },
+    {
+      "text": "string",
+      "startMs": 9389,
+      "endMs": 9797,
+      "scene": 1
+    },
+    {
+      "text": "made",
+      "startMs": 9818,
+      "endMs": 10110,
+      "scene": 1
+    },
+    {
+      "text": "only",
+      "startMs": 10125,
+      "endMs": 10416,
+      "scene": 1
+    },
+    {
+      "text": "of",
+      "startMs": 10432,
+      "endMs": 10606,
+      "scene": 1
+    },
+    {
+      "text": "brackets.",
+      "startMs": 10616,
+      "endMs": 11140,
+      "scene": 1
+    },
+    {
+      "text": "Round,",
+      "startMs": 11352,
+      "endMs": 11701,
+      "scene": 1
+    },
+    {
+      "text": "square",
+      "startMs": 11904,
+      "endMs": 12311,
+      "scene": 1
+    },
+    {
+      "text": "and",
+      "startMs": 12333,
+      "endMs": 12566,
+      "scene": 1
+    },
+    {
+      "text": "curly.",
+      "startMs": 12578,
+      "endMs": 12928,
+      "scene": 1
+    },
+    {
+      "text": "Is",
+      "startMs": 13130,
+      "endMs": 13305,
+      "scene": 1
+    },
+    {
+      "text": "it",
+      "startMs": 13314,
+      "endMs": 13489,
+      "scene": 1
+    },
+    {
+      "text": "valid?",
+      "startMs": 13498,
+      "endMs": 13848,
+      "scene": 1
+    },
+    {
+      "text": "Every",
+      "startMs": 14050,
+      "endMs": 14400,
+      "scene": 1
+    },
+    {
+      "text": "bracket",
+      "startMs": 14418,
+      "endMs": 14884,
+      "scene": 1
+    },
+    {
+      "text": "must",
+      "startMs": 14909,
+      "endMs": 15200,
+      "scene": 1
+    },
+    {
+      "text": "close,",
+      "startMs": 15215,
+      "endMs": 15565,
+      "scene": 1
+    },
+    {
+      "text": "with",
+      "startMs": 15767,
+      "endMs": 16059,
+      "scene": 1
+    },
+    {
+      "text": "the",
+      "startMs": 16074,
+      "endMs": 16307,
+      "scene": 1
+    },
+    {
+      "text": "same",
+      "startMs": 16319,
+      "endMs": 16611,
+      "scene": 1
+    },
+    {
+      "text": "type,",
+      "startMs": 16626,
+      "endMs": 16917,
+      "scene": 1
+    },
+    {
+      "text": "in",
+      "startMs": 17117,
+      "endMs": 17291,
+      "scene": 1
+    },
+    {
+      "text": "the",
+      "startMs": 17300,
+      "endMs": 17534,
+      "scene": 1
+    },
+    {
+      "text": "right",
+      "startMs": 17546,
+      "endMs": 17895,
+      "scene": 1
+    },
+    {
+      "text": "order.",
+      "startMs": 17914,
+      "endMs": 18263,
+      "scene": 1
+    },
+    {
+      "text": "Curly,",
+      "startMs": 18466,
+      "endMs": 18815,
+      "scene": 1
+    },
+    {
+      "text": "square,",
+      "startMs": 19018,
+      "endMs": 19426,
+      "scene": 1
+    },
+    {
+      "text": "close",
+      "startMs": 19631,
+      "endMs": 19981,
+      "scene": 1
+    },
+    {
+      "text": "square,",
+      "startMs": 19999,
+      "endMs": 20407,
+      "scene": 1
+    },
+    {
+      "text": "close",
+      "startMs": 20612,
+      "endMs": 20962,
+      "scene": 1
+    },
+    {
+      "text": "curly:",
+      "startMs": 20980,
+      "endMs": 21330,
+      "scene": 1
+    },
+    {
+      "text": "valid.",
+      "startMs": 21532,
+      "endMs": 21882,
+      "scene": 1
+    },
+    {
+      "text": "My",
+      "startMs": 22160,
+      "endMs": 22312,
+      "scene": 2
+    },
+    {
+      "text": "first",
+      "startMs": 22320,
+      "endMs": 22623,
+      "scene": 2
+    },
+    {
+      "text": "idea:",
+      "startMs": 22639,
+      "endMs": 22892,
+      "scene": 2
+    },
+    {
+      "text": "keep",
+      "startMs": 23065,
+      "endMs": 23318,
+      "scene": 2
+    },
+    {
+      "text": "deleting",
+      "startMs": 23331,
+      "endMs": 23786,
+      "scene": 2
+    },
+    {
+      "text": "pairs",
+      "startMs": 23810,
+      "endMs": 24113,
+      "scene": 2
+    },
+    {
+      "text": "like",
+      "startMs": 24129,
+      "endMs": 24382,
+      "scene": 2
+    },
+    {
+      "text": "round-round",
+      "startMs": 24396,
+      "endMs": 24952,
+      "scene": 2
+    },
+    {
+      "text": "or",
+      "startMs": 24981,
+      "endMs": 25133,
+      "scene": 2
+    },
+    {
+      "text": "square-square,",
+      "startMs": 25141,
+      "endMs": 25798,
+      "scene": 2
+    },
+    {
+      "text": "again",
+      "startMs": 25992,
+      "endMs": 26296,
+      "scene": 2
+    },
+    {
+      "text": "and",
+      "startMs": 26312,
+      "endMs": 26514,
+      "scene": 2
+    },
+    {
+      "text": "again,",
+      "startMs": 26525,
+      "endMs": 26828,
+      "scene": 2
+    },
+    {
+      "text": "until",
+      "startMs": 27004,
+      "endMs": 27307,
+      "scene": 2
+    },
+    {
+      "text": "nothing",
+      "startMs": 27323,
+      "endMs": 27727,
+      "scene": 2
+    },
+    {
+      "text": "is",
+      "startMs": 27749,
+      "endMs": 27900,
+      "scene": 2
+    },
+    {
+      "text": "left.",
+      "startMs": 27908,
+      "endMs": 28161,
+      "scene": 2
+    },
+    {
+      "text": "Correct,",
+      "startMs": 28334,
+      "endMs": 28739,
+      "scene": 2
+    },
+    {
+      "text": "but",
+      "startMs": 28920,
+      "endMs": 29122,
+      "scene": 2
+    },
+    {
+      "text": "each",
+      "startMs": 29133,
+      "endMs": 29385,
+      "scene": 2
+    },
+    {
+      "text": "pass",
+      "startMs": 29399,
+      "endMs": 29651,
+      "scene": 2
+    },
+    {
+      "text": "scans",
+      "startMs": 29665,
+      "endMs": 29968,
+      "scene": 2
+    },
+    {
+      "text": "the",
+      "startMs": 29984,
+      "endMs": 30186,
+      "scene": 2
+    },
+    {
+      "text": "whole",
+      "startMs": 30197,
+      "endMs": 30500,
+      "scene": 2
+    },
+    {
+      "text": "text.",
+      "startMs": 30516,
+      "endMs": 30769,
+      "scene": 2
+    },
+    {
+      "text": "For",
+      "startMs": 30942,
+      "endMs": 31144,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "startMs": 31155,
+      "endMs": 31256,
+      "scene": 2
+    },
+    {
+      "text": "million",
+      "startMs": 31262,
+      "endMs": 31666,
+      "scene": 2
+    },
+    {
+      "text": "characters,",
+      "startMs": 31687,
+      "endMs": 32244,
+      "scene": 2
+    },
+    {
+      "text": "about",
+      "startMs": 32432,
+      "endMs": 32736,
+      "scene": 2
+    },
+    {
+      "text": "two",
+      "startMs": 32752,
+      "endMs": 32954,
+      "scene": 2
+    },
+    {
+      "text": "hundred",
+      "startMs": 32965,
+      "endMs": 33369,
+      "scene": 2
+    },
+    {
+      "text": "fifty",
+      "startMs": 33390,
+      "endMs": 33694,
+      "scene": 2
+    },
+    {
+      "text": "billion",
+      "startMs": 33710,
+      "endMs": 34114,
+      "scene": 2
+    },
+    {
+      "text": "steps.",
+      "startMs": 34136,
+      "endMs": 34439,
+      "scene": 2
+    },
+    {
+      "text": "At",
+      "startMs": 34615,
+      "endMs": 34766,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "startMs": 34774,
+      "endMs": 34875,
+      "scene": 2
+    },
+    {
+      "text": "billion",
+      "startMs": 34881,
+      "endMs": 35285,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "startMs": 35307,
+      "endMs": 35408,
+      "scene": 2
+    },
+    {
+      "text": "second,",
+      "startMs": 35413,
+      "endMs": 35767,
+      "scene": 2
+    },
+    {
+      "text": "four",
+      "startMs": 35945,
+      "endMs": 36198,
+      "scene": 2
+    },
+    {
+      "text": "minutes.",
+      "startMs": 36211,
+      "endMs": 36616,
+      "scene": 2
+    },
+    {
+      "text": "Pause",
+      "startMs": 36897,
+      "endMs": 37256,
+      "scene": 3
+    },
+    {
+      "text": "the",
+      "startMs": 37274,
+      "endMs": 37513,
+      "scene": 3
+    },
+    {
+      "text": "video.",
+      "startMs": 37526,
+      "endMs": 37884,
+      "scene": 3
+    },
+    {
+      "text": "Can",
+      "startMs": 38092,
+      "endMs": 38331,
+      "scene": 3
+    },
+    {
+      "text": "you",
+      "startMs": 38344,
+      "endMs": 38583,
+      "scene": 3
+    },
+    {
+      "text": "do",
+      "startMs": 38595,
+      "endMs": 38774,
+      "scene": 3
+    },
+    {
+      "text": "it",
+      "startMs": 38784,
+      "endMs": 38963,
+      "scene": 3
+    },
+    {
+      "text": "in",
+      "startMs": 38972,
+      "endMs": 39152,
+      "scene": 3
+    },
+    {
+      "text": "one",
+      "startMs": 39161,
+      "endMs": 39400,
+      "scene": 3
+    },
+    {
+      "text": "pass?",
+      "startMs": 39413,
+      "endMs": 39711,
+      "scene": 3
+    },
+    {
+      "text": "I",
+      "startMs": 39916,
+      "endMs": 40035,
+      "scene": 3
+    },
+    {
+      "text": "will",
+      "startMs": 40042,
+      "endMs": 40340,
+      "scene": 3
+    },
+    {
+      "text": "wait.",
+      "startMs": 40356,
+      "endMs": 40655,
+      "scene": 3
+    },
+    {
+      "text": "Hint:",
+      "startMs": 40859,
+      "endMs": 41158,
+      "scene": 3
+    },
+    {
+      "text": "the",
+      "startMs": 41362,
+      "endMs": 41601,
+      "scene": 3
+    },
+    {
+      "text": "last",
+      "startMs": 41614,
+      "endMs": 41912,
+      "scene": 3
+    },
+    {
+      "text": "bracket",
+      "startMs": 41928,
+      "endMs": 42406,
+      "scene": 3
+    },
+    {
+      "text": "opened",
+      "startMs": 42431,
+      "endMs": 42849,
+      "scene": 3
+    },
+    {
+      "text": "must",
+      "startMs": 42871,
+      "endMs": 43170,
+      "scene": 3
+    },
+    {
+      "text": "close",
+      "startMs": 43186,
+      "endMs": 43544,
+      "scene": 3
+    },
+    {
+      "text": "first.",
+      "startMs": 43563,
+      "endMs": 43922,
+      "scene": 3
+    },
+    {
+      "text": "Picture",
+      "startMs": 44200,
+      "endMs": 44616,
+      "scene": 4
+    },
+    {
+      "text": "a",
+      "startMs": 44638,
+      "endMs": 44742,
+      "scene": 4
+    },
+    {
+      "text": "stack",
+      "startMs": 44747,
+      "endMs": 45059,
+      "scene": 4
+    },
+    {
+      "text": "of",
+      "startMs": 45075,
+      "endMs": 45231,
+      "scene": 4
+    },
+    {
+      "text": "plates.",
+      "startMs": 45239,
+      "endMs": 45603,
+      "scene": 4
+    },
+    {
+      "text": "Every",
+      "startMs": 45786,
+      "endMs": 46098,
+      "scene": 4
+    },
+    {
+      "text": "opening",
+      "startMs": 46114,
+      "endMs": 46530,
+      "scene": 4
+    },
+    {
+      "text": "bracket",
+      "startMs": 46552,
+      "endMs": 46967,
+      "scene": 4
+    },
+    {
+      "text": "is",
+      "startMs": 46989,
+      "endMs": 47145,
+      "scene": 4
+    },
+    {
+      "text": "a",
+      "startMs": 47153,
+      "endMs": 47257,
+      "scene": 4
+    },
+    {
+      "text": "plate",
+      "startMs": 47262,
+      "endMs": 47574,
+      "scene": 4
+    },
+    {
+      "text": "you",
+      "startMs": 47590,
+      "endMs": 47798,
+      "scene": 4
+    },
+    {
+      "text": "put",
+      "startMs": 47809,
+      "endMs": 48017,
+      "scene": 4
+    },
+    {
+      "text": "on",
+      "startMs": 48028,
+      "endMs": 48184,
+      "scene": 4
+    },
+    {
+      "text": "top.",
+      "startMs": 48192,
+      "endMs": 48400,
+      "scene": 4
+    },
+    {
+      "text": "A",
+      "startMs": 48575,
+      "endMs": 48678,
+      "scene": 4
+    },
+    {
+      "text": "closing",
+      "startMs": 48684,
+      "endMs": 49099,
+      "scene": 4
+    },
+    {
+      "text": "bracket",
+      "startMs": 49121,
+      "endMs": 49537,
+      "scene": 4
+    },
+    {
+      "text": "must",
+      "startMs": 49559,
+      "endMs": 49818,
+      "scene": 4
+    },
+    {
+      "text": "match",
+      "startMs": 49832,
+      "endMs": 50144,
+      "scene": 4
+    },
+    {
+      "text": "the",
+      "startMs": 50160,
+      "endMs": 50368,
+      "scene": 4
+    },
+    {
+      "text": "top",
+      "startMs": 50379,
+      "endMs": 50587,
+      "scene": 4
+    },
+    {
+      "text": "plate.",
+      "startMs": 50598,
+      "endMs": 50909,
+      "scene": 4
+    },
+    {
+      "text": "You",
+      "startMs": 51090,
+      "endMs": 51297,
+      "scene": 4
+    },
+    {
+      "text": "can",
+      "startMs": 51308,
+      "endMs": 51516,
+      "scene": 4
+    },
+    {
+      "text": "only",
+      "startMs": 51527,
+      "endMs": 51787,
+      "scene": 4
+    },
+    {
+      "text": "take",
+      "startMs": 51800,
+      "endMs": 52060,
+      "scene": 4
+    },
+    {
+      "text": "from",
+      "startMs": 52074,
+      "endMs": 52333,
+      "scene": 4
+    },
+    {
+      "text": "the",
+      "startMs": 52347,
+      "endMs": 52555,
+      "scene": 4
+    },
+    {
+      "text": "top.",
+      "startMs": 52566,
+      "endMs": 52774,
+      "scene": 4
+    },
+    {
+      "text": "Read",
+      "startMs": 53045,
+      "endMs": 53322,
+      "scene": 5
+    },
+    {
+      "text": "left",
+      "startMs": 53337,
+      "endMs": 53615,
+      "scene": 5
+    },
+    {
+      "text": "to",
+      "startMs": 53630,
+      "endMs": 53796,
+      "scene": 5
+    },
+    {
+      "text": "right.",
+      "startMs": 53805,
+      "endMs": 54139,
+      "scene": 5
+    },
+    {
+      "text": "Opening",
+      "startMs": 54332,
+      "endMs": 54776,
+      "scene": 5
+    },
+    {
+      "text": "bracket?",
+      "startMs": 54800,
+      "endMs": 55244,
+      "scene": 5
+    },
+    {
+      "text": "Push",
+      "startMs": 55443,
+      "endMs": 55721,
+      "scene": 5
+    },
+    {
+      "text": "it.",
+      "startMs": 55736,
+      "endMs": 55903,
+      "scene": 5
+    },
+    {
+      "text": "Closing",
+      "startMs": 56087,
+      "endMs": 56532,
+      "scene": 5
+    },
+    {
+      "text": "bracket?",
+      "startMs": 56555,
+      "endMs": 57000,
+      "scene": 5
+    },
+    {
+      "text": "Look",
+      "startMs": 57198,
+      "endMs": 57476,
+      "scene": 5
+    },
+    {
+      "text": "at",
+      "startMs": 57491,
+      "endMs": 57658,
+      "scene": 5
+    },
+    {
+      "text": "the",
+      "startMs": 57667,
+      "endMs": 57889,
+      "scene": 5
+    },
+    {
+      "text": "top",
+      "startMs": 57901,
+      "endMs": 58123,
+      "scene": 5
+    },
+    {
+      "text": "plate.",
+      "startMs": 58135,
+      "endMs": 58468,
+      "scene": 5
+    },
+    {
+      "text": "Same",
+      "startMs": 58661,
+      "endMs": 58939,
+      "scene": 5
+    },
+    {
+      "text": "type?",
+      "startMs": 58954,
+      "endMs": 59232,
+      "scene": 5
+    },
+    {
+      "text": "Pop",
+      "startMs": 59422,
+      "endMs": 59644,
+      "scene": 5
+    },
+    {
+      "text": "it.",
+      "startMs": 59656,
+      "endMs": 59822,
+      "scene": 5
+    },
+    {
+      "text": "Different,",
+      "startMs": 60007,
+      "endMs": 60563,
+      "scene": 5
+    },
+    {
+      "text": "or",
+      "startMs": 60767,
+      "endMs": 60934,
+      "scene": 5
+    },
+    {
+      "text": "no",
+      "startMs": 60943,
+      "endMs": 61110,
+      "scene": 5
+    },
+    {
+      "text": "plate?",
+      "startMs": 61118,
+      "endMs": 61452,
+      "scene": 5
+    },
+    {
+      "text": "Invalid.",
+      "startMs": 61645,
+      "endMs": 62090,
+      "scene": 5
+    },
+    {
+      "text": "At",
+      "startMs": 62289,
+      "endMs": 62455,
+      "scene": 5
+    },
+    {
+      "text": "the",
+      "startMs": 62464,
+      "endMs": 62686,
+      "scene": 5
+    },
+    {
+      "text": "end,",
+      "startMs": 62698,
+      "endMs": 62920,
+      "scene": 5
+    },
+    {
+      "text": "the",
+      "startMs": 63108,
+      "endMs": 63330,
+      "scene": 5
+    },
+    {
+      "text": "stack",
+      "startMs": 63342,
+      "endMs": 63675,
+      "scene": 5
+    },
+    {
+      "text": "must",
+      "startMs": 63693,
+      "endMs": 63971,
+      "scene": 5
+    },
+    {
+      "text": "be",
+      "startMs": 63985,
+      "endMs": 64152,
+      "scene": 5
+    },
+    {
+      "text": "empty.",
+      "startMs": 64161,
+      "endMs": 64494,
+      "scene": 5
+    },
+    {
+      "text": "That",
+      "startMs": 64772,
+      "endMs": 65074,
+      "scene": 6
+    },
+    {
+      "text": "is",
+      "startMs": 65090,
+      "endMs": 65271,
+      "scene": 6
+    },
+    {
+      "text": "the",
+      "startMs": 65280,
+      "endMs": 65522,
+      "scene": 6
+    },
+    {
+      "text": "whole",
+      "startMs": 65535,
+      "endMs": 65897,
+      "scene": 6
+    },
+    {
+      "text": "algorithm.",
+      "startMs": 65916,
+      "endMs": 66520,
+      "scene": 6
+    },
+    {
+      "text": "A",
+      "startMs": 66742,
+      "endMs": 66863,
+      "scene": 6
+    },
+    {
+      "text": "stack,",
+      "startMs": 66869,
+      "endMs": 67232,
+      "scene": 6
+    },
+    {
+      "text": "and",
+      "startMs": 67441,
+      "endMs": 67683,
+      "scene": 6
+    },
+    {
+      "text": "a",
+      "startMs": 67696,
+      "endMs": 67816,
+      "scene": 6
+    },
+    {
+      "text": "map",
+      "startMs": 67823,
+      "endMs": 68064,
+      "scene": 6
+    },
+    {
+      "text": "of",
+      "startMs": 68077,
+      "endMs": 68258,
+      "scene": 6
+    },
+    {
+      "text": "closers",
+      "startMs": 68268,
+      "endMs": 68751,
+      "scene": 6
+    },
+    {
+      "text": "to",
+      "startMs": 68776,
+      "endMs": 68957,
+      "scene": 6
+    },
+    {
+      "text": "openers.",
+      "startMs": 68967,
+      "endMs": 69450,
+      "scene": 6
+    },
+    {
+      "text": "Opening?",
+      "startMs": 69666,
+      "endMs": 70149,
+      "scene": 6
+    },
+    {
+      "text": "Push.",
+      "startMs": 70365,
+      "endMs": 70667,
+      "scene": 6
+    },
+    {
+      "text": "Closing?",
+      "startMs": 70874,
+      "endMs": 71357,
+      "scene": 6
+    },
+    {
+      "text": "The",
+      "startMs": 71573,
+      "endMs": 71815,
+      "scene": 6
+    },
+    {
+      "text": "top",
+      "startMs": 71827,
+      "endMs": 72069,
+      "scene": 6
+    },
+    {
+      "text": "must",
+      "startMs": 72082,
+      "endMs": 72383,
+      "scene": 6
+    },
+    {
+      "text": "match,",
+      "startMs": 72399,
+      "endMs": 72762,
+      "scene": 6
+    },
+    {
+      "text": "or",
+      "startMs": 72971,
+      "endMs": 73153,
+      "scene": 6
+    },
+    {
+      "text": "return",
+      "startMs": 73162,
+      "endMs": 73585,
+      "scene": 6
+    },
+    {
+      "text": "false.",
+      "startMs": 73607,
+      "endMs": 73969,
+      "scene": 6
+    },
+    {
+      "text": "At",
+      "startMs": 74179,
+      "endMs": 74360,
+      "scene": 6
+    },
+    {
+      "text": "the",
+      "startMs": 74370,
+      "endMs": 74611,
+      "scene": 6
+    },
+    {
+      "text": "end,",
+      "startMs": 74624,
+      "endMs": 74866,
+      "scene": 6
+    },
+    {
+      "text": "return",
+      "startMs": 75069,
+      "endMs": 75492,
+      "scene": 6
+    },
+    {
+      "text": "whether",
+      "startMs": 75514,
+      "endMs": 75997,
+      "scene": 6
+    },
+    {
+      "text": "the",
+      "startMs": 76022,
+      "endMs": 76264,
+      "scene": 6
+    },
+    {
+      "text": "stack",
+      "startMs": 76277,
+      "endMs": 76639,
+      "scene": 6
+    },
+    {
+      "text": "is",
+      "startMs": 76658,
+      "endMs": 76839,
+      "scene": 6
+    },
+    {
+      "text": "empty.",
+      "startMs": 76849,
+      "endMs": 77211,
+      "scene": 6
+    },
+    {
+      "text": "Let",
+      "startMs": 77490,
+      "endMs": 77703,
+      "scene": 7
+    },
+    {
+      "text": "us",
+      "startMs": 77714,
+      "endMs": 77874,
+      "scene": 7
+    },
+    {
+      "text": "run",
+      "startMs": 77883,
+      "endMs": 78096,
+      "scene": 7
+    },
+    {
+      "text": "it.",
+      "startMs": 78107,
+      "endMs": 78267,
+      "scene": 7
+    },
+    {
+      "text": "The",
+      "startMs": 78443,
+      "endMs": 78656,
+      "scene": 7
+    },
+    {
+      "text": "first",
+      "startMs": 78667,
+      "endMs": 78987,
+      "scene": 7
+    },
+    {
+      "text": "curly",
+      "startMs": 79004,
+      "endMs": 79323,
+      "scene": 7
+    },
+    {
+      "text": "is",
+      "startMs": 79340,
+      "endMs": 79500,
+      "scene": 7
+    },
+    {
+      "text": "already",
+      "startMs": 79508,
+      "endMs": 79934,
+      "scene": 7
+    },
+    {
+      "text": "on",
+      "startMs": 79957,
+      "endMs": 80117,
+      "scene": 7
+    },
+    {
+      "text": "the",
+      "startMs": 80125,
+      "endMs": 80338,
+      "scene": 7
+    },
+    {
+      "text": "stack.",
+      "startMs": 80349,
+      "endMs": 80669,
+      "scene": 7
+    },
+    {
+      "text": "Next",
+      "startMs": 80854,
+      "endMs": 81120,
+      "scene": 7
+    },
+    {
+      "text": "is",
+      "startMs": 81134,
+      "endMs": 81294,
+      "scene": 7
+    },
+    {
+      "text": "a",
+      "startMs": 81302,
+      "endMs": 81409,
+      "scene": 7
+    },
+    {
+      "text": "square",
+      "startMs": 81414,
+      "endMs": 81787,
+      "scene": 7
+    },
+    {
+      "text": "opening.",
+      "startMs": 81807,
+      "endMs": 82233,
+      "scene": 7
+    },
+    {
+      "text": "Push",
+      "startMs": 82423,
+      "endMs": 82690,
+      "scene": 7
+    },
+    {
+      "text": "it",
+      "startMs": 82704,
+      "endMs": 82864,
+      "scene": 7
+    },
+    {
+      "text": "on",
+      "startMs": 82872,
+      "endMs": 83032,
+      "scene": 7
+    },
+    {
+      "text": "top.",
+      "startMs": 83040,
+      "endMs": 83253,
+      "scene": 7
+    },
+    {
+      "text": "Next,",
+      "startMs": 83524,
+      "endMs": 83793,
+      "scene": 8
+    },
+    {
+      "text": "a",
+      "startMs": 83978,
+      "endMs": 84085,
+      "scene": 8
+    },
+    {
+      "text": "closing",
+      "startMs": 84091,
+      "endMs": 84521,
+      "scene": 8
+    },
+    {
+      "text": "square.",
+      "startMs": 84544,
+      "endMs": 84921,
+      "scene": 8
+    },
+    {
+      "text": "Top",
+      "startMs": 85110,
+      "endMs": 85326,
+      "scene": 8
+    },
+    {
+      "text": "plate:",
+      "startMs": 85337,
+      "endMs": 85660,
+      "scene": 8
+    },
+    {
+      "text": "an",
+      "startMs": 85847,
+      "endMs": 86008,
+      "scene": 8
+    },
+    {
+      "text": "opening",
+      "startMs": 86017,
+      "endMs": 86447,
+      "scene": 8
+    },
+    {
+      "text": "square.",
+      "startMs": 86470,
+      "endMs": 86847,
+      "scene": 8
+    },
+    {
+      "text": "Match!",
+      "startMs": 87036,
+      "endMs": 87359,
+      "scene": 8
+    },
+    {
+      "text": "Pop",
+      "startMs": 87546,
+      "endMs": 87762,
+      "scene": 8
+    },
+    {
+      "text": "it.",
+      "startMs": 87773,
+      "endMs": 87934,
+      "scene": 8
+    },
+    {
+      "text": "Last,",
+      "startMs": 88203,
+      "endMs": 88554,
+      "scene": 9
+    },
+    {
+      "text": "a",
+      "startMs": 88794,
+      "endMs": 88935,
+      "scene": 9
+    },
+    {
+      "text": "closing",
+      "startMs": 88942,
+      "endMs": 89504,
+      "scene": 9
+    },
+    {
+      "text": "curly.",
+      "startMs": 89534,
+      "endMs": 89955,
+      "scene": 9
+    },
+    {
+      "text": "Top",
+      "startMs": 90199,
+      "endMs": 90480,
+      "scene": 9
+    },
+    {
+      "text": "plate:",
+      "startMs": 90495,
+      "endMs": 90916,
+      "scene": 9
+    },
+    {
+      "text": "an",
+      "startMs": 91160,
+      "endMs": 91371,
+      "scene": 9
+    },
+    {
+      "text": "opening",
+      "startMs": 91382,
+      "endMs": 91944,
+      "scene": 9
+    },
+    {
+      "text": "curly.",
+      "startMs": 91973,
+      "endMs": 92395,
+      "scene": 9
+    },
+    {
+      "text": "Pop.",
+      "startMs": 92639,
+      "endMs": 92920,
+      "scene": 9
+    },
+    {
+      "text": "The",
+      "startMs": 93156,
+      "endMs": 93437,
+      "scene": 9
+    },
+    {
+      "text": "stack",
+      "startMs": 93452,
+      "endMs": 93873,
+      "scene": 9
+    },
+    {
+      "text": "is",
+      "startMs": 93895,
+      "endMs": 94106,
+      "scene": 9
+    },
+    {
+      "text": "empty.",
+      "startMs": 94117,
+      "endMs": 94539,
+      "scene": 9
+    },
+    {
+      "text": "Valid!",
+      "startMs": 94783,
+      "endMs": 95204,
+      "scene": 9
+    },
+    {
+      "text": "Now",
+      "startMs": 95486,
+      "endMs": 95698,
+      "scene": 10
+    },
+    {
+      "text": "the",
+      "startMs": 95709,
+      "endMs": 95921,
+      "scene": 10
+    },
+    {
+      "text": "trap.",
+      "startMs": 95932,
+      "endMs": 96196,
+      "scene": 10
+    },
+    {
+      "text": "Round,",
+      "startMs": 96377,
+      "endMs": 96695,
+      "scene": 10
+    },
+    {
+      "text": "square,",
+      "startMs": 96879,
+      "endMs": 97249,
+      "scene": 10
+    },
+    {
+      "text": "close",
+      "startMs": 97436,
+      "endMs": 97753,
+      "scene": 10
+    },
+    {
+      "text": "round,",
+      "startMs": 97770,
+      "endMs": 98088,
+      "scene": 10
+    },
+    {
+      "text": "close",
+      "startMs": 98271,
+      "endMs": 98589,
+      "scene": 10
+    },
+    {
+      "text": "square.",
+      "startMs": 98606,
+      "endMs": 98976,
+      "scene": 10
+    },
+    {
+      "text": "Counts",
+      "startMs": 99163,
+      "endMs": 99533,
+      "scene": 10
+    },
+    {
+      "text": "match:",
+      "startMs": 99553,
+      "endMs": 99870,
+      "scene": 10
+    },
+    {
+      "text": "one",
+      "startMs": 100054,
+      "endMs": 100266,
+      "scene": 10
+    },
+    {
+      "text": "of",
+      "startMs": 100277,
+      "endMs": 100435,
+      "scene": 10
+    },
+    {
+      "text": "each.",
+      "startMs": 100444,
+      "endMs": 100708,
+      "scene": 10
+    },
+    {
+      "text": "But",
+      "startMs": 100889,
+      "endMs": 101101,
+      "scene": 10
+    },
+    {
+      "text": "the",
+      "startMs": 101112,
+      "endMs": 101324,
+      "scene": 10
+    },
+    {
+      "text": "order",
+      "startMs": 101335,
+      "endMs": 101653,
+      "scene": 10
+    },
+    {
+      "text": "is",
+      "startMs": 101669,
+      "endMs": 101828,
+      "scene": 10
+    },
+    {
+      "text": "broken.",
+      "startMs": 101836,
+      "endMs": 102207,
+      "scene": 10
+    },
+    {
+      "text": "The",
+      "startMs": 102393,
+      "endMs": 102605,
+      "scene": 10
+    },
+    {
+      "text": "stack",
+      "startMs": 102616,
+      "endMs": 102934,
+      "scene": 10
+    },
+    {
+      "text": "sees",
+      "startMs": 102951,
+      "endMs": 103215,
+      "scene": 10
+    },
+    {
+      "text": "a",
+      "startMs": 103229,
+      "endMs": 103335,
+      "scene": 10
+    },
+    {
+      "text": "closing",
+      "startMs": 103340,
+      "endMs": 103764,
+      "scene": 10
+    },
+    {
+      "text": "round",
+      "startMs": 103786,
+      "endMs": 104104,
+      "scene": 10
+    },
+    {
+      "text": "on",
+      "startMs": 104120,
+      "endMs": 104279,
+      "scene": 10
+    },
+    {
+      "text": "top",
+      "startMs": 104287,
+      "endMs": 104499,
+      "scene": 10
+    },
+    {
+      "text": "of",
+      "startMs": 104510,
+      "endMs": 104669,
+      "scene": 10
+    },
+    {
+      "text": "a",
+      "startMs": 104677,
+      "endMs": 104783,
+      "scene": 10
+    },
+    {
+      "text": "square",
+      "startMs": 104789,
+      "endMs": 105159,
+      "scene": 10
+    },
+    {
+      "text": "plate,",
+      "startMs": 105179,
+      "endMs": 105496,
+      "scene": 10
+    },
+    {
+      "text": "and",
+      "startMs": 105680,
+      "endMs": 105892,
+      "scene": 10
+    },
+    {
+      "text": "says",
+      "startMs": 105903,
+      "endMs": 106167,
+      "scene": 10
+    },
+    {
+      "text": "invalid.",
+      "startMs": 106181,
+      "endMs": 106605,
+      "scene": 10
+    },
+    {
+      "text": "Now",
+      "startMs": 106887,
+      "endMs": 107148,
+      "scene": 11
+    },
+    {
+      "text": "the",
+      "startMs": 107162,
+      "endMs": 107423,
+      "scene": 11
+    },
+    {
+      "text": "maths.",
+      "startMs": 107437,
+      "endMs": 107829,
+      "scene": 11
+    },
+    {
+      "text": "Two",
+      "startMs": 108056,
+      "endMs": 108317,
+      "scene": 11
+    },
+    {
+      "text": "hundred",
+      "startMs": 108331,
+      "endMs": 108853,
+      "scene": 11
+    },
+    {
+      "text": "fifty",
+      "startMs": 108881,
+      "endMs": 109273,
+      "scene": 11
+    },
+    {
+      "text": "billion",
+      "startMs": 109294,
+      "endMs": 109816,
+      "scene": 11
+    },
+    {
+      "text": "steps",
+      "startMs": 109844,
+      "endMs": 110236,
+      "scene": 11
+    },
+    {
+      "text": "became",
+      "startMs": 110256,
+      "endMs": 110713,
+      "scene": 11
+    },
+    {
+      "text": "one",
+      "startMs": 110737,
+      "endMs": 110999,
+      "scene": 11
+    },
+    {
+      "text": "million.",
+      "startMs": 111013,
+      "endMs": 111535,
+      "scene": 11
+    },
+    {
+      "text": "Four",
+      "startMs": 111769,
+      "endMs": 112095,
+      "scene": 11
+    },
+    {
+      "text": "minutes",
+      "startMs": 112113,
+      "endMs": 112635,
+      "scene": 11
+    },
+    {
+      "text": "became",
+      "startMs": 112663,
+      "endMs": 113120,
+      "scene": 11
+    },
+    {
+      "text": "one",
+      "startMs": 113144,
+      "endMs": 113405,
+      "scene": 11
+    },
+    {
+      "text": "millisecond.",
+      "startMs": 113419,
+      "endMs": 114203,
+      "scene": 11
+    },
+    {
+      "text": "Same",
+      "startMs": 114450,
+      "endMs": 114777,
+      "scene": 11
+    },
+    {
+      "text": "answer.",
+      "startMs": 114794,
+      "endMs": 115252,
+      "scene": 11
+    },
+    {
+      "text": "One",
+      "startMs": 115482,
+      "endMs": 115743,
+      "scene": 11
+    },
+    {
+      "text": "stack,",
+      "startMs": 115757,
+      "endMs": 116149,
+      "scene": 11
+    },
+    {
+      "text": "one",
+      "startMs": 116376,
+      "endMs": 116637,
+      "scene": 11
+    },
+    {
+      "text": "pass.",
+      "startMs": 116651,
+      "endMs": 116977,
+      "scene": 11
+    },
+    {
+      "text": "The",
+      "startMs": 117255,
+      "endMs": 117446,
+      "scene": 12
+    },
+    {
+      "text": "interviewer",
+      "startMs": 117456,
+      "endMs": 118031,
+      "scene": 12
+    },
+    {
+      "text": "says:",
+      "startMs": 118061,
+      "endMs": 118300,
+      "scene": 12
+    },
+    {
+      "text": "great,",
+      "startMs": 118464,
+      "endMs": 118752,
+      "scene": 12
+    },
+    {
+      "text": "you",
+      "startMs": 118918,
+      "endMs": 119109,
+      "scene": 12
+    },
+    {
+      "text": "handled",
+      "startMs": 119119,
+      "endMs": 119503,
+      "scene": 12
+    },
+    {
+      "text": "the",
+      "startMs": 119523,
+      "endMs": 119714,
+      "scene": 12
+    },
+    {
+      "text": "order,",
+      "startMs": 119724,
+      "endMs": 120012,
+      "scene": 12
+    },
+    {
+      "text": "not",
+      "startMs": 120178,
+      "endMs": 120369,
+      "scene": 12
+    },
+    {
+      "text": "just",
+      "startMs": 120380,
+      "endMs": 120619,
+      "scene": 12
+    },
+    {
+      "text": "the",
+      "startMs": 120632,
+      "endMs": 120823,
+      "scene": 12
+    },
+    {
+      "text": "count.",
+      "startMs": 120833,
+      "endMs": 121120,
+      "scene": 12
+    },
+    {
+      "text": "That",
+      "startMs": 121287,
+      "endMs": 121526,
+      "scene": 12
+    },
+    {
+      "text": "is",
+      "startMs": 121539,
+      "endMs": 121682,
+      "scene": 12
+    },
+    {
+      "text": "a",
+      "startMs": 121690,
+      "endMs": 121786,
+      "scene": 12
+    },
+    {
+      "text": "good",
+      "startMs": 121791,
+      "endMs": 122030,
+      "scene": 12
+    },
+    {
+      "text": "smile.",
+      "startMs": 122043,
+      "endMs": 122330,
+      "scene": 12
+    },
+    {
+      "text": "This",
+      "startMs": 122605,
+      "endMs": 122863,
+      "scene": 13
+    },
+    {
+      "text": "is",
+      "startMs": 122876,
+      "endMs": 123031,
+      "scene": 13
+    },
+    {
+      "text": "a",
+      "startMs": 123039,
+      "endMs": 123142,
+      "scene": 13
+    },
+    {
+      "text": "stack.",
+      "startMs": 123147,
+      "endMs": 123457,
+      "scene": 13
+    },
+    {
+      "text": "Last",
+      "startMs": 123636,
+      "endMs": 123893,
+      "scene": 13
+    },
+    {
+      "text": "in,",
+      "startMs": 123907,
+      "endMs": 124061,
+      "scene": 13
+    },
+    {
+      "text": "first",
+      "startMs": 124232,
+      "endMs": 124541,
+      "scene": 13
+    },
+    {
+      "text": "out.",
+      "startMs": 124557,
+      "endMs": 124763,
+      "scene": 13
+    },
+    {
+      "text": "Whenever",
+      "startMs": 124937,
+      "endMs": 125401,
+      "scene": 13
+    },
+    {
+      "text": "the",
+      "startMs": 125425,
+      "endMs": 125631,
+      "scene": 13
+    },
+    {
+      "text": "latest",
+      "startMs": 125642,
+      "endMs": 126002,
+      "scene": 13
+    },
+    {
+      "text": "thing",
+      "startMs": 126021,
+      "endMs": 126331,
+      "scene": 13
+    },
+    {
+      "text": "must",
+      "startMs": 126347,
+      "endMs": 126604,
+      "scene": 13
+    },
+    {
+      "text": "finish",
+      "startMs": 126618,
+      "endMs": 126979,
+      "scene": 13
+    },
+    {
+      "text": "first,",
+      "startMs": 126998,
+      "endMs": 127307,
+      "scene": 13
+    },
+    {
+      "text": "think",
+      "startMs": 127486,
+      "endMs": 127795,
+      "scene": 13
+    },
+    {
+      "text": "stack.",
+      "startMs": 127811,
+      "endMs": 128120,
+      "scene": 13
+    },
+    {
+      "text": "Notes",
+      "startMs": 128396,
+      "endMs": 128875,
+      "scene": 14
+    },
+    {
+      "text": "for",
+      "startMs": 128900,
+      "endMs": 129219,
+      "scene": 14
+    },
+    {
+      "text": "revision.",
+      "startMs": 129235,
+      "endMs": 129953,
+      "scene": 14
+    },
+    {
+      "text": "Time:",
+      "startMs": 130242,
+      "endMs": 130641,
+      "scene": 14
+    },
+    {
+      "text": "order",
+      "startMs": 130914,
+      "endMs": 131392,
+      "scene": 14
+    },
+    {
+      "text": "n.",
+      "startMs": 131417,
+      "endMs": 131577,
+      "scene": 14
+    },
+    {
+      "text": "Space:",
+      "startMs": 131837,
+      "endMs": 132315,
+      "scene": 14
+    },
+    {
+      "text": "order",
+      "startMs": 132592,
+      "endMs": 133070,
+      "scene": 14
+    },
+    {
+      "text": "n.",
+      "startMs": 133095,
+      "endMs": 133255,
+      "scene": 14
+    },
+    {
+      "text": "The",
+      "startMs": 133515,
+      "endMs": 133834,
+      "scene": 14
+    },
+    {
+      "text": "idea:",
+      "startMs": 133851,
+      "endMs": 134249,
+      "scene": 14
+    },
+    {
+      "text": "the",
+      "startMs": 134522,
+      "endMs": 134841,
+      "scene": 14
+    },
+    {
+      "text": "latest",
+      "startMs": 134857,
+      "endMs": 135415,
+      "scene": 14
+    },
+    {
+      "text": "opened",
+      "startMs": 135445,
+      "endMs": 136003,
+      "scene": 14
+    },
+    {
+      "text": "closes",
+      "startMs": 136032,
+      "endMs": 136590,
+      "scene": 14
+    },
+    {
+      "text": "first.",
+      "startMs": 136620,
+      "endMs": 137098,
+      "scene": 14
+    },
+    {
+      "text": "Trap:",
+      "startMs": 137375,
+      "endMs": 137773,
+      "scene": 14
+    },
+    {
+      "text": "count",
+      "startMs": 138046,
+      "endMs": 138524,
+      "scene": 14
+    },
+    {
+      "text": "is",
+      "startMs": 138550,
+      "endMs": 138789,
+      "scene": 14
+    },
+    {
+      "text": "not",
+      "startMs": 138801,
+      "endMs": 139120,
+      "scene": 14
+    },
+    {
+      "text": "order.",
+      "startMs": 139137,
+      "endMs": 139615,
+      "scene": 14
+    },
+    {
+      "text": "Quick",
+      "startMs": 139900,
+      "endMs": 140228,
+      "scene": 15
+    },
+    {
+      "text": "quiz.",
+      "startMs": 140245,
+      "endMs": 140518,
+      "scene": 15
+    },
+    {
+      "text": "The",
+      "startMs": 140705,
+      "endMs": 140923,
+      "scene": 15
+    },
+    {
+      "text": "string",
+      "startMs": 140934,
+      "endMs": 141316,
+      "scene": 15
+    },
+    {
+      "text": "is",
+      "startMs": 141337,
+      "endMs": 141500,
+      "scene": 15
+    },
+    {
+      "text": "three",
+      "startMs": 141509,
+      "endMs": 141836,
+      "scene": 15
+    },
+    {
+      "text": "opening",
+      "startMs": 141854,
+      "endMs": 142290,
+      "scene": 15
+    },
+    {
+      "text": "round",
+      "startMs": 142313,
+      "endMs": 142641,
+      "scene": 15
+    },
+    {
+      "text": "brackets,",
+      "startMs": 142658,
+      "endMs": 143149,
+      "scene": 15
+    },
+    {
+      "text": "and",
+      "startMs": 143347,
+      "endMs": 143565,
+      "scene": 15
+    },
+    {
+      "text": "nothing",
+      "startMs": 143577,
+      "endMs": 144014,
+      "scene": 15
+    },
+    {
+      "text": "else.",
+      "startMs": 144036,
+      "endMs": 144309,
+      "scene": 15
+    },
+    {
+      "text": "Valid",
+      "startMs": 144496,
+      "endMs": 144823,
+      "scene": 15
+    },
+    {
+      "text": "or",
+      "startMs": 144841,
+      "endMs": 145004,
+      "scene": 15
+    },
+    {
+      "text": "not?",
+      "startMs": 145013,
+      "endMs": 145231,
+      "scene": 15
+    },
+    {
+      "text": "Comment",
+      "startMs": 145415,
+      "endMs": 145852,
+      "scene": 15
+    },
+    {
+      "text": "your",
+      "startMs": 145875,
+      "endMs": 146148,
+      "scene": 15
+    },
+    {
+      "text": "answer.",
+      "startMs": 146162,
+      "endMs": 146544,
+      "scene": 15
+    },
+    {
+      "text": "Save",
+      "startMs": 146824,
+      "endMs": 147078,
+      "scene": 16
+    },
+    {
+      "text": "this",
+      "startMs": 147092,
+      "endMs": 147346,
+      "scene": 16
+    },
+    {
+      "text": "for",
+      "startMs": 147359,
+      "endMs": 147563,
+      "scene": 16
+    },
+    {
+      "text": "your",
+      "startMs": 147573,
+      "endMs": 147827,
+      "scene": 16
+    },
+    {
+      "text": "interview.",
+      "startMs": 147841,
+      "endMs": 148349,
+      "scene": 16
+    },
+    {
+      "text": "Send",
+      "startMs": 148537,
+      "endMs": 148791,
+      "scene": 16
+    },
+    {
+      "text": "it",
+      "startMs": 148804,
+      "endMs": 148957,
+      "scene": 16
+    },
+    {
+      "text": "to",
+      "startMs": 148965,
+      "endMs": 149117,
+      "scene": 16
+    },
+    {
+      "text": "the",
+      "startMs": 149125,
+      "endMs": 149329,
+      "scene": 16
+    },
+    {
+      "text": "friend",
+      "startMs": 149339,
+      "endMs": 149695,
+      "scene": 16
+    },
+    {
+      "text": "who",
+      "startMs": 149714,
+      "endMs": 149917,
+      "scene": 16
+    },
+    {
+      "text": "only",
+      "startMs": 149928,
+      "endMs": 150182,
+      "scene": 16
+    },
+    {
+      "text": "counts",
+      "startMs": 150195,
+      "endMs": 150551,
+      "scene": 16
+    },
+    {
+      "text": "brackets.",
+      "startMs": 150570,
+      "endMs": 151028,
+      "scene": 16
+    },
+    {
+      "text": "Like",
+      "startMs": 151212,
+      "endMs": 151466,
+      "scene": 16
+    },
+    {
+      "text": "for",
+      "startMs": 151480,
+      "endMs": 151683,
+      "scene": 16
+    },
+    {
+      "text": "the",
+      "startMs": 151694,
+      "endMs": 151897,
+      "scene": 16
+    },
+    {
+      "text": "next",
+      "startMs": 151908,
+      "endMs": 152162,
+      "scene": 16
+    },
+    {
+      "text": "question:",
+      "startMs": 152175,
+      "endMs": 152633,
+      "scene": 16
+    },
+    {
+      "text": "Min",
+      "startMs": 152818,
+      "endMs": 153021,
+      "scene": 16
+    },
+    {
+      "text": "Stack.",
+      "startMs": 153032,
+      "endMs": 153337,
+      "scene": 16
+    },
+    {
+      "text": "And",
+      "startMs": 153513,
+      "endMs": 153717,
+      "scene": 16
+    },
+    {
+      "text": "comment",
+      "startMs": 153727,
+      "endMs": 154134,
+      "scene": 16
+    },
+    {
+      "text": "BRACKETS",
+      "startMs": 154155,
+      "endMs": 154613,
+      "scene": 16
+    },
+    {
+      "text": "for",
+      "startMs": 154637,
+      "endMs": 154840,
+      "scene": 16
+    },
+    {
+      "text": "the",
+      "startMs": 154851,
+      "endMs": 155054,
+      "scene": 16
+    },
+    {
+      "text": "notes",
+      "startMs": 155065,
+      "endMs": 155370,
+      "scene": 16
+    },
+    {
+      "text": "PDF.",
+      "startMs": 155386,
+      "endMs": 155590,
+      "scene": 16
+    }
+  ]
+}
