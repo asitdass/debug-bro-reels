@@ -175,6 +175,44 @@
           "metric": "follows"
         }
       ]
+    },
+    {
+      "slug": "dsa101-02-valid-parentheses",
+      "readAt": "2026-11-28T12:46:41.615Z",
+      "numbers": "181 views, 161 viewers, 154 reach, 100% non-followers, 0 likes, 0 comments, 2 saves, 0 shares, 1 follow, 1 profile activity, skip rate 65.6%, avg watch 12.1 s of 117 s, original audio, 12 h old (early, under 24 h). For comparison, dsa101-01 at 10 h: 313 views, skip rate 62%, avg watch 20 s; at 23 h: 1256 views, skip rate 64.9%, avg watch 17 s of 111 s, 12 follows",
+      "worked": [
+        "Original audio was used and the first frame is clean (no word stamps), as the previous fixes asked",
+        "2 saves from 181 views (1.1%) and 1 follow from 161 viewers (0.62%), early but non-zero"
+      ],
+      "failed": [
+        "Skip rate 65.6% against 62% (10 h) and 64.9% (23 h) for dsa101-01: the clean first frame did not lower it, so a cluttered opening was not the main cause (one reel)",
+        "Avg watch 12.1 s of 117 s (10%) against 17 s of 111 s (15%) for dsa101-01 at 23 h",
+        "181 views at 12 h against 313 at 10 h for dsa101-01; reach 154 against 248 (early, cause not known)",
+        "0 comments and 0 likes: the quiz is scene 16 of 17 and the asks come only at the end",
+        "Opening line is a spoken string of bracket words, and the title card shows only the title; the puzzle symbols first appear in scene 2 (hypothesis)"
+      ],
+      "fixes": [
+        {
+          "id": "puzzle-on-first-frame",
+          "change": "Show the concrete example as symbols or numbers on the first frame, with a short spoken question",
+          "metric": "skipRate"
+        },
+        {
+          "id": "early-comment-ask",
+          "change": "Put the comment question on screen before the middle of the reel",
+          "metric": "comments"
+        },
+        {
+          "id": "one-end-ask",
+          "change": "End on one ask only, not save + send + like + comment",
+          "metric": "comments"
+        },
+        {
+          "id": "follow-reason",
+          "change": "Keep naming the next question",
+          "metric": "follows"
+        }
+      ]
     }
   ]
 }
