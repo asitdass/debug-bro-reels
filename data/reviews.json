@@ -137,6 +137,44 @@
           "metric": "follows"
         }
       ]
+    },
+    {
+      "slug": "dsa101-02-valid-parentheses",
+      "readAt": "2026-11-28T12:43:31Z",
+      "numbers": "180 views, 161 viewers, 100% non-followers, 0 likes, 0 comments, 2 saves, 0 shares, 1 follow, 1 profile activity, 117 s, original audio, 12 h old (early, under 24 h); skip rate and watch time not shown on the web. For comparison, dsa101-01 at 23 h: 1255 views, 1066 viewers, 30 likes, 0 comments, 18 saves, 7 shares, 12 follows",
+      "worked": [
+        "First frame is clean: title card readable, no word stamps (seen in the posted reel)",
+        "2 saves from 180 views (1.1%) and 1 follow from 161 viewers (0.62%)",
+        "dsa101-01 grew from 313 views and 2 follows at 10 h to 1255 views and 12 follows at 23 h, saves + shares 2.0% of views: the numbered DSA series earns saves and follows"
+      ],
+      "failed": [
+        "180 views at 12 h against 313 for dsa101-01 at 10 h (one reel, early; cause not known)",
+        "0 comments again: the quiz is scene 16 of 17 and the comment asks are only at the end",
+        "The last scene asks for four things: save, send, like and a comment keyword",
+        "Hypothesis: the spoken opening spells brackets out in words while the title card does not show the string, so a stranger cannot see the puzzle at once"
+      ],
+      "fixes": [
+        {
+          "id": "early-comment-ask",
+          "change": "Put the comment question on screen before the middle of the reel",
+          "metric": "comments"
+        },
+        {
+          "id": "puzzle-on-first-frame",
+          "change": "Show the concrete example as symbols or numbers on the first frame, with a short spoken question",
+          "metric": "skipRate"
+        },
+        {
+          "id": "one-end-ask",
+          "change": "End on one ask only, not save + send + like + comment",
+          "metric": "comments"
+        },
+        {
+          "id": "follow-reason",
+          "change": "Keep naming the next question",
+          "metric": "follows"
+        }
+      ]
     }
   ]
 }
