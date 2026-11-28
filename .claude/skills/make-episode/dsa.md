@@ -58,7 +58,7 @@ quiz, close. Skip a kind when it does not fit the problem; never bend a problem 
 | pause | hint |
 | gate | look?, heading, sign (≤10), items[2-5], storeTitle (the analogy's data structure) |
 | steps | steps[2-4], yes?, no? |
-| code | file, lines[3-12, ≤48 chars], meanings (exactly one per line, ≤44) |
+| code | file, lines[3-12, ≤48 chars: exactly the Python in notes.json, comments left out], meanings (exactly one per line, ≤44) |
 | run | cells, i (current index), panelLabel, panelText, panelAccent?, storeTitle, store[rows BEFORE this step, max 4], push? (row added), hit? (row index matched), pop? (remove last row), matched?[cell indices], found (true on the last step), result |
 | trap | heading, rows[exactly 2: {title, cells, steps[1-2], result, bad}] wrong first, then right |
 | aha | slow {label, value}, fast {label, value, bar 0.01-1}, headline, sub |
